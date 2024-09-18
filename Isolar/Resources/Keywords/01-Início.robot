@@ -3,9 +3,10 @@ Documentation      Modúlo que Gerencie um resumo das informações cadastradas 
 Resource           ../Main.robot
 
 *** Variables ***
-${Botao_Fila}        (//div[contains(.,'37')])[9]
+${Tela_Inicio}       (//div[contains(.,'Gerencie um resumo das informações cadastradas no sistema.')])[7]
+${Botao_Fila}        (//div[contains(.,'Fila')])[9] 
 ${Botao_Producao}    (//div[contains(.,'Produção')])[9]
-${Botao_Concluidas}  (//div[contains(.,'1495Concluídas')])[7]
+${Botao_Concluidas}  (//div[contains(.,'Concluídas')])[9]
 ${Botao_Paradas}     (//div[contains(.,'Paradas')])[9]
 ${Status_Fila}        Fila
 ${Status_Producao}    Produção
@@ -19,6 +20,9 @@ ${Btn_Buscar}         //button[contains(.,'Buscar')]
 Dado que clico no menu "Início"
     Wait Until Element Is Visible    ${MENU_INICIO}
     Click Element                    ${MENU_INICIO}
+
+Então sistema exibe informações de requisições gerais
+    Wait Until Element Is Visible    ${Tela_Inicio}
 
 # --1.2
 Quando clico em "Fila"

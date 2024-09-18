@@ -1,5 +1,5 @@
 *** Variables ***
-${URLISO}                   https://teste.grupoiso.com.br/
+${URLISO}                   https://sistemas.grupoiso.com.br/
 # ...    https://teste.grupoiso.com.br/
 # ...    https://validacao.grupoiso.com.br/
 # ...    https://sistemas.grupoiso.com.br/
@@ -7,9 +7,11 @@ ${URLISO}                   https://teste.grupoiso.com.br/
 ${BROWSER}                  chrome
 ${LOGO}                     //img[@alt='Logo Isolar Energy']
 
+# qa@grupoiso.com.br
+# 24455090
 
-${EmailAdmin}                qa@grupoiso.com.br
-${SenhaAdmin}                24455090
+${EmailAdmin}                suporte@gerenciadores.com 
+${SenhaAdmin}                suporte@gerenciadores.com 
 ${EmailVendedor}             joice@isolarenergy.com.br
 ${SenhaVendedor}             Isolar@2023
 ${EmailTecnico}              projetos6@isolarenergy.com.br
