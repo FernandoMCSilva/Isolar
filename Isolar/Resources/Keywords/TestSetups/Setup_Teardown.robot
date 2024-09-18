@@ -1,0 +1,20 @@
+*** Settings ***
+Documentation    Abre e fecha navegador
+Resource    ../../Main.robot
+# Resource    ../Config/Variables.robot
+
+*** Keywords ***
+Abrir navegador
+    [Arguments]     ${url}
+    Open Browser    ${url}    ${BROWSER}   
+    Set Window Size    1920    1080
+    Wait Until Element Is Visible    ${LOGO}
+
+Dado que acesse a Isolar e logue no sistema
+    Abrir navegador    ${URLISO}
+    Fazer login        ${EmailAdmin}    ${SenhaAdmin}
+    Sleep    3s
+    Reload Page
+
+Fechar navegador
+    Close Browser
