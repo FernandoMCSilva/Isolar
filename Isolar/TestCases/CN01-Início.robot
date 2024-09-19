@@ -53,6 +53,5 @@ CT 01.07 - Validar todos os filtros da tela Início
     Dado que clico no menu "Início"
     E preencho data inicial
     E preencho data final
-    Quando clico em "Departamento"
     E clico em Buscar
     Então sistema exibe requisições filtradas

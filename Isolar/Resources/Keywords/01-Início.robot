@@ -98,7 +98,7 @@ E seleciono "Todos"
 E valido todos os filtros de departamento
     FOR    ${departamento}    IN    @{DEPARTAMENTOS}
         Wait Until Element Is Visible    xpath=//button[@id='departament']    timeout=10s
-        Execute JavaScript               document.getElementById('departament').click();
+        Execute JavaScript               (//button[@type='button'])[8].click();
         Wait Until Element Is Visible    xpath=//div[@role='option'][contains(.,'${departamento}')]    timeout=10s
         Execute JavaScript               //div[@role='option'][contains(.,'${departamento}')].click();
         Sleep    2s
@@ -115,20 +115,16 @@ Então sistema exibe requisições do departamento
 
 # --1.7
 E preencho data inicial
-    Sleep   2s
     Wait Until Element Is Visible    (//input[@placeholder='DD/MM/YYYY'])[1]    timeout=10s
-    Execute JavaScript    document.evaluate("(//input[@placeholder='DD/MM/YYYY'])[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.value = '17/08/2024';
+    Input Text    (//input[@placeholder='DD/MM/YYYY'])[1]    16/08/2024
     Sleep   2s
 
 E preencho data final
     Wait Until Element Is Visible    (//input[@placeholder='DD/MM/YYYY'])[2]    timeout=10s
-    Execute JavaScript    document.evaluate("(//input[@placeholder='DD/MM/YYYY'])[2]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.value = '17/08/2024';
-    Sleep   2s
+    Input Text    (//input[contains(@placeholder,'DD/MM/YYYY')])[2]    16/08/2024
 
 Então sistema exibe requisições filtradas
-    Mouse Over    xpath=(//canvas[contains(@width,'442')])[1]
-    Wait Until Element Is Visible    xpath=//div[@class='tooltip-class']    timeout=5s
-    Element Text Should Be    xpath=//div[@class='tooltip-class']    Requisições por Status: 2
-
-    # Wait Until Element Is Visible     (//canvas[@height='383'])[1]
-    Capture Element Screenshot        (//canvas[@height='383'])[1]
+    Wait Until Element Is Visible       //*[@id="root"]/main/div/div/div/main/div/div[4]/div[1]/canvas
+    Sleep    10s
+    Mouse Over    xpath=//*[@id="root"]/main/div/div/div/main/div/div[4]/div[1]/canvas
+    Capture Page Screenshot

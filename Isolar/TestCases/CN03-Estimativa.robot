@@ -20,41 +20,41 @@ CT 03.02 - Validar filtro Vendedor
     E clico em "Buscar"
     Então sistema exibe estimativas de filtro Vendedor
 
-# CT 03.03 - Validar filtro Cliente
-#     [Documentation]     Caso de teste valida o filtro Cliente em Estimativa
-#     [Tags]    Estimativa    Funcional        
-#     Dado que clico no menu "Estimativa"
-#     Quando clico em "Filtros"
-#     E preencho informações no campo Cliente
-#     E clico em "Buscar"
-#     Então sistema exibe informações do filtro Cliente
+CT 03.03 - Validar filtro Cliente
+    [Documentation]     Caso de teste valida o filtro Cliente em Estimativa
+    [Tags]    Estimativa    Funcional        
+    Dado que clico no menu "Estimativa"
+    Quando clico em "Filtros"
+    E preencho informações no campo Cliente
+    E clico em "Buscar"
+    Então sistema exibe estimativas do filtro Cliente
 
-# CT 03.04 - Validar filtro Tipo de usina
-#     [Documentation]    Caso de teste valida o filtro Tipo de usina "Todos"
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico em "Filtros"
-#     E seleciono Tipo de usina "Todos"
-#     E clico em "Buscar"
-#     Então sistema exibe informações de Estimativa do filtro Tipo de usina
+CT 03.04 - Validar filtro Tipo de usina "Todos"
+    [Documentation]    Caso de teste valida o filtro Tipo de usina "Todos"
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico em "Filtros"
+    E seleciono Tipo de usina "Todos"
+    E clico em "Buscar"
+    Então sistema exibe informações de Estimativa do filtro Tipo de usina "Todos"
 
-# CT 03.05 - Validar filtro Tipo de usina
-#     [Documentation]    Caso de teste valida o filtro Tipo de usina "Autoconsumo"
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico em "Filtros"
-#     E seleciono Tipo de usina "Autoconsumo"
-#     E clico em "Buscar"
-#     Então sistema exibe informações de Estimativa do filtro Tipo de usina
+CT 03.05 - Validar filtro Tipo de usina "Autoconsumo"
+    [Documentation]    Caso de teste valida o filtro Tipo de usina "Autoconsumo"
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico em "Filtros"
+    E seleciono Tipo de usina "Autoconsumo"
+    E clico em "Buscar"
+    Então sistema exibe informações de Estimativa do filtro Tipo de usina "Autoconsumo"
 
-# CT 03.06 - Validar filtro Tipo de usina
-#     [Documentation]    Caso de teste valida o filtro Tipo de usina "Aluguel"
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico em "Filtros"
-#     E seleciono Tipo de usina "Aluguel"
-#     E clico em "Buscar"
-#     Então sistema exibe informações de Estimativa do filtro Tipo de usina
+CT 03.06 - Validar filtro Tipo de usina
+    [Documentation]    Caso de teste valida o filtro Tipo de usina "Aluguel"
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico em "Filtros"
+    E seleciono Tipo de usina "Aluguel"
+    E clico em "Buscar"
+    Então sistema exibe informações de Estimativa do filtro Tipo de usina "Aluguel"
 
 # CT 03.07 - Validar filtro Data de registro
 #     [Documentation]     Caso de teste valida o filtro Data de registro
@@ -62,7 +62,6 @@ CT 03.02 - Validar filtro Vendedor
 #     Dado que clico no menu "Estimativa"
 #     Quando clico em "Filtros"
 #     E preencho com informações data de registro
-#     E clico em "Buscar"
 #     Então sistema exibe Estimativa do filtro Data de registro
 
 # CT 03.08 - Validar filtro Quantidade de itens por pág
