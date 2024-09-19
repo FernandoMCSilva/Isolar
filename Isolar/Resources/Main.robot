@@ -6,6 +6,7 @@ Resource  Config/Matchers.robot
 Resource  Keywords/TestSetups/Setup_Teardown.robot
 Resource  Keywords/01-Início.robot
 Resource  Keywords/02-Requisições.robot
+Resource  Keywords/03-Estimativa.robot
 Resource  Keywords/05-Cadastros.robot
 Resource  Keywords/06-Usuários.robot
 Resource  Keywords/07-Configurações.robot
