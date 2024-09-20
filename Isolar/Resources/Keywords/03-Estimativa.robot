@@ -9,6 +9,7 @@ ${Vendedor_Fila}          Fernando
 ${Campo_Cliente}          //input[@id='cliente']
 ${Cliente_Fila}           Fernando
 @{TIPO_USINAS}        Todos     Autoconsumo    Aluguel
+
 *** Keywords ***
 # --3.1
 Dado que clico no menu "Estimativa"

@@ -7,12 +7,14 @@ Resource  Keywords/TestSetups/Setup_Teardown.robot
 Resource  Keywords/01-Início.robot
 Resource  Keywords/02-Requisições.robot
 Resource  Keywords/03-Estimativa.robot
-Resource  Keywords/05-Cadastros.robot
-Resource  Keywords/06-Usuários.robot
-Resource  Keywords/07-Configurações.robot
-Resource  Keywords/08-Relatórios.robot
-Resource  Keywords/09-Novidades.robot
-Resource  Keywords/10-Perfil.robot
+Resource  Keywords/04-MiSol.robot
+Resource  Keywords/05-Documentos.robot
+Resource  Keywords/06-Cadastros.robot
+Resource  Keywords/07-Usuários.robot
+Resource  Keywords/08-Configurações.robot
+Resource  Keywords/09-Relatórios.robot
+Resource  Keywords/10-Monitoramento.robot
+Resource  Keywords/11-Novidades.robot
 
 
 *** Keywords ***

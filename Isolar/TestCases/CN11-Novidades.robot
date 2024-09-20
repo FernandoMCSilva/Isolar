@@ -5,7 +5,7 @@ Test Teardown      Fechar navegador
 Documentation      Modúlo que Gerencie o menu Novidades
 
 *** Test Cases ***
-CT 09.01 - Validar menu Novidades
+CT 11.01 - Validar menu Novidades
     [Documentation]     Caso de teste valida se Menu Novidades está funcional
     [Tags]    Novidades    Funcional        
     Dado que clico no menu "Novidades"
