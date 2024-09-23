@@ -56,67 +56,67 @@ CT 03.06 - Validar filtro Tipo de usina "Aluguel"
     E clico em "Buscar"
     Então sistema exibe informações de Estimativa do filtro Tipo de usina "Aluguel"
 
-# CT 03.07 - Validar filtro Data de registro
-#     [Documentation]     Caso de teste valida o filtro Data de registro
-#     [Tags]    Estimativa    Funcional        
-#     Dado que clico no menu "Estimativa"
-#     Quando clico em "Filtros"
-#     E preencho com informações data de registro
-#     Então sistema exibe Estimativa do filtro Data de registro
+CT 03.07 - Validar filtro Data de registro
+    [Documentation]     Caso de teste valida o filtro Data de registro
+    [Tags]    Estimativa    Funcional        
+    Dado que clico no menu "Estimativa"
+    Quando clico em "Filtros"
+    E preencho com informações data de registro
+    Então sistema exibe Estimativa do filtro Data de registro
 
-# CT 03.08 - Validar filtro Quantidade de itens por pág
-#     [Documentation]     Caso de teste valida o filtro Quantidade de itens por pág
-#     [Tags]    Estimativa    Funcional        
-#     Dado que clico no menu "Estimativa"
-#     Quando clico em "Quantidade de itens por pág"
-#     E preencho informações no campo quantidade
-#     Então sistema exibe informações de acordo com quantidade preenchida
+CT 03.08 - Validar filtro Quantidade de itens por pág
+    [Documentation]     Caso de teste valida o filtro Quantidade de itens por pág
+    [Tags]    Estimativa    Funcional        
+    Dado que clico no menu "Estimativa"
+    Quando clico em "Quantidade de itens por pág"
+    E preencho informações no campo quantidade
+    Então sistema exibe informações de acordo com quantidade preenchida
 
-# CT 03.09 - Validar botão Próximo
-#     [Documentation]     Caso de teste valida o botão próximo
-#     [Tags]    Estimativa    Funcional        
-#     Dado que clico no menu "Estimativa"
-#     Quando clico em "Próximo"
-#     Então sistema exibe próximas Estimativa
+CT 03.09 - Validar botão Próximo
+    [Documentation]     Caso de teste valida o botão próximo
+    [Tags]    Estimativa    Funcional        
+    Dado que clico no menu "Estimativa"
+    Quando clico em "Próximo"
+    Então sistema exibe próximas Estimativa
 
-# CT 03.10 - Validar botão Anterior
-#     [Documentation]     Caso de teste valida o botão Anterior
-#     [Tags]    Estimativa    Funcional        
-#     Dado que clico no menu "Estimativa"
-#     Quando clico em "Próximo"
-#     E clico em "Anterior"
-#     Então sistema exibe Estimativa anteriores
+CT 03.10 - Validar botão Anterior
+    [Documentation]     Caso de teste valida o botão Anterior
+    [Tags]    Estimativa    Funcional        
+    Dado que clico no menu "Estimativa"
+    Quando clico em "Próximo"
+    E clico em "Anterior"
+    Então sistema exibe Estimativa anteriores
 
 # CT 03.11 - Validar botão Gerar link de assinatura inativo
 #     [Documentation]     Caso de teste valida botão Gerar link de assinatura inativo
 #     [Tags]    Estimativa    Funcional        
 #     Dado que clico no menu "Estimativa"
-#     Quando clico em "Gerar link de assinatura"
-#     Então sistema não executa nenhuma ação
+#     # Quando clico em "Gerar link de assinatura" inativo
+# # #     Então sistema não executa nenhuma ação
    
-# CT 03.12 - Validar botão Não em Gerar link de assinatura
-#     [Documentation]     Caso de teste valida botão Gerar link de assinatura
-#     [Tags]    Estimativa    Funcional        
-#     Dado que clico no menu "Estimativa"
-#     Quando clico em "Gerar link de assinatura"
-#     E clico em "Não"
-#     Então sistema volta para menu Estimativa
+CT 03.12 - Validar botão Não em Gerar link de assinatura
+    [Documentation]     Caso de teste valida botão Gerar link de assinatura
+    [Tags]    Estimativa    Funcional        
+    Dado que clico no menu "Estimativa"
+    Quando clico em "Gerar link de assinatura"
+    E clico em "Não"
+    Então sistema volta para menu Estimativa
 
-# CT 03.13 - Validar botão Gerar link de assinatura
-#     [Documentation]     Caso de teste valida botão Gerar link de assinatura    
-#     [Tags]    Estimativa    Funcional        
-#     Dado que clico no menu "Estimativa"
-#     Quando clico em "Gerar link de assinatura"
-#     E clico em "Sim"
-#     Então sistema exibe informações para criar assinaturas
+CT 03.13 - Validar botão Gerar link de assinatura
+    [Documentation]     Caso de teste valida botão Gerar link de assinatura    
+    [Tags]    Estimativa    Funcional        
+    Dado que clico no menu "Estimativa"
+    Quando clico em "Gerar link de assinatura"
+    E clico em "Sim"
+    Então sistema exibe informações para criar assinaturas
 
 
-# CT 03.14 Validar botão Ver PDF
-#     [Documentation]    Caso de teste valida botão Ver PDF
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Ver PDF"
-#     Então sistema exibe informações em aquivo PDF
+CT 03.14 Validar botão Ver PDF
+    [Documentation]    Caso de teste valida botão Ver PDF
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Ver PDF"
+    Então sistema exibe informações em aquivo PDF
 
 # CT 03.15 Validar botão Fechar PDF 
 #     [Documentation]    Caso de teste valida botão Fechar PDF
