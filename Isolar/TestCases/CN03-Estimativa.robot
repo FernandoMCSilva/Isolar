@@ -124,49 +124,73 @@ CT 03.14 Validar botão Ver PDF
 #     Dado que clico no menu "Estimativa"
 #     Quando clico no botão "Ver PDF"
 #     E clico em "Fechar PDF"
-#     Então sistema retorna e exibe informações do menu Estimativa
+# #     Então sistema retorna e exibe informações do menu Estimativa
 
-# CT 03.16 Teste botão Imprimir Estimativa em Ver PDF
-#     [Documentation]    Caso de teste testa botão Imprimir Estimativa em "Ver PDF"
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Ver PDF"
-#     E clico em "imprimir Estimativa"
-#     Então sistema exibe informações de estimativa em arquivo PDF
+CT 03.16 Teste botão Imprimir Estimativa em Ver PDF
+    [Documentation]    Caso de teste testa botão Imprimir Estimativa em "Ver PDF"
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Ver PDF"
+    E clico em "imprimir Estimativa"
+    Então sistema exibe informações de estimativa em arquivo PDF
 
-# CT 03.17 Validar botão Cancelar em Aplicar desconto
-#     [Documentation]    Caso de teste valida botão Cancelar em Aplicar desconto
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Aplicar desconto"
-#     E clico em "Cancelar"
-#     Então sistema retorna e exibe informações do menu Estimativa
+CT 03.17 Validar botão Cancelar em Aplicar desconto
+    [Documentation]    Caso de teste valida botão Cancelar em Aplicar desconto
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Aplicar desconto"
+    E clico em "Cancelar"
+    Então sistema retorna e exibe informações do menu Estimativa
 
-# CT 03.18 Validar botão Aplicar desconto 
-#     [Documentation]    Caso de teste valida botão Aplicar desconto
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Aplicar desconto"
-#     E preencho informações de desconto
-#     E clico em "Confirmar"
-#     Então sistema aplica desconto e exibe informações em arquivo PDF
+CT 03.18 Validar botão Aplicar desconto 
+    [Documentation]    Caso de teste valida botão Aplicar desconto
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Aplicar desconto"
+    E preencho informações de desconto
+    Então sistema aplica desconto e exibe informações em arquivo PDF
 
-# CT 03.19 Teste aplicar desconto acima do valor permitido
-#     [Documentation]    Caso de teste testa aplicar desconto acima do valor permitido
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Aplicar desconto"
-#     E preencho informações de desconto acima do limite
-#     E clico em "Confirmar"
-#     Então sistema exibe mensagem de erro de desconto máximo permitido
+CT 03.19 Teste aplicar desconto acima do limite
+    [Documentation]    Caso de teste testa aplicar desconto acima do valor permitido
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Aplicar desconto"
+    E preencho informações de desconto acima do limite
+    Então sistema exibe mensagem de erro de desconto máximo permitido
 
 
-# # BOTÃO GERAR (ESTIMATIVA)
+# BOTÃO GERAR (ESTIMATIVA)
 
-# CT 03.20 Validar botão Gerar 
-#     [Documentation]    Caso de teste valida botão gerar em Estimativa
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Gerar"
-#     Então sistema exibe informações do botão Gerar
+CT 03.20 Validar botão Gerar 
+    [Documentation]    Caso de teste valida botão gerar em Estimativa
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Gerar"
+    Então sistema exibe informações do botão Gerar
+
+
+CT 03.21 Validar Condições de simulação
+    [Documentation]    Caso de teste valida filtro Local de instalação "Solo"
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Gerar"
+    E seleciono Local de instalação "Solo"
+    E seleciono Autoconsumo ou Aluguel "Autoconsumo"
+    E seleciono GD1 ou GD2 "GD1"
+    E seleciono Local de geração "Junto a carga"
+    E seleciono Estimativa pôr "Gasto mensal em R$" 
+    E seleciono Valor da classificação "Trifásico"
+    E preencho valor de Gasto mensal
+    E seleciono valor de tensão FF "220v"
+    E seleciono valor de tensão FN "220v"
+    E clico em Gerar cálculos
+    Então sistema exibe resultado dos cálculos
+
+CT 03.22 Validar botão Constantes personalizadas
+    [Documentation]    Caso de teste valida botão Constantes personalizadas em Gerar nova estimativa
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Gerar"
+    E clico no botão "Constantes personalizadas"
+    Então sistema exibe aba de Constantes personalizadas
     
