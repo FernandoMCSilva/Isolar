@@ -71,8 +71,7 @@ CT 03.08 - Validar filtro Quantidade de itens por pág
     Quando clico em "Quantidade de itens por pág"
     E preencho informações no campo quantidade
     Então sistema exibe informações de acordo com quantidade preenchida
-
-CT 03.09 - Validar botão Próximo
+ CT 03.09 - Validar botão Próximo
     [Documentation]     Caso de teste valida o botão próximo
     [Tags]    Estimativa    Funcional        
     Dado que clico no menu "Estimativa"
@@ -94,7 +93,7 @@ CT 03.10 - Validar botão Anterior
 #     # Quando clico em "Gerar link de assinatura" inativo
 # # #     Então sistema não executa nenhuma ação
    
-CT 03.12 - Validar botão Não em Gerar link de assinatura
+CT 03.12 - Validar botão Não em confirmação do Gerar link de assinatura
     [Documentation]     Caso de teste valida botão Gerar link de assinatura
     [Tags]    Estimativa    Funcional        
     Dado que clico no menu "Estimativa"
@@ -111,7 +110,7 @@ CT 03.13 - Validar botão Gerar link de assinatura
     Então sistema exibe informações para criar assinaturas
 
 
-CT 03.14 Validar botão Ver PDF
+CT 03.14 - Validar botão Ver PDF
     [Documentation]    Caso de teste valida botão Ver PDF
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
@@ -126,7 +125,7 @@ CT 03.14 Validar botão Ver PDF
 #     E clico em "Fechar PDF"
 # #     Então sistema retorna e exibe informações do menu Estimativa
 
-CT 03.16 Teste botão Imprimir Estimativa em Ver PDF
+CT 03.16 - Validar botão Imprimir Estimativa em Ver PDF
     [Documentation]    Caso de teste testa botão Imprimir Estimativa em "Ver PDF"
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
@@ -134,7 +133,7 @@ CT 03.16 Teste botão Imprimir Estimativa em Ver PDF
     E clico em "imprimir Estimativa"
     Então sistema exibe informações de estimativa em arquivo PDF
 
-CT 03.17 Validar botão Cancelar em Aplicar desconto
+CT 03.17 - Validar botão Cancelar em Aplicar desconto
     [Documentation]    Caso de teste valida botão Cancelar em Aplicar desconto
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
@@ -142,7 +141,7 @@ CT 03.17 Validar botão Cancelar em Aplicar desconto
     E clico em "Cancelar"
     Então sistema retorna e exibe informações do menu Estimativa
 
-CT 03.18 Validar botão Aplicar desconto 
+CT 03.18 - Validar botão aplicar desconto
     [Documentation]    Caso de teste valida botão Aplicar desconto
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
@@ -150,7 +149,7 @@ CT 03.18 Validar botão Aplicar desconto
     E preencho informações de desconto
     Então sistema aplica desconto e exibe informações em arquivo PDF
 
-CT 03.19 Teste aplicar desconto acima do limite
+CT 03.19 - Tentar aplicar desconto "acima do limite"
     [Documentation]    Caso de teste testa aplicar desconto acima do valor permitido
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
@@ -161,16 +160,8 @@ CT 03.19 Teste aplicar desconto acima do limite
 
 # BOTÃO GERAR (ESTIMATIVA)
 
-CT 03.20 Validar botão Gerar 
-    [Documentation]    Caso de teste valida botão gerar em Estimativa
-    [Tags]    Estimativa    Funcional
-    Dado que clico no menu "Estimativa"
-    Quando clico no botão "Gerar"
-    Então sistema exibe informações do botão Gerar
-
-
-CT 03.21 Validar Condições de simulação
-    [Documentation]    Caso de teste valida filtro Local de instalação "Solo"
+CT 03.20 - Validar Condições de simulação
+    [Documentation]    Caso de teste valida combobox
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Gerar"
@@ -186,7 +177,7 @@ CT 03.21 Validar Condições de simulação
     E clico em Gerar cálculos
     Então sistema exibe resultado dos cálculos
 
-CT 03.22 Validar botão Constantes personalizadas
+CT 03.22 - Validar botão Constantes personalizadas
     [Documentation]    Caso de teste valida botão Constantes personalizadas em Gerar nova estimativa
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"

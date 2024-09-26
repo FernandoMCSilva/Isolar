@@ -22,6 +22,7 @@ ${Tipo_Fila}               Técnico
 Dado que clico no menu "Requisições"
     Wait Until Element Is Visible    ${MENU_REQUISICOES}
     Click Element                    ${MENU_REQUISICOES}
+    Sleep    5s
 
 # --2.2
 Quando clico em "Filtros"
@@ -111,7 +112,7 @@ Então sistema exibe requisições do filtro Urgente
 
 # --2.7
 E seleciono Nível de urgência "Alto"
-    Wait Until Element Is Visible    //button[contains(@id,'nivel_urgencia')]      10s
+    Wait Until Element Is Visible    //button[contains(@id,'nivel_urgencia')]
     Click Element                    //button[contains(@id,'nivel_urgencia')]
     Click Element                    ${Campo_Nivel_Urgencia}
     Click Element                    ${Botao_Buscar}

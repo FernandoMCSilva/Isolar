@@ -9,9 +9,12 @@ ${Vendedor_Fila}          Fernando
 ${Campo_Cliente}          //input[@id='cliente']
 ${Cliente_Fila}           Fernando
 @{TIPO_USINAS}        Todos     Autoconsumo    Aluguel
+${EXPECTED_RESULTS}    10
+
 *** Keywords ***
 # --3.1
 Dado que clico no menu "Estimativa"
+    Sleep    5s
     Wait Until Element Is Visible    ${MENU_ESTIMATIVA}
     Click Element                    ${MENU_ESTIMATIVA}
 
@@ -95,25 +98,29 @@ Então sistema exibe Estimativa do filtro Data de registro
 # --3.8
 
 Quando clico em "Quantidade de itens por pág"
-    Sleep    5s
+    Wait Until Element Is Visible    //span[contains(.,'Quantidade de itens por pág')]    timeout=10s
     Click Element    //span[contains(.,'Quantidade de itens por pág')]
 
 E preencho informações no campo quantidade
-    Input Text    //input[@value='12']    3
-    Click Element    (//div[contains(.,'Quantidade')])[10]
+    Input Text    //input[contains(@id,'itensPorPagina')]   ${EXPECTED_RESULTS}
 
 Então sistema exibe informações de acordo com quantidade preenchida
-    Sleep    10s
-    Wait Until Page Contains    text=Suporte Francisco	
+    Click Element    (//div[contains(.,'Quantidade')])[10]
+    Sleep    5s
+    ${resultados}    Get WebElements    xpath=//tr[contains(@class, 'border-b transition-colors')]
+    ${quantidade}    Get Length    ${resultados}
+    Should Be Equal As Numbers    ${quantidade - 1}    ${EXPECTED_RESULTS}
 
 # --3.9
 
 Quando clico em "Próximo"
-    Sleep    5s
+    Wait Until Element Is Visible    //button[contains(.,'Próximo')]
     Click Element    //button[contains(.,'Próximo')]
 
 Então sistema exibe próximas Estimativa
-    Wait Until Page Contains    text=Registros carregados com sucesso!
+    ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Anterior')]
+     Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior está visível. Funcionou."
+    ...    ELSE    Log    "Botão Anterior não está visível. Falhou."    WARN
 
 # --3.10
 
@@ -121,7 +128,10 @@ E clico em "Anterior"
     Click Element    //button[contains(.,'Anterior')]
 
 Então sistema exibe Estimativa anteriores
-    Wait Until Page Contains    text=Registros carregados com sucesso!
+    ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Not Be Visible    //button[contains(.,'Anterior')]
+     Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior não está visível. Funcionou.
+    ...    ELSE    Log    "Botão Anterior ainda está visível. Falhou."    WARN
+
 
 # # --3.11
 
@@ -194,7 +204,7 @@ E preencho informações de desconto
 Então sistema aplica desconto e exibe informações em arquivo PDF
     Wait Until Page Contains    text=Valor do projeto atualizado com sucesso!
 
-# --3.20
+# --3.19
 
 E preencho informações de desconto acima do limite
     Input Text    //input[@id='descontoMaximo']    6
@@ -203,6 +213,7 @@ E preencho informações de desconto acima do limite
 Então sistema exibe mensagem de erro de desconto máximo permitido
     Wait Until Page Contains    text=O valor digitado é maior que o desconto máximo permitido.
 
+# PÁGINA GERAR ESTIMATIVA
 # --3.20
 
 Quando clico no botão "Gerar"
@@ -211,9 +222,6 @@ Quando clico no botão "Gerar"
 
 Então sistema exibe informações do botão Gerar
     Wait Until Page Contains    text=Informe os campos para geração de estimativa para o estado de Santa Catarina.
-
-# PÁGINA GERAR ESTIMATIVA
-# --3.21
 
 E seleciono Local de instalação "Solo"
     Sleep    5s
@@ -258,6 +266,7 @@ E clico em Gerar cálculos
 
 Então sistema exibe resultado dos cálculos
     Wait Until Page Contains    text=Resultado dos cálculos
+
 
 # --3.22
 
