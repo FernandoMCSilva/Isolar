@@ -177,7 +177,7 @@ CT 03.20 - Validar Condições de simulação
     E clico em Gerar cálculos
     Então sistema exibe resultado dos cálculos
 
-CT 03.22 - Validar botão Constantes personalizadas
+CT 03.21 - Validar botão Constantes personalizadas
     [Documentation]    Caso de teste valida botão Constantes personalizadas em Gerar nova estimativa
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
