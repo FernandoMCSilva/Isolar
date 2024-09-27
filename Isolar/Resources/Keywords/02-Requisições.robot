@@ -20,6 +20,7 @@ ${Tipo_Fila}               Técnico
 *** Keywords ***
 # --2.1
 Dado que clico no menu "Requisições"
+    Sleep    2s
     Wait Until Element Is Visible    ${MENU_REQUISICOES}
     Click Element                    ${MENU_REQUISICOES}
     Sleep    5s
@@ -75,12 +76,16 @@ Então sistema exibe requisições do filtro Status
     Wait Until Element Is Visible        xpath=//td[contains(normalize-space(),'Produção')]       timeout=10s
     ${statuses}=    Get Webelements      xpath=//td[contains(normalize-space(),'Produção')]                                
     ${count}=    Get Length    ${statuses}
-    Log    Número de elementos encontrados: ${count}
+    ${adjusted_count}=    Set Variable    ${count} - 1
+    Log    Número de elementos encontrados (ajustado): ${adjusted_count}
+
     FOR    ${status}    IN    @{statuses}
-        ${text}=    Get Text    ${status}
-        Log    Status encontrado: ${text}
-        Should Be Equal As Strings    ${text}    ${Status_Fila}
+    ${text}=    Get Text    ${status} 
+    Log    Status encontrado: ${text}
+    # Verifica se o status é igual a Fila
+    Should Be Equal As Strings    ${text}    ${Status_Fila}    Fail    Produção não é igual a Fila
     END
+
 
 # --2.5
 E seleciono tipo "Técnico"

@@ -12,7 +12,7 @@ CT 02.01 - Validar menu Requisições
 
 CT 02.02 - Validar filtro Cliente
     [Documentation]     Caso de teste valida o filtro Cliente em Requisições
-    [Tags]    Início    Funcional        
+    [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho informações no campo Cliente
@@ -20,7 +20,7 @@ CT 02.02 - Validar filtro Cliente
 
 CT 02.03 - Validar filtro Departamento
     [Documentation]     Caso de teste valida o filtro Departamento em Requisições
-    [Tags]    Início    Funcional        
+    [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E seleciono departamento "Técnico"
@@ -28,7 +28,7 @@ CT 02.03 - Validar filtro Departamento
 
 CT 02.04 - Validar filtro Status
     [Documentation]     Caso de teste valida o filtro Status em Requisições
-    [Tags]    Início    Funcional        
+    [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E seleciono status "Produção"
@@ -36,7 +36,7 @@ CT 02.04 - Validar filtro Status
 
 CT 02.05 - Validar filtro Tipo
     [Documentation]     Caso de teste valida o filtro Tipo em Requisições
-    [Tags]    Início    Funcional        
+    [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E seleciono tipo "Técnico"
@@ -44,7 +44,7 @@ CT 02.05 - Validar filtro Tipo
 
 CT 02.06 - Validar filtro Urgente
     [Documentation]     Caso de teste valida o filtro Urgente em Requisições
-    [Tags]    Início    Funcional        
+    [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E seleciono urgente "Sim"
@@ -52,7 +52,7 @@ CT 02.06 - Validar filtro Urgente
 
 CT 02.07 - Validar filtro Nível de urgência
     [Documentation]     Caso de teste valida o filtro Nível de urgência em Requisições
-    [Tags]    Início    Funcional        
+    [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E seleciono urgente "Sim"
