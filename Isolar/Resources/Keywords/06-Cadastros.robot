@@ -28,6 +28,10 @@ Então sistema exibe informações de cadastro de "Pessoas"
 
 # --6.2
 Quando clico em "Excluir"
+    Sleep    3s
+    Click Element    (//button[@type='button'])[8]
+    Input Text    //input[@placeholder='Buscar...']    Gileade
+    Sleep    2s
     Wait Until Element Is Visible    ${botao_Excluir}
     Click Element    ${botao_Excluir}
 
@@ -93,58 +97,109 @@ Dado que clico no menu "Cadastros > Grupos Consumidores"
     Click Element                    ${Menu_Grupos_Consumidores}
 Então sistema exibe informações de cadastro de "Grupo Consumidores"
     Wait Until Page Contains     text=Grupos Consumidores
-# --6.3
-Dado que clico no menu "Cadastros > Tipo de Gerador"
-    Wait Until Element Is Visible    ${MENU_CADASTROS}
-    Click Element                    ${MENU_CADASTROS}
-    Click Element                    ${Menu_Tipo_de_Gerador}
-Então sistema exibe informações de cadastro de "Tipo de Gerador"
-    Wait Until Page Contains     text=Tipos de Gerador
-# --6.4
-Dado que clico no menu "Cadastros > Tipo de Financiamento"
-    Wait Until Element Is Visible    ${MENU_CADASTROS}
-    Click Element                    ${MENU_CADASTROS}
-    Click Element                    ${Menu_Tipo_de_Financiamento}
-Então sistema exibe informações de cadastro de "Tipo de Financiamento"
-    Wait Until Page Contains     text=Tipos de Financiamento
-
-# --6.5
-Dado que clico no menu "Cadastros > Classificações"
-    Wait Until Element Is Visible    ${MENU_CADASTROS}
-    Click Element                    ${MENU_CADASTROS}
-    Click Element                    ${Menu_Classificacoes}
-Então sistema exibe informações de cadastro de "Classificações"
-    Wait Until Page Contains     text=Classificações
-
-# --6.6
-
-Dado que clico no menu "Cadastros > Motivos de Urgência"
-    Wait Until Element Is Visible    ${MENU_CADASTROS}
-    Click Element                    ${MENU_CADASTROS}
-    Click Element                    ${Menu_Motivos_de_Urgencia}
-Então sistema exibe informações de cadastro de "Motivos de Urgência"
-    Wait Until Page Contains     text=Motivos de Urgência
-
-# --6.7
-Dado que clico no menu "Cadastros > Concessionárias"
-    Wait Until Element Is Visible    ${MENU_CADASTROS}
-    Click Element                    ${MENU_CADASTROS}
-    Click Element                    ${Menu_Concessionarias}
-Então sistema exibe informações de cadastro de "Concessionárias"
-    Wait Until Page Contains     text=Concessionárias
-
 # --6.8
-Dado que clico no menu "Cadastros > Departamentos"
-    Wait Until Element Is Visible    ${MENU_CADASTROS}
-    Click Element                    ${MENU_CADASTROS}
-    Click Element                    ${Menu_Departamentos}
-Então sistema exibe informações de cadastro de "Departamentos"
-    Wait Until Page Contains     text=Departamentos
 
-# --6.8
-Dado que clico no menu "Cadastros > Origem da Indicação"
-    Wait Until Element Is Visible    ${MENU_CADASTROS}
-    Click Element                    ${MENU_CADASTROS}
-    Click Element                    ${Menu_Origem_da_Indicacao}
-Então sistema exibe informações de cadastro de "Origem de indicação"
-    Wait Until Page Contains     text=Origem de indicação
+Quando clico em "Editar"
+    Sleep    5s
+    Click Element    (//button[contains(.,'Editar')])[1]
+
+E preencho informações de cadastro editado
+    Sleep    10s
+    Input Text    //input[@placeholder='Nome completo']    Gileade do Nascimento Santos
+    Input Text    //input[@placeholder='000.000.000-00']    19895982771
+    Input Text    //input[@placeholder='(99) 99999-9999']    21981905892
+    Input Text    //input[@placeholder='00000-000']    28990154
+    Click Element    xpath=//div[@role='button' and contains(@class, 'select__multi-value__remove')]
+    Click Element    xpath=//div[@class='select__value-container select__value-container--is-multi css-hlgwow'][contains(.,'Selecione a função')]
+    Click Element    (//div[contains(.,'Vendedor técnico')])[13]
+    Click Element    (//div[contains(.,'Representante comercial')])[13]
+    Click Element    xpath=//div[contains(@class, 'select__multi-value__remove')]
+
+    Click Element    //button[contains(.,'Atualizar')]
+
+Então sistema exibe informações de "Editar"
+    
+    Wait Until Page Contains    text=Informações atualizadas com sucesso!
+
+# --6.9
+
+Quando clico no botão "Inserir"
+    Sleep    3s
+    Click Element    //button[contains(.,'Inserir')]
+ 
+E preencho informações de inserir novo cadastro de pessoas
+    Sleep    5s
+    Input Text    //input[@name='Nome']    Gileade
+    Input Text    //input[@name='CPF']    19895982771
+    Input Text    //input[@name='Telefone']    21981905892
+    Input Text    //input[@name='CEP']    28990154
+    Click Element    xpath=//div[@class='select__value-container select__value-container--is-multi css-hlgwow'][contains(.,'Selecione a função')]
+    Click Element    (//div[contains(.,'Vendedor técnico')])[13]
+ 
+
+E clico em "Salvar"
+    Click Element    //button[contains(.,'Salvar')]
+
+Então sistema salva novo cadastro de pessoas
+    Wait Until Page Contains    text=Registro adicionado com sucesso!
+
+# --6.11
+Então sistema exlcui item do menu Cadastro > Grupos Consumidores
+    Wait Until Page Contains    text=Registro excluído com sucesso!
+
+
+# # --6.3
+# Dado que clico no menu "Cadastros > Tipo de Gerador"
+#     Wait Until Element Is Visible    ${MENU_CADASTROS}
+#     Click Element                    ${MENU_CADASTROS}
+#     Click Element                    ${Menu_Tipo_de_Gerador}
+# Então sistema exibe informações de cadastro de "Tipo de Gerador"
+#     Wait Until Page Contains     text=Tipos de Gerador
+# # --6.4
+# Dado que clico no menu "Cadastros > Tipo de Financiamento"
+#     Wait Until Element Is Visible    ${MENU_CADASTROS}
+#     Click Element                    ${MENU_CADASTROS}
+#     Click Element                    ${Menu_Tipo_de_Financiamento}
+# Então sistema exibe informações de cadastro de "Tipo de Financiamento"
+#     Wait Until Page Contains     text=Tipos de Financiamento
+
+# # --6.5
+# Dado que clico no menu "Cadastros > Classificações"
+#     Wait Until Element Is Visible    ${MENU_CADASTROS}
+#     Click Element                    ${MENU_CADASTROS}
+#     Click Element                    ${Menu_Classificacoes}
+# Então sistema exibe informações de cadastro de "Classificações"
+#     Wait Until Page Contains     text=Classificações
+
+# # --6.6
+
+# Dado que clico no menu "Cadastros > Motivos de Urgência"
+#     Wait Until Element Is Visible    ${MENU_CADASTROS}
+#     Click Element                    ${MENU_CADASTROS}
+#     Click Element                    ${Menu_Motivos_de_Urgencia}
+# Então sistema exibe informações de cadastro de "Motivos de Urgência"
+#     Wait Until Page Contains     text=Motivos de Urgência
+
+# # --6.7
+# Dado que clico no menu "Cadastros > Concessionárias"
+#     Wait Until Element Is Visible    ${MENU_CADASTROS}
+#     Click Element                    ${MENU_CADASTROS}
+#     Click Element                    ${Menu_Concessionarias}
+# Então sistema exibe informações de cadastro de "Concessionárias"
+#     Wait Until Page Contains     text=Concessionárias
+
+# # --6.8
+# Dado que clico no menu "Cadastros > Departamentos"
+#     Wait Until Element Is Visible    ${MENU_CADASTROS}
+#     Click Element                    ${MENU_CADASTROS}
+#     Click Element                    ${Menu_Departamentos}
+# Então sistema exibe informações de cadastro de "Departamentos"
+#     Wait Until Page Contains     text=Departamentos
+
+# # --6.8
+# Dado que clico no menu "Cadastros > Origem da Indicação"
+#     Wait Until Element Is Visible    ${MENU_CADASTROS}
+#     Click Element                    ${MENU_CADASTROS}
+#     Click Element                    ${Menu_Origem_da_Indicacao}
+# Então sistema exibe informações de cadastro de "Origem de indicação"
+#     Wait Until Page Contains     text=Origem de indicação
