@@ -5,7 +5,7 @@ ${URLISO}                   https://teste.grupoiso.com.br/
 # ...    https://sistemas.grupoiso.com.br/
 
 ${BROWSER}                  chrome
-${LOGO}                     //img[@alt='Logo Isolar Energy']
+${LOGO}                     //img[@alt='Logo Grupo ISO']
 
 # suporte@gerenciadores.com
 # suporte@gerenciadores.com

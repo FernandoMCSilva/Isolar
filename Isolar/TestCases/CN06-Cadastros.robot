@@ -31,10 +31,9 @@ CT 06.01.04- Validar botão "Continuar" em "Excluir" no menu Cadastros > Pessoas
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Pessoas"
-    E clico no botao buscar
     Quando clico em "Excluir"
     E clico no botão "Continuar" em "Excluir"
-    Então sistema exlcui item do menu Cadastro > Pessoas
+    Então sistema exclui item do menu Cadastro > Pessoas
 
 CT 06.01.05 - Validar filtro "Cards ou Lista" no menu Cadastros > Pessoas
     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
@@ -102,7 +101,7 @@ CT 06.02.02- Validar botão "Continuar" em "Excluir" no menu Cadastros > Grupos 
     Dado que clico no menu "Cadastros > Grupos Consumidores"
     Quando clico em "Excluir"
     E clico no botão "Continuar" em "Excluir"
-    Então sistema exlcui item do menu Cadastro > Grupos Consumidores
+    Então sistema exclui item do menu Cadastro > Grupos Consumidores
 
 
 CT 06.02.03 - Validar filtro "Cards ou Lista" no menu Cadastros > Grupo Consumidores
@@ -161,7 +160,7 @@ CT 06.03.01 - Validar menu Cadastros > Tipo de Gerador
     Dado que clico no menu "Cadastros > Tipo de Gerador"
     Então sistema exibe informações de cadastro de "Tipo de Gerador"
 
-CT 06.01.02 - Validar funcionalidade "inserir" no menu Cadastros > Tipo de Gerador
+CT 06.03.02 - Validar funcionalidade "inserir" no menu Cadastros > Tipo de Gerador
     [Documentation]     Caso de teste valida se funcionalidade inserir no menu Cadastros > Tipo de Gerador está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Tipo de Gerador"
@@ -170,3 +169,63 @@ CT 06.01.02 - Validar funcionalidade "inserir" no menu Cadastros > Tipo de Gerad
     E clico em "Salvar"
     Então sistema salva novo cadastro de pessoas
 
+
+CT 06.03.03 - Validar funcionalidade "editar" menu Cadastros > Tipo de Gerador
+    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Tipo de Gerador está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Tipo de Gerador"
+    Quando clico no botão "Buscar"
+    E preencho informações de pesquisa
+    Quando clico em "Editar"
+    E preencho informações de cadastro editado em Tipo de Gerador
+    Então sistema exibe informações de "Editar"
+    
+
+CT 06.03.04 - Validar filtro "buscar" no menu Cadastros > Tipo de Gerador
+    [Documentation]     Caso de teste valida se filtro buscar está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Tipo de Gerador"
+    Quando clico no botão "Buscar"
+    E preencho informações de pesquisa
+    Então sistema exibe informações de pesquisa de Tipo de Gerador
+
+CT 06.03.05 - Validar botão "Cancelar" em "Excluir" no menu Cadastros > Tipo de Gerador
+    [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Tipo de Gerador"
+    Quando clico em "Excluir"
+    E clico no botão "Cancelar" em "Excluir"
+    Então sistema exibe informações de cadastro de "Tipo de Gerador"
+
+CT 06.03.06- Validar botão "Continuar" em "Excluir" no menu Cadastros > Tipo de Gerador
+    [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Tipo de Gerador"
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema exclui item do menu Cadastro > Tipo de Gerador
+
+CT 06.03.07 - Validar filtro "Cards ou Lista" no menu Cadastros > Tipo de Gerador
+    [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Tipo de Gerador"
+    Quando clico no filtro "Cards"
+    E clico em "Lista"
+    Então sistema exibe informações com filtro "Lista"
+
+
+CT 06.03.08 - Validar busca não encontrada no filtro buscar no menu Cadastros > Tipo de Gerador
+    [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Tipo de Gerador
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Tipo de Gerador"
+    Quando clico no botão "Buscar"
+    E preencho informações de busca não encontrada
+    Então sistema exibe mensagem de erro em Tipo de Gerador
+
+CT 06.03.09 - Validar botão "Fechar" no filtro buscar menu Cadastros > Tipo de Gerador
+    [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Tipo de Gerador está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Tipo de Gerador"
+    Quando clico no botão "Buscar"
+    E clico em "Fechar"
+    Então sistema verifica se filtro buscar fechou
