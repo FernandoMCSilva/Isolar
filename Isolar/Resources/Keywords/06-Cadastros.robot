@@ -13,27 +13,29 @@ ${Menu_Concessionarias}           //a[contains(.,'Concessionárias')]
 ${Menu_Departamentos}             //a[contains(.,'Departamentos')]
 ${Menu_Origem_da_Indicacao}       //a[contains(.,'Origem da indicação')]
 
+${nome_pesquisa_GruposConsumidores}             B3 (teste)
+${nome_pesquisa_pessoas}                        Fernando
+${nome_BuscaNaoEncontrada}                      1234
 ${botao_buscar_CadastrosPessoas}                //button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')]
 ${botao_Editar}                                 (//a[contains(.,'Editar')])[1]
 ${botao_Excluir_CadastrosPessoas}               //button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-destructive text-destructive-foreground hover:bg-destructive/90 h-10 px-4 py-2')]
 ${botao_continuar_Excluir}                      //button[contains(.,'Continuar')]
 ${botao_Cancelar}                               //button[contains(.,'Cancelar')]
+${botao_salvar_CadastrosPessoas}                //button[contains(.,'Salvar')]
+${botao_Excluir_CadastrosGruposConsumidores}    //button[contains(.,'Excluir')]
+${botao_atualizar_CadastrosPessoas}             //button[contains(.,'Atualizar')]
 ${input_buscar_CadastrosPessoas}                //input[contains(@placeholder,'Buscar...')]
+${input_descricao_GruposConsumidores}           //input[@id='descricao']
+${input_buscar_GruposConsumidores}              xpath=//input[contains(@class, 'flex h-10')]
 ${filtro_cards/Lista}                           (//button[@type='button'])[7]
 ${filtro_botaoLista}                            xpath=//div[@role='option'][contains(.,'Lista')]
-${botao_atualizar_CadastrosPessoas}             //button[contains(.,'Atualizar')]
-${botao_salvar_CadastrosPessoas}                //button[contains(.,'Salvar')]
-${nome_pesquisa_pessoas}                        Fernando
-${nome_pesquisa_GruposConsumidores}             B3 (Gileade)
-${input_buscar_GruposConsumidores}              xpath=//input[contains(@class, 'flex h-10')]
-${input_descricao_GruposConsumidores}           //input[@id='descricao']
-${botao_Excluir_CadastrosGruposConsumidores}    //button[contains(.,'Excluir')]
 
 *** Keywords ***
 # --6.01.01
 Dado que clico no menu "Cadastros > Pessoas"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
+    Sleep    2s
     Click Element                    ${Menu_Pessoas}
 Então sistema exibe informações de cadastro de "Pessoas"
     Wait Until Page Contains     text=Pessoas
@@ -46,20 +48,18 @@ Quando clico no botão "Inserir"
 # --6.01.03
 Quando clico em "Excluir"
     Sleep    2s
-    Click Element                    ${botao_buscar_CadastrosPessoas}
-    Input Text                       ${input_buscar_CadastrosPessoas}    ${nome_pesquisa_GruposConsumidores}
     Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
     Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
 
 E clico no botão "Cancelar" em "Excluir"
-    Wait Until Element Is Visible    ${botao_Cancelar}
+    Sleep    2s
     Click Element                    ${botao_Cancelar}
 
 # --6.01.04
 E clico no botao buscar
     Sleep    2s
     Click Element     ${botao_buscar_CadastrosPessoas}
-    Input Text        ${input_buscar_CadastrosPessoas}    Gileade
+
 E clico no botão "Continuar" em "Excluir"
     Click Element    ${botao_continuar_Excluir}
 
@@ -82,22 +82,18 @@ Então sistema exibe informações com filtro "Lista"
 
 # --6.01.06
 
-Quando clico no botão "Buscar"
-    Wait Until Element Is Visible    ${botao_buscar_CadastrosPessoas}
-    Click Element                    ${botao_buscar_CadastrosPessoas}
-
 E preencho informações de pesquisa
     Input Text    //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
 
 Então sistema exibe informações de pesquisa
-     ${nome_resultado}=    Get Text    //p[contains(.,'Fernando Morais da Costa Silva')]
+     ${nome_resultado}=    Get Text    //p[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
 
 # --6.01.07
 
 E preencho informações de busca não encontrada
-    Input Text    ${input_buscar_CadastrosPessoas}    Gileade
+    Input Text    ${input_buscar_CadastrosPessoas}    ${nome_BuscaNaoEncontrada}
 
 Então sistema exibe mensagem de erro
     Wait Until Page Contains    text=Nenhuma pessoa encontrada.
@@ -110,10 +106,6 @@ Então sistema verifica se filtro buscar fechou
     Run Keyword If    ${filtro_buscar}    Log    "Filtro buscar não está visível. Funcionou."
     ...    ELSE    Fail    "Filtro buscar ainda está visível. Falhou."
 
-Dado que clico no menu "Cadastros > Grupos Consumidores"
-    Wait Until Element Is Visible    ${MENU_CADASTROS}
-    Click Element                    ${MENU_CADASTROS}
-    Click Element                    ${Menu_Grupos_Consumidores}
 Então sistema exibe informações de cadastro de "Grupo Consumidores"
     Wait Until Page Contains     text=Grupos Consumidores
 
@@ -124,8 +116,8 @@ Quando clico em "Editar"
     Click Element    ${botao_Editar}
 
 E preencho informações de cadastro editado
-    Sleep    5s
-    Input Text        //input[@placeholder='Nome completo']    Gileade do Nascimento Santos
+    Wait Until Page Contains    text=Editar Informações
+    Input Text        //input[@placeholder='Nome completo']    ${nome_pesquisa_GruposConsumidores}
     Input Text        //input[@placeholder='000.000.000-00']    19895982771
     Input Text        //input[@placeholder='(99) 99999-9999']    21981905892
     Input Text        //input[@placeholder='00000-000']    289901541
@@ -144,7 +136,7 @@ Então sistema exibe informações de "Editar"
 
 E preencho informações de inserir novo cadastro de pessoas
     Sleep    5s
-    Input Text       //input[@name='Nome']    Gileade
+    Input Text       //input[@name='Nome']   ${nome_pesquisa_GruposConsumidores}
     Input Text       //input[@name='CPF']    19895982771
     Input Text       //input[@name='Telefone']    21981905892
     Input Text       //input[@name='CEP']    28990154
@@ -159,6 +151,15 @@ Então sistema salva novo cadastro de pessoas
     Wait Until Page Contains    text=Registro adicionado com sucesso!
 
 # --6.02.01
+Dado que clico no menu "Cadastros > Grupos Consumidores"
+    Wait Until Element Is Visible    ${MENU_CADASTROS}
+    Click Element                    ${MENU_CADASTROS}
+    Sleep    2s
+    Click Element                    ${Menu_Grupos_Consumidores}
+
+Então sistema exibe informações de cadastro de "Grupos Consumidores"
+    Wait Until Page Contains    text=Grupos Consumidores
+
 
 E preencho informações de inserir novo cadastro de Grupos Consumidores
     Sleep    2s
@@ -173,7 +174,7 @@ Então sistema exclui item do menu Cadastro > Grupos Consumidores
 # --6.02.02
 
 E preencho informações de busca não escontrada em Grupos Consumidores
-    Input Text    ${input_buscar_GruposConsumidores}    ${nome_pesquisa_pessoas}
+    Input Text    ${input_buscar_GruposConsumidores}    ${nome_BuscaNaoEncontrada}
 
 Então sistema exibe mensagem de erro em Grupos Consumidores
     Wait Until Page Contains    text=Nenhum grupo consumidor encontrado.
@@ -182,7 +183,7 @@ Então sistema exibe mensagem de erro em Grupos Consumidores
 # --6.02.04
 
 Então sistema exibe informações de pesquisa de Grupos Consumidores
-    ${nome_resultado}=    Get Text    //p[contains(.,'B3 (COMERCIAL)')]
+    ${nome_resultado}=    Get Text    //p[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    Log    "O resultado da pesquisa é B3. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é B3. Teste falhou."    WARN
 
@@ -190,22 +191,23 @@ Então sistema exibe informações de pesquisa de Grupos Consumidores
 Dado que clico no menu "Cadastros > Tipo de Gerador"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
+    Sleep    2s
     Click Element                    ${Menu_Tipo_de_Gerador}
 Então sistema exibe informações de cadastro de "Tipo de Gerador"
     Wait Until Page Contains     text=Tipos de Gerador
     
 # --6.03.02
 
+E preencho informações de inserir novo cadastro de Tipo de Gerador
+    Sleep    2s
+    Input Text    ${input_descricao_GruposConsumidores}    ${nome_pesquisa_GruposConsumidores}
+    
+# --6.03.03
+
 E preencho informações de cadastro editado em Tipo de Gerador
     Sleep    2s
     Input Text    //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
     Click Element    ${botao_atualizar_CadastrosPessoas}
-    
-# --6.03.03
-
-E preencho informações de inserir novo cadastro de Tipo de Gerador
-    Sleep    2s
-    Input Text    ${input_descricao_GruposConsumidores}    ${nome_pesquisa_GruposConsumidores}
 
 # --6.03.04
 
@@ -214,7 +216,7 @@ Então sistema exclui item do menu Cadastro > Tipo de Gerador
 
 # --6.03.06
 Então sistema exibe informações de pesquisa de Tipo de Gerador
-    ${nome_resultado}=    Get Text    //p[contains(.,'B3 (Gileade)')]
+    ${nome_resultado}=    Get Text    //p[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    Log    "O resultado da pesquisa é B3. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é B3. Teste falhou."    WARN
 
@@ -223,13 +225,14 @@ Então sistema exibe informações de pesquisa de Tipo de Gerador
 Então sistema exibe mensagem de erro em Tipo de Gerador
     Wait Until Page Contains    text=Nenhum tipo de gerador encontrado.
 
-# --6.4
-# Dado que clico no menu "Cadastros > Tipo de Financiamento"
-#     Wait Until Element Is Visible    ${MENU_CADASTROS}
-#     Click Element                    ${MENU_CADASTROS}
-#     Click Element                    ${Menu_Tipo_de_Financiamento}
-# Então sistema exibe informações de cadastro de "Tipo de Financiamento"
-#     Wait Until Page Contains     text=Tipos de Financiamento
+# --6.04.01
+Dado que clico no menu "Cadastros > Tipo de Financiamento"
+    Wait Until Element Is Visible    ${MENU_CADASTROS}
+    Click Element                    ${MENU_CADASTROS}
+    Sleep    2s
+    Click Element                    ${Menu_Tipo_de_Financiamento}
+Então sistema exibe informações de cadastro de "Tipo de Financiamento"
+    Wait Until Page Contains     text=Tipos de Financiamento
 
 # # --6.5
 # Dado que clico no menu "Cadastros > Classificações"
