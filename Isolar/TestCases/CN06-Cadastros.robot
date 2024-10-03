@@ -249,65 +249,222 @@ CT 06.04.02 - Validar funcionalidade "inserir" no menu Cadastros > Tipo de Finan
     E clico em "Salvar"
     Então sistema salva novo cadastro de pessoas
 
-# CT 06.04.03 - Validar funcionalidade "editar" menu Cadastros > Tipo de Financiamento
-#     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Tipo de Financiamento está funcional
-#     [Tags]    Cadastros    Funcional        
-#     Dado que clico no menu "Cadastros > Tipo de Financiamento"
-#     E clico no botao buscar
-#     E preencho informações de pesquisa
-#     Quando clico em "Editar"
-#     E preencho informações de cadastro editado
-#     Então sistema exibe informações de "Editar"
+CT 06.04.03 - Validar funcionalidade "editar" menu Cadastros > Tipo de Financiamento
+    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Tipo de Financiamento está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Tipo de Financiamento"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Editar"
+    E preencho informações de cadastro editado em Tipo de Gerador
+    Então sistema exibe informações de "Editar"
 
-# CT 06.04.04 - Validar filtro "buscar" no menu Cadastros > Tipo de Financiamento
-#     [Documentation]     Caso de teste valida se filtro buscar está funcional
-#     [Tags]    Cadastros    Funcional        
-#     Dado que clico no menu "Cadastros > Tipo de Financiamento"
-#     E clico no botao buscar
-#     E preencho informações de pesquisa
-#     Então sistema exibe informações de pesquisa
+CT 06.04.04 - Validar filtro "buscar" no menu Cadastros > Tipo de Financiamento
+    [Documentation]     Caso de teste valida se filtro buscar está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Tipo de Financiamento"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Então sistema exibe informações de pesquisa
 
-# CT 06.04.05 - Validar botão "Cancelar" em "Excluir" no menu Cadastros > Tipo de Financiamento
-#     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
-#     [Tags]    Cadastros    Funcional        
-#     Dado que clico no menu "Cadastros > Tipo de Financiamento"
-#     Quando clico em "Excluir"
-#     E clico no botão "Cancelar" em "Excluir"
-#     Então sistema exibe informações de cadastro de "Pessoas"
+CT 06.04.05 - Validar botão "Cancelar" em "Excluir" no menu Cadastros > Tipo de Financiamento
+    [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Tipo de Financiamento"
+    Quando clico em "Excluir"
+    E clico no botão "Cancelar" em "Excluir"
+    Então sistema exibe informações de cadastro de "Pessoas"
 
-# CT 06.04.06- Validar botão "Continuar" em "Excluir" no menu Cadastros > Tipo de Financiamento
-#     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
-#     [Tags]    Cadastros    Funcional        
-#     Dado que clico no menu "Cadastros > Tipo de Financiamento"
-#     E clico no botao buscar
-#     E preencho informações de pesquisa
-#     Quando clico em "Excluir"
-#     E clico no botão "Continuar" em "Excluir"
-#     Então sistema exclui item do menu Cadastro > Pessoas
+CT 06.04.06- Validar botão "Continuar" em "Excluir" no menu Cadastros > Tipo de Financiamento
+    [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Tipo de Financiamento"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema exclui item do menu Cadastro > Pessoas
 
-# CT 06.04.07 - Validar filtro "Cards ou Lista" no menu Cadastros > Tipo de Financiamento
-#     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
-#     [Tags]    Cadastros    Funcional        
-#     Dado que clico no menu "Cadastros > Tipo de Financiamento"
-#     Quando clico no filtro "Cards"
-#     E clico em "Lista"
-#     Então sistema exibe informações com filtro "Lista"
+CT 06.04.07 - Validar filtro "Cards ou Lista" no menu Cadastros > Tipo de Financiamento
+    [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Tipo de Financiamento"
+    Quando clico no filtro "Cards"
+    E clico em "Lista"
+    Então sistema exibe informações com filtro "Lista"
 
-# CT 06.04.08 - Validar busca não encontrada no filtro buscar no menu Cadastros > Tipo de Financiamento
-#     [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Tipo de Financiamento
-#     [Tags]    Cadastros    Funcional        
-#     Dado que clico no menu "Cadastros > Tipo de Financiamento"
-#     E clico no botao buscar
-#     E preencho informações de busca não encontrada
-#     Então sistema exibe mensagem de erro
+CT 06.04.08 - Validar busca não encontrada no filtro buscar no menu Cadastros > Tipo de Financiamento
+    [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Tipo de Financiamento
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Tipo de Financiamento"
+    E clico no botao buscar
+    E preencho informações de busca não encontrada
+    Então sistema exibe mensagem de erro de Tipo de Financiamento
 
-# CT 06.04.09 - Validar botão "Fechar" no filtro buscar menu Cadastros > Tipo de Financiamento
-#     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Tipo de Financiamento está funcional
-#     [Tags]    Cadastros    Funcional        
-#     Dado que clico no menu "Cadastros > Tipo de Financiamento"
-#     E clico no botao buscar
-#     E clico em "Fechar"
-#     Então sistema verifica se filtro buscar fechou
+CT 06.04.09 - Validar botão "Fechar" no filtro buscar menu Cadastros > Tipo de Financiamento
+    [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Tipo de Financiamento está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Tipo de Financiamento"
+    E clico no botao buscar
+    E clico em "Fechar"
+    Então sistema verifica se filtro buscar fechou
+
+
+CT 06.05.01 - Validar menu Cadastros > Classificações
+    [Documentation]     Caso de teste valida se Menu Cadastros Classificações está funcional
+    [Tags]    Cadastros    Funcional
+    Dado que clico no menu "Cadastros > Classificações"
+    Então sistema exibe informações de cadastro de "Classificações"
+
+    
+CT 06.05.02 - Validar funcionalidade "inserir" no menu Cadastros > Classificações
+    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Classificações está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Classificações"
+    Quando clico no botão "Inserir"
+    E preencho informações de inserir novo cadastro de Tipo de Gerador
+    E clico em "Salvar"
+    Então sistema salva novo cadastro de pessoas
+
+CT 06.05.03 - Validar funcionalidade "editar" menu Cadastros > Classificações
+    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Classificações está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Classificações"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Editar"
+    E preencho informações de cadastro editado em Tipo de Gerador
+    Então sistema exibe informações de "Editar"
+
+CT 06.05.04 - Validar filtro "buscar" no menu Cadastros > Classificações
+    [Documentation]     Caso de teste valida se filtro buscar está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Classificações"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Então sistema exibe informações de pesquisa
+
+CT 06.05.05 - Validar botão "Cancelar" em "Excluir" no menu Cadastros > Classificações
+    [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Classificações"
+    Quando clico em "Excluir"
+    E clico no botão "Cancelar" em "Excluir"
+    Então sistema exibe informações de cadastro de "Pessoas"
+
+CT 06.05.06- Validar botão "Continuar" em "Excluir" no menu Cadastros > Classificações
+    [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Classificações"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema exclui item do menu Cadastro > Pessoas
+
+CT 06.05.07 - Validar filtro "Cards ou Lista" no menu Cadastros > Classificações
+    [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Classificações"
+    Quando clico no filtro "Cards"
+    E clico em "Lista"
+    Então sistema exibe informações com filtro "Lista"
+
+CT 06.05.08 - Validar busca não encontrada no filtro buscar no menu Cadastros > Classificações
+    [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Classificações
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Classificações"
+    E clico no botao buscar
+    E preencho informações de busca não encontrada
+    Então sistema exibe mensagem de erro de Classificações
+
+CT 06.05.09 - Validar botão "Fechar" no filtro buscar menu Cadastros > Classificações
+    [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Classificações está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Classificações"
+    E clico no botao buscar
+    E clico em "Fechar"
+    Então sistema verifica se filtro buscar fechou
+
+CT 06.06.01 - Validar menu Cadastros > Motivos de Urgência
+    [Documentation]     Caso de teste valida se Menu Cadastros Motivos de Urgência está funcional
+    [Tags]    Cadastros    Funcional
+    Dado que clico no menu "Cadastros > Motivos de Urgência"
+    Então sistema exibe informações de cadastro de "Motivos de Urgência"
+
+    
+CT 06.06.02 - Validar funcionalidade "inserir" no menu Cadastros > Motivos de Urgência
+    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Motivos de Urgência está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Motivos de Urgência"
+    Quando clico no botão "Inserir"
+    E preencho informações de inserir novo cadastro de Motivos de Urgência
+    E clico em "Salvar"
+    Então sistema salva novo cadastro de pessoas
+
+CT 06.06.03 - Validar funcionalidade "editar" menu Cadastros > Motivos de Urgência
+    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Motivos de Urgência está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Motivos de Urgência"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Editar"
+    E preencho informações de cadastro editado em Tipo de Gerador
+    Então sistema exibe informações de "Editar"
+
+CT 06.06.04 - Validar filtro "buscar" no menu Cadastros > Motivos de Urgência
+    [Documentation]     Caso de teste valida se filtro buscar está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Motivos de Urgência"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Então sistema exibe informações de pesquisa
+
+CT 06.06.06 - Validar botão "Cancelar" em "Excluir" no menu Cadastros > Motivos de Urgência
+    [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Motivos de Urgência"
+    Quando clico em "Excluir"
+    E clico no botão "Cancelar" em "Excluir"
+    Então sistema exibe informações de cadastro de "Pessoas"
+
+CT 06.06.06- Validar botão "Continuar" em "Excluir" no menu Cadastros > Motivos de Urgência
+    [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Motivos de Urgência"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema exclui item do menu Cadastro > Pessoas
+
+CT 06.06.07 - Validar filtro "Cards ou Lista" no menu Cadastros > Motivos de Urgência
+    [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Motivos de Urgência"
+    Quando clico no filtro "Cards"
+    E clico em "Lista"
+    Então sistema exibe informações com filtro "Lista"
+
+CT 06.06.08 - Validar busca não encontrada no filtro buscar no menu Cadastros > Motivos de Urgência
+    [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Motivos de Urgência
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Motivos de Urgência"
+    E clico no botao buscar
+    E preencho informações de busca não encontrada
+    Então sistema exibe mensagem de erro de Motivos de Urgência
+
+CT 06.06.09 - Validar botão "Fechar" no filtro buscar menu Cadastros > Motivos de Urgência
+    [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Motivos de Urgência está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Motivos de Urgência"
+    E clico no botao buscar
+    E clico em "Fechar"
+    Então sistema verifica se filtro buscar fechou
+
+
+
+
 # - Validar menu
 # - Funcionalidade Inserir
 # - Funcionalidade Editar

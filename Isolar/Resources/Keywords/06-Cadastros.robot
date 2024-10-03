@@ -234,23 +234,48 @@ Dado que clico no menu "Cadastros > Tipo de Financiamento"
 Então sistema exibe informações de cadastro de "Tipo de Financiamento"
     Wait Until Page Contains     text=Tipos de Financiamento
 
-# # --6.5
-# Dado que clico no menu "Cadastros > Classificações"
-#     Wait Until Element Is Visible    ${MENU_CADASTROS}
-#     Click Element                    ${MENU_CADASTROS}
-#     Click Element                    ${Menu_Classificacoes}
-# Então sistema exibe informações de cadastro de "Classificações"
-#     Wait Until Page Contains     text=Classificações
+# --6.04.08
 
-# # --6.6
+Então sistema exibe mensagem de erro de Tipo de Financiamento
+    Wait Until Page Contains    text=Nenhum tipo de financiamento encontrado
 
-# Dado que clico no menu "Cadastros > Motivos de Urgência"
-#     Wait Until Element Is Visible    ${MENU_CADASTROS}
-#     Click Element                    ${MENU_CADASTROS}
-#     Click Element                    ${Menu_Motivos_de_Urgencia}
-# Então sistema exibe informações de cadastro de "Motivos de Urgência"
-#     Wait Until Page Contains     text=Motivos de Urgência
 
+# --6.05.01
+Dado que clico no menu "Cadastros > Classificações"
+    Wait Until Element Is Visible    ${MENU_CADASTROS}
+    Click Element                    ${MENU_CADASTROS}
+    Click Element                    ${Menu_Classificacoes}
+Então sistema exibe informações de cadastro de "Classificações"
+    Wait Until Page Contains     text=Classificações
+
+# --6.05.08
+Então sistema exibe mensagem de erro de Classificações
+    Wait Until Page Contains    text=Nenhum classificação encontrada.
+
+
+# --6.06.01
+
+Dado que clico no menu "Cadastros > Motivos de Urgência"
+    Wait Until Element Is Visible    ${MENU_CADASTROS}
+    Click Element                    ${MENU_CADASTROS}
+    Click Element                    ${Menu_Motivos_de_Urgencia}
+Então sistema exibe informações de cadastro de "Motivos de Urgência"
+    Wait Until Page Contains     text=Motivos de Urgência
+
+# --6.06.02
+
+E preencho informações de inserir novo cadastro de Motivos de Urgência
+    Sleep    2s
+    Input Text    //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
+    Click Element    //button[@id='nivel']
+    Click Element    (//div[@role='option'])[2]
+
+# --6.06.08
+
+E preencho informações de busca não encontrada em Motivo de Urgência
+    Input Text    //input[@type='text']    ${nome_BuscaNaoEncontrada}
+Então sistema exibe mensagem de erro de Motivos de Urgência
+    Wait Until Page Contains    text=Nenhum motivo de urgência encontrada.
 # # --6.7
 # Dado que clico no menu "Cadastros > Concessionárias"
 #     Wait Until Element Is Visible    ${MENU_CADASTROS}
