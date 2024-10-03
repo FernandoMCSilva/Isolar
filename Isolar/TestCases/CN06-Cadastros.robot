@@ -240,14 +240,14 @@ CT 06.04.01 - Validar menu Cadastros > Tipo de Financiamento
     Então sistema exibe informações de cadastro de "Tipo de Financiamento"
 
     
-# CT 06.04.02 - Validar funcionalidade "inserir" no menu Cadastros > Tipo de Financiamento
-#     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Tipo de Financiamento está funcional
-#     [Tags]    Cadastros    Funcional        
-#     Dado que clico no menu "Cadastros > Tipo de Financiamento"
-#     Quando clico no botão "Inserir"
-#     E preencho informações de inserir novo cadastro de Tipo de Gerador
-#     E clico em "Salvar"
-#     Então sistema salva novo cadastro de pessoas
+CT 06.04.02 - Validar funcionalidade "inserir" no menu Cadastros > Tipo de Financiamento
+    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Tipo de Financiamento está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Tipo de Financiamento"
+    Quando clico no botão "Inserir"
+    E preencho informações de inserir novo cadastro de Tipo de Gerador
+    E clico em "Salvar"
+    Então sistema salva novo cadastro de pessoas
 
 # CT 06.04.03 - Validar funcionalidade "editar" menu Cadastros > Tipo de Financiamento
 #     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Tipo de Financiamento está funcional
