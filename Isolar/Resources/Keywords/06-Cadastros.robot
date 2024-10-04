@@ -129,7 +129,6 @@ E preencho informações de cadastro editado
     Click Element     ${botao_atualizar_CadastrosPessoas}
 
 Então sistema exibe informações de "Editar"
-    
     Wait Until Page Contains    text=Informações atualizadas com sucesso!
 
 # --6.01.09
@@ -276,26 +275,95 @@ E preencho informações de busca não encontrada em Motivo de Urgência
     Input Text    //input[@type='text']    ${nome_BuscaNaoEncontrada}
 Então sistema exibe mensagem de erro de Motivos de Urgência
     Wait Until Page Contains    text=Nenhum motivo de urgência encontrada.
-# # --6.7
-# Dado que clico no menu "Cadastros > Concessionárias"
-#     Wait Until Element Is Visible    ${MENU_CADASTROS}
-#     Click Element                    ${MENU_CADASTROS}
-#     Click Element                    ${Menu_Concessionarias}
-# Então sistema exibe informações de cadastro de "Concessionárias"
-#     Wait Until Page Contains     text=Concessionárias
 
-# # --6.8
-# Dado que clico no menu "Cadastros > Departamentos"
-#     Wait Until Element Is Visible    ${MENU_CADASTROS}
-#     Click Element                    ${MENU_CADASTROS}
-#     Click Element                    ${Menu_Departamentos}
-# Então sistema exibe informações de cadastro de "Departamentos"
-#     Wait Until Page Contains     text=Departamentos
+# --6.07.01
+Dado que clico no menu "Cadastros > Concessionárias"
+    Wait Until Element Is Visible    ${MENU_CADASTROS}
+    Click Element                    ${MENU_CADASTROS}
+    Click Element                    ${Menu_Concessionarias}
+Então sistema exibe informações de cadastro de "Concessionárias"
+    Wait Until Page Contains     text=Concessionárias
 
-# # --6.8
-# Dado que clico no menu "Cadastros > Origem da Indicação"
-#     Wait Until Element Is Visible    ${MENU_CADASTROS}
-#     Click Element                    ${MENU_CADASTROS}
-#     Click Element                    ${Menu_Origem_da_Indicacao}
-# Então sistema exibe informações de cadastro de "Origem de indicação"
-#     Wait Until Page Contains     text=Origem de indicação
+# --6.07.02
+E preencho informações de inserir novo cadastro de Concessionárias
+    Sleep    2s
+    Input Text    //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
+    Input Text    //input[@id='icms']   ${nome_BuscaNaoEncontrada}
+    Input Text    //input[@id='pis']    ${nome_BuscaNaoEncontrada}
+    Input Text    //input[@id='taxa_min']    ${nome_BuscaNaoEncontrada}
+    Input Text    //input[@id='cofins']    ${nome_BuscaNaoEncontrada}
+
+# --6.07.03
+E preencho informações de cadastro editado em Concessionárias
+    Sleep    2s
+    Input Text    //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
+    Input Text    //input[@id='icms']   4321
+    Input Text    //input[@id='pis']    4321
+    Input Text    //input[@id='taxa_min']    4321
+    Input Text    //input[@id='cofins']    4321
+    Click Element    ${botao_atualizar_CadastrosPessoas}
+
+
+# --6.07.08
+Então sistema exibe mensagem de erro de Concessionárias
+    Wait Until Page Contains    text=Nenhuma concessionaria encontrada.
+
+
+
+# --6.08.01
+Dado que clico no menu "Cadastros > Departamentos"
+    Wait Until Element Is Visible    ${MENU_CADASTROS}
+    Click Element                    ${MENU_CADASTROS}
+    Click Element                    ${Menu_Departamentos}
+Então sistema exibe informações de cadastro de "Departamentos"
+    Wait Until Page Contains     text=Departamentos
+
+# --6.08.02
+E preencho informações de inserir novo cadastro de Departamentos
+    Sleep    2s
+    Input Text        //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
+    Input Text        //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
+    Click Element    (//div[contains(.,'Selecione os documentos')])[13]
+    Click Element    //div[@id='react-select-2-option-2']
+    Click Element    (//div[contains(.,'Selecione as requisições')])[13]
+    Click Element    //div[@id='react-select-3-option-19']
+
+
+# --6.08.03
+E preencho informações de cadastro editado em Departamentos
+    Sleep    2s
+    Input Text        //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
+    Input Text        //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
+    Click Element    (//div[contains(.,'Selecione os documentos')])[13]
+    Click Element    //div[@id='react-select-2-option-2']
+    Click Element    (//div[contains(.,'Selecione as requisições')])[13]
+    Click Element    //div[@id='react-select-3-option-19']
+    Click Element    //button[contains(.,'Atualizar')]
+# --6.08.08
+Então sistema exibe mensagem de erro de Departamentos
+    Wait Until Page Contains    text=Nenhum departamento encontrado.
+
+# --6.09.01
+Dado que clico no menu "Cadastros > Origem da Indicação"
+    Wait Until Element Is Visible    ${MENU_CADASTROS}
+    Click Element                    ${MENU_CADASTROS}
+    Click Element                    ${Menu_Origem_da_Indicacao}
+Então sistema exibe informações de cadastro de "Origem de indicação"
+    Wait Until Page Contains     text=Origem de indicação
+
+# --6.09.02
+
+E preencho informações de inserir novo cadastro de Origem da indicação
+    Sleep    2s
+    Input Text    //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
+
+# --6.09.03
+E preencho informações de cadastro editado em Origem da indicação
+    Sleep    5s
+    Input Text    //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
+    Click Element    //button[contains(.,'Atualizar')]
+    
+
+# --6.09.08
+Então sistema exibe mensagem de erro de Origem da indicação
+    Wait Until Page Contains    text=Nenhuma fonte de origem encontrado.

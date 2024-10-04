@@ -462,7 +462,230 @@ CT 06.06.09 - Validar botão "Fechar" no filtro buscar menu Cadastros > Motivos 
     E clico em "Fechar"
     Então sistema verifica se filtro buscar fechou
 
+CT 06.07.01 - Validar menu Cadastros > Concessionárias
+    [Documentation]     Caso de teste valida se Menu Cadastros Concessionárias está funcional
+    [Tags]    Cadastros    Funcional
+    Dado que clico no menu "Cadastros > Concessionárias"
+    Então sistema exibe informações de cadastro de "Concessionárias"
+    
+CT 06.07.02 - Validar funcionalidade "inserir" no menu Cadastros > Concessionárias
+    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Concessionárias está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Concessionárias"
+    Quando clico no botão "Inserir"
+    E preencho informações de inserir novo cadastro de Concessionárias
+    E clico em "Salvar"
+    Então sistema salva novo cadastro de pessoas
 
+CT 06.07.03 - Validar funcionalidade "editar" menu Cadastros > Concessionárias
+    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Concessionárias está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Concessionárias"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Editar"
+    E preencho informações de cadastro editado em Concessionárias
+    Então sistema exibe informações de "Editar"
+
+CT 06.07.04 - Validar filtro "buscar" no menu Cadastros > Concessionárias
+    [Documentation]     Caso de teste valida se filtro buscar está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Concessionárias"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Então sistema exibe informações de pesquisa
+
+CT 06.07.06 - Validar botão "Cancelar" em "Excluir" no menu Cadastros > Concessionárias
+    [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Concessionárias"
+    Quando clico em "Excluir"
+    E clico no botão "Cancelar" em "Excluir"
+    Então sistema exibe informações de cadastro de "Pessoas"
+
+CT 06.07.06- Validar botão "Continuar" em "Excluir" no menu Cadastros > Concessionárias
+    [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Concessionárias"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema exclui item do menu Cadastro > Pessoas
+
+CT 06.07.07 - Validar filtro "Cards ou Lista" no menu Cadastros > Concessionárias
+    [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Concessionárias"
+    Quando clico no filtro "Cards"
+    E clico em "Lista"
+    Então sistema exibe informações com filtro "Lista"
+
+CT 06.07.08 - Validar busca não encontrada no filtro buscar no menu Cadastros > Concessionárias
+    [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Concessionárias
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Concessionárias"
+    E clico no botao buscar
+    E preencho informações de busca não encontrada
+    Então sistema exibe mensagem de erro de Concessionárias
+
+CT 06.07.09 - Validar botão "Fechar" no filtro buscar menu Cadastros > Concessionárias
+    [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Concessionárias está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Departamentos"
+    E clico no botao buscar
+    E clico em "Fechar"
+    Então sistema verifica se filtro buscar fechou
+
+CT 06.08.01 - Validar menu Cadastros > Departamentos
+    [Documentation]     Caso de teste valida se Menu Cadastros Departamentos está funcional
+    [Tags]    Cadastros    Funcional
+    Dado que clico no menu "Cadastros > Departamentos"
+    Então sistema exibe informações de cadastro de "Departamentos"
+    
+CT 06.08.02 - Validar funcionalidade "inserir" no menu Cadastros > Departamentos
+    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Departamentos está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Departamentos"
+    Quando clico no botão "Inserir"
+    E preencho informações de inserir novo cadastro de Departamentos
+    E clico em "Salvar"
+    Então sistema salva novo cadastro de pessoas
+
+CT 06.08.03 - Validar funcionalidade "editar" menu Cadastros > Departamentos
+    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Departamentos está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Departamentos"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Editar"
+    E preencho informações de cadastro editado em Departamentos
+    Então sistema exibe informações de "Editar"
+
+CT 06.08.04 - Validar filtro "buscar" no menu Cadastros > Departamentos
+    [Documentation]     Caso de teste valida se filtro buscar está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Departamentos"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Então sistema exibe informações de pesquisa
+
+CT 06.08.05 - Validar botão "Cancelar" em "Excluir" no menu Cadastros > Departamentos
+    [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Departamentos"
+    Quando clico em "Excluir"
+    E clico no botão "Cancelar" em "Excluir"
+    Então sistema exibe informações de cadastro de "Pessoas"
+
+CT 06.08.06- Validar botão "Continuar" em "Excluir" no menu Cadastros > Departamentos
+    [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Departamentos"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema exclui item do menu Cadastro > Pessoas
+
+CT 06.08.07 - Validar filtro "Cards ou Lista" no menu Cadastros > Departamentos
+    [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Departamentos"
+    Quando clico no filtro "Cards"
+    E clico em "Lista"
+    Então sistema exibe informações com filtro "Lista"
+
+CT 06.08.08 - Validar busca não encontrada no filtro buscar no menu Cadastros > Departamentos
+    [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Departamentos
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Departamentos"
+    E clico no botao buscar
+    E preencho informações de busca não encontrada
+    Então sistema exibe mensagem de erro de Departamentos
+
+CT 06.08.09 - Validar botão "Fechar" no filtro buscar menu Cadastros > Departamentos
+    [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Departamentos está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Departamentos"
+    E clico no botao buscar
+    E clico em "Fechar"
+    Então sistema verifica se filtro buscar fechou
+
+CT 06.09.01 - Validar menu Cadastros > Origem da indicação
+    [Documentation]     Caso de teste valida se Menu Cadastros Origem da indicação está funcional
+    [Tags]    Cadastros    Funcional
+    Dado que clico no menu "Cadastros > Origem da indicação"
+    Então sistema exibe informações de cadastro de "Origem de indicação"
+    
+CT 06.09.02 - Validar funcionalidade "inserir" no menu Cadastros > Origem da indicação
+    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Origem da indicação está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Origem da indicação"
+    Quando clico no botão "Inserir"
+    E preencho informações de inserir novo cadastro de Origem da indicação
+    E clico em "Salvar"
+    Então sistema salva novo cadastro de pessoas
+
+CT 06.09.03 - Validar funcionalidade "editar" menu Cadastros > Origem da indicação
+    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Origem da indicação está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Origem da indicação"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Editar"
+    E preencho informações de cadastro editado em Origem da indicação
+    Então sistema exibe informações de "Editar"
+
+CT 06.09.04 - Validar filtro "buscar" no menu Cadastros > Origem da indicação
+    [Documentation]     Caso de teste valida se filtro buscar está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Origem da indicação"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Então sistema exibe informações de pesquisa
+
+CT 06.09.06 - Validar botão "Cancelar" em "Excluir" no menu Cadastros > Origem da indicação
+    [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Origem da indicação"
+    Quando clico em "Excluir"
+    E clico no botão "Cancelar" em "Excluir"
+    Então sistema exibe informações de cadastro de "Pessoas"
+
+CT 06.09.06- Validar botão "Continuar" em "Excluir" no menu Cadastros > Origem da indicação
+    [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Origem da indicação"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema exclui item do menu Cadastro > Pessoas
+
+CT 06.09.07 - Validar filtro "Cards ou Lista" no menu Cadastros > Origem da indicação
+    [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Origem da indicação"
+    Quando clico no filtro "Cards"
+    E clico em "Lista"
+    Então sistema exibe informações com filtro "Lista"
+
+CT 06.09.08 - Validar busca não encontrada no filtro buscar no menu Cadastros > Origem da indicação
+    [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Origem da indicação
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Origem da indicação"
+    E clico no botao buscar
+    E preencho informações de busca não encontrada
+    Então sistema exibe mensagem de erro de Origem da indicação
+
+CT 06.09.09 - Validar botão "Fechar" no filtro buscar menu Cadastros > Origem da indicação
+    [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Origem da indicação está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Departamentos"
+    E clico no botao buscar
+    E clico em "Fechar"
+    Então sistema verifica se filtro buscar fechou    
 
 
 # - Validar menu
