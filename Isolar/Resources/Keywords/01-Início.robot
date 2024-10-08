@@ -3,17 +3,20 @@ Documentation      Modúlo que Gerencie um resumo das informações cadastradas 
 Resource           ../Main.robot
 
 *** Variables ***
-${Tela_Inicio}       (//div[contains(.,'Gerencie um resumo das informações cadastradas no sistema.')])[7]
-${Botao_Fila}        (//div[contains(.,'Fila')])[9] 
-${Botao_Producao}    (//div[contains(.,'Produção')])[9]
-${Botao_Concluidas}  (//div[contains(.,'Concluídas')])[9]
-${Botao_Paradas}     (//div[contains(.,'Paradas')])[9]
-${Status_Fila}        Fila
-${Status_Producao}    Produção
-${Status_Concluidas}  Concluído
-${Status_Paradas}     Parado
-${Btn_Buscar}         //button[contains(.,'Buscar')]
-@{DEPARTAMENTOS}    Todos    Comercial    Compras    Técnico    Administrativo    TI    Logística    Jurídico    
+${Tela_Inicio}         (//div[contains(.,'Gerencie um resumo das informações cadastradas no sistema.')])[7]
+${Botao_Fila}          (//div[contains(.,'Fila')])[9] 
+${Botao_Producao}      (//div[contains(.,'Produção')])[9]
+${Botao_Concluidas}    (//div[contains(.,'Concluídas')])[9]
+${Botao_Paradas}       (//div[contains(.,'Paradas')])[9]
+${Status_Fila}         Fila
+${Status_Producao}     Produção
+${Status_Concluidas}   Concluído
+${Status_Paradas}      Parado
+${Btn_Buscar}          //button[contains(.,'Buscar')]
+${Btn_Departamentos}    (//button[@type='button'])[9]
+@{DEPARTAMENTOS_OPTIONS}    (//div[contains(.,'Comercial')])[5]    (//div[contains(.,'Compras')])[5]    (//div[contains(.,'Técnico')])[5]    
+...    (//div[contains(.,'Administrativo')])[5]    (//div[contains(.,'TI')])[5]    (//div[contains(.,'Logística')])[5]    
+...    (//div[contains(.,'Jurídico')])[5]    (//div[contains(.,'Departamento pessoal')])[5]    (//div[contains(.,'Teste cadastro')])[5]
 
 *** Keywords ***
 # --1.1
@@ -96,19 +99,32 @@ E seleciono "Todos"
     Click Element                     //div[@role='option'][contains(.,'Todos')]
 
 E valido todos os filtros de departamento
-    FOR    ${departamento}    IN    @{DEPARTAMENTOS}
-        Wait Until Element Is Visible    xpath=//button[@id='departament']    timeout=10s
-        Execute JavaScript               (//button[@type='button'])[8].click();
-        Wait Until Element Is Visible    xpath=//div[@role='option'][contains(.,'${departamento}')]    timeout=10s
-        Execute JavaScript               //div[@role='option'][contains(.,'${departamento}')].click();
-        Sleep    2s
-        Execute JavaScript               ${Btn_Buscar}.click();
-        Wait Until Element Is Visible    xpath=//h2[contains(.,'Requisições por Status')]
-        Log    Departamento ${departamento} validado com sucesso
-    END
+    Wait Until Element Is Visible    ${Btn_Departamentos}    timeout=10s
+    Click Element    ${Btn_Departamentos}
+    # Pega todas as opções dentro do dropdown
+    ${departamentos}    Get WebElements    ${Btn_Departamentos}
+
+    FOR    ${departamento}    IN    @{DEPARTAMENTOS_OPTIONS}
+            # Clica na opção de departamento atual
+            Click Element    ${departamento}
+            Sleep    2s
+            
+            # Clica no botão de buscar
+            Click Element    ${Btn_Buscar}
+            
+            # Espera pela atualização e valida que a página foi atualizada
+            Wait Until Element Is Visible    xpath=//h2[contains(.,'Requisições por Status')]    timeout=10s
+            
+            # Log do departamento testado
+            ${departamento_text}    Get Text    ${departamento}
+            Log    Departamento ${departamento_text} validado com sucesso
+            
+            # Reabre a combobox para a próxima iteração
+            Click Element    ${Btn_Departamentos}
+        END
 
 E clico em Buscar
-    Execute JavaScript               ${Btn_Buscar}.click(); 
+    Click Element                    ${Btn_Buscar}.click(); 
 
 Então sistema exibe requisições do departamento
     Wait Until Element Is Visible     //h2[contains(.,'Requisições por Status')]

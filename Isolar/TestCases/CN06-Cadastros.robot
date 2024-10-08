@@ -241,7 +241,7 @@ CT 06.04.01 - Validar menu Cadastros > Tipo de Financiamento
 
     
 CT 06.04.02 - Validar funcionalidade "inserir" no menu Cadastros > Tipo de Financiamento
-    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Tipo de Financiamento está funcional
+    [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Tipo de Financiamento está funcional
     [Tags]    Cadastros    Tipo de Financiamento    Funcional        
     Dado que clico no menu "Cadastros > Tipo de Financiamento"
     Quando clico no botão "Inserir"
@@ -318,7 +318,7 @@ CT 06.05.01 - Validar menu Cadastros > Classificações
 
     
 CT 06.05.02 - Validar funcionalidade "inserir" no menu Cadastros > Classificações
-    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Classificações está funcional
+    [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Classificações está funcional
     [Tags]    Cadastros    Classificações    Funcional        
     Dado que clico no menu "Cadastros > Classificações"
     Quando clico no botão "Inserir"
@@ -394,7 +394,7 @@ CT 06.06.01 - Validar menu Cadastros > Motivos de Urgência
 
     
 CT 06.06.02 - Validar funcionalidade "inserir" no menu Cadastros > Motivos de Urgência
-    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Motivos de Urgência está funcional
+    [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Motivos de Urgência está funcional
     [Tags]    Cadastros    Motivos de Urgência    Funcional        
     Dado que clico no menu "Cadastros > Motivos de Urgência"
     Quando clico no botão "Inserir"
@@ -469,7 +469,7 @@ CT 06.07.01 - Validar menu Cadastros > Concessionárias
     Então sistema exibe informações de cadastro de "Concessionárias"
     
 CT 06.07.02 - Validar funcionalidade "inserir" no menu Cadastros > Concessionárias
-    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Concessionárias está funcional
+    [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Concessionárias está funcional
     [Tags]    Cadastros    Concessionárias    Funcional        
     Dado que clico no menu "Cadastros > Concessionárias"
     Quando clico no botão "Inserir"
@@ -544,7 +544,7 @@ CT 06.08.01 - Validar menu Cadastros > Departamentos
     Então sistema exibe informações de cadastro de "Departamentos"
     
 CT 06.08.02 - Validar funcionalidade "inserir" no menu Cadastros > Departamentos
-    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Departamentos está funcional
+    [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Departamentos está funcional
     [Tags]    Cadastros    Departamentos    Funcional        
     Dado que clico no menu "Cadastros > Departamentos"
     Quando clico no botão "Inserir"
@@ -619,7 +619,7 @@ CT 06.09.01 - Validar menu Cadastros > Origem da indicação
     Então sistema exibe informações de cadastro de "Origem de indicação"
     
 CT 06.09.02 - Validar funcionalidade "inserir" no menu Cadastros > Origem da indicação
-    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Origem da indicação está funcional
+    [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Origem da indicação está funcional
     [Tags]    Cadastros    Origem da indicação    Funcional        
     Dado que clico no menu "Cadastros > Origem da indicação"
     Quando clico no botão "Inserir"
@@ -694,7 +694,7 @@ CT 06.09.09 - Validar botão "Fechar" no filtro buscar menu Cadastros > Origem d
 #     Então sistema exibe informações de cadastro de "Usuários ZapSign"
     
 # CT 06.10.02 - Validar funcionalidade "inserir" no menu Cadastros > Usuários ZapSign
-#     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Usuários ZapSign está funcional
+#     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Usuários ZapSign está funcional
 #     [Tags]    Cadastros    Funcional        
 #     Dado que clico no menu "Cadastros > Usuários ZapSign"
 #     Quando clico no botão "Inserir"

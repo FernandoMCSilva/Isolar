@@ -31,7 +31,7 @@ CT 02.04 - Validar filtro Status
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E seleciono status "Produção"
+    E seleciono status "Parado"
     Então sistema exibe requisições do filtro Status
 
 CT 02.05 - Validar filtro Tipo

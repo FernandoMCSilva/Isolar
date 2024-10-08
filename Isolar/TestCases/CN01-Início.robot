@@ -43,7 +43,6 @@ CT 01.06 - Validar filtros em departamento
     [Documentation]     Caso de teste valida os filtros Departamento
     [Tags]    Início    Funcional        
     Dado que clico no menu "Início"
-    Quando clico em "Departamento"
     E valido todos os filtros de departamento
     Então sistema exibe requisições do departamento
 

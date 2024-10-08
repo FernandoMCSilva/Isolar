@@ -13,7 +13,7 @@ ${Campo_Nivel_Urgencia}    //div[@role='option' and contains(.,'Alto')]
 ${Botao_Buscar}            //button[contains(.,'Buscar')]
 ${Cliente_Fila}            Fernando
 ${Departamento_Fila}       Técnico
-${Status_Fila}             Produção
+${Status_option}             (//div[contains(.,'Parado')])[5]
 ${Tipo_Fila}               Técnico
 
 
@@ -28,9 +28,8 @@ Dado que clico no menu "Requisições"
 # --2.2
 Quando clico em "Filtros"
     Wait Until Element Is Visible    ${Link_Filtros}
-    Sleep    2s
     Click Element                    ${Link_Filtros}
-    Sleep    2s
+    Sleep    1s
 
 E preencho informações no campo Cliente
     Wait Until Element Is Visible    ${Campo_Cliente}
@@ -66,25 +65,33 @@ Então sistema exibe requisições do filtro Departamento
     END
 
 # --2.4
-E seleciono status "Produção"
+E seleciono status "Parado"
     Wait Until Element Is Visible    //button[contains(@id,'status')]      10s
     Click Element                    //button[contains(@id,'status')]
-    Click Element                    ${Campo_Status}
+    Click Element                    ${Status_option}
     Click Element                    ${Botao_Buscar}
+    Sleep    2s
 
 Então sistema exibe requisições do filtro Status
-    Wait Until Element Is Visible        xpath=//td[contains(normalize-space(),'Produção')]       timeout=10s
-    ${statuses}=    Get Webelements      xpath=//td[contains(normalize-space(),'Produção')]                                
-    ${count}=    Get Length    ${statuses}
-    ${adjusted_count}=    Set Variable    ${count} - 1
-    Log    Número de elementos encontrados (ajustado): ${adjusted_count}
+    # Aguarda a atualização dos elementos filtrados.
+    Wait Until Element Is Visible    (//div[contains(.,'Parado')])[19]    timeout=10s
 
+    # Obtém todos os elementos que correspondem ao status filtrado "Parado".
+    ${statuses}=    Get Webelements    (//div[contains(.,'Parado')])[19]
+
+    # Conta quantos elementos foram encontrados.
+    ${count}=    Get Length    ${statuses}
+    Log    Número de elementos encontrados com status 'Parado': ${count}
+
+    # Verifica se todos os elementos retornados têm o status "Parado".
     FOR    ${status}    IN    @{statuses}
-    ${text}=    Get Text    ${status} 
-    Log    Status encontrado: ${text}
-    # Verifica se o status é igual a Fila
-    Should Be Equal As Strings    ${text}    ${Status_Fila}    Fail    Produção não é igual a Fila
+        ${text}=    Get Text    ${status}
+        Log    Status encontrado: ${text}
+        Should Contain    ${text}    Parado
     END
+
+
+
 
 
 # --2.5

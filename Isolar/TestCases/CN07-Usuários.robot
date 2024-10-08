@@ -12,7 +12,7 @@ CT 07.01 - Validar menu Usuários
     Então sistema exibe usuários
 
 CT 07.02 - Validar funcionalidade "inserir" no Usuários
-    [Documentation]     Caso de teste valida se funcionalidade Editar no Usuários está funcional
+    [Documentation]     Caso de teste valida se funcionalidade Inserir no Usuários está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"
     Quando clico no botão "Inserir"
@@ -47,7 +47,7 @@ CT 07.05 - Validar botão "Cancelar" em "Excluir" no Usuários
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Usuários"
 
-CT 07.06- Validar botão "Continuar" em "Excluir" no Usuários
+CT 07.06 - Validar botão "Continuar" em "Excluir" no Usuários
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"
@@ -82,12 +82,3 @@ CT 07.09 - Validar botão "Fechar" no filtro buscar Usuários
     E clico em "Fechar"
     Então sistema verifica se filtro buscar fechou
 
-# - Validar menu
-# - Funcionalidade Inserir
-# - Funcionalidade Editar
-# - Filtro Buscar
-# - Botão Cancelar
-# - Botão Continuar
-# - Filtro Card ou Lista
-# - Validar Busca Não encontrada
-# - Validar botão fechar 
