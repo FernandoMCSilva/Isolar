@@ -12,6 +12,7 @@ ${Menu_Motivos_de_Urgencia}       //a[contains(.,'Motivos de Urgência')]
 ${Menu_Concessionarias}           //a[contains(.,'Concessionárias')]
 ${Menu_Departamentos}             //a[contains(.,'Departamentos')]
 ${Menu_Origem_da_Indicacao}       //a[contains(.,'Origem da indicação')]
+${Menu_UsuarioZapSign}            //p[contains(.,'Usuários ZapSign')]
 
 ${nome_pesquisa_GruposConsumidores}             B3 (teste)
 ${nome_pesquisa_pessoas}                        Fernando
@@ -165,6 +166,7 @@ E preencho informações de inserir novo cadastro de Grupos Consumidores
     Input Text       ${input_descricao_GruposConsumidores}    ${nome_pesquisa_GruposConsumidores}
     Click Element    (//button[@type='button'])[7]
     Click Element    (//div[@tabindex='-1'])[3]
+    Input Text    //input[contains(@type,'text')]    1234
 
 Então sistema exclui item do menu Cadastro > Grupos Consumidores
     Wait Until Page Contains    text=Registro excluído com sucesso!
@@ -292,6 +294,7 @@ E preencho informações de inserir novo cadastro de Concessionárias
     Input Text    //input[@id='pis']    ${nome_BuscaNaoEncontrada}
     Input Text    //input[@id='taxa_min']    ${nome_BuscaNaoEncontrada}
     Input Text    //input[@id='cofins']    ${nome_BuscaNaoEncontrada}
+    Input Text    (//input[@type='text'])[2]    ${nome_BuscaNaoEncontrada}
 
 # --6.07.03
 E preencho informações de cadastro editado em Concessionárias
@@ -367,3 +370,27 @@ E preencho informações de cadastro editado em Origem da indicação
 # --6.09.08
 Então sistema exibe mensagem de erro de Origem da indicação
     Wait Until Page Contains    text=Nenhuma fonte de origem encontrado.
+
+
+# # --6.10.01
+# Dado que clico no menu "Cadastros > Usuários ZapSign"
+#     Wait Until Element Is Visible    ${MENU_CADASTROS}
+#     Click Element                    ${MENU_CADASTROS}
+#     Click Element                    ${Menu_UsuarioZapSign}
+# Então sistema exibe informações de cadastro de "Usuários ZapSign"
+#     Wait Until Page Contains     text=Usuários ZapSign
+
+
+# # --6.10.02
+# E preencho informações de inserir novo cadastro de Usuários ZapSign
+#     Sleep    2s
+#     Input Text    //input[@placeholder='Nome completo']    ${nome_pesquisa_GruposConsumidores}
+#     Input Text    //input[@id='tokenUser']    999999999999999999999999999
+
+
+# # --6.10.03
+# E preencho informações de cadastro editado em Usuários ZapSign
+
+
+
+# --6.10.01

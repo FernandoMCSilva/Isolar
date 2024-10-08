@@ -3,7 +3,22 @@ Documentation      Modúlo que Gerencie usuários cadastrados no sistema.
 Resource           ../Main.robot
 
 *** Variables ***
-${Tela_Usuarios}            //h1[contains(.,'Usuários')]
+${Tela_Usuarios}              //h1[contains(.,'Usuários')]
+
+${nome_pesquisa}              B3 (teste)
+${nome_BuscaNaoEncontrada}    1234
+${botao_Editar}               (//a[contains(.,'Editar')])[1]
+${botao_Excluir}              //button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-destructive text-destructive-foreground hover:bg-destructive/90 h-10 px-4 py-2')]
+${botao_inserir}              //button[contains(.,'Inserir')]
+${botao_continuar_Excluir}    //button[contains(.,'Continuar')]
+${botao_Cancelar_Excluir}     //button[contains(.,'Cancelar')]
+${botao_salvar}               //button[contains(.,'Salvar')]
+${botao_atualizar}            //button[contains(.,'Atualizar')]
+${input_buscar}               //input[contains(@placeholder,'Buscar...')]
+${input_descricao}            //input[@id='descricao']
+${input_buscar}               xpath=//input[contains(@class, 'flex h-10')]
+${filtro_cards/Lista}         (//button[@type='button'])[7]
+${filtro_botaoLista}          xpath=//div[@role='option'][contains(.,'Lista')]
 
 *** Keywords ***                
 # --7.1
@@ -15,19 +30,44 @@ Então sistema exibe usuários
     Wait Until Element Is Visible    ${Tela_Usuarios}
 
 # --7.2
-Quando clico em combo "Lista"
-    Wait Until Element Is Visible    //button[@type='button'][contains(.,'Cards')]
-    Click Element                    //button[@type='button'][contains(.,'Cards')]
-    Click Element                    //div[@role='option'][contains(.,'Lista')]
-    Capture Page Screenshot
-
-Então sistema exibe usuários como lista
+E preencho informações de inserir novo cadastro de Usuários
+    Sleep    2s
+    Input Text       //input[@id='nome']    ${nome_pesquisa}
+    Input Text       //input[@id='telefone']    99999999999
+    Input Text       //input[@id='email']    ${EmailAdmin}
+    Input Text       //input[@id='senha']    ${SenhaAdmin}
+    Click Element    (//button[@type='button'])[7]
+    Click Element    //span[contains(.,'Administrador')]
+    Click Element    (//button[@type='button'])[8]
+    Click Element    (//div[@role='option'])[5]
+Então sistema salva novo cadastro de Usuários
+    Wait Until Page Contains    text=Registro adicionado com sucesso!
 
 # --7.3
-Quando clico em combo "Cards"
-    Wait Until Element Is Visible    //button[@type='button'][contains(.,'Cards')]
-    Click Element                    //button[@type='button'][contains(.,'Cards')]
-    Click Element                    //div[@role='option'][contains(.,'Cards')]
-    Capture Page Screenshot
+E preencho informações de cadastro editado no menu Usuários
+    Sleep    3s
+    Input Text       //input[@id='nome']    ${nome_pesquisa}
+    Input Text       //input[@id='telefone']    99999999999
+    Input Text       //input[@id='email']    ${EmailAdmin}
+    Input Text       //input[@id='senha']    ${SenhaAdmin}
+    Click Element    (//button[@type='button'])[7]
+    Click Element    //span[contains(.,'Vendedor')]
+    Click Element    ${botao_atualizar}
+E preencho campo de senha
+    Sleep    2s
+    Input Text    (//input[@type='password'])[2]    ${SenhaAdmin} 
+    Click Element    //button[contains(.,'Confirmar')]
 
-Então sistema exibe usuários como cards
+# --7.3
+Então sistema exibe informações de cadastro de "Usuários"
+    Wait Until Page Contains    text=Gerenciar informações cadastradas no sistema
+
+# --7.6
+Então sistema exclui item do menu Usuários
+    Wait Until Page Contains    text=Registro excluído com sucesso!
+
+# --7.3
+Então sistema exibe mensagem de erro em Usuários
+    Wait Until Page Contains    text=Nenhum usuário encontrado.
+
+
