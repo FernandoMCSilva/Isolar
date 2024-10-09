@@ -69,7 +69,7 @@ CT 03.08 - Validar filtro Quantidade de itens por pág
     [Tags]    Estimativa    Funcional        
     Dado que clico no menu "Estimativa"
     Quando clico em "Quantidade de itens por pág"
-    E preencho informações no campo quantidade
+    E preencho informações no campo quantidade em perguntas
     Então sistema exibe informações de acordo com quantidade preenchida
  CT 03.09 - Validar botão Próximo
     [Documentation]     Caso de teste valida o botão próximo
