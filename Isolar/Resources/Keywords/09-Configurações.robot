@@ -16,6 +16,7 @@ ${botao_Salvar}                     //button[contains(.,'Salvar')]
 ${filtro_cards/Lista_Perguntas}     //button[contains(.,'Cards')]
 ${filtro_botaoLista_Perguntas}      (//div[contains(.,'Lista')])[9]
 ${quantidade_perguntas}             2
+
 *** Keywords ***
 # -9.01.01
 Dado que clico no menu "Configurações > Requisições"
@@ -78,16 +79,12 @@ Então sistema exibe informações de pesquisa de tipo de requisição
 Então sistema exclui item do menu Configurações > Requisições
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
-<<<<<<< HEAD:Isolar/Resources/Keywords/09-Configurações.robot
 # -9.01.08
-=======
-# --8.01.08
 Então sistema exibe informações de "Perguntas" no menu Configurações > Requisições
     Wait Until Page Contains    text=Adicionar uma nova pergunta
 
 
-# --8.01.09
->>>>>>> aa26fe3792eda01a6650bad18b3362419f5d3bff:Isolar/Resources/Keywords/08-Configurações.robot
+# --9.01.09
 E clico no botao "Perguntas"
     Sleep    2s
     Click Element    ${botao_Perguntas}
@@ -107,10 +104,7 @@ E preencho informações de nova pergunta
 Então sistema exibe mensagem de pergunta adicionada no menu Configurações > Requisições
     Wait Until Page Contains    text=Pergunta adicionada com sucesso!
 
-<<<<<<< HEAD:Isolar/Resources/Keywords/09-Configurações.robot
 # -9.2
-=======
-# --8.01.10
 E preencho informações de pergunta editada no menu Configurações > Requisições > Perguntas
     Sleep    2s
     Input Text            (//input[@value='B3 (teste)'])[1]    ${nome_pesquisa_GruposConsumidores}
@@ -121,18 +115,18 @@ E preencho informações de pergunta editada no menu Configurações > Requisiç
 Então sistema exibe informações de "Editar" no menu Configurações > Requisições > Perguntas
     Wait Until Page Contains    text=Pergunta atualizada com sucesso!
 
-# --8.01.11
+# --9.01.11
 Então sistema exibe informações de pesquisa de perguntas
     Sleep    1s
     ${nome_resultado}=    Get Text    //h3[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
 
-# --8.01.12
+# --9.01.12
 Então sistema exclui pergunta do menu Configurações > Requisições > Perguntas
     Wait Until Page Contains    text=Pergunta deletada com sucesso!
 
-# --8.01.13
+# --9.01.13
 Quando clico no filtro "Cards" em perguntas
     Sleep    2s
     Click Element    ${filtro_cards/Lista_Perguntas}
@@ -140,11 +134,11 @@ E clico em "Lista" em perguntas
     Sleep    1s
     Click Element    ${filtro_botaoLista_Perguntas}
 
-# --8.01.14
+# --9.01.14
 Então sistema exibe mensagem de erro em Perguntas
     Wait Until Page Contains    text=Nenhum tipo de requisição encontrado.
 
-# --8.01.15
+# --9.01.15
 E preencho informações no campo quantidade em perguntas
     Input Text    //input[contains(@id,'itensPorPagina')]   ${quantidade_perguntas}
     Click Element    (//div[contains(.,'Quantidade')])[12]
@@ -155,19 +149,18 @@ Então sistema exibe informações de acordo com quantidade preenchida em pergun
     Log    Quantidade de elementos encontrados: ${quantidade}
     Should Be Equal As Numbers    ${quantidade}    ${quantidade_perguntas}    A quantidade de elementos retornados não corresponde à quantidade esperada
 
-# --8.01.17
+# --9.01.17
 Então sistema exibe informações com filtro "Lista" em Configurações > Requisições
     Sleep    2s
     ${titulo_nome}=    Run Keyword And Return Status    Element Should Be Visible    //th[contains(.,'Tipo')]
     Run Keyword If    ${titulo_nome}    Log    "O Título Nome está visível. Funcionou."
     ...    ELSE    Fail    "O Título Nome não está visível. Falhou."
 
-# --8.01.18
+# --9.01.18
 Então sistema exibe mensagem de erro em Configurações > Requisições
     Wait Until Page Contains    text=Nenhum tipo de requisição encontrado.
 
-# --8.01.12
->>>>>>> aa26fe3792eda01a6650bad18b3362419f5d3bff:Isolar/Resources/Keywords/08-Configurações.robot
+# --9.01.12
 # Dado que clico no menu "Configurações > Minerando sol"
 #     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
 #     Click Element                    ${MENU_CONFIGURACOES}
