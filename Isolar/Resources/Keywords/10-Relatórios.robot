@@ -7,7 +7,7 @@ ${Menu_Relatorios}                   (//span[contains(.,'Relatórios')])[2]
 ${Menu_Homologatorias}               //p[contains(.,'Homologatórias')]
 
 *** Keywords ***
-# --9.1
+# --10.1
 Dado que clico no menu "Relatórios > Relatórios"
     Wait Until Element Is Visible    ${MENU_RELATORIOS}
     Click Element                    ${MENU_RELATORIOS}

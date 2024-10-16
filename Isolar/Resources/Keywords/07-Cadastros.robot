@@ -32,7 +32,7 @@ ${filtro_cards/Lista}                           (//button[@type='button'])[7]
 ${filtro_botaoLista}                            xpath=//div[@role='option'][contains(.,'Lista')]
 
 *** Keywords ***
-# --6.01.01
+# -07.01.01
 Dado que clico no menu "Cadastros > Pessoas"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -41,12 +41,12 @@ Dado que clico no menu "Cadastros > Pessoas"
 Então sistema exibe informações de cadastro de "Pessoas"
     Wait Until Page Contains     text=Pessoas
 
-# --6.01.02
+# -07.01.02
 Quando clico no botão "Inserir"
     Sleep    3s
     Click Element    //button[contains(.,'Inserir')]
 
-# --6.01.03
+# -07.01.03
 Quando clico em "Excluir"
     Sleep    2s
     Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
@@ -56,7 +56,7 @@ E clico no botão "Cancelar" em "Excluir"
     Sleep    2s
     Click Element                    ${botao_Cancelar}
 
-# --6.01.04
+# -07.01.04
 E clico no botao buscar
     Sleep    2s
     Click Element     ${botao_buscar_CadastrosPessoas}
@@ -67,7 +67,7 @@ E clico no botão "Continuar" em "Excluir"
 Então sistema exclui item do menu Cadastro > Pessoas
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
-# --6.01.05
+# -07.01.05
 Quando clico no filtro "Cards"
     Sleep    2s
     Click Element    ${filtro_cards/Lista}
@@ -81,7 +81,7 @@ Então sistema exibe informações com filtro "Lista"
     Run Keyword If    ${titulo_nome}    Log    "O Título Nome está visível. Funcionou."
     ...    ELSE    Fail    "O Título Nome não está visível. Falhou."
 
-# --6.01.06
+# -07.01.06
 
 E preencho informações de pesquisa
     Input Text    //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
@@ -91,7 +91,7 @@ Então sistema exibe informações de pesquisa
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
 
-# --6.01.07
+# -07.01.07
 
 E preencho informações de busca não encontrada
     Input Text    ${input_buscar_CadastrosPessoas}    ${nome_BuscaNaoEncontrada}
@@ -99,7 +99,7 @@ E preencho informações de busca não encontrada
 Então sistema exibe mensagem de erro
     Wait Until Page Contains    text=Nenhuma pessoa encontrada.
 
-# --6.01.08
+# -07.01.08
 E clico em "Fechar"
     Click Element    ${botao_buscar_CadastrosPessoas}
 Então sistema verifica se filtro buscar fechou
@@ -110,7 +110,7 @@ Então sistema verifica se filtro buscar fechou
 Então sistema exibe informações de cadastro de "Grupo Consumidores"
     Wait Until Page Contains     text=Grupos Consumidores
 
-# --6.01.09
+# -07.01.09
 
 Quando clico em "Editar"
     Sleep    2s
@@ -132,7 +132,7 @@ E preencho informações de cadastro editado
 Então sistema exibe informações de "Editar"
     Wait Until Page Contains    text=Informações atualizadas com sucesso!
 
-# --6.01.09
+# -07.01.09
 
 E preencho informações de inserir novo cadastro de pessoas
     Sleep    5s
@@ -150,7 +150,7 @@ E clico em "Salvar"
 Então sistema salva novo cadastro de pessoas
     Wait Until Page Contains    text=Registro adicionado com sucesso!
 
-# --6.02.01
+# -07.02.01
 Dado que clico no menu "Cadastros > Grupos Consumidores"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -172,7 +172,7 @@ Então sistema exclui item do menu Cadastro > Grupos Consumidores
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
 
-# --6.02.02
+# -07.02.02
 
 E preencho informações de busca não escontrada em Grupos Consumidores
     Input Text    ${input_buscar_GruposConsumidores}    ${nome_BuscaNaoEncontrada}
@@ -181,14 +181,14 @@ Então sistema exibe mensagem de erro em Grupos Consumidores
     Wait Until Page Contains    text=Nenhum grupo consumidor encontrado.
 
 
-# --6.02.04
+# -07.02.04
 
 Então sistema exibe informações de pesquisa de Grupos Consumidores
     ${nome_resultado}=    Get Text    //p[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    Log    "O resultado da pesquisa é B3. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é B3. Teste falhou."    WARN
 
-# --6.03.01
+# -07.03.01
 Dado que clico no menu "Cadastros > Tipo de Gerador"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -197,36 +197,36 @@ Dado que clico no menu "Cadastros > Tipo de Gerador"
 Então sistema exibe informações de cadastro de "Tipo de Gerador"
     Wait Until Page Contains     text=Tipos de Gerador
     
-# --6.03.02
+# -07.03.02
 
 E preencho informações de inserir novo cadastro de Tipo de Gerador
     Sleep    2s
     Input Text    ${input_descricao_GruposConsumidores}    ${nome_pesquisa_GruposConsumidores}
     
-# --6.03.03
+# -07.03.03
 
 E preencho informações de cadastro editado em Tipo de Gerador
     Sleep    2s
     Input Text    //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
     Click Element    ${botao_atualizar_CadastrosPessoas}
 
-# --6.03.04
+# -07.03.04
 
 Então sistema exclui item do menu Cadastro > Tipo de Gerador
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
-# --6.03.06
+# -07.03.06
 Então sistema exibe informações de pesquisa de Tipo de Gerador
     ${nome_resultado}=    Get Text    //p[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    Log    "O resultado da pesquisa é B3. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é B3. Teste falhou."    WARN
 
-# --6.03.07
+# -07.03.07
 
 Então sistema exibe mensagem de erro em Tipo de Gerador
     Wait Until Page Contains    text=Nenhum tipo de gerador encontrado.
 
-# --6.04.01
+# -07.04.01
 Dado que clico no menu "Cadastros > Tipo de Financiamento"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -235,13 +235,13 @@ Dado que clico no menu "Cadastros > Tipo de Financiamento"
 Então sistema exibe informações de cadastro de "Tipo de Financiamento"
     Wait Until Page Contains     text=Tipos de Financiamento
 
-# --6.04.08
+# -07.04.08
 
 Então sistema exibe mensagem de erro de Tipo de Financiamento
     Wait Until Page Contains    text=Nenhum tipo de financiamento encontrado
 
 
-# --6.05.01
+# -07.05.01
 Dado que clico no menu "Cadastros > Classificações"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -249,12 +249,12 @@ Dado que clico no menu "Cadastros > Classificações"
 Então sistema exibe informações de cadastro de "Classificações"
     Wait Until Page Contains     text=Classificações
 
-# --6.05.08
+# -07.05.08
 Então sistema exibe mensagem de erro de Classificações
     Wait Until Page Contains    text=Nenhum classificação encontrada.
 
 
-# --6.06.01
+# -07.06.01
 
 Dado que clico no menu "Cadastros > Motivos de Urgência"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
@@ -263,7 +263,7 @@ Dado que clico no menu "Cadastros > Motivos de Urgência"
 Então sistema exibe informações de cadastro de "Motivos de Urgência"
     Wait Until Page Contains     text=Motivos de Urgência
 
-# --6.06.02
+# -07.06.02
 
 E preencho informações de inserir novo cadastro de Motivos de Urgência
     Sleep    2s
@@ -271,14 +271,14 @@ E preencho informações de inserir novo cadastro de Motivos de Urgência
     Click Element    //button[@id='nivel']
     Click Element    (//div[@role='option'])[2]
 
-# --6.06.08
+# -07.06.08
 
 E preencho informações de busca não encontrada em Motivo de Urgência
     Input Text    //input[@type='text']    ${nome_BuscaNaoEncontrada}
 Então sistema exibe mensagem de erro de Motivos de Urgência
     Wait Until Page Contains    text=Nenhum motivo de urgência encontrada.
 
-# --6.07.01
+# -07.07.01
 Dado que clico no menu "Cadastros > Concessionárias"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -286,7 +286,7 @@ Dado que clico no menu "Cadastros > Concessionárias"
 Então sistema exibe informações de cadastro de "Concessionárias"
     Wait Until Page Contains     text=Concessionárias
 
-# --6.07.02
+# -07.07.02
 E preencho informações de inserir novo cadastro de Concessionárias
     Sleep    2s
     Input Text    //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
@@ -296,7 +296,7 @@ E preencho informações de inserir novo cadastro de Concessionárias
     Input Text    //input[@id='cofins']    ${nome_BuscaNaoEncontrada}
     Input Text    (//input[@type='text'])[2]    ${nome_BuscaNaoEncontrada}
 
-# --6.07.03
+# -07.07.03
 E preencho informações de cadastro editado em Concessionárias
     Sleep    2s
     Input Text    //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
@@ -307,13 +307,13 @@ E preencho informações de cadastro editado em Concessionárias
     Click Element    ${botao_atualizar_CadastrosPessoas}
 
 
-# --6.07.08
+# -07.07.08
 Então sistema exibe mensagem de erro de Concessionárias
     Wait Until Page Contains    text=Nenhuma concessionaria encontrada.
 
 
 
-# --6.08.01
+# -07.08.01
 Dado que clico no menu "Cadastros > Departamentos"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -321,7 +321,7 @@ Dado que clico no menu "Cadastros > Departamentos"
 Então sistema exibe informações de cadastro de "Departamentos"
     Wait Until Page Contains     text=Departamentos
 
-# --6.08.02
+# -07.08.02
 E preencho informações de inserir novo cadastro de Departamentos
     Sleep    2s
     Input Text        //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
@@ -332,7 +332,7 @@ E preencho informações de inserir novo cadastro de Departamentos
     Click Element    //div[@id='react-select-3-option-19']
 
 
-# --6.08.03
+# -07.08.03
 E preencho informações de cadastro editado em Departamentos
     Sleep    2s
     Input Text        //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
@@ -342,11 +342,11 @@ E preencho informações de cadastro editado em Departamentos
     Click Element    (//div[contains(.,'Selecione as requisições')])[13]
     Click Element    //div[@id='react-select-3-option-19']
     Click Element    //button[contains(.,'Atualizar')]
-# --6.08.08
+# -07.08.08
 Então sistema exibe mensagem de erro de Departamentos
     Wait Until Page Contains    text=Nenhum departamento encontrado.
 
-# --6.09.01
+# -07.09.01
 Dado que clico no menu "Cadastros > Origem da Indicação"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -354,25 +354,25 @@ Dado que clico no menu "Cadastros > Origem da Indicação"
 Então sistema exibe informações de cadastro de "Origem de indicação"
     Wait Until Page Contains     text=Origem de indicação
 
-# --6.09.02
+# -07.09.02
 
 E preencho informações de inserir novo cadastro de Origem da indicação
     Sleep    2s
     Input Text    //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
 
-# --6.09.03
+# -07.09.03
 E preencho informações de cadastro editado em Origem da indicação
     Sleep    5s
     Input Text    //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
     Click Element    //button[contains(.,'Atualizar')]
     
 
-# --6.09.08
+# -07.09.08
 Então sistema exibe mensagem de erro de Origem da indicação
     Wait Until Page Contains    text=Nenhuma fonte de origem encontrado.
 
 
-# # --6.10.01
+# # -07.10.01
 # Dado que clico no menu "Cadastros > Usuários ZapSign"
 #     Wait Until Element Is Visible    ${MENU_CADASTROS}
 #     Click Element                    ${MENU_CADASTROS}
@@ -381,16 +381,16 @@ Então sistema exibe mensagem de erro de Origem da indicação
 #     Wait Until Page Contains     text=Usuários ZapSign
 
 
-# # --6.10.02
+# # -07.10.02
 # E preencho informações de inserir novo cadastro de Usuários ZapSign
 #     Sleep    2s
 #     Input Text    //input[@placeholder='Nome completo']    ${nome_pesquisa_GruposConsumidores}
 #     Input Text    //input[@id='tokenUser']    999999999999999999999999999
 
 
-# # --6.10.03
+# # -07.10.03
 # E preencho informações de cadastro editado em Usuários ZapSign
 
 
 
-# --6.10.01
+# -07.10.01

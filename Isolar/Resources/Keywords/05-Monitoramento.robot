@@ -6,7 +6,7 @@ Resource           ../Main.robot
 
 
 *** Keywords ***
-# --10.1
+# --5.1
 Dado que clico no menu "Monitoramento"
     Wait Until Element Is Visible    ${MENU_MONITORAMENTO}
     Click Element                    ${MENU_MONITORAMENTO}

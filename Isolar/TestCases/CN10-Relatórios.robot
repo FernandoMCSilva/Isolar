@@ -5,12 +5,12 @@ Test Teardown      Fechar navegador
 Documentation      Modúlo gerencia Relatórios no sistema.
 
 *** Test Cases ***
-CT 09.01 - Validar menu Relatórios > Relatórios
+CT 10.01 - Validar menu Relatórios > Relatórios
     [Documentation]     Caso de teste valida se Menu Relatórios > Relatórios está funcional
     [Tags]    Relatórios    Funcional        
     Dado que clico no menu "Relatórios > Relatórios"
 
-CT 09.02 - Validar menu Relatórios > Homologatórias
+CT 10.02 - Validar menu Relatórios > Homologatórias
     [Documentation]     Caso de teste valida se Menu Relatórios > Homologatórias está funcional
     [Tags]    Relatórios    Funcional        
     Dado que clico no menu "Relatórios > Homologatórias"

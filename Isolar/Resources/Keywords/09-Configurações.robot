@@ -16,7 +16,7 @@ ${botao_Salvar}                 //button[contains(.,'Salvar')]
 
 
 *** Keywords ***
-# --8.01.01
+# -9.01.01
 Dado que clico no menu "Configurações > Requisições"
     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
     Click Element                    ${MENU_CONFIGURACOES}
@@ -24,7 +24,7 @@ Dado que clico no menu "Configurações > Requisições"
 Então sistema exibe informações de menu Requisições
     Wait Until Page Contains    text=Tipos de requisição
 
-# --8.01.02
+# -9.01.02
 Quando clico no botão "Novo tipo"
     Sleep    2s
     Click Element    ${botao_NovoTipo}
@@ -52,7 +52,7 @@ E preencho informações de cadastro de Novo tipo de Requisições
 Então sistema salva novo Tipo de requisição
     Wait Until Page Contains    text=Erro ao inserir no banco de dados: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'card' at row 1
 
-# --8.01.03
+# -9.01.03
 E preencho informações de cadastro editado no menu Configurações > Requisições
     Sleep    2s
     Input Text               //input[@placeholder='Ex: Técnico']    ${nome_pesquisa_GruposConsumidores}
@@ -66,18 +66,18 @@ E preencho informações de cadastro editado no menu Configurações > Requisiç
 Então sistema exibe informações de "Editar" no menu Configurações > Requisições
     Wait Until Page Contains    text=Registro editado com sucesso!
 
-# --8.01.05
+# -9.01.05
 Então sistema exibe informações de pesquisa de tipo de requisição
     ${nome_resultado}=    Get Text    //h3[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
 
 
-# --8.01.07
+# -9.01.07
 Então sistema exclui item do menu Configurações > Requisições
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
-# --8.01.08
+# -9.01.08
 E clico no botao "Perguntas"
     Sleep    2s
     Click Element    ${botao_Perguntas}
@@ -97,7 +97,7 @@ E preencho informações de nova pergunta
 Então sistema exibe mensagem de pergunta adicionada no menu Configurações > Requisições
     Wait Until Page Contains    text=Pergunta adicionada com sucesso!
 
-# --8.2
+# -9.2
 # Dado que clico no menu "Configurações > Minerando sol"
 #     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
 #     Click Element                    ${MENU_CONFIGURACOES}
@@ -106,7 +106,7 @@ Então sistema exibe mensagem de pergunta adicionada no menu Configurações > R
 # Então sistema exibe informações de menu Minerando sol
 #     Wait Until Page Contains    text=
 
-# # --8.3
+# # -9.3
 # Dado que clico no menu "Configurações > Documentos"
 #     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
 #     Click Element                    ${MENU_CONFIGURACOES}
@@ -115,14 +115,14 @@ Então sistema exibe mensagem de pergunta adicionada no menu Configurações > R
 # Então sistema exibe informações de menu Documentos
 #     Wait Until Page Contains    text=
 
-# # --8.4
+# # -9.4
 # Dado que clico no menu "Configurações > Estimativa"
 #     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
 #     Click Element                    ${MENU_CONFIGURACOES}
 #     Wait Until Element Is Visible    ${Menu_Estimativa}
 #     Click Element                    ${Menu_Estimativa}
 
-# # --8.5
+# # -9.5
 # Dado que clico no menu "Configurações > Sistema"
 #     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
 #     Click Element                    ${MENU_CONFIGURACOES}

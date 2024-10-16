@@ -5,13 +5,13 @@ Test Teardown      Fechar navegador
 Documentation      Modúlo gerencia Configurações no sistema.
 
 *** Test Cases ***
-CT 08.01.01 - Validar menu Configurações > Requisições
+CT 09.01.01 - Validar menu Configurações > Requisições
     [Documentation]     Caso de teste valida se Menu Configurações > Requisições está funcional
     [Tags]    Configurações    Requisições    Funcional        
     Dado que clico no menu "Configurações > Requisições"
     Então sistema exibe informações de menu Requisições
 
-CT 08.01.02 - Validar funcionalidade "inserir" no menu Configurações > Requisições
+CT 09.01.02 - Validar funcionalidade "inserir" no menu Configurações > Requisições
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Configurações > Requisições está funcional
     [Tags]    Configurações    Requisições    Funcional        
     Dado que clico no menu "Configurações > Requisições"
@@ -20,7 +20,7 @@ CT 08.01.02 - Validar funcionalidade "inserir" no menu Configurações > Requisi
     E clico em "Salvar"
     Então sistema salva novo Tipo de requisição
 
-CT 08.01.03 - Validar funcionalidade "editar" Configurações > Requisições
+CT 09.01.03 - Validar funcionalidade "editar" Configurações > Requisições
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Configurações > Requisições está funcional
     [Tags]    Configurações    Requisições    Funcional       
     Dado que clico no menu "Configurações > Requisições"
@@ -30,7 +30,7 @@ CT 08.01.03 - Validar funcionalidade "editar" Configurações > Requisições
     E preencho informações de cadastro editado no menu Configurações > Requisições
     Então sistema exibe informações de "Editar" no menu Configurações > Requisições
 
-# CT 08.01.04 - Validar filtro Status "Ligado ou Desligado" no menu Configurações > Requisições
+# CT 09.01.04 - Validar filtro Status "Ligado ou Desligado" no menu Configurações > Requisições
 #     [Documentation]     Caso de teste valida se filtro status "Ligado ou Desligado" está funcional
 #     [Tags]    Configurações    Requisições    Funcional       
 #     Dado que clico no menu "Configurações > Requisições"
@@ -39,7 +39,7 @@ CT 08.01.03 - Validar funcionalidade "editar" Configurações > Requisições
 #     Quando clico no filtro status
 #     Então sistema exibe informações de "Editar" no menu Configurações > Requisições
 
-CT 08.01.05 - Validar filtro "buscar" no menu Configurações > Requisições
+CT 09.01.05 - Validar filtro "buscar" no menu Configurações > Requisições
     [Documentation]     Caso de teste valida se filtro buscar no menu Configurações > Requisições está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Configurações > Requisições"
@@ -47,7 +47,7 @@ CT 08.01.05 - Validar filtro "buscar" no menu Configurações > Requisições
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa de tipo de requisição
 
-CT 08.01.06 - Validar botão "Cancelar" em Excluir no menu Configurações > Requisições
+CT 09.01.06 - Validar botão "Cancelar" em Excluir no menu Configurações > Requisições
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional no menu Configurações > Requisições
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Configurações > Requisições"
@@ -55,7 +55,7 @@ CT 08.01.06 - Validar botão "Cancelar" em Excluir no menu Configurações > Req
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de menu Requisições
 
-CT 08.01.07 - Validar botão "Continuar" em Excluir no menu Configurações > Requisições
+CT 09.01.07 - Validar botão "Continuar" em Excluir no menu Configurações > Requisições
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional no menu Configurações > Requisições
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Configurações > Requisições"
@@ -65,7 +65,7 @@ CT 08.01.07 - Validar botão "Continuar" em Excluir no menu Configurações > Re
     E clico no botão "Continuar" em "Excluir"
     Então sistema exclui item do menu Configurações > Requisições
 
-CT 08.01.08 - Validar botão "Perguntas" no menu Configurações > Requisições
+CT 09.01.08 - Validar botão "Perguntas" no menu Configurações > Requisições
     [Documentation]     Caso de teste valida se botão Perguntas no menu Configurações > Requisições está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Configurações > Requisições"
@@ -96,25 +96,25 @@ CT 08.01.08 - Validar botão "Perguntas" no menu Configurações > Requisições
 # - Validar Busca Não encontrada
 # - Validar botão fechar 
 
-# CT 08.02.01 - Validar menu Configurações > Minerando sol 
+# CT 09.02.01 - Validar menu Configurações > Minerando sol 
 #     [Documentation]     Caso de teste valida se Menu Configurações > Minerando sol está funcional
 #     [Tags]    Configurações    Funcional        
 #     Dado que clico no menu "Configurações > Minerando sol"
 #     Então sistema exibe informações de menu Minerando sol
 
-# CT 08.03.01 - Validar menu Configurações > Documentos
+# CT 09.03.01 - Validar menu Configurações > Documentos
 #     [Documentation]     Caso de teste valida se Menu Configurações > Documentos está funcional
 #     [Tags]    Configurações    Funcional        
 #     Dado que clico no menu "Configurações > Documentos"
 #     Então sistema exibe informações de menu Documentos
 
     
-# CT 08.04 - Validar menu Configurações > Minerando sol
+# CT 09.04 - Validar menu Configurações > Minerando sol
 #     [Documentation]     Caso de teste valida se Menu Configurações > Minerando sol está funcional
 #     [Tags]    Configurações    Funcional        
 #     Dado que clico no menu "Configurações > Minerando sol"
 
-# CT 08.05 - Validar menu Configurações > Sistema
+# CT 09.05 - Validar menu Configurações > Sistema
 #     [Documentation]     Caso de teste valida se Menu Configurações > Sistema está funcional
 #     [Tags]    Configurações    Funcional        
 #     Dado que clico no menu "Configurações > Sistema"

@@ -21,7 +21,7 @@ ${filtro_cards/Lista}         (//button[@type='button'])[7]
 ${filtro_botaoLista}          xpath=//div[@role='option'][contains(.,'Lista')]
 
 *** Keywords ***                
-# --7.1
+# -8.1
 Dado que clico no menu "Usuários"
     Wait Until Element Is Visible    ${MENU_USUARIOS}
     Click Element                    ${MENU_USUARIOS}
@@ -29,7 +29,7 @@ Dado que clico no menu "Usuários"
 Então sistema exibe usuários
     Wait Until Element Is Visible    ${Tela_Usuarios}
 
-# --7.2
+# -8.2
 E preencho informações de inserir novo cadastro de Usuários
     Sleep    2s
     Input Text       //input[@id='nome']    ${nome_pesquisa}
@@ -43,7 +43,7 @@ E preencho informações de inserir novo cadastro de Usuários
 Então sistema salva novo cadastro de Usuários
     Wait Until Page Contains    text=Registro adicionado com sucesso!
 
-# --7.3
+# -8.3
 E preencho informações de cadastro editado no menu Usuários
     Sleep    3s
     Input Text       //input[@id='nome']    ${nome_pesquisa}
@@ -58,15 +58,15 @@ E preencho campo de senha
     Input Text    (//input[@type='password'])[2]    ${SenhaAdmin} 
     Click Element    //button[contains(.,'Confirmar')]
 
-# --7.3
+# -8.3
 Então sistema exibe informações de cadastro de "Usuários"
     Wait Until Page Contains    text=Gerenciar informações cadastradas no sistema
 
-# --7.6
+# -8.6
 Então sistema exclui item do menu Usuários
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
-# --7.3
+# -8.3
 Então sistema exibe mensagem de erro em Usuários
     Wait Until Page Contains    text=Nenhum usuário encontrado.
 
