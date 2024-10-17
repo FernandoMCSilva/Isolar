@@ -4,6 +4,7 @@ Resource           ../Main.robot
 
 *** Variables ***
 ${MENU_CONFIGURACOES}                 (//div[contains(.,'Configurações')])[8]
+${MENU_DOCUMENTOS}                    //a[contains(.,'Documentos')]
 ${Menu_ConfigRequisicoes}             (//p[contains(.,'Requisições')])[2]
 ${Menu_ConfigDocumentos}              (//p[contains(.,'Documentos')])[2]
 ${Menu_ConfigEstimativa}              (//p[contains(.,'Estimativa')])[2]
@@ -169,15 +170,28 @@ Então sistema exibe mensagem de erro em Configurações > Requisições
 # Então sistema exibe informações de menu Minerando sol
 #     Wait Until Page Contains    text=
 
-# # -9.3
-# Dado que clico no menu "Configurações > Documentos"
-#     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
-#     Click Element                    ${MENU_CONFIGURACOES}
-#     Wait Until Element Is Visible    ${Menu_Documentos}
-#     Click Element                    ${Menu_Documentos}
-# Então sistema exibe informações de menu Documentos
-#     Wait Until Page Contains    text=
+# -9.03.01
+Dado que clico no menu "Configurações > Documentos"
+    Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
+    Click Element                    ${MENU_CONFIGURACOES}
+    Wait Until Element Is Visible    ${Menu_Documentos}
+    Click Element                    ${Menu_Documentos}
+Então sistema exibe informações de menu Documentos
+    Wait Until Page Contains    text=Informações referentes aos historicos dos documentos gerados no sistema.
 
+# -9.03.01
+E seleciono filtro "Tipo de documento"
+    Click Element            (//button[contains(.,'Selecione')])[1]
+    Click Element            (//div[contains(.,'teste-cadastro')])[13]
+Então sistema exibe informações de filtro selecionado
+    Wait Until Page Contains    text=Registros carregados com sucesso!
+
+# -9.03.02
+E seleciono filtro "Departamento"
+    Click Element            (//button[contains(.,'Selecione')])[2]
+    Click Element            (//div[contains(.,'TI')])[5]
+
+# -9.03.01
 # # -9.4
 # Dado que clico no menu "Configurações > Estimativa"
 #     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}

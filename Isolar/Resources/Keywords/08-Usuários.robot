@@ -19,6 +19,7 @@ ${input_descricao}            //input[@id='descricao']
 ${input_buscar}               xpath=//input[contains(@class, 'flex h-10')]
 ${filtro_cards/Lista}         (//button[@type='button'])[7]
 ${filtro_botaoLista}          xpath=//div[@role='option'][contains(.,'Lista')]
+${SenhaLocal}                 Q@grupoiso123
 
 *** Keywords ***                
 # -8.1
@@ -35,7 +36,7 @@ E preencho informações de inserir novo cadastro de Usuários
     Input Text       //input[@id='nome']    ${nome_pesquisa}
     Input Text       //input[@id='telefone']    99999999999
     Input Text       //input[@id='email']    ${EmailAdmin}
-    Input Text       //input[@id='senha']    ${SenhaAdmin}
+    Input Text       //input[@id='senha']    ${SenhaLocal}
     Click Element    (//button[@type='button'])[7]
     Click Element    //span[contains(.,'Administrador')]
     Click Element    (//button[@type='button'])[8]
@@ -49,13 +50,13 @@ E preencho informações de cadastro editado no menu Usuários
     Input Text       //input[@id='nome']    ${nome_pesquisa}
     Input Text       //input[@id='telefone']    99999999999
     Input Text       //input[@id='email']    ${EmailAdmin}
-    Input Text       //input[@id='senha']    ${SenhaAdmin}
+    Input Text       //input[@id='senha']    ${SenhaLocal}
     Click Element    (//button[@type='button'])[7]
     Click Element    //span[contains(.,'Vendedor')]
     Click Element    ${botao_atualizar}
 E preencho campo de senha
     Sleep    2s
-    Input Text    (//input[@type='password'])[2]    ${SenhaAdmin} 
+    Input Text    (//input[@type='password'])[2]    ${SenhaLocal} 
     Click Element    //button[contains(.,'Confirmar')]
 
 # -8.3
