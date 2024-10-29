@@ -14,9 +14,29 @@ ${Menu_ConfigMinerandoSol}            (//a[contains(@href,'misol')])[2]
 ${botao_NovoTipo}                   //button[contains(.,'Novo tipo')]
 ${botao_Perguntas}                  //button[contains(.,'Perguntas')]
 ${botao_Salvar}                     //button[contains(.,'Salvar')]
+${botao_InserirPergunta}            (//button[@data-state='closed'])[9]
+${botaox_ExcluirPergunta}           //button[contains(@class,'ml-2')]
 ${filtro_cards/Lista_Perguntas}     //button[contains(.,'Cards')]
 ${filtro_botaoLista_Perguntas}      (//div[contains(.,'Lista')])[9]
 ${quantidade_perguntas}             2
+${input_NomeDaRequisicao}           //input[@placeholder='Ex: Técnico']
+${input_NomeSecao}                  //div[contains(@class, 'col-start-2') and contains(@class, 'col-end-3') and contains(text(), 'Clique para editar o nome da Seção')]
+${input_NomeSecaoSelecionado}       //div[contains(@class, 'col-start-2') and contains(@class, 'col-end-3') and contains(@class, 'min-w-24') and contains(@class, 'min-h-12') and contains(@class, 'border') and contains(@class, 'p-2') and contains(@class, 'rounded-sm')]
+${box_Departamento}                 (//div[contains(.,'Selecione as requisições')])[12]
+${box_DepartamentoTI}               (//div[contains(.,'TI')])[13]
+${box_EscolhaPergunta}              (//div[contains(.,'Selecione um opção')])[16]
+${box_EscolhaPerguntaNomeCompleto}  (//div[contains(.,'Nome completo')])[17]
+${box_TipodoCampo}                  //button[contains(.,'Selecione')]
+${box_TipodoCampoData}              (//div[contains(.,'Data')])[4]
+${botao_SecaoCliente}               (//button[@type='button'])[7]
+${botao_AdicionarSecao}             //button[contains(.,'Adicionar seção')]
+${botao_ExcluirSecao}               (//button[@data-state='closed'])[14]
+${botao_SalvarNovaPergunta}         (//button[contains(.,'Salvar')])[2]
+${botao_CadastrarPergunta}          (//button[contains(@data-state,'closed')])[10]
+${botao_TornarObrigatorias}         (//button[@data-state='closed'])[7]
+${input_NovaPergunta}               //input[@name='nome']
+${opcao_ObrigatorioNao}             //button[@id='opcao1']
+${opcao_ObrigatorioSim}             //button[@id='opcao2']
 
 *** Keywords ***
 # -9.01.01
@@ -33,41 +53,55 @@ Quando clico no botão "Novo tipo"
     Click Element    ${botao_NovoTipo}
 E preencho informações de cadastro de Novo tipo de Requisições
     Sleep    2s
-    Input Text               //input[@placeholder='Ex: Técnico']    ${nome_pesquisa_GruposConsumidores}
-    Click Element            (//div[contains(.,'Selecione as requisições')])[12]
-    Click Element            (//div[contains(.,'TI')])[13]
-    Click Element            //input[@placeholder='Ex: Técnico']
-    Sleep    2s
-    Click Element            (//button[@type='button'])[7]
-    Click Element            (//button[@type='button'])[7]
+    Input Text                   ${input_NomeDaRequisicao}    ${nome_pesquisa_GruposConsumidores}
+    Click Element                ${box_Departamento}
+    Click Element                ${box_DepartamentoTI}
+    Click Element                ${input_NomeDaRequisicao}
     Sleep    1s
-    # Click Element             xpath=//div[contains(@class,'col-start-2 col-end-3 min-w-24 min-h-12 border p-2 rounded-sm')]
-    # Input Text                xpath=//input[@placeholder='Clique para editar o nome da Seção']    Meu Novo Texto
-    Click Element            (//button[@data-state='closed'])[9]
-    Click Element            (//button[@data-state='closed'])[9]
-    Click Element            //button[contains(@class,'ml-2')]
-    Click Element            (//div[contains(.,'Selecione um opção')])[16]
-    Click Element            (//div[contains(.,'Nome completo')])[17]
-    Click Element            (//button[@data-state='closed'])[7]
-    Click Element            (//button[@data-state='closed'])[7]
-    Click Element            //button[contains(.,'Adicionar seção')]
-    Click Element            (//button[@data-state='closed'])[14]
+    Click Element                ${botao_SecaoCliente}
+    Click Element                ${botao_SecaoCliente}
+    Click Element                ${botao_TornarObrigatorias}
+    Click Element                ${botao_CadastrarPergunta}
+    Input Text                   ${input_NovaPergunta}   ${nome_pesquisa_GruposConsumidores}
+    Click Element                ${box_TipodoCampo}
+    Click Element                ${box_TipodoCampoData}
+    Click Element                ${botao_SalvarNovaPergunta}
+    Wait Until Page Contains     text=Pergunta adicionada com sucesso!
+    Sleep    4s
+    Click Element                ${botaox_ExcluirPergunta}
+    Click Element                ${botao_InserirPergunta}
+    Click Element                ${botao_InserirPergunta}
+    Click Element                ${botaox_ExcluirPergunta}
+    Click Element                ${box_EscolhaPergunta}
+    Click Element                ${box_EscolhaPerguntaNomeCompleto}
+    Click Element                ${opcao_ObrigatorioNao}
+    Click Element                ${opcao_ObrigatorioSim}
+    Click Element                ${botao_AdicionarSecao}
+    Click Element                ${botao_ExcluirSecao}
 Então sistema salva novo Tipo de requisição
-    Wait Until Page Contains    text=Erro ao inserir no banco de dados: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'card' at row 1
+    Wait Until Page Contains    text=Registro adicionado com sucesso!
 
 # -9.01.03
 E preencho informações de cadastro editado no menu Configurações > Requisições
     Sleep    2s
-    Input Text               //input[@placeholder='Ex: Técnico']    ${nome_pesquisa_GruposConsumidores}
+    Input Text               ${input_NomeDaRequisicao}    ${nome_pesquisa_GruposConsumidores}
     Click Element            (//div[contains(.,'TI')])[12]
     Click Element            (//div[contains(.,'Comercial')])[13]
-    Click Element            //input[@id='nomeRequisicao']
+    Click Element            ${input_NomeDaRequisicao}
     Sleep    1s
-    Click Element            (//button[@data-state='closed'])[9]
+    Click Element            ${botao_InserirPergunta}
     Click Element            ${botao_Salvar}
 
 Então sistema exibe informações de "Editar" no menu Configurações > Requisições
     Wait Until Page Contains    text=Registro editado com sucesso!
+
+# -9.01.04
+Quando clico no filtro status
+    Click Element            //button[contains(@class, 'peer') and contains(@class, 'inline-flex') and contains(@class, 'cursor-pointer') and contains(@class, 'rounded-full') and contains(@class, 'border-2') and contains(@aria-checked, 'true')]
+    
+Então sistema exibe mensagem de status atualizado
+    Wait Until Page Contains    text=Status do tipo de requisição atualizado com sucesso!
+    
 
 # -9.01.05
 Então sistema exibe informações de pesquisa de tipo de requisição

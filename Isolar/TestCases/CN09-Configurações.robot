@@ -30,14 +30,14 @@ CT 09.01.03 - Validar funcionalidade "editar" Configurações > Requisições
     E preencho informações de cadastro editado no menu Configurações > Requisições
     Então sistema exibe informações de "Editar" no menu Configurações > Requisições
 
-# CT 09.01.04 - Validar filtro Status "Ligado ou Desligado" no menu Configurações > Requisições
-#     [Documentation]     Caso de teste valida se filtro status "Ligado ou Desligado" está funcional
-#     [Tags]    Configurações    Requisições    Funcional       
-#     Dado que clico no menu "Configurações > Requisições"
-#     E clico no botao buscar
-#     E preencho informações de pesquisa
-#     Quando clico no filtro status
-#     Então sistema exibe informações de "Editar" no menu Configurações > Requisições
+CT 09.01.04 - Validar filtro Status "Ligado ou Desligado" no menu Configurações > Requisições
+    [Documentation]     Caso de teste valida se filtro status "Ligado ou Desligado" está funcional
+    [Tags]    Configurações    Requisições    Funcional       
+    Dado que clico no menu "Configurações > Requisições"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico no filtro status
+    Então sistema exibe mensagem de status atualizado
 
 CT 09.01.05 - Validar filtro "buscar" no menu Configurações > Requisições
     [Documentation]     Caso de teste valida se filtro buscar no menu Configurações > Requisições está funcional
@@ -51,6 +51,8 @@ CT 09.01.06 - Validar botão "Cancelar" em Excluir no menu Configurações > Req
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional no menu Configurações > Requisições
     [Tags]    Configurações    Requisições    Funcional        
     Dado que clico no menu "Configurações > Requisições"
+    E clico no botao buscar
+    E preencho informações de pesquisa
     Quando clico em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de menu Requisições
