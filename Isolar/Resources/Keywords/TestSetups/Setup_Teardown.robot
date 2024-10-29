@@ -7,7 +7,8 @@ Resource    ../../Main.robot
 Abrir navegador
     [Arguments]     ${url}
     Open Browser    ${url}    ${BROWSER}   
-    Set Window Size    1920    1080
+    Maximize Browser Window
+    # Set Window Size    1920    1080
     Wait Until Element Is Visible    ${LOGO}
 
 Dado que acesse a Isolar e logue no sistema

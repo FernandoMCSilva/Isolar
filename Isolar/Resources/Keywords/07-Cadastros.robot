@@ -33,7 +33,8 @@ ${input_NomeCompleto_Clientes}                  //input[@id='nome']
 ${input_CPF_Clientes}                           //input[@id='cpfCnpj']
 ${input_CEP_Clientes}                           //input[@id='cep']
 ${input_Telefone_Clientes}                      //input[@id='telefone']
-${input_AtividadeEconomica_Clientes}            //input[@id='atividade_economica']
+${input_AtividadeEconomica_Clientes}            //input[@id='atividadeEconomica']
+${input_AtividadeEconomica_EditarClientes}      //input[contains(@name,'atividade_economica')]
 ${filtro_cards/Lista}                           (//button[@type='button'])[7]
 ${filtro_botaoLista}                            xpath=//div[@role='option'][contains(.,'Lista')]
 
@@ -169,12 +170,11 @@ E preencho informações de inserir novo cadastro de Clientes
     Sleep    2s
     Input Text        ${input_NomeCompleto_Clientes}          ${nome_pesquisa}
     Input Text        ${input_CPF_Clientes}                   19895982771
-    Input Text        ${input_CEP_Clientes}                   28990154
     Input Text        ${input_Telefone_Clientes}              99999999999
     Input Text        ${input_AtividadeEconomica_Clientes}    teste
+    Input Text        ${input_CEP_Clientes}                   28990154
     Click Element     ${botao_salvar_CadastrosPessoas}
 Então sistema salva novo cadastro de Clientes
-    Sleep    5s
     Wait Until Page Contains    text=Cliente cadastrado com sucesso!
 
 # -07.02.03
@@ -184,7 +184,7 @@ E preencho informações de cadastro editado no menu Cadastros > Clientes
     Input Text        ${input_CPF_Clientes}                   19895982771
     Input Text        ${input_CEP_Clientes}                   28990154
     Input Text        ${input_Telefone_Clientes}              99999999999
-    Input Text        ${input_AtividadeEconomica_Clientes}    teste
+    Input Text        ${input_AtividadeEconomica_EditarClientes}    teste
     Click Element     ${botao_atualizar}
 
 # -07.02.04
@@ -195,7 +195,7 @@ Então sistema exibe informações de pesquisa de Clientes
 
 # -07.02.06
 Então sistema exclui item do menu Cadastro > Clientes
-    Wait Until Page Contains    text=Cadastro de cliente excluido com sucesso!
+    Wait Until Page Contains    text= Cliente excluído com sucesso!
 
 # -07.02.08
 E preencho informações de busca não escontrada em Clientes

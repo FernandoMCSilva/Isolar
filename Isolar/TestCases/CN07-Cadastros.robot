@@ -114,25 +114,25 @@ CT 07.02.04 - Validar filtro "buscar" no menu Cadastros > Clientes
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa de Clientes
 
-# CT 07.02.05 - Validar botão "Cancelar" em "Excluir" no menu Cadastros > Clientes
-#     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Clientes está funcional
-#     [Tags]    Cadastros    Clientes    Funcional        
-#     Dado que clico no menu "Cadastros > Clientes"
-#     E clico no botao buscar
-#     E preencho informações de pesquisa
-#     Quando clico em "Excluir"
-#     E clico no botão "Cancelar" em "Excluir"
-#     Então sistema exibe informações de cadastro de "Clientes"
+CT 07.02.05 - Validar botão "Cancelar" em "Excluir" no menu Cadastros > Clientes
+    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Clientes está funcional
+    [Tags]    Cadastros    Clientes    Funcional        
+    Dado que clico no menu "Cadastros > Clientes"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Excluir"
+    E clico no botão "Cancelar" em "Excluir"
+    Então sistema exibe informações de cadastro de "Clientes"
 
-# CT 07.02.06- Validar botão "Continuar" em "Excluir" no menu Cadastros > Clientes
-#     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
-#     [Tags]    Cadastros    Clientes    Funcional        
-#     Dado que clico no menu "Cadastros > Clientes"
-#     E clico no botao buscar
-#     E preencho informações de pesquisa
-#     Quando clico em "Excluir"
-#     E clico no botão "Continuar" em "Excluir"
-#     Então sistema exclui item do menu Cadastro > Clientes
+CT 07.02.06- Validar botão "Continuar" em "Excluir" no menu Cadastros > Clientes
+    [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
+    [Tags]    Cadastros    Clientes    Funcional        
+    Dado que clico no menu "Cadastros > Clientes"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+    # Então sistema exclui item do menu Cadastro > Clientes
 
 
 CT 07.02.07 - Validar filtro "Cards ou Lista" no menu Cadastros > Clientes
