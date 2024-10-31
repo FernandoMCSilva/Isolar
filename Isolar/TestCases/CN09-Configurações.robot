@@ -174,33 +174,49 @@ CT 09.01.19 - Validar botão "Fechar" no filtro buscar no menu Configurações >
     E clico em "Fechar"
     Então sistema verifica se filtro buscar fechou
 
-# CT 09.02.01 - Validar menu Configurações > Minerando sol 
-#     [Documentation]     Caso de teste valida se Menu Configurações > Minerando sol está funcional
-#     [Tags]    Configurações    Funcional        
+CT 09.02.01 - Validar menu Configurações > Minerando sol 
+    [Documentation]     Caso de teste valida se Menu Configurações > Minerando sol está funcional
+    [Tags]    Configurações    Minerando Sol    Funcional
+    Dado que clico no menu "Configurações > Minerando sol"
+    Então sistema exibe informações de menu Minerando sol
+
+# CT 09.02.02 - Validar edição na tela "Geral" no menu Configurações > Minerando Sol
+#     [Documentation]     Caso de teste valida se edição na tela "Geral" no menu Configurações > Minerando Sol está funcional
+#     [Tags]    Configurações    Minerando Sol    Funcional
 #     Dado que clico no menu "Configurações > Minerando sol"
-#     Então sistema exibe informações de menu Minerando sol
+#     Quando preencho informações do menu "Geral" no menu Configurações > Minerando Sol
+#     E clico em Atualizar
+#     Então sistema exibe mensagem de atualização
 
-CT 09.03.01 - Validar menu Configurações > Documentos
-    [Documentation]     Caso de teste valida se Menu Configurações > Documentos está funcional
-    [Tags]    Configurações    Documentos    Funcional        
-    Dado que clico no menu "Configurações > Documentos"
-    Então sistema exibe informações de menu Documentos
+# CT 09.02.03 - Validar edição na tela "Template" no menu Configurações > Minerando Sol
+#     [Documentation]     Caso de teste valida se edição na tela "Geral" no menu Configurações > Minerando Sol está funcional
+#     [Tags]    Configurações    Minerando Sol    Funcional
+#     Dado que clico no menu "Configurações > Minerando sol"
+#     Quando preencho informações do menu "Geral" no menu Configurações > Minerando Sol
+#     E clico em Atualizar
+#     Então sistema exibe mensagem de atualização
 
-CT 09.03.02 - Validar filtro "Tipo de documento" no menu Configurações > Documentos
-    [Documentation]     Caso de teste valida se filtro "Tipo de documento" no menu Configurações > Documentos está funcional
-    [Tags]    Configurações    Documentos    Funcional        
-    Dado que clico no menu "Configurações > Documentos"
-    Quando clico em "Filtros"
-    E seleciono filtro "Tipo de documento"
-    Então sistema exibe informações de filtro selecionado
+# CT 09.03.01 - Validar menu Configurações > Documentos
+#     [Documentation]     Caso de teste valida se Menu Configurações > Documentos está funcional
+#     [Tags]    Configurações    Documentos    Funcional        
+#     Dado que clico no menu "Configurações > Documentos"
+#     Então sistema exibe informações de menu Documentos
 
-CT 09.03.03 - Validar filtro "Departamento" no menu Configurações > Documentos
-    [Documentation]     Caso de teste valida se filtro "Departamento" no menu Configurações > Documentos está funcional
-    [Tags]    Configurações    Documentos    Funcional        
-    Dado que clico no menu "Configurações > Documentos"
-    Quando clico em "Filtros"
-    E seleciono filtro "Departamento"
-    Então sistema exibe informações de filtro selecionado
+# CT 09.03.02 - Validar filtro "Tipo de documento" no menu Configurações > Documentos
+#     [Documentation]     Caso de teste valida se filtro "Tipo de documento" no menu Configurações > Documentos está funcional
+#     [Tags]    Configurações    Documentos    Funcional        
+#     Dado que clico no menu "Configurações > Documentos"
+#     Quando clico em "Filtros"
+#     E seleciono filtro "Tipo de documento"
+#     Então sistema exibe informações de filtro selecionado
+
+# CT 09.03.03 - Validar filtro "Departamento" no menu Configurações > Documentos
+#     [Documentation]     Caso de teste valida se filtro "Departamento" no menu Configurações > Documentos está funcional
+#     [Tags]    Configurações    Documentos    Funcional        
+#     Dado que clico no menu "Configurações > Documentos"
+#     Quando clico em "Filtros"
+#     E seleciono filtro "Departamento"
+#     Então sistema exibe informações de filtro selecionado
 
 # - Validar menu
 # ...

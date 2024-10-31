@@ -16,25 +16,41 @@ ${botao_Perguntas}                  //button[contains(.,'Perguntas')]
 ${botao_Salvar}                     //button[contains(.,'Salvar')]
 ${botao_InserirPergunta}            (//button[@data-state='closed'])[9]
 ${botaox_ExcluirPergunta}           //button[contains(@class,'ml-2')]
+
 ${filtro_cards/Lista_Perguntas}     //button[contains(.,'Cards')]
 ${filtro_botaoLista_Perguntas}      (//div[contains(.,'Lista')])[9]
 ${quantidade_perguntas}             2
+${quatidade_padrao}                 7
+
 ${input_NomeDaRequisicao}           //input[@placeholder='Ex: Técnico']
 ${input_NomeSecao}                  //div[contains(@class, 'col-start-2') and contains(@class, 'col-end-3') and contains(text(), 'Clique para editar o nome da Seção')]
 ${input_NomeSecaoSelecionado}       //div[contains(@class, 'col-start-2') and contains(@class, 'col-end-3') and contains(@class, 'min-w-24') and contains(@class, 'min-h-12') and contains(@class, 'border') and contains(@class, 'p-2') and contains(@class, 'rounded-sm')]
+${input_NovaPergunta}               //input[@name='nome']
+${input_ValorConfins}               //input[@id='cofins']
+${input_ValorPis}                   //input[@id='pis']
+${input_ValorICMS}                  //input[@id='icms']
+${input_ValorAutoconsumo}           //input[@id='autoconsumo']
+${input_ValorGeracaoCompartilhada}  //input[@id='geracao_compartilhada']
+
 ${box_Departamento}                 (//div[contains(.,'Selecione as requisições')])[12]
 ${box_DepartamentoTI}               (//div[contains(.,'TI')])[13]
 ${box_EscolhaPergunta}              (//div[contains(.,'Selecione um opção')])[16]
 ${box_EscolhaPerguntaNomeCompleto}  (//div[contains(.,'Nome completo')])[17]
 ${box_TipodoCampo}                  //button[contains(.,'Selecione')]
 ${box_TipodoCampoData}              (//div[contains(.,'Data')])[4]
+
 ${botao_SecaoCliente}               (//button[@type='button'])[7]
 ${botao_AdicionarSecao}             //button[contains(.,'Adicionar seção')]
 ${botao_ExcluirSecao}               (//button[@data-state='closed'])[14]
 ${botao_SalvarNovaPergunta}         (//button[contains(.,'Salvar')])[2]
 ${botao_CadastrarPergunta}          (//button[contains(@data-state,'closed')])[10]
 ${botao_TornarObrigatorias}         (//button[@data-state='closed'])[7]
-${input_NovaPergunta}               //input[@name='nome']
+${botao_DecontoNivelAssociados}     //button[contains(.,'Nível de Associados')]
+${botao_DecontoConcessionarias}     //button[contains(.,'Concessionárias')]
+${botao_DecontoGruposTarifarios}    //button[contains(.,'Grupos tárifarios')]
+${botaox_RemoverSupervisor}         //div[contains(@aria-label,'Remove Fernando Morais da Costa Silva')]
+${botao_AtualizarConfig}            //button[contains(.,'Atualizar')]
+
 ${opcao_ObrigatorioNao}             //button[@id='opcao1']
 ${opcao_ObrigatorioSim}             //button[@id='opcao2']
 
@@ -88,6 +104,8 @@ E preencho informações de cadastro editado no menu Configurações > Requisiç
     Click Element            (//div[contains(.,'TI')])[12]
     Click Element            (//div[contains(.,'Comercial')])[13]
     Click Element            ${input_NomeDaRequisicao}
+    # Click Element            //div[@class='col-start-2 col-end-3 min-w-24 min-h-12 border p-2 rounded-sm'][contains(.,'Clique para editar o nome da Seção')]
+    # Input Text               css:.relative    ${nome_pesquisa_GruposConsumidores}
     Sleep    1s
     Click Element            ${botao_InserirPergunta}
     Click Element            ${botao_Salvar}
@@ -139,7 +157,7 @@ E preencho informações de nova pergunta
 Então sistema exibe mensagem de pergunta adicionada no menu Configurações > Requisições
     Wait Until Page Contains    text=Pergunta adicionada com sucesso!
 
-# -9.2
+# -9.01.10
 E preencho informações de pergunta editada no menu Configurações > Requisições > Perguntas
     Sleep    2s
     Input Text            (//input[@value='B3 (teste)'])[1]    ${nome_pesquisa_GruposConsumidores}
@@ -195,15 +213,59 @@ Então sistema exibe informações com filtro "Lista" em Configurações > Requi
 Então sistema exibe mensagem de erro em Configurações > Requisições
     Wait Until Page Contains    text=Nenhum tipo de requisição encontrado.
 
-# --9.01.12
-# Dado que clico no menu "Configurações > Minerando sol"
-#     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
-#     Click Element                    ${MENU_CONFIGURACOES}
-#     Wait Until Element Is Visible    ${Menu_MinerandoSol}
-#     Click Element                    ${Menu_MinerandoSol}
-# Então sistema exibe informações de menu Minerando sol
-#     Wait Until Page Contains    text=
+# --9.02.01
+Dado que clico no menu "Configurações > Minerando sol"
+    Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
+    Click Element                    ${MENU_CONFIGURACOES}
+    Wait Until Element Is Visible    ${Menu_ConfigMinerandoSol}
+    Click Element                    ${Menu_ConfigMinerandoSol}
+Então sistema exibe informações de menu Minerando sol
+    Wait Until Page Contains    text=Configurar valores das constantes da Minerando Sol
 
+# -9.02.02
+Quando preencho informações do menu "Geral" no menu Configurações > Minerando Sol
+    Sleep    2s
+    Input Text        ${input_ValorConfins}                    2,35    
+    Input Text        ${input_ValorPis}                        0,5
+    Input Text        ${input_ValorICMS}                       17
+    Input Text        ${input_ValorAutoconsumo}                1
+    Input Text        ${input_ValorGeracaoCompartilhada}       1
+    Click Element     ${botao_DecontoNivelAssociados}
+    Click Element     ${botao_DecontoConcessionarias}
+    Click Element     ${botao_DecontoGruposTarifarios}
+    Input Text        //input[@id='concessionaria-1']            ${quatidade_padrao}
+    Input Text        //input[@id='concessionaria-4']            ${quatidade_padrao}
+    Input Text        //input[@id='concessionaria-6']            ${quatidade_padrao}
+    Input Text        //input[@id='concessionaria-7']            ${quatidade_padrao}
+    Input Text        //input[@id='grupo-106']                   ${quatidade_padrao}
+    Input Text        //input[@id='grupo-107']                   ${quatidade_padrao}
+    Input Text        //input[@id='grupo-108']                   ${quatidade_padrao}
+    Input Text        //input[@id='grupo-109']                   ${quatidade_padrao}
+    Input Text        //input[@id='concessionaria-8']            ${quatidade_padrao}
+    Input Text        //input[@id='concessionaria-9']            ${quatidade_padrao}
+    Input Text        //input[@id='concessionaria-10']           ${quatidade_padrao}
+    Input Text        //input[@id='concessionaria-11']           ${quatidade_padrao}
+    Input Text        //input[@id='concessionaria-12']           ${quatidade_padrao}
+    Input Text        //input[@id='concessionaria-24']           ${quatidade_padrao}
+    Input Text        //input[@id='concessionaria-25']           ${quatidade_padrao}
+    Input Text        (//input[@value='7'])[16]                  ${quatidade_padrao}
+    Input Text        (//input[@value='7'])[17]                  ${quatidade_padrao}
+    Input Text        (//input[@value='7'])[18]                  ${quatidade_padrao}
+    Input Text        (//input[@value='7'])[19]                  ${quatidade_padrao}
+    Input Text        (//input[@type='number'])[5]               ${quatidade_padrao}
+    Click Element     //button[contains(.,'Adicionar Novo Associado')]
+    Click Element     (//button[contains(.,'Remover')])[6]
+    Sleep    1s
+    Click Element     ${botaox_RemoverSupervisor}
+    Click Element     (//div[@aria-hidden='true'])[2]
+    Click Element     (//div[contains(.,'Fernando Morais da Costa Silva')])[16]
+    Click Element     //button[@class='peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-slate-400']
+    Click Element     //button[@class='peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-slate-400']
+E clico em Atualizar
+    Click Element     ${botao_AtualizarConfig}
+
+Então sistema exibe mensagem de atualização
+    Wait Until Page Contains    text=Registro atualizado com sucesso!
 # -9.03.01
 Dado que clico no menu "Configurações > Documentos"
     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
