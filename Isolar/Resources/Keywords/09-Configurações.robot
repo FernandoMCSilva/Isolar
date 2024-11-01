@@ -266,6 +266,22 @@ E clico em Atualizar
 
 Então sistema exibe mensagem de atualização
     Wait Until Page Contains    text=Registro atualizado com sucesso!
+
+# -9.02.03
+Quando preencho informações do menu "Template > Campos CPF" no menu Configurações > Minerando Sol
+    Sleep    1s
+    Click Element    (//button[contains(.,'Texto')])[1]
+    Click Element    (//div[contains(.,'Data')])[5]
+    Click Element    (//button[contains(.,'Nenhuma')])[1]
+    Click Element    (//div[contains(.,'Endereço/Rua')])[5]
+    Input Text       (//input[@value='Nome'])[1]    ${nome_pesquisa_GruposConsumidores}
+    Click Element    //button[contains(.,'Atualizar campos Pessoa física - Termos')]
+    Wait Until Page Contains    text=Campos atualizados com sucesso.
+    Sleep    4s
+
+
+
+# -9.02.03
 # -9.03.01
 Dado que clico no menu "Configurações > Documentos"
     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}

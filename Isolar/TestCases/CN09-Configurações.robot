@@ -180,19 +180,19 @@ CT 09.02.01 - Validar menu Configurações > Minerando sol
     Dado que clico no menu "Configurações > Minerando sol"
     Então sistema exibe informações de menu Minerando sol
 
-# CT 09.02.02 - Validar edição na tela "Geral" no menu Configurações > Minerando Sol
-#     [Documentation]     Caso de teste valida se edição na tela "Geral" no menu Configurações > Minerando Sol está funcional
-#     [Tags]    Configurações    Minerando Sol    Funcional
-#     Dado que clico no menu "Configurações > Minerando sol"
-#     Quando preencho informações do menu "Geral" no menu Configurações > Minerando Sol
-#     E clico em Atualizar
-#     Então sistema exibe mensagem de atualização
+CT 09.02.02 - Validar edição na tela "Geral" no menu Configurações > Minerando Sol
+    [Documentation]     Caso de teste valida se edição na tela "Geral" no menu Configurações > Minerando Sol está funcional
+    [Tags]    Configurações    Minerando Sol    Funcional
+    Dado que clico no menu "Configurações > Minerando sol"
+    Quando preencho informações do menu "Geral" no menu Configurações > Minerando Sol
+    E clico em Atualizar
+    Então sistema exibe mensagem de atualização
 
-# CT 09.02.03 - Validar edição na tela "Template" no menu Configurações > Minerando Sol
-#     [Documentation]     Caso de teste valida se edição na tela "Geral" no menu Configurações > Minerando Sol está funcional
+# CT 09.02.03 - Validar edição na tela "Template > Campos CPF " no menu Configurações > Minerando Sol
+#     [Documentation]     Caso de teste valida se edição na tela "Template" no menu Configurações > Minerando Sol está funcional
 #     [Tags]    Configurações    Minerando Sol    Funcional
 #     Dado que clico no menu "Configurações > Minerando sol"
-#     Quando preencho informações do menu "Geral" no menu Configurações > Minerando Sol
+#     Quando preencho informações do menu "Template > Campos CPF" no menu Configurações > Minerando Sol
 #     E clico em Atualizar
 #     Então sistema exibe mensagem de atualização
 
