@@ -139,7 +139,7 @@ Então sistema exibe informações de "Perguntas" no menu Configurações > Requ
 
 # --9.01.09
 E clico no botao "Perguntas"
-    Sleep    2s
+    Wait Until Element Is Visible    ${botao_Perguntas}
     Click Element    ${botao_Perguntas}
 E preencho informações de nova pergunta
     Sleep    2s

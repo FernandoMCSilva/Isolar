@@ -14,11 +14,13 @@ ${botao_continuar_Excluir}    //button[contains(.,'Continuar')]
 ${botao_Cancelar_Excluir}     //button[contains(.,'Cancelar')]
 ${botao_salvar}               //button[contains(.,'Salvar')]
 ${botao_atualizar}            //button[contains(.,'Atualizar')]
+${botao_SalvarUsuários}       //button[contains(.,'Salvar')]
 ${input_buscar}               //input[contains(@placeholder,'Buscar...')]
 ${input_descricao}            //input[@id='descricao']
 ${input_buscar}               xpath=//input[contains(@class, 'flex h-10')]
 ${filtro_cards/Lista}         (//button[@type='button'])[7]
 ${filtro_botaoLista}          xpath=//div[@role='option'][contains(.,'Lista')]
+${EmailLocal}                 teste123@gmail.com
 ${SenhaLocal}                 Q@grupoiso123
 
 *** Keywords ***                
@@ -35,12 +37,15 @@ E preencho informações de inserir novo cadastro de Usuários
     Sleep    2s
     Input Text       //input[@id='nome']    ${nome_pesquisa}
     Input Text       //input[@id='telefone']    99999999999
-    Input Text       //input[@id='email']    ${EmailAdmin}
+    Input Text       //input[@id='email']    ${EmailLocal}
     Input Text       //input[@id='senha']    ${SenhaLocal}
     Click Element    (//button[@type='button'])[7]
     Click Element    //span[contains(.,'Administrador')]
     Click Element    (//button[@type='button'])[8]
     Click Element    (//div[@role='option'])[5]
+
+E clico em "Salvar" em Usuários
+    Click Element    ${botao_SalvarUsuários}
 Então sistema salva novo cadastro de Usuários
     Wait Until Page Contains    text=Registro adicionado com sucesso!
 

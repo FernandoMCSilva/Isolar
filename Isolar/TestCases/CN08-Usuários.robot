@@ -17,7 +17,7 @@ CT 08.02 - Validar funcionalidade "inserir" no Usuários
     Dado que clico no menu "Usuários"
     Quando clico no botão "Inserir"
     E preencho informações de inserir novo cadastro de Usuários
-    E clico em "Salvar"
+    E clico em "Salvar" em Usuários
     Então sistema salva novo cadastro de Usuários
 
 CT 08.03 - Validar funcionalidade "editar" Usuários

@@ -14,7 +14,7 @@ ${EXPECTED_RESULTS}    10
 *** Keywords ***
 # --3.1
 Dado que clico no menu "Estimativa"
-    Sleep    5s
+    Sleep    2s
     Wait Until Element Is Visible    ${MENU_ESTIMATIVA}
     Click Element                    ${MENU_ESTIMATIVA}
 
@@ -89,9 +89,17 @@ Então sistema exibe informações de Estimativa do filtro Tipo de usina "Alugue
 
 E preencho com informações data de registro
     Click Element    (//button[@type='button'])[9]
+WHILE
+        ${mes_atual}=    Get Text    (//div[contains(@class, 'calendar')])[1]//div[contains(@class, 'month')]
+        ${ano_atual}=    Get Text    (//div[contains(@class, 'calendar')])[1]//div[contains(@class, 'year')]
+
+        Run Keyword If    '${mes_atual}' == 'Setembro' AND '${ano_atual}' == '2024'    Exit For Loop
+        Click Element     (//button[@type='button'])[11]    # Clica na seta para voltar
+
+    # Sai do loop e clica no dia 12 de setembro
     Click Element    (//button[contains(.,'12')])[1]
     Click Element    //button[contains(.,'Buscar')]
-    Sleep    5s
+    Sleep    3s
 Então sistema exibe Estimativa do filtro Data de registro
     Wait Until Page Contains    text=Fernando Morais da Costa Silva
 
@@ -106,7 +114,7 @@ E preencho informações no campo quantidade
 
 Então sistema exibe informações de acordo com quantidade preenchida
     Click Element    (//div[contains(.,'Quantidade')])[10]
-    Sleep    5s
+    Sleep    10s
     ${resultados}    Get WebElements    xpath=//tr[contains(@class, 'border-b transition-colors')]
     ${quantidade}    Get Length    ${resultados}
     Should Be Equal As Numbers    ${quantidade - 1}    ${EXPECTED_RESULTS}
@@ -144,11 +152,13 @@ Então sistema exibe Estimativa anteriores
 # --3.12
 
 Quando clico em "Gerar link de assinatura"
-    Sleep    5s
-    Click Element    xpath=(//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[2]
+    Sleep    2s
+    Click Element    (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[5]
 
 E clico em "Não"
-    Click Element    (//button[@type='button'])[9]
+    Click Element    //button[contains(.,'Sim')]
+    Click Element    //button[contains(@class, 'absolute') and contains(@class, 'right-4') and contains(@class, 'top-4') and contains(@class, 'rounded-sm')]
+    Click Element    //button[contains(.,'Fechar')]
     
 Então sistema volta para menu Estimativa
     Wait Until Page Contains    text=Histórico das estimativas
@@ -156,18 +166,17 @@ Então sistema volta para menu Estimativa
 # --3.13
 
 E clico em "Sim"
-    Sleep    5s
+    Wait Until Element Is Visible    (//button[@type='button'])[10]
     Click Element    (//button[@type='button'])[10]
 
 Então sistema exibe informações para criar assinaturas
-    Wait Until Page Contains   text=Criar assinatura
+    Wait Until Page Contains   text=Clique para fazer o upload
     
 # --3.14
 
 Quando clico no botão "Ver PDF"
-    Sleep    5s
-    Click Element    xpath=(//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[5]
-
+    Wait Until Element Is Visible    (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[3]
+    Click Element    (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[3]
 Então sistema exibe informações em aquivo PDF
     Wait Until Page Contains    text=Estimativa
 
@@ -180,6 +189,7 @@ Então sistema exibe informações em aquivo PDF
 # --3.16
 
 E clico em "imprimir Estimativa"
+    Wait Until Element Is Visible    //button[contains(.,'Imprimir Estimativa')]
     Click Element    //button[contains(.,'Imprimir Estimativa')]
 
 

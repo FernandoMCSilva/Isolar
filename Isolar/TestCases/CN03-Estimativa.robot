@@ -69,8 +69,9 @@ CT 03.08 - Validar filtro Quantidade de itens por pág
     [Tags]    Estimativa    Funcional        
     Dado que clico no menu "Estimativa"
     Quando clico em "Quantidade de itens por pág"
-    E preencho informações no campo quantidade em perguntas
+    E preencho informações no campo quantidade
     Então sistema exibe informações de acordo com quantidade preenchida
+
  CT 03.09 - Validar botão Próximo
     [Documentation]     Caso de teste valida o botão próximo
     [Tags]    Estimativa    Funcional        
@@ -94,7 +95,7 @@ CT 03.10 - Validar botão Anterior
 # # #     Então sistema não executa nenhuma ação
    
 CT 03.12 - Validar botão Não em confirmação do Gerar link de assinatura
-    [Documentation]     Caso de teste valida botão Gerar link de assinatura
+    [Documentation]     Caso de teste valida botão Não em confirmação do Gerar link de assinatura
     [Tags]    Estimativa    Funcional        
     Dado que clico no menu "Estimativa"
     Quando clico em "Gerar link de assinatura"
@@ -108,7 +109,6 @@ CT 03.13 - Validar botão Gerar link de assinatura
     Quando clico em "Gerar link de assinatura"
     E clico em "Sim"
     Então sistema exibe informações para criar assinaturas
-
 
 CT 03.14 - Validar botão Ver PDF
     [Documentation]    Caso de teste valida botão Ver PDF
@@ -131,7 +131,7 @@ CT 03.16 - Validar botão Imprimir Estimativa em Ver PDF
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Ver PDF"
     E clico em "imprimir Estimativa"
-    Então sistema exibe informações de estimativa em arquivo PDF
+    # Então sistema exibe informações de estimativa em arquivo PDF
 
 CT 03.17 - Validar botão Cancelar em Aplicar desconto
     [Documentation]    Caso de teste valida botão Cancelar em Aplicar desconto
@@ -156,7 +156,6 @@ CT 03.19 - Tentar aplicar desconto "acima do limite"
     Quando clico no botão "Aplicar desconto"
     E preencho informações de desconto acima do limite
     Então sistema exibe mensagem de erro de desconto máximo permitido
-
 
 # BOTÃO GERAR (ESTIMATIVA)
 

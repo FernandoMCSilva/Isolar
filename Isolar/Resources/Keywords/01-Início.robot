@@ -16,7 +16,8 @@ ${Btn_Buscar}          //button[contains(.,'Buscar')]
 ${Btn_Departamentos}    (//button[@type='button'])[9]
 @{DEPARTAMENTOS_OPTIONS}    (//div[contains(.,'Comercial')])[5]    (//div[contains(.,'Compras')])[5]    (//div[contains(.,'Técnico')])[5]    
 ...    (//div[contains(.,'Administrativo')])[5]    (//div[contains(.,'TI')])[5]    (//div[contains(.,'Logística')])[5]    
-...    (//div[contains(.,'Jurídico')])[5]    (//div[contains(.,'Departamento pessoal')])[5]    (//div[contains(.,'Teste cadastro')])[5]
+...    (//div[contains(.,'Jurídico')])[5]    (//div[contains(.,'Departamento pessoal')])[5]    (//div[contains(.,'ENG.CIVIL')])[5]    
+...    (//div[contains(.,'OBRAS')])[5]    (//div[contains(.,'SERVIÇOS')])[5]    (//div[contains(.,'CS-Customer Success')])[5]
 
 *** Keywords ***
 # --1.1
@@ -107,7 +108,6 @@ E valido todos os filtros de departamento
     FOR    ${departamento}    IN    @{DEPARTAMENTOS_OPTIONS}
             # Clica na opção de departamento atual
             Click Element    ${departamento}
-            Sleep    2s
             
             # Clica no botão de buscar
             Click Element    ${Btn_Buscar}
@@ -124,10 +124,10 @@ E valido todos os filtros de departamento
         END
 
 E clico em Buscar
-    Click Element                    ${Btn_Buscar}.click(); 
+    Click Element                    ${Btn_Buscar} 
 
 Então sistema exibe requisições do departamento
-    Wait Until Element Is Visible     //h2[contains(.,'Requisições por Status')]
+    Wait Until Page Contains    text=Gerencie um resumo das informações cadastradas no sistema.
 
 # --1.7
 E preencho data inicial
