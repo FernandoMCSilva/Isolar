@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.6 on win32)" generated="2024-11-02T09:28:56.607186" rpa="false" schemaversion="5">
+<suite id="s1" name="CN11-Novidades" source="c:\Users\silva\Documents\Isolar\Isolar\Isolar\TestCases\CN11-Novidades.robot">
+<test id="s1-t1" name="CT 11.01 - Validar menu Novidades" line="8">
+<kw name="Dado que acesse a Isolar e logue no sistema" owner="Setup_Teardown" type="SETUP">
+<kw name="Abrir navegador" owner="Setup_Teardown">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-02T09:28:59.292378" level="INFO">Opening browser 'chrome' to base url 'https://teste.grupoiso.com.br/'.</msg>
+<arg>${url}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-02T09:28:59.292378" elapsed="8.259389"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-11-02T09:29:07.551767" elapsed="0.333154"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T09:29:07.884921" elapsed="0.902286"/>
+</kw>
+<arg>${URLISO}</arg>
+<status status="PASS" start="2024-11-02T09:28:59.292378" elapsed="9.495957"/>
+</kw>
+<kw name="Fazer login" owner="Main">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@id='email']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T09:29:08.788335" elapsed="0.045229"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-02T09:29:08.833564" level="INFO">Typing text 'qa@grupoiso.com.br' into text field '//input[@id='email']'.</msg>
+<arg>//input[@id='email']</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T09:29:08.833564" elapsed="0.416133"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-02T09:29:09.249697" level="INFO">Typing text '24455090' into text field '//input[@id='senha']'.</msg>
+<arg>//input[@id='senha']</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T09:29:09.249697" elapsed="0.365141"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T09:29:09.615834" level="INFO">Clicking element '//button[contains(.,'Entrar')]'.</msg>
+<arg>//button[contains(.,'Entrar')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T09:29:09.615834" elapsed="0.141260"/>
+</kw>
+<arg>${EmailAdmin}</arg>
+<arg>${SenhaAdmin}</arg>
+<status status="PASS" start="2024-11-02T09:29:08.788335" elapsed="0.968759"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-02T09:29:12.757318" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-02T09:29:09.757094" elapsed="3.000224"/>
+</kw>
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2024-11-02T09:29:12.760870" elapsed="0.262452"/>
+</kw>
+<status status="PASS" start="2024-11-02T09:28:59.292378" elapsed="13.731941"/>
+</kw>
+<kw name="Dado que clico no menu &quot;Novidades&quot;" owner="11-Novidades">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENU_NOVIDADES}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T09:29:13.056854" elapsed="0.646094"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T09:29:13.704149" level="INFO">Clicking element '//a[contains(.,'Novidades')]'.</msg>
+<arg>${MENU_NOVIDADES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T09:29:13.702948" elapsed="0.319124"/>
+</kw>
+<status status="PASS" start="2024-11-02T09:29:13.054665" elapsed="0.967407"/>
+</kw>
+<kw name="Fechar navegador" owner="Setup_Teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-02T09:29:14.039055" elapsed="2.916773"/>
+</kw>
+<status status="PASS" start="2024-11-02T09:29:14.035554" elapsed="2.920274"/>
+</kw>
+<doc>Caso de teste valida se Menu Novidades está funcional</doc>
+<tag>Funcional</tag>
+<tag>Novidades</tag>
+<status status="PASS" start="2024-11-02T09:28:59.289403" elapsed="17.682248"/>
+</test>
+<doc>Modúlo que Gerencie o menu Novidades</doc>
+<status status="PASS" start="2024-11-02T09:28:56.622145" elapsed="20.360781"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Funcional</stat>
+<stat pass="1" fail="0" skip="0">Novidades</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="CN11-Novidades">CN11-Novidades</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-11-02T09:28:59.189366" level="WARN">Imported resource file 'c:\Users\silva\Documents\Isolar\Isolar\Isolar\Resources\Keywords\04-MiSol.robot' is empty.</msg>
+<msg time="2024-11-02T09:28:59.196371" level="WARN">Imported resource file 'c:\Users\silva\Documents\Isolar\Isolar\Isolar\Resources\Keywords\06-Documentos.robot' is empty.</msg>
+</errors>
+</robot>
