@@ -10,11 +10,19 @@ ${Campo_Status}            //div[@role='option' and contains(.,'Produção')]
 ${Campo_Tipo}              //div[@role='option' and contains(.,'Técnico')]
 ${Campo_Urgente}           //div[@role='option' and contains(.,'Sim')]
 ${Campo_Nivel_Urgencia}    //div[@role='option' and contains(.,'Alto')]
+
 ${Botao_Buscar}            //button[contains(.,'Buscar')]
+
 ${Cliente_Fila}            Fernando
 ${Departamento_Fila}       Técnico
 ${Status_option}             (//div[contains(.,'Parado')])[5]
 ${Tipo_Fila}               Técnico
+
+${COMBOBOX_DEPARTAMENTO}   //button[contains(@id,'departament')]
+@{COMBOBOX_OPCOES}     (//div[contains(.,'Comercial')])[14]  (//div[contains(.,'Compras')])[5]      (//div[contains(.,'Técnico')])[5]    
+...    (//div[contains(.,'Administrativo')])[5]              (//div[contains(.,'TI')])[19]          (//div[contains(.,'Logística')])[5]    (//div[contains(.,'Jurídico')])[5]
+...    (//div[contains(.,'Departamento pessoal')])[5]        (//div[contains(.,'ENG.CIVIL')])[5]    (//div[contains(.,'OBRAS')])[5]        (//div[contains(.,'SERVIÇOS')])[5]
+...    (//div[contains(.,'CS-Customer Success')])[5]
 
 
 *** Keywords ***
@@ -49,9 +57,33 @@ Então sistema exibe requisições do filtro Cliente
 
 # --2.3
 E seleciono departamento "Técnico"
-    Wait Until Element Is Visible    //button[@id='departament']      10s
-    Execute JavaScript               ${Campo_Departamento}
-    Click Element                    ${Botao_Buscar}
+    Wait Until Element Is Visible    ${COMBOBOX_DEPARTAMENTO}    timeout=10s
+    Click Element    ${COMBOBOX_DEPARTAMENTO}
+    # Pega todas as opções dentro do dropdown
+    ${departamentos}    Get WebElements    ${COMBOBOX_DEPARTAMENTO}
+
+    FOR    ${departamento}    IN    @{COMBOBOX_OPCOES}
+            # Clica na opção de departamento atual
+            Click Element    ${departamento}
+            
+            # Clica no botão de buscar
+            Click Element    ${Btn_Buscar}
+            
+            # Espera pela atualização e valida que a página foi atualizada
+            Wait Until Element Is Visible    //button[contains(.,'Inserir')]    timeout=10s
+            
+            # Log do departamento testado
+            ${departamento_text}    Get Text    ${departamento}
+            Log    Departamento ${departamento_text} validado com sucesso
+        Wait Until Element Is Visible    ${COMBOBOX_DEPARTAMENTO}    timeout=10s
+            
+            # Reabre a combobox para a próxima iteração
+            Click Element    ${COMBOBOX_DEPARTAMENTO}
+        END
+
+    # Wait Until Element Is Visible    //button[@id='departament']      10s
+    # Execute JavaScript               ${Campo_Departamento}
+    # Click Element                    ${Botao_Buscar}
 
 Então sistema exibe requisições do filtro Departamento
     Wait Until Element Is Visible        xpath=//td[contains(normalize-space(),'Técnico')]       timeout=10s
