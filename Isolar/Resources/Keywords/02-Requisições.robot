@@ -56,7 +56,7 @@ Então sistema exibe requisições do filtro Cliente
     END
 
 # --2.3
-E seleciono departamento "Técnico"
+E valido todos os filtros de departamento em Requisições
     Wait Until Element Is Visible    ${COMBOBOX_DEPARTAMENTO}    timeout=10s
     Click Element    ${COMBOBOX_DEPARTAMENTO}
     # Pega todas as opções dentro do dropdown
@@ -75,8 +75,8 @@ E seleciono departamento "Técnico"
             # Log do departamento testado
             ${departamento_text}    Get Text    ${departamento}
             Log    Departamento ${departamento_text} validado com sucesso
-        Wait Until Element Is Visible    ${COMBOBOX_DEPARTAMENTO}    timeout=10s
-            
+            Wait Until Element Is Visible    ${COMBOBOX_DEPARTAMENTO}
+            Execute JavaScript    window.scrollTo(0, 0)
             # Reabre a combobox para a próxima iteração
             Click Element    ${COMBOBOX_DEPARTAMENTO}
         END

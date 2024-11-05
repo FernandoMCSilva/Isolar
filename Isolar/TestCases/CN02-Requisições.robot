@@ -23,7 +23,7 @@ CT 02.03 - Validar filtro Departamento
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E seleciono departamento "Técnico"
+    E valido todos os filtros de departamento em Requisições
     Então sistema exibe requisições do filtro Departamento
 
 CT 02.04 - Validar filtro Status
@@ -58,3 +58,54 @@ CT 02.07 - Validar filtro Nível de urgência
     E seleciono urgente "Sim"
     E seleciono Nível de urgência "Alto"
     Então sistema exibe requisições do filtro Urgente
+
+CT 02.08 - Validar filtro Data de entrega
+    [Documentation]     Caso de teste valida o filtro Data de entrega em Requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho informações de Data de entrega
+    Então sistema exibe requisições do filtro Data de entrega
+
+CT 02.09 - Validar filtro Data de criação
+    [Documentation]     Caso de teste valida o filtro Data de criação em Requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho informações de Data de criação
+    Então sistema exibe requisições do filtro Data de Criação
+
+CT 02.10 - Validar filtro Responsável
+    [Documentation]     Caso de teste valida o filtro Responsável em Requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E valido todos os filtros dentro de "Responsável"
+    Então sistema exibe requisições de filtro Responsável
+
+CT 02.11 - Validar filtro Representante comercial
+    [Documentation]     Caso de teste valida o filtro Representante comercial em Requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E valido todos os filtros dentro de "Representante comercial"
+    Então sistema exibe requisições de filtro Representante comercial
+
+CT 02.12 - Validar filtro Vendedor
+    [Documentation]     Caso de teste valida o filtro Vendedor em Requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E seleciono filtro vendedor "Todos"
+    Então sistema exibe requisições de filtro vendedor "Todos"
+
+CT 02.13 - Validar filtro Renovadas
+    [Documentation]     Caso de teste valida o filtro Renovadas em Requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E valido todos os filtros dentro de "Renovadas"
+    Então sistema exibe requisições de filtro Renovadas
+
+
+
