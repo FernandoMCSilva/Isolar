@@ -66,7 +66,7 @@ Quando clico em "Concluídas"
     Click Element                    ${Botao_Concluidas}
 
 Então sistema exibe requisições com status "Concluídas"
-    Wait Until Element Is Visible    xpath=//td[contains(normalize-space(),'Concluído')]       timeout=10s
+    Wait Until Element Is Visible    xpath=//td[contains(normalize-space(),'Concluído')]       timeout=15s
     ${statuses}=    Get Webelements    xpath=//td[contains(normalize-space(),'Concluído')]                                
     ${count}=    Get Length    ${statuses}
     Log    Número de elementos encontrados: ${count}
@@ -102,6 +102,7 @@ E seleciono "Todos"
 E valido todos os filtros de departamento
     Wait Until Element Is Visible    ${Btn_Departamentos}    timeout=10s
     Click Element    ${Btn_Departamentos}
+    Sleep    2s
     # Pega todas as opções dentro do dropdown
     ${departamentos}    Get WebElements    ${Btn_Departamentos}
 

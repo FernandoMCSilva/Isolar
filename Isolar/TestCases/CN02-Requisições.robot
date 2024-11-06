@@ -23,7 +23,7 @@ CT 02.03 - Validar filtro Departamento
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E valido todos os filtros de departamento em Requisições
+    E valido todos os filtros dentro de departamento em Requisições
     Então sistema exibe requisições do filtro Departamento
 
 CT 02.04 - Validar filtro Status
@@ -80,7 +80,7 @@ CT 02.10 - Validar filtro Responsável
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E valido todos os filtros dentro de "Responsável"
+    E valido filtro dentro de "Responsável"
     Então sistema exibe requisições de filtro Responsável
 
 CT 02.11 - Validar filtro Representante comercial
@@ -88,7 +88,7 @@ CT 02.11 - Validar filtro Representante comercial
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E valido todos os filtros dentro de "Representante comercial"
+    E valido filtro dentro de "Representante comercial"
     Então sistema exibe requisições de filtro Representante comercial
 
 CT 02.12 - Validar filtro Vendedor
@@ -104,7 +104,7 @@ CT 02.13 - Validar filtro Renovadas
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E valido todos os filtros dentro de "Renovadas"
+    E valido filtro dentro de "Renovadas"
     Então sistema exibe requisições de filtro Renovadas
 
 
