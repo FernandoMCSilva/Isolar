@@ -23,7 +23,7 @@ CT 02.03 - Validar filtro Departamento
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E valido todos os filtros dentro de departamento em Requisições
+    E valido todos os filtros dentro de Departamento em Requisições
     Então sistema exibe requisições do filtro Departamento
 
 CT 02.04 - Validar filtro Status
@@ -31,7 +31,7 @@ CT 02.04 - Validar filtro Status
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E seleciono status "Parado"
+    E valido todos os filtros dentro de Status em Requisições
     Então sistema exibe requisições do filtro Status
 
 CT 02.05 - Validar filtro Tipo
@@ -39,7 +39,7 @@ CT 02.05 - Validar filtro Tipo
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E seleciono tipo "Técnico"
+    E valido todos os filtros dentro de Tipo em Requisições
     Então sistema exibe requisições do filtro Tipo
 
 CT 02.06 - Validar filtro Urgente
@@ -47,7 +47,7 @@ CT 02.06 - Validar filtro Urgente
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E seleciono urgente "Sim"
+    E valido todos os filtros dentro de Urgente em Requisições
     Então sistema exibe requisições do filtro Urgente
 
 CT 02.07 - Validar filtro Nível de urgência
@@ -56,7 +56,7 @@ CT 02.07 - Validar filtro Nível de urgência
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E seleciono urgente "Sim"
-    E seleciono Nível de urgência "Alto"
+    E valido todos os filtros de Nivel de urgencia em Requisições
     Então sistema exibe requisições do filtro Urgente
 
 CT 02.08 - Validar filtro Data de entrega
@@ -80,7 +80,7 @@ CT 02.10 - Validar filtro Responsável
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E valido filtro dentro de "Responsável"
+    E valido todos os filtros dentro de "Responsável"
     Então sistema exibe requisições de filtro Responsável
 
 CT 02.11 - Validar filtro Representante comercial
@@ -104,7 +104,7 @@ CT 02.13 - Validar filtro Renovadas
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E valido filtro dentro de "Renovadas"
+    E valido todos os filtros dentro de "Renovadas"
     Então sistema exibe requisições de filtro Renovadas
 
 
