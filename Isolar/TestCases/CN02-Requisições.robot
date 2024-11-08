@@ -107,5 +107,55 @@ CT 02.13 - Validar filtro Renovadas
     E valido todos os filtros dentro de "Renovadas"
     Então sistema exibe requisições de filtro Renovadas
 
+CT 02.14 - Validar botão Editar em Requisições
+    [Documentation]     Caso de teste valida botão editar em Requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E clico no botão "Editar"
+    E preencho informações de requisição editada
+    Então sistema conlcui edição de requisição
+
+CT 02.15 - Validar botão Visualizar em Requisições
+    [Documentation]     Caso de teste valida botão editar em Requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E clico no botão "Visualizar"
+    Então sistema exibe informações de Visualizar em requisições
+
+CT 02.16 - Validar botão Ações em Requisições
+    [Documentation]     Caso de teste valida botão Ações em Requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E seleciono opção "Concluído" no botão ações em requisicoes
+    Então sistema verifica funcionalidade do botão ações em Requisições
+
+CT 02.17 - Validar botão Histórico em Requisições
+    [Documentation]     Caso de teste valida botão Histórico em Requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E clico no botão "Histórico"
+    Então sistema exibe histórico em requisições
 
 
+# CT 02.17 - Validar botão Comentários em Requisições
+#     [Documentation]     Caso de teste valida botão Comentários em Requisições
+#     [Tags]    Requisições    Funcional        
+#     Dado que clico no menu "Requisições"
+#     Quando clico em "Filtros"
+#     E preencho filtro Cliente
+#     E clico no botão "Comentários"
+#     E preencho informações de comentário
+#     Então sistema exibe mensagem de confirmação
+
+
+# Inserir
+# Excluir
+# Comentário

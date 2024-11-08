@@ -50,7 +50,7 @@ Então sistema exibe informações de cadastro de "Pessoas"
 
 # -07.01.02
 Quando clico no botão "Inserir"
-    Sleep    3s
+    Wait Until Element Is Visible    //button[contains(.,'Inserir')]
     Click Element    //button[contains(.,'Inserir')]
 
 # -07.01.03

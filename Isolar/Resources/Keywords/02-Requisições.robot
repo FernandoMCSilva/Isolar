@@ -12,6 +12,10 @@ ${Campo_Urgente}           //div[@role='option' and contains(.,'Sim')]
 ${Campo_Nivel_Urgencia}    //div[@role='option' and contains(.,'Alto')]
 
 ${Botao_Buscar}            //button[contains(.,'Buscar')]
+${Botao_Editar}            //a[@href='https://teste.grupoiso.com.br/requisicoes/editar/1951']
+${Botao_Visualizar}        //a[@href='https://teste.grupoiso.com.br/requisicoes/visualizar/1951']
+${Botao_Acoes}             (//button[@data-state='closed'])[19]
+${Botao_Historico}         xpath=//a[@href='https://teste.grupoiso.com.br/requisicoes/historico/1951' and @data-state='closed']
 
 ${Cliente_Fila}            Fernando
 ${Departamento_Fila}       Técnico
@@ -29,8 +33,7 @@ ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 
 @{OPCOES_COMBOBOX_DEPARTAMENTO}     (//div[contains(.,'Comercial')])[14]  (//div[contains(.,'Compras')])[5]      (//div[contains(.,'Técnico')])[14]    
 ...    (//div[contains(.,'Administrativo')])[5]              (//div[contains(.,'TI')])[5]          (//div[contains(.,'Logística')])[5]    (//div[contains(.,'Jurídico')])[5]
-...    (//div[contains(.,'Departamento pessoal')])[5]        (//div[contains(.,'ENG.CIVIL')])[5]    (//div[contains(.,'OBRAS')])[5]        (//div[contains(.,'SERVIÇOS')])[5]
-...    (//div[contains(.,'CS-Customer Success')])[5]
+...    (//div[contains(.,'Departamento pessoal')])[5]        (//div[contains(.,'ENG.CIVIL')])[5]    (//div[contains(.,'OBRAS')])[5]    (//div[contains(.,'CS-Customer Success')])[5]
 @{OPCOES_COMBOBOX_STATUS}           (//div[contains(.,'Fila')])[22]    (//div[contains(.,'Produção')])[5]    (//div[contains(.,'Concluído')])[22]    (//div[contains(.,'Parado')])[5]
 @{OPCOES_COMBOBOX_TIPO}             (//div[contains(.,'Estimativa')])[19]    (//div[contains(.,'Pós Venda')])[5]    (//div[contains(.,'Compra')])[5]    (//div[contains(.,'Defeito com computador/notebook')])[5]    (//div[contains(.,'Defeito com impressora')])[5]    
 ...     (//div[contains(.,'Problemas com internet')])[5]    (//div[contains(.,'Novo Colaborador')])[5]    (//div[contains(.,'Bloqueio de Acesso a Plataforma')])[5]    (//div[contains(.,'Problema com Sistema')])[5]    
@@ -39,6 +42,8 @@ ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 @{OPCOES_COMBOBOX_NIVELDEURGENCIA}  (//div[contains(.,'Baixo')])[5]    (//div[contains(.,'Médio')])[5]    (//div[contains(.,'Alto')])[5]
 @{OPCOES_COMBOBOX_RESPONSAVEL}      (//div[contains(.,'Joice')])[5]    (//div[contains(.,'Larissa SDR')])[5]    (//div[contains(.,'Leandro Coser')])[5]    (//div[contains(.,'Fabrício TI')])[5]    (//div[contains(.,'Yoseph - Aprediz de dev')])[5]    
 @{OPCOES_COMBOBOX_RENOVADAS}        (//div[contains(.,'Originais')])[5]    
+
+${actions}=    Get Webdriver Manager
 
 
 
@@ -340,5 +345,73 @@ E valido todos os filtros dentro de "Renovadas"
 
 Então sistema exibe requisições de filtro Renovadas
     Wait Until Page Contains    text=Requisições
+
+# --2.14
+E preencho filtro Cliente
+    Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
+    Input Text    //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_GruposConsumidores}
+    Click Element    ${Botao_Buscar}
+E clico no botão "Editar"
+    Wait Until Element Is Visible    ${Botao_Editar}
+    Click Element    ${Botao_Editar}
+
+E preencho informações de requisição editada
+    Sleep    4s
+    Input Text       //input[contains(@id,'cpfCnpj')]      12345678910
+    Input Text       //input[contains(@id,'telefone')]     12345678910
+    Click Element    //button[contains(.,'Salvar alterações')]
+
+Então sistema conlcui edição de requisição
+    Wait Until Page Contains    text=Editar requisição
+    
+# --2.15
+E clico no botão "Visualizar"
+    Wait Until Element Is Visible    ${Botao_Visualizar}   
+    Click Element    ${Botao_Visualizar}
+
+Então sistema exibe informações de Visualizar em requisições
+    Wait Until Page Contains    text=Visualizar informações
+
+# --2.16
+E seleciono opção "Concluído" no botão ações em requisicoes
+    Wait Until Element Is Visible    ${Botao_Acoes}
+    Click Element    ${Botao_Acoes}
+    Click Element    //button[contains(.,'Concluído')]
+
+Então sistema verifica funcionalidade do botão ações em Requisições
+    Wait Until Element Is Visible    ${Link_Filtros}
+    Click Element                    ${Link_Filtros}
+    Sleep    1s
+    Input Text    //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_GruposConsumidores}
+    Click Element    ${Botao_Buscar}
+    Wait Until Element Is Visible    (//div[contains(.,'Concluído')])[10]
+
+# --2.17
+E clico no botão "Histórico"
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
+    Wait Until Element Is Visible    ${Botao_Historico}
+    Click Element    ${Botao_Historico}
+Então sistema exibe histórico em requisições
+    Wait Until Page Contains    text=Histórico da requisição
+
+# --2.18
+# E clico no botão "Comentários"
+#     Sleep    1
+#     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
+#     ${actions}.move_by_offset(100, 200).click().perform()
+#     Wait Until Element Is Visible    (//button[@data-state='closed'])[11]
+#     Click Element    (//button[@data-state='closed'])[11]
+
+# E preencho informações de comentário
+#     Wait Until Element Is Visible    (//button[@type='button'])[11]
+#     Click Element    (//button[@type='button'])[11]
+#     Click Element    (//button[@type='button'])[12]
+#     Click Element    (//button[@type='button'])[13]
+#     Click Element    (//button[@type='button'])[14]
+#     Input Text       //div[contains(@contenteditable,'true')]    ${nome_pesquisa_GruposConsumidores}
+#     Click Element    (//button[@type='button'])[28]
+
+# Então sistema exibe mensagem de confirmação
+#     Wait Until Page Contains    text=Mensagem enviada com sucesso!
 
 # --2.7
