@@ -144,18 +144,50 @@ CT 02.17 - Validar botão Histórico em Requisições
     E clico no botão "Histórico"
     Então sistema exibe histórico em requisições
 
+CT 02.18 - Validar botão Renovar em Requisições
+    [Documentation]     Caso de teste valida botão Renovar em Requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E clico no botão "Renovar"
+    Então sistema exibe mensagem de renovação
 
-# CT 02.17 - Validar botão Comentários em Requisições
-#     [Documentation]     Caso de teste valida botão Comentários em Requisições
+CT 02.19 - Validar botão Comentários em Requisições
+    [Documentation]     Caso de teste valida botão Comentários em Requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E clico no botão "Comentários"
+    E preencho informações de comentário
+    Então sistema exibe mensagem de confirmação
+
+# CT 02.20 - Validar botão Inserir "Comercial" em Requisições
+#     [Documentation]     Caso de teste valida botão Inserir "Comercial" em Requisições
 #     [Tags]    Requisições    Funcional        
 #     Dado que clico no menu "Requisições"
-#     Quando clico em "Filtros"
-#     E preencho filtro Cliente
-#     E clico no botão "Comentários"
-#     E preencho informações de comentário
-#     Então sistema exibe mensagem de confirmação
+#     Quanto clico no botão "Inserir/Comercial"
+#     E preencho informações de cadastro de requisição
+#     Então sistema exibe mensagem de cadastro realizado
+
+CT 02.21 - Validar botão Inserir "Ti" em Requisições
+    [Documentation]     Caso de teste valida botão Inserir "Ti" em Requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quanto clico no botão "Inserir/Ti"
+    Então sistema exibe mensagem de cadastro TI realizado
+    
+# CT 02.22 - Validar botão Inserir "Departamento pessoal" em Requisições
+#     [Documentation]     Caso de teste valida botão Inserir "Departamento pessoal" em Requisições
+#     [Tags]    Requisições    Funcional        
+#     Dado que clico no menu "Requisições"
+#     Quanto clico no botão "Inserir/DP"
+#     E preencho informações de cadastro de requisição "Departamento Pessoal"
+#     Então sistema exibe mensagem de cadastro realizado
 
 
+# Comentário
+# ...
 # Inserir
 # Excluir
-# Comentário
