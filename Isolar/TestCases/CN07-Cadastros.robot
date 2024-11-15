@@ -181,6 +181,7 @@ CT 07.03.03 - Validar funcionalidade "editar" menu Cadastros > Grupos Consumidor
     Dado que clico no menu "Cadastros > Grupos Consumidores"
     E clico no botao buscar
     E preencho informações de pesquisa
+    E clico no botao "acoes"
     Quando clico em "Editar"
     E preencho informações de cadastro editado em Tipo de Gerador
     Então sistema exibe informações de "Editar"
@@ -220,7 +221,6 @@ CT 07.03.07 - Validar filtro "Cards ou Lista" no menu Cadastros > Grupo Consumid
     E clico em "Lista"
     Então sistema exibe informações com filtro "Lista"
 
-
 CT 07.03.08 - Validar busca não encontrada no filtro buscar no menu Cadastros > Grupos Consumidores
     [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Gupos Consumidores
     [Tags]    Cadastros    Grupo Consumidores    Funcional        
@@ -258,6 +258,7 @@ CT 07.04.03 - Validar funcionalidade "editar" menu Cadastros > Tipo de Gerador
     Dado que clico no menu "Cadastros > Tipo de Gerador"
     E clico no botao buscar
     E preencho informações de pesquisa
+    E clico no botao "acoes"
     Quando clico em "Editar"
     E preencho informações de cadastro editado em Tipo de Gerador
     Então sistema exibe informações de "Editar"
@@ -334,6 +335,7 @@ CT 07.05.03 - Validar funcionalidade "editar" menu Cadastros > Tipo de Financiam
     Dado que clico no menu "Cadastros > Tipo de Financiamento"
     E clico no botao buscar
     E preencho informações de pesquisa
+    E clico no botao "acoes"
     Quando clico em "Editar"
     E preencho informações de cadastro editado em Tipo de Gerador
     Então sistema exibe informações de "Editar"
@@ -411,6 +413,7 @@ CT 07.06.03 - Validar funcionalidade "editar" menu Cadastros > Classificações
     Dado que clico no menu "Cadastros > Classificações"
     E clico no botao buscar
     E preencho informações de pesquisa
+    E clico no botao "acoes"
     Quando clico em "Editar"
     E preencho informações de cadastro editado em Tipo de Gerador
     Então sistema exibe informações de "Editar"
@@ -487,6 +490,7 @@ CT 07.07.03 - Validar funcionalidade "editar" menu Cadastros > Motivos de Urgên
     Dado que clico no menu "Cadastros > Motivos de Urgência"
     E clico no botao buscar
     E preencho informações de pesquisa
+    E clico no botao "acoes"
     Quando clico em "Editar"
     E preencho informações de cadastro editado em Tipo de Gerador
     Então sistema exibe informações de "Editar"
@@ -562,6 +566,7 @@ CT 07.08.03 - Validar funcionalidade "editar" menu Cadastros > Concessionárias
     Dado que clico no menu "Cadastros > Concessionárias"
     E clico no botao buscar
     E preencho informações de pesquisa
+    E clico no botao "acoes"
     Quando clico em "Editar"
     E preencho informações de cadastro editado em Concessionárias
     Então sistema exibe informações de "Editar"
@@ -637,6 +642,7 @@ CT 07.09.03 - Validar funcionalidade "editar" menu Cadastros > Departamentos
     Dado que clico no menu "Cadastros > Departamentos"
     E clico no botao buscar
     E preencho informações de pesquisa
+    E clico no botao "acoes"
     Quando clico em "Editar"
     E preencho informações de cadastro editado em Departamentos
     Então sistema exibe informações de "Editar"
@@ -712,6 +718,7 @@ CT 07.10.03 - Validar funcionalidade "editar" menu Cadastros > Origem da indica�
     Dado que clico no menu "Cadastros > Origem da indicação"
     E clico no botao buscar
     E preencho informações de pesquisa
+    E clico no botao "acoes"
     Quando clico em "Editar"
     E preencho informações de cadastro editado em Origem da indicação
     Então sistema exibe informações de "Editar"

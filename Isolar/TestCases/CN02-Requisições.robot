@@ -196,3 +196,13 @@ CT 02.23 - Validar excluir em requisições
     E clico no botão "Excluir requisição"
     Então sistema exclui e retorna para menu requisições 
 
+CT 02.24 - Validar funcionalidade excluir cadastro de requisiçao em Cadastros > Clientes
+    [Documentation]     Caso de teste valida funcionalidade excluir em requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Cadastros > Clientes"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+
+

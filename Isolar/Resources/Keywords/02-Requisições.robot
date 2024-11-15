@@ -13,7 +13,7 @@ ${Campo_Nivel_Urgencia}                 //div[@role='option' and contains(.,'Alt
 
 ${Botao_Buscar}                         //button[contains(.,'Buscar')]
 ${Botao_Editar}                         (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')])[1]
-${Botao_Visualizar}                     //a[@href='https://teste.grupoiso.com.br/requisicoes/visualizar/1951']
+${Botao_Visualizar}                     //a[contains(@href, "/requisicoes/visualizar/1960") and @data-state="closed"]
 ${Botao_Acoes}                          (//button[@data-state='closed'])[19]
 ${Botao_Historico}                      (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10')])[3]
 ${Botao_Comentarios}                    (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[4]
@@ -381,6 +381,7 @@ E preencho informações de cadastro de requisição
     Click Element    (//div[contains(.,'teste')])[5]
 
     Click Element    (//button[contains(.,'Selecione')])[1]
+    Sleep    1s
     Click Element    (//div[contains(.,'teste')])[16]
 
     Click Element    //button[contains(.,'Selecione')]
@@ -405,7 +406,6 @@ E preencho informações de cadastro de requisição
     Click Element      ${Botao_Proximo_Requisicoes}
 # 4
     Input Text        //input[@placeholder='DD/MM/YYYY']    11112026
-    Input Text        //textarea[@placeholder='Descreva']    Teste
     Click Element     //button[contains(.,'Salvar')]
 
 Então sistema exibe mensagem de cadastro realizado
@@ -435,6 +435,8 @@ Então sistema conlcui edição de requisição
 # --2.16
 
 E clico no botão "Visualizar"
+    Sleep    1s
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
     Wait Until Element Is Visible    ${Botao_Visualizar}   
     Click Element                    ${Botao_Visualizar}
 

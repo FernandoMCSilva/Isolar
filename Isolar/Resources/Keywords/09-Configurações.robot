@@ -50,6 +50,7 @@ ${botao_DecontoConcessionarias}     //button[contains(.,'Concessionárias')]
 ${botao_DecontoGruposTarifarios}    //button[contains(.,'Grupos tárifarios')]
 ${botaox_RemoverSupervisor}         //div[contains(@aria-label,'Remove Fernando Morais da Costa Silva')]
 ${botao_AtualizarConfig}            //button[contains(.,'Atualizar')]
+${botao_Editar_Configuracoes}       //button[contains(.,'Editar')]
 
 ${opcao_ObrigatorioNao}             //button[@id='opcao1']
 ${opcao_ObrigatorioSim}             //button[@id='opcao2']
@@ -158,6 +159,10 @@ Então sistema exibe mensagem de pergunta adicionada no menu Configurações > R
     Wait Until Page Contains    text=Pergunta adicionada com sucesso!
 
 # -9.01.10
+Quando clico em "Editar" em configurações
+    Wait Until Element Is Visible    ${botao_Editar_Configuracoes}
+    Click Element                    ${botao_Editar_Configuracoes}
+
 E preencho informações de pergunta editada no menu Configurações > Requisições > Perguntas
     Sleep    2s
     Input Text            (//input[@value='B3 (teste)'])[1]    ${nome_pesquisa_GruposConsumidores}

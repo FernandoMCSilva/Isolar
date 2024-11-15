@@ -90,7 +90,7 @@ CT 09.01.10 - Validar funcionalidade "Editar" em Perguntas no menu Configuraçõ
     E clico no botao "Perguntas"
     E clico no botao buscar
     E preencho informações de pesquisa
-    Quando clico em "Editar"
+    Quando clico em "Editar" em configurações
     E preencho informações de pergunta editada no menu Configurações > Requisições > Perguntas
     Então sistema exibe informações de "Editar" no menu Configurações > Requisições > Perguntas
 

@@ -159,8 +159,8 @@ CT 03.19 - Tentar aplicar desconto "acima do limite"
 
 # BOTÃO GERAR (ESTIMATIVA)
 
-CT 03.20 - Validar Condições de simulação
-    [Documentation]    Caso de teste valida combobox
+CT 03.20 - Validar Gerar em estimativa
+    [Documentation]    Caso de teste valida botao gerar em estimativa
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Gerar"

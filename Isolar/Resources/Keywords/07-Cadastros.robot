@@ -19,13 +19,17 @@ ${nome_pesquisa_GruposConsumidores}             B3 (teste)
 ${nome_pesquisa_pessoas}                        Fernando
 ${nome_BuscaNaoEncontrada}                      1234
 ${botao_buscar_CadastrosPessoas}                //button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')]
-${botao_Editar}                                 (//a[contains(.,'Editar')])[1]
+${botao_Editar_Pessoas}                                 (//a[contains(.,'Editar')])[1]
 ${botao_Excluir_CadastrosPessoas}               //button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-destructive text-destructive-foreground hover:bg-destructive/90 h-10 px-4 py-2')]
 ${botao_continuar_Excluir}                      //button[contains(.,'Continuar')]
 ${botao_Cancelar}                               //button[contains(.,'Cancelar')]
 ${botao_salvar_CadastrosPessoas}                //button[contains(.,'Salvar')]
 ${botao_Excluir_CadastrosGruposConsumidores}    //button[contains(.,'Excluir')]
 ${botao_atualizar_CadastrosPessoas}             //button[contains(.,'Atualizar')]
+${botao_acoes_Clientes}                         //button[contains(.,'Ações')]
+${botao_Editar_Clientes}                        //button[contains(.,'Editar')]
+${botao_SalvarCadastro_Clientes}                //button[contains(.,'Salvar')]
+
 ${input_buscar_CadastrosPessoas}                //input[contains(@placeholder,'Buscar...')]
 ${input_descricao_GruposConsumidores}           //input[@id='descricao']
 ${input_buscar_GruposConsumidores}              xpath=//input[contains(@class, 'flex h-10')]
@@ -50,12 +54,14 @@ Então sistema exibe informações de cadastro de "Pessoas"
 
 # -07.01.02
 Quando clico no botão "Inserir"
+    Sleep    2s
     Wait Until Element Is Visible    //button[contains(.,'Inserir')]
     Click Element    //button[contains(.,'Inserir')]
 
 # -07.01.03
 Quando clico em "Excluir"
     Sleep    2s
+    Click Element                    ${botao_acoes_Clientes}
     Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
     Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
 
@@ -94,7 +100,7 @@ E preencho informações de pesquisa
     Input Text    //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
 
 Então sistema exibe informações de pesquisa
-     ${nome_resultado}=    Get Text    //p[contains(.,'B3 (teste)')]
+     ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
 
@@ -119,9 +125,13 @@ Então sistema exibe informações de cadastro de "Grupo Consumidores"
 
 # -07.01.09
 
+E clico no botao "acoes"
+    Wait Until Element Is Visible    ${botao_acoes_Clientes}
+    Click Element                    ${botao_acoes_Clientes}
+
 Quando clico em "Editar"
-    Sleep    2s
-    Click Element    ${botao_Editar}
+    Wait Until Element Is Visible    ${botao_Editar_Configuracoes}    timeout=10s
+    Click Element                    ${botao_Editar_Configuracoes}
 
 E preencho informações de cadastro editado
     Wait Until Page Contains    text=Editar Informações
@@ -134,7 +144,7 @@ E preencho informações de cadastro editado
     Click Element     (//div[contains(.,'Vendedor técnico')])[13]
     Click Element     (//div[contains(.,'Representante comercial')])[13]
     Click Element     xpath=//div[contains(@class, 'select__multi-value__remove')]
-    Click Element     ${botao_atualizar_CadastrosPessoas}
+    Click Element     ${botao_SalvarCadastro_Clientes}
 
 Então sistema exibe informações de "Editar"
     Wait Until Page Contains    text=Informações atualizadas com sucesso!
@@ -173,8 +183,9 @@ E preencho informações de inserir novo cadastro de Clientes
     Input Text        ${input_Telefone_Clientes}              99999999999
     Input Text        ${input_AtividadeEconomica_Clientes}    teste
     Input Text        ${input_CEP_Clientes}                   28990154
-    Click Element     ${botao_salvar_CadastrosPessoas}
+    Sleep    3s
 Então sistema salva novo cadastro de Clientes
+    # Sleep    10s
     Wait Until Page Contains    text=Cliente cadastrado com sucesso!
 
 # -07.02.03
@@ -189,7 +200,7 @@ E preencho informações de cadastro editado no menu Cadastros > Clientes
 
 # -07.02.04
 Então sistema exibe informações de pesquisa de Clientes
-    ${nome_resultado}=    Get Text    //p[contains(.,'B3 (teste)')]
+    ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    Log    "O resultado da pesquisa é B3. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é B3. Teste falhou."    WARN
 
@@ -239,7 +250,7 @@ Então sistema exibe mensagem de erro em Grupos Consumidores
 # -07.03.04
 
 Então sistema exibe informações de pesquisa de Grupos Consumidores
-    ${nome_resultado}=    Get Text    //p[contains(.,'B3 (teste)')]
+    ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    Log    "O resultado da pesquisa é B3. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é B3. Teste falhou."    WARN
 
@@ -272,7 +283,7 @@ Então sistema exclui item do menu Cadastro > Tipo de Gerador
 
 # -07.04.06
 Então sistema exibe informações de pesquisa de Tipo de Gerador
-    ${nome_resultado}=    Get Text    //p[contains(.,'B3 (teste)')]
+    ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    Log    "O resultado da pesquisa é B3. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é B3. Teste falhou."    WARN
 

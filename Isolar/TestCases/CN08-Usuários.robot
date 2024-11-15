@@ -26,6 +26,7 @@ CT 08.03 - Validar funcionalidade "editar" Usuários
     Dado que clico no menu "Usuários"
     E clico no botao buscar
     E preencho informações de pesquisa
+    E clico no botao "acoes"
     Quando clico em "Editar"
     E preencho informações de cadastro editado no menu Usuários
     E preencho campo de senha

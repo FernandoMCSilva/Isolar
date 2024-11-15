@@ -11,6 +11,11 @@ ${Cliente_Fila}           Fernando
 @{TIPO_USINAS}        Todos     Autoconsumo    Aluguel
 ${EXPECTED_RESULTS}    10
 
+${botao_gerar_assinatura}            //td[contains(@class, 'p-4 align-middle') and contains(@class, 'text-center')]//button
+${botao_imprimir_estimativa}        //button[contains(.,'Imprimir Estimativa')]
+${botao_verPDF}                     //td[contains(@class, 'p-4 align-middle') and contains(@class, 'text-center')]//button
+
+
 *** Keywords ***
 # --3.1
 Dado que clico no menu "Estimativa"
@@ -23,8 +28,8 @@ Então sistema exibe informações de estimativas
 
 # --3.2
 E preencho informações no campo Vendedor
-    Wait Until Element Is Visible    ${Campo_Vendedor}
-    Input Text                       ${Campo_Vendedor}        Fernando
+    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]
+    Press Keys    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
 
 E clico em "Buscar"
     Click Element                    ${Botao_Buscar}
@@ -153,8 +158,7 @@ Então sistema exibe Estimativa anteriores
 
 Quando clico em "Gerar link de assinatura"
     Sleep    2s
-    Click Element    (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[5]
-
+    Click Element    ${botao_gerar_assinatura}
 E clico em "Não"
     Click Element    //button[contains(.,'Sim')]
     Click Element    //button[contains(@class, 'absolute') and contains(@class, 'right-4') and contains(@class, 'top-4') and contains(@class, 'rounded-sm')]
@@ -175,10 +179,10 @@ Então sistema exibe informações para criar assinaturas
 # --3.14
 
 Quando clico no botão "Ver PDF"
-    Wait Until Element Is Visible    (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[3]
-    Click Element    (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[3]
+    Wait Until Element Is Visible    ${botao_verPDF}
+    Click Element                    ${botao_verPDF}
 Então sistema exibe informações em aquivo PDF
-    Wait Until Page Contains    text=Estimativa
+    Wait Until Page Contains    text=Estimativa de Nº
 
 # --3.15
 
@@ -189,8 +193,8 @@ Então sistema exibe informações em aquivo PDF
 # --3.16
 
 E clico em "imprimir Estimativa"
-    Wait Until Element Is Visible    //button[contains(.,'Imprimir Estimativa')]
-    Click Element    //button[contains(.,'Imprimir Estimativa')]
+    Wait Until Element Is Visible    ${botao_imprimir_estimativa}
+    Click Element                    ${botao_imprimir_estimativa}
 
 
 Então sistema exibe informações de estimativa em arquivo PDF
@@ -235,7 +239,7 @@ Então sistema exibe informações do botão Gerar
 
 E seleciono Local de instalação "Solo"
     Sleep    5s
-    Click Element    xpath=//button[contains(@aria-controls,'radix-:rq:')]
+    Click Element    (//button[contains(.,'Selecione')])[1]
     Click Element    xpath=//div[@role='option'][contains(.,'Solo')]
 
 E seleciono Autoconsumo ou Aluguel "Autoconsumo"
