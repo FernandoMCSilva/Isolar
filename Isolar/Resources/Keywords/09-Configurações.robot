@@ -99,11 +99,15 @@ Então sistema salva novo Tipo de requisição
     Wait Until Page Contains    text=Registro adicionado com sucesso!
 
 # -9.01.03
+Quando clico em "Editar" em configuracoes
+    Wait Until Element Is Visible    ${botao_Editar_Configuracoes}
+    Click Element                    ${botao_Editar_Configuracoes}
+
 E preencho informações de cadastro editado no menu Configurações > Requisições
     Sleep    2s
     Input Text               ${input_NomeDaRequisicao}    ${nome_pesquisa_GruposConsumidores}
     Click Element            (//div[contains(.,'TI')])[12]
-    Click Element            (//div[contains(.,'Comercial')])[13]
+    Click Element            (//div[contains(.,'Compras')])[13]
     Click Element            ${input_NomeDaRequisicao}
     # Click Element            //div[@class='col-start-2 col-end-3 min-w-24 min-h-12 border p-2 rounded-sm'][contains(.,'Clique para editar o nome da Seção')]
     # Input Text               css:.relative    ${nome_pesquisa_GruposConsumidores}
@@ -128,6 +132,11 @@ Então sistema exibe informações de pesquisa de tipo de requisição
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
 
+
+# -9.01.06
+Quando clico em "Excluir" em configurações
+    Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
+    Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
 
 # -9.01.07
 Então sistema exclui item do menu Configurações > Requisições
@@ -166,7 +175,6 @@ Quando clico em "Editar" em configurações
 E preencho informações de pergunta editada no menu Configurações > Requisições > Perguntas
     Sleep    2s
     Input Text            (//input[@value='B3 (teste)'])[1]    ${nome_pesquisa_GruposConsumidores}
-    Click Element         //button[contains(.,'Texto')]
     Click Element         (//div[contains(.,'Data')])[4]
     Click Element         ${botao_Salvar}
 

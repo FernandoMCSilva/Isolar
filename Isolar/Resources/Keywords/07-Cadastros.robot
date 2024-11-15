@@ -29,6 +29,7 @@ ${botao_atualizar_CadastrosPessoas}             //button[contains(.,'Atualizar')
 ${botao_acoes_Clientes}                         //button[contains(.,'Ações')]
 ${botao_Editar_Clientes}                        //button[contains(.,'Editar')]
 ${botao_SalvarCadastro_Clientes}                //button[contains(.,'Salvar')]
+${botao_acoes_Pessoas}                          //button[contains(.,'Ações')]
 
 ${input_buscar_CadastrosPessoas}                //input[contains(@placeholder,'Buscar...')]
 ${input_descricao_GruposConsumidores}           //input[@id='descricao']
@@ -88,6 +89,12 @@ Quando clico no filtro "Cards"
 E clico em "Lista"
     Click Element    ${filtro_botaoLista}
 
+Então sistema exibe informações com filtro "Lista" em Motivos de urgência
+    Sleep    2s
+    ${titulo_nome}=    Run Keyword And Return Status    Element Should Be Visible    //th[contains(.,'Motivo')]
+    Run Keyword If    ${titulo_nome}    Log    "O Título Nome está visível. Funcionou."
+    ...    ELSE    Fail    "O Título Nome não está visível. Falhou."
+
 Então sistema exibe informações com filtro "Lista"
     Sleep    2s
     ${titulo_nome}=    Run Keyword And Return Status    Element Should Be Visible    //th[contains(.,'Nome')]
@@ -130,6 +137,8 @@ E clico no botao "acoes"
     Click Element                    ${botao_acoes_Clientes}
 
 Quando clico em "Editar"
+    Wait Until Element Is Visible    ${botao_acoes_Pessoas}
+    Click Element                    ${botao_acoes_Pessoas}
     Wait Until Element Is Visible    ${botao_Editar_Configuracoes}    timeout=10s
     Click Element                    ${botao_Editar_Configuracoes}
 
@@ -144,7 +153,7 @@ E preencho informações de cadastro editado
     Click Element     (//div[contains(.,'Vendedor técnico')])[13]
     Click Element     (//div[contains(.,'Representante comercial')])[13]
     Click Element     xpath=//div[contains(@class, 'select__multi-value__remove')]
-    Click Element     ${botao_SalvarCadastro_Clientes}
+    Click Element     ${botao_atualizar_CadastrosPessoas}
 
 Então sistema exibe informações de "Editar"
     Wait Until Page Contains    text=Informações atualizadas com sucesso!
@@ -152,7 +161,7 @@ Então sistema exibe informações de "Editar"
 # -07.01.09
 
 E preencho informações de inserir novo cadastro de pessoas
-    Sleep    5s
+    Wait Until Element Is Visible    //input[@name='Nome']    timeout=10s
     Input Text       //input[@name='Nome']   ${nome_pesquisa_GruposConsumidores}
     Input Text       //input[@name='CPF']    19895982771
     Input Text       //input[@name='Telefone']    21981905892

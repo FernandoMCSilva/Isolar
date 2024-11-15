@@ -26,7 +26,7 @@ CT 09.01.03 - Validar funcionalidade "editar" Configurações > Requisições
     Dado que clico no menu "Configurações > Requisições"
     E clico no botao buscar
     E preencho informações de pesquisa
-    Quando clico em "Editar"
+    Quando clico em "Editar" em configuracoes
     E preencho informações de cadastro editado no menu Configurações > Requisições
     Então sistema exibe informações de "Editar" no menu Configurações > Requisições
 
@@ -53,7 +53,7 @@ CT 09.01.06 - Validar botão "Cancelar" em Excluir no menu Configurações > Req
     Dado que clico no menu "Configurações > Requisições"
     E clico no botao buscar
     E preencho informações de pesquisa
-    Quando clico em "Excluir"
+    Quando clico em "Excluir" em configurações
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de menu Requisições
 
@@ -63,7 +63,7 @@ CT 09.01.07 - Validar botão "Continuar" em Excluir no menu Configurações > Re
     Dado que clico no menu "Configurações > Requisições"
     E clico no botao buscar
     E preencho informações de pesquisa
-    Quando clico em "Excluir"
+    Quando clico em "Excluir" em configurações
     E clico no botão "Continuar" em "Excluir"
     Então sistema exclui item do menu Configurações > Requisições
 
@@ -110,7 +110,7 @@ CT 09.01.12 - Validar botão "Excluir" em perguntas no menu Configurações > Re
     E clico no botao "Perguntas"
     E clico no botao buscar
     E preencho informações de pesquisa
-    Quando clico em "Excluir"
+    Quando clico em "Excluir" em configurações
     Então sistema exclui pergunta do menu Configurações > Requisições > Perguntas
 
 CT 09.01.13 - Validar filtro "Cards ou Lista" em Perguntas no menu Configurações > Requisições

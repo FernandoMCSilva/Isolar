@@ -527,7 +527,7 @@ CT 07.07.07 - Validar filtro "Cards ou Lista" no menu Cadastros > Motivos de Urg
     Dado que clico no menu "Cadastros > Motivos de Urgência"
     Quando clico no filtro "Cards"
     E clico em "Lista"
-    Então sistema exibe informações com filtro "Lista"
+    Então sistema exibe informações com filtro "Lista" em Motivos de urgência
 
 CT 07.07.08 - Validar busca não encontrada no filtro buscar no menu Cadastros > Motivos de Urgência
     [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Motivos de Urgência

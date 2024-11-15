@@ -107,11 +107,11 @@ CT 02.13 - Validar filtro Renovadas
     E valido todos os filtros dentro de "Renovadas"
     Então sistema exibe requisições de filtro Renovadas
 
-CT 02.14 - Validar botão Inserir "Comercial" em Requisições
-    [Documentation]     Caso de teste valida botão Inserir "Comercial" em Requisições
+CT 02.14 - Validar botão Inserir "Técnico" em Requisições
+    [Documentation]     Caso de teste valida botão Inserir "Técnico" em Requisições
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
-    Quanto clico no botão "Inserir/Comercial"
+    Quanto clico no botão "Inserir/Técnico"
     E preencho informações de cadastro de requisição
     Então sistema exibe mensagem de cadastro realizado
 
@@ -131,6 +131,7 @@ CT 02.16 - Validar botão Visualizar em Requisições
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro Cliente
+    E clico no botao "acoes"
     E clico no botão "Visualizar"
     Então sistema exibe informações de Visualizar em requisições
 

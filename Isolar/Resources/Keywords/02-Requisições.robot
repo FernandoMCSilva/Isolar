@@ -13,7 +13,7 @@ ${Campo_Nivel_Urgencia}                 //div[@role='option' and contains(.,'Alt
 
 ${Botao_Buscar}                         //button[contains(.,'Buscar')]
 ${Botao_Editar}                         (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')])[1]
-${Botao_Visualizar}                     //a[contains(@href, "/requisicoes/visualizar/1960") and @data-state="closed"]
+${Botao_Visualizar}                     (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')])[2]
 ${Botao_Acoes}                          (//button[@data-state='closed'])[19]
 ${Botao_Historico}                      (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10')])[3]
 ${Botao_Comentarios}                    (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[4]
@@ -39,9 +39,9 @@ ${COMBOBOX_RESPONSAVEL}        (//button[contains(@dir,'ltr')])[3]
 ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 
 
-@{OPCOES_COMBOBOX_DEPARTAMENTO}     (//div[contains(.,'Comercial')])[14]  (//div[contains(.,'Compras')])[5]      (//div[contains(.,'Técnico')])[14]    
+@{OPCOES_COMBOBOX_DEPARTAMENTO}       (//div[contains(.,'Compras')])[5]      (//div[contains(.,'Técnico')])[14]    
 ...    (//div[contains(.,'Administrativo')])[5]              (//div[contains(.,'TI')])[5]          (//div[contains(.,'Logística')])[5]    (//div[contains(.,'Jurídico')])[5]
-...    (//div[contains(.,'Departamento pessoal')])[5]        (//div[contains(.,'ENG.CIVIL')])[5]    (//div[contains(.,'OBRAS')])[5]    (//div[contains(.,'CS-Customer Success')])[5]
+...    (//div[contains(.,'Departamento pessoal')])[5]        (//div[contains(.,'ENG.CIVIL')])[5]    (//div[contains(.,'CS-Customer Success')])[5]
 @{OPCOES_COMBOBOX_STATUS}           (//div[contains(.,'Fila')])[22]    (//div[contains(.,'Produção')])[5]    (//div[contains(.,'Concluído')])[22]    (//div[contains(.,'Parado')])[5]
 @{OPCOES_COMBOBOX_TIPO}             (//div[contains(.,'Estimativa')])[19]    (//div[contains(.,'Pós Venda')])[5]    (//div[contains(.,'Compra')])[5]    (//div[contains(.,'Defeito com computador/notebook')])[5]    (//div[contains(.,'Defeito com impressora')])[5]    
 ...     (//div[contains(.,'Problemas com internet')])[5]    (//div[contains(.,'Novo Colaborador')])[5]    (//div[contains(.,'Bloqueio de Acesso a Plataforma')])[5]    (//div[contains(.,'Problema com Sistema')])[5]    
@@ -356,10 +356,10 @@ Então sistema exibe requisições de filtro Renovadas
     Wait Until Page Contains    text=Requisições
 
 # --2.14
-Quanto clico no botão "Inserir/Comercial"
+Quanto clico no botão "Inserir/Técnico"
     Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
     Click Element    ${Botao_Inserir_Requisicoes}
-    Click Element    //button[contains(.,'Comercial')]
+    Click Element    //button[contains(.,'Técnico')]
     Click Element    //button[contains(.,'Estimativa')]
 
 E preencho informações de cadastro de requisição
@@ -397,7 +397,7 @@ E preencho informações de cadastro de requisição
     Click Element    (//div[contains(.,'B1 (RESIDENCIAL)')])[5]
 
     Click Element    (//button[contains(.,'Selecione')])[1]
-    Click Element    (//div[contains(.,'B3 (teste)')])[5]
+    Click Element    (//div[contains(.,'Light')])[5]
 
     Click Element    //button[contains(.,'Selecione')]
     Click Element    (//div[contains(.,'Telhado')])[5]
