@@ -13,8 +13,7 @@ ${EXPECTED_RESULTS}    10
 
 ${botao_gerar_assinatura}            //td[contains(@class, 'p-4 align-middle') and contains(@class, 'text-center')]//button
 ${botao_imprimir_estimativa}        //button[contains(.,'Imprimir Estimativa')]
-${botao_verPDF}                     //td[contains(@class, 'p-4 align-middle') and contains(@class, 'text-center')]//button
-
+${botao_verPDF}                     (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[5]
 
 *** Keywords ***
 # --3.1
@@ -181,8 +180,9 @@ Então sistema exibe informações para criar assinaturas
 Quando clico no botão "Ver PDF"
     Wait Until Element Is Visible    ${botao_verPDF}
     Click Element                    ${botao_verPDF}
+
 Então sistema exibe informações em aquivo PDF
-    Wait Until Page Contains    text=Estimativa de Nº
+    Wait Until Page Contains    text=Estimativa de Nº 43
 
 # --3.15
 

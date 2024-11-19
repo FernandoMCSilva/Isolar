@@ -39,7 +39,7 @@ ${COMBOBOX_RESPONSAVEL}        (//button[contains(@dir,'ltr')])[3]
 ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 
 
-@{OPCOES_COMBOBOX_DEPARTAMENTO}       (//div[contains(.,'Compras')])[5]      (//div[contains(.,'Técnico')])[14]    
+@{OPCOES_COMBOBOX_DEPARTAMENTO}       (//div[contains(.,'Compras')])[5]      //span[contains(.,'Técnico')]    
 ...    (//div[contains(.,'Administrativo')])[5]              (//div[contains(.,'TI')])[5]          (//div[contains(.,'Logística')])[5]    (//div[contains(.,'Jurídico')])[5]
 ...    (//div[contains(.,'Departamento pessoal')])[5]        (//div[contains(.,'ENG.CIVIL')])[5]    (//div[contains(.,'CS-Customer Success')])[5]
 @{OPCOES_COMBOBOX_STATUS}           (//div[contains(.,'Fila')])[22]    (//div[contains(.,'Produção')])[5]    (//div[contains(.,'Concluído')])[22]    (//div[contains(.,'Parado')])[5]

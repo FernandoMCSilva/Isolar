@@ -52,14 +52,14 @@ Então sistema exibe informações de filtro Responsável "suporte"
     Run Keyword Unless    '${resultado}' == 'suporte'    Fail    Reprovado.
 
 # --10.01.05
-# E seleciono filtro Vendedor Técnico "Todos"
-#     Click Element    (//button[contains(.,'Todos')])[3]
-#     Click Element    (//div[contains(.,'Todos')])[28]
-# Então sistema exibe informações de filtro Vendedor Técnico "Todos"
-#     Wait Until Element Is Visible    (//td[contains(.,'Não definido')])[2]    timeout=10s
-#     ${resultado}=    Get Text    (//td[contains(.,'Não definido')])[2]
-#     Run Keyword If    '${resultado}' == 'Todos'    Log    Aprovado.
-#     Run Keyword Unless    '${resultado}' == 'Todos'    Fail    Reprovado.
+E seleciono filtro Vendedor Técnico "Todos"
+    Click Element    (//button[contains(.,'Todos')])[3]
+    Click Element    (//div[contains(.,'Todos')])[28]
+Então sistema exibe informações de filtro Vendedor Técnico "Todos"
+    Wait Until Element Is Visible    (//td[contains(.,'Não definido')])[2]    timeout=10s
+    ${resultado}=    Get Text    (//td[contains(.,'Não definido')])[2]
+    Run Keyword If    '${resultado}' == 'Todos'    Log    Aprovado.
+    Run Keyword Unless    '${resultado}' == 'Todos'    Fail    Reprovado.
 
 # # --10.01.06
 # E seleciono filtro Representante comercial "Todos"

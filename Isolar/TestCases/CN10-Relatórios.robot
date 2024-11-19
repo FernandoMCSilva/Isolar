@@ -38,14 +38,14 @@ CT 10.01.04 - Validar filtro Responsável no menu Relatórios > Relatórios
     E clico em "Buscar"
     Então sistema exibe informações de filtro Responsável "suporte"
 
-# CT 10.01.05 - Validar filtro Vendedor Técnico no menu Relatórios > Relatórios
-#     [Documentation]     Caso de teste valida se filtro Vendedor Técnico no Menu Relatórios > Relatórios está funcional
-#     [Tags]    Relatórios    Relatórios    Funcional        
-#     Dado que clico no menu "Relatórios > Relatórios"
-#     Quando clico em "Filtros"
-#     E seleciono filtro Vendedor Técnico "Todos"
-#     E clico em "Buscar"
-#     Então sistema exibe informações de filtro Vendedor Técnico "Todos"
+CT 10.01.05 - Validar filtro Vendedor Técnico no menu Relatórios > Relatórios
+    [Documentation]     Caso de teste valida se filtro Vendedor Técnico no Menu Relatórios > Relatórios está funcional
+    [Tags]    Relatórios    Relatórios    Funcional        
+    Dado que clico no menu "Relatórios > Relatórios"
+    Quando clico em "Filtros"
+    E seleciono filtro Vendedor Técnico "Todos"
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Vendedor Técnico "Todos"
 
 # CT 10.01.06 - Validar filtro Representante comercial no menu Relatórios > Relatórios
 #     [Documentation]     Caso de teste valida se filtro Representante comercial no Menu Relatórios > Relatórios está funcional

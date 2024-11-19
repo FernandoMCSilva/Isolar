@@ -135,10 +135,8 @@ Então sistema exibe informações de cadastro de "Grupo Consumidores"
 E clico no botao "acoes"
     Wait Until Element Is Visible    ${botao_acoes_Clientes}
     Click Element                    ${botao_acoes_Clientes}
-
+    
 Quando clico em "Editar"
-    Wait Until Element Is Visible    ${botao_acoes_Pessoas}
-    Click Element                    ${botao_acoes_Pessoas}
     Wait Until Element Is Visible    ${botao_Editar_Configuracoes}    timeout=10s
     Click Element                    ${botao_Editar_Configuracoes}
 

@@ -60,7 +60,7 @@ E preencho informações de cadastro editado no menu Usuários
     Click Element    //span[contains(.,'Vendedor')]
     Click Element    ${botao_atualizar}
 E preencho campo de senha
-    Sleep    2s
+    Wait Until Element Is Visible    (//input[@type='password'])[2]
     Input Text    (//input[@type='password'])[2]    ${SenhaLocal} 
     Click Element    //button[contains(.,'Confirmar')]
 

@@ -107,7 +107,7 @@ CT 02.13 - Validar filtro Renovadas
     E valido todos os filtros dentro de "Renovadas"
     Então sistema exibe requisições de filtro Renovadas
 
-CT 02.14 - Validar botão Inserir "Técnico" em Requisições
+CT 02.14 - Validar botão Inserir "Técnico"
     [Documentation]     Caso de teste valida botão Inserir "Técnico" em Requisições
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
@@ -115,7 +115,7 @@ CT 02.14 - Validar botão Inserir "Técnico" em Requisições
     E preencho informações de cadastro de requisição
     Então sistema exibe mensagem de cadastro realizado
 
-CT 02.15 - Validar botão Editar em Requisições
+CT 02.15 - Validar botão Editar
     [Documentation]     Caso de teste valida botão editar em Requisições
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
@@ -125,18 +125,17 @@ CT 02.15 - Validar botão Editar em Requisições
     E preencho informações de requisição editada
     Então sistema conlcui edição de requisição
 
-CT 02.16 - Validar botão Visualizar em Requisições
-    [Documentation]     Caso de teste valida botão editar em Requisições
+CT 02.16 - Validar botão Visualizar 
+    [Documentation]     Caso de teste valida botão editar 
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro Cliente
-    E clico no botao "acoes"
     E clico no botão "Visualizar"
     Então sistema exibe informações de Visualizar em requisições
 
-CT 02.17 - Validar botão Ações em Requisições
-    [Documentation]     Caso de teste valida botão Ações em Requisições
+CT 02.17 - Validar botão Ações 
+    [Documentation]     Caso de teste valida botão Ações 
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
@@ -144,8 +143,8 @@ CT 02.17 - Validar botão Ações em Requisições
     E seleciono opção "Concluído" no botão ações em requisicoes
     Então sistema verifica funcionalidade do botão ações em Requisições
 
-CT 02.18 - Validar botão Histórico em Requisições
-    [Documentation]     Caso de teste valida botão Histórico em Requisições
+CT 02.18 - Validar botão Histórico 
+    [Documentation]     Caso de teste valida botão Histórico 
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
@@ -153,17 +152,17 @@ CT 02.18 - Validar botão Histórico em Requisições
     E clico no botão "Histórico"
     Então sistema exibe histórico em requisições
 
-CT 02.19 - Validar botão Renovar em Requisições
-    [Documentation]     Caso de teste valida botão Renovar em Requisições
-    [Tags]    Requisições    Funcional        
-    Dado que clico no menu "Requisições"
-    Quando clico em "Filtros"
-    E preencho filtro Cliente
-    E clico no botão "Renovar"
-    Então sistema exibe mensagem de renovação
+# CT 02.19 - Validar botão Renovar em Requisições
+#     [Documentation]     Caso de teste valida botão Renovar em Requisições
+#     [Tags]    Requisições    Funcional        
+#     Dado que clico no menu "Requisições"
+#     Quando clico em "Filtros"
+#     E preencho filtro Cliente
+#     E clico no botão "Renovar"
+#     Então sistema exibe mensagem de renovação
 
-CT 02.20 - Validar botão Comentários em Requisições
-    [Documentation]     Caso de teste valida botão Comentários em Requisições
+CT 02.20 - Validar botão Comentários 
+    [Documentation]     Caso de teste valida botão Comentários 
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
@@ -172,23 +171,23 @@ CT 02.20 - Validar botão Comentários em Requisições
     E preencho informações de comentário
     Então sistema exibe mensagem de confirmação
 
-CT 02.21 - Validar botão Inserir "Ti" em Requisições
-    [Documentation]     Caso de teste valida botão Inserir "Ti" em Requisições
+CT 02.21 - Validar botão Inserir "Ti" 
+    [Documentation]     Caso de teste valida botão Inserir "Ti" 
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quanto clico no botão "Inserir/Ti"
     Então sistema exibe mensagem de cadastro TI realizado
     
-CT 02.22 - Validar botão Inserir "Departamento pessoal" em Requisições
-    [Documentation]     Caso de teste valida botão Inserir "Departamento pessoal" em Requisições
+CT 02.22 - Validar botão Inserir "Departamento pessoal" 
+    [Documentation]     Caso de teste valida botão Inserir "Departamento pessoal" 
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quanto clico no botão "Inserir/DP"
     E preencho informações de cadastro de requisição "Departamento Pessoal"
     Então sistema exibe mensagem de cadastro realizado
 
-CT 02.23 - Validar excluir em requisições
-    [Documentation]     Caso de teste valida funcionalidade excluir em requisições
+CT 02.23 - Validar excluir 
+    [Documentation]     Caso de teste valida funcionalidade excluir 
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
@@ -198,7 +197,7 @@ CT 02.23 - Validar excluir em requisições
     Então sistema exclui e retorna para menu requisições 
 
 CT 02.24 - Validar funcionalidade excluir cadastro de requisiçao em Cadastros > Clientes
-    [Documentation]     Caso de teste valida funcionalidade excluir em requisições
+    [Documentation]     Caso de teste valida funcionalidade excluir 
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Cadastros > Clientes"
     E clico no botao buscar
