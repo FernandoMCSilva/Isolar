@@ -85,16 +85,8 @@ CT 03.10 - Validar botão Anterior
     Dado que clico no menu "Estimativa"
     Quando clico em "Próximo"
     E clico em "Anterior"
-    Então sistema exibe Estimativa anteriores
-
-# CT 03.11 - Validar botão Gerar link de assinatura inativo
-#     [Documentation]     Caso de teste valida botão Gerar link de assinatura inativo
-#     [Tags]    Estimativa    Funcional        
-#     Dado que clico no menu "Estimativa"
-#     # Quando clico em "Gerar link de assinatura" inativo
-# # #     Então sistema não executa nenhuma ação
-   
-CT 03.12 - Validar botão Não em confirmação do Gerar link de assinatura
+    Então sistema exibe Estimativa anteriores   
+CT 03.12 - Validar botão Não em Gerar link de assinatura
     [Documentation]     Caso de teste valida botão Não em confirmação do Gerar link de assinatura
     [Tags]    Estimativa    Funcional        
     Dado que clico no menu "Estimativa"
@@ -116,15 +108,6 @@ CT 03.14 - Validar botão Ver PDF
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Ver PDF"
     Então sistema exibe informações em aquivo PDF
-
-# CT 03.15 Validar botão Fechar PDF 
-#     [Documentation]    Caso de teste valida botão Fechar PDF
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Ver PDF"
-#     E clico em "Fechar PDF"
-# #     Então sistema retorna e exibe informações do menu Estimativa
-
 CT 03.16 - Validar botão Imprimir Estimativa em Ver PDF
     [Documentation]    Caso de teste testa botão Imprimir Estimativa em "Ver PDF"
     [Tags]    Estimativa    Funcional
@@ -156,10 +139,7 @@ CT 03.19 - Tentar aplicar desconto "acima do limite"
     Quando clico no botão "Aplicar desconto"
     E preencho informações de desconto acima do limite
     Então sistema exibe mensagem de erro de desconto máximo permitido
-
-# BOTÃO GERAR (ESTIMATIVA)
-
-CT 03.20 - Validar Gerar em estimativa
+CT 03.20 - Validar Gerar
     [Documentation]    Caso de teste valida botao gerar em estimativa
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"

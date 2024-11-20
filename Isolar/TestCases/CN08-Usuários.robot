@@ -11,7 +11,7 @@ CT 08.01 - Validar menu Usuários
     Dado que clico no menu "Usuários"
     Então sistema exibe usuários
 
-CT 08.02 - Validar funcionalidade "inserir" no Usuários
+CT 08.02 - Validar funcionalidade "inserir" 
     [Documentation]     Caso de teste valida se funcionalidade Inserir no Usuários está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"
@@ -20,7 +20,7 @@ CT 08.02 - Validar funcionalidade "inserir" no Usuários
     E clico em "Salvar" em Usuários
     Então sistema salva novo cadastro de Usuários
 
-CT 08.03 - Validar funcionalidade "editar" Usuários
+CT 08.03 - Validar funcionalidade "editar" 
     [Documentation]     Caso de teste valida se funcionalidade Editar no Usuários está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"
@@ -32,7 +32,7 @@ CT 08.03 - Validar funcionalidade "editar" Usuários
     E preencho campo de senha
     Então sistema exibe informações de "Editar"
 
-CT 08.04 - Validar filtro "buscar" no Usuários
+CT 08.04 - Validar filtro "buscar" 
     [Documentation]     Caso de teste valida se filtro buscar está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"
@@ -40,7 +40,7 @@ CT 08.04 - Validar filtro "buscar" no Usuários
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa
 
-CT 08.05 - Validar botão "Cancelar" em "Excluir" no Usuários
+CT 08.05 - Validar botão "Cancelar" em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"
@@ -48,7 +48,7 @@ CT 08.05 - Validar botão "Cancelar" em "Excluir" no Usuários
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Usuários"
 
-CT 08.06 - Validar botão "Continuar" em "Excluir" no Usuários
+CT 08.06 - Validar botão "Continuar" em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"
@@ -58,7 +58,7 @@ CT 08.06 - Validar botão "Continuar" em "Excluir" no Usuários
     E clico no botão "Continuar" em "Excluir"
     Então sistema exclui item do menu Usuários
 
-CT 08.07 - Validar filtro "Cards ou Lista" no Usuários
+CT 08.07 - Validar filtro "Cards ou Lista" 
     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"
@@ -67,7 +67,7 @@ CT 08.07 - Validar filtro "Cards ou Lista" no Usuários
     Então sistema exibe informações com filtro "Lista"
 
 
-CT 08.08 - Validar busca não encontrada no filtro buscar no Usuários
+CT 08.08 - Validar busca não encontrada no filtro buscar 
     [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no Usuários
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"
@@ -75,7 +75,7 @@ CT 08.08 - Validar busca não encontrada no filtro buscar no Usuários
     E preencho informações de busca não encontrada
     Então sistema exibe mensagem de erro em Usuários
 
-CT 08.09 - Validar botão "Fechar" no filtro buscar Usuários
+CT 08.09 - Validar botão "Fechar" no filtro buscar 
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar Usuários está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"

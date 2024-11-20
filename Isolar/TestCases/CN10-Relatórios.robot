@@ -11,7 +11,7 @@ CT 10.01.01 - Validar menu Relatórios > Relatórios
     [Tags]    Relatórios    Relatórios    Funcional        
     Dado que clico no menu "Relatórios > Relatórios"
     Então sistema exibe informações de menu Relatórios > Relatórios
-CT 10.01.02 - Validar filtro Cliente no menu Relatórios > Relatórios
+CT 10.01.02 - Validar filtro Cliente 
     [Documentation]     Caso de teste valida se filtro cliente no Menu Relatórios > Relatórios está funcional
     [Tags]    Relatórios    Relatórios    Funcional        
     Dado que clico no menu "Relatórios > Relatórios"
@@ -20,7 +20,7 @@ CT 10.01.02 - Validar filtro Cliente no menu Relatórios > Relatórios
     E clico em "Buscar"
     Então sistema exibe informações de filtro "Cliente"
 
-CT 10.01.03 - Validar filtro Status no menu Relatórios > Relatórios
+CT 10.01.03 - Validar filtro Status
     [Documentation]     Caso de teste valida se filtro status no Menu Relatórios > Relatórios está funcional
     [Tags]    Relatórios    Relatórios    Funcional        
     Dado que clico no menu "Relatórios > Relatórios"
@@ -29,7 +29,7 @@ CT 10.01.03 - Validar filtro Status no menu Relatórios > Relatórios
     E clico em "Buscar"
     Então sistema exibe informações de filtro Status "Fila"
 
-CT 10.01.04 - Validar filtro Responsável no menu Relatórios > Relatórios
+CT 10.01.04 - Validar filtro Responsável 
     [Documentation]     Caso de teste valida se filtro Responsável no Menu Relatórios > Relatórios está funcional
     [Tags]    Relatórios    Relatórios    Funcional        
     Dado que clico no menu "Relatórios > Relatórios"
@@ -38,7 +38,7 @@ CT 10.01.04 - Validar filtro Responsável no menu Relatórios > Relatórios
     E clico em "Buscar"
     Então sistema exibe informações de filtro Responsável "suporte"
 
-CT 10.01.05 - Validar filtro Vendedor Técnico no menu Relatórios > Relatórios
+CT 10.01.05 - Validar filtro Vendedor Técnico 
     [Documentation]     Caso de teste valida se filtro Vendedor Técnico no Menu Relatórios > Relatórios está funcional
     [Tags]    Relatórios    Relatórios    Funcional        
     Dado que clico no menu "Relatórios > Relatórios"
