@@ -152,14 +152,14 @@ CT 02.18 - Validar botão Histórico
     E clico no botão "Histórico"
     Então sistema exibe histórico em requisições
 
-# CT 02.19 - Validar botão Renovar em Requisições
-#     [Documentation]     Caso de teste valida botão Renovar em Requisições
-#     [Tags]    Requisições    Funcional        
-#     Dado que clico no menu "Requisições"
-#     Quando clico em "Filtros"
-#     E preencho filtro Cliente
-#     E clico no botão "Renovar"
-#     Então sistema exibe mensagem de renovação
+CT 02.19 - Validar botão Renovar em Requisições
+    [Documentation]     Caso de teste valida botão Renovar em Requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E clico no botão "Renovar"
+    Então sistema exibe mensagem de renovação
 
 CT 02.20 - Validar botão Comentários 
     [Documentation]     Caso de teste valida botão Comentários 
@@ -177,8 +177,15 @@ CT 02.21 - Validar botão Inserir "Ti"
     Dado que clico no menu "Requisições"
     Quanto clico no botão "Inserir/Ti"
     Então sistema exibe mensagem de cadastro TI realizado
+
+CT 02.22 - Validar botão Inserir "Compras" 
+    [Documentation]     Caso de teste valida botão Inserir "Ti" 
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quanto clico no botão "Inserir/Compras"
+    Então sistema exibe mensagem de cadastro Compras realizado
     
-CT 02.22 - Validar botão Inserir "Departamento pessoal" 
+CT 02.23 - Validar botão Inserir "Departamento pessoal" 
     [Documentation]     Caso de teste valida botão Inserir "Departamento pessoal" 
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
@@ -186,7 +193,7 @@ CT 02.22 - Validar botão Inserir "Departamento pessoal"
     E preencho informações de cadastro de requisição "Departamento Pessoal"
     Então sistema exibe mensagem de cadastro realizado
 
-CT 02.23 - Validar excluir 
+CT 02.24 - Validar excluir 
     [Documentation]     Caso de teste valida funcionalidade excluir 
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
@@ -196,7 +203,17 @@ CT 02.23 - Validar excluir
     E clico no botão "Excluir requisição"
     Então sistema exclui e retorna para menu requisições 
 
-CT 02.24 - Validar funcionalidade excluir cadastro de requisiçao em Cadastros > Clientes
+CT 02.25 - Validar excluir requisição (compras)
+    [Documentation]     Caso de teste valida funcionalidade excluir requisição (compras)
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E clico no botão "Editar"
+    E clico no botão "Excluir requisição"
+    Então sistema exclui e retorna para menu requisições 
+
+CT 02.26 - Validar funcionalidade excluir cadastro de requisiçao em Cadastros > Clientes
     [Documentation]     Caso de teste valida funcionalidade excluir 
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Cadastros > Clientes"
@@ -204,5 +221,3 @@ CT 02.24 - Validar funcionalidade excluir cadastro de requisiçao em Cadastros >
     E preencho informações de pesquisa
     Quando clico em "Excluir"
     E clico no botão "Continuar" em "Excluir"
-
-

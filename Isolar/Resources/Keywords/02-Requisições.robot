@@ -358,9 +358,9 @@ Então sistema exibe requisições de filtro Renovadas
 # --2.14
 Quanto clico no botão "Inserir/Técnico"
     Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
-    Click Element    ${Botao_Inserir_Requisicoes}
-    Click Element    //button[contains(.,'Técnico')]
-    Click Element    //button[contains(.,'Estimativa')]
+    Click Element                    ${Botao_Inserir_Requisicoes}
+    Click Element                    //button[contains(.,'Técnico')]
+    Click Element                    //button[contains(.,'Técnico')]
 
 E preencho informações de cadastro de requisição
 # 1
@@ -401,11 +401,37 @@ E preencho informações de cadastro de requisição
 
     Click Element    //button[contains(.,'Selecione')]
     Click Element    (//div[contains(.,'Telhado')])[5]
+    Sleep    1s
+    Click Button     (//button[@type='button'])[11]
+    Click Element    (//div[contains(.,'Aluzinco')])[5]
+    
+    # Click Element   (//button[@type='button'])[12]
+    # Click Button    //div[@role='option'][contains(.,'Metal')]
+
+    Input Text      (//input[contains(@type,'text')])[1]    1
+    Input Text      (//input[contains(@type,'text')])[2]    1
+
+    Input Text      //input[@placeholder='Descreva']    Cliente
+
+    Input Text      //input[@id='uniConsumi']    123456
+
+    Input Text      (//input[contains(@type,'text')])[5]    Teste
+    Input Text      (//input[contains(@type,'text')])[6]    Teste
+    Input Text      (//input[contains(@type,'number')])[2]  1
+    Input Text      (//input[contains(@type,'number')])[3]  1
+    
     
     Input Text         //input[contains(@id,'uniConsumi')]   123456
     Click Element      ${Botao_Proximo_Requisicoes}
 # 4
     Input Text        //input[@placeholder='DD/MM/YYYY']    11112026
+
+    Click Element      (//button[contains(.,'Selecione')])[1]
+    Click Element      (//div[contains(.,'Nacional')])[5]
+
+    Click Element      //button[contains(.,'Selecione')]
+    Click Element      (//div[contains(.,'Financiamento Importado')])[5]
+
     Click Element     //button[contains(.,'Salvar')]
 
 Então sistema exibe mensagem de cadastro realizado
@@ -484,8 +510,8 @@ Então sistema exibe mensagem de renovação
 # --2.20
 
 E clico no botão "Comentários"
-    Sleep    2s
-    Click Element         //td[contains(.,'Estimativa')]
+    # Sleep    2s
+    # Click Element         //td[contains(.,'Estimativa')]
     Sleep    1s
     Execute JavaScript    window.scrollTo(document.body.scrollWidth, 0);
     Wait Until Element Is Visible    ${Botao_Comentarios}
@@ -515,6 +541,15 @@ Então sistema exibe mensagem de cadastro TI realizado
 
 
 # --2.22
+Quanto clico no botão "Inserir/Compras"
+    Wait Until Element Is Visible     ${Botao_Inserir_Requisicoes}
+    Click Element                     ${Botao_Inserir_Requisicoes}
+    Wait Until Element Is Visible     //button[contains(.,'Compras')]
+    Click Element                     //button[contains(.,'Compras')]     
+
+Então sistema exibe mensagem de cadastro Compras realizado
+    Wait Until Page Contains    text=Escolha o tipo de requisição que deseja cadastrar.
+
 Quanto clico no botão "Inserir/DP"
     Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
     Click Element                    ${Botao_Inserir_Requisicoes}
