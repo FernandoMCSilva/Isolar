@@ -24,10 +24,12 @@ ${Botao_Proximo_Requisicoes}            //button[contains(.,'Próximo')]
 ${Botao_Excluir_Requisicoes}            //button[contains(.,'Excluir requisição')]
 
 ${input_nomecompleto_Requisicoes}       //div[@class='select__value-container css-hlgwow']
+${input_telefone_Requisicoes}           //input[@id='telefone']
+${input_CEP_Requisicoes}                //input[@id='cep']
 
 ${Cliente_Fila}            Fernando
 ${Departamento_Fila}       Técnico
-${Status_option}             (//div[contains(.,'Parado')])[5]
+${Status_option}           (//div[contains(.,'Parado')])[5]
 ${Tipo_Fila}               Técnico
 
 ${COMBOBOX_DEPARTAMENTO}       //button[contains(@id,'departament')]
@@ -578,4 +580,36 @@ E clico no botão "Excluir requisição"
 Então sistema exclui e retorna para menu requisições
     Wait Until Page Contains    text=Requisições
 
-# --2.7
+# --2.27
+E clico em próximo sem preencher campos
+    Wait Until Element Is Visible    ${Botao_Proximo_Requisicoes}
+    Click Element                    ${Botao_Proximo_Requisicoes}
+
+Então sistema exibe mensagem de campos obrigatórios não preenchido
+    Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, CEP
+
+# --2.28
+Preencho somente campo telefone
+    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]
+    Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
+    Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]
+    Click Element                    //button[contains(.,'Novo Cliente')]
+    Wait Until Element Is Visible         ${input_telefone_Requisicoes}
+    Input Text                            ${input_telefone_Requisicoes}    1111111111
+    Click Element                         ${Botao_Proximo_Requisicoes}
+
+Então sistema exibe mensagem de CEP não preenchido
+    Wait Until Page Contains    text=Preencha os campos obrigatórios: CEP
+# --2.29
+Preencho somente campo CEP
+    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]
+    Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
+    Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]
+    Click Element                    //button[contains(.,'Novo Cliente')]
+    Wait Until Element Is Visible    ${input_CEP_Requisicoes}
+    Input Text                       ${input_CEP_Requisicoes}    1111111
+    Click Element                    ${Botao_Proximo_Requisicoes}
+
+Então sistema exibe mensagem de telefone não preenchido
+    Wait Until Page Contains    text=Preencha os campos obrigatórios: Telefone
+# --2.27

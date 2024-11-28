@@ -221,3 +221,28 @@ CT 02.26 - Validar funcionalidade excluir cadastro de requisiçao em Cadastros >
     E preencho informações de pesquisa
     Quando clico em "Excluir"
     E clico no botão "Continuar" em "Excluir"
+
+CT 02.27 - Validar inserir sem preencher campos obrigatórios (Erro)
+    [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quanto clico no botão "Inserir/Técnico"
+    E clico em próximo sem preencher campos
+    Então sistema exibe mensagem de campos obrigatórios não preenchido
+
+CT 02.28 - Validar inserir preenchendo somente telefone (Erro)
+    [Documentation]     Caso de teste valida inserir preenchendo somente o campo telefone (Erro) 
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quanto clico no botão "Inserir/Técnico"
+    Preencho somente campo telefone
+    Então sistema exibe mensagem de CEP não preenchido
+
+CT 02.29 - Validar inserir preenchendo somente CEP (Erro)
+    [Documentation]     Caso de teste valida inserir preenchendo somente o campo CEP (Erro) 
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quanto clico no botão "Inserir/Técnico"
+    Preencho somente campo CEP
+    Então sistema exibe mensagem de telefone não preenchido
+

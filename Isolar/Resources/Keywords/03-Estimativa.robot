@@ -8,12 +8,28 @@ ${Campo_Vendedor}         //input[@id='vendedor']
 ${Vendedor_Fila}          Fernando        
 ${Campo_Cliente}          //input[@id='cliente']
 ${Cliente_Fila}           Fernando
-@{TIPO_USINAS}        Todos     Autoconsumo    Aluguel
-${EXPECTED_RESULTS}    10
+@{TIPO_USINAS}            Todos     Autoconsumo    Aluguel
+${EXPECTED_RESULTS}       10
 
-${botao_gerar_assinatura}            //td[contains(@class, 'p-4 align-middle') and contains(@class, 'text-center')]//button
-${botao_imprimir_estimativa}        //button[contains(.,'Imprimir Estimativa')]
-${botao_verPDF}                     (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[5]
+${emailteste}             teste123@gmail.com   
+${numeroteste}            21981905892
+${valorteste}             0,7400
+
+${botao_gerar_assinatura}                //td[contains(@class, 'p-4 align-middle') and contains(@class, 'text-center')]//button
+${botao_imprimir_estimativa}             //button[contains(.,'Imprimir Estimativa')]
+${botao_verPDF}                          (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[5]
+${botao_ExportarExcel_estimativa}        //button[contains(.,'Exportar para Excel')]
+${botao_Acoes_Estimativa}                //button[contains(.,'Ações')]
+${botao_baixar/imprimir_Estimativa}      //button[contains(.,'Baixar/Imprimir Estimativa')]
+${botao_iniciarconversa_Estimativa}      //button[contains(.,'Iniciar conversa no WhatsApp')]
+${botao_enviaremail_Estimativa}          //button[contains(.,'(0)Enviar por E-mail')]
+${botao_salvarinformacoes_Estimativa}    //button[contains(.,'Salvar informações no sistema')]
+${botao_baixar/imprimir_desabilitado}    (//div[contains(.,'Baixar/Imprimir Estimativa')])[4]
+
+${input_nomeCliente_Estimativa}      //input[@id='nomeCliente']
+${input_numeroCliente_Estimativa}    //input[@id='numeroCliente']
+${input_emailCliente_Estimativa}     //input[@id='emailCliente']
+${CTRL}           CONTROL
 
 *** Keywords ***
 # --3.1
@@ -259,7 +275,7 @@ E seleciono Estimativa pôr "Gasto mensal em R$"
     Click Element    xpath=//button[contains(@id,'estimativaPor')]
     Click Element    xpath=//div[@role='option'][contains(.,'Gasto mensal em R$')]
 
-E seleciono Valor da classificação "Trifásico"
+E seleciono valor da classificação "Trifásico"
     Click Element    xpath=//button[contains(@id,'valorClassificacao')]
     Click Element    xpath=//div[@role='option'][contains(.,'Trifásico')]
 
@@ -283,11 +299,111 @@ Então sistema exibe resultado dos cálculos
 
 
 # --3.21
-
 E clico no botão "Constantes personalizadas"
     Wait Until Element Is Visible    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 mt-4 bg-blue-400'][contains(.,'Constantes personalizadas')] 
    Click Element    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 mt-4 bg-blue-400'][contains(.,'Constantes personalizadas')] 
 
-
 Então sistema exibe aba de Constantes personalizadas
     Wait Until Page Contains    text=Constantes personalizadas
+
+# --3.22
+Quando clico no botão Exportar para Excel
+    Wait Until Element Is Visible    ${botao_ExportarExcel_estimativa}
+    Click Element                    ${botao_ExportarExcel_estimativa}
+Então sistema exporta para excel
+    Wait Until Page Contains    text=Histórico das estimativas
+
+# --3.23
+Então sistema exibe mensagem de campos obrigatórios não preenchido em estimativa
+    Wait Until Page Contains    text=Valor da tensão é obrigatório.
+
+# --3.24
+E preencho informações de calculos
+    Wait Until Element Is Visible    (//button[contains(.,'Selecione')])[1]
+    Click Element                    (//button[contains(.,'Selecione')])[1]
+    Click Element                    (//div[contains(.,'Solo')])[5]
+
+    Click Element                    (//button[contains(.,'Selecione')])[1]
+    Click Element                    (//div[contains(.,'Gasto mensal em R$')])[5]
+
+
+    Click Element                    (//button[contains(.,'Selecione')])[1]
+    Click Element                    (//div[contains(.,'Autoconsumo')])[15]
+
+    Click Element                    (//button[contains(.,'Selecione')])[1]
+    Click Element                    (//div[contains(.,'Junto a carga')])[5]
+
+    Click Element                    (//button[contains(.,'Selecione')])[1]
+    Click Element                    (//div[contains(.,'Trifásico')])[5]
+
+    Click Element                    (//button[@id='tensaoValor'])[1]
+    Click Element                    (//div[contains(.,'127 V')])[5]
+
+    Click Element                    //button[@id='tensaoValor']
+    Click Element                    (//div[contains(.,'220 V')])[5]
+
+    Input Text                        //input[@id='mensalValor']    500,00
+E clico no botão Ações
+    Wait Until Element Is Visible    ${botao_Acoes_Estimativa}
+    Click Element                    ${botao_Acoes_Estimativa}
+
+Então sistema exibe tela de botão ações 
+    Wait Until Page Contains    text=Baixar/Imprimir Estimativa
+
+# --3.25
+E preencho informações do cliente
+    Wait Until Element Is Visible    ${input_nomeCliente_Estimativa}
+    Input Text                       ${input_nomeCliente_Estimativa}        ${nome_pesquisa_GruposConsumidores}
+    Input Text                       ${input_numeroCliente_Estimativa}      ${numeroteste}
+    Input Text                       ${input_emailCliente_Estimativa}       ${emailteste}
+
+E clico no botão Baixar/Imprimir
+    Wait Until Element Is Visible    ${botao_baixar/imprimir_Estimativa}
+    Click Element                    ${botao_baixar/imprimir_Estimativa}
+
+Então sistema Baixa/Imprime Estimativa
+    Wait Until Page Contains    text=Estimativa salva com sucesso!
+
+# --3.26
+E clico no botão Iniciar conversa no WhatsApp
+    Wait Until Element Is Visible    ${botao_iniciarconversa_Estimativa}
+    Click Element                    ${botao_iniciarconversa_Estimativa}
+
+Então sistema redireciona para Whatsapp
+    Wait Until Page Contains    text=Estimativa salva com sucesso!
+
+# --3.27
+E clico no botão Enviar por email
+    Wait Until Element Is Visible    ${botao_enviaremail_Estimativa}
+    Click Element                    ${botao_enviaremail_Estimativa}
+    Wait Until Element Is Visible    //button[contains(.,'Sim')]
+    Click Element                    //button[contains(.,'Sim')]
+Então sistema abre informações do email
+    Wait Until Page Contains    text=Selecione ou arraste a estimativa
+
+# --3.28
+E clico no botão Salvar informarções no sistema
+    Wait Until Element Is Visible    ${botao_salvarinformacoes_Estimativa}
+    Click Element                    ${botao_salvarinformacoes_Estimativa}
+
+Então sistema salva informações no sistema
+    Wait Until Page Contains    text=Estimativa salva com sucesso!
+
+# --3.29
+E clico no botão Baixar/Imprimir desabilitado
+    Wait Until Element Is Visible    ${botao_baixar/imprimir_desabilitado}
+    Click Element                    ${botao_baixar/imprimir_desabilitado}
+
+Então sistema sai da tela do botão Ações
+    Wait Until Element Is Not Visible    ${botao_baixar/imprimir_desabilitado}
+    Element Should Not Be Visible        ${botao_baixar/imprimir_desabilitado}
+
+# --3.30
+# E preencho informações de constantes personalizadas
+#     Sleep    2s
+#     Execute JavaScript    document.querySelector("#radix-r11").style.zoom='0.8'
+#     Sleep    2s
+#     Click Element               //input[@value='0,7400']
+#     Input Text                  //input[@value='0,7400']    ${valorteste}
+
+# --3.22
