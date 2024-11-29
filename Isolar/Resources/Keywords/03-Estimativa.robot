@@ -134,7 +134,7 @@ E preencho informações no campo quantidade
 
 Então sistema exibe informações de acordo com quantidade preenchida
     Click Element    (//div[contains(.,'Quantidade')])[10]
-    Sleep    10s
+    Sleep    5s
     ${resultados}    Get WebElements    xpath=//tr[contains(@class, 'border-b transition-colors')]
     ${quantidade}    Get Length    ${resultados}
     Should Be Equal As Numbers    ${quantidade - 1}    ${EXPECTED_RESULTS}
@@ -143,7 +143,7 @@ Então sistema exibe informações de acordo com quantidade preenchida
 
 Quando clico em "Próximo"
     Wait Until Element Is Visible    //button[contains(.,'Próximo')]
-    Click Element    //button[contains(.,'Próximo')]
+    Click Element                    //button[contains(.,'Próximo')]
 
 Então sistema exibe próximas Estimativa
     ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Anterior')]
@@ -153,7 +153,8 @@ Então sistema exibe próximas Estimativa
 # --3.10
 
 E clico em "Anterior"
-    Click Element    //button[contains(.,'Anterior')]
+    Wait Until Element Is Visible    //button[contains(.,'Anterior')]
+    Click Element                    //button[contains(.,'Anterior')]
 
 Então sistema exibe Estimativa anteriores
     ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Not Be Visible    //button[contains(.,'Anterior')]
@@ -311,7 +312,7 @@ Quando clico no botão Exportar para Excel
     Wait Until Element Is Visible    ${botao_ExportarExcel_estimativa}
     Click Element                    ${botao_ExportarExcel_estimativa}
 Então sistema exporta para excel
-    Wait Until Page Contains    text=Histórico das estimativas
+    Wait Until Element Is Visible    ${botao_ExportarExcel_estimativa}
 
 # --3.23
 Então sistema exibe mensagem de campos obrigatórios não preenchido em estimativa

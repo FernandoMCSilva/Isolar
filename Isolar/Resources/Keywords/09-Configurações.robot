@@ -168,6 +168,9 @@ Então sistema exibe mensagem de pergunta adicionada no menu Configurações > R
     Wait Until Page Contains    text=Pergunta adicionada com sucesso!
 
 # -9.01.10
+E vou para o fim da página
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+
 Quando clico em "Editar" em configurações
     Wait Until Element Is Visible    ${botao_Editar_Configuracoes}
     Click Element                    ${botao_Editar_Configuracoes}
@@ -175,6 +178,7 @@ Quando clico em "Editar" em configurações
 E preencho informações de pergunta editada no menu Configurações > Requisições > Perguntas
     Sleep    2s
     Input Text            (//input[@value='B3 (teste)'])[1]    ${nome_pesquisa_GruposConsumidores}
+    Click Element         //button[contains(.,'Texto')]
     Click Element         (//div[contains(.,'Data')])[4]
     Click Element         ${botao_Salvar}
 

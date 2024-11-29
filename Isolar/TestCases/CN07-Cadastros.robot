@@ -26,6 +26,7 @@ CT 07.01.03 - Validar funcionalidade "editar"
     Dado que clico no menu "Cadastros > Pessoas"
     E clico no botao buscar
     E preencho informações de pesquisa
+    E clico no botao "acoes"
     Quando clico em "Editar"
     E preencho informações de cadastro editado
     Então sistema exibe informações de "Editar"
@@ -102,6 +103,7 @@ CT 07.02.03 - Validar funcionalidade "editar"
     Dado que clico no menu "Cadastros > Clientes"
     E clico no botao buscar
     E preencho informações de pesquisa
+    E clico no botao "acoes"
     Quando clico em "Editar"
     E preencho informações de cadastro editado no menu Cadastros > Clientes
     Então sistema exibe informações de "Editar"
