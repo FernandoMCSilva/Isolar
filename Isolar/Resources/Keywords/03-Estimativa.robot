@@ -127,7 +127,7 @@ Então sistema exibe Estimativa do filtro Data de registro
 
 Quando clico em "Quantidade de itens por pág"
     Wait Until Element Is Visible    //span[contains(.,'Quantidade de itens por pág')]    timeout=10s
-    Click Element    //span[contains(.,'Quantidade de itens por pág')]
+    Click Element                    //span[contains(.,'Quantidade de itens por pág')]
 
 E preencho informações no campo quantidade
     Input Text    //input[contains(@id,'itensPorPagina')]   ${EXPECTED_RESULTS}

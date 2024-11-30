@@ -163,7 +163,106 @@ CT 10.02.01 - Validar menu Relatórios > Homologatórias
     Dado que clico no menu "Relatórios > Homologatórias"
     Então sistema exibe informações do menu Relatórios > Homologatórias
 
-CT 10.02.12 - Validar filtro quantidade de itens > Homologatórias
+CT 10.02.02 - Validar filtro Resolução ANEEL
+    [Documentation]     Caso de teste valida se filtro Resolução ANEEL está funcional
+    [Tags]    Relatórios    Homologatórias    Funcional        
+    Dado que clico no menu "Relatórios > Homologatórias"
+    Quando clico em "Filtros"
+    E preencho informação de filtro resolução ANEEL
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro resolução ANEEL
+
+CT 10.02.03 - Validar filtro Concessionária
+    [Documentation]     Caso de teste valida se filtro Concessionária está funcional
+    [Tags]    Relatórios    Homologatórias    Funcional        
+    Dado que clico no menu "Relatórios > Homologatórias"
+    Quando clico em "Filtros"
+    E preencho informação de filtro Concessionária
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Concessionária
+
+CT 10.02.04 - Validar filtro Acessante
+    [Documentation]     Caso de teste valida se filtro Acessante está funcional
+    [Tags]    Relatórios    Homologatórias    Funcional        
+    Dado que clico no menu "Relatórios > Homologatórias"
+    Quando clico em "Filtros"
+    E preencho informação de filtro Acessante
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Acessante
+
+CT 10.02.05 - Validar filtro Classe
+    [Documentation]     Caso de teste valida se filtro Classe está funcional
+    [Tags]    Relatórios    Homologatórias    Funcional        
+    Dado que clico no menu "Relatórios > Homologatórias"
+    Quando clico em "Filtros"
+    E preencho informação de filtro Classe
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Classe
+
+CT 10.02.06 - Validar filtro Detalhe
+    [Documentation]     Caso de teste valida se filtro Detalhe está funcional
+    [Tags]    Relatórios    Homologatórias    Funcional        
+    Dado que clico no menu "Relatórios > Homologatórias"
+    Quando clico em "Filtros"
+    E preencho informação de filtro Detalhe
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Detalhe
+
+CT 10.02.07 - Validar filtro Posto
+    [Documentation]     Caso de teste valida se filtro Posto está funcional
+    [Tags]    Relatórios    Homologatórias    Funcional        
+    Dado que clico no menu "Relatórios > Homologatórias"
+    Quando clico em "Filtros"
+    E preencho informação de filtro Posto
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Posto
+
+CT 10.02.08 - Validar filtro Ano
+    [Documentation]     Caso de teste valida se filtro Ano está funcional
+    [Tags]    Relatórios    Homologatórias    Funcional        
+    Dado que clico no menu "Relatórios > Homologatórias"
+    Quando clico em "Filtros"
+    E preencho informação de filtro Ano
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Ano
+
+CT 10.02.09 - Validar filtro Subgrupo
+    [Documentation]     Caso de teste valida se filtro Subgrupo está funcional
+    [Tags]    Relatórios    Homologatórias    Funcional        
+    Dado que clico no menu "Relatórios > Homologatórias"
+    Quando clico em "Filtros"
+    E preencho informação de filtro Subgrupo
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Subgrupo
+
+CT 10.02.10 - Validar filtro Modalidade
+    [Documentation]     Caso de teste valida se filtro Modalidade está funcional
+    [Tags]    Relatórios    Homologatórias    Funcional        
+    Dado que clico no menu "Relatórios > Homologatórias"
+    Quando clico em "Filtros"
+    E preencho informação de filtro Modalidade
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Modalidade
+
+CT 10.02.11 - Validar filtro SubClasse
+    [Documentation]     Caso de teste valida se filtro SubClasse está funcional
+    [Tags]    Relatórios    Homologatórias    Funcional        
+    Dado que clico no menu "Relatórios > Homologatórias"
+    Quando clico em "Filtros"
+    E preencho informação de filtro SubClasse
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro SubClasse
+
+CT 10.02.12 - Validar filtro Outorga
+    [Documentation]     Caso de teste valida se filtro Outorga está funcional
+    [Tags]    Relatórios    Homologatórias    Funcional        
+    Dado que clico no menu "Relatórios > Homologatórias"
+    Quando clico em "Filtros"
+    E preencho informação de filtro Outorga
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Outorga
+
+CT 10.02.13 - Validar filtro quantidade de itens > Homologatórias
     [Documentation]     Caso de teste valida se Menu Relatórios > Homologatórias está funcional
     [Tags]    Relatórios    Homologatórias    Funcional        
     Dado que clico no menu "Relatórios > Homologatórias"
@@ -172,14 +271,14 @@ CT 10.02.12 - Validar filtro quantidade de itens > Homologatórias
     E preencho informações no campo quantidade
     Então sistema exibe quantidade de itens preenchida em Relatórios
 
-CT 10.02.13 - Validar botão Próximo > Homologatórias
+CT 10.02.14 - Validar botão Próximo > Homologatórias
     [Documentation]     Caso de teste valida se Menu Relatórios > Homologatórias está funcional
     [Tags]    Relatórios    Homologatórias    Funcional        
     Dado que clico no menu "Relatórios > Homologatórias"
     Quando clico em "Próximo"
     Então sistema exibe próximas informações
 
-CT 10.02.14 - Validar botão Anterior > Homologatórias
+CT 10.02.15 - Validar botão Anterior > Homologatórias
     [Documentation]     Caso de teste valida se Menu Relatórios > Homologatórias está funcional
     [Tags]    Relatórios    Homologatórias    Funcional        
     Dado que clico no menu "Relatórios > Homologatórias"
@@ -188,11 +287,9 @@ CT 10.02.14 - Validar botão Anterior > Homologatórias
     Então sistema exibe informações anteriores   
 
 
-
 # Quantidade de itens por pág
 # Botão Próximo 
 # Botão Anterior 
-# ...
 # Resolução ANEEL
 # Concessionária
 # Acessante
@@ -204,3 +301,4 @@ CT 10.02.14 - Validar botão Anterior > Homologatórias
 # Modalidade
 # SubClasse
 # Outorga
+# ...

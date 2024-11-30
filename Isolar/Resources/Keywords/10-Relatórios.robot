@@ -8,8 +8,31 @@ ${Menu_Relatorios>Relatorios}        //a[contains(.,'Relatórios')]
 ${Menu_Homologatorias}               //p[contains(.,'Homologatórias')]
 ${nome_pesquisa_Relatórios}          Teste
 
-${Campo_Cliente}                     //input[@id='cliente']
+${filtro_ANEEL}                      (//div[contains(.,'Selecione ...')])[17]
+${filtro_Concessionaria}             (//div[contains(.,'Selecione ...')])[22]
+${filtro_Acessante}                  (//div[contains(.,'Selecione ...')])[27]
+${filtro_Classe}                     (//div[contains(.,'Selecione ...')])[32]
+${filtro_Detalhe}                    (//div[contains(.,'Selecione ...')])[37]
+${filtro_Posto}                      (//div[contains(.,'Selecione ...')])[42]
+${filtro_Ano}                        //button[contains(.,'Selecione um ano')]
+${filtro_Subgrupo}                   (//div[contains(.,'Selecione ...')])[48]
+${filtro_Modalidade}                 (//div[contains(.,'Selecione ...')])[53]
+${filtro_SubClasse}                  (//div[contains(.,'Selecione ...')])[58]
+${filtro_Outorga}                    (//div[contains(.,'Todos')])[17]
 
+${result_ANEEL}                      (//td[@class='p-4 align-middle [&:has([role=checkbox])]:pr-0 text-center font-bold'][contains(.,'DSP RETIFICAÇÃO DE 24 DE NOVEMBRO DE 2016')])[1]
+${result_Concessionaria}             (//td[contains(.,'Castro - DIS')])[1]
+${result_Acessante}                  //td[@class='p-4 align-middle [&:has([role=checkbox])]:pr-0 text-center'][contains(.,'ADVOGADO EDUARDO SOARES (ANTIGA BOA ESPERANÇA)')]
+${result_Classe}                     (//td[contains(.,'Residencial')])[1]
+${result_Detalhe}                    (//td[contains(.,'TIPO 02')])[1]
+${result_Posto}                      (//td[contains(.,'Fora ponta')])[1]
+${result_Ano}                        (//td[contains(.,'01/11/2020')])[1]
+${result_Subgrupo}                   (//td[contains(.,'B3')])[1]
+${result_Modalidade}                 (//td[contains(.,'Convencional')])[1]
+${result_Subclasse}                  (//td[contains(.,'Baixa Renda')])[1]
+${result_Outorga}                    (//td[contains(.,'Amazonas Energia')])[1]
+
+${Campo_Cliente}                     //input[@id='cliente']
 ${botao_exportarPDF_Relatorios}      //button[contains(.,'Exportar para PDF')]
 
 
@@ -157,6 +180,7 @@ Então sistema exibe informações anteriores
      Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior não está visível. Funcionou.
     ...    ELSE    Log    "Botão Anterior ainda está visível. Falhou."    WARN
 
+
 # --10.02.01
 Dado que clico no menu "Relatórios > Homologatórias"
     Wait Until Element Is Visible    ${MENU_RELATORIOS}
@@ -164,10 +188,110 @@ Dado que clico no menu "Relatórios > Homologatórias"
     Wait Until Element Is Visible    ${Menu_Homologatorias}
     Click Element                    ${Menu_Homologatorias}
 
+# --10.02.02
+E preencho informação de filtro resolução ANEEL
+    Wait Until Element Is Visible    ${filtro_ANEEL}
+    Click Element                    ${filtro_ANEEL}
+    Sleep    1s
+    Click Element                    //div[@id='react-select-2-option-1']
+
+Então sistema exibe informações de filtro resolução ANEEL
+    Wait Until Element Is Visible    ${result_ANEEL}
+
+# --10.02.02
+E preencho informação de filtro Concessionária
+    Wait Until Element Is Visible    ${filtro_Concessionaria}
+    Click Element                    ${filtro_Concessionaria}
+    Click Element                    (//div[contains(.,'Castro - DIS')])[4]
+Então sistema exibe informações de filtro Concessionária
+    Wait Until Element Is Visible    ${result_Concessionaria}
+
+# --10.02.04
+E preencho informação de filtro Acessante
+    Wait Until Element Is Visible    ${filtro_Acessante}    
+    Click Element                    ${filtro_Acessante}
+    Click Element                    (//div[contains(.,'ADVOGADO EDUARDO SOARES (ANTIGA BOA ESPERANÇA)')])[4]
+
+Então sistema exibe informações de filtro Acessante
+    Wait Until Element Is Visible    ${result_Acessante}
+
+# --10.02.05
+E preencho informação de filtro Classe
+    Wait Until Element Is Visible    ${filtro_Classe}
+    Click Element                    ${filtro_Classe}
+    Click Element                    (//div[contains(.,'Residencial')])[4]
+
+Então sistema exibe informações de filtro Classe
+    Wait Until Element Is Visible    ${result_Classe}
+
+# --10.02.06
+E preencho informação de filtro Detalhe
+    Wait Until Element Is Visible    ${filtro_Detalhe}
+    Click Element                    ${filtro_Detalhe}
+    Click Element                    (//div[contains(.,'TIPO 02')])[12]
+
+Então sistema exibe informações de filtro Detalhe
+    Wait Until Element Is Visible    ${result_Detalhe}    
+
+# --10.02.07
+E preencho informação de filtro Posto
+    Wait Until Element Is Visible    ${filtro_Posto}
+    Click Element                    ${filtro_Posto}
+    Click Element                    (//div[contains(.,'Fora ponta')])[12]
+
+Então sistema exibe informações de filtro Posto
+    Wait Until Element Is Visible    ${result_Posto}
+
+# --10.02.08
+E preencho informação de filtro Ano
+    Wait Until Element Is Visible    ${filtro_Ano}
+    Click Element                    ${filtro_Ano}
+    Click Element                    (//div[contains(.,'2020')])[5]
+
+Então sistema exibe informações de filtro Ano
+    Wait Until Element Is Visible    ${result_Ano}
+
+# --10.02.09
+E preencho informação de filtro Subgrupo
+    Wait Until Element Is Visible    ${filtro_Subgrupo}
+    Click Element                    ${filtro_Subgrupo}
+    Click Element                    (//div[contains(.,'B3')])[4]
+
+Então sistema exibe informações de filtro Subgrupo
+    Wait Until Element Is Visible    ${result_Subgrupo}
+
+# --10.02.10
+E preencho informação de filtro Modalidade
+    Wait Until Element Is Visible    ${filtro_Modalidade}
+    Click Element                    ${filtro_Modalidade}
+    Click Element                    (//div[contains(.,'Convencional')])[4]
+
+Então sistema exibe informações de filtro Modalidade
+    Wait Until Element Is Visible    ${result_Modalidade}
+
+# --10.02.11
+E preencho informação de filtro SubClasse
+    Wait Until Element Is Visible    ${filtro_SubClasse}
+    Click Element                    ${filtro_SubClasse}
+    Click Element                    (//div[contains(.,'Baixa Renda')])[4]
+
+Então sistema exibe informações de filtro SubClasse
+    Wait Until Element Is Visible    ${result_Subclasse}
+
+# --10.02.12
+E preencho informação de filtro Outorga
+    Wait Until Element Is Visible    ${filtro_Outorga}
+    Click Element                    ${filtro_Outorga}
+    Click Element                    (//div[contains(.,'Concessionária')])[23]
+    Execute JavaScript    window.scrollTo(0, 0)
+    Sleep    2s
+
+Então sistema exibe informações de filtro Outorga
+    Wait Until Element Is Visible    ${result_Outorga}
+
+# --10.02.01
 Então sistema exibe informações do menu Relatórios > Homologatórias
     Wait Until Page Contains    text=Homologatórias ANEEL
-
-
 
 # --10.02.12
 Então sistema exibe quantidade de itens preenchida em Relatórios
@@ -176,5 +300,3 @@ Então sistema exibe quantidade de itens preenchida em Relatórios
     ${resultados}    Get WebElements    xpath=//tr[contains(@class, 'border-b transition-colors')]
     ${quantidade}    Get Length    ${resultados}
     Should Be Equal As Numbers    ${quantidade - 1}    ${EXPECTED_RESULTS}
-
-# --10.02.01

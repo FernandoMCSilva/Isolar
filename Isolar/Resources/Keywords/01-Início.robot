@@ -24,7 +24,7 @@ ${Btn_Departamentos}    (//button[@type='button'])[9]
 Dado que clico no menu "Início"
     Wait Until Element Is Visible    ${MENU_INICIO}
     Click Element                    ${MENU_INICIO}
-
+    
 Então sistema exibe informações de requisições gerais
     Wait Until Element Is Visible    ${Tela_Inicio}
 
