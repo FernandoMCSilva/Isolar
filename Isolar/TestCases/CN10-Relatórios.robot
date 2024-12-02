@@ -286,19 +286,3 @@ CT 10.02.15 - Validar botão Anterior > Homologatórias
     E clico em "Anterior"
     Então sistema exibe informações anteriores   
 
-
-# Quantidade de itens por pág
-# Botão Próximo 
-# Botão Anterior 
-# Resolução ANEEL
-# Concessionária
-# Acessante
-# Classe
-# Detalhe
-# Posto
-# Ano
-# Subgrupo
-# Modalidade
-# SubClasse
-# Outorga
-# ...

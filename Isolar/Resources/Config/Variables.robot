@@ -21,6 +21,9 @@ ${SenhaTecnico}              Isolar@2023
 ${MENU_INICIO}               //a[contains(.,'Início')]
 ${MENU_REQUISICOES}          //a[contains(.,'Requisições')]
 ${MENU_ESTIMATIVA}           //p[contains(.,'Estimativa')]
+${MENU_MISOL}
+${MENU_MONITORAMENTO}
+${MENU_DOCUMENTOS}           (//div[contains(.,'Documentos')])[8]
 ${MENU_CADASTROS}            //p[contains(.,'Cadastros')]
 ${MENU_USUARIOS}             //a[contains(.,'Usuários')]
 ${MENU_CONFIGURACOES}        (//div[contains(.,'Configurações')])[7]

@@ -114,15 +114,16 @@ Então sistema exibe informações de filtro Unidade Consumidora
 E seleciono filtro Tipo de requisição "Estimativa"
     Wait Until Element Is Visible    //button[@id='tipo']
     Click Element                    //button[@id='tipo']
-    Click Element                    (//div[contains(.,'Estimativa')])[18]
+    Click Element                    (//div[contains(.,'Técnico')])[13]
 
 Então sistema exibe informações de filtro Tipo de requisição "Estimativa"
-    Wait Until Element Is Visible    (//td[contains(.,'Estimativa')])[1]
+    Wait Until Element Is Visible    (//td[contains(.,'Técnico')])[1]
 
 # --10.01.10
 E seleciono filtro Data de criação
     Wait Until Element Is Visible    //button[contains(.,'Selecione a data')]
     Click Element                    //button[contains(.,'Selecione a data')]
+    Click Element                    (//button[@type='button'])[19]    # Clica na seta para voltar
     Click Element                    (//button[@type='button'])[19]    # Clica na seta para voltar
     Click Element                    (//button[@type='button'])[19]    # Clica na seta para voltar
     Sleep    1s

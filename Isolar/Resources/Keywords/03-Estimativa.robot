@@ -25,6 +25,7 @@ ${botao_iniciarconversa_Estimativa}      //button[contains(.,'Iniciar conversa n
 ${botao_enviaremail_Estimativa}          //button[contains(.,'(0)Enviar por E-mail')]
 ${botao_salvarinformacoes_Estimativa}    //button[contains(.,'Salvar informações no sistema')]
 ${botao_baixar/imprimir_desabilitado}    (//div[contains(.,'Baixar/Imprimir Estimativa')])[4]
+${botao_GerarCalculos_Estimativa}        //button[contains(.,'Gerar cálculos')]
 
 ${input_nomeCliente_Estimativa}      //input[@id='nomeCliente']
 ${input_numeroCliente_Estimativa}    //input[@id='numeroCliente']
@@ -292,7 +293,8 @@ E seleciono valor de tensão FN "220v"
     Click Element    xpath=//div[@role='option'][contains(.,'220 V')]
 
 E clico em Gerar cálculos
-    Click Element    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2'][contains(.,'Gerar cálculos')]
+    Wait Until Element Is Visible    ${botao_GerarCalculos_Estimativa}
+    Click Element                    ${botao_GerarCalculos_Estimativa}
 
 
 Então sistema exibe resultado dos cálculos
