@@ -71,7 +71,7 @@ CT 06.01.08 - Validar botão Status da assinatura
     Dado que clico no menu "Documentos"
     Clico no menu "Documentos geradados"
     Quando clico em "Filtros"
-    E preencho informações do filtro criador
+    E preencho filtro criador
     E clico no botão Status da assinatura
     Então sistema exibe informações de botão Status da assinatura
 
@@ -187,14 +187,68 @@ CT 06.02.05 - Validar filtro Observador
     E clico em "Buscar"
     Então sistema exibe informações de filtro Observador
 
+CT 06.02.06 - Validar filtro Quantidade de itens por pág
+    [Documentation]     Caso de teste valida se filtro Quantidade de itens por pág está funcional
+    [Tags]    Documentos    Assinaturas    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Quando seleciono opção Cards ou Lista "Lista"
+    Quando clico em "Quantidade de itens por pág"
+    E preencho informações no campo quantidade
+    Então sistema exibe informações de acordo com quantidade preenchida
+
+CT 06.02.07 - Validar filtro Cards ou Lista
+    [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
+    [Tags]    Documentos    Assinaturas    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Quando seleciono opção Cards ou Lista "Lista"
+    Então sistema exibe informações com filtro "Lista"
+
+CT 06.02.08 - Validar botão Próximo
+    [Documentation]     Caso de teste valida se botão Próximo está funcional
+    [Tags]    Documentos    Assinaturas    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Quando clico em "Próximo"
+    Então sistema exibe próximas Assinaturas
+
+CT 06.02.09 - Validar botão Anterior
+    [Documentation]     Caso de teste valida se botão Anterior está funcional
+    [Tags]    Documentos    Assinaturas    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Quando clico em "Próximo"
+    E clico em "Anterior"
+    Então sistema exibe Assinaturas anteriores
+
+# CT 06.02.10 - Validar funcionalidade Criar
+#     [Documentation]     Caso de teste valida se funcionalidade Criar está funcional
+#     [Tags]    Documentos    Assinaturas    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Assinaturas"
+#     Quando clico no botão Criar
+#     E ralizo o upload do arquivo
+#     # Então sistema 
+
+CT 06.02.11 - Validar filtro Buscar
+    [Documentation]     Caso de teste valida se filtro Buscar está funcional
+    [Tags]    Documentos    Assinaturas    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    E preencho informação de filtro Buscar
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Buscar
+
+
 
 # Testar Filtros
-# ...
 # Filtro quantidade de itens por pag
+# Testar filtro Card/lista
 # Botão Próximo
 # Botão Anterior
-# Testar filtro Card/lista
-# Botão Criar
 # Testar botão buscar
+# ...
+# Botão Criar
 # Botão Editar
 # Botão Excluir
