@@ -68,7 +68,6 @@ Dado que clico no menu "Requisições"
 # --2.2
 Quando clico em "Filtros"
     Wait Until Element Is Visible    ${Link_Filtros}
-    # Sleep    15s
     Click Element                    ${Link_Filtros}
     Sleep    1s
 

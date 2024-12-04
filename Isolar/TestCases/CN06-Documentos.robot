@@ -75,16 +75,126 @@ CT 06.01.08 - Validar botão Status da assinatura
     E clico no botão Status da assinatura
     Então sistema exibe informações de botão Status da assinatura
 
+CT 06.01.09 - Validar botão Rubrica
+    [Documentation]     Caso de teste valida se botão Rubrica está funcional
+    [Tags]    Documentos    Documentos gerados    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Documentos geradados"
+    Quando clico em "Filtros"
+    E preencho informações do filtro criador
+    E clico no botão Rubrica
+    Então sistema exibe informações de botão Rubrica
+
+CT 06.01.10 - Validar botão Próximo
+    [Documentation]     Caso de teste valida se botão Próximo está funcional
+    [Tags]    Documentos    Documentos gerados    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Documentos geradados"
+    Quando clico no botão Próximo
+    Então sistema exibe próximas informações
+
+CT 06.01.11 - Validar botão Anterior
+    [Documentation]     Caso de teste valida se botão Anterior está funcional
+    [Tags]    Documentos    Documentos gerados    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Documentos geradados"
+    Quando clico no botão Próximo
+    E clico em "Anterior"
+    Então sistema exibe informações anteriores 
+
+CT 06.01.12 - Validar botão Ver Documento (ERROR)
+    [Documentation]     Caso de teste valida se botão Ver Documento (ERROR) está funcional
+    [Tags]    Documentos    Documentos gerados    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Documentos geradados"
+    Quando clico em "Filtros"
+    E preencho filtro criador
+    E clico no botão Ver Documento (ERROR)
+    Então sistema exibe informações de botão Ver Documento (ERROR)
+
+CT 06.01.13 - Validar botão Status da assinatura (ERROR)
+    [Documentation]     Caso de teste valida se botão Status da assinatura (ERROR) está funcional
+    [Tags]    Documentos    Documentos gerados    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Documentos geradados"
+    Quando clico em "Filtros"
+    E preencho filtro criador
+    E clico no botão Status da assinatura (ERROR)
+    Então sistema exibe informações de botão Status da assinatura (ERROR)
+
+CT 06.01.14 - Validar botão Gerar link de assinatura (ERROR)
+    [Documentation]     Caso de teste valida se botão Gerar link de assinatura (ERROR) está funcional
+    [Tags]    Documentos    Documentos gerados    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Documentos geradados"
+    Quando clico em "Filtros"
+    E preencho filtro criador
+    E clico no botão Gerar link de assinatura (ERROR)
+    Então sistema exibe informações de botão Gerar link de assinatura (ERROR)
+
+CT 06.01.15 - Validar botão Gerar link de assinatura
+    [Documentation]     Caso de teste valida se botão Gerar link de assinatura está funcional
+    [Tags]    Documentos    Documentos gerados    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Documentos geradados"
+    E clico no botão Gerar link de assinatura
+    Então sistema exibe informações de botão Gerar link de assinatura
+
+CT 06.02.01 - Validar menu Assinaturas
+    [Documentation]     Caso de teste valida se menu Assinaturas está funcional
+    [Tags]    Documentos    Assinaturas    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Então sistema exibe informações de menu Assinaturas
+
+CT 06.02.02 - Validar filtro Origem da assinatura
+    [Documentation]     Caso de teste valida se filtro Origem da assinatura está funcional
+    [Tags]    Documentos    Assinaturas    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Quando clico em "Filtros"
+    E preencho informações de filtro Origem da assinatura
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Origem da assinatura
+
+CT 06.02.03 - Validar filtro Status
+    [Documentation]     Caso de teste valida se filtro Status está funcional
+    [Tags]    Documentos    Assinaturas    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Quando clico em "Filtros"
+    E preencho informações de filtro Status
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Status
+
+CT 06.02.04 - Validar filtro Assinante
+    [Documentation]     Caso de teste valida se filtro Assinante está funcional
+    [Tags]    Documentos    Assinaturas    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Quando clico em "Filtros"
+    E preencho informações de filtro Assinante
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Assinante
+
+CT 06.02.05 - Validar filtro Observador
+    [Documentation]     Caso de teste valida se filtro Observador está funcional
+    [Tags]    Documentos    Assinaturas    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Quando clico em "Filtros"
+    E preencho informações de filtro Observador
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Observador
 
 
-# Teste Filtros
-# Botão Ver Documento
-# Botão Status de Assinatura 
+# Testar Filtros
 # ...
-# Botão Gerar link de assinatura
-# Botão Rubrica
+# Filtro quantidade de itens por pag
 # Botão Próximo
 # Botão Anterior
-# Botão Ver Documento (ERROR: Documento não encontrado)
-# Botão Status da assinatura  (ERROR: Sem assinatura)
-# Botão Gerar link de assinatura (ERROR: Link já foi gerado.)
+# Testar filtro Card/lista
+# Botão Criar
+# Testar botão buscar
+# Botão Editar
+# Botão Excluir

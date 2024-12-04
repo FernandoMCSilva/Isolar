@@ -15,7 +15,7 @@ ${emailteste}             teste123@gmail.com
 ${numeroteste}            21981905892
 ${valorteste}             0,7400
 
-${botao_gerar_assinatura}                //td[contains(@class, 'p-4 align-middle') and contains(@class, 'text-center')]//button
+${botao_gerar_assinatura_Estimativa}     //td[contains(@class, 'p-4 align-middle') and contains(@class, 'text-center')]//button
 ${botao_imprimir_estimativa}             //button[contains(.,'Imprimir Estimativa')]
 ${botao_verPDF}                          (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[5]
 ${botao_ExportarExcel_estimativa}        //button[contains(.,'Exportar para Excel')]
@@ -175,7 +175,7 @@ Então sistema exibe Estimativa anteriores
 
 Quando clico em "Gerar link de assinatura"
     Sleep    2s
-    Click Element    ${botao_gerar_assinatura}
+    Click Element    ${botao_gerar_assinatura_Estimativa}
 E clico em "Não"
     Click Element    //button[contains(.,'Sim')]
     Click Element    //button[contains(@class, 'absolute') and contains(@class, 'right-4') and contains(@class, 'top-4') and contains(@class, 'rounded-sm')]

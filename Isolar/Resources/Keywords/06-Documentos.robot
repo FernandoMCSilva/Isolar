@@ -11,13 +11,23 @@ ${combobox_Departamento_Documentos}      (//button[contains(@type,'button')])[9]
 ${input_Criador}                 //input[@placeholder='Nome do criador ...']
 ${filtro_TipoDocumento}          (//button[contains(.,'Selecione')])[1]
 ${filtro_DataRegistro}           //span[contains(.,'Selecione a data')]
+${filtro_OrigemAssinatura}       //button[@id='origem']
+${filtro_Status_Documentos}      //button[@id='status']
+${filtro_Assinante}              //input[@id='assinante']
+${filtro_Observador}             //input[@id='observador']
 
-@{opcoes_Departamento}    (//div[contains(.,'Compras')])[5]    (//div[contains(.,'Administrativo')])[5]              (//div[contains(.,'TI')])[5]          (//div[contains(.,'Logística')])[5]    (//div[contains(.,'Jurídico')])[5]
+@{opcoes_Departamento}        (//div[contains(.,'Compras')])[5]    (//div[contains(.,'Administrativo')])[5]              (//div[contains(.,'TI')])[5]          (//div[contains(.,'Logística')])[5]    (//div[contains(.,'Jurídico')])[5]
 ...    (//div[contains(.,'Departamento pessoal')])[5]        (//div[contains(.,'ENG.CIVIL')])[5]    (//div[contains(.,'CS-Customer Success')])[5]
+@{opcoes_OrigemAssinatura}    (//div[contains(.,'Documentos')])[14]    (//div[contains(.,'Externos')])[5]    (//div[contains(.,'Minerando Sol')])[5]    (//div[contains(.,'Estimativa')])[11]    
 
 ${botao_VerDocumento}            (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[4]
 ${botao_StatusAssinatura}        (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[17]
-${botao_Rubrica}                 (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[6]
+${botao_Rubrica}                 (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[18]
+${botao_GerarAssinatura}         (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[9]
+${botao_VerdocumentoERROR}       (//button[@data-state='closed'])[15] 
+${botao_StatusAssinaturaError}   (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-destructive text-destructive-foreground hover:bg-destructive/90 h-10 w-10')])[3]
+${botao_StatusAssinaturaError2}  (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')])[1]
+
 
 *** Keywords ***
 
@@ -120,4 +130,105 @@ E clico no botão Status da assinatura
 Então sistema exibe informações de botão Status da assinatura
     Wait Until Page Contains    text=Status da assinatura - 20
 
-# -06.01.01
+# -06.01.09
+E clico no botão Rubrica
+    Wait Until Element Is Visible    ${botao_Rubrica}
+    Click Element                    ${botao_Rubrica}
+
+Então sistema exibe informações de botão Rubrica
+    Wait Until Page Contains    text=Adicionar rubrica - 20
+
+# -06.01.10
+Quando clico no botão Próximo
+    Wait Until Element Is Visible   ${Botao_Proximo_Requisicoes} 
+    Click Element                   ${Botao_Proximo_Requisicoes}
+
+Então sistema exibe informações de botão Próximo
+    Wait Until Element Is Visible    //td[contains(.,'13')]
+
+# -06.01.11
+Então sistema exibe informações de botão Anterior
+    ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Not Be Visible    //button[contains(.,'Anterior')]
+     Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior não está visível. Funcionou.
+    ...    ELSE    Log    "Botão Anterior ainda está visível. Falhou."    WARN
+    
+# -06.01.12
+E preencho filtro criador
+    Wait Until Element Is Visible    ${input_Criador}
+    Input Text                       ${input_Criador}    Fernando Morais da Costa Silva
+    Sleep    1s
+E clico no botão Ver Documento (ERROR)
+    Wait Until Element Is Visible    ${botao_VerdocumentoERROR}
+    Click Element                    ${botao_VerdocumentoERROR}
+
+Então sistema exibe informações de botão Ver Documento (ERROR)
+    Wait Until Page Contains    text=Documento não encontrado.
+
+# -06.01.13
+E clico no botão Status da assinatura (ERROR)
+    Wait Until Element Is Visible    ${botao_StatusAssinaturaError}
+    Click Element                    ${botao_StatusAssinaturaError}
+
+Então sistema exibe informações de botão Status da assinatura (ERROR)
+    Wait Until Page Contains    text=Sem assinatura.
+    
+# -06.01.14
+E clico no botão Gerar link de assinatura (ERROR)
+    Wait Until Element Is Visible    ${botao_StatusAssinaturaError2}
+    Click Element                    ${botao_StatusAssinaturaError2}
+
+Então sistema exibe informações de botão Gerar link de assinatura (ERROR)
+    Wait Until Page Contains    text=Link já foi gerado.
+
+# -06.01.15
+E clico no botão Gerar link de assinatura
+    Wait Until Element Is Visible    ${botao_GerarAssinatura}
+    Click Element                    ${botao_GerarAssinatura}
+
+Então sistema exibe informações de botão Gerar link de assinatura
+    Wait Until Page Contains    text=ZapSign - 3
+
+# -06.02.01
+Clico no menu "Assinaturas"
+    Wait Until Element Is Visible    ${menu_Assinaturas}
+    Click Element                    ${menu_Assinaturas}
+    Sleep    5s
+
+Então sistema exibe informações de menu Assinaturas
+    Wait Until Page Contains    text=Informações referentes as assinaturas gerados no sistema.
+
+# -06.02.02
+E preencho informações de filtro Origem da assinatura
+    Wait Until Element Is Visible    ${filtro_OrigemAssinatura}
+    Click Element                    ${filtro_OrigemAssinatura}
+    Click Element                    (//div[contains(.,'Minerando Sol')])[5]
+
+Então sistema exibe informações de filtro Origem da assinatura
+    Wait Until Element Is Visible    //span[contains(.,'Doc')]
+
+# -06.02.03
+E preencho informações de filtro Status
+    Wait Until Element Is Visible    ${filtro_Status_Documentos}
+    Click Element                    ${filtro_Status_Documentos}
+    Click Element                    (//div[contains(.,'Assinado')])[5]
+
+Então sistema exibe informações de filtro Status
+    Wait Until Element Is Visible    (//span[contains(.,'Contrato ativo')])[1]
+
+# -06.02.04
+E preencho informações de filtro Assinante
+    Wait Until Element Is Visible    ${filtro_Assinante}
+    Input Text                       ${filtro_Assinante}    Teste
+
+Então sistema exibe informações de filtro Assinante
+    Wait Until Element Is Visible    (//span[contains(.,'Teste')])[1]
+
+# -06.02.05
+E preencho informações de filtro Observador
+    Wait Until Element Is Visible    ${filtro_Observador}
+    Input Text                       ${filtro_Observador}    a
+
+Então sistema exibe informações de filtro Observador
+    Wait Until Page Contains    text=Registros carregados com sucesso!
+
+# -06.02.01
