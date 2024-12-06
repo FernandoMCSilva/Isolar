@@ -207,6 +207,7 @@ E preencho informações de cadastro editado no menu Cadastros > Clientes
 
 # -07.02.04
 Então sistema exibe informações de pesquisa de Clientes
+    Sleep    1s
     ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    Log    "O resultado da pesquisa é B3. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é B3. Teste falhou."    WARN

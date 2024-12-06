@@ -6,6 +6,8 @@ Resource           ../Main.robot
 ${menu_DocumentosGerados}                //a[contains(.,'Documentos gerados')]
 ${menu_Assinaturas}                      //a[contains(.,'Assinaturas')]
 ${menu_Criardocumentos}                  (//div[contains(.,'Criar documento')])[9]
+${menu_CriarDocumento_Jurídico}          //button[contains(.,'Jurídico')]
+
 ${combobox_Departamento_Documentos}      (//button[contains(@type,'button')])[9]
 
 ${input_Criador}                 //input[@placeholder='Nome do criador ...']
@@ -35,6 +37,7 @@ ${botao_EditarCampos}            //button[contains(.,'Editar campos')]
 ${botao_GerarDocumento}          //button[contains(.,'Gerar Documento')]
 ${botao_VerTemplate_Documentos}  //button[contains(.,'Ver template')]
 ${botao_PreencherDocumento}      //button[contains(.,'Preencher documento')]
+${botao_BaixarTemplateEditável}  //button[contains(.,'Baixar Template editável')]
 
 ${CAMINHO_ARQUIVO}               "C:\Users\silva\Downloads\teste.pdf"
 ${nome_teste}                    teste
@@ -327,6 +330,7 @@ E preencho informações de novo documento
     Input Text                       (//input[@placeholder='Insira o valor do campo'])[2]    Teste
 
 E clico em Gerar Documento
+    Sleep    2s
     Wait Until Element Is Visible    ${botao_GerarDocumento}
     Click Element                    ${botao_GerarDocumento}
 
@@ -339,7 +343,7 @@ E clico em Ver template
     Click Element                    ${botao_VerTemplate_Documentos}
 
 Então sistema exibe tela de Ver template
-    Wait Until Page Does Not Contain    text=Você está preenchendo o seguinte documento:
+    Wait Until Element Is Visible    ${botao_VerTemplate_Documentos}
 
 # -06.03.04
 E clico em Preencher documento
@@ -355,22 +359,27 @@ E clico em "TI"
     Click Element                    //button[contains(.,'TI')]
     Click Element                    //button[contains(.,'rhivateste 4')]
 
+Então sistema entra na tela de Criar Documento > TI
+    Wait Until Page Contains    text=Preencha os campos abaixo e clique em preencher para baixar seu documento
+
+
+    
 E preencho informações de novo documento > TI
     Wait Until Element Is Visible    (//input[@placeholder='Insira o valor do campo'])[1]
-    Input Text        (//input[@placeholder='Insira o valor do campo'])[1]    ${nome_teste} 
-    Input Text        (//input[@placeholder='Insira o valor do campo'])[2]    1234
-    Input Text        (//input[@placeholder='Insira o valor do campo'])[3]    "C:\Users\silva\Downloads\teste.pdf"   
-    Input Text        (//input[@placeholder='Insira o valor do campo'])[4]    ${nome_teste}
-    Input Text        (//input[@placeholder='Insira o valor do campo'])[5]    1234
-    Input Text        (//input[@placeholder='Insira o valor do campo'])[6]    ${nome_teste}
-    Input Text        (//input[@placeholder='Insira o valor do campo'])[7]    ${nome_teste}
-    Input Text        (//input[@placeholder='Insira o valor do campo'])[8]    ${nome_teste}
-    Input Text        (//input[@placeholder='Insira o valor do campo'])[9]    ${nome_teste}
-    Input Text        (//input[@placeholder='Insira o valor do campo'])[10]   1234
-    Input Text        (//input[@placeholder='Insira o valor do campo'])[11]   ${nome_teste}
-    Input Text        (//input[@placeholder='Insira o valor do campo'])[12]   1234
-    Input Text        (//input[@placeholder='Insira o valor do campo'])[13]   ${nome_teste}
-    Input Text        (//input[@placeholder='Insira o valor do campo'])[14]   1234
+    Input Text        //input[@id='CLIENTE']                     ${nome_teste} 
+    Input Text        //input[contains(@id,'a')]                 1234
+    Choose File       xpath=//input[@type='file' and @id='b']    C:\\Users\\silva\\Downloads\\teste.pdf   
+    Input Text        //input[@id='RAZAO_SOCIAL']                ${nome_teste}
+    Input Text        //input[@id='CNPJ_CLIENTE']                12123123000112
+    Input Text        //input[@id='RUA_CLIENTE']                 ${nome_teste}
+    Input Text        //input[@id='BAIRRO_CLIENTE']              ${nome_teste}
+    Input Text        //input[@id='CIDADE_CLIENTE']              ${nome_teste}
+    Input Text        //input[@id='ESTADO_CLIENTE']              ${nome_teste}
+    Input Text        //input[@id='CEP_CLIENTE']                 28990204
+    Input Text        //input[@id='REPRESENTANTE_LEGAL']         ${nome_teste}
+    Input Text        //input[@id='CPF_REPRESENTANTE']           19895982771
+    Input Text        //input[@id='TESTEMUNHA_CLIENTE']          ${nome_teste}
+    Input Text        //input[@id='CPF_TESTEMUNHA']              19895982771
     
 Então sistema Gera documento
     Wait Until Page Contains    text=Documentos não foram recebidos.
@@ -378,4 +387,22 @@ Então sistema Gera documento
 Então sistema exibe erro de campos obrigatórios não preenchidos
     Wait Until Page Contains    text=Por favor, preencha todos os campos obrigatórios.
 
-# -06.03.01
+# -06.03.03.01
+E clico em "Jurídico"
+    Wait Until Element Is Visible    ${menu_CriarDocumento_Jurídico}
+    Click Element                    ${menu_CriarDocumento_Jurídico}
+    Click Element                    //button[contains(.,'66b28755d0543')]
+
+Então sistema entra na tela de Criar documento > Jurídico
+    Wait Until Page Contains    text=Preencha os campos abaixo e clique em preencher para baixar seu documento
+
+# -06.03.03.02
+E preencho informações de novo documento > Jurídico
+    Wait Until Element Is Visible    //input[@id='CLIENTE']
+    Input Text                       //input[@id='CLIENTE']              ${nome_teste}
+    Input Text                       //input[@id='RAZAO_SOCIAL']         ${nome_teste}
+    Input Text                       //input[@id='CNPJ_CLIENTE']         12123123000112
+    Input Text                       //input[@id='CPF_REPRESENTANTE']    12312312312
+
+
+# -06.03.03.01
