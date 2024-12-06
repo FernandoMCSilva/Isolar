@@ -222,14 +222,16 @@ CT 06.02.09 - Validar botão Anterior
     E clico em "Anterior"
     Então sistema exibe Assinaturas anteriores
 
-# CT 06.02.10 - Validar funcionalidade Criar
-#     [Documentation]     Caso de teste valida se funcionalidade Criar está funcional
-#     [Tags]    Documentos    Assinaturas    Funcional
-#     Dado que clico no menu "Documentos"
-#     Clico no menu "Assinaturas"
-#     Quando clico no botão Criar
-#     E ralizo o upload do arquivo
-#     # Então sistema 
+CT 06.02.10 - Validar funcionalidade Criar
+    [Documentation]     Caso de teste valida se funcionalidade Criar está funcional
+    [Tags]    Documentos    Assinaturas    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Quando clico no botão Criar
+    E seleciono opção "link"
+    Então sistema abre input de link
+    # E ralizo o upload do arquivo
+    # Então sistema 
 
 CT 06.02.11 - Validar filtro Buscar
     [Documentation]     Caso de teste valida se filtro Buscar está funcional
@@ -240,6 +242,107 @@ CT 06.02.11 - Validar filtro Buscar
     E clico em "Buscar"
     Então sistema exibe informações de filtro Buscar
 
+CT 06.02.12 - Validar botão Editar
+    [Documentation]     Caso de teste valida se botão Editar está funcional
+    [Tags]    Documentos    Assinaturas    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Quando clico em "Filtros"
+    E preencho informações de filtro Assinante
+    E clico em "Buscar"
+    Quando clico em "Editar"
+    Então sistema exibe tela de edição
+
+CT 06.02.13 - Validar botão Editar
+    [Documentation]     Caso de teste valida se botão Editar está funcional
+    [Tags]    Documentos    Assinaturas    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Quando clico em "Filtros"
+    E preencho informações de filtro Assinante
+    E clico em "Buscar"
+    Quando clico em "Editar"
+    Então sistema exibe tela de edição
+
+CT 06.02.14 - Validar botão Documento original em Editar
+    [Documentation]     Caso de teste valida se botão Documento original em Editar está funcional
+    [Tags]    Documentos    Assinaturas    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Quando clico em "Filtros"
+    E preencho informações de filtro Assinante
+    E clico em "Buscar"
+    Quando clico em "Editar"
+    E clico em Documento original
+    Então sistema exibe tela de Documento original
+
+CT 06.02.15 - Validar botão Editar campos em Editar
+    [Documentation]     Caso de teste valida se botão Editar campos em Editar está funcional
+    [Tags]    Documentos    Assinaturas    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Quando clico em "Filtros"
+    E preencho informações de filtro Assinante
+    E clico em "Buscar"
+    Quando clico em "Editar"
+    E clico em Documento original
+    E clico em Editar campos
+    Então sistema exibe tela de Editar campos
+
+CT 06.03.01 - Validar menu Criar documento > Compras
+    [Documentation]     Caso de teste valida se menu Criar documento > Compras está funcional
+    [Tags]    Documentos    Criar documento    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Criar documento"
+    E clico em "Compras"
+    Então sistema exibe informações de menu Criar documento
+
+# CT 06.03.02 - Validar botão Gerar Documento
+#     [Documentation]     Caso de teste valida se botão Gerar Documento está funcional
+#     [Tags]    Documentos    Criar documento    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Criar documento"
+#     E preencho informações de novo documento
+#     E clico em Gerar Documento
+#     Então sistema exibe mensagem de documento gerado
+
+CT 06.03.03 - Validar botão Ver template
+    [Documentation]     Caso de teste valida se botão Ver template está funcional
+    [Tags]    Documentos    Criar documento    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Criar documento"
+    E clico em "Ti"
+    E clico em Ver template
+    Então sistema exibe tela de Ver template
+
+CT 06.03.04 - Validar botão Preencher documento
+    [Documentation]     Caso de teste valida se botão Preencher documento está funcional
+    [Tags]    Documentos    Criar documento    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Criar documento"
+    E clico em "Ti"
+    E clico em Ver template
+    E clico em Preencher documento
+    Então sistema exibe tela de Preencher documento
+
+CT 06.03.05 - Validar menu Criar documento > TI
+    [Documentation]     Caso de teste valida se menu Criar documento > TI está funcional
+    [Tags]    Documentos    Criar documento    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Criar documento"
+    E clico em "TI"
+    E preencho informações de novo documento > TI
+    E clico em Gerar Documento
+    Então sistema Gera documento
+
+CT 06.03.06 - Validar menu Criar documento > TI sem preencher campos obrigatórios (Error) 
+    [Documentation]     Caso de teste valida se menu Criar documento > TI está funcional
+    [Tags]    Documentos    Criar documento    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Criar documento"
+    E clico em "TI"
+    E clico em Gerar Documento
+    Então sistema exibe erro de campos obrigatórios não preenchidos
 
 
 # Testar Filtros
@@ -248,7 +351,8 @@ CT 06.02.11 - Validar filtro Buscar
 # Botão Próximo
 # Botão Anterior
 # Testar botão buscar
-# ...
-# Botão Criar
 # Botão Editar
 # Botão Excluir
+# Gerar documento sem preencher campos obrigatórios
+# ...
+# Botão Criar

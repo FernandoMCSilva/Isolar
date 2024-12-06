@@ -30,8 +30,14 @@ ${botao_VerdocumentoERROR}       (//button[@data-state='closed'])[15]
 ${botao_StatusAssinaturaError}   (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-destructive text-destructive-foreground hover:bg-destructive/90 h-10 w-10')])[3]
 ${botao_StatusAssinaturaError2}  (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')])[1]
 ${botao_Criar}                   //button[contains(.,'Criar')]
+${botao_DocumentoOriginal}       //button[contains(.,'Documento original')]
+${botao_EditarCampos}            //button[contains(.,'Editar campos')]
+${botao_GerarDocumento}          //button[contains(.,'Gerar Documento')]
+${botao_VerTemplate_Documentos}  //button[contains(.,'Ver template')]
+${botao_PreencherDocumento}      //button[contains(.,'Preencher documento')]
 
 ${CAMINHO_ARQUIVO}               "C:\Users\silva\Downloads\teste.pdf"
+${nome_teste}                    teste
 *** Keywords ***
 
 # -06.01.01
@@ -263,6 +269,14 @@ Quando clico no botão Criar
 #     Sleep    5s
     
 # -06.02.10
+
+E seleciono opção "link"
+    Wait Until Element Is Visible    //button[contains(.,'Arquivo')]
+    Click Element                    //button[contains(.,'Arquivo')]
+    Click Element                    (//div[contains(.,'Link')])[5]
+
+Então sistema abre input de link
+    Wait Until Element Is Visible    //input[@placeholder='https://gruposiso.com.br/documentos/arquivopdf.pdf']
 E preencho informação de filtro Buscar
     Wait Until Element Is Visible    (//button[@type='button'])[10]
     Click Element                    (//button[@type='button'])[10]
@@ -273,4 +287,95 @@ Então sistema exibe informações de filtro Buscar
     Sleep    2s
     Wait Until Element Is Visible    //span[contains(.,'Teste de Morais')]
 
-# -06.02.01
+# -06.02.11
+Então sistema exibe tela de edição
+    Wait Until Page Contains    text=Editar contrato
+
+# -06.02.14
+E clico em Documento original
+    Wait Until Element Is Visible    ${botao_DocumentoOriginal}
+    Click Element                    ${botao_DocumentoOriginal}
+
+Então sistema exibe tela de Documento original
+    Wait Until Element Is Not Visible    //h1[contains(.,'Documento')]
+
+# -06.02.15
+E clico em Editar campos
+    Wait Until Element Is Visible    ${botao_EditarCampos}
+    Click Element                    ${botao_EditarCampos}
+
+Então sistema exibe tela de Editar campos
+    Wait Until Element Is Visible    //h1[contains(.,'Documento')]
+
+# -06.03.01
+Clico no menu "Criar documento"
+    Wait Until Element Is Visible    ${menu_Criardocumentos}
+    Click Element                    ${menu_Criardocumentos}
+
+E clico em "Compras"
+    Wait Until Element Is Visible    //button[contains(.,'Compras')]
+    Click Element                    //button[contains(.,'Compras')]
+    Click Element                    //button[contains(.,'cadastro_2')]
+
+Então sistema exibe informações de menu Criar documento
+    Wait Until Page Contains    text=Preencha os campos abaixo e clique em preencher para baixar seu documento
+
+# -06.03.02
+E preencho informações de novo documento
+    Wait Until Element Is Visible    (//input[@placeholder='Insira o valor do campo'])[1]
+    Input Text                       (//input[@placeholder='Insira o valor do campo'])[1]    Teste
+    Input Text                       (//input[@placeholder='Insira o valor do campo'])[2]    Teste
+
+E clico em Gerar Documento
+    Wait Until Element Is Visible    ${botao_GerarDocumento}
+    Click Element                    ${botao_GerarDocumento}
+
+Então sistema exibe mensagem de documento gerado
+    Wait Until Page Contains    text=Documentos não foram recebidos.
+
+# -06.03.03
+E clico em Ver template
+    Wait Until Element Is Visible    ${botao_VerTemplate_Documentos}
+    Click Element                    ${botao_VerTemplate_Documentos}
+
+Então sistema exibe tela de Ver template
+    Wait Until Page Does Not Contain    text=Você está preenchendo o seguinte documento:
+
+# -06.03.04
+E clico em Preencher documento
+    Wait Until Element Is Visible    ${botao_PreencherDocumento}
+    Click Element                    ${botao_PreencherDocumento}
+
+Então sistema exibe tela de Preencher documento
+    Wait Until Page Contains    text=Você está preenchendo o seguinte documento:
+
+# -06.03.05
+E clico em "TI"
+    Wait Until Element Is Visible    //button[contains(.,'TI')]
+    Click Element                    //button[contains(.,'TI')]
+    Click Element                    //button[contains(.,'rhivateste 4')]
+
+E preencho informações de novo documento > TI
+    Wait Until Element Is Visible    (//input[@placeholder='Insira o valor do campo'])[1]
+    Input Text        (//input[@placeholder='Insira o valor do campo'])[1]    ${nome_teste} 
+    Input Text        (//input[@placeholder='Insira o valor do campo'])[2]    1234
+    Input Text        (//input[@placeholder='Insira o valor do campo'])[3]    "C:\Users\silva\Downloads\teste.pdf"   
+    Input Text        (//input[@placeholder='Insira o valor do campo'])[4]    ${nome_teste}
+    Input Text        (//input[@placeholder='Insira o valor do campo'])[5]    1234
+    Input Text        (//input[@placeholder='Insira o valor do campo'])[6]    ${nome_teste}
+    Input Text        (//input[@placeholder='Insira o valor do campo'])[7]    ${nome_teste}
+    Input Text        (//input[@placeholder='Insira o valor do campo'])[8]    ${nome_teste}
+    Input Text        (//input[@placeholder='Insira o valor do campo'])[9]    ${nome_teste}
+    Input Text        (//input[@placeholder='Insira o valor do campo'])[10]   1234
+    Input Text        (//input[@placeholder='Insira o valor do campo'])[11]   ${nome_teste}
+    Input Text        (//input[@placeholder='Insira o valor do campo'])[12]   1234
+    Input Text        (//input[@placeholder='Insira o valor do campo'])[13]   ${nome_teste}
+    Input Text        (//input[@placeholder='Insira o valor do campo'])[14]   1234
+    
+Então sistema Gera documento
+    Wait Until Page Contains    text=Documentos não foram recebidos.
+# -06.03.06
+Então sistema exibe erro de campos obrigatórios não preenchidos
+    Wait Until Page Contains    text=Por favor, preencha todos os campos obrigatórios.
+
+# -06.03.01
