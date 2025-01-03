@@ -297,89 +297,89 @@ CT 06.03.01.01 - Validar menu Criar documento > Compras
     E clico em "Compras"
     Então sistema exibe informações de menu Criar documento
 
-CT 06.03.01.02 - Validar botão Gerar Documento 
-    [Documentation]     Caso de teste valida se botão Gerar Documento está funcional
-    [Tags]    Documentos    Criar documento    Compras    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Criar documento"
-    E clico em "Compras"
-    E preencho informações de novo documento
-    E clico em Gerar Documento
-    Então sistema exibe mensagem de documento gerado
+# CT 06.03.01.02 - Validar botão Gerar Documento 
+#     [Documentation]     Caso de teste valida se botão Gerar Documento está funcional
+#     [Tags]    Documentos    Criar documento    Compras    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Criar documento"
+#     E clico em "Compras"
+#     E preencho informações de novo documento
+#     E clico em Gerar Documento
+#     Então sistema exibe mensagem de documento gerado
 
-CT 06.03.01.03 - Validar botão Gerar Documento sem preencher campos obrigatórios (ERROR)
-    [Documentation]     Caso de teste valida se botão Gerar Documento está funcional
-    [Tags]    Documentos    Criar documento    Compras    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Criar documento"
-    E clico em "Compras"
-    E clico em Gerar Documento
-    Então sistema exibe erro de campos obrigatórios não preenchidos
+# CT 06.03.01.03 - Validar botão Gerar Documento sem preencher campos obrigatórios (ERROR)
+#     [Documentation]     Caso de teste valida se botão Gerar Documento está funcional
+#     [Tags]    Documentos    Criar documento    Compras    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Criar documento"
+#     E clico em "Compras"
+#     E clico em Gerar Documento
+#     Então sistema exibe erro de campos obrigatórios não preenchidos
 
-CT 06.03.01.03 - Validar botão Ver template
-    [Documentation]     Caso de teste valida se botão Ver template está funcional
-    [Tags]    Documentos    Criar documento    Compras    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Criar documento"
-    E clico em "Ti"
-    E clico em Ver template
-    Então sistema exibe tela de Ver template
+# CT 06.03.01.03 - Validar botão Ver template
+#     [Documentation]     Caso de teste valida se botão Ver template está funcional
+#     [Tags]    Documentos    Criar documento    Compras    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Criar documento"
+#     E clico em "Ti"
+#     E clico em Ver template
+#     Então sistema exibe tela de Ver template
 
-CT 06.03.01.04 - Validar botão "Preencher documento"
-    [Documentation]     Caso de teste valida se botão Preencher documento está funcional
-    [Tags]    Documentos    Criar documento    Compras    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Criar documento"
-    E clico em "Ti"
-    E clico em Ver template
-    E clico em Preencher documento
-    Então sistema exibe tela de Preencher documento
+# CT 06.03.01.04 - Validar botão "Preencher documento"
+#     [Documentation]     Caso de teste valida se botão Preencher documento está funcional
+#     [Tags]    Documentos    Criar documento    Compras    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Criar documento"
+#     E clico em "Ti"
+#     E clico em Ver template
+#     E clico em Preencher documento
+#     Então sistema exibe tela de Preencher documento
 
-CT 06.03.02.01 - Validar menu Criar documento > TI
-    [Documentation]     Caso de teste valida se menu Criar documento > TI está funcional
-    [Tags]    Documentos    Criar documento    TI    Funcional
+CT 06.03.02.01 - Validar menu Criar documento > Comercial
+    [Documentation]     Caso de teste valida se menu Criar documento > Comercial está funcional
+    [Tags]    Documentos    Criar documento    Comercial    Funcional
     Dado que clico no menu "Documentos"
     Clico no menu "Criar documento"
-    E clico em "TI"
-    Então sistema entra na tela de Criar Documento > TI
+    E clico em "Comercial"
+    Então sistema entra na tela de Criar Documento > Comercial
 
-CT 06.03.02.02 - Validar menu Gerar documento
-    [Documentation]     Caso de teste valida se menu Gerar documento > TI está funcional
-    [Tags]    Documentos    Criar documento    TI    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Criar documento"
-    E clico em "TI"
-    E preencho informações de novo documento > TI
-    E clico em Gerar Documento
-    Então sistema Gera documento
+# CT 06.03.02.02 - Validar menu Gerar documento
+#     [Documentation]     Caso de teste valida se menu Gerar documento > Comercial está funcional
+#     [Tags]    Documentos    Criar documento    Comercial    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Criar documento"
+#     E clico em "Comercial"
+#     E preencho informações de novo documento > Comercial
+#     E clico em Gerar Documento
+#     Então sistema Gera documento
 
-CT 06.03.02.03 - Validar menu Gerar documento sem preencher campos obrigatórios (Error) 
-    [Documentation]     Caso de teste valida se menu Gerar documento > TI está funcional
-    [Tags]    Documentos    Criar documento    TI    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Criar documento"
-    E clico em "TI"
-    E clico em Gerar Documento
-    Então sistema exibe erro de campos obrigatórios não preenchidos
+# CT 06.03.02.03 - Validar menu Gerar documento sem preencher campos obrigatórios (Error) 
+#     [Documentation]     Caso de teste valida se menu Gerar documento > Comercial está funcional
+#     [Tags]    Documentos    Criar documento    Comercial    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Criar documento"
+#     E clico em "Comercial"
+#     E clico em Gerar Documento
+#     Então sistema exibe erro de campos obrigatórios não preenchidos
 
-CT 06.03.02.04 - Validar botão Ver template 
-    [Documentation]     Caso de teste valida botão Ver templateestá funcional
-    [Tags]    Documentos    Criar documento    TI    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Criar documento"
-    E clico em "TI"
-    E clico em Ver template
-    Então sistema exibe tela de Ver template
+# CT 06.03.02.04 - Validar botão Ver template 
+#     [Documentation]     Caso de teste valida botão Ver templateestá funcional
+#     [Tags]    Documentos    Criar documento    Comercial    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Criar documento"
+#     E clico em "Comercial"
+#     E clico em Ver template
+#     Então sistema exibe tela de Ver template
 
-CT 06.03.02.05 - Validar botão "Preencher documento"
-    [Documentation]     Caso de teste valida se botão Preencher documento está funcional
-    [Tags]    Documentos    Criar documento    TI    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Criar documento"
-    E clico em "Compras"
-    E clico em Ver template
-    E clico em Preencher documento
-    Então sistema exibe tela de Preencher documento
+# CT 06.03.02.05 - Validar botão "Preencher documento"
+#     [Documentation]     Caso de teste valida se botão Preencher documento está funcional
+#     [Tags]    Documentos    Criar documento    Comercial    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Criar documento"
+#     E clico em "Compras"
+#     E clico em Ver template
+#     E clico em Preencher documento
+#     Então sistema exibe tela de Preencher documento
 
 CT 06.03.03.01 - Validar menu Criar documento > Jurídico
     [Documentation]     Caso de teste valida se menu Criar documento > Jurídico está funcional
@@ -389,43 +389,43 @@ CT 06.03.03.01 - Validar menu Criar documento > Jurídico
     E clico em "Jurídico"
     Então sistema entra na tela de Criar documento > Jurídico
     
-CT 06.03.03.02 - Validar menu Gerar documento
-    [Documentation]     Caso de teste valida se menu Gerar documento > Jurídico está funcional
-    [Tags]    Documentos    Criar documento    Jurídico    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Criar documento"
-    E clico em "Jurídico"
-    E preencho informações de novo documento > Jurídico
-    E clico em Gerar Documento
-    Então sistema Gera documento    
+# CT 06.03.03.02 - Validar menu Gerar documento
+#     [Documentation]     Caso de teste valida se menu Gerar documento > Jurídico está funcional
+#     [Tags]    Documentos    Criar documento    Jurídico    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Criar documento"
+#     E clico em "Jurídico"
+#     E preencho informações de novo documento > Jurídico
+#     E clico em Gerar Documento
+#     Então sistema Gera documento    
 
-CT 06.03.03.03 - Validar menu Gerar documento sem preencher campos obrigatórios (ERROR)
-    [Documentation]     Caso de teste valida se Gerar documento sem preencher campos obrigatórios está funcional
-    [Tags]    Documentos    Criar documento    Jurídico    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Criar documento"
-    E clico em "Jurídico"
-    E clico em Gerar Documento
-    Então sistema exibe erro de campos obrigatórios não preenchidos    
+# CT 06.03.03.03 - Validar menu Gerar documento sem preencher campos obrigatórios (ERROR)
+#     [Documentation]     Caso de teste valida se Gerar documento sem preencher campos obrigatórios está funcional
+#     [Tags]    Documentos    Criar documento    Jurídico    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Criar documento"
+#     E clico em "Jurídico"
+#     E clico em Gerar Documento
+#     Então sistema exibe erro de campos obrigatórios não preenchidos    
 
-CT 06.03.03.04 - Validar menu Gerar documento sem preencher campos obrigatórios (ERROR)
-    [Documentation]     Caso de teste valida se Gerar documento sem preencher campos obrigatórios está funcional
-    [Tags]    Documentos    Criar documento    Jurídico    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Criar documento"
-    E clico em "Jurídico"
-    E clico em Ver template
-    Então sistema exibe tela de Ver template 
+# CT 06.03.03.04 - Validar menu Gerar documento sem preencher campos obrigatórios (ERROR)
+#     [Documentation]     Caso de teste valida se Gerar documento sem preencher campos obrigatórios está funcional
+#     [Tags]    Documentos    Criar documento    Jurídico    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Criar documento"
+#     E clico em "Jurídico"
+#     E clico em Ver template
+#     Então sistema exibe tela de Ver template 
 
-CT 06.03.03.04 - Validar botão "Preencher documento" 
-    [Documentation]     Caso de teste valida se botão Preencher documento está funcional
-    [Tags]    Documentos    Criar documento    Jurídico    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Criar documento"
-    E clico em "Jurídico"
-    E clico em Ver template
-    E clico em Preencher documento
-    Então sistema exibe tela de Preencher documento
+# CT 06.03.03.04 - Validar botão "Preencher documento" 
+#     [Documentation]     Caso de teste valida se botão Preencher documento está funcional
+#     [Tags]    Documentos    Criar documento    Jurídico    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Criar documento"
+#     E clico em "Jurídico"
+#     E clico em Ver template
+#     E clico em Preencher documento
+#     Então sistema exibe tela de Preencher documento
 
 # Validar menu 
 # Gerar Documento 

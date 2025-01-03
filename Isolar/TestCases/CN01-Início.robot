@@ -53,5 +53,5 @@ CT 01.07 - Validar todos os filtros
     Dado que clico no menu "Início"
     E preencho data inicial
     E preencho data final
-    E clico em Buscar
+    # E clico em Buscar
     Então sistema exibe requisições filtradas

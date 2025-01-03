@@ -9,7 +9,7 @@ Abrir navegador
     Open Browser    ${url}    ${BROWSER}   
     Maximize Browser Window
     # Set Window Size    1920    1080
-    Wait Until Element Is Visible    ${LOGO}
+    Wait Until Element Is Visible    ${LOGO}    timeout=10s
 
 Dado que acesse a Isolar e logue no sistema
     Abrir navegador    ${URLISO}

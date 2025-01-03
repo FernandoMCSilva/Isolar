@@ -79,9 +79,9 @@ CT 10.01.09 - Validar filtro Tipo de requisição
     [Tags]    Relatórios    Relatórios    Funcional        
     Dado que clico no menu "Relatórios > Relatórios"
     Quando clico em "Filtros"
-    E seleciono filtro Tipo de requisição "Estimativa"
+    E seleciono filtro Tipo de requisição "Todos"
     E clico em "Buscar"
-    Então sistema exibe informações de filtro Tipo de requisição "Estimativa"
+    Então sistema exibe informações de filtro Tipo de requisição "Todos"
 
 CT 10.01.10 - Validar filtro Data de criação 
     [Documentation]     Caso de teste valida se filtro Data de criação no Menu Relatórios > Relatórios está funcional

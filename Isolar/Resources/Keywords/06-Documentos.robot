@@ -5,7 +5,7 @@ Resource           ../Main.robot
 *** Variables ***
 ${menu_DocumentosGerados}                //a[contains(.,'Documentos gerados')]
 ${menu_Assinaturas}                      //a[contains(.,'Assinaturas')]
-${menu_Criardocumentos}                  (//div[contains(.,'Criar documento')])[9]
+${menu_Criardocumentos}                  //button[contains(.,'Criar Documento')]
 ${menu_CriarDocumento_Jurídico}          //button[contains(.,'Jurídico')]
 
 ${combobox_Departamento_Documentos}      (//button[contains(@type,'button')])[9]
@@ -31,7 +31,7 @@ ${botao_GerarAssinatura}         (//button[@class='inline-flex items-center just
 ${botao_VerdocumentoERROR}       (//button[@data-state='closed'])[15] 
 ${botao_StatusAssinaturaError}   (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-destructive text-destructive-foreground hover:bg-destructive/90 h-10 w-10')])[3]
 ${botao_StatusAssinaturaError2}  (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')])[1]
-${botao_Criar}                   //button[contains(.,'Criar')]
+${botao_Criar}                   (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2')])[1]
 ${botao_DocumentoOriginal}       //button[contains(.,'Documento original')]
 ${botao_EditarCampos}            //button[contains(.,'Editar campos')]
 ${botao_GerarDocumento}          //button[contains(.,'Gerar Documento')]
@@ -216,7 +216,7 @@ E preencho informações de filtro Origem da assinatura
     Click Element                    (//div[contains(.,'Minerando Sol')])[5]
 
 Então sistema exibe informações de filtro Origem da assinatura
-    Wait Until Element Is Visible    //span[contains(.,'Doc')]
+    Wait Until Element Is Visible    (//p[contains(.,'Doc')])[4]
 
 # -06.02.03
 E preencho informações de filtro Status
@@ -225,7 +225,7 @@ E preencho informações de filtro Status
     Click Element                    (//div[contains(.,'Assinado')])[5]
 
 Então sistema exibe informações de filtro Status
-    Wait Until Element Is Visible    (//span[contains(.,'Contrato ativo')])[1]
+    Wait Until Element Is Visible    (//p[contains(.,'Contrato ativo')])[2]
 
 # -06.02.04
 E preencho informações de filtro Assinante
@@ -233,7 +233,7 @@ E preencho informações de filtro Assinante
     Input Text                       ${filtro_Assinante}    Teste
 
 Então sistema exibe informações de filtro Assinante
-    Wait Until Element Is Visible    (//span[contains(.,'Teste')])[1]
+    Wait Until Element Is Visible    (//p[contains(.,'Teste')])[1]
 
 # -06.02.05
 E preencho informações de filtro Observador
@@ -274,6 +274,7 @@ Quando clico no botão Criar
 # -06.02.10
 
 E seleciono opção "link"
+    Sleep    2s
     Wait Until Element Is Visible    //button[contains(.,'Arquivo')]
     Click Element                    //button[contains(.,'Arquivo')]
     Click Element                    (//div[contains(.,'Link')])[5]
@@ -288,7 +289,7 @@ E preencho informação de filtro Buscar
     
 Então sistema exibe informações de filtro Buscar
     Sleep    2s
-    Wait Until Element Is Visible    //span[contains(.,'Teste de Morais')]
+    Wait Until Element Is Visible    //p[contains(.,'Teste de Morais')]
 
 # -06.02.11
 Então sistema exibe tela de edição
@@ -318,10 +319,9 @@ Clico no menu "Criar documento"
 E clico em "Compras"
     Wait Until Element Is Visible    //button[contains(.,'Compras')]
     Click Element                    //button[contains(.,'Compras')]
-    Click Element                    //button[contains(.,'cadastro_2')]
 
 Então sistema exibe informações de menu Criar documento
-    Wait Until Page Contains    text=Preencha os campos abaixo e clique em preencher para baixar seu documento
+    Wait Until Page Contains    text=Escolha o tipo de documento que deseja gerar.
 
 # -06.03.02
 E preencho informações de novo documento
@@ -354,17 +354,16 @@ Então sistema exibe tela de Preencher documento
     Wait Until Page Contains    text=Você está preenchendo o seguinte documento:
 
 # -06.03.05
-E clico em "TI"
-    Wait Until Element Is Visible    //button[contains(.,'TI')]
-    Click Element                    //button[contains(.,'TI')]
-    Click Element                    //button[contains(.,'rhivateste 4')]
+E clico em "Comercial"
+    Wait Until Element Is Visible    //button[contains(.,'Comercial')]
+    Click Element                    //button[contains(.,'Comercial')]
 
-Então sistema entra na tela de Criar Documento > TI
-    Wait Until Page Contains    text=Preencha os campos abaixo e clique em preencher para baixar seu documento
+Então sistema entra na tela de Criar Documento > Comercial
+    Wait Until Page Contains    text=Escolha o tipo de documento que deseja gerar.
 
 
     
-E preencho informações de novo documento > TI
+E preencho informações de novo documento > Comercial
     Wait Until Element Is Visible    (//input[@placeholder='Insira o valor do campo'])[1]
     Input Text        //input[@id='CLIENTE']                     ${nome_teste} 
     Input Text        //input[contains(@id,'a')]                 1234
@@ -391,10 +390,10 @@ Então sistema exibe erro de campos obrigatórios não preenchidos
 E clico em "Jurídico"
     Wait Until Element Is Visible    ${menu_CriarDocumento_Jurídico}
     Click Element                    ${menu_CriarDocumento_Jurídico}
-    Click Element                    //button[contains(.,'66b28755d0543')]
+
 
 Então sistema entra na tela de Criar documento > Jurídico
-    Wait Until Page Contains    text=Preencha os campos abaixo e clique em preencher para baixar seu documento
+    Wait Until Page Contains    text=Escolha o tipo de documento que deseja gerar.
 
 # -06.03.03.02
 E preencho informações de novo documento > Jurídico

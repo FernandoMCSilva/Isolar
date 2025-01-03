@@ -400,22 +400,23 @@ E preencho informações de inserir novo cadastro de Departamentos
     Sleep    2s
     Input Text        //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
     Input Text        //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
-    Click Element    (//div[contains(.,'Selecione os documentos')])[13]
-    Click Element    //div[@id='react-select-2-option-2']
     Click Element    (//div[contains(.,'Selecione as requisições')])[13]
-    Click Element    //div[@id='react-select-3-option-19']
-
+    Click Element    (//div[contains(.,'Técnico')])[14]
+    Click Element    (//input[@value='B3 (teste)'])[2]
+    Click Element    //button[contains(.,'Próximo')]
 
 # -07.09.03
 E preencho informações de cadastro editado em Departamentos
     Sleep    2s
     Input Text        //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
     Input Text        //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
-    Click Element    (//div[contains(.,'Selecione os documentos')])[13]
-    Click Element    //div[@id='react-select-2-option-2']
-    Click Element    (//div[contains(.,'Selecione as requisições')])[13]
-    Click Element    //div[@id='react-select-3-option-19']
-    Click Element    //button[contains(.,'Atualizar')]
+    Click Element    (//div[contains(.,'Técnico')])[13]
+    Click Element    (//div[contains(.,'Pós Venda')])[14]
+    Click Element    (//input[@value='B3 (teste)'])[2]
+    Click Element    //button[contains(.,'Próximo')]
+    Sleep    1s
+    # Execute JavaScript    window.scrollBy(0, 500);
+    Click Element    ${botao_Salvar}
 # -07.09.08
 Então sistema exibe mensagem de erro de Departamentos
     Wait Until Page Contains    text=Nenhum departamento encontrado.

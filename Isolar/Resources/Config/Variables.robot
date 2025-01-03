@@ -11,7 +11,7 @@ ${LOGO}                     //img[@alt='Logo Grupo ISO']
 # suporte@gerenciadores.com
 
 ${EmailAdmin}                qa@grupoiso.com.br
-${SenhaAdmin}                24455090 
+${SenhaAdmin}                Gabriela16+
 ${EmailVendedor}             joice@isolarenergy.com.br
 ${SenhaVendedor}             Isolar@2023
 ${EmailTecnico}              projetos6@isolarenergy.com.br

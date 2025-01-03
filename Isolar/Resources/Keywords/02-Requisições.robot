@@ -17,11 +17,12 @@ ${Botao_Visualizar}                     (//button[contains(@class,'inline-flex i
 ${Botao_Acoes}                          (//button[@data-state='closed'])[19]
 ${Botao_Historico}                      (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10')])[3]
 ${Botao_Comentarios}                    (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[4]
-${Botao_Acoes_Requisicoes}              (//button[@type='button'])[20]
-${Botao_Renovar}                        (//button[@data-state='closed'])[21]
+${Botao_Acoes_Requisicoes}              (//button[@data-state='closed'])[19]
+${Botao_Renovar}                        (//button[@data-state='closed'])[19]
 ${Botao_Inserir_Requisicoes}            //button[contains(.,'Inserir')]
 ${Botao_Proximo_Requisicoes}            //button[contains(.,'Próximo')]
 ${Botao_Excluir_Requisicoes}            //button[contains(.,'Excluir requisição')]
+${Botao_MudarStatusRequisicao}          (//button[@data-state='closed'])[18]
 
 ${input_nomecompleto_Requisicoes}       //div[@class='select__value-container css-hlgwow']
 ${input_telefone_Requisicoes}           //input[@id='telefone']
@@ -34,7 +35,7 @@ ${Tipo_Fila}               Técnico
 
 ${COMBOBOX_DEPARTAMENTO}       //button[contains(@id,'departament')]
 ${COMBOBOX_STATUS}             //button[contains(@id,'status')]
-${COMBOBOX_TIPO}               //button[contains(@id,'tipo')]
+${COMBOBOX_TIPO}               //button[@id='tipo']
 ${COMBOBOX_URGENTE}            //button[contains(@id,'urgente')]
 ${COMBOBOX_NIVEL_DE_URGENCIA}  //button[contains(@id,'nivel_urgencia')]
 ${COMBOBOX_RESPONSAVEL}        (//button[contains(@dir,'ltr')])[3]
@@ -45,18 +46,16 @@ ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 ...    (//div[contains(.,'Administrativo')])[5]              (//div[contains(.,'TI')])[5]          (//div[contains(.,'Logística')])[5]    (//div[contains(.,'Jurídico')])[5]
 ...    (//div[contains(.,'Departamento pessoal')])[5]        (//div[contains(.,'ENG.CIVIL')])[5]    (//div[contains(.,'CS-Customer Success')])[5]
 @{OPCOES_COMBOBOX_STATUS}           (//div[contains(.,'Fila')])[22]    (//div[contains(.,'Produção')])[5]    (//div[contains(.,'Concluído')])[22]    (//div[contains(.,'Parado')])[5]
-@{OPCOES_COMBOBOX_TIPO}             (//div[contains(.,'Técnico')])[14]    (//div[contains(.,'Pós Venda')])[5]    (//div[contains(.,'Compra')])[5]    (//div[contains(.,'Defeito com computador/notebook')])[5]    (//div[contains(.,'Defeito com impressora')])[5]    
-...     (//div[contains(.,'Problemas com internet')])[5]    (//div[contains(.,'Novo Colaborador')])[5]    (//div[contains(.,'Bloqueio de Acesso a Plataforma')])[5]    (//div[contains(.,'Problema com Sistema')])[5]    
-...    (//div[contains(.,'SERVIÇO MANUTENÇAO')])[5]    (//div[contains(.,'CERTIDAO AMBIENTAL')])[5]
+@{OPCOES_COMBOBOX_TIPO}
+# @{OPCOES_COMBOBOX_TIPO}             (//div[contains(.,'Técnico')])[14]    (//div[contains(.,'Pós Venda')])[5]    (//div[contains(.,'Compra')])[5]    (//div[contains(.,'Defeito com computador/notebook')])[5]    (//div[contains(.,'Defeito com impressora')])[5]    
+# ...     (//div[contains(.,'Problemas com internet')])[5]    (//div[contains(.,'Novo Colaborador')])[5]    (//div[contains(.,'Bloqueio de Acesso a Plataforma')])[5]    (//div[contains(.,'Problema com Sistema')])[5]    
+# ...    (//div[contains(.,'SERVIÇO MANUTENÇAO')])[5]    (//div[contains(.,'CERTIDAO AMBIENTAL')])[5]
 @{OPCOES_COMBOBOX_URGENTE}          (//div[contains(.,'Sim')])[5]    (//div[contains(.,'Não')])[14]
 @{OPCOES_COMBOBOX_NIVELDEURGENCIA}  (//div[contains(.,'Baixo')])[5]    (//div[contains(.,'Médio')])[5]    (//div[contains(.,'Alto')])[5]
-@{OPCOES_COMBOBOX_RESPONSAVEL}      (//div[contains(.,'Joice')])[5]    (//div[contains(.,'Larissa SDR')])[5]    (//div[contains(.,'Leandro Coser')])[5]    (//div[contains(.,'Fabrício TI')])[5]    (//div[contains(.,'Yoseph - Aprediz de dev')])[5]    
+@{OPCOES_COMBOBOX_RESPONSAVEL}      (//div[contains(.,'Joice')])[5]    (//div[contains(.,'Larissa SDR')])[5]    (//div[contains(.,'Leandro Coser')])[5]    
 @{OPCOES_COMBOBOX_RENOVADAS}        (//div[contains(.,'Originais')])[5]    
 
 ${actions}=    Get Webdriver Manager
-
-
-
 *** Keywords ***
 # --2.1
 Dado que clico no menu "Requisições"
@@ -69,7 +68,6 @@ Dado que clico no menu "Requisições"
 Quando clico em "Filtros"
     Wait Until Element Is Visible    ${Link_Filtros}
     Click Element                    ${Link_Filtros}
-    Sleep    1s
 
 E preencho informações no campo Cliente
     Wait Until Element Is Visible    ${Campo_Cliente}
@@ -250,9 +248,10 @@ E valido todos os filtros de Nivel de urgencia em Requisições
 E preencho informações de Data de entrega
     Wait Until Element Is Visible    //button[@id='data_entrega']
     Click Element                    //button[@id='data_entrega']
-    Wait Until Element Is Visible    (//button[@type='button'])[43]
-    Click Element                    (//button[@type='button'])[43]
-    Click Element                    (//button[@type='button'])[43]
+    Wait Until Element Is Visible    (//button[@type='button'])[42]
+    Click Element                    (//button[@type='button'])[42]
+    Click Element                    (//button[@type='button'])[42]
+    Click Element                    (//button[@type='button'])[42]
     Click Element                    (//button[contains(.,'1')])[1]
     Click Element                    //button[contains(.,'31')]
     Click Element                    ${Botao_Buscar} 
@@ -262,15 +261,19 @@ Então sistema exibe requisições do filtro Data de entrega
 
 # --2.9
 E preencho informações de Data de criação
-    Wait Until Element Is Visible    //button[@id='data_criacao']
-    Click Element                    //button[@id='data_criacao']
-    Click Element                    (//button[@type='button'])[43]
-    Click Element                    (//button[@type='button'])[43]
-    Click Element                    (//button[contains(.,'1')])[1]
-    Click Element                    //button[contains(.,'31')]
-    Click Element                    //button[@id='data_criacao']
-    Click Element                    ${Botao_Buscar}          
+    Wait Until Element Is Visible      //button[@id='data_criacao']
+    Click Element                      //button[@id='data_criacao']
 
+    Click Element                      (//button[@type='button'])[42]
+    Click Element                      (//button[@type='button'])[42]
+    Click Element                      (//button[@type='button'])[42]
+    Click Element                      (//button[@type='button'])[42]
+
+    Click Element                      (//button[contains(.,'1')])[1]
+    Click Element                      //button[contains(.,'31')]
+
+    Click Element                      //button[@id='data_criacao']
+    Click Element                      ${Botao_Buscar}
 Então sistema exibe requisições do filtro Data de Criação
     Wait Until Page Contains         text=1927    timeout=10s
 
@@ -307,21 +310,21 @@ Então sistema exibe requisições de filtro Responsável
 E valido filtro dentro de "Representante comercial"
     Wait Until Element Is Visible    (//button[contains(.,'Selecione')])[5]
     Click Element                    (//button[contains(.,'Selecione')])[5]
-    Click Element                    (//div[contains(.,'Todos')])[24]
+    Click Element                    (//div[contains(.,'Todos')])[23]
     Click Element                    ${Botao_Buscar}
 
 Então sistema exibe requisições de filtro Representante comercial
-    Wait Until Page Contains    text=1937
+    Wait Until Page Contains    text=1927
 
 # --2.12
 E seleciono filtro vendedor "Todos"
     Wait Until Element Is Visible    (//button[contains(.,'Selecione')])[2]
     Click Element                    (//button[contains(.,'Selecione')])[2]
-    Click Element                    (//div[contains(.,'Todos')])[24]
+    Click Element                    (//div[contains(.,'Todos')])[23]
     Click Element                    ${Botao_Buscar}
 
 Então sistema exibe requisições de filtro vendedor "Todos"
-    Wait Until Page Contains    text=1937
+    Wait Until Page Contains    text=1927
 
 # --2.13
 E valido todos os filtros dentro de "Renovadas"
@@ -360,12 +363,13 @@ Então sistema exibe requisições de filtro Renovadas
 Quanto clico no botão "Inserir/Técnico"
     Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
     Click Element                    ${Botao_Inserir_Requisicoes}
+    Wait Until Element Is Visible    //button[contains(.,'Técnico')]
     Click Element                    //button[contains(.,'Técnico')]
     Click Element                    //button[contains(.,'Técnico')]
 
 E preencho informações de cadastro de requisição
 # 1
-    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]
+    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    timeout=10s
     Press Keys    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
     Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]
     Click Element    //button[contains(.,'Novo Cliente')]
@@ -378,12 +382,13 @@ E preencho informações de cadastro de requisição
     Click Element    (//button[contains(.,'Selecione')])[1]
     Click Element    (//div[contains(.,'Fernando Morais da Costa Silva')])[5]
 
-    Click Element    (//button[contains(.,'Selecione')])[1]
-    Click Element    (//div[contains(.,'teste')])[5]
+    Click Element                    (//button[contains(.,'Selecione')])[1]
+    Wait Until Element Is Visible    (//div[contains(.,'teste')])[5]
+    Click Element                    (//div[contains(.,'teste')])[5]
 
-    Click Element    (//button[contains(.,'Selecione')])[1]
-    Sleep    1s
-    Click Element    (//div[contains(.,'teste')])[16]
+    Click Element                    (//button[contains(.,'Selecione')])[1]
+    Wait Until Element Is Visible    (//div[contains(.,'teste')])[16]
+    Click Element                    (//div[contains(.,'teste')])[16]
 
     Click Element    //button[contains(.,'Selecione')]
     Click Element    (//div[contains(.,'Não')])[5]
@@ -415,12 +420,12 @@ E preencho informações de cadastro de requisição
     Input Text      //input[@placeholder='Descreva']    Cliente
 
     Input Text      //input[@id='uniConsumi']    123456
+    Input Text      (//input[contains(@type,'text')])[3]    Teste
+    Input Text      (//input[contains(@type,'text')])[4]    Teste
+    Input Text      (//input[contains(@type,'text')])[4]      1
+    Input Text      (//input[contains(@type,'number')])[2]    1
+    Input Text      (//input[contains(@type,'number')])[3]    1
 
-    Input Text      (//input[contains(@type,'text')])[5]    Teste
-    Input Text      (//input[contains(@type,'text')])[6]    Teste
-    Input Text      (//input[contains(@type,'number')])[2]  1
-    Input Text      (//input[contains(@type,'number')])[3]  1
-    
     
     Input Text         //input[contains(@id,'uniConsumi')]   123456
     Click Element      ${Botao_Proximo_Requisicoes}
@@ -444,6 +449,7 @@ E preencho filtro Cliente
     Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
     Input Text                       //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_GruposConsumidores}
     Click Element                    ${Botao_Buscar}
+    Sleep    1s
 E clico no botão "Editar"
     Sleep    2s
     Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
@@ -473,13 +479,13 @@ Então sistema exibe informações de Visualizar em requisições
 
 # --2.17
 
-E seleciono opção "Concluído" no botão ações em requisicoes
-    Wait Until Element Is Visible    ${Botao_Acoes}
-    Click Element                    ${Botao_Acoes}
+E seleciono opção "Concluído" no botão Mudar Status Requisição em requisicoes
+    Wait Until Element Is Visible    ${Botao_MudarStatusRequisicao}
+    Click Element                    ${Botao_MudarStatusRequisicao}
     Click Element                    //button[contains(.,'Concluído')]
 
-Então sistema verifica funcionalidade do botão ações em Requisições
-    Wait Until Element Is Visible    ${Link_Filtros}
+Então sistema verifica funcionalidade do botão Mudar Status Requisição em Requisições
+    Sleep    5s
     Click Element                    ${Link_Filtros}
     Sleep                            1s
     Input Text                       //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_GruposConsumidores}
@@ -525,7 +531,7 @@ E preencho informações de comentário
     Click Element    (//button[@data-state='closed'])[25]
     Click Element    (//button[@data-state='closed'])[26]
     Input Text       //div[contains(@contenteditable,'true')]    ${nome_pesquisa_GruposConsumidores}
-    Click Element    (//button[@data-state='closed'])[40]
+    Click Element    (//button[@data-state='closed'])[38]
 
 Então sistema exibe mensagem de confirmação
     Wait Until Page Contains    text=Mensagem enviada com sucesso!
@@ -535,6 +541,7 @@ Então sistema exibe mensagem de confirmação
 Quanto clico no botão "Inserir/Ti"
     Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
     Click Element                    ${Botao_Inserir_Requisicoes}
+    Wait Until Element Is Visible    //button[contains(.,'TI')]
     Click Element                    //button[contains(.,'TI')]
 
 Então sistema exibe mensagem de cadastro TI realizado
@@ -570,6 +577,7 @@ E preencho informações de cadastro de requisição "Departamento Pessoal"
 
 # --2.22
 E clico no botão "Excluir requisição"
+    Sleep    10s
     Wait Until Page Contains         text=Editar requisição
     Execute JavaScript               window.scrollTo(0, 0)
     Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}

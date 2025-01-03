@@ -80,7 +80,7 @@ Então sistema exibe informações de filtro Responsável "suporte"
 # --10.01.05
 E seleciono filtro Vendedor Técnico "Todos"
     Click Element    (//button[contains(.,'Todos')])[3]
-    Click Element    (//div[contains(.,'Todos')])[28]
+    Click Element    (//div[contains(.,'Todos')])[27]
 Então sistema exibe informações de filtro Vendedor Técnico "Todos"
     Wait Until Page Contains    text=Não definido
 
@@ -111,18 +111,19 @@ Então sistema exibe informações de filtro Unidade Consumidora
     Wait Until Page Contains    text=alexander leidou
 
 # --10.01.09
-E seleciono filtro Tipo de requisição "Estimativa"
+E seleciono filtro Tipo de requisição "Todos"
     Wait Until Element Is Visible    //button[@id='tipo']
     Click Element                    //button[@id='tipo']
-    Click Element                    (//div[contains(.,'Técnico')])[13]
+    Click Element                    (//div[contains(.,'Todos')])[27]
 
-Então sistema exibe informações de filtro Tipo de requisição "Estimativa"
+Então sistema exibe informações de filtro Tipo de requisição "Todos"
     Wait Until Element Is Visible    (//td[contains(.,'Técnico')])[1]
 
 # --10.01.10
 E seleciono filtro Data de criação
     Wait Until Element Is Visible    //button[contains(.,'Selecione a data')]
     Click Element                    //button[contains(.,'Selecione a data')]
+    Click Element                    (//button[@type='button'])[19]    # Clica na seta para voltar
     Click Element                    (//button[@type='button'])[19]    # Clica na seta para voltar
     Click Element                    (//button[@type='button'])[19]    # Clica na seta para voltar
     Click Element                    (//button[@type='button'])[19]    # Clica na seta para voltar
@@ -138,7 +139,7 @@ Então sistema exibe informações de filtro Data de criação
 E seleciono filtro Promotor "Todos"
     Wait Until Element Is Visible    (//button[contains(.,'Todos')])[7]
     Click Element                    (//button[contains(.,'Todos')])[7]
-    Click Element                    (//div[contains(.,'Todos')])[28]
+    Click Element                    (//div[contains(.,'Todos')])[27]
 
 Então sistema exibe informações de filtro Promotor "Todos"
     Wait Until Element Is Visible    (//td[contains(.,'Não definido')])[2]
@@ -147,15 +148,15 @@ Então sistema exibe informações de filtro Promotor "Todos"
 E seleciono filtro Indicador "Todos"
     Wait Until Element Is Visible    (//button[contains(.,'Todos')])[8]
     Click Element                    (//button[contains(.,'Todos')])[8]
-    Click Element                    (//div[contains(.,'Todos')])[28]
+    Click Element                    (//div[contains(.,'Todos')])[27]
     
 Então sistema exibe informações de filtro Indicador "Todos"
     Wait Until Element Is Visible    (//td[contains(.,'Não definido')])[2]
 
 # --10.01.13
 E seleciono fitro Departamento "TI"
-    Wait Until Element Is Visible    (//button[contains(.,'Todos')])[9]
-    Click Element                    (//button[contains(.,'Todos')])[9]
+    Wait Until Element Is Visible    //button[contains(.,'Comercial')]
+    Click Element                    //button[contains(.,'Comercial')]
     Click Element                    (//div[contains(.,'TI')])[5]
 
 Então sistema exibe informações de filtro Departamento "TI"

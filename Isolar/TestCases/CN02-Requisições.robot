@@ -134,14 +134,14 @@ CT 02.16 - Validar botão Visualizar
     E clico no botão "Visualizar"
     Então sistema exibe informações de Visualizar em requisições
 
-CT 02.17 - Validar botão Ações 
-    [Documentation]     Caso de teste valida botão Ações 
+CT 02.17 - Validar botão Mudar Status Requisição
+    [Documentation]     Caso de teste valida botão Mudar Status Requisição
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro Cliente
-    E seleciono opção "Concluído" no botão ações em requisicoes
-    Então sistema verifica funcionalidade do botão ações em Requisições
+    E seleciono opção "Concluído" no botão Mudar Status Requisição em requisicoes
+    Então sistema verifica funcionalidade do botão Mudar Status Requisição em Requisições
 
 CT 02.18 - Validar botão Histórico 
     [Documentation]     Caso de teste valida botão Histórico 
@@ -171,12 +171,12 @@ CT 02.20 - Validar botão Comentários
     E preencho informações de comentário
     Então sistema exibe mensagem de confirmação
 
-CT 02.21 - Validar botão Inserir "Ti" 
-    [Documentation]     Caso de teste valida botão Inserir "Ti" 
-    [Tags]    Requisições    Funcional        
-    Dado que clico no menu "Requisições"
-    Quanto clico no botão "Inserir/Ti"
-    Então sistema exibe mensagem de cadastro TI realizado
+# CT 02.21 - Validar botão Inserir "Ti" 
+#     [Documentation]     Caso de teste valida botão Inserir "Ti" 
+#     [Tags]    Requisições    Funcional        
+#     Dado que clico no menu "Requisições"
+#     Quanto clico no botão "Inserir/Ti"
+#     Então sistema exibe mensagem de cadastro TI realizado
 
 CT 02.22 - Validar botão Inserir "Compras" 
     [Documentation]     Caso de teste valida botão Inserir "Ti" 

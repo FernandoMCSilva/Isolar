@@ -111,7 +111,7 @@ E valido todos os filtros de departamento
             Click Element    ${departamento}
             
             # Clica no botão de buscar
-            Click Element    ${Btn_Buscar}
+            # Click Element    ${Btn_Buscar}
             
             # Espera pela atualização e valida que a página foi atualizada
             Wait Until Element Is Visible    xpath=//h2[contains(.,'Requisições por Status')]    timeout=10s

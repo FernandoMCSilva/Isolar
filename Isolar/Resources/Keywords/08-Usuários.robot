@@ -40,9 +40,11 @@ E preencho informações de inserir novo cadastro de Usuários
     Input Text       //input[@id='email']    ${EmailLocal}
     Input Text       //input[@id='senha']    ${SenhaLocal}
     Click Element    (//button[@type='button'])[7]
-    Click Element    //span[contains(.,'Administrador')]
+    Click Element    (//div[contains(.,'Isolar Energy')])[15]
     Click Element    (//button[@type='button'])[8]
-    Click Element    (//div[@role='option'])[5]
+    Sleep    2s
+    Click Element    (//div[contains(.,'Departamento pessoal')])[15]
+    Click Element    //button[contains(.,'Próximo')]
 
 E clico em "Salvar" em Usuários
     Click Element    ${botao_SalvarUsuários}

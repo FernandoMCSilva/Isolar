@@ -14,8 +14,9 @@ ${Menu_ConfigMinerandoSol}            (//a[contains(@href,'misol')])[2]
 ${botao_NovoTipo}                   //button[contains(.,'Novo tipo')]
 ${botao_Perguntas}                  //button[contains(.,'Perguntas')]
 ${botao_Salvar}                     //button[contains(.,'Salvar')]
-${botao_InserirPergunta}            (//button[@data-state='closed'])[9]
+${botao_InserirPergunta}            (//button[@data-state='closed'])[10]
 ${botaox_ExcluirPergunta}           //button[contains(@class,'ml-2')]
+${botao_ApagarSecao}                (//button[@data-state='closed'])[9]
 
 ${filtro_cards/Lista_Perguntas}     //button[contains(.,'Cards')]
 ${filtro_botaoLista_Perguntas}      (//div[contains(.,'Lista')])[9]
@@ -43,8 +44,8 @@ ${botao_SecaoCliente}               (//button[@type='button'])[7]
 ${botao_AdicionarSecao}             //button[contains(.,'Adicionar seção')]
 ${botao_ExcluirSecao}               (//button[@data-state='closed'])[14]
 ${botao_SalvarNovaPergunta}         (//button[contains(.,'Salvar')])[2]
-${botao_CadastrarPergunta}          (//button[contains(@data-state,'closed')])[10]
-${botao_TornarObrigatorias}         (//button[@data-state='closed'])[7]
+${botao_CadastrarPergunta}          (//button[@data-state='closed'])[11]
+${botao_TornarObrigatorias}         (//button[@data-state='closed'])[8]
 ${botao_DecontoNivelAssociados}     //button[contains(.,'Nível de Associados')]
 ${botao_DecontoConcessionarias}     //button[contains(.,'Concessionárias')]
 ${botao_DecontoGruposTarifarios}    //button[contains(.,'Grupos tárifarios')]
@@ -77,7 +78,6 @@ E preencho informações de cadastro de Novo tipo de Requisições
     Sleep    1s
     Click Element                ${botao_SecaoCliente}
     Click Element                ${botao_SecaoCliente}
-    Click Element                ${botao_TornarObrigatorias}
     Click Element                ${botao_CadastrarPergunta}
     Input Text                   ${input_NovaPergunta}   ${nome_pesquisa_GruposConsumidores}
     Click Element                ${box_TipodoCampo}
@@ -85,6 +85,7 @@ E preencho informações de cadastro de Novo tipo de Requisições
     Click Element                ${botao_SalvarNovaPergunta}
     Wait Until Page Contains     text=Pergunta adicionada com sucesso!
     Sleep    4s
+    Click Element                ${botao_TornarObrigatorias}
     Click Element                ${botaox_ExcluirPergunta}
     Click Element                ${botao_InserirPergunta}
     Click Element                ${botao_InserirPergunta}
@@ -113,6 +114,7 @@ E preencho informações de cadastro editado no menu Configurações > Requisiç
     # Input Text               css:.relative    ${nome_pesquisa_GruposConsumidores}
     Sleep    1s
     Click Element            ${botao_InserirPergunta}
+    Click Element            ${botao_ApagarSecao}
     Click Element            ${botao_Salvar}
 
 Então sistema exibe informações de "Editar" no menu Configurações > Requisições
@@ -250,10 +252,10 @@ Quando preencho informações do menu "Geral" no menu Configurações > Minerand
     Click Element     ${botao_DecontoNivelAssociados}
     Click Element     ${botao_DecontoConcessionarias}
     Click Element     ${botao_DecontoGruposTarifarios}
-    Input Text        //input[@id='concessionaria-1']            ${quatidade_padrao}
     Input Text        //input[@id='concessionaria-4']            ${quatidade_padrao}
     Input Text        //input[@id='concessionaria-6']            ${quatidade_padrao}
     Input Text        //input[@id='concessionaria-7']            ${quatidade_padrao}
+    Input Text        //input[@id='concessionaria-8']            ${quatidade_padrao}
     Input Text        //input[@id='grupo-106']                   ${quatidade_padrao}
     Input Text        //input[@id='grupo-107']                   ${quatidade_padrao}
     Input Text        //input[@id='grupo-108']                   ${quatidade_padrao}

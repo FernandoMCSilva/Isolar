@@ -154,7 +154,7 @@ Então sistema exibe próximas Estimativa
 # --3.10
 
 E clico em "Anterior"
-    Wait Until Element Is Visible    //button[contains(.,'Anterior')]
+    Sleep    1s
     Click Element                    //button[contains(.,'Anterior')]
 
 Então sistema exibe Estimativa anteriores
@@ -285,8 +285,9 @@ E preencho valor de Gasto mensal
     Input Text    //input[contains(@id,'mensalValor')]    500
 
 E seleciono valor de tensão FF "220v"
-    Click Element    xpath=//button[contains(@aria-controls,'radix-:r10:')]
-    Click Element    xpath=//div[@role='option'][contains(.,'220 V')]
+    Wait Until Element Is Visible    (//button[contains(.,'Selecione')])[1]
+    Click Element                    (//button[contains(.,'Selecione')])[1]
+    Click Element                    (//div[contains(.,'220 V')])[5]
 
 E seleciono valor de tensão FN "220v"
     Click Element    xpath=//button[contains(@id,'tensaoValor')]
