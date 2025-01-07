@@ -171,12 +171,12 @@ CT 02.20 - Validar botão Comentários
     E preencho informações de comentário
     Então sistema exibe mensagem de confirmação
 
-# CT 02.21 - Validar botão Inserir "Ti" 
-#     [Documentation]     Caso de teste valida botão Inserir "Ti" 
-#     [Tags]    Requisições    Funcional        
-#     Dado que clico no menu "Requisições"
-#     Quanto clico no botão "Inserir/Ti"
-#     Então sistema exibe mensagem de cadastro TI realizado
+CT 02.21 - Validar botão Inserir "Ti" 
+    [Documentation]     Caso de teste valida botão Inserir "Ti" 
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quanto clico no botão "Inserir/Ti"
+    Então sistema exibe mensagem de cadastro TI realizado
 
 CT 02.22 - Validar botão Inserir "Compras" 
     [Documentation]     Caso de teste valida botão Inserir "Ti" 

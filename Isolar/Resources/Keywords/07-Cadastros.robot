@@ -13,7 +13,10 @@ ${Menu_Motivos_de_Urgencia}       //a[contains(.,'Motivos de Urgência')]
 ${Menu_Concessionarias}           //a[contains(.,'Concessionárias')]
 ${Menu_Departamentos}             //a[contains(.,'Departamentos')]
 ${Menu_Origem_da_Indicacao}       //a[contains(.,'Origem da indicação')]
+${Menu_Empresas}                  //a[contains(.,'Empresas')]
 ${Menu_UsuarioZapSign}            //p[contains(.,'Usuários ZapSign')]
+${Menu_CargosFuncoes}             //a[contains(.,'Cargos e Funções')]
+${Menu_LinksExternos}             //a[contains(.,'Links Externos')]
 
 ${nome_pesquisa_GruposConsumidores}             B3 (teste)
 ${nome_pesquisa_pessoas}                        Fernando
@@ -31,6 +34,7 @@ ${botao_Editar_Clientes}                        //button[contains(.,'Editar')]
 ${botao_SalvarCadastro_Clientes}                //button[contains(.,'Salvar')]
 ${botao_acoes_Pessoas}                          //button[contains(.,'Ações')]
 
+
 ${input_buscar_CadastrosPessoas}                //input[contains(@placeholder,'Buscar...')]
 ${input_descricao_GruposConsumidores}           //input[@id='descricao']
 ${input_buscar_GruposConsumidores}              xpath=//input[contains(@class, 'flex h-10')]
@@ -40,6 +44,14 @@ ${input_CEP_Clientes}                           //input[@id='cep']
 ${input_Telefone_Clientes}                      //input[@id='telefone']
 ${input_AtividadeEconomica_Clientes}            //input[@id='atividadeEconomica']
 ${input_AtividadeEconomica_EditarClientes}      //input[contains(@name,'atividade_economica')]
+${input_NomeInserirEmpresas}                    //input[@placeholder='Insira o nome']
+${input_DescricaoEmpresas}                      //input[@placeholder='Insira a descrição']
+${input_NomeUsuarioZapSign}                     //input[@placeholder='Nome completo']
+${input_TokenUsuarioZapSign}                    //input[@placeholder='Ex: 66587esas-4388-3ba7428db54c']
+${input_NomeCargosFuncoes}                      //input[@placeholder='Nome completo']
+${input_DescricaoCargosFuncoes}                 //textarea[@id='descricao']
+
+
 ${filtro_cards/Lista}                           (//button[@type='button'])[7]
 ${filtro_botaoLista}                            xpath=//div[@role='option'][contains(.,'Lista')]
 
@@ -153,7 +165,7 @@ E preencho informações de cadastro editado
     Click Element     xpath=//div[contains(@class, 'select__multi-value__remove')]
     Click Element     ${botao_atualizar_CadastrosPessoas}
 
-Então sistema exibe informações de "Editar"
+Então sistema exibe mensagem de informações editadas
     Wait Until Page Contains    text=Informações atualizadas com sucesso!
 
 # -07.01.09
@@ -169,7 +181,8 @@ E preencho informações de inserir novo cadastro de pessoas
  
 
 E clico em "Salvar"
-    Click Element    ${botao_salvar_CadastrosPessoas}
+    Wait Until Element Is Visible    ${botao_salvar_CadastrosPessoas}
+    Click Element                    ${botao_salvar_CadastrosPessoas}
 
 Então sistema salva novo cadastro de pessoas
     Wait Until Page Contains    text=Registro adicionado com sucesso!
@@ -403,6 +416,8 @@ E preencho informações de inserir novo cadastro de Departamentos
     Click Element    (//div[contains(.,'Selecione as requisições')])[13]
     Click Element    (//div[contains(.,'Técnico')])[14]
     Click Element    (//input[@value='B3 (teste)'])[2]
+    Click Element    (//div[contains(.,'Selecione as empresas')])[13]
+    Click Element    (//div[contains(.,'Isolar Energy')])[14]
     Click Element    //button[contains(.,'Próximo')]
 
 # -07.09.03
@@ -430,7 +445,6 @@ Então sistema exibe informações de cadastro de "Origem de indicação"
     Wait Until Page Contains     text=Origem de indicação
 
 # -07.10.02
-
 E preencho informações de inserir novo cadastro de Origem da indicação
     Sleep    2s
     Input Text    //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
@@ -441,31 +455,116 @@ E preencho informações de cadastro editado em Origem da indicação
     Input Text    //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
     Click Element    //button[contains(.,'Atualizar')]
     
-
 # -07.10.08
 Então sistema exibe mensagem de erro de Origem da indicação
     Wait Until Page Contains    text=Nenhuma fonte de origem encontrado.
 
+# -07.11.01
+Dado que clico no menu "Cadastros > Empresas"
+    Wait Until Element Is Visible    ${MENU_CADASTROS}
+    Click Element                    ${MENU_CADASTROS}
+    Click Element                    ${Menu_Empresas}
+Então sistema exibe informações de cadastro de "Empresas"
+    Wait Until Page Contains    text=Empresas
 
-# # -07.10.01
-# Dado que clico no menu "Cadastros > Usuários ZapSign"
-#     Wait Until Element Is Visible    ${MENU_CADASTROS}
-#     Click Element                    ${MENU_CADASTROS}
-#     Click Element                    ${Menu_UsuarioZapSign}
-# Então sistema exibe informações de cadastro de "Usuários ZapSign"
-#     Wait Until Page Contains     text=Usuários ZapSign
+# -07.11.02
+E preencho informações de inserir novo cadastro de Empresas
+    Wait Until Element Is Visible    ${input_NomeInserirEmpresas}
+    Input Text                       ${input_NomeInserirEmpresas}    ${nome_pesquisa_GruposConsumidores}
 
+    Input Text                       ${input_DescricaoEmpresas}      ${nome_pesquisa_GruposConsumidores}
+    Click Element                    ${Botao_Proximo_Requisicoes}
+    Sleep    1s
+    Execute JavaScript    window.scrollTo(0, 0)
+    Sleep    3s
+Então sistema salva novo cadastro de Empresas
+    Wait Until Page Contains    text=Registro adicionado com sucesso!
 
-# # -07.10.02
-# E preencho informações de inserir novo cadastro de Usuários ZapSign
-#     Sleep    2s
-#     Input Text    //input[@placeholder='Nome completo']    ${nome_pesquisa_GruposConsumidores}
-#     Input Text    //input[@id='tokenUser']    999999999999999999999999999
+# -07.11.03
+E preencho informações de cadastro editado em Empresas
+    Wait Until Element Is Visible    ${input_NomeInserirEmpresas}
+    Input Text                       ${input_NomeInserirEmpresas}    ${nome_pesquisa_GruposConsumidores}
+    Input Text                       ${input_DescricaoEmpresas}      ${nome_pesquisa_GruposConsumidores}
+    Click Element                    ${Botao_Proximo_Requisicoes}
+    Execute Javascript               window.scrollTo(0,0)
 
+# -07.12.01
+Dado que clico no menu "Cadastros > Usuários ZapSign"
+    Wait Until Element Is Visible    ${MENU_CADASTROS}
+    Click Element                    ${MENU_CADASTROS}
+    Click Element                    ${Menu_UsuarioZapSign}
 
-# # -07.10.03
-# E preencho informações de cadastro editado em Usuários ZapSign
+Então sistema exibe informações de cadastro de "Usuários ZapSign"
+    Wait Until Page Contains    text=Usuários ZapSign
 
+# -07.12.01
+E preencho informações de inserir novo cadastro de Usuários ZapSign
+    Wait Until Element Is Visible    ${input_NomeUsuarioZapSign}
+    Input Text                       ${input_NomeUsuarioZapSign}    ${nome_pesquisa_GruposConsumidores}
+    Input Text                       ${input_TokenUsuarioZapSign}   ${nome_pesquisa_GruposConsumidores}
 
+Então sistema salva novo cadastro de Usuários ZapSign
+    Wait Until Page Contains    text=Registro adicionado com sucesso!
 
-# -07.10.01
+# -07.12.03
+E preencho informações de cadastro editado em Usuários ZapSign
+    Wait Until Element Is Visible    ${input_NomeUsuarioZapSign}
+    Input Text                       ${input_NomeUsuarioZapSign}    ${nome_pesquisa_GruposConsumidores}
+    Input Text                       ${input_TokenUsuarioZapSign}   ${nome_pesquisa_GruposConsumidores}
+    Click Element                    ${botao_atualizar_CadastrosPessoas}
+
+# -07.12.05
+Quando clico em "Excluir" Usuário ZapSign
+    Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
+    Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
+# -07.12.06
+Então sistema exclui item do menu Cadastro > Usuários ZapSign
+    Wait Until Page Contains    text=Registro excluído com sucesso!
+
+# -07.12.08
+Então sistema exibe mensagem de erro de Usuários ZapSign
+    Wait Until Page Contains    text=Nenhuma fonte de origem encontrado.
+
+# -07.13.01
+Dado que clico no menu "Cadastros > Cargos e Funções"
+    Wait Until Element Is Visible    ${MENU_CADASTROS}
+    Click Element                    ${MENU_CADASTROS}
+    Click Element                    ${Menu_CargosFuncoes}
+
+Então sistema exibe informações de cadastro de "Cargos e Funções"
+    Wait Until Page Contains    text=Cargos e funções
+
+# -07.13.02
+E preencho informações de inserir novo cadastro de Cargos e Funções
+    Sleep    2s
+    Input Text                       ${input_NomeCargosFuncoes}         ${nome_pesquisa_GruposConsumidores}
+    Click Element                    //button[contains(.,'Selecione')]
+    Click Element                    (//div[contains(.,'Técnico')])[15]
+    Sleep    1s
+    Input Text                       ${input_DescricaoCargosFuncoes}    ${nome_pesquisa_GruposConsumidores}
+    Click Element                    ${Botao_Proximo_Requisicoes}
+Então sistema salva novo cadastro de Cargos e Funções
+    Wait Until Page Contains    text=Registro adicionado com sucesso!
+
+# -07.13.03
+E preencho informações de cadastro editado em Cargos e Funções
+    Wait Until Element Is Visible    ${input_NomeCargosFuncoes}
+    Input Text                       ${input_NomeCargosFuncoes}    ${nome_pesquisa_GruposConsumidores}
+    Click Element                    ${Botao_Proximo_Requisicoes}
+
+# -07.13.06
+Então sistema exclui item do menu Cadastro > Cargos e Funções
+    Wait Until Page Contains    text=Registro excluído com sucesso!
+
+# -07.13.07
+Então sistema exibe informações com filtro "Lista" em Cargos e Funções
+    Sleep    2s
+    ${titulo_nome}=    Run Keyword And Return Status    Element Should Be Visible    //th[contains(.,'Cargo/Função')]
+    Run Keyword If    ${titulo_nome}    Log    "O Título Nome está visível. Funcionou."
+    ...    ELSE    Fail    "O Título Nome não está visível. Falhou."
+
+# -07.13.08
+Então sistema exibe mensagem de erro de Cargos e Funções
+    Wait Until Page Contains    text=Nenhum departamento encontrado.
+
+# -07.13.01
