@@ -110,14 +110,12 @@ Então sistema exibe informações de Estimativa do filtro Tipo de usina "Alugue
 
 E preencho com informações data de registro
     Click Element    (//button[@type='button'])[9]
-WHILE
-        ${mes_atual}=    Get Text    (//div[contains(@class, 'calendar')])[1]//div[contains(@class, 'month')]
-        ${ano_atual}=    Get Text    (//div[contains(@class, 'calendar')])[1]//div[contains(@class, 'year')]
-
-        Run Keyword If    '${mes_atual}' == 'Setembro' AND '${ano_atual}' == '2024'    Exit For Loop
-        Click Element     (//button[@type='button'])[11]    # Clica na seta para voltar
-
-    # Sai do loop e clica no dia 12 de setembro
+    
+    Click Element    (//button[@type='button'])[11]
+    Click Element    (//button[@type='button'])[11]
+    Click Element    (//button[@type='button'])[11]
+    Click Element    (//button[@type='button'])[11]
+    
     Click Element    (//button[contains(.,'12')])[1]
     Click Element    //button[contains(.,'Buscar')]
     Sleep    3s

@@ -38,7 +38,7 @@ ${box_DepartamentoTI}               (//div[contains(.,'TI')])[13]
 ${box_EscolhaPergunta}              (//div[contains(.,'Selecione um opção')])[16]
 ${box_EscolhaPerguntaNomeCompleto}  (//div[contains(.,'Nome completo')])[17]
 ${box_TipodoCampo}                  //button[contains(.,'Selecione')]
-${box_TipodoCampoData}              (//div[contains(.,'Data')])[4]
+${box_TipodoCampoTexto}             (//div[contains(.,'Texto')])[4]
 
 ${botao_SecaoCliente}               (//button[@type='button'])[7]
 ${botao_AdicionarSecao}             //button[contains(.,'Adicionar seção')]
@@ -81,7 +81,8 @@ E preencho informações de cadastro de Novo tipo de Requisições
     Click Element                ${botao_CadastrarPergunta}
     Input Text                   ${input_NovaPergunta}   ${nome_pesquisa_GruposConsumidores}
     Click Element                ${box_TipodoCampo}
-    Click Element                ${box_TipodoCampoData}
+    Click Element                ${box_TipodoCampoTexto}
+    Input Text                   //input[@name='placeholder']    teste
     Click Element                ${botao_SalvarNovaPergunta}
     Wait Until Page Contains     text=Pergunta adicionada com sucesso!
     Sleep    4s
@@ -140,6 +141,15 @@ Quando clico em "Excluir" em configurações
     Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
     Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
 
+Quando clico em "Excluir" em configurações em perguntas
+    Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
+    Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
+    Sleep    4s
+    Input Text                       //input[@value='B3 (teste)']    ${nome_BuscaNaoEncontrada}
+    Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
+    Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
+
+
 # -9.01.07
 Então sistema exclui item do menu Configurações > Requisições
     Wait Until Page Contains    text=Registro excluído com sucesso!
@@ -155,11 +165,11 @@ E clico no botao "Perguntas"
     Click Element    ${botao_Perguntas}
 E preencho informações de nova pergunta
     Sleep    2s
-    Input Text            //input[contains(@placeholder,'Nome do campo')]    ${nome_pesquisa_GruposConsumidores}
+    Input Text            //input[contains(@placeholder,'Nome do campo')]    ${nome_BuscaNaoEncontrada}
     Click Element         //button[contains(.,'Selecione')]
     Click Element         (//div[contains(.,'Texto')])[4]
     Sleep                 1s
-    Input Text            //input[contains(@name,'placeholder')]    ${nome_pesquisa_GruposConsumidores}
+    Input Text            //input[contains(@name,'placeholder')]    ${nome_BuscaNaoEncontrada}
     Click Element         //button[contains(.,'Não')]
     Click Element         (//div[contains(.,'Sim')])[4]
     Click Element         //button[contains(.,'Sim')]
@@ -182,6 +192,7 @@ E preencho informações de pergunta editada no menu Configurações > Requisiç
     Input Text            (//input[@value='B3 (teste)'])[1]    ${nome_pesquisa_GruposConsumidores}
     Click Element         //button[contains(.,'Texto')]
     Click Element         (//div[contains(.,'Data')])[4]
+    Sleep    2s
     Click Element         ${botao_Salvar}
 
 Então sistema exibe informações de "Editar" no menu Configurações > Requisições > Perguntas

@@ -30,7 +30,7 @@ CT 08.03 - Validar funcionalidade "editar"
     Quando clico em "Editar"
     E preencho informações de cadastro editado no menu Usuários
     E preencho campo de senha
-    Então sistema exibe informações de "Editar"
+    Então sistema exibe mensagem de informações editadas
 
 CT 08.04 - Validar filtro "buscar" 
     [Documentation]     Caso de teste valida se filtro buscar está funcional

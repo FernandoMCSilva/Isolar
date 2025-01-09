@@ -88,6 +88,7 @@ E clico no botao buscar
     Click Element     ${botao_buscar_CadastrosPessoas}
 
 E clico no botão "Continuar" em "Excluir"
+    Sleep    2s
     Click Element    ${botao_continuar_Excluir}
 
 Então sistema exclui item do menu Cadastro > Pessoas
@@ -167,6 +168,9 @@ E preencho informações de cadastro editado
 
 Então sistema exibe mensagem de informações editadas
     Wait Until Page Contains    text=Informações atualizadas com sucesso!
+
+Então sistema exibe mensagem de informações editadas em Empresas
+    Wait Until Page Contains    text=Registro atualizado com sucesso!
 
 # -07.01.09
 
@@ -487,7 +491,7 @@ E preencho informações de cadastro editado em Empresas
     Input Text                       ${input_DescricaoEmpresas}      ${nome_pesquisa_GruposConsumidores}
     Click Element                    ${Botao_Proximo_Requisicoes}
     Execute Javascript               window.scrollTo(0,0)
-
+    Click Element                    ${botao_Salvar}
 # -07.12.01
 Dado que clico no menu "Cadastros > Usuários ZapSign"
     Wait Until Element Is Visible    ${MENU_CADASTROS}

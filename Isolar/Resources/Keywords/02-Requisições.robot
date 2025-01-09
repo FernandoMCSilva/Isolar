@@ -72,7 +72,6 @@ Quando clico em "Filtros"
 E preencho informações no campo Cliente
     Wait Until Element Is Visible    ${Campo_Cliente}
     Input Text                       ${Campo_Cliente}        Fernando
-    Click Element                    ${Botao_Buscar}
 
 Então sistema exibe requisições do filtro Cliente
     Wait Until Element Is Visible        xpath=//td[contains(normalize-space(),'Fernando')]       timeout=10s
@@ -561,6 +560,7 @@ Então sistema exibe mensagem de cadastro Compras realizado
 Quanto clico no botão "Inserir/DP"
     Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
     Click Element                    ${Botao_Inserir_Requisicoes}
+    Sleep    1s
     Click Element                    //button[contains(.,'Departamento pessoal')]
     Click Element                    //button[contains(.,'CERTIDAO AMBIENTAL')]
 
@@ -577,7 +577,7 @@ E preencho informações de cadastro de requisição "Departamento Pessoal"
 
 # --2.22
 E clico no botão "Excluir requisição"
-    Sleep    10s
+    Sleep    2s
     Wait Until Page Contains         text=Editar requisição
     Execute JavaScript               window.scrollTo(0, 0)
     Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}
@@ -587,7 +587,7 @@ E clico no botão "Excluir requisição"
 Então sistema exclui e retorna para menu requisições
     Wait Until Page Contains    text=Requisições
 
-# --2.27
+# --2.26
 E clico em próximo sem preencher campos
     Wait Until Element Is Visible    ${Botao_Proximo_Requisicoes}
     Click Element                    ${Botao_Proximo_Requisicoes}
@@ -595,7 +595,7 @@ E clico em próximo sem preencher campos
 Então sistema exibe mensagem de campos obrigatórios não preenchido
     Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, CEP
 
-# --2.28
+# --2.27
 Preencho somente campo telefone
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]
     Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
@@ -607,7 +607,7 @@ Preencho somente campo telefone
 
 Então sistema exibe mensagem de CEP não preenchido
     Wait Until Page Contains    text=Preencha os campos obrigatórios: CEP
-# --2.29
+# --2.28
 Preencho somente campo CEP
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]
     Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}

@@ -111,7 +111,7 @@ CT 09.01.12 - Validar botão "Excluir" em perguntas
     E clico no botao "Perguntas"
     E clico no botao buscar
     E preencho informações de pesquisa
-    Quando clico em "Excluir" em configurações
+    Quando clico em "Excluir" em configurações em perguntas
     Então sistema exclui pergunta do menu Configurações > Requisições > Perguntas
 
 CT 09.01.13 - Validar filtro "Cards ou Lista" em Perguntas 

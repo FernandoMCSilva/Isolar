@@ -775,81 +775,81 @@ CT 07.10.09 - Validar botão "Fechar" no filtro buscar
     E clico em "Fechar"
     Então sistema verifica se filtro buscar fechou
 
-# CT 07.11.01 - Validar menu Cadastros > Empresas
-#     [Documentation]     Caso de teste valida se Menu Cadastros Empresas está funcional
-#     [Tags]    Cadastros    Empresas    Funcional
-#     Dado que clico no menu "Cadastros > Empresas"
-#     Então sistema exibe informações de cadastro de "Empresas"
+CT 07.11.01 - Validar menu Cadastros > Empresas
+    [Documentation]     Caso de teste valida se Menu Cadastros Empresas está funcional
+    [Tags]    Cadastros    Empresas    Funcional
+    Dado que clico no menu "Cadastros > Empresas"
+    Então sistema exibe informações de cadastro de "Empresas"
     
-# CT 07.11.02 - Validar funcionalidade "inserir" 
-#     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Empresas está funcional
-#     [Tags]    Cadastros    Empresas    Funcional        
-#     Dado que clico no menu "Cadastros > Empresas"
-#     Quando clico no botão "Inserir"
-#     E preencho informações de inserir novo cadastro de Empresas
-#     E clico em "Salvar"
-#     Então sistema salva novo cadastro de Empresas
+CT 07.11.02 - Validar funcionalidade "inserir" 
+    [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Empresas está funcional
+    [Tags]    Cadastros    Empresas    Funcional        
+    Dado que clico no menu "Cadastros > Empresas"
+    Quando clico no botão "Inserir"
+    E preencho informações de inserir novo cadastro de Empresas
+    E clico em "Salvar"
+    Então sistema salva novo cadastro de Empresas
 
-# CT 07.11.03 - Validar funcionalidade "editar" 
-#     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Empresas está funcional
-#     [Tags]    Cadastros    Empresas    Funcional        
-#     Dado que clico no menu "Cadastros > Empresas"
-#     E clico no botao buscar
-#     E preencho informações de pesquisa
-#     E clico no botao "acoes"
-#     Quando clico em "Editar"
-#     E preencho informações de cadastro editado em Empresas
-#     Então sistema exibe mensagem de informações editadas
+CT 07.11.03 - Validar funcionalidade "editar" 
+    [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Empresas está funcional
+    [Tags]    Cadastros    Empresas    Funcional        
+    Dado que clico no menu "Cadastros > Empresas"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    E clico no botao "acoes"
+    Quando clico em "Editar"
+    E preencho informações de cadastro editado em Empresas
+    Então sistema exibe mensagem de informações editadas em Empresas
 
-# CT 07.11.04 - Validar filtro "buscar" 
-#     [Documentation]     Caso de teste valida se filtro buscar está funcional
-#     [Tags]    Cadastros    Empresas    Funcional        
-#     Dado que clico no menu "Cadastros > Empresas"
-#     E clico no botao buscar
-#     E preencho informações de pesquisa
-#     Então sistema exibe informações de pesquisa
+CT 07.11.04 - Validar filtro "buscar" 
+    [Documentation]     Caso de teste valida se filtro buscar está funcional
+    [Tags]    Cadastros    Empresas    Funcional        
+    Dado que clico no menu "Cadastros > Empresas"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Então sistema exibe informações de pesquisa
 
-# CT 07.11.05 - Validar botão "Cancelar" em "Excluir"
-#     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
-#     [Tags]    Cadastros    Empresas    Funcional        
-#     Dado que clico no menu "Cadastros > Empresas"
-#     Quando clico em "Excluir"
-#     E clico no botão "Cancelar" em "Excluir"
-#     Então sistema exibe informações de cadastro de "Empresas"
+CT 07.11.05 - Validar botão "Cancelar" em "Excluir"
+    [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
+    [Tags]    Cadastros    Empresas    Funcional        
+    Dado que clico no menu "Cadastros > Empresas"
+    Quando clico em "Excluir"
+    E clico no botão "Cancelar" em "Excluir"
+    Então sistema exibe informações de cadastro de "Empresas"
 
-# CT 07.11.06- Validar botão "Continuar" em "Excluir" 
-#     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
-#     [Tags]    Cadastros    Origem da indicação    Funcional        
-#     Dado que clico no menu "Cadastros > Origem da indicação"
-#     E clico no botao buscar
-#     E preencho informações de pesquisa
-#     Quando clico em "Excluir"
-#     E clico no botão "Continuar" em "Excluir"
-#     Então sistema exclui item do menu Cadastro > Pessoas
+CT 07.11.06- Validar botão "Continuar" em "Excluir" 
+    [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
+    [Tags]    Cadastros    Origem da indicação    Funcional        
+    Dado que clico no menu "Cadastros > Origem da indicação"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema exclui item do menu Cadastro > Pessoas
 
-# CT 07.11.07 - Validar filtro "Cards ou Lista" 
-#     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
-#     [Tags]    Cadastros    Origem da indicação    Funcional        
-#     Dado que clico no menu "Cadastros > Origem da indicação"
-#     Quando clico no filtro "Cards"
-#     E clico em "Lista"
-#     Então sistema exibe informações com filtro "Lista"
+CT 07.11.07 - Validar filtro "Cards ou Lista" 
+    [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
+    [Tags]    Cadastros    Origem da indicação    Funcional        
+    Dado que clico no menu "Cadastros > Origem da indicação"
+    Quando clico no filtro "Cards"
+    E clico em "Lista"
+    Então sistema exibe informações com filtro "Lista"
 
-# CT 07.11.08 - Validar busca não encontrada no filtro buscar 
-#     [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Origem da indicação
-#     [Tags]    Cadastros    Origem da indicação    Funcional        
-#     Dado que clico no menu "Cadastros > Origem da indicação"
-#     E clico no botao buscar
-#     E preencho informações de busca não encontrada
-#     Então sistema exibe mensagem de erro de Origem da indicação
+CT 07.11.08 - Validar busca não encontrada no filtro buscar 
+    [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Origem da indicação
+    [Tags]    Cadastros    Origem da indicação    Funcional        
+    Dado que clico no menu "Cadastros > Origem da indicação"
+    E clico no botao buscar
+    E preencho informações de busca não encontrada
+    Então sistema exibe mensagem de erro de Origem da indicação
 
-# CT 07.11.09 - Validar botão "Fechar" no filtro buscar
-#     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Origem da indicação está funcional
-#     [Tags]    Cadastros    Origem da indicação    Funcional        
-#     Dado que clico no menu "Cadastros > Departamentos"
-#     E clico no botao buscar
-#     E clico em "Fechar"
-#     Então sistema verifica se filtro buscar fechou
+CT 07.11.09 - Validar botão "Fechar" no filtro buscar
+    [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Origem da indicação está funcional
+    [Tags]    Cadastros    Origem da indicação    Funcional        
+    Dado que clico no menu "Cadastros > Departamentos"
+    E clico no botao buscar
+    E clico em "Fechar"
+    Então sistema verifica se filtro buscar fechou
 
 CT 07.12.01 - Validar menu Cadastros > Usuários ZapSign
     [Documentation]     Caso de teste valida se Menu Cadastros Usuários ZapSign está funcional
@@ -857,7 +857,7 @@ CT 07.12.01 - Validar menu Cadastros > Usuários ZapSign
     Dado que clico no menu "Cadastros > Usuários ZapSign"
     Então sistema exibe informações de cadastro de "Usuários ZapSign"
     
-CT 07.12.02 - Validar funcionalidade "inserir" no menu Cadastros > Usuários ZapSign
+CT 07.12.02 - Validar funcionalidade "inserir"
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Usuários ZapSign está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Usuários ZapSign"
@@ -866,7 +866,7 @@ CT 07.12.02 - Validar funcionalidade "inserir" no menu Cadastros > Usuários Zap
     E clico em "Salvar"
     Então sistema salva novo cadastro de Usuários ZapSign
 
-CT 07.12.03 - Validar funcionalidade "editar" menu Cadastros > Usuários ZapSign
+CT 07.12.03 - Validar funcionalidade "editar"
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Usuários ZapSign está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Usuários ZapSign"
@@ -876,7 +876,7 @@ CT 07.12.03 - Validar funcionalidade "editar" menu Cadastros > Usuários ZapSign
     E preencho informações de cadastro editado em Usuários ZapSign
     Então sistema exibe mensagem de informações editadas
 
-CT 07.12.04 - Validar filtro "buscar" no menu Cadastros > Usuários ZapSign
+CT 07.12.04 - Validar filtro "buscar"
     [Documentation]     Caso de teste valida se filtro buscar está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Usuários ZapSign"
@@ -884,7 +884,7 @@ CT 07.12.04 - Validar filtro "buscar" no menu Cadastros > Usuários ZapSign
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa
 
-CT 07.12.05 - Validar botão "Cancelar" em "Excluir" no menu Cadastros > Usuários ZapSign
+CT 07.12.05 - Validar botão "Cancelar" em "Excluir"
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Usuários ZapSign"
@@ -892,7 +892,7 @@ CT 07.12.05 - Validar botão "Cancelar" em "Excluir" no menu Cadastros > Usuári
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Usuários ZapSign"
 
-CT 07.12.06- Validar botão "Continuar" em "Excluir" no menu Cadastros > Usuários ZapSign
+CT 07.12.06- Validar botão "Continuar" em "Excluir"
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Usuários ZapSign"
@@ -902,7 +902,7 @@ CT 07.12.06- Validar botão "Continuar" em "Excluir" no menu Cadastros > Usuári
     E clico no botão "Continuar" em "Excluir"
     Então sistema exclui item do menu Cadastro > Usuários ZapSign
 
-CT 07.12.07 - Validar filtro "Cards ou Lista" no menu Cadastros > Usuários ZapSign
+CT 07.12.07 - Validar filtro "Cards ou Lista"
     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Usuários ZapSign"
@@ -910,7 +910,7 @@ CT 07.12.07 - Validar filtro "Cards ou Lista" no menu Cadastros > Usuários ZapS
     E clico em "Lista"
     Então sistema exibe informações com filtro "Lista"
 
-CT 07.12.08 - Validar busca não encontrada no filtro buscar no menu Cadastros > Usuários ZapSign
+CT 07.12.08 - Validar busca não encontrada no filtro buscar
     [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Usuários ZapSign
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Usuários ZapSign"
@@ -918,7 +918,7 @@ CT 07.12.08 - Validar busca não encontrada no filtro buscar no menu Cadastros >
     E preencho informações de busca não encontrada
     Então sistema exibe mensagem de erro de Usuários ZapSign
 
-CT 07.12.09 - Validar botão "Fechar" no filtro buscar menu Cadastros > Usuários ZapSign
+CT 07.12.09 - Validar botão "Fechar" no filtro buscar
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Usuários ZapSign está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Departamentos"
@@ -926,13 +926,13 @@ CT 07.12.09 - Validar botão "Fechar" no filtro buscar menu Cadastros > Usuário
     E clico em "Fechar"
     Então sistema verifica se filtro buscar fechou   
 
-CT 07.13.01 - Validar menu Cadastros > Cargos e Funções
+CT 07.13.01 - Validar Menu Cadastros > Cargos e Funções
     [Documentation]     Caso de teste valida se Menu Cadastros Cargos e Funções está funcional
     [Tags]    Cadastros    Funcional
     Dado que clico no menu "Cadastros > Cargos e Funções"
     Então sistema exibe informações de cadastro de "Cargos e Funções"
     
-CT 07.13.02 - Validar funcionalidade "inserir" no menu Cadastros > Cargos e Funções
+CT 07.13.02 - Validar funcionalidade "inserir" 
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Cargos e Funções está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Cargos e Funções"
@@ -941,7 +941,7 @@ CT 07.13.02 - Validar funcionalidade "inserir" no menu Cadastros > Cargos e Fun�
     E clico em "Salvar"
     Então sistema salva novo cadastro de Cargos e Funções
 
-CT 07.13.03 - Validar funcionalidade "editar" menu Cadastros > Cargos e Funções
+CT 07.13.03 - Validar funcionalidade "editar" 
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Cargos e Funções está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Cargos e Funções"
@@ -953,7 +953,7 @@ CT 07.13.03 - Validar funcionalidade "editar" menu Cadastros > Cargos e Funçõe
     E clico em "Salvar"
     Então sistema exibe mensagem de informações editadas
 
-CT 07.13.04 - Validar filtro "buscar" no menu Cadastros > Cargos e Funções
+CT 07.13.04 - Validar filtro "buscar" 
     [Documentation]     Caso de teste valida se filtro buscar está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Cargos e Funções"
@@ -961,7 +961,7 @@ CT 07.13.04 - Validar filtro "buscar" no menu Cadastros > Cargos e Funções
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa
 
-CT 07.13.05 - Validar botão "Cancelar" em "Excluir" no menu Cadastros > Cargos e Funções
+CT 07.13.05 - Validar botão "Cancelar" em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Cargos e Funções"
@@ -969,7 +969,7 @@ CT 07.13.05 - Validar botão "Cancelar" em "Excluir" no menu Cadastros > Cargos 
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Cargos e Funções"
 
-CT 07.13.06- Validar botão "Continuar" em "Excluir" no menu Cadastros > Cargos e Funções
+CT 07.13.06- Validar botão "Continuar" em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Cargos e Funções"
@@ -979,7 +979,7 @@ CT 07.13.06- Validar botão "Continuar" em "Excluir" no menu Cadastros > Cargos 
     E clico no botão "Continuar" em "Excluir"
     Então sistema exclui item do menu Cadastro > Cargos e Funções
 
-CT 07.13.07 - Validar filtro "Cards ou Lista" no menu Cadastros > Cargos e Funções
+CT 07.13.07 - Validar filtro "Cards ou Lista" 
     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Cargos e Funções"
@@ -987,7 +987,7 @@ CT 07.13.07 - Validar filtro "Cards ou Lista" no menu Cadastros > Cargos e Funç
     E clico em "Lista"
     Então sistema exibe informações com filtro "Lista" em Cargos e Funções
 
-CT 07.13.08 - Validar busca não encontrada no filtro buscar no menu Cadastros > Cargos e Funções
+CT 07.13.08 - Validar busca não encontrada no filtro buscar 
     [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Cargos e Funções
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Cargos e Funções"
@@ -995,7 +995,7 @@ CT 07.13.08 - Validar busca não encontrada no filtro buscar no menu Cadastros >
     E preencho informações de busca não encontrada
     Então sistema exibe mensagem de erro de Cargos e Funções
 
-CT 07.13.09 - Validar botão "Fechar" no filtro buscar menu Cadastros > Cargos e Funções
+CT 07.13.09 - Validar botão "Fechar" no filtro buscar 
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Cargos e Funções está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Departamentos"

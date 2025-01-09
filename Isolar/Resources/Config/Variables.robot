@@ -4,7 +4,7 @@ ${URLISO}                   https://teste.grupoiso.com.br/
 # ...    https://validacao.grupoiso.com.br/
 # ...    https://sistemas.grupoiso.com.br/
 
-${BROWSER}                  chrome
+${BROWSER}                  edge
 ${LOGO}                     //img[@alt='Logo Grupo ISO']
 
 # suporte@gerenciadores.com

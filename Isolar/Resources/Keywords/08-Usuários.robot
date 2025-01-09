@@ -45,9 +45,11 @@ E preencho informações de inserir novo cadastro de Usuários
     Sleep    2s
     Click Element    (//div[contains(.,'Departamento pessoal')])[15]
     Click Element    //button[contains(.,'Próximo')]
-
+    Sleep    2s
+    Execute Javascript    window.scrollTo(0,0)
 E clico em "Salvar" em Usuários
-    Click Element    ${botao_SalvarUsuários}
+    Wait Until Element Is Visible    ${botao_SalvarUsuários}
+    Click Element                    ${botao_SalvarUsuários}
 Então sistema salva novo cadastro de Usuários
     Wait Until Page Contains    text=Registro adicionado com sucesso!
 
