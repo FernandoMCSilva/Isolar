@@ -33,6 +33,9 @@ ${botao_acoes_Clientes}                         //button[contains(.,'Ações')]
 ${botao_Editar_Clientes}                        //button[contains(.,'Editar')]
 ${botao_SalvarCadastro_Clientes}                //button[contains(.,'Salvar')]
 ${botao_acoes_Pessoas}                          //button[contains(.,'Ações')]
+${botao_acoes1LinksExternos}                    (//button[contains(.,'Ações')])[5]
+${botao_acoes2LinksExternos}                    (//button[contains(.,'Ações')])[6]
+${botao_ExportarExcelLinksExternos}             //button[contains(.,'Exportar para Excel')]
 
 
 ${input_buscar_CadastrosPessoas}                //input[contains(@placeholder,'Buscar...')]
@@ -50,6 +53,7 @@ ${input_NomeUsuarioZapSign}                     //input[@placeholder='Nome compl
 ${input_TokenUsuarioZapSign}                    //input[@placeholder='Ex: 66587esas-4388-3ba7428db54c']
 ${input_NomeCargosFuncoes}                      //input[@placeholder='Nome completo']
 ${input_DescricaoCargosFuncoes}                 //textarea[@id='descricao']
+${input_BuscarLinksExternos}                    //input[@placeholder='Buscar...']
 
 
 ${filtro_cards/Lista}                           (//button[@type='button'])[7]
@@ -471,6 +475,11 @@ Dado que clico no menu "Cadastros > Empresas"
 Então sistema exibe informações de cadastro de "Empresas"
     Wait Until Page Contains    text=Empresas
 
+Então sistema exibe mensagem de erro de Empresas
+    Wait Until Page Contains    text=Nenhum segmento encontrado.
+
+
+
 # -07.11.02
 E preencho informações de inserir novo cadastro de Empresas
     Wait Until Element Is Visible    ${input_NomeInserirEmpresas}
@@ -571,4 +580,62 @@ Então sistema exibe informações com filtro "Lista" em Cargos e Funções
 Então sistema exibe mensagem de erro de Cargos e Funções
     Wait Until Page Contains    text=Nenhum departamento encontrado.
 
-# -07.13.01
+# -07.14.01
+Dado que clico no menu "Cadastros > Links externos"
+    Wait Until Element Is Visible    ${MENU_CADASTROS}
+    Click Element                    ${MENU_CADASTROS}
+    Click Element                    ${Menu_LinksExternos}
+
+Então sistema exibe informações de cadastro de "Links externos"
+    Wait Until Page Contains    text=Links externos
+
+# -07.14.02
+E preencho informações de busca em links externos
+    Wait Until Element Is Visible    ${input_BuscarLinksExternos}
+    Input Text                       ${input_BuscarLinksExternos}    123
+
+E clico em ações 2 
+    Wait Until Element Is Visible    ${botao_acoes2LinksExternos}
+    Click Element                    ${botao_acoes2LinksExternos}
+
+E preencho informações de cadastro editado em links externos
+    Wait Until Element Is Visible    //input[@id='uc']
+    Input Text                       //input[@id='uc']    123
+    Click Element                    ${Botao_Proximo_Requisicoes}
+    Sleep    1s
+    Click Element                    ${Botao_Proximo_Requisicoes}
+    Sleep    1s
+    Click Element                    ${botao_Salvar}
+
+# -07.14.03
+E preencho informações de pesquisa em links externos
+    Wait Until Element Is Visible    //input[@placeholder='Buscar...']
+    Input Text                       //input[@placeholder='Buscar...']    123
+
+Então sistema exibe informações de pesquisa em links externos
+     ${nome_resultado}=    Get Text    (//td[contains(.,'123')])[2]
+    Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
+    ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
+
+# -07.14.04
+Quando clico em "Excluir" em Links externos
+    Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}   
+    Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
+
+# -07.14.06
+Então sistema exibe informações com filtro "Lista" em Links externos
+    Sleep    2s
+    ${titulo_nome}=    Run Keyword And Return Status    Element Should Be Visible    //th[contains(.,'Unidade consumidora')]
+    Run Keyword If    ${titulo_nome}    Log    "O Título Nome está visível. Funcionou."
+    ...    ELSE    Fail    "O Título Nome não está visível. Falhou."
+
+# -07.14.07
+Então sistema exibe mensagem de erro de Links externos
+    Wait Until Page Contains    text=Nenhum segmento encontrado.
+
+# -07.14.09
+Quando clico no botão Exportar para Excel em Links externos 
+    Wait Until Element Is Visible    ${botao_ExportarExcelLinksExternos}
+    Click Element                    ${botao_ExportarExcelLinksExternos}
+    
+# -07.14.03

@@ -33,6 +33,7 @@ ${result_Subclasse}                  (//td[contains(.,'Baixa Renda')])[1]
 ${result_Outorga}                    (//td[contains(.,'Amazonas Energia')])[1]
 
 ${Campo_Cliente}                     //input[@id='cliente']
+${campo_clienteRelatorios}           //div[@class='select__value-container css-hlgwow'][contains(.,'Digite o nome do cliente...')]
 ${botao_exportarPDF_Relatorios}      //button[contains(.,'Exportar para PDF')]
 
 
@@ -49,12 +50,13 @@ Então sistema exibe informações de menu Relatórios > Relatórios
 
 # --10.01.02
 E preencho informações de filtro "Cliente"
-    Wait Until Element Is Visible         ${Campo_Cliente}
-    Input Text        ${Campo_Cliente}    ${nome_pesquisa_Relatórios}
-
+    Wait Until Element Is Visible    ${campo_clienteRelatorios}
+    Sleep    2s
+    Click Element                    ${campo_clienteRelatorios}
+    Click Element                    (//div[contains(.,'Evandro Carlos Mior')])[19]
 Então sistema exibe informações de filtro "Cliente"
-    Wait Until Element Is Visible    (//td[contains(@class,'p-4 align-middle [&:has([role=checkbox])]:pr-0 text-center')])[2]    timeout=10s
-    ${resultado}=    Get Text    (//td[contains(@class,'p-4 align-middle [&:has([role=checkbox])]:pr-0 text-center')])[2]
+    Wait Until Element Is Visible    //td[contains(.,'Evandro Carlos Mior')]    timeout=10s
+    ${resultado}=    Get Text    //td[contains(.,'Evandro Carlos Mior')]
     Run Keyword If    '${resultado}' == '${nome_pesquisa_Relatórios}'    Log    Aprovado.
     Run Keyword Unless    '${resultado}' == '${nome_pesquisa_Relatórios}'    Fail    Reprovado.
 

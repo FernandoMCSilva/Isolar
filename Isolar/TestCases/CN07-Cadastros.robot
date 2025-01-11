@@ -819,33 +819,33 @@ CT 07.11.05 - Validar botão "Cancelar" em "Excluir"
 
 CT 07.11.06- Validar botão "Continuar" em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
-    [Tags]    Cadastros    Origem da indicação    Funcional        
-    Dado que clico no menu "Cadastros > Origem da indicação"
+    [Tags]    Cadastros    Empresas    Funcional        
+    Dado que clico no menu "Cadastros > Empresas"
     E clico no botao buscar
     E preencho informações de pesquisa
     Quando clico em "Excluir"
     E clico no botão "Continuar" em "Excluir"
-    Então sistema exclui item do menu Cadastro > Pessoas
+    Então sistema exclui item do menu Cadastro > Pessoas 
 
 CT 07.11.07 - Validar filtro "Cards ou Lista" 
     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
-    [Tags]    Cadastros    Origem da indicação    Funcional        
-    Dado que clico no menu "Cadastros > Origem da indicação"
+    [Tags]    Cadastros    Empresas    Funcional        
+    Dado que clico no menu "Cadastros > Empresas"
     Quando clico no filtro "Cards"
     E clico em "Lista"
     Então sistema exibe informações com filtro "Lista"
 
 CT 07.11.08 - Validar busca não encontrada no filtro buscar 
-    [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Origem da indicação
-    [Tags]    Cadastros    Origem da indicação    Funcional        
-    Dado que clico no menu "Cadastros > Origem da indicação"
+    [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Empresas
+    [Tags]    Cadastros    Empresas    Funcional        
+    Dado que clico no menu "Cadastros > Empresas"
     E clico no botao buscar
     E preencho informações de busca não encontrada
-    Então sistema exibe mensagem de erro de Origem da indicação
+    Então sistema exibe mensagem de erro de Empresas
 
 CT 07.11.09 - Validar botão "Fechar" no filtro buscar
-    [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Origem da indicação está funcional
-    [Tags]    Cadastros    Origem da indicação    Funcional        
+    [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Empresas está funcional
+    [Tags]    Cadastros    Empresas    Funcional        
     Dado que clico no menu "Cadastros > Departamentos"
     E clico no botao buscar
     E clico em "Fechar"
@@ -1002,4 +1002,79 @@ CT 07.13.09 - Validar botão "Fechar" no filtro buscar
     E clico no botao buscar
     E clico em "Fechar"
     Então sistema verifica se filtro buscar fechou   
+
+CT 07.14.01 - Validar Menu Cadastros > Links externos
+    [Documentation]     Caso de teste valida se Menu Cadastros Links externos está funcional
+    [Tags]    Cadastros    Funcional
+    Dado que clico no menu "Cadastros > Links externos"
+    Então sistema exibe informações de cadastro de "Links externos"
+    
+# CT 07.14.02 - Validar funcionalidade "editar" 
+#     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Links externos está funcional
+#     [Tags]    Cadastros    Funcional        
+#     Dado que clico no menu "Cadastros > Links externos"
+#     E clico no botao buscar
+#     E preencho informações de busca em links externos
+#     E clico em ações 2 
+#     Quando clico em "Editar"
+#     E preencho informações de cadastro editado em links externos
+#     Então sistema exibe mensagem de informações editadas
+
+CT 07.14.03 - Validar filtro "buscar" 
+    [Documentation]     Caso de teste valida se filtro buscar está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Links externos"
+    E clico no botao buscar
+    E preencho informações de pesquisa em links externos
+    Então sistema exibe informações de pesquisa em links externos
+
+CT 07.14.04 - Validar botão "Cancelar" em "Excluir" 
+    [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Links externos"
+    E clico em ações 2 
+    Quando clico em "Excluir" em Links externos
+    E clico no botão "Cancelar" em "Excluir"
+    Então sistema exibe informações de cadastro de "Links externos"
+
+# CT 07.14.05- Validar botão "Continuar" em "Excluir" 
+#     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
+#     [Tags]    Cadastros    Funcional        
+#     Dado que clico no menu "Cadastros > Links externos"
+#     E clico no botao buscar
+#     E preencho informações de pesquisa
+#     Quando clico em "Excluir"
+#     E clico no botão "Continuar" em "Excluir"
+#     Então sistema exclui item do menu Cadastro > Links externos
+
+CT 07.14.06 - Validar filtro "Cards ou Lista" 
+    [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Links externos"
+    Quando clico no filtro "Cards"
+    E clico em "Lista"
+    Então sistema exibe informações com filtro "Lista" em Links externos
+
+# CT 07.14.07 - Validar busca não encontrada no filtro buscar 
+#     [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Links externos
+#     [Tags]    Cadastros    Funcional        
+#     Dado que clico no menu "Cadastros > Links externos"
+#     E clico no botao buscar
+#     E preencho informações de busca não encontrada
+#     Então sistema exibe mensagem de erro de Links externos
+
+CT 07.14.08 - Validar botão "Fechar" no filtro buscar 
+    [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Links externos está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Links externos"
+    E clico no botao buscar
+    E clico em "Fechar"
+    Então sistema verifica se filtro buscar fechou   
+
+CT 07.14.09 - Validar botão "Fechar" no filtro buscar 
+    [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Links externos está funcional
+    [Tags]    Cadastros    Funcional        
+    Dado que clico no menu "Cadastros > Links externos"
+    Quando clico no botão Exportar para Excel em Links externos 
+    Então sistema exporta para excel
 
