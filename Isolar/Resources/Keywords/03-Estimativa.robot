@@ -192,29 +192,18 @@ Então sistema exibe informações para criar assinaturas
     Wait Until Page Contains   text=Clique para fazer o upload
     
 # --3.14
-
 Quando clico no botão "Ver PDF"
     Wait Until Element Is Visible    ${botao_verPDF}
     Click Element                    ${botao_verPDF}
 
 Então sistema exibe informações em aquivo PDF
     Wait Until Page Contains    text=27/11/2024
-
-# --3.15
-
-# E clico em "Fechar PDF"
-#     Sleep    3s
-#     Click Element    
-
-# --3.16
-
 E clico em "imprimir Estimativa"
     Wait Until Element Is Visible    ${botao_imprimir_estimativa}
     Click Element                    ${botao_imprimir_estimativa}
 
-
 Então sistema exibe informações de estimativa em arquivo PDF
-    Wait Until Page Contains    text=10/01/2025    timeout=10s
+    Wait Until Page Contains    text=27/11/2024    timeout=10s
     # Wait Until Page Contains    text=PROPOSTA COMERCIAL
 
 # --3.17

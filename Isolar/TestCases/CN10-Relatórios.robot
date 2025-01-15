@@ -161,7 +161,7 @@ CT 10.02.01 - Validar menu Relatórios > Homologatórias
     [Documentation]     Caso de teste valida se Menu Relatórios > Homologatórias está funcional
     [Tags]    Relatórios    Homologatórias    Funcional        
     Dado que clico no menu "Relatórios > Homologatórias"
-    Então sistema exibe informações do menu Relatórios > Homologatórias
+    Então sistema exibe informações do menu Relatórios > Homologatórias 
 
 CT 10.02.02 - Validar filtro Resolução ANEEL
     [Documentation]     Caso de teste valida se filtro Resolução ANEEL está funcional

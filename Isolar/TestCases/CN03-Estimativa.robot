@@ -116,6 +116,9 @@ CT 03.15 - Validar botão Imprimir Estimativa em Ver PDF
     [Documentation]    Caso de teste testa botão Imprimir Estimativa em "Ver PDF"
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
+    Quando clico em "Filtros"
+    E preencho informações no campo Cliente
+    E clico em "Buscar"
     Quando clico no botão "Ver PDF"
     E clico em "imprimir Estimativa"
     Então sistema exibe informações de estimativa em arquivo PDF

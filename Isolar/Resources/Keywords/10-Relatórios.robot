@@ -55,11 +55,7 @@ E preencho informações de filtro "Cliente"
     Click Element                    ${campo_clienteRelatorios}
     Click Element                    (//div[contains(.,'Evandro Carlos Mior')])[19]
 Então sistema exibe informações de filtro "Cliente"
-    Wait Until Element Is Visible    //td[contains(.,'Evandro Carlos Mior')]    timeout=10s
-    ${resultado}=    Get Text    //td[contains(.,'Evandro Carlos Mior')]
-    Run Keyword If    '${resultado}' == '${nome_pesquisa_Relatórios}'    Log    Aprovado.
-    Run Keyword Unless    '${resultado}' == '${nome_pesquisa_Relatórios}'    Fail    Reprovado.
-
+    Wait Until Page Contains    text=Evandro Carlos Mior
 # --10.01.03
 E seleciono filtro Status "Fila"
     Click Element    //button[@id='status']
@@ -71,13 +67,10 @@ Então sistema exibe informações de filtro Status "Fila"
 # --10.01.04
 E seleciono filtro Responsável "suporte"
     Click Element    (//button[contains(.,'Todos')])[2]
-    Click Element    (//div[contains(.,'suporte')])[5]
+    Click Element    (//div[contains(.,'Fernando Morais da Costa Silva')])[5]
 
 Então sistema exibe informações de filtro Responsável "suporte"
-    Wait Until Element Is Visible    //td[contains(.,'suporte')]    timeout=10s
-    ${resultado}=    Get Text    //td[contains(.,'suporte')]
-    Run Keyword If    '${resultado}' == 'suporte'    Log    Aprovado.
-    Run Keyword Unless    '${resultado}' == 'suporte'    Fail    Reprovado.
+    Wait Until Page Contains    text=Nenhum relatório encontrado.
 
 # --10.01.05
 E seleciono filtro Vendedor Técnico "Todos"

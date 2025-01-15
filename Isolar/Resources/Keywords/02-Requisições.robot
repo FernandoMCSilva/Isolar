@@ -52,7 +52,7 @@ ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 # ...    (//div[contains(.,'SERVIÇO MANUTENÇAO')])[5]    (//div[contains(.,'CERTIDAO AMBIENTAL')])[5]
 @{OPCOES_COMBOBOX_URGENTE}          (//div[contains(.,'Sim')])[5]    (//div[contains(.,'Não')])[14]
 @{OPCOES_COMBOBOX_NIVELDEURGENCIA}  (//div[contains(.,'Baixo')])[5]    (//div[contains(.,'Médio')])[5]    (//div[contains(.,'Alto')])[5]
-@{OPCOES_COMBOBOX_RESPONSAVEL}      (//div[contains(.,'Joice')])[5]    (//div[contains(.,'Larissa SDR')])[5]    (//div[contains(.,'Leandro Coser')])[5]    
+@{OPCOES_COMBOBOX_RESPONSAVEL}      (//div[contains(.,'Rhody')])[5]    (//div[contains(.,'Larissa SDR')])[5]    (//div[contains(.,'Leandro Coser')])[5]    
 @{OPCOES_COMBOBOX_RENOVADAS}        (//div[contains(.,'Originais')])[5]    
 
 ${actions}=    Get Webdriver Manager
