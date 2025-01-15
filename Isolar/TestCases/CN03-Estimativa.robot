@@ -106,15 +106,19 @@ CT 03.14 - Validar botão Ver PDF
     [Documentation]    Caso de teste valida botão Ver PDF
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
+    Quando clico em "Filtros"
+    E preencho informações no campo Cliente
+    E clico em "Buscar"
     Quando clico no botão "Ver PDF"
     Então sistema exibe informações em aquivo PDF
+
 CT 03.15 - Validar botão Imprimir Estimativa em Ver PDF
     [Documentation]    Caso de teste testa botão Imprimir Estimativa em "Ver PDF"
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Ver PDF"
     E clico em "imprimir Estimativa"
-    # Então sistema exibe informações de estimativa em arquivo PDF
+    Então sistema exibe informações de estimativa em arquivo PDF
 
 CT 03.16 - Validar botão Cancelar em Aplicar desconto
     [Documentation]    Caso de teste valida botão Cancelar em Aplicar desconto

@@ -51,7 +51,7 @@ ${input_NomeInserirEmpresas}                    //input[@placeholder='Insira o n
 ${input_DescricaoEmpresas}                      //input[@placeholder='Insira a descrição']
 ${input_NomeUsuarioZapSign}                     //input[@placeholder='Nome completo']
 ${input_TokenUsuarioZapSign}                    //input[@placeholder='Ex: 66587esas-4388-3ba7428db54c']
-${input_NomeCargosFuncoes}                      //input[@placeholder='Nome completo']
+${input_NomeCargosFuncoes}                      //input[@id='nome']
 ${input_DescricaoCargosFuncoes}                 //textarea[@id='descricao']
 ${input_BuscarLinksExternos}                    //input[@placeholder='Buscar...']
 
@@ -191,7 +191,7 @@ E preencho informações de inserir novo cadastro de pessoas
 E clico em "Salvar"
     Wait Until Element Is Visible    ${botao_salvar_CadastrosPessoas}
     Click Element                    ${botao_salvar_CadastrosPessoas}
-
+    
 Então sistema salva novo cadastro de pessoas
     Wait Until Page Contains    text=Registro adicionado com sucesso!
 
@@ -495,7 +495,7 @@ Então sistema salva novo cadastro de Empresas
 
 # -07.11.03
 E preencho informações de cadastro editado em Empresas
-    Wait Until Element Is Visible    ${input_NomeInserirEmpresas}
+    Sleep    3s
     Input Text                       ${input_NomeInserirEmpresas}    ${nome_pesquisa_GruposConsumidores}
     Input Text                       ${input_DescricaoEmpresas}      ${nome_pesquisa_GruposConsumidores}
     Click Element                    ${Botao_Proximo_Requisicoes}

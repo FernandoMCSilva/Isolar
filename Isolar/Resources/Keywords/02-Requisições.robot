@@ -587,6 +587,10 @@ E clico no botão "Excluir requisição"
 Então sistema exclui e retorna para menu requisições
     Wait Until Page Contains    text=Requisições
 
+# --2.25
+Então sistema exibe mensagem de cadastro excluido
+    Wait Until Element Is Visible    //p[contains(.,'Gerenciar informações cadastradas no sistema')]
+
 # --2.26
 E clico em próximo sem preencher campos
     Wait Until Element Is Visible    ${Botao_Proximo_Requisicoes}

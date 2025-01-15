@@ -230,7 +230,7 @@ Então sistema exibe informações de filtro Status
 # -06.02.04
 E preencho informações de filtro Assinante
     Wait Until Element Is Visible    ${filtro_Assinante}
-    Input Text                       ${filtro_Assinante}    Teste
+    Input Text                       ${filtro_Assinante}    teste123
 
 Então sistema exibe informações de filtro Assinante
     Wait Until Element Is Visible    (//p[contains(.,'Teste')])[1]

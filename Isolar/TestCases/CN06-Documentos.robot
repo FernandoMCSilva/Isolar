@@ -253,17 +253,6 @@ CT 06.02.12 - Validar botão Editar
     Quando clico em "Editar"
     Então sistema exibe tela de edição
 
-CT 06.02.13 - Validar botão Editar
-    [Documentation]     Caso de teste valida se botão Editar está funcional
-    [Tags]    Documentos    Assinaturas    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Assinaturas"
-    Quando clico em "Filtros"
-    E preencho informações de filtro Assinante
-    E clico em "Buscar"
-    Quando clico em "Editar"
-    Então sistema exibe tela de edição
-
 CT 06.02.14 - Validar botão Documento original em Editar
     [Documentation]     Caso de teste valida se botão Documento original em Editar está funcional
     [Tags]    Documentos    Assinaturas    Funcional

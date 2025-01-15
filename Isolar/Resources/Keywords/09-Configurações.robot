@@ -162,7 +162,7 @@ Então sistema exibe informações de "Perguntas" no menu Configurações > Requ
 # --9.01.09
 E clico no botao "Perguntas"
     Wait Until Element Is Visible    ${botao_Perguntas}
-    Click Element    ${botao_Perguntas}
+    Click Element                    ${botao_Perguntas}
 E preencho informações de nova pergunta
     Sleep    2s
     Input Text            //input[contains(@placeholder,'Nome do campo')]    ${nome_BuscaNaoEncontrada}
@@ -189,7 +189,7 @@ Quando clico em "Editar" em configurações
 
 E preencho informações de pergunta editada no menu Configurações > Requisições > Perguntas
     Sleep    2s
-    Input Text            (//input[@value='B3 (teste)'])[1]    ${nome_pesquisa_GruposConsumidores}
+    Input Text            //input[@name='nome']    ${nome_pesquisa_GruposConsumidores}
     Click Element         //button[contains(.,'Texto')]
     Click Element         (//div[contains(.,'Data')])[4]
     Sleep    2s

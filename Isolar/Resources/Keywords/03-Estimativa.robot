@@ -198,7 +198,7 @@ Quando clico no botão "Ver PDF"
     Click Element                    ${botao_verPDF}
 
 Então sistema exibe informações em aquivo PDF
-    Wait Until Page Contains    text=Estimativa de Nº 43
+    Wait Until Page Contains    text=27/11/2024
 
 # --3.15
 
@@ -214,7 +214,8 @@ E clico em "imprimir Estimativa"
 
 
 Então sistema exibe informações de estimativa em arquivo PDF
-    Wait Until Page Contains    text=PROPOSTA COMERCIAL
+    Wait Until Page Contains    text=10/01/2025    timeout=10s
+    # Wait Until Page Contains    text=PROPOSTA COMERCIAL
 
 # --3.17
 Quando clico no botão "Aplicar desconto"

@@ -193,7 +193,17 @@ CT 02.23 - Validar botão Inserir "Departamento pessoal"
     E preencho informações de cadastro de requisição "Departamento Pessoal"
     Então sistema exibe mensagem de cadastro realizado
 
-CT 02.24 - Validar excluir 
+CT 02.24 - Validar excluir "Técnico"
+    [Documentation]     Caso de teste valida funcionalidade excluir 
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E clico no botão "Editar"
+    E clico no botão "Excluir requisição"
+    Então sistema exclui e retorna para menu requisições 
+
+CT 02.25 - Validar excluir "Departamento pessoal"
     [Documentation]     Caso de teste valida funcionalidade excluir 
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
@@ -211,6 +221,7 @@ CT 02.25 - Validar funcionalidade excluir cadastro de requisiçao em Cadastros >
     E preencho informações de pesquisa
     Quando clico em "Excluir"
     E clico no botão "Continuar" em "Excluir"
+    Então sistema exibe mensagem de cadastro excluido
 
 CT 02.26 - Validar inserir sem preencher campos obrigatórios (Erro)
     [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
