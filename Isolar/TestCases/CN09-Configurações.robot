@@ -13,7 +13,7 @@ CT 09.01.01 - Validar menu Configurações > Requisições
 
 CT 09.01.02 - Validar funcionalidade "inserir" 
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Configurações > Requisições está funcional
-    [Tags]    Configurações    Requisições    Funcional        
+    [Tags]    Configurações    Requisições    Funcional    SmokeTest        
     Dado que clico no menu "Configurações > Requisições"
     Quando clico no botão "Novo tipo"
     E preencho informações de cadastro de Novo tipo de Requisições
@@ -22,7 +22,7 @@ CT 09.01.02 - Validar funcionalidade "inserir"
 
 CT 09.01.03 - Validar funcionalidade "editar" 
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Configurações > Requisições está funcional
-    [Tags]    Configurações    Requisições    Funcional       
+    [Tags]    Configurações    Requisições    Funcional    SmokeTest       
     Dado que clico no menu "Configurações > Requisições"
     E clico no botao buscar
     E preencho informações de pesquisa
@@ -59,7 +59,7 @@ CT 09.01.06 - Validar botão "Cancelar" em Excluir
 
 CT 09.01.07 - Validar botão "Continuar" em Excluir 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional no menu Configurações > Requisições
-    [Tags]    Configurações    Requisições    Funcional        
+    [Tags]    Configurações    Requisições    Funcional    SmokeTest        
     Dado que clico no menu "Configurações > Requisições"
     E clico no botao buscar
     E preencho informações de pesquisa
@@ -76,7 +76,7 @@ CT 09.01.08 - Validar botão "Perguntas"
 
 CT 09.01.09 - Validar funcionalidade "Inserir" em perguntas 
     [Documentation]     Caso de teste valida funcionalidade "Inserir" nova pergunta em perguntas no menu Configurações > Requisições
-    [Tags]    Configurações    Requisições    Funcional        
+    [Tags]    Configurações    Requisições    Funcional    SmokeTest        
     Dado que clico no menu "Configurações > Requisições"
     E clico no botao "Perguntas"
     E preencho informações de nova pergunta
@@ -85,7 +85,7 @@ CT 09.01.09 - Validar funcionalidade "Inserir" em perguntas
 
 CT 09.01.10 - Validar funcionalidade "Editar" em Perguntas 
     [Documentation]     Caso de teste valida se funcionalidade "Editar" em Perguntas no menu Configurações > Requisições está funcional
-    [Tags]    Configurações    Requisições    Funcional        
+    [Tags]    Configurações    Requisições    Funcional    SmokeTest        
     Dado que clico no menu "Configurações > Requisições"
     E clico no botao "Perguntas"
     E clico no botao buscar
@@ -106,7 +106,7 @@ CT 09.01.11 - Validar filtro "buscar" em perguntas
 
 CT 09.01.12 - Validar botão "Excluir" em perguntas 
     [Documentation]     Caso de teste valida se botão Excluir em perguntas está funcional no menu Configurações > Requisições
-    [Tags]    Configurações    Requisições    Funcional        
+    [Tags]    Configurações    Requisições    Funcional    SmokeTest        
     Dado que clico no menu "Configurações > Requisições"
     E clico no botao "Perguntas"
     E clico no botao buscar

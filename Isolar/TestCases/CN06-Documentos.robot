@@ -51,7 +51,7 @@ CT 06.01.05 - Validar filtro Data de registro
 
 CT 06.01.06 - Validar botão Ver Documento
     [Documentation]     Caso de teste valida se botão Ver Documento está funcional
-    [Tags]    Documentos    Documentos gerados    Funcional
+    [Tags]    Documentos    Documentos gerados    Funcional    SmokeTest
     Dado que clico no menu "Documentos"
     Clico no menu "Documentos geradados"
     E clico no botão Ver Documento
@@ -59,7 +59,7 @@ CT 06.01.06 - Validar botão Ver Documento
 
 CT 06.01.07 - Validar botão Gerar link de assinatura
     [Documentation]     Caso de teste valida se botão Gerar link de assinatura está funcional
-    [Tags]    Documentos    Documentos gerados    Funcional
+    [Tags]    Documentos    Documentos gerados    Funcional    SmokeTest
     Dado que clico no menu "Documentos"
     Clico no menu "Documentos geradados"
     E clico no botão Gerar link de assinatura
@@ -67,7 +67,7 @@ CT 06.01.07 - Validar botão Gerar link de assinatura
 
 CT 06.01.08 - Validar botão Status da assinatura
     [Documentation]     Caso de teste valida se botão Status da assinatura está funcional
-    [Tags]    Documentos    Documentos gerados    Funcional
+    [Tags]    Documentos    Documentos gerados    Funcional    SmokeTest
     Dado que clico no menu "Documentos"
     Clico no menu "Documentos geradados"
     Quando clico em "Filtros"
@@ -77,7 +77,7 @@ CT 06.01.08 - Validar botão Status da assinatura
 
 CT 06.01.09 - Validar botão Rubrica
     [Documentation]     Caso de teste valida se botão Rubrica está funcional
-    [Tags]    Documentos    Documentos gerados    Funcional
+    [Tags]    Documentos    Documentos gerados    Funcional    SmokeTest
     Dado que clico no menu "Documentos"
     Clico no menu "Documentos geradados"
     Quando clico em "Filtros"
@@ -131,14 +131,6 @@ CT 06.01.14 - Validar botão Gerar link de assinatura (ERROR)
     E preencho filtro criador
     E clico no botão Gerar link de assinatura (ERROR)
     Então sistema exibe informações de botão Gerar link de assinatura (ERROR)
-
-CT 06.01.15 - Validar botão Gerar link de assinatura
-    [Documentation]     Caso de teste valida se botão Gerar link de assinatura está funcional
-    [Tags]    Documentos    Documentos gerados    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Documentos geradados"
-    E clico no botão Gerar link de assinatura
-    Então sistema exibe informações de botão Gerar link de assinatura
 
 CT 06.02.01 - Validar menu Assinaturas
     [Documentation]     Caso de teste valida se menu Assinaturas está funcional
@@ -224,7 +216,7 @@ CT 06.02.09 - Validar botão Anterior
 
 CT 06.02.10 - Validar funcionalidade Criar
     [Documentation]     Caso de teste valida se funcionalidade Criar está funcional
-    [Tags]    Documentos    Assinaturas    Funcional
+    [Tags]    Documentos    Assinaturas    Funcional    SmokeTest
     Dado que clico no menu "Documentos"
     Clico no menu "Assinaturas"
     Quando clico no botão Criar
@@ -244,7 +236,7 @@ CT 06.02.11 - Validar filtro Buscar
 
 CT 06.02.12 - Validar botão Editar
     [Documentation]     Caso de teste valida se botão Editar está funcional
-    [Tags]    Documentos    Assinaturas    Funcional
+    [Tags]    Documentos    Assinaturas    Funcional    SmokeTest
     Dado que clico no menu "Documentos"
     Clico no menu "Assinaturas"
     Quando clico em "Filtros"
@@ -288,7 +280,7 @@ CT 06.03.01.01 - Validar menu Criar documento > Compras
 
 CT 06.03.02.01 - Validar menu Criar documento > Comercial
     [Documentation]     Caso de teste valida se menu Criar documento > Comercial está funcional
-    [Tags]    Documentos    Criar documento    Comercial    Funcional
+    [Tags]    Documentos    Criar documento    Comercial    Funcional    SmokeTest
     Dado que clico no menu "Documentos"
     Clico no menu "Criar documento"
     E clico em "Comercial"

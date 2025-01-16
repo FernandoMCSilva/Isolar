@@ -74,21 +74,21 @@ CT 03.08 - Validar filtro Quantidade de itens por pág
 
  CT 03.09 - Validar botão Próximo
     [Documentation]     Caso de teste valida o botão próximo
-    [Tags]    Estimativa    Funcional        
+    [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
     Quando clico em "Próximo"
     Então sistema exibe próximas Estimativa
 
 CT 03.10 - Validar botão Anterior
     [Documentation]     Caso de teste valida o botão Anterior
-    [Tags]    Estimativa    Funcional        
+    [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
     Quando clico em "Próximo"
     E clico em "Anterior"
     Então sistema exibe Estimativa anteriores   
 CT 03.12 - Validar botão Não em Gerar link de assinatura
     [Documentation]     Caso de teste valida botão Não em confirmação do Gerar link de assinatura
-    [Tags]    Estimativa    Funcional        
+    [Tags]    Estimativa    Funcional  
     Dado que clico no menu "Estimativa"
     Quando clico em "Gerar link de assinatura"
     E clico em "Não"
@@ -96,7 +96,7 @@ CT 03.12 - Validar botão Não em Gerar link de assinatura
 
 CT 03.13 - Validar botão Gerar link de assinatura
     [Documentation]     Caso de teste valida botão Gerar link de assinatura    
-    [Tags]    Estimativa    Funcional        
+    [Tags]    Estimativa    Funcional    SmokeTest
     Dado que clico no menu "Estimativa"
     Quando clico em "Gerar link de assinatura"
     E clico em "Sim"
@@ -104,7 +104,7 @@ CT 03.13 - Validar botão Gerar link de assinatura
 
 CT 03.14 - Validar botão Ver PDF
     [Documentation]    Caso de teste valida botão Ver PDF
-    [Tags]    Estimativa    Funcional
+    [Tags]    Estimativa    Funcional    SmokeTest
     Dado que clico no menu "Estimativa"
     Quando clico em "Filtros"
     E preencho informações no campo Cliente
@@ -114,7 +114,7 @@ CT 03.14 - Validar botão Ver PDF
 
 CT 03.15 - Validar botão Imprimir Estimativa em Ver PDF
     [Documentation]    Caso de teste testa botão Imprimir Estimativa em "Ver PDF"
-    [Tags]    Estimativa    Funcional
+    [Tags]    Estimativa    Funcional    SmokeTest
     Dado que clico no menu "Estimativa"
     Quando clico em "Filtros"
     E preencho informações no campo Cliente
@@ -133,7 +133,7 @@ CT 03.16 - Validar botão Cancelar em Aplicar desconto
 
 CT 03.17 - Validar botão aplicar desconto
     [Documentation]    Caso de teste valida botão Aplicar desconto
-    [Tags]    Estimativa    Funcional
+    [Tags]    Estimativa    Funcional    SmokeTest
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Aplicar desconto"
     E preencho informações de desconto
@@ -148,7 +148,7 @@ CT 03.18 - Tentar aplicar desconto "acima do limite"
     Então sistema exibe mensagem de erro de desconto máximo permitido
 CT 03.19 - Validar Gerar
     [Documentation]    Caso de teste valida botao gerar em estimativa
-    [Tags]    Estimativa    Funcional
+    [Tags]    Estimativa    Funcional    SmokeTest
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Gerar"
     E seleciono Local de instalação "Solo"
@@ -198,7 +198,7 @@ CT 03.23 - Validar botão ações após gerar cálculos
 
 CT 03.24 - Validar botão Baixar/Imprimir
     [Documentation]    Caso de teste valida botão Baixar/Imprimir em Acões após gerar cálculos
-    [Tags]    Estimativa    Funcional
+    [Tags]    Estimativa    Funcional    SmokeTest
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Gerar"
     E preencho informações de calculos

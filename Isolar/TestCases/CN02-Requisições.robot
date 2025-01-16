@@ -109,7 +109,7 @@ CT 02.13 - Validar filtro Renovadas
 
 CT 02.14 - Validar botão Inserir "Técnico"
     [Documentation]     Caso de teste valida botão Inserir "Técnico" em Requisições
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições    Funcional     SmokeTest   
     Dado que clico no menu "Requisições"
     Quanto clico no botão "Inserir/Técnico"
     E preencho informações de cadastro de requisição
@@ -117,7 +117,7 @@ CT 02.14 - Validar botão Inserir "Técnico"
 
 CT 02.15 - Validar botão Editar
     [Documentation]     Caso de teste valida botão editar em Requisições
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições    Funcional    SmokeTest
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro Cliente
@@ -127,7 +127,7 @@ CT 02.15 - Validar botão Editar
 
 CT 02.16 - Validar botão Visualizar 
     [Documentation]     Caso de teste valida botão editar 
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições    Funcional    SmokeTest 
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro Cliente
@@ -136,7 +136,7 @@ CT 02.16 - Validar botão Visualizar
 
 CT 02.17 - Validar botão Mudar Status Requisição
     [Documentation]     Caso de teste valida botão Mudar Status Requisição
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições    Funcional    SmokeTest
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro Cliente
@@ -154,7 +154,7 @@ CT 02.18 - Validar botão Histórico
 
 CT 02.19 - Validar botão Renovar em Requisições
     [Documentation]     Caso de teste valida botão Renovar em Requisições
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições    Funcional    SmokeTest
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro Cliente
@@ -195,7 +195,7 @@ CT 02.23 - Validar botão Inserir "Departamento pessoal"
 
 CT 02.24 - Validar excluir "Técnico"
     [Documentation]     Caso de teste valida funcionalidade excluir 
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições    Funcional    SmokeTest
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro Cliente

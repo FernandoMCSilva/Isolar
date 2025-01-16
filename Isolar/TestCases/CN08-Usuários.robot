@@ -13,7 +13,7 @@ CT 08.01 - Validar menu Usuários
 
 CT 08.02 - Validar funcionalidade "inserir" 
     [Documentation]     Caso de teste valida se funcionalidade Inserir no Usuários está funcional
-    [Tags]    Usuários    Funcional        
+    [Tags]    Usuários    Funcional    SmokeTest        
     Dado que clico no menu "Usuários"
     Quando clico no botão "Inserir"
     E preencho informações de inserir novo cadastro de Usuários
@@ -22,7 +22,7 @@ CT 08.02 - Validar funcionalidade "inserir"
 
 CT 08.03 - Validar funcionalidade "editar" 
     [Documentation]     Caso de teste valida se funcionalidade Editar no Usuários está funcional
-    [Tags]    Usuários    Funcional        
+    [Tags]    Usuários    Funcional    SmokeTest      
     Dado que clico no menu "Usuários"
     E clico no botao buscar
     E preencho informações de pesquisa
@@ -50,7 +50,7 @@ CT 08.05 - Validar botão "Cancelar" em "Excluir"
 
 CT 08.06 - Validar botão "Continuar" em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
-    [Tags]    Usuários    Funcional        
+    [Tags]    Usuários    Funcional    SmokeTest        
     Dado que clico no menu "Usuários"
     E clico no botao buscar
     E preencho informações de pesquisa
