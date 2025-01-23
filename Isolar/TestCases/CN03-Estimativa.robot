@@ -112,7 +112,7 @@ CT 03.14 - Validar botão Ver PDF
     Quando clico no botão "Ver PDF"
     Então sistema exibe informações em aquivo PDF
 
-CT 03.15 - Validar botão Imprimir Estimativa em Ver PDF
+CT 03.15 - Validar impressão de estimativa
     [Documentation]    Caso de teste testa botão Imprimir Estimativa em "Ver PDF"
     [Tags]    Estimativa    Funcional    SmokeTest
     Dado que clico no menu "Estimativa"
@@ -139,14 +139,14 @@ CT 03.17 - Validar botão aplicar desconto
     E preencho informações de desconto
     Então sistema aplica desconto e exibe informações em arquivo PDF
 
-CT 03.18 - Tentar aplicar desconto "acima do limite"
+CT 03.18 - Validar botão aplicar desconto com valor acima do limite
     [Documentation]    Caso de teste testa aplicar desconto acima do valor permitido
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Aplicar desconto"
     E preencho informações de desconto acima do limite
     Então sistema exibe mensagem de erro de desconto máximo permitido
-CT 03.19 - Validar Gerar
+CT 03.19 - Validar botão e funcionalidade "Gerar"
     [Documentation]    Caso de teste valida botao gerar em estimativa
     [Tags]    Estimativa    Funcional    SmokeTest
     Dado que clico no menu "Estimativa"
@@ -171,14 +171,14 @@ CT 03.20 - Validar botão Constantes personalizadas
     E clico no botão "Constantes personalizadas"
     Então sistema exibe aba de Constantes personalizadas
     
-CT 03.21 - Validar botão Exportar para Excel
+CT 03.21 - Validar exportação para Excel
     [Documentation]    Caso de teste valida botão Exportar para Excel no menu Estimativas
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
     Quando clico no botão Exportar para Excel
     Então sistema exporta para excel
 
-CT 03.22 - Validar gerar sem preencher campos obrigatórios
+CT 03.22 - Gerar estimativa sem preencher campos obrigatórios
     [Documentation]    Caso de teste valida gerar sem preencher nenhum dos campos obrigatórios
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
@@ -196,7 +196,7 @@ CT 03.23 - Validar botão ações após gerar cálculos
     E clico no botão Ações
     Então sistema exibe tela de botão ações 
 
-CT 03.24 - Validar botão Baixar/Imprimir
+CT 03.24 - Validar impressão de estimativa 
     [Documentation]    Caso de teste valida botão Baixar/Imprimir em Acões após gerar cálculos
     [Tags]    Estimativa    Funcional    SmokeTest
     Dado que clico no menu "Estimativa"
@@ -210,7 +210,7 @@ CT 03.24 - Validar botão Baixar/Imprimir
 
 CT 03.25 - Validar botão Iniciar conversa no Whatsapp
     [Documentation]    Caso de teste valida botão Iniciar conversa no Whatsapp em Acões após gerar cálculos
-    [Tags]    Estimativa    Funcional
+    [Tags]    Estimativa    Funcional    SmokeTest
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Gerar"
     E preencho informações de calculos
@@ -222,7 +222,7 @@ CT 03.25 - Validar botão Iniciar conversa no Whatsapp
 
 CT 03.26 - Validar botão Enviar por email
     [Documentation]    Caso de teste valida botão Enviar por email em Acões após gerar cálculos
-    [Tags]    Estimativa    Funcional
+    [Tags]    Estimativa    Funcional    SmokeTest
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Gerar"
     E preencho informações de calculos

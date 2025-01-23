@@ -11,7 +11,7 @@ CT 07.01.01 - Validar menu Cadastros > Pessoas
     Dado que clico no menu "Cadastros > Pessoas"
     Então sistema exibe informações de cadastro de "Pessoas"
 
-CT 07.01.02 - Validar funcionalidade "inserir"
+CT 07.01.02 - Validar botão Inserir
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Pessoas está funcional
     [Tags]    Cadastros    Pessoas    Funcional    SmokeTest
     Dado que clico no menu "Cadastros > Pessoas"
@@ -20,7 +20,7 @@ CT 07.01.02 - Validar funcionalidade "inserir"
     E clico em "Salvar"
     Então sistema salva novo cadastro de pessoas
 
-CT 07.01.03 - Validar funcionalidade "editar" 
+CT 07.01.03 - Validar botão Editar
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Pessoas está funcional
     [Tags]    Cadastros    Pessoas    Funcional    SmokeTest     
     Dado que clico no menu "Cadastros > Pessoas"
@@ -39,7 +39,7 @@ CT 07.01.04 - Validar filtro "buscar"
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa
 
-CT 07.01.05 - Validar botão "Cancelar" em "Excluir" 
+CT 07.01.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Cadastros    Pessoas    Funcional        
     Dado que clico no menu "Cadastros > Pessoas"
@@ -47,7 +47,7 @@ CT 07.01.05 - Validar botão "Cancelar" em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Pessoas"
 
-CT 07.01.06 - Validar botão "Continuar" em "Excluir" 
+CT 07.01.06 - Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Cadastros    Pessoas    Funcional    SmokeTest  
     Dado que clico no menu "Cadastros > Pessoas"
@@ -74,7 +74,7 @@ CT 07.01.08 - Validar busca não encontrada no filtro buscar
     E preencho informações de busca não encontrada
     Então sistema exibe mensagem de erro
 
-CT 07.01.09 - Validar botão "Fechar" no filtro buscar 
+CT 07.01.09 - Validar botão Fechar no filtro "buscar" 
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Pessoas está funcional
     [Tags]    Cadastros    Pessoas    Funcional        
     Dado que clico no menu "Cadastros > Pessoas"
@@ -88,7 +88,7 @@ CT 07.02.01 - Validar menu Cadastros > Clientes
     Dado que clico no menu "Cadastros > Clientes"
     Então sistema exibe informações de cadastro de "Clientes"
 
-CT 07.02.02 - Validar funcionalidade "inserir" 
+CT 07.02.02 - Validar botão Inserir
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Clientes está funcional
     [Tags]    Cadastros    Clientes    Funcional      SmokeTest  
     Dado que clico no menu "Cadastros > Clientes"
@@ -97,7 +97,7 @@ CT 07.02.02 - Validar funcionalidade "inserir"
     E clico em "Salvar"
     Então sistema salva novo cadastro de Clientes
 
-CT 07.02.03 - Validar funcionalidade "editar" 
+CT 07.02.03 - Validar botão Editar
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Clientes está funcional
     [Tags]    Cadastros    Clientes    Funcional    SmokeTest
     Dado que clico no menu "Cadastros > Clientes"
@@ -116,7 +116,7 @@ CT 07.02.04 - Validar filtro "buscar"
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa de Clientes
 
-CT 07.02.05 - Validar botão "Cancelar" em "Excluir" 
+CT 07.02.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Clientes está funcional
     [Tags]    Cadastros    Clientes    Funcional        
     Dado que clico no menu "Cadastros > Clientes"
@@ -126,7 +126,7 @@ CT 07.02.05 - Validar botão "Cancelar" em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Clientes"
 
-CT 07.02.06- Validar botão "Continuar" em "Excluir" 
+CT 07.02.06- Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Cadastros    Clientes    Funcional    SmokeTest  
     Dado que clico no menu "Cadastros > Clientes"
@@ -154,7 +154,7 @@ CT 07.02.08 - Validar busca não encontrada no filtro buscar
     E preencho informações de busca não escontrada em Clientes
     Então sistema exibe mensagem de erro em Clientes
 
-CT 07.02.09 - Validar botão "Fechar" no filtro buscar 
+CT 07.02.09 - Validar botão Fechar no filtro "buscar" 
     [Documentation]     Caso de teste valida botão fechar no filtro buscar no menu Cadastros > Gupos Clientes
     [Tags]    Cadastros    Clientes    Funcional        
     Dado que clico no menu "Cadastros > Clientes"
@@ -168,7 +168,7 @@ CT 07.03.01 - Validar menu Cadastros > Grupo Consumidores
     Dado que clico no menu "Cadastros > Grupos Consumidores"
     Então sistema exibe informações de cadastro de "Grupos Consumidores"
 
-CT 07.03.02 - Validar funcionalidade "inserir"
+CT 07.03.02 - Validar botão Inserir
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Grupo Consumidores está funcional
     [Tags]    Cadastros    Grupo Consumidores    Funcional    SmokeTest 
     Dado que clico no menu "Cadastros > Grupos Consumidores"
@@ -177,7 +177,7 @@ CT 07.03.02 - Validar funcionalidade "inserir"
     E clico em "Salvar"
     Então sistema salva novo cadastro de pessoas
 
-CT 07.03.03 - Validar funcionalidade "editar" 
+CT 07.03.03 - Validar botão Editar
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Grupos Consumidores está funcional
     [Tags]    Cadastros    Grupo Consumidores    Funcional    SmokeTest       
     Dado que clico no menu "Cadastros > Grupos Consumidores"
@@ -196,7 +196,7 @@ CT 07.03.04 - Validar filtro "buscar"
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa de Grupos Consumidores
 
-CT 07.03.05 - Validar botão "Cancelar" em "Excluir" 
+CT 07.03.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Grupo Consumidores está funcional
     [Tags]    Cadastros    Grupo Consumidores    Funcional        
     Dado que clico no menu "Cadastros > Grupos Consumidores"
@@ -204,7 +204,7 @@ CT 07.03.05 - Validar botão "Cancelar" em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Grupo Consumidores"
 
-CT 07.03.06- Validar botão "Continuar" em "Excluir" 
+CT 07.03.06- Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Cadastros    Grupo Consumidores    Funcional    SmokeTest      
     Dado que clico no menu "Cadastros > Grupos Consumidores"
@@ -231,7 +231,7 @@ CT 07.03.08 - Validar busca não encontrada no filtro buscar
     E preencho informações de busca não escontrada em Grupos Consumidores
     Então sistema exibe mensagem de erro em Grupos Consumidores
 
-CT 07.03.09 - Validar botão "Fechar" no filtro buscar 
+CT 07.03.09 - Validar botão Fechar no filtro "buscar" 
     [Documentation]     Caso de teste valida botão fechar no filtro buscar no menu Cadastros > Gupos Consumidores
     [Tags]    Cadastros    Grupo Consumidores    Funcional        
     Dado que clico no menu "Cadastros > Grupos Consumidores"
@@ -245,7 +245,7 @@ CT 07.04.01 - Validar menu Cadastros > Tipo de Gerador
     Dado que clico no menu "Cadastros > Tipo de Gerador"
     Então sistema exibe informações de cadastro de "Tipo de Gerador"
 
-CT 07.04.02 - Validar funcionalidade "inserir" 
+CT 07.04.02 - Validar botão Inserir
     [Documentation]     Caso de teste valida se funcionalidade inserir no menu Cadastros > Tipo de Gerador está funcional
     [Tags]    Cadastros    Tipo de Gerador    Funcional    SmokeTest 
     Dado que clico no menu "Cadastros > Tipo de Gerador"
@@ -254,7 +254,7 @@ CT 07.04.02 - Validar funcionalidade "inserir"
     E clico em "Salvar"
     Então sistema salva novo cadastro de pessoas
 
-CT 07.04.03 - Validar funcionalidade "editar" 
+CT 07.04.03 - Validar botão Editar
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Tipo de Gerador está funcional
     [Tags]    Cadastros    Tipo de Gerador    Funcional    SmokeTest
     Dado que clico no menu "Cadastros > Tipo de Gerador"
@@ -273,7 +273,7 @@ CT 07.04.04 - Validar filtro "buscar"
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa de Tipo de Gerador
 
-CT 07.04.05 - Validar botão "Cancelar" em "Excluir" 
+CT 07.04.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Cadastros    Tipo de Gerador    Funcional        
     Dado que clico no menu "Cadastros > Tipo de Gerador"
@@ -281,7 +281,7 @@ CT 07.04.05 - Validar botão "Cancelar" em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Tipo de Gerador"
 
-CT 07.04.06- Validar botão "Continuar" em "Excluir" 
+CT 07.04.06- Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Cadastros    Tipo de Gerador    Funcional    SmokeTest   
     Dado que clico no menu "Cadastros > Tipo de Gerador"
@@ -307,7 +307,7 @@ CT 07.04.08 - Validar busca não encontrada no filtro buscar
     E preencho informações de busca não encontrada
     Então sistema exibe mensagem de erro em Tipo de Gerador
 
-CT 07.04.09 - Validar botão "Fechar" no filtro buscar
+CT 07.04.09 - Validar botão Fechar no filtro "buscar"
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Tipo de Gerador está funcional
     [Tags]    Cadastros    Tipo de Gerador    Funcional        
     Dado que clico no menu "Cadastros > Tipo de Gerador"
@@ -322,7 +322,7 @@ CT 07.05.01 - Validar menu Cadastros > Tipo de Financiamento
     Então sistema exibe informações de cadastro de "Tipo de Financiamento"
 
     
-CT 07.05.02 - Validar funcionalidade "inserir" 
+CT 07.05.02 - Validar botão Inserir 
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Tipo de Financiamento está funcional
     [Tags]    Cadastros    Tipo de Financiamento    Funcional    SmokeTest      
     Dado que clico no menu "Cadastros > Tipo de Financiamento"
@@ -331,7 +331,7 @@ CT 07.05.02 - Validar funcionalidade "inserir"
     E clico em "Salvar"
     Então sistema salva novo cadastro de pessoas
 
-CT 07.05.03 - Validar funcionalidade "editar"
+CT 07.05.03 - Validar botão Editar
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Tipo de Financiamento está funcional
     [Tags]    Cadastros    Tipo de Financiamento    Funcional    SmokeTest      
     Dado que clico no menu "Cadastros > Tipo de Financiamento"
@@ -350,7 +350,7 @@ CT 07.05.04 - Validar filtro "buscar"
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa
 
-CT 07.05.05 - Validar botão "Cancelar" em "Excluir" 
+CT 07.05.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Cadastros    Tipo de Financiamento    Funcional        
     Dado que clico no menu "Cadastros > Tipo de Financiamento"
@@ -358,7 +358,7 @@ CT 07.05.05 - Validar botão "Cancelar" em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Pessoas"
 
-CT 07.05.06- Validar botão "Continuar" em "Excluir" 
+CT 07.05.06- Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Cadastros    Tipo de Financiamento    Funcional    SmokeTest  
     Dado que clico no menu "Cadastros > Tipo de Financiamento"
@@ -384,7 +384,7 @@ CT 07.05.08 - Validar busca não encontrada no filtro buscar
     E preencho informações de busca não encontrada
     Então sistema exibe mensagem de erro de Tipo de Financiamento
 
-CT 07.05.09 - Validar botão "Fechar" no filtro buscar 
+CT 07.05.09 - Validar botão Fechar no filtro "buscar" 
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Tipo de Financiamento está funcional
     [Tags]    Cadastros    Tipo de Financiamento    Funcional        
     Dado que clico no menu "Cadastros > Tipo de Financiamento"
@@ -400,7 +400,7 @@ CT 07.06.01 - Validar menu Cadastros > Classificações
     Então sistema exibe informações de cadastro de "Classificações"
 
     
-CT 07.06.02 - Validar funcionalidade "inserir"
+CT 07.06.02 - Validar botão Inserir
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Classificações está funcional
     [Tags]    Cadastros    Classificações    Funcional    SmokeTest     
     Dado que clico no menu "Cadastros > Classificações"
@@ -409,7 +409,7 @@ CT 07.06.02 - Validar funcionalidade "inserir"
     E clico em "Salvar"
     Então sistema salva novo cadastro de pessoas
 
-CT 07.06.03 - Validar funcionalidade "editar"
+CT 07.06.03 - Validar botão Editar
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Classificações está funcional
     [Tags]    Cadastros    Classificações    Funcional    SmokeTest
     Dado que clico no menu "Cadastros > Classificações"
@@ -428,7 +428,7 @@ CT 07.06.04 - Validar filtro "buscar"
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa
 
-CT 07.06.05 - Validar botão "Cancelar" em "Excluir" 
+CT 07.06.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Cadastros    Classificações    Funcional        
     Dado que clico no menu "Cadastros > Classificações"
@@ -436,7 +436,7 @@ CT 07.06.05 - Validar botão "Cancelar" em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Pessoas"
 
-CT 07.06.06- Validar botão "Continuar" em "Excluir" 
+CT 07.06.06- Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Cadastros    Classificações    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Classificações"
@@ -462,7 +462,7 @@ CT 07.06.08 - Validar busca não encontrada no filtro buscar
     E preencho informações de busca não encontrada
     Então sistema exibe mensagem de erro de Classificações
 
-CT 07.06.09 - Validar botão "Fechar" no filtro buscar 
+CT 07.06.09 - Validar botão Fechar no filtro "buscar" 
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Classificações está funcional
     [Tags]    Cadastros    Classificações    Funcional        
     Dado que clico no menu "Cadastros > Classificações"
@@ -477,7 +477,7 @@ CT 07.07.01 - Validar menu Cadastros > Motivos de Urgência
     Então sistema exibe informações de cadastro de "Motivos de Urgência"
 
     
-CT 07.07.02 - Validar funcionalidade "inserir" 
+CT 07.07.02 - Validar botão Inserir 
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Motivos de Urgência está funcional
     [Tags]    Cadastros    Motivos de Urgência    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Motivos de Urgência"
@@ -486,7 +486,7 @@ CT 07.07.02 - Validar funcionalidade "inserir"
     E clico em "Salvar"
     Então sistema salva novo cadastro de pessoas
 
-CT 07.07.03 - Validar funcionalidade "editar" 
+CT 07.07.03 - Validar botão Editar 
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Motivos de Urgência está funcional
     [Tags]    Cadastros    Motivos de Urgência    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Motivos de Urgência"
@@ -505,7 +505,7 @@ CT 07.07.04 - Validar filtro "buscar"
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa
 
-CT 07.07.05 - Validar botão "Cancelar" em "Excluir" 
+CT 07.07.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Cadastros    Motivos de Urgência    Funcional        
     Dado que clico no menu "Cadastros > Motivos de Urgência"
@@ -513,7 +513,7 @@ CT 07.07.05 - Validar botão "Cancelar" em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Pessoas"
 
-CT 07.07.06- Validar botão "Continuar" em "Excluir" 
+CT 07.07.06- Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Cadastros    Motivos de Urgência    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Motivos de Urgência"
@@ -539,7 +539,7 @@ CT 07.07.08 - Validar busca não encontrada no filtro buscar
     E preencho informações de busca não encontrada
     Então sistema exibe mensagem de erro de Motivos de Urgência
 
-CT 07.07.09 - Validar botão "Fechar" no filtro buscar 
+CT 07.07.09 - Validar botão Fechar no filtro "buscar" 
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Motivos de Urgência está funcional
     [Tags]    Cadastros    Motivos de Urgência    Funcional        
     Dado que clico no menu "Cadastros > Motivos de Urgência"
@@ -553,7 +553,7 @@ CT 07.08.01 - Validar menu Cadastros > Concessionárias
     Dado que clico no menu "Cadastros > Concessionárias"
     Então sistema exibe informações de cadastro de "Concessionárias"
     
-CT 07.08.02 - Validar funcionalidade "inserir" 
+CT 07.08.02 - Validar botão Inserir 
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Concessionárias está funcional
     [Tags]    Cadastros    Concessionárias    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Concessionárias"
@@ -562,7 +562,7 @@ CT 07.08.02 - Validar funcionalidade "inserir"
     E clico em "Salvar"
     Então sistema salva novo cadastro de pessoas
 
-CT 07.08.03 - Validar funcionalidade "editar" 
+CT 07.08.03 - Validar botão Editar 
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Concessionárias está funcional
     [Tags]    Cadastros    Concessionárias    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Concessionárias"
@@ -581,7 +581,7 @@ CT 07.08.04 - Validar filtro "buscar"
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa
 
-CT 07.08.05 - Validar botão "Cancelar" em "Excluir" 
+CT 07.08.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Cadastros    Concessionárias    Funcional        
     Dado que clico no menu "Cadastros > Concessionárias"
@@ -589,7 +589,7 @@ CT 07.08.05 - Validar botão "Cancelar" em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Pessoas"
 
-CT 07.08.06- Validar botão "Continuar" em "Excluir" 
+CT 07.08.06- Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Cadastros    Concessionárias    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Concessionárias"
@@ -615,7 +615,7 @@ CT 07.08.08 - Validar busca não encontrada no filtro buscar
     E preencho informações de busca não encontrada
     Então sistema exibe mensagem de erro de Concessionárias
 
-CT 07.08.09 - Validar botão "Fechar" no filtro buscar 
+CT 07.08.09 - Validar botão Fechar no filtro "buscar" 
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Concessionárias está funcional
     [Tags]    Cadastros    Concessionárias    Funcional        
     Dado que clico no menu "Cadastros > Departamentos"
@@ -629,7 +629,7 @@ CT 07.09.01 - Validar menu Cadastros > Departamentos
     Dado que clico no menu "Cadastros > Departamentos"
     Então sistema exibe informações de cadastro de "Departamentos"
     
-CT 07.09.02 - Validar funcionalidade "inserir"
+CT 07.09.02 - Validar botão Inserir
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Departamentos está funcional
     [Tags]    Cadastros    Departamentos    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Departamentos"
@@ -638,7 +638,7 @@ CT 07.09.02 - Validar funcionalidade "inserir"
     E clico em "Salvar"
     Então sistema salva novo cadastro de pessoas
 
-CT 07.09.03 - Validar funcionalidade "editar"
+CT 07.09.03 - Validar botão Editar
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Departamentos está funcional
     [Tags]    Cadastros    Departamentos    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Departamentos"
@@ -657,7 +657,7 @@ CT 07.09.04 - Validar filtro "buscar"
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa
 
-CT 07.09.05 - Validar botão "Cancelar" em "Excluir" 
+CT 07.09.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Cadastros    Departamentos    Funcional        
     Dado que clico no menu "Cadastros > Departamentos"
@@ -665,7 +665,7 @@ CT 07.09.05 - Validar botão "Cancelar" em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Pessoas"
 
-CT 07.09.06 - Validar botão "Continuar" em "Excluir" 
+CT 07.09.06 - Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Cadastros    Departamentos    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Departamentos"
@@ -691,7 +691,7 @@ CT 07.09.08 - Validar busca não encontrada no filtro buscar
     E preencho informações de busca não encontrada
     Então sistema exibe mensagem de erro de Departamentos
 
-CT 07.09.09 - Validar botão "Fechar" no filtro buscar 
+CT 07.09.09 - Validar botão Fechar no filtro "buscar" 
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Departamentos está funcional
     [Tags]    Cadastros    Departamentos    Funcional        
     Dado que clico no menu "Cadastros > Departamentos"
@@ -705,7 +705,7 @@ CT 07.10.01 - Validar menu Cadastros > Origem da indicação
     Dado que clico no menu "Cadastros > Origem da indicação"
     Então sistema exibe informações de cadastro de "Origem de indicação"
     
-CT 07.10.02 - Validar funcionalidade "inserir" 
+CT 07.10.02 - Validar botão Inserir 
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Origem da indicação está funcional
     [Tags]    Cadastros    Origem da indicação    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Origem da indicação"
@@ -714,7 +714,7 @@ CT 07.10.02 - Validar funcionalidade "inserir"
     E clico em "Salvar"
     Então sistema salva novo cadastro de pessoas
 
-CT 07.10.03 - Validar funcionalidade "editar" 
+CT 07.10.03 - Validar botão Editar 
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Origem da indicação está funcional
     [Tags]    Cadastros    Origem da indicação    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Origem da indicação"
@@ -733,7 +733,7 @@ CT 07.10.04 - Validar filtro "buscar"
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa
 
-CT 07.10.05 - Validar botão "Cancelar" em "Excluir"
+CT 07.10.05 - Validar botão Cancelar em "Excluir"
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Cadastros    Origem da indicação    Funcional        
     Dado que clico no menu "Cadastros > Origem da indicação"
@@ -741,7 +741,7 @@ CT 07.10.05 - Validar botão "Cancelar" em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Pessoas"
 
-CT 07.10.06- Validar botão "Continuar" em "Excluir" 
+CT 07.10.06- Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Cadastros    Origem da indicação    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Origem da indicação"
@@ -767,7 +767,7 @@ CT 07.10.08 - Validar busca não encontrada no filtro buscar
     E preencho informações de busca não encontrada
     Então sistema exibe mensagem de erro de Origem da indicação
 
-CT 07.10.09 - Validar botão "Fechar" no filtro buscar
+CT 07.10.09 - Validar botão Fechar no filtro "buscar"
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Origem da indicação está funcional
     [Tags]    Cadastros    Origem da indicação    Funcional        
     Dado que clico no menu "Cadastros > Departamentos"
@@ -781,7 +781,7 @@ CT 07.11.01 - Validar menu Cadastros > Empresas
     Dado que clico no menu "Cadastros > Empresas"
     Então sistema exibe informações de cadastro de "Empresas"
     
-CT 07.11.02 - Validar funcionalidade "inserir" 
+CT 07.11.02 - Validar botão Inserir 
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Empresas está funcional
     [Tags]    Cadastros    Empresas    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Empresas"
@@ -790,7 +790,7 @@ CT 07.11.02 - Validar funcionalidade "inserir"
     E clico em "Salvar"
     Então sistema salva novo cadastro de Empresas
 
-CT 07.11.03 - Validar funcionalidade "editar" 
+CT 07.11.03 - Validar botão Editar 
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Empresas está funcional
     [Tags]    Cadastros    Empresas    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Empresas"
@@ -809,7 +809,7 @@ CT 07.11.04 - Validar filtro "buscar"
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa
 
-CT 07.11.05 - Validar botão "Cancelar" em "Excluir"
+CT 07.11.05 - Validar botão Cancelar em "Excluir"
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Cadastros    Empresas    Funcional        
     Dado que clico no menu "Cadastros > Empresas"
@@ -817,7 +817,7 @@ CT 07.11.05 - Validar botão "Cancelar" em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Empresas"
 
-CT 07.11.06- Validar botão "Continuar" em "Excluir" 
+CT 07.11.06- Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Cadastros    Empresas    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Empresas"
@@ -843,7 +843,7 @@ CT 07.11.08 - Validar busca não encontrada no filtro buscar
     E preencho informações de busca não encontrada
     Então sistema exibe mensagem de erro de Empresas
 
-CT 07.11.09 - Validar botão "Fechar" no filtro buscar
+CT 07.11.09 - Validar botão Fechar no filtro "buscar"
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Empresas está funcional
     [Tags]    Cadastros    Empresas    Funcional        
     Dado que clico no menu "Cadastros > Departamentos"
@@ -853,22 +853,22 @@ CT 07.11.09 - Validar botão "Fechar" no filtro buscar
 
 CT 07.12.01 - Validar menu Cadastros > Usuários ZapSign
     [Documentation]     Caso de teste valida se Menu Cadastros Usuários ZapSign está funcional
-    [Tags]    Cadastros    Funcional
+    [Tags]    Cadastros    Usuários ZapSign    Funcional
     Dado que clico no menu "Cadastros > Usuários ZapSign"
     Então sistema exibe informações de cadastro de "Usuários ZapSign"
     
-CT 07.12.02 - Validar funcionalidade "inserir"
+CT 07.12.02 - Validar botão Inserir
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Usuários ZapSign está funcional
-    [Tags]    Cadastros    Funcional    SmokeTest        
+    [Tags]    Cadastros    Usuários ZapSign    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Usuários ZapSign"
     Quando clico no botão "Inserir"
     E preencho informações de inserir novo cadastro de Usuários ZapSign
     E clico em "Salvar"
     Então sistema salva novo cadastro de Usuários ZapSign
 
-CT 07.12.03 - Validar funcionalidade "editar"
+CT 07.12.03 - Validar botão Editar
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Usuários ZapSign está funcional
-    [Tags]    Cadastros    Funcional    SmokeTest        
+    [Tags]    Cadastros    Usuários ZapSign    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Usuários ZapSign"
     E clico no botao buscar
     E preencho informações de pesquisa
@@ -878,23 +878,23 @@ CT 07.12.03 - Validar funcionalidade "editar"
 
 CT 07.12.04 - Validar filtro "buscar"
     [Documentation]     Caso de teste valida se filtro buscar está funcional
-    [Tags]    Cadastros    Funcional        
+    [Tags]    Cadastros    Usuários ZapSign    Funcional        
     Dado que clico no menu "Cadastros > Usuários ZapSign"
     E clico no botao buscar
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa
 
-CT 07.12.05 - Validar botão "Cancelar" em "Excluir"
+CT 07.12.05 - Validar botão Cancelar em "Excluir"
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
-    [Tags]    Cadastros    Funcional        
+    [Tags]    Cadastros    Usuários ZapSign    Funcional        
     Dado que clico no menu "Cadastros > Usuários ZapSign"
     Quando clico em "Excluir" Usuário ZapSign
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Usuários ZapSign"
 
-CT 07.12.06- Validar botão "Continuar" em "Excluir"
+CT 07.12.06- Validar botão Continuar em "Excluir"
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
-    [Tags]    Cadastros    Funcional    SmokeTest        
+    [Tags]    Cadastros    Usuários ZapSign    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Usuários ZapSign"
     E clico no botao buscar
     E preencho informações de pesquisa
@@ -904,7 +904,7 @@ CT 07.12.06- Validar botão "Continuar" em "Excluir"
 
 CT 07.12.07 - Validar filtro "Cards ou Lista"
     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
-    [Tags]    Cadastros    Funcional        
+    [Tags]    Cadastros    Usuários ZapSign    Funcional        
     Dado que clico no menu "Cadastros > Usuários ZapSign"
     Quando clico no filtro "Cards"
     E clico em "Lista"
@@ -912,15 +912,15 @@ CT 07.12.07 - Validar filtro "Cards ou Lista"
 
 CT 07.12.08 - Validar busca não encontrada no filtro buscar
     [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Usuários ZapSign
-    [Tags]    Cadastros    Funcional        
+    [Tags]    Cadastros    Usuários ZapSign    Funcional        
     Dado que clico no menu "Cadastros > Usuários ZapSign"
     E clico no botao buscar
     E preencho informações de busca não encontrada
     Então sistema exibe mensagem de erro de Usuários ZapSign
 
-CT 07.12.09 - Validar botão "Fechar" no filtro buscar
+CT 07.12.09 - Validar botão Fechar no filtro "buscar"
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Usuários ZapSign está funcional
-    [Tags]    Cadastros    Funcional        
+    [Tags]    Cadastros    Usuários ZapSign    Funcional        
     Dado que clico no menu "Cadastros > Departamentos"
     E clico no botao buscar
     E clico em "Fechar"
@@ -932,18 +932,18 @@ CT 07.13.01 - Validar Menu Cadastros > Cargos e Funções
     Dado que clico no menu "Cadastros > Cargos e Funções"
     Então sistema exibe informações de cadastro de "Cargos e Funções"
     
-CT 07.13.02 - Validar funcionalidade "inserir" 
+CT 07.13.02 - Validar botão Inserir 
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Cargos e Funções está funcional
-    [Tags]    Cadastros    Funcional    SmokeTest        
+    [Tags]    Cadastros    Cargos e Funções    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Cargos e Funções"
     Quando clico no botão "Inserir"
     E preencho informações de inserir novo cadastro de Cargos e Funções
     E clico em "Salvar"
     Então sistema salva novo cadastro de Cargos e Funções
 
-CT 07.13.03 - Validar funcionalidade "editar" 
+CT 07.13.03 - Validar botão Editar 
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Cargos e Funções está funcional
-    [Tags]    Cadastros    Funcional    SmokeTest        
+    [Tags]    Cadastros    Cargos e Funções    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Cargos e Funções"
     E clico no botao buscar
     E preencho informações de pesquisa
@@ -955,23 +955,23 @@ CT 07.13.03 - Validar funcionalidade "editar"
 
 CT 07.13.04 - Validar filtro "buscar" 
     [Documentation]     Caso de teste valida se filtro buscar está funcional
-    [Tags]    Cadastros    Funcional        
+    [Tags]    Cadastros    Cargos e Funções    Funcional        
     Dado que clico no menu "Cadastros > Cargos e Funções"
     E clico no botao buscar
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa
 
-CT 07.13.05 - Validar botão "Cancelar" em "Excluir" 
+CT 07.13.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
-    [Tags]    Cadastros    Funcional        
+    [Tags]    Cadastros    Cargos e Funções    Funcional        
     Dado que clico no menu "Cadastros > Cargos e Funções"
     Quando clico em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Cargos e Funções"
 
-CT 07.13.06- Validar botão "Continuar" em "Excluir" 
+CT 07.13.06- Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
-    [Tags]    Cadastros    Funcional    SmokeTest        
+    [Tags]    Cadastros    Cargos e Funções    Funcional    SmokeTest        
     Dado que clico no menu "Cadastros > Cargos e Funções"
     E clico no botao buscar
     E preencho informações de pesquisa
@@ -981,7 +981,7 @@ CT 07.13.06- Validar botão "Continuar" em "Excluir"
 
 CT 07.13.07 - Validar filtro "Cards ou Lista" 
     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
-    [Tags]    Cadastros    Funcional        
+    [Tags]    Cadastros    Cargos e Funções    Funcional        
     Dado que clico no menu "Cadastros > Cargos e Funções"
     Quando clico no filtro "Cards"
     E clico em "Lista"
@@ -989,15 +989,15 @@ CT 07.13.07 - Validar filtro "Cards ou Lista"
 
 CT 07.13.08 - Validar busca não encontrada no filtro buscar 
     [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Cargos e Funções
-    [Tags]    Cadastros    Funcional        
+    [Tags]    Cadastros    Cargos e Funções    Funcional        
     Dado que clico no menu "Cadastros > Cargos e Funções"
     E clico no botao buscar
     E preencho informações de busca não encontrada
     Então sistema exibe mensagem de erro de Cargos e Funções
 
-CT 07.13.09 - Validar botão "Fechar" no filtro buscar 
+CT 07.13.09 - Validar botão Fechar no filtro "buscar" 
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Cargos e Funções está funcional
-    [Tags]    Cadastros    Funcional        
+    [Tags]    Cadastros    Cargos e Funções    Funcional        
     Dado que clico no menu "Cadastros > Departamentos"
     E clico no botao buscar
     E clico em "Fechar"
@@ -1005,11 +1005,11 @@ CT 07.13.09 - Validar botão "Fechar" no filtro buscar
 
 CT 07.14.01 - Validar Menu Cadastros > Links externos
     [Documentation]     Caso de teste valida se Menu Cadastros Links externos está funcional
-    [Tags]    Cadastros    Funcional
+    [Tags]    Cadastros    Links externos    Funcional
     Dado que clico no menu "Cadastros > Links externos"
     Então sistema exibe informações de cadastro de "Links externos"
     
-# CT 07.14.02 - Validar funcionalidade "editar" 
+# CT 07.14.02 - Validar botão Editar 
 #     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Links externos está funcional
 #     [Tags]    Cadastros    Funcional        
 #     Dado que clico no menu "Cadastros > Links externos"
@@ -1028,7 +1028,7 @@ CT 07.14.03 - Validar filtro "buscar"
     E preencho informações de pesquisa em links externos
     Então sistema exibe informações de pesquisa em links externos
 
-CT 07.14.04 - Validar botão "Cancelar" em "Excluir" 
+CT 07.14.04 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Links externos"
@@ -1063,7 +1063,7 @@ CT 07.14.06 - Validar filtro "Cards ou Lista"
 #     E preencho informações de busca não encontrada
 #     Então sistema exibe mensagem de erro de Links externos
 
-CT 07.14.08 - Validar botão "Fechar" no filtro buscar 
+CT 07.14.08 - Validar botão Fechar no filtro "buscar" 
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Links externos está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Links externos"
@@ -1071,7 +1071,7 @@ CT 07.14.08 - Validar botão "Fechar" no filtro buscar
     E clico em "Fechar"
     Então sistema verifica se filtro buscar fechou   
 
-CT 07.14.09 - Validar botão "Fechar" no filtro buscar 
+CT 07.14.09 - Validar botão Fechar no filtro "buscar" 
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Links externos está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Links externos"

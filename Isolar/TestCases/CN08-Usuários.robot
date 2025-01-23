@@ -11,7 +11,7 @@ CT 08.01 - Validar menu Usuários
     Dado que clico no menu "Usuários"
     Então sistema exibe usuários
 
-CT 08.02 - Validar funcionalidade "inserir" 
+CT 08.02 - Validar botão Inserir 
     [Documentation]     Caso de teste valida se funcionalidade Inserir no Usuários está funcional
     [Tags]    Usuários    Funcional    SmokeTest        
     Dado que clico no menu "Usuários"
@@ -20,7 +20,7 @@ CT 08.02 - Validar funcionalidade "inserir"
     E clico em "Salvar" em Usuários
     Então sistema salva novo cadastro de Usuários
 
-CT 08.03 - Validar funcionalidade "editar" 
+CT 08.03 - Validar botão Editar
     [Documentation]     Caso de teste valida se funcionalidade Editar no Usuários está funcional
     [Tags]    Usuários    Funcional    SmokeTest      
     Dado que clico no menu "Usuários"
@@ -40,7 +40,7 @@ CT 08.04 - Validar filtro "buscar"
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa
 
-CT 08.05 - Validar botão "Cancelar" em "Excluir" 
+CT 08.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"
@@ -48,7 +48,7 @@ CT 08.05 - Validar botão "Cancelar" em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Usuários"
 
-CT 08.06 - Validar botão "Continuar" em "Excluir" 
+CT 08.06 - Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Usuários    Funcional    SmokeTest        
     Dado que clico no menu "Usuários"
@@ -75,7 +75,7 @@ CT 08.08 - Validar busca não encontrada no filtro buscar
     E preencho informações de busca não encontrada
     Então sistema exibe mensagem de erro em Usuários
 
-CT 08.09 - Validar botão "Fechar" no filtro buscar 
+CT 08.09 - Validar botão Fechar no filtro "buscar" 
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar Usuários está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"

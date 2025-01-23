@@ -128,14 +128,14 @@ CT 10.01.14 - Validar filtro Quantidade de itens por pág
     E preencho informações no campo quantidade
     Então sistema exibe informações de acordo com quantidade preenchida
 
-CT 10.01.15 - Validar botão Exportar para Excel 
+CT 10.01.15 - Validar exportação para Excel 
     [Documentation]     Caso de teste valida se botão Exportar para Excel no Menu Relatórios > Relatórios está funcional
     [Tags]    Relatórios    Relatórios    Funcional        
     Dado que clico no menu "Relatórios > Relatórios"
     Quando clico no botão Exportar para Excel
     Então sistema exporta para excel
 
-CT 10.01.16 - Validar botão Exportar para PDF 
+CT 10.01.16 - Validar exportação para PDF 
     [Documentation]     Caso de teste valida se botão Exportar para PDF no Menu Relatórios > Relatórios está funcional
     [Tags]    Relatórios    Relatórios    Funcional        
     Dado que clico no menu "Relatórios > Relatórios"
