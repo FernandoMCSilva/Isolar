@@ -34,18 +34,27 @@ Então sistema exibe usuários
 
 # -8.2
 E preencho informações de inserir novo cadastro de Usuários
-    Sleep    2s
-    Input Text       //input[@id='nome']    ${nome_pesquisa}
-    Input Text       //input[@id='telefone']    99999999999
-    Input Text       //input[@id='email']    ${EmailLocal}
-    Input Text       //input[@id='senha']    ${SenhaLocal}
-    Click Element    (//button[@type='button'])[7]
-    Click Element    (//div[contains(.,'Isolar Energy')])[15]
-    Click Element    (//button[@type='button'])[8]
-    Sleep    2s
-    Click Element    (//div[contains(.,'Departamento pessoal')])[15]
-    Click Element    //button[contains(.,'Próximo')]
-    Sleep    2s
+    Wait Until Element Is Visible    //input[@id='nome']
+    Input Text                       //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
+    Input Text                       //input[@id='email']   ${EmailLocal}   
+    Sleep    1s
+    Click Element                    (//button[@type='button'])[8]
+    Click Element                    (//div[contains(.,'Choque Bruto')])[15]
+    Sleep    1s
+    Click Element                    (//button[@type='button'])[9]
+    Click Element                    (//div[contains(.,'ENG.CIVIL')])[15]
+    Sleep    1s
+    Click Element                    (//button[@type='button'])[10]
+    Click Element                    (//div[contains(.,'Teste permissions')])[15]
+    Sleep    1s
+    Input Text                       //input[@id='telefone']    22222222222
+    Sleep    1s
+    Click Element                    (//button[@type='button'])[11]
+    Click Element                    (//div[contains(.,'Sim')])[15]
+    Input Text                       //input[@id='senha']    ${SenhaLocal}
+    Sleep    1s
+    Click Element                    ${Botao_Proximo_Requisicoes}
+    Sleep    1s
     Execute Javascript    window.scrollTo(0,0)
 E clico em "Salvar" em Usuários
     Wait Until Element Is Visible    ${botao_SalvarUsuários}
@@ -58,14 +67,16 @@ E preencho informações de cadastro editado no menu Usuários
     Sleep    3s
     Input Text       //input[@id='nome']    ${nome_pesquisa}
     Input Text       //input[@id='telefone']    99999999999
-    Input Text       //input[@id='email']    ${EmailAdmin}
+    Input Text       //input[@id='email']    ${EmailLocal}
     Input Text       //input[@id='senha']    ${SenhaLocal}
-    Click Element    (//button[@type='button'])[7]
-    Click Element    //span[contains(.,'Vendedor')]
-    Click Element    ${botao_atualizar}
+    Sleep    1s
+    Click Element    ${Botao_Proximo_Requisicoes}   
+    Sleep    1s
+    Execute Javascript    window.scrollTo(0,0)
+
 E preencho campo de senha
-    Wait Until Element Is Visible    (//input[@type='password'])[2]
-    Input Text    (//input[@type='password'])[2]    ${SenhaLocal} 
+    Wait Until Element Is Visible    //input[@id='confirm-password']
+    Input Text    //input[@id='confirm-password']    ${SenhaLocal} 
     Click Element    //button[contains(.,'Confirmar')]
 
 # -8.3

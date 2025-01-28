@@ -29,6 +29,7 @@ CT 08.03 - Validar botão Editar
     E clico no botao "acoes"
     Quando clico em "Editar"
     E preencho informações de cadastro editado no menu Usuários
+    E clico em "Salvar" em Usuários
     E preencho campo de senha
     Então sistema exibe mensagem de informações editadas
 
