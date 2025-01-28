@@ -56,7 +56,7 @@ ${input_DescricaoCargosFuncoes}                 //textarea[@id='descricao']
 ${input_BuscarLinksExternos}                    //input[@placeholder='Buscar...']
 
 
-${filtro_cards/Lista}                           (//button[@type='button'])[7]
+${filtro_cards/Lista}                           (//button[@type='button'])[8]
 ${filtro_botaoLista}                            xpath=//div[@role='option'][contains(.,'Lista')]
 
 *** Keywords ***
@@ -259,7 +259,7 @@ Então sistema exibe informações de cadastro de "Grupos Consumidores"
 E preencho informações de inserir novo cadastro de Grupos Consumidores
     Sleep    2s
     Input Text       ${input_descricao_GruposConsumidores}    ${nome_pesquisa_GruposConsumidores}
-    Click Element    (//button[@type='button'])[7]
+    Click Element    (//button[@type='button'])[8]
     Click Element    (//div[@tabindex='-1'])[3]
     Input Text    //input[contains(@type,'text')]    1234
 

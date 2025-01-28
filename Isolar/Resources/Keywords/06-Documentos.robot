@@ -8,24 +8,24 @@ ${menu_Assinaturas}                      //a[contains(.,'Assinaturas')]
 ${menu_Criardocumentos}                  //button[contains(.,'Criar Documento')]
 ${menu_CriarDocumento_Jurídico}          //button[contains(.,'Jurídico')]
 
-${combobox_Departamento_Documentos}      (//button[contains(@type,'button')])[9]
+${combobox_Departamento_Documentos}      (//button[@type='button'])[10]
 
-${input_Criador}                 //input[@placeholder='Nome do criador ...']
-${filtro_TipoDocumento}          (//button[contains(.,'Selecione')])[1]
-${filtro_DataRegistro}           //span[contains(.,'Selecione a data')]
-${filtro_OrigemAssinatura}       //button[@id='origem']
-${filtro_Status_Documentos}      //button[@id='status']
-${filtro_Assinante}              //input[@id='assinante']
-${filtro_Observador}             //input[@id='observador']
-${filtro_CardsLista_Documentos}  //button[contains(.,'Cards')]
-${filtro_Buscar}                 //input[@placeholder='Buscar...']
+${input_Criador}                     //input[@placeholder='Nome do criador ...']
+${filtro_TipoDocumento}              (//button[contains(.,'Selecione')])[1]
+${filtro_DataRegistro_Documentos}    (//button[@type='button'])[11]
+${filtro_OrigemAssinatura}           //button[@id='origem']
+${filtro_Status_Documentos}          //button[@id='status']
+${filtro_Assinante}                  //input[@id='assinante']
+${filtro_Observador}                 //input[@id='observador']
+${filtro_CardsLista_Documentos}      //button[contains(.,'Cards')]
+${filtro_Buscar}                     //input[@placeholder='Buscar...']
 
 @{opcoes_Departamento}        (//div[contains(.,'Compras')])[5]    (//div[contains(.,'Administrativo')])[5]              (//div[contains(.,'TI')])[5]          (//div[contains(.,'Logística')])[5]    (//div[contains(.,'Jurídico')])[5]
 ...    (//div[contains(.,'Departamento pessoal')])[5]        (//div[contains(.,'ENG.CIVIL')])[5]    (//div[contains(.,'CS-Customer Success')])[5]
 @{opcoes_OrigemAssinatura}    (//div[contains(.,'Documentos')])[14]    (//div[contains(.,'Externos')])[5]    (//div[contains(.,'Minerando Sol')])[5]    (//div[contains(.,'Estimativa')])[11]    
 
 ${botao_VerDocumento}            (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[4]
-${botao_StatusAssinatura}        (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[5]
+${botao_StatusAssinatura}        (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[3]
 ${botao_Rubrica}                 (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[17]
 ${botao_GerarAssinatura}         (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[9]
 ${botao_VerdocumentoERROR}       (//button[@data-state='closed'])[15] 
@@ -66,6 +66,7 @@ Então sistema exibe informações de filtro criador
 # -06.01.03
 E seleciono opção de filtro Tipo de documento
     Wait Until Element Is Visible    ${filtro_TipoDocumento}
+    Sleep    1s
     Click Element                    ${filtro_TipoDocumento}
     Click Element                    (//div[contains(.,'teste')])[14]
     
@@ -75,6 +76,7 @@ Então sistema exibe informações de filtro Tipo de documento
 # -06.01.04
 E seleciono opção de filtro Departamento
     Wait Until Element Is Visible    ${combobox_Departamento_Documentos}    timeout=10s
+    Sleep    1s
     Click Element    ${combobox_Departamento_Documentos}
     # Pega todas as opções dentro do dropdown
     ${departamentos}    Get WebElements    ${combobox_Departamento_Documentos}
@@ -82,7 +84,7 @@ E seleciono opção de filtro Departamento
     FOR    ${departamento}    IN    @{opcoes_Departamento}
             # Clica na opção de departamento atual
             Click Element    ${departamento}
-            
+            Sleep    1s 
             # Espera pela atualização e valida que a página foi atualizada
             Wait Until Page Contains    text=Histórico dos documentos    timeout=10s
             
@@ -100,11 +102,11 @@ Então sistema exibe informações de filtro Departamento
 
 # -06.01.05
 E seleciono opção de filtro Data de registro
-    Click Element                     //button[contains(.,'Selecione a data')]
-    Wait Until Element Is Visible     xpath=(//button[@type='button'])[11]
-    Click Element                     xpath=(//button[@type='button'])[11]    # Clica na seta para voltar
-    Click Element                     xpath=(//button[@type='button'])[11]    # Clica na seta para voltar
-    Click Element                     xpath=(//button[@type='button'])[11]    # Clica na seta para voltar
+    Click Element                     ${filtro_DataRegistro_Documentos}
+    Wait Until Element Is Visible     (//button[@type='button'])[12]
+    Click Element                     (//button[@type='button'])[12]    # Clica na seta para voltar
+    Click Element                     (//button[@type='button'])[12]    # Clica na seta para voltar
+    Click Element                     (//button[@type='button'])[12]    # Clica na seta para voltar
     Sleep    1s    # Aguarda um segundo antes de verificar novamente
         
     # Sai do loop e clica no dia 1 de setembro e 31 de outubro
@@ -282,8 +284,8 @@ E seleciono opção "link"
 Então sistema abre input de link
     Wait Until Element Is Visible    //input[@placeholder='https://gruposiso.com.br/documentos/arquivopdf.pdf']
 E preencho informação de filtro Buscar
-    Wait Until Element Is Visible    (//button[@type='button'])[10]
-    Click Element                    (//button[@type='button'])[10]
+    Wait Until Element Is Visible    (//button[@type='button'])[11]
+    Click Element                    (//button[@type='button'])[11]
     Wait Until Element Is Visible    ${filtro_Buscar}
     Input Text                       ${filtro_Buscar}    teste
     

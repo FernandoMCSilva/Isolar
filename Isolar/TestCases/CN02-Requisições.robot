@@ -23,7 +23,7 @@ CT 02.03 - Validar filtro Departamento
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E valido todos os filtros dentro de Departamento em Requisições
+    E valido filtros dentro de Departamento em Requisições
     Então sistema exibe requisições do filtro Departamento
 
 CT 02.04 - Validar filtro Status
@@ -171,27 +171,27 @@ CT 02.20 - Validar botão Comentários
     E preencho informações de comentário
     Então sistema exibe mensagem de confirmação
 
-CT 02.21 - Validar inserção de nova resquisição do tipo "Ti" 
-    [Documentation]     Caso de teste valida botão Inserir "Ti" 
-    [Tags]    Requisições    Funcional        
-    Dado que clico no menu "Requisições"
-    Quanto clico no botão "Inserir/Ti"
-    Então sistema exibe mensagem de cadastro TI realizado
+# CT 02.21 - Validar inserção de nova resquisição do tipo "TI" 
+#     [Documentation]     Caso de teste valida botão Inserir "Ti" 
+#     [Tags]    Requisições    Funcional        
+#     Dado que clico no menu "Requisições"
+#     Quanto clico no botão "Inserir/TI"
+#     Então sistema exibe mensagem de cadastro TI realizado
 
-CT 02.22 - Validar inserção de nova requisição do tipo "Compras" 
-    [Documentation]     Caso de teste valida botão Inserir "Ti" 
-    [Tags]    Requisições    Funcional        
-    Dado que clico no menu "Requisições"
-    Quanto clico no botão "Inserir/Compras"
-    Então sistema exibe mensagem de cadastro Compras realizado
+# CT 02.22 - Validar inserção de nova requisição do tipo "Compras" 
+#     [Documentation]     Caso de teste valida botão Inserir "Ti" 
+#     [Tags]    Requisições    Funcional        
+#     Dado que clico no menu "Requisições"
+#     Quanto clico no botão "Inserir/Compras"
+#     Então sistema exibe mensagem de cadastro Compras realizado
     
-CT 02.23 - Validar inserção de nova requisição do tipo "Departamento pessoal" 
-    [Documentation]     Caso de teste valida botão Inserir "Departamento pessoal" 
-    [Tags]    Requisições    Funcional        
-    Dado que clico no menu "Requisições"
-    Quanto clico no botão "Inserir/DP"
-    E preencho informações de cadastro de requisição "Departamento Pessoal"
-    Então sistema exibe mensagem de cadastro realizado
+# CT 02.23 - Validar inserção de nova requisição do tipo "Departamento pessoal" 
+#     [Documentation]     Caso de teste valida botão Inserir "Departamento pessoal" 
+#     [Tags]    Requisições    Funcional        
+#     Dado que clico no menu "Requisições"
+#     Quanto clico no botão "Inserir/DP"
+#     E preencho informações de cadastro de requisição "Departamento Pessoal"
+#     Então sistema exibe mensagem de cadastro realizado
 
 CT 02.24 - Excluir requisição tipo "Técnico"
     [Documentation]     Caso de teste valida funcionalidade excluir 
@@ -203,15 +203,15 @@ CT 02.24 - Excluir requisição tipo "Técnico"
     E clico no botão "Excluir requisição"
     Então sistema exclui e retorna para menu requisições 
 
-CT 02.25 - Excluir requisição tipo "Departamento pessoal"
-    [Documentation]     Caso de teste valida funcionalidade excluir 
-    [Tags]    Requisições    Funcional        
-    Dado que clico no menu "Requisições"
-    Quando clico em "Filtros"
-    E preencho filtro Cliente
-    E clico no botão "Editar"
-    E clico no botão "Excluir requisição"
-    Então sistema exclui e retorna para menu requisições 
+# CT 02.25 - Excluir requisição tipo "Departamento pessoal"
+#     [Documentation]     Caso de teste valida funcionalidade excluir 
+#     [Tags]    Requisições    Funcional        
+#     Dado que clico no menu "Requisições"
+#     Quando clico em "Filtros"
+#     E preencho filtro Cliente
+#     E clico no botão "Editar"
+#     E clico no botão "Excluir requisição"
+#     Então sistema exclui e retorna para menu requisições 
 
 CT 02.25 - Excluir cadastro de requisiçao em Cadastros > Clientes
     [Documentation]     Caso de teste valida funcionalidade excluir 

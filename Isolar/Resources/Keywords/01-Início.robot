@@ -13,7 +13,8 @@ ${Status_Producao}     Produção
 ${Status_Concluidas}   Concluído
 ${Status_Paradas}      Parado
 ${Btn_Buscar}          //button[contains(.,'Buscar')]
-${Btn_Departamentos}    (//button[@type='button'])[9]
+${Btn_Departamentos}   //button[@id='departament']
+
 @{DEPARTAMENTOS_OPTIONS}        (//div[contains(.,'Compras')])[5]    (//div[contains(.,'Técnico')])[5]    
 ...    (//div[contains(.,'Administrativo')])[5]    (//div[contains(.,'TI')])[5]    (//div[contains(.,'Logística')])[5]    
 ...    (//div[contains(.,'Jurídico')])[5]    (//div[contains(.,'Departamento pessoal')])[5]    (//div[contains(.,'ENG.CIVIL')])[5]    

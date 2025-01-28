@@ -109,12 +109,12 @@ Então sistema exibe informações de Estimativa do filtro Tipo de usina "Alugue
 # --3.7
 
 E preencho com informações data de registro
-    Click Element    (//button[@type='button'])[9]
+    Click Element    (//button[@data-state='closed'])[10]
     
-    Click Element    (//button[@type='button'])[11]
-    Click Element    (//button[@type='button'])[11]
-    Click Element    (//button[@type='button'])[11]
-    Click Element    (//button[@type='button'])[11]
+    Click Element    (//button[@type='button'])[12]
+    Click Element    (//button[@type='button'])[12]
+    Click Element    (//button[@type='button'])[12]
+    Click Element    (//button[@type='button'])[12]
     
     Click Element    (//button[contains(.,'12')])[1]
     Click Element    //button[contains(.,'Buscar')]

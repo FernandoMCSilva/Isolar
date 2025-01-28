@@ -14,9 +14,9 @@ ${Menu_ConfigMinerandoSol}            (//a[contains(@href,'misol')])[2]
 ${botao_NovoTipo}                   //button[contains(.,'Novo tipo')]
 ${botao_Perguntas}                  //button[contains(.,'Perguntas')]
 ${botao_Salvar}                     //button[contains(.,'Salvar')]
-${botao_InserirPergunta}            (//button[@data-state='closed'])[10]
-${botaox_ExcluirPergunta}           //button[contains(@class,'ml-2')]
-${botao_ApagarSecao}                (//button[@data-state='closed'])[9]
+${botao_InserirPergunta}            (//button[@data-state='closed'])[11]
+${botaox_ExcluirPergunta}           xpath=//div[contains(@class, 'flex items-center justify-center gap-4')]//button[contains(@data-state, 'closed')]
+${botao_ApagarSecao}                (//button[@data-state='closed'])[10]
 
 ${filtro_cards/Lista_Perguntas}     //button[contains(.,'Cards')]
 ${filtro_botaoLista_Perguntas}      (//div[contains(.,'Lista')])[9]
@@ -40,12 +40,12 @@ ${box_EscolhaPerguntaNomeCompleto}  (//div[contains(.,'Nome completo')])[17]
 ${box_TipodoCampo}                  //button[contains(.,'Selecione')]
 ${box_TipodoCampoTexto}             (//div[contains(.,'Texto')])[4]
 
-${botao_SecaoCliente}               (//button[@type='button'])[7]
+${botao_SecaoCliente}               (//button[@type='button'])[8]
 ${botao_AdicionarSecao}             //button[contains(.,'Adicionar seção')]
 ${botao_ExcluirSecao}               (//button[@data-state='closed'])[14]
 ${botao_SalvarNovaPergunta}         (//button[contains(.,'Salvar')])[2]
-${botao_CadastrarPergunta}          (//button[@data-state='closed'])[11]
-${botao_TornarObrigatorias}         (//button[@data-state='closed'])[8]
+${botao_CadastrarPergunta}          (//button[@data-state='closed'])[12]
+${botao_TornarObrigatorias}         (//button[@data-state='closed'])[9]
 ${botao_DecontoNivelAssociados}     //button[contains(.,'Nível de Associados')]
 ${botao_DecontoConcessionarias}     //button[contains(.,'Concessionárias')]
 ${botao_DecontoGruposTarifarios}    //button[contains(.,'Grupos tárifarios')]
@@ -111,8 +111,6 @@ E preencho informações de cadastro editado no menu Configurações > Requisiç
     Click Element            (//div[contains(.,'TI')])[12]
     Click Element            (//div[contains(.,'Compras')])[13]
     Click Element            ${input_NomeDaRequisicao}
-    # Click Element            //div[@class='col-start-2 col-end-3 min-w-24 min-h-12 border p-2 rounded-sm'][contains(.,'Clique para editar o nome da Seção')]
-    # Input Text               css:.relative    ${nome_pesquisa_GruposConsumidores}
     Sleep    1s
     Click Element            ${botao_InserirPergunta}
     Click Element            ${botao_ApagarSecao}
@@ -142,10 +140,6 @@ Quando clico em "Excluir" em configurações
     Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
 
 Quando clico em "Excluir" em configurações em perguntas
-    Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
-    Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
-    Sleep    4s
-    Input Text                       //input[@value='B3 (teste)']    ${nome_BuscaNaoEncontrada}
     Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
     Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
 
