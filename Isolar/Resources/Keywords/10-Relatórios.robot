@@ -95,7 +95,7 @@ E seleciono o filtro Renovadas "Renovadas"
     Click Element                    (//div[contains(.,'Renovadas')])[19]
 
 Então sistema exibe informações de filtro Renovadas "Renovadas"
-    Wait Until Element Is Visible    (//div[contains(.,'Produção')])[9]
+    Wait Until Element Is Visible    //td[contains(.,'2033')]
 
 # --10.01.08
 E preencho informações de filtro Unidade consumidora
@@ -116,12 +116,12 @@ Então sistema exibe informações de filtro Tipo de requisição "Todos"
 
 # --10.01.10
 E seleciono filtro Data de criação
-    Wait Until Element Is Visible    //button[contains(.,'Selecione a data')]
-    Click Element                    //button[contains(.,'Selecione a data')]
-    Click Element                    (//button[@type='button'])[19]    # Clica na seta para voltar
-    Click Element                    (//button[@type='button'])[19]    # Clica na seta para voltar
-    Click Element                    (//button[@type='button'])[19]    # Clica na seta para voltar
-    Click Element                    (//button[@type='button'])[19]    # Clica na seta para voltar
+    Wait Until Element Is Visible    (//button[@type='button'])[15]
+    Click Element                    (//button[@type='button'])[15]
+    Click Element                    (//button[@type='button'])[20]    # Clica na seta para voltar
+    Click Element                    (//button[@type='button'])[20]    # Clica na seta para voltar
+    Click Element                    (//button[@type='button'])[20]    # Clica na seta para voltar
+    Click Element                    (//button[@type='button'])[20]    # Clica na seta para voltar
     Sleep    1s
     # Sai do loop e clica no dia 12 de setembro
     Click Element    (//button[contains(.,'1')])[1]
@@ -149,13 +149,13 @@ Então sistema exibe informações de filtro Indicador "Todos"
     Wait Until Element Is Visible    (//td[contains(.,'Não definido')])[2]
 
 # --10.01.13
-E seleciono fitro Departamento "TI"
-    Wait Until Element Is Visible    //button[contains(.,'Comercial')]
-    Click Element                    //button[contains(.,'Comercial')]
-    Click Element                    (//div[contains(.,'TI')])[5]
+E seleciono fitro Departamento "Departamento pessoal"
+    Wait Until Element Is Visible    //button[@id='departament']
+    Click Element                    //button[@id='departament']
+    Click Element                    (//div[contains(.,'Departamento pessoal')])[5]
 
-Então sistema exibe informações de filtro Departamento "TI"
-    Wait Until Page Contains    text=Nenhum relatório encontrado.
+Então sistema exibe informações de filtro Departamento "Departamento pessoal"
+    Wait Until Element Is Visible    //td[contains(.,'2085')]
 
 # --10.01.16
 Quando clico no botão Exportar para PDF

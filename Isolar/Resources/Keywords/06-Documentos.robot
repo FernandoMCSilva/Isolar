@@ -66,7 +66,7 @@ Então sistema exibe informações de filtro criador
 # -06.01.03
 E seleciono opção de filtro Tipo de documento
     Wait Until Element Is Visible    ${filtro_TipoDocumento}
-    Sleep    1s
+    Sleep    2s
     Click Element                    ${filtro_TipoDocumento}
     Click Element                    (//div[contains(.,'teste')])[14]
     

@@ -10,4 +10,3 @@ CT 05.01 - Validar menu Monitoramento
     [Tags]    Perfil    Funcional        
     Dado que clico no menu "Monitoramento"
     Então sistema entra na página Monitoramento
-

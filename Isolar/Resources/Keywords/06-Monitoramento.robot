@@ -6,7 +6,7 @@ Resource           ../Main.robot
 ${MENU_MONITORAMENTO_local}    //a[contains(.,'Monitoramento')]
 # Não está funcionando com a variável GLOBAL, então criei uma variavel local e funcionou. 
 *** Keywords ***
-# --5.1
+# --6.1
 Dado que clico no menu "Monitoramento"
     Wait Until Element Is Visible    ${MENU_MONITORAMENTO_local}
     Click Element                    ${MENU_MONITORAMENTO_local}

@@ -72,7 +72,7 @@ CT 09.01.08 - Validar botão "Perguntas"
     [Tags]    Configurações    Requisições    Funcional        
     Dado que clico no menu "Configurações > Requisições"
     E clico no botao "Perguntas"
-    Então sistema exibe informações de "Perguntas" no menu Configurações > Requisições
+    Então sistema exibe informações da pagina perguntas
 
 CT 09.01.09 - Validar botão Inserir perguntas 
     [Documentation]     Caso de teste valida funcionalidade "Inserir" nova pergunta em perguntas no menu Configurações > Requisições

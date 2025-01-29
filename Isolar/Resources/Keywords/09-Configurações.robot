@@ -71,35 +71,37 @@ Quando clico no botão "Novo tipo"
     Click Element    ${botao_NovoTipo}
 E preencho informações de cadastro de Novo tipo de Requisições
     Sleep    2s
-    Input Text                   ${input_NomeDaRequisicao}    ${nome_pesquisa_GruposConsumidores}
-    Click Element                ${box_Departamento}
-    Click Element                ${box_DepartamentoTI}
-    Click Element                ${input_NomeDaRequisicao}
+    Input Text                       ${input_NomeDaRequisicao}    ${nome_pesquisa_GruposConsumidores}
+    Click Element                    ${box_Departamento}
+    Click Element                    ${box_DepartamentoTI}
+    Click Element                    ${input_NomeDaRequisicao}
     Sleep    1s
-    Click Element                ${botao_SecaoCliente}
-    Click Element                ${botao_SecaoCliente}
-    Click Element                ${botao_CadastrarPergunta}
-    Input Text                   ${input_NovaPergunta}   ${nome_pesquisa_GruposConsumidores}
-    Click Element                ${box_TipodoCampo}
-    Click Element                ${box_TipodoCampoTexto}
+    Click Element                    ${botao_SecaoCliente}
+    Click Element                    ${botao_SecaoCliente}
+    Click Element                    ${botao_CadastrarPergunta}
+    Input Text                       ${input_NovaPergunta}   ${nome_pesquisa_GruposConsumidores}
+    Click Element                    ${box_TipodoCampo}
+    Click Element                    ${box_TipodoCampoTexto}
     Input Text                   //input[@name='placeholder']    teste
     Click Element                ${botao_SalvarNovaPergunta}
     Wait Until Page Contains     text=Pergunta adicionada com sucesso!
     Sleep    4s
-    Click Element                ${botao_TornarObrigatorias}
-    Click Element                ${botaox_ExcluirPergunta}
-    Click Element                ${botao_InserirPergunta}
-    Click Element                ${botao_InserirPergunta}
-    Click Element                ${botaox_ExcluirPergunta}
-    Click Element                ${box_EscolhaPergunta}
+    Click Element                    ${botao_TornarObrigatorias}
+    Click Element                    ${botaox_ExcluirPergunta}
+    Click Element                    ${botao_InserirPergunta}
+    Click Element                    ${botao_InserirPergunta}
+    Click Element                    ${botaox_ExcluirPergunta}
+    Click Element                    ${box_EscolhaPergunta}
     Sleep    1s
-    Click Element                ${box_EscolhaPerguntaNomeCompleto}
-    Click Element                ${opcao_ObrigatorioNao}
-    Click Element                ${opcao_ObrigatorioSim}
+    Click Element                    ${box_EscolhaPerguntaNomeCompleto}
+    Click Element                    ${opcao_ObrigatorioNao}
+    Click Element                    ${opcao_ObrigatorioSim}
     Sleep    1s
-    Click Element                ${botao_ExcluirSecao}
-    Click Element                ${botao_AdicionarSecao}
-    Click Element                ${botao_ExcluirSecao}
+    Execute Javascript               window.scrollBy(0,-100)
+    Wait Until Element Is Visible    ${botao_ExcluirSecao}
+    Click Element                    ${botao_ExcluirSecao}
+    Click Element                    ${botao_AdicionarSecao}
+    Click Element                    ${botao_ExcluirSecao}
 
 Então sistema salva novo Tipo de requisição
     Wait Until Page Contains    text=Registro adicionado com sucesso!
@@ -146,14 +148,15 @@ Quando clico em "Excluir" em configurações
 Quando clico em "Excluir" em configurações em perguntas
     Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
     Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
-
+    Sleep    1s
+    Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
 
 # -9.01.07
 Então sistema exclui item do menu Configurações > Requisições
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
 # -9.01.08
-Então sistema exibe informações de "Perguntas" no menu Configurações > Requisições
+Então sistema exibe informações da pagina perguntas
     Wait Until Page Contains    text=Adicionar uma nova pergunta
 
 
@@ -163,11 +166,11 @@ E clico no botao "Perguntas"
     Click Element                    ${botao_Perguntas}
 E preencho informações de nova pergunta
     Sleep    2s
-    Input Text            //input[contains(@placeholder,'Nome do campo')]    ${nome_BuscaNaoEncontrada}
+    Input Text            //input[@name='nome']    ${nome_pesquisa_GruposConsumidores}
     Click Element         //button[contains(.,'Selecione')]
     Click Element         (//div[contains(.,'Texto')])[4]
     Sleep                 1s
-    Input Text            //input[contains(@name,'placeholder')]    ${nome_BuscaNaoEncontrada}
+    Input Text            //input[@name='placeholder']    ${nome_pesquisa_GruposConsumidores}
     Click Element         //button[contains(.,'Não')]
     Click Element         (//div[contains(.,'Sim')])[4]
     Click Element         //button[contains(.,'Sim')]
