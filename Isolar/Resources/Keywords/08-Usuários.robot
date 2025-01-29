@@ -34,7 +34,7 @@ Então sistema exibe usuários
 
 # -8.2
 E preencho informações de inserir novo cadastro de Usuários
-    Wait Until Element Is Visible    //input[@id='nome']
+    Sleep    2s
     Input Text                       //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
     Input Text                       //input[@id='email']   ${EmailLocal}   
     Sleep    1s

@@ -42,7 +42,7 @@ ${box_TipodoCampoTexto}             (//div[contains(.,'Texto')])[4]
 
 ${botao_SecaoCliente}               (//button[@type='button'])[8]
 ${botao_AdicionarSecao}             //button[contains(.,'Adicionar seção')]
-${botao_ExcluirSecao}               (//button[@data-state='closed'])[14]
+${botao_ExcluirSecao}               (//button[contains(@data-state,'closed')])[10]
 ${botao_SalvarNovaPergunta}         (//button[contains(.,'Salvar')])[2]
 ${botao_CadastrarPergunta}          (//button[@data-state='closed'])[12]
 ${botao_TornarObrigatorias}         (//button[@data-state='closed'])[9]
@@ -92,11 +92,15 @@ E preencho informações de cadastro de Novo tipo de Requisições
     Click Element                ${botao_InserirPergunta}
     Click Element                ${botaox_ExcluirPergunta}
     Click Element                ${box_EscolhaPergunta}
+    Sleep    1s
     Click Element                ${box_EscolhaPerguntaNomeCompleto}
     Click Element                ${opcao_ObrigatorioNao}
     Click Element                ${opcao_ObrigatorioSim}
+    Sleep    1s
+    Click Element                ${botao_ExcluirSecao}
     Click Element                ${botao_AdicionarSecao}
     Click Element                ${botao_ExcluirSecao}
+
 Então sistema salva novo Tipo de requisição
     Wait Until Page Contains    text=Registro adicionado com sucesso!
 

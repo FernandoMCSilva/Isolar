@@ -561,7 +561,7 @@ Então sistema salva novo cadastro de Cargos e Funções
 
 # -07.13.03
 E preencho informações de cadastro editado em Cargos e Funções
-    Wait Until Element Is Visible    ${input_NomeCargosFuncoes}
+    Sleep    2s
     Input Text                       ${input_NomeCargosFuncoes}    ${nome_pesquisa_GruposConsumidores}
     Click Element                    ${Botao_Proximo_Requisicoes}
 

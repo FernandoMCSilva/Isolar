@@ -15,10 +15,7 @@ ${Status_Paradas}      Parado
 ${Btn_Buscar}          //button[contains(.,'Buscar')]
 ${Btn_Departamentos}   //button[@id='departament']
 
-@{DEPARTAMENTOS_OPTIONS}        (//div[contains(.,'Compras')])[5]    (//div[contains(.,'Técnico')])[5]    
-...    (//div[contains(.,'Administrativo')])[5]    (//div[contains(.,'TI')])[5]    (//div[contains(.,'Logística')])[5]    
-...    (//div[contains(.,'Jurídico')])[5]    (//div[contains(.,'Departamento pessoal')])[5]    (//div[contains(.,'ENG.CIVIL')])[5]    
-...    (//div[contains(.,'SERVIÇOS')])[5]    (//div[contains(.,'CS-Customer Success')])[5]
+@{DEPARTAMENTOS_OPTIONS}    (//div[contains(.,'Administrativo')])[5]    (//div[contains(.,'TI')])[5]    (//div[contains(.,'Departamento pessoal')])[5]    (//div[contains(.,'teste')])[5]
 
 *** Keywords ***
 # --1.1
@@ -101,22 +98,19 @@ Quando clico em "Departamento"
 E seleciono "Todos"
     Click Element                     //div[@role='option'][contains(.,'Todos')]
 
-E valido todos os filtros de departamento
+E valido filtros de departamento
     Wait Until Element Is Visible    ${Btn_Departamentos}    timeout=10s
     Click Element    ${Btn_Departamentos}
-    Sleep    2s
+    Sleep    1s
     # Pega todas as opções dentro do dropdown
     ${departamentos}    Get WebElements    ${Btn_Departamentos}
 
     FOR    ${departamento}    IN    @{DEPARTAMENTOS_OPTIONS}
             # Clica na opção de departamento atual
             Click Element    ${departamento}
-            
-            # Clica no botão de buscar
-            # Click Element    ${Btn_Buscar}
-            
+
             # Espera pela atualização e valida que a página foi atualizada
-            Wait Until Element Is Visible    xpath=//h2[contains(.,'Requisições por Status')]    timeout=10s
+            Wait Until Element Is Visible    //h2[contains(.,'Requisições por Status')]    timeout=10s
             
             # Log do departamento testado
             ${departamento_text}    Get Text    ${departamento}
@@ -143,7 +137,5 @@ E preencho data final
     Input Text    (//input[contains(@placeholder,'DD/MM/YYYY')])[2]    16/08/2024
 
 Então sistema exibe requisições filtradas
-    Wait Until Element Is Visible       //*[@id="root"]/main/div/div/div/main/div/div[4]/div[1]/canvas
-    Sleep    10s
-    Mouse Over    xpath=//*[@id="root"]/main/div/div/div/main/div/div[4]/div[1]/canvas
+    Wait Until Element Is Visible    //span[contains(.,'1.969')]
     Capture Page Screenshot

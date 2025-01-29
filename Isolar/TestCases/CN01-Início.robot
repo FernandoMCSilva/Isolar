@@ -44,7 +44,7 @@ CT 01.06 - Validar filtros em departamento
     [Documentation]     Caso de teste valida os filtros Departamento
     [Tags]    Início    Funcional       
     Dado que clico no menu "Início"
-    E valido todos os filtros de departamento
+    E valido filtros de departamento
     Então sistema exibe requisições do departamento
     
 CT 01.07 - Validar filtro Data inicial e Data final
@@ -53,5 +53,4 @@ CT 01.07 - Validar filtro Data inicial e Data final
     Dado que clico no menu "Início"
     E preencho data inicial
     E preencho data final
-    # E clico em Buscar
     Então sistema exibe requisições filtradas
