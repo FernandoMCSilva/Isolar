@@ -43,7 +43,7 @@ ${CAMINHO_ARQUIVO}               "C:\Users\silva\Downloads\teste.pdf"
 ${nome_teste}                    teste
 *** Keywords ***
 
-# -06.01.01
+# -07.01.01
 Dado que clico no menu "Documentos"
     Wait Until Element Is Visible    ${MENU_DOCUMENTOS}
     Click Element                    ${MENU_DOCUMENTOS}
@@ -55,7 +55,7 @@ Clico no menu "Documentos geradados"
 Então sistema exibe informações de documentos gerados
     Wait Until Page Contains    text=Histórico dos documentos
 
-# -06.01.02
+# -07.01.02
 E preencho informações de filtro criador
     Wait Until Element Is Visible    ${input_Criador}
     Input Text                       ${input_Criador}    ${nome_pesquisa_GruposConsumidores}
@@ -63,7 +63,7 @@ E preencho informações de filtro criador
 Então sistema exibe informações de filtro criador
     Wait Until Page Contains    text=Registros carregados com sucesso!
 
-# -06.01.03
+# -07.01.03
 E seleciono opção de filtro Tipo de documento
     Wait Until Element Is Visible    ${filtro_TipoDocumento}
     Sleep    2s
@@ -73,7 +73,7 @@ E seleciono opção de filtro Tipo de documento
 Então sistema exibe informações de filtro Tipo de documento
     Wait Until Element Is Visible    (//p[contains(.,'teste')])[1]
 
-# -06.01.04
+# -07.01.04
 E seleciono opção de filtro Departamento
     Wait Until Element Is Visible    ${combobox_Departamento_Documentos}    timeout=10s
     Sleep    1s
@@ -100,7 +100,7 @@ E seleciono opção de filtro Departamento
 Então sistema exibe informações de filtro Departamento
     Wait Until Page Contains    text=Histórico dos documentos
 
-# -06.01.05
+# -07.01.05
 E seleciono opção de filtro Data de registro
     Click Element                     ${filtro_DataRegistro_Documentos}
     Wait Until Element Is Visible     (//button[@type='button'])[12]
@@ -120,7 +120,7 @@ Então sistema exibe informações de filtro Data de registro
     Wait Until Element Is Visible    (//td[contains(.,'20')])[1]
     Sleep    1s 
 
-# -06.01.06
+# -07.01.06
 E clico no botão Ver Documento
     Wait Until Element Is Visible    ${botao_VerDocumento}
     Click Element                    ${botao_VerDocumento}
@@ -128,10 +128,10 @@ E clico no botão Ver Documento
 Então sistema exibe informações de botão Ver Documento
     Wait Until Page Contains    text=Documento
 
-# -06.01.07
+# -07.01.07
 
 
-# -06.01.08
+# -07.01.08
 E preencho informações do filtro criador
     Wait Until Element Is Visible    ${input_Criador}
     Input Text                       ${input_Criador}    Rhiva Cordeiro
@@ -144,7 +144,7 @@ E clico no botão Status da assinatura
 Então sistema exibe informações de botão Status da assinatura
     Wait Until Page Contains    text=Status da assinatura - 7
 
-# -06.01.09
+# -07.01.09
 E clico no botão Rubrica
     Wait Until Element Is Visible    ${botao_Rubrica}
     Click Element                    ${botao_Rubrica}
@@ -152,7 +152,7 @@ E clico no botão Rubrica
 Então sistema exibe informações de botão Rubrica
     Wait Until Page Contains    text=Adicionar rubrica - 20
 
-# -06.01.10
+# -07.01.10
 Quando clico no botão Próximo
     Wait Until Element Is Visible   ${Botao_Proximo_Requisicoes} 
     Click Element                   ${Botao_Proximo_Requisicoes}
@@ -160,13 +160,13 @@ Quando clico no botão Próximo
 Então sistema exibe informações de botão Próximo
     Wait Until Element Is Visible    //td[contains(.,'13')]
 
-# -06.01.11
+# -07.01.11
 Então sistema exibe informações de botão Anterior
     ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Not Be Visible    //button[contains(.,'Anterior')]
      Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior não está visível. Funcionou.
     ...    ELSE    Log    "Botão Anterior ainda está visível. Falhou."    WARN
     
-# -06.01.12
+# -07.01.12
 E preencho filtro criador
     Wait Until Element Is Visible    ${input_Criador}
     Input Text                       ${input_Criador}    Fernando Morais da Costa Silva
@@ -178,7 +178,7 @@ E clico no botão Ver Documento (ERROR)
 Então sistema exibe informações de botão Ver Documento (ERROR)
     Wait Until Page Contains    text=Documento não encontrado.
 
-# -06.01.13
+# -07.01.13
 E clico no botão Status da assinatura (ERROR)
     Wait Until Element Is Visible    ${botao_StatusAssinaturaError}
     Click Element                    ${botao_StatusAssinaturaError}
@@ -186,7 +186,7 @@ E clico no botão Status da assinatura (ERROR)
 Então sistema exibe informações de botão Status da assinatura (ERROR)
     Wait Until Page Contains    text=Sem assinatura.
     
-# -06.01.14
+# -07.01.14
 E clico no botão Gerar link de assinatura (ERROR)
     Wait Until Element Is Visible    ${botao_StatusAssinaturaError2}
     Click Element                    ${botao_StatusAssinaturaError2}
@@ -194,7 +194,7 @@ E clico no botão Gerar link de assinatura (ERROR)
 Então sistema exibe informações de botão Gerar link de assinatura (ERROR)
     Wait Until Page Contains    text=Link já foi gerado.
 
-# -06.01.15
+# -07.01.15
 E clico no botão Gerar link de assinatura
     Wait Until Element Is Visible    ${botao_GerarAssinatura}
     Click Element                    ${botao_GerarAssinatura}
@@ -202,7 +202,7 @@ E clico no botão Gerar link de assinatura
 Então sistema exibe informações de botão Gerar link de assinatura
     Wait Until Page Contains    text=ZapSign - 3
 
-# -06.02.01
+# -07.02.01
 Clico no menu "Assinaturas"
     Wait Until Element Is Visible    ${menu_Assinaturas}
     Click Element                    ${menu_Assinaturas}
@@ -211,7 +211,7 @@ Clico no menu "Assinaturas"
 Então sistema exibe informações de menu Assinaturas
     Wait Until Page Contains    text=Informações referentes as assinaturas gerados no sistema.
 
-# -06.02.02
+# -07.02.02
 E preencho informações de filtro Origem da assinatura
     Wait Until Element Is Visible    ${filtro_OrigemAssinatura}
     Click Element                    ${filtro_OrigemAssinatura}
@@ -220,7 +220,7 @@ E preencho informações de filtro Origem da assinatura
 Então sistema exibe informações de filtro Origem da assinatura
     Wait Until Element Is Visible    (//p[contains(.,'Doc')])[4]
 
-# -06.02.03
+# -07.02.03
 E preencho informações de filtro Status
     Wait Until Element Is Visible    ${filtro_Status_Documentos}
     Click Element                    ${filtro_Status_Documentos}
@@ -229,7 +229,7 @@ E preencho informações de filtro Status
 Então sistema exibe informações de filtro Status
     Wait Until Element Is Visible    (//p[contains(.,'Contrato ativo')])[2]
 
-# -06.02.04
+# -07.02.04
 E preencho informações de filtro Assinante
     Wait Until Element Is Visible    ${filtro_Assinante}
     Input Text                       ${filtro_Assinante}    teste123
@@ -237,7 +237,7 @@ E preencho informações de filtro Assinante
 Então sistema exibe informações de filtro Assinante
     Wait Until Element Is Visible    (//p[contains(.,'Teste')])[1]
 
-# -06.02.05
+# -07.02.05
 E preencho informações de filtro Observador
     Wait Until Element Is Visible    ${filtro_Observador}
     Input Text                       ${filtro_Observador}    a
@@ -245,25 +245,25 @@ E preencho informações de filtro Observador
 Então sistema exibe informações de filtro Observador
     Wait Until Page Contains    text=Registros carregados com sucesso!
 
-# -06.02.06
+# -07.02.06
 Quando seleciono opção Cards ou Lista "Lista"
     Wait Until Element Is Visible    ${filtro_CardsLista_Documentos}
     Click Element                    ${filtro_CardsLista_Documentos}
     Click Element                    (//div[contains(.,'Lista')])[5]
 
-# -06.02.08
+# -07.02.08
 Então sistema exibe próximas Assinaturas
     ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Anterior')]
      Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior está visível. Funcionou."
     ...    ELSE    Log    "Botão Anterior não está visível. Falhou."    WARN
 
-# -06.02.09
+# -07.02.09
 Então sistema exibe Assinaturas anteriores
     ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Not Be Visible    //button[contains(.,'Anterior')]
      Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior não está visível. Funcionou.
     ...    ELSE    Log    "Botão Anterior ainda está visível. Falhou."    WARN
 
-# -06.02.10
+# -07.02.10
 Quando clico no botão Criar
     Wait Until Element Is Visible    ${botao_Criar}
     Click Element                    ${botao_Criar}
@@ -273,7 +273,7 @@ Quando clico no botão Criar
 #     Choose File        ${CAMINHO_ARQUIVO}
 #     Sleep    5s
     
-# -06.02.10
+# -07.02.10
 
 E seleciono opção "link"
     Sleep    2s
@@ -293,11 +293,11 @@ Então sistema exibe informações de filtro Buscar
     Sleep    2s
     Wait Until Element Is Visible    //p[contains(.,'Teste de Morais')]
 
-# -06.02.11
+# -07.02.11
 Então sistema exibe tela de edição
     Wait Until Page Contains    text=Editar contrato
 
-# -06.02.14
+# -07.02.14
 E clico em Documento original
     Wait Until Element Is Visible    ${botao_DocumentoOriginal}
     Click Element                    ${botao_DocumentoOriginal}
@@ -305,7 +305,7 @@ E clico em Documento original
 Então sistema exibe tela de Documento original
     Wait Until Element Is Not Visible    //h1[contains(.,'Documento')]
 
-# -06.02.15
+# -07.02.15
 E clico em Editar campos
     Wait Until Element Is Visible    ${botao_EditarCampos}
     Click Element                    ${botao_EditarCampos}
@@ -313,7 +313,7 @@ E clico em Editar campos
 Então sistema exibe tela de Editar campos
     Wait Until Element Is Visible    //h1[contains(.,'Documento')]
 
-# -06.03.01
+# -07.03.01
 Clico no menu "Criar documento"
     Wait Until Element Is Visible    ${menu_Criardocumentos}
     Click Element                    ${menu_Criardocumentos}
@@ -325,7 +325,7 @@ E clico em "Compras"
 Então sistema exibe informações de menu Criar documento
     Wait Until Page Contains    text=Escolha o tipo de documento que deseja gerar.
 
-# -06.03.02
+# -07.03.02
 E preencho informações de novo documento
     Wait Until Element Is Visible    (//input[@placeholder='Insira o valor do campo'])[1]
     Input Text                       (//input[@placeholder='Insira o valor do campo'])[1]    Teste
@@ -339,7 +339,7 @@ E clico em Gerar Documento
 Então sistema exibe mensagem de documento gerado
     Wait Until Page Contains    text=Documentos não foram recebidos.
 
-# -06.03.03
+# -07.03.03
 E clico em Ver template
     Wait Until Element Is Visible    ${botao_VerTemplate_Documentos}
     Click Element                    ${botao_VerTemplate_Documentos}
@@ -347,7 +347,7 @@ E clico em Ver template
 Então sistema exibe tela de Ver template
     Wait Until Element Is Visible    ${botao_VerTemplate_Documentos}
 
-# -06.03.04
+# -07.03.04
 E clico em Preencher documento
     Wait Until Element Is Visible    ${botao_PreencherDocumento}
     Click Element                    ${botao_PreencherDocumento}
@@ -355,7 +355,7 @@ E clico em Preencher documento
 Então sistema exibe tela de Preencher documento
     Wait Until Page Contains    text=Você está preenchendo o seguinte documento:
 
-# -06.03.05
+# -07.03.05
 E clico em "Comercial"
     Wait Until Element Is Visible    //button[contains(.,'Comercial')]
     Click Element                    //button[contains(.,'Comercial')]
@@ -363,8 +363,6 @@ E clico em "Comercial"
 Então sistema entra na tela de Criar Documento > Comercial
     Wait Until Page Contains    text=Escolha o tipo de documento que deseja gerar.
 
-
-    
 E preencho informações de novo documento > Comercial
     Wait Until Element Is Visible    (//input[@placeholder='Insira o valor do campo'])[1]
     Input Text        //input[@id='CLIENTE']                     ${nome_teste} 
@@ -384,20 +382,19 @@ E preencho informações de novo documento > Comercial
     
 Então sistema Gera documento
     Wait Until Page Contains    text=Documentos não foram recebidos.
-# -06.03.06
+# -07.03.06
 Então sistema exibe erro de campos obrigatórios não preenchidos
     Wait Until Page Contains    text=Por favor, preencha todos os campos obrigatórios.
 
-# -06.03.03.01
+# -07.03.03.01
 E clico em "Jurídico"
     Wait Until Element Is Visible    ${menu_CriarDocumento_Jurídico}
     Click Element                    ${menu_CriarDocumento_Jurídico}
 
-
 Então sistema entra na tela de Criar documento > Jurídico
     Wait Until Page Contains    text=Escolha o tipo de documento que deseja gerar.
 
-# -06.03.03.02
+# -07.03.03.02
 E preencho informações de novo documento > Jurídico
     Wait Until Element Is Visible    //input[@id='CLIENTE']
     Input Text                       //input[@id='CLIENTE']              ${nome_teste}
@@ -405,5 +402,4 @@ E preencho informações de novo documento > Jurídico
     Input Text                       //input[@id='CNPJ_CLIENTE']         12123123000112
     Input Text                       //input[@id='CPF_REPRESENTANTE']    12312312312
 
-
-# -06.03.03.01
+# -07.03.03.01

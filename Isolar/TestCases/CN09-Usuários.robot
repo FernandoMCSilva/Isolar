@@ -5,13 +5,13 @@ Test Teardown      Fechar navegador
 Documentation      Modúlo que Gerencie usuários cadastrados no sistema.
 
 *** Test Cases ***
-CT 08.01 - Validar menu Usuários
+CT 09.01 - Validar menu Usuários
     [Documentation]     Caso de teste valida se Menu Usuário está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"
     Então sistema exibe usuários
 
-CT 08.02 - Validar botão Inserir 
+CT 09.02 - Validar botão Inserir 
     [Documentation]     Caso de teste valida se funcionalidade Inserir no Usuários está funcional
     [Tags]    Usuários    Funcional    SmokeTest        
     Dado que clico no menu "Usuários"
@@ -20,7 +20,7 @@ CT 08.02 - Validar botão Inserir
     E clico em "Salvar" em Usuários
     Então sistema salva novo cadastro de Usuários
 
-CT 08.03 - Validar botão Editar
+CT 09.03 - Validar botão Editar
     [Documentation]     Caso de teste valida se funcionalidade Editar no Usuários está funcional
     [Tags]    Usuários    Funcional    SmokeTest      
     Dado que clico no menu "Usuários"
@@ -33,7 +33,7 @@ CT 08.03 - Validar botão Editar
     E preencho campo de senha
     Então sistema exibe mensagem de informações editadas
 
-CT 08.04 - Validar filtro "buscar" 
+CT 09.04 - Validar filtro "buscar" 
     [Documentation]     Caso de teste valida se filtro buscar está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"
@@ -41,7 +41,7 @@ CT 08.04 - Validar filtro "buscar"
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa
 
-CT 08.05 - Validar botão Cancelar em "Excluir" 
+CT 09.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"
@@ -49,7 +49,7 @@ CT 08.05 - Validar botão Cancelar em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Usuários"
 
-CT 08.06 - Validar botão Continuar em "Excluir" 
+CT 09.06 - Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Usuários    Funcional    SmokeTest        
     Dado que clico no menu "Usuários"
@@ -59,7 +59,7 @@ CT 08.06 - Validar botão Continuar em "Excluir"
     E clico no botão "Continuar" em "Excluir"
     Então sistema exclui item do menu Usuários
 
-CT 08.07 - Validar filtro "Cards ou Lista" 
+CT 09.07 - Validar filtro "Cards ou Lista" 
     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"
@@ -68,7 +68,7 @@ CT 08.07 - Validar filtro "Cards ou Lista"
     Então sistema exibe informações com filtro "Lista"
 
 
-CT 08.08 - Validar busca não encontrada no filtro buscar 
+CT 09.08 - Validar busca não encontrada no filtro buscar 
     [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no Usuários
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"
@@ -76,7 +76,7 @@ CT 08.08 - Validar busca não encontrada no filtro buscar
     E preencho informações de busca não encontrada
     Então sistema exibe mensagem de erro em Usuários
 
-CT 08.09 - Validar botão Fechar no filtro "buscar" 
+CT 09.09 - Validar botão Fechar no filtro "buscar" 
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar Usuários está funcional
     [Tags]    Usuários    Funcional        
     Dado que clico no menu "Usuários"

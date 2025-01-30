@@ -24,7 +24,7 @@ ${EmailLocal}                 teste123@gmail.com
 ${SenhaLocal}                 Q@grupoiso123
 
 *** Keywords ***                
-# -8.1
+# -9.1
 Dado que clico no menu "Usuários"
     Wait Until Element Is Visible    ${MENU_USUARIOS}
     Click Element                    ${MENU_USUARIOS}
@@ -32,13 +32,13 @@ Dado que clico no menu "Usuários"
 Então sistema exibe usuários
     Wait Until Element Is Visible    ${Tela_Usuarios}
 
-# -8.2
+# -9.2
 E preencho informações de inserir novo cadastro de Usuários
     Sleep    2s
     Input Text                       //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
     Input Text                       //input[@id='email']   ${EmailLocal}   
     Sleep    1s
-    Click Element                    (//button[@type='button'])[8]
+    Click Element                    (//button[@type='button'])[9]
     Click Element                    (//div[contains(.,'Choque Bruto')])[15]
     Sleep    1s
     Click Element                    (//button[@type='button'])[9]
@@ -62,7 +62,7 @@ E clico em "Salvar" em Usuários
 Então sistema salva novo cadastro de Usuários
     Wait Until Page Contains    text=Registro adicionado com sucesso!
 
-# -8.3
+# -9.3
 E preencho informações de cadastro editado no menu Usuários
     Sleep    3s
     Input Text       //input[@id='nome']    ${nome_pesquisa}
@@ -79,15 +79,15 @@ E preencho campo de senha
     Input Text    //input[@id='confirm-password']    ${SenhaLocal} 
     Click Element    //button[contains(.,'Confirmar')]
 
-# -8.3
+# -9.5
 Então sistema exibe informações de cadastro de "Usuários"
     Wait Until Page Contains    text=Gerenciar informações cadastradas no sistema
 
-# -8.6
+# -9.6
 Então sistema exclui item do menu Usuários
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
-# -8.3
+# -9.8
 Então sistema exibe mensagem de erro em Usuários
     Wait Until Page Contains    text=Nenhum usuário encontrado.
 

@@ -57,7 +57,7 @@ ${opcao_ObrigatorioNao}             //button[@id='opcao1']
 ${opcao_ObrigatorioSim}             //button[@id='opcao2']
 
 *** Keywords ***
-# -9.01.01
+# -10.01.01
 Dado que clico no menu "Configurações > Requisições"
     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
     Click Element                    ${MENU_CONFIGURACOES}
@@ -65,7 +65,7 @@ Dado que clico no menu "Configurações > Requisições"
 Então sistema exibe informações de menu Requisições
     Wait Until Page Contains    text=Tipos de requisição
 
-# -9.01.02
+# -10.01.02
 Quando clico no botão "Novo tipo"
     Sleep    2s
     Click Element    ${botao_NovoTipo}
@@ -106,7 +106,7 @@ E preencho informações de cadastro de Novo tipo de Requisições
 Então sistema salva novo Tipo de requisição
     Wait Until Page Contains    text=Registro adicionado com sucesso!
 
-# -9.01.03
+# -10.01.03
 Quando clico em "Editar" em configuracoes
     Wait Until Element Is Visible    ${botao_Editar_Configuracoes}
     Click Element                    ${botao_Editar_Configuracoes}
@@ -125,7 +125,7 @@ E preencho informações de cadastro editado no menu Configurações > Requisiç
 Então sistema exibe informações de "Editar" no menu Configurações > Requisições
     Wait Until Page Contains    text=Registro editado com sucesso!
 
-# -9.01.04
+# -10.01.04
 Quando clico no filtro status
     Click Element            //button[contains(@class, 'peer') and contains(@class, 'inline-flex') and contains(@class, 'cursor-pointer') and contains(@class, 'rounded-full') and contains(@class, 'border-2') and contains(@aria-checked, 'true')]
     
@@ -133,14 +133,14 @@ Então sistema exibe mensagem de status atualizado
     Wait Until Page Contains    text=Status do tipo de requisição atualizado com sucesso!
     
 
-# -9.01.05
+# -10.01.05
 Então sistema exibe informações de pesquisa de tipo de requisição
     ${nome_resultado}=    Get Text    //h3[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
 
 
-# -9.01.06
+# -10.01.06
 Quando clico em "Excluir" em configurações
     Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
     Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
@@ -151,16 +151,16 @@ Quando clico em "Excluir" em configurações em perguntas
     Sleep    1s
     Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
 
-# -9.01.07
+# -10.01.07
 Então sistema exclui item do menu Configurações > Requisições
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
-# -9.01.08
+# -10.01.08
 Então sistema exibe informações da pagina perguntas
     Wait Until Page Contains    text=Adicionar uma nova pergunta
 
 
-# --9.01.09
+# --10.01.09
 E clico no botao "Perguntas"
     Wait Until Element Is Visible    ${botao_Perguntas}
     Click Element                    ${botao_Perguntas}
@@ -180,7 +180,7 @@ E preencho informações de nova pergunta
 Então sistema exibe mensagem de pergunta adicionada no menu Configurações > Requisições
     Wait Until Page Contains    text=Pergunta adicionada com sucesso!
 
-# -9.01.10
+# -10.01.10
 E vou para o fim da página
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
 
@@ -199,18 +199,18 @@ E preencho informações de pergunta editada no menu Configurações > Requisiç
 Então sistema exibe informações de "Editar" no menu Configurações > Requisições > Perguntas
     Wait Until Page Contains    text=Pergunta atualizada com sucesso!
 
-# --9.01.11
+# --10.01.11
 Então sistema exibe informações de pesquisa de perguntas
     Sleep    1s
     ${nome_resultado}=    Get Text    //h3[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
 
-# --9.01.12
+# --10.01.12
 Então sistema exclui pergunta do menu Configurações > Requisições > Perguntas
     Wait Until Page Contains    text=Pergunta deletada com sucesso!
 
-# --9.01.13
+# --10.01.13
 Quando clico no filtro "Cards" em perguntas
     Sleep    2s
     Click Element    ${filtro_cards/Lista_Perguntas}
@@ -218,11 +218,11 @@ E clico em "Lista" em perguntas
     Sleep    1s
     Click Element    ${filtro_botaoLista_Perguntas}
 
-# --9.01.14
+# --10.01.14
 Então sistema exibe mensagem de erro em Perguntas
     Wait Until Page Contains    text=Nenhum tipo de requisição encontrado.
 
-# --9.01.15
+# --10.01.15
 E preencho informações no campo quantidade em perguntas
     Input Text    //input[contains(@id,'itensPorPagina')]   ${quantidade_perguntas}
     Click Element    (//div[contains(.,'Quantidade')])[12]
@@ -233,18 +233,18 @@ Então sistema exibe informações de acordo com quantidade preenchida em pergun
     Log    Quantidade de elementos encontrados: ${quantidade}
     Should Be Equal As Numbers    ${quantidade}    ${quantidade_perguntas}    A quantidade de elementos retornados não corresponde à quantidade esperada
 
-# --9.01.17
+# --10.01.17
 Então sistema exibe informações com filtro "Lista" em Configurações > Requisições
     Sleep    2s
     ${titulo_nome}=    Run Keyword And Return Status    Element Should Be Visible    //th[contains(.,'Tipo')]
     Run Keyword If    ${titulo_nome}    Log    "O Título Nome está visível. Funcionou."
     ...    ELSE    Fail    "O Título Nome não está visível. Falhou."
 
-# --9.01.18
+# --10.01.18
 Então sistema exibe mensagem de erro em Configurações > Requisições
     Wait Until Page Contains    text=Nenhum tipo de requisição encontrado.
 
-# --9.02.01
+# --10.02.01
 Dado que clico no menu "Configurações > Minerando sol"
     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
     Click Element                    ${MENU_CONFIGURACOES}
@@ -253,7 +253,7 @@ Dado que clico no menu "Configurações > Minerando sol"
 Então sistema exibe informações de menu Minerando sol
     Wait Until Page Contains    text=Configurar valores das constantes da Minerando Sol
 
-# -9.02.02
+# -10.02.02
 Quando preencho informações do menu "Geral" no menu Configurações > Minerando Sol
     Sleep    2s
     Input Text        ${input_ValorConfins}                    2,35    
@@ -298,7 +298,7 @@ E clico em Atualizar
 Então sistema exibe mensagem de atualização
     Wait Until Page Contains    text=Registro atualizado com sucesso!
 
-# -9.02.03
+# -10.02.03
 Quando preencho informações do menu "Template > Campos CPF" no menu Configurações > Minerando Sol
     Sleep    1s
     Click Element    (//button[contains(.,'Texto')])[1]
@@ -312,8 +312,8 @@ Quando preencho informações do menu "Template > Campos CPF" no menu Configura�
 
 
 
-# -9.02.03
-# -9.03.01
+# -10.02.03
+# -10.03.01
 Dado que clico no menu "Configurações > Documentos"
     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
     Click Element                    ${MENU_CONFIGURACOES}
@@ -322,27 +322,27 @@ Dado que clico no menu "Configurações > Documentos"
 Então sistema exibe informações de menu Documentos
     Wait Until Page Contains    text=Informações referentes aos historicos dos documentos gerados no sistema.
 
-# -9.03.01
+# -10.03.01
 E seleciono filtro "Tipo de documento"
     Click Element            (//button[contains(.,'Selecione')])[1]
     Click Element            (//div[contains(.,'teste-cadastro')])[13]
 Então sistema exibe informações de filtro selecionado
     Wait Until Page Contains    text=Registros carregados com sucesso!
 
-# -9.03.02
+# -10.03.02
 E seleciono filtro "Departamento"
     Click Element            (//button[contains(.,'Selecione')])[2]
     Click Element            (//div[contains(.,'TI')])[5]
 
-# -9.03.01
-# # -9.4
+# -10.03.01
+# # -10.4
 # Dado que clico no menu "Configurações > Estimativa"
 #     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
 #     Click Element                    ${MENU_CONFIGURACOES}
 #     Wait Until Element Is Visible    ${Menu_Estimativa}
 #     Click Element                    ${Menu_Estimativa}
 
-# # -9.5
+# # -10.5
 # Dado que clico no menu "Configurações > Sistema"
 #     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
 #     Click Element                    ${MENU_CONFIGURACOES}

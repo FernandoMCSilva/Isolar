@@ -8,7 +8,7 @@ ${botao_FAQ_Novidades}                //button[contains(.,'FAQ')]
 
 
 *** Keywords ***
-# --11.1
+# --12.1
 Dado que clico no menu "Novidades"
     Wait Until Element Is Visible    ${MENU_NOVIDADES}
     Click Element                    ${MENU_NOVIDADES}
@@ -16,14 +16,14 @@ Dado que clico no menu "Novidades"
 Então sistema exibe página de Novidades
     Wait Until Page Contains    text=Acompanhe as funcionalidades adicionadas ao sistema.
 
-# --11.2
+# --12.2
 Quando clico no menu FAQ
     Wait Until Element Is Visible    ${botao_FAQ_Novidades}
     Click Element                    ${botao_FAQ_Novidades}
 
 Então sistema exibe página de FAQ
     Wait Until Page Contains    text=Como renovar ou revisar uma requisição?
-# --11.3
+# --12.3
 Quando clico no menu Atualizações
     Wait Until Element Is Visible    ${botao_Atulaizacoes_Novidades}
     Click Element                    ${botao_Atulaizacoes_Novidades}

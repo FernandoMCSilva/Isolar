@@ -33,7 +33,7 @@ ${input_emailCliente_Estimativa}     //input[@id='emailCliente']
 ${CTRL}           CONTROL
 
 *** Keywords ***
-# --3.1
+# --4.1
 Dado que clico no menu "Estimativa"
     Sleep    2s
     Wait Until Element Is Visible    ${MENU_ESTIMATIVA}
@@ -42,7 +42,7 @@ Dado que clico no menu "Estimativa"
 Então sistema exibe informações de estimativas
     Wait Until Element Is Visible    ${Tela_Estimativa}
 
-# --3.2
+# --4.2
 E preencho informações no campo Vendedor
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]
     Press Keys    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
@@ -61,7 +61,7 @@ Então sistema exibe estimativas de filtro Vendedor
         Should Contain    ${text}    ${Vendedor_Fila}
     END
 
-# --3.3
+# --4.3
 
 # E preencho informações no campo Cliente em estimativa
 #     Wait Until Element Is Visible    ${Campo_Cliente}
@@ -79,7 +79,7 @@ Então sistema exibe estimativas do filtro Cliente
         Should Contain    ${text}    ${Cliente_Fila}
     END
 
-# --3.4
+# --4.4
 E seleciono Tipo de usina "Todos"  
     Wait Until Element Is Visible    //button[@type='button'][contains(.,'Tipo')]
     Click Element    //button[@type='button'][contains(.,'Tipo')]
@@ -88,7 +88,7 @@ E seleciono Tipo de usina "Todos"
 Então sistema exibe informações de Estimativa do filtro Tipo de usina "Todos"
    Wait Until Element Is Visible        (//div[contains(.,'Registros carregados com sucesso!')])[7]
 
-# --3.5
+# --4.5
 E seleciono Tipo de usina "Autoconsumo"
     Wait Until Element Is Visible    //button[@type='button'][contains(.,'Tipo')]
     Click Element    //button[@type='button'][contains(.,'Tipo')]
@@ -97,7 +97,7 @@ E seleciono Tipo de usina "Autoconsumo"
 Então sistema exibe informações de Estimativa do filtro Tipo de usina "Autoconsumo"
     Wait Until Element Is Visible     (//div[contains(.,'Registros carregados com sucesso!')])[7]
 
-# --3.6
+# --4.6
 E seleciono Tipo de usina "Aluguel"
     Wait Until Element Is Visible    //button[@type='button'][contains(.,'Tipo')]
     Click Element    //button[@type='button'][contains(.,'Tipo')]
@@ -106,7 +106,7 @@ E seleciono Tipo de usina "Aluguel"
 Então sistema exibe informações de Estimativa do filtro Tipo de usina "Aluguel"
     Wait Until Element Is Visible     (//div[contains(.,'Registros carregados com sucesso!')])[7]
 
-# --3.7
+# --4.7
 
 E preencho com informações data de registro
     Click Element    (//button[@data-state='closed'])[10]
@@ -122,7 +122,7 @@ E preencho com informações data de registro
 Então sistema exibe Estimativa do filtro Data de registro
     Wait Until Page Contains    text=Fernando Morais da Costa Silva
 
-# --3.8
+# --4.8
 
 Quando clico em "Quantidade de itens por pág"
     Wait Until Element Is Visible    //span[contains(.,'Quantidade de itens por pág')]    timeout=10s
@@ -138,7 +138,7 @@ Então sistema exibe informações de acordo com quantidade preenchida
     ${quantidade}    Get Length    ${resultados}
     Should Be Equal As Numbers    ${quantidade - 1}    ${EXPECTED_RESULTS}
 
-# --3.9
+# --4.9
 
 Quando clico em "Próximo"
     Wait Until Element Is Visible    //button[contains(.,'Próximo')]
@@ -149,7 +149,7 @@ Então sistema exibe próximas Estimativa
      Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior está visível. Funcionou."
     ...    ELSE    Log    "Botão Anterior não está visível. Falhou."    WARN
 
-# --3.10
+# --4.10
 
 E clico em "Anterior"
     Sleep    1s
@@ -161,7 +161,7 @@ Então sistema exibe Estimativa anteriores
     ...    ELSE    Log    "Botão Anterior ainda está visível. Falhou."    WARN
 
 
-# # --3.11
+# # --4.11
 
 # Quando clico em "Gerar link de assinatura" inativo
 #     ${is_enabled}    Run Keyword And Return Status    Is Element Enabled    ${XPATH_BOTAO_GERAR_LINK}
@@ -169,7 +169,7 @@ Então sistema exibe Estimativa anteriores
 #     ...    ELSE    Fail    O botão "Gerar link de assinatura" está ativo, mas deveria estar inativo.
 # # #     Então sistema não executa nenhuma ação
 
-# --3.12
+# --4.12
 
 Quando clico em "Gerar link de assinatura"
     Sleep    2s
@@ -182,7 +182,7 @@ E clico em "Não"
 Então sistema volta para menu Estimativa
     Wait Until Page Contains    text=Histórico das estimativas
 
-# --3.13
+# --4.13
 
 E clico em "Sim"
     Wait Until Element Is Visible    (//button[@type='button'])[10]
@@ -191,7 +191,7 @@ E clico em "Sim"
 Então sistema exibe informações para criar assinaturas
     Wait Until Page Contains   text=Clique para fazer o upload
     
-# --3.14
+# --4.14
 Quando clico no botão "Ver PDF"
     Wait Until Element Is Visible    ${botao_verPDF}
     Click Element                    ${botao_verPDF}
@@ -206,7 +206,7 @@ Então sistema exibe informações de estimativa em arquivo PDF
     Wait Until Page Contains    text=27/11/2024    timeout=10s
     # Wait Until Page Contains    text=PROPOSTA COMERCIAL
 
-# --3.17
+# --4.17
 Quando clico no botão "Aplicar desconto"
     Sleep    5s
     Click Element    xpath=(//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[6]
@@ -216,7 +216,7 @@ E clico em "Cancelar"
 Então sistema retorna e exibe informações do menu Estimativa
     Wait Until Page Contains    text=Histórico das estimativas
 
-# --3.18
+# --4.18
 E preencho informações de desconto
     Input Text    //input[@id='descontoMaximo']    5
     Click Element    //button[contains(.,'Confirmar')]
@@ -224,7 +224,7 @@ E preencho informações de desconto
 Então sistema aplica desconto e exibe informações em arquivo PDF
     Wait Until Page Contains    text=Valor do projeto atualizado com sucesso!
 
-# --3.19
+# --4.19
 
 E preencho informações de desconto acima do limite
     Input Text    //input[@id='descontoMaximo']    6
@@ -234,7 +234,7 @@ Então sistema exibe mensagem de erro de desconto máximo permitido
     Wait Until Page Contains    text=O valor digitado é maior que o desconto máximo permitido.
 
 # PÁGINA GERAR ESTIMATIVA
-# --3.20
+# --4.20
 
 Quando clico no botão "Gerar"
     Wait Until Element Is Visible    //button[contains(.,'Gerar')]
@@ -290,7 +290,7 @@ Então sistema exibe resultado dos cálculos
     Wait Until Page Contains    text=Resultado dos cálculos
 
 
-# --3.21
+# --4.21
 E clico no botão "Constantes personalizadas"
     Wait Until Element Is Visible    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 mt-4 bg-blue-400'][contains(.,'Constantes personalizadas')] 
    Click Element    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 mt-4 bg-blue-400'][contains(.,'Constantes personalizadas')] 
@@ -298,18 +298,18 @@ E clico no botão "Constantes personalizadas"
 Então sistema exibe aba de Constantes personalizadas
     Wait Until Page Contains    text=Constantes personalizadas
 
-# --3.22
+# --4.22
 Quando clico no botão Exportar para Excel
     Wait Until Element Is Visible    ${botao_ExportarExcel_estimativa}
     Click Element                    ${botao_ExportarExcel_estimativa}
 Então sistema exporta para excel
     Wait Until Element Is Visible    ${botao_ExportarExcel_estimativa}
 
-# --3.23
+# --4.23
 Então sistema exibe mensagem de campos obrigatórios não preenchido em estimativa
     Wait Until Page Contains    text=Valor da tensão é obrigatório.
 
-# --3.24
+# --4.24
 E preencho informações de calculos
     Wait Until Element Is Visible    (//button[contains(.,'Selecione')])[1]
     Click Element                    (//button[contains(.,'Selecione')])[1]
@@ -342,7 +342,7 @@ E clico no botão Ações
 Então sistema exibe tela de botão ações 
     Wait Until Page Contains    text=Baixar/Imprimir Estimativa
 
-# --3.25
+# --4.25
 E preencho informações do cliente
     Wait Until Element Is Visible    ${input_nomeCliente_Estimativa}
     Input Text                       ${input_nomeCliente_Estimativa}        ${nome_pesquisa_GruposConsumidores}
@@ -356,7 +356,7 @@ E clico no botão Baixar/Imprimir
 Então sistema Baixa/Imprime Estimativa
     Wait Until Page Contains    text=Estimativa salva com sucesso!
 
-# --3.26
+# --4.26
 E clico no botão Iniciar conversa no WhatsApp
     Wait Until Element Is Visible    ${botao_iniciarconversa_Estimativa}
     Click Element                    ${botao_iniciarconversa_Estimativa}
@@ -364,7 +364,7 @@ E clico no botão Iniciar conversa no WhatsApp
 Então sistema redireciona para Whatsapp
     Wait Until Page Contains    text=Estimativa salva com sucesso!
 
-# --3.27
+# --4.27
 E clico no botão Enviar por email
     Wait Until Element Is Visible    ${botao_enviaremail_Estimativa}
     Click Element                    ${botao_enviaremail_Estimativa}
@@ -373,7 +373,7 @@ E clico no botão Enviar por email
 Então sistema abre informações do email
     Wait Until Page Contains    text=Selecione ou arraste a estimativa
 
-# --3.28
+# --4.28
 E clico no botão Salvar informarções no sistema
     Wait Until Element Is Visible    ${botao_salvarinformacoes_Estimativa}
     Click Element                    ${botao_salvarinformacoes_Estimativa}
@@ -381,7 +381,7 @@ E clico no botão Salvar informarções no sistema
 Então sistema salva informações no sistema
     Wait Until Page Contains    text=Estimativa salva com sucesso!
 
-# --3.29
+# --4.29
 E clico no botão Baixar/Imprimir desabilitado
     Wait Until Element Is Visible    ${botao_baixar/imprimir_desabilitado}
     Click Element                    ${botao_baixar/imprimir_desabilitado}
@@ -390,7 +390,7 @@ Então sistema sai da tela do botão Ações
     Wait Until Element Is Not Visible    ${botao_baixar/imprimir_desabilitado}
     Element Should Not Be Visible        ${botao_baixar/imprimir_desabilitado}
 
-# --3.30
+# --4.30
 # E preencho informações de constantes personalizadas
 #     Sleep    2s
 #     Execute JavaScript    document.querySelector("#radix-r11").style.zoom='0.8'
@@ -398,4 +398,4 @@ Então sistema sai da tela do botão Ações
 #     Click Element               //input[@value='0,7400']
 #     Input Text                  //input[@value='0,7400']    ${valorteste}
 
-# --3.22
+# --4.22

@@ -38,7 +38,7 @@ ${botao_exportarPDF_Relatorios}      //button[contains(.,'Exportar para PDF')]
 
 
 *** Keywords ***
-# --10.01.01
+# --11.01.01
 Dado que clico no menu "Relatórios > Relatórios"
     Wait Until Element Is Visible    ${Menu_Relatorios}
     Click Element                    ${Menu_Relatorios}
@@ -48,7 +48,7 @@ Dado que clico no menu "Relatórios > Relatórios"
 Então sistema exibe informações de menu Relatórios > Relatórios
     Wait Until Page Contains    text=Gerencie um resumo das informações cadastradas no sistema.
 
-# --10.01.02
+# --11.01.02
 E preencho informações de filtro "Cliente"
     Wait Until Element Is Visible    ${campo_clienteRelatorios}
     Sleep    2s
@@ -56,7 +56,7 @@ E preencho informações de filtro "Cliente"
     Click Element                    (//div[contains(.,'Evandro Carlos Mior')])[19]
 Então sistema exibe informações de filtro "Cliente"
     Wait Until Page Contains    text=Evandro Carlos Mior
-# --10.01.03
+# --11.01.03
 E seleciono filtro Status "Fila"
     Click Element    //button[@id='status']
     Click Element    (//div[contains(.,'Fila')])[5]
@@ -64,7 +64,7 @@ E seleciono filtro Status "Fila"
 Então sistema exibe informações de filtro Status "Fila"
     Wait Until Element Is Visible    (//div[contains(.,'Fila')])[18]
 
-# --10.01.04
+# --11.01.04
 E seleciono filtro Responsável "suporte"
     Click Element    (//button[contains(.,'Todos')])[2]
     Click Element    (//div[contains(.,'Fernando Morais da Costa Silva')])[5]
@@ -72,14 +72,14 @@ E seleciono filtro Responsável "suporte"
 Então sistema exibe informações de filtro Responsável "suporte"
     Wait Until Page Contains    text=Nenhum relatório encontrado.
 
-# --10.01.05
+# --11.01.05
 E seleciono filtro Vendedor Técnico "Todos"
     Click Element    (//button[contains(.,'Todos')])[3]
     Click Element    (//div[contains(.,'Todos')])[27]
 Então sistema exibe informações de filtro Vendedor Técnico "Todos"
     Wait Until Page Contains    text=Não definido
 
-# --10.01.06
+# --11.01.06
 E seleciono filtro Representante comercial "B3 (teste)"
     Wait Until Element Is Visible    (//button[contains(.,'Todos')])[4]
     Click Element                    (//button[contains(.,'Todos')])[4]
@@ -88,7 +88,7 @@ E seleciono filtro Representante comercial "B3 (teste)"
 Então sistema exibe informações de filtro Representante comercial "B3 (teste)"
     Wait Until Page Contains    text=Nenhum relatório encontrado.
 
-# --10.01.07
+# --11.01.07
 E seleciono o filtro Renovadas "Renovadas"
     Wait Until Element Is Visible    //button[@id='renovada']
     Click Element                    //button[@id='renovada']
@@ -97,7 +97,7 @@ E seleciono o filtro Renovadas "Renovadas"
 Então sistema exibe informações de filtro Renovadas "Renovadas"
     Wait Until Element Is Visible    //td[contains(.,'2033')]
 
-# --10.01.08
+# --11.01.08
 E preencho informações de filtro Unidade consumidora
     Wait Until Element Is Visible    //input[@id='unidade_consumidora']
     Input Text                       //input[@id='unidade_consumidora']    1234
@@ -105,7 +105,7 @@ E preencho informações de filtro Unidade consumidora
 Então sistema exibe informações de filtro Unidade Consumidora
     Wait Until Page Contains    text=alexander leidou
 
-# --10.01.09
+# --11.01.09
 E seleciono filtro Tipo de requisição "Todos"
     Wait Until Element Is Visible    //button[@id='tipo']
     Click Element                    //button[@id='tipo']
@@ -114,7 +114,7 @@ E seleciono filtro Tipo de requisição "Todos"
 Então sistema exibe informações de filtro Tipo de requisição "Todos"
     Wait Until Element Is Visible    (//td[contains(.,'Técnico')])[1]
 
-# --10.01.10
+# --11.01.10
 E seleciono filtro Data de criação
     Wait Until Element Is Visible    (//button[@type='button'])[15]
     Click Element                    (//button[@type='button'])[15]
@@ -130,7 +130,7 @@ E seleciono filtro Data de criação
 Então sistema exibe informações de filtro Data de criação
     Wait Until Element Is Visible    (//td[contains(.,'02/09/2024')])[1]
 
-# --10.01.11
+# --11.01.11
 E seleciono filtro Promotor "Todos"
     Wait Until Element Is Visible    (//button[contains(.,'Todos')])[7]
     Click Element                    (//button[contains(.,'Todos')])[7]
@@ -139,7 +139,7 @@ E seleciono filtro Promotor "Todos"
 Então sistema exibe informações de filtro Promotor "Todos"
     Wait Until Element Is Visible    (//td[contains(.,'Não definido')])[2]
 
-# --10.01.12
+# --11.01.12
 E seleciono filtro Indicador "Todos"
     Wait Until Element Is Visible    (//button[contains(.,'Todos')])[8]
     Click Element                    (//button[contains(.,'Todos')])[8]
@@ -148,7 +148,7 @@ E seleciono filtro Indicador "Todos"
 Então sistema exibe informações de filtro Indicador "Todos"
     Wait Until Element Is Visible    (//td[contains(.,'Não definido')])[2]
 
-# --10.01.13
+# --11.01.13
 E seleciono fitro Departamento "Departamento pessoal"
     Wait Until Element Is Visible    //button[@id='departament']
     Click Element                    //button[@id='departament']
@@ -157,7 +157,7 @@ E seleciono fitro Departamento "Departamento pessoal"
 Então sistema exibe informações de filtro Departamento "Departamento pessoal"
     Wait Until Element Is Visible    //td[contains(.,'2085')]
 
-# --10.01.16
+# --11.01.16
 Quando clico no botão Exportar para PDF
     Wait Until Element Is Visible    ${botao_exportarPDF_Relatorios}
     Click Element                    ${botao_exportarPDF_Relatorios}
@@ -165,27 +165,27 @@ Quando clico no botão Exportar para PDF
 Então sistema exporta para PDF
     Wait Until Element Is Visible    ${botao_exportarPDF_Relatorios}
 
-# --10.01.17
+# --11.01.17
 Então sistema exibe próximas informações
     ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Anterior')]
      Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior está visível. Funcionou."
     ...    ELSE    Log    "Botão Anterior não está visível. Falhou."    WARN
 
-# --10.01.18
+# --11.01.18
 Então sistema exibe informações anteriores   
     ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Not Be Visible    //button[contains(.,'Anterior')]
      Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior não está visível. Funcionou.
     ...    ELSE    Log    "Botão Anterior ainda está visível. Falhou."    WARN
 
 
-# --10.02.01
+# --11.02.01
 Dado que clico no menu "Relatórios > Homologatórias"
     Wait Until Element Is Visible    ${MENU_RELATORIOS}
     Click Element                    ${MENU_RELATORIOS}
     Wait Until Element Is Visible    ${Menu_Homologatorias}
     Click Element                    ${Menu_Homologatorias}
 
-# --10.02.02
+# --11.02.02
 E preencho informação de filtro resolução ANEEL
     Wait Until Element Is Visible    ${filtro_ANEEL}
     Click Element                    ${filtro_ANEEL}
@@ -195,7 +195,7 @@ E preencho informação de filtro resolução ANEEL
 Então sistema exibe informações de filtro resolução ANEEL
     Wait Until Element Is Visible    ${result_ANEEL}
 
-# --10.02.02
+# --11.02.02
 E preencho informação de filtro Concessionária
     Wait Until Element Is Visible    ${filtro_Concessionaria}
     Click Element                    ${filtro_Concessionaria}
@@ -203,7 +203,7 @@ E preencho informação de filtro Concessionária
 Então sistema exibe informações de filtro Concessionária
     Wait Until Element Is Visible    ${result_Concessionaria}
 
-# --10.02.04
+# --11.02.04
 E preencho informação de filtro Acessante
     Wait Until Element Is Visible    ${filtro_Acessante}    
     Click Element                    ${filtro_Acessante}
@@ -212,7 +212,7 @@ E preencho informação de filtro Acessante
 Então sistema exibe informações de filtro Acessante
     Wait Until Element Is Visible    ${result_Acessante}
 
-# --10.02.05
+# --11.02.05
 E preencho informação de filtro Classe
     Wait Until Element Is Visible    ${filtro_Classe}
     Click Element                    ${filtro_Classe}
@@ -221,7 +221,7 @@ E preencho informação de filtro Classe
 Então sistema exibe informações de filtro Classe
     Wait Until Element Is Visible    ${result_Classe}
 
-# --10.02.06
+# --11.02.06
 E preencho informação de filtro Detalhe
     Wait Until Element Is Visible    ${filtro_Detalhe}
     Click Element                    ${filtro_Detalhe}
@@ -230,7 +230,7 @@ E preencho informação de filtro Detalhe
 Então sistema exibe informações de filtro Detalhe
     Wait Until Element Is Visible    ${result_Detalhe}    
 
-# --10.02.07
+# --11.02.07
 E preencho informação de filtro Posto
     Wait Until Element Is Visible    ${filtro_Posto}
     Click Element                    ${filtro_Posto}
@@ -239,7 +239,7 @@ E preencho informação de filtro Posto
 Então sistema exibe informações de filtro Posto
     Wait Until Element Is Visible    ${result_Posto}
 
-# --10.02.08
+# --11.02.08
 E preencho informação de filtro Ano
     Wait Until Element Is Visible    ${filtro_Ano}
     Click Element                    ${filtro_Ano}
@@ -248,7 +248,7 @@ E preencho informação de filtro Ano
 Então sistema exibe informações de filtro Ano
     Wait Until Element Is Visible    ${result_Ano}
 
-# --10.02.09
+# --11.02.09
 E preencho informação de filtro Subgrupo
     Wait Until Element Is Visible    ${filtro_Subgrupo}
     Click Element                    ${filtro_Subgrupo}
@@ -257,7 +257,7 @@ E preencho informação de filtro Subgrupo
 Então sistema exibe informações de filtro Subgrupo
     Wait Until Element Is Visible    ${result_Subgrupo}
 
-# --10.02.10
+# --11.02.10
 E preencho informação de filtro Modalidade
     Wait Until Element Is Visible    ${filtro_Modalidade}
     Click Element                    ${filtro_Modalidade}
@@ -266,7 +266,7 @@ E preencho informação de filtro Modalidade
 Então sistema exibe informações de filtro Modalidade
     Wait Until Element Is Visible    ${result_Modalidade}
 
-# --10.02.11
+# --11.02.11
 E preencho informação de filtro SubClasse
     Wait Until Element Is Visible    ${filtro_SubClasse}
     Click Element                    ${filtro_SubClasse}
@@ -275,7 +275,7 @@ E preencho informação de filtro SubClasse
 Então sistema exibe informações de filtro SubClasse
     Wait Until Element Is Visible    ${result_Subclasse}
 
-# --10.02.12
+# --11.02.12
 E preencho informação de filtro Outorga
     Wait Until Element Is Visible    ${filtro_Outorga}
     Click Element                    ${filtro_Outorga}
@@ -286,11 +286,11 @@ E preencho informação de filtro Outorga
 Então sistema exibe informações de filtro Outorga
     Wait Until Element Is Visible    ${result_Outorga}
 
-# --10.02.01
+# --11.02.01
 Então sistema exibe informações do menu Relatórios > Homologatórias
     Wait Until Page Contains    text=Homologatórias ANEEL
 
-# --10.02.12
+# --11.02.12
 Então sistema exibe quantidade de itens preenchida em Relatórios
     Click Element    (//div[contains(.,'Quantidade')])[15]
     Sleep    5s

@@ -60,7 +60,7 @@ ${filtro_cards/Lista}                           (//button[@type='button'])[8]
 ${filtro_botaoLista}                            xpath=//div[@role='option'][contains(.,'Lista')]
 
 *** Keywords ***
-# -07.01.01
+# -08.01.01
 Dado que clico no menu "Cadastros > Pessoas"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -69,13 +69,13 @@ Dado que clico no menu "Cadastros > Pessoas"
 Então sistema exibe informações de cadastro de "Pessoas"
     Wait Until Page Contains     text=Pessoas
 
-# -07.01.02
+# -08.01.02
 Quando clico no botão "Inserir"
     Sleep    2s
     Wait Until Element Is Visible    //button[contains(.,'Inserir')]
     Click Element    //button[contains(.,'Inserir')]
 
-# -07.01.03
+# -08.01.03
 Quando clico em "Excluir"
     Sleep    2s
     Click Element                    ${botao_acoes_Clientes}
@@ -86,7 +86,7 @@ E clico no botão "Cancelar" em "Excluir"
     Sleep    2s
     Click Element                    ${botao_Cancelar}
 
-# -07.01.04
+# -08.01.04
 E clico no botao buscar
     Sleep    2s
     Click Element     ${botao_buscar_CadastrosPessoas}
@@ -98,7 +98,7 @@ E clico no botão "Continuar" em "Excluir"
 Então sistema exclui item do menu Cadastro > Pessoas
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
-# -07.01.05
+# -08.01.05
 Quando clico no filtro "Cards"
     Sleep    2s
     Click Element    ${filtro_cards/Lista}
@@ -118,7 +118,7 @@ Então sistema exibe informações com filtro "Lista"
     Run Keyword If    ${titulo_nome}    Log    "O Título Nome está visível. Funcionou."
     ...    ELSE    Fail    "O Título Nome não está visível. Falhou."
 
-# -07.01.06
+# -08.01.06
 
 E preencho informações de pesquisa
     Input Text    //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
@@ -128,7 +128,7 @@ Então sistema exibe informações de pesquisa
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
 
-# -07.01.07
+# -08.01.           
 
 E preencho informações de busca não encontrada
     Input Text    ${input_buscar_CadastrosPessoas}    ${nome_BuscaNaoEncontrada}
@@ -136,7 +136,7 @@ E preencho informações de busca não encontrada
 Então sistema exibe mensagem de erro
     Wait Until Page Contains    text=Nenhuma pessoa encontrada.
 
-# -07.01.08
+# -08.01.08
 E clico em "Fechar"
     Click Element    ${botao_buscar_CadastrosPessoas}
 Então sistema verifica se filtro buscar fechou
@@ -147,7 +147,7 @@ Então sistema verifica se filtro buscar fechou
 Então sistema exibe informações de cadastro de "Grupo Consumidores"
     Wait Until Page Contains     text=Grupos Consumidores
 
-# -07.01.09
+# -08.01.09
 
 E clico no botao "acoes"
     Wait Until Element Is Visible    ${botao_acoes_Clientes}
@@ -176,7 +176,7 @@ Então sistema exibe mensagem de informações editadas
 Então sistema exibe mensagem de informações editadas em Empresas
     Wait Until Page Contains    text=Registro atualizado com sucesso!
 
-# -07.01.09
+# -08.01.09
 
 E preencho informações de inserir novo cadastro de pessoas
     Wait Until Element Is Visible    //input[@name='Nome']    timeout=10s
@@ -195,7 +195,7 @@ E clico em "Salvar"
 Então sistema salva novo cadastro de pessoas
     Wait Until Page Contains    text=Registro adicionado com sucesso!
 
-# -07.02.01
+# -08.02.01
 Dado que clico no menu "Cadastros > Clientes"
     Sleep    2s
     Click Element      ${MENU_CADASTROS} 
@@ -203,7 +203,7 @@ Dado que clico no menu "Cadastros > Clientes"
 Então sistema exibe informações de cadastro de "Clientes"
     Wait Until Page Contains    text=Gerenciar informações cadastradas no sistema
     
-# -07.02.02
+# -08.02.02
 E preencho informações de inserir novo cadastro de Clientes
     Sleep    2s
     Input Text        ${input_NomeCompleto_Clientes}          ${nome_pesquisa}
@@ -216,7 +216,7 @@ Então sistema salva novo cadastro de Clientes
     # Sleep    10s
     Wait Until Page Contains    text=Cliente cadastrado com sucesso!
 
-# -07.02.03
+# -08.02.03
 E preencho informações de cadastro editado no menu Cadastros > Clientes
     Sleep    2s
     Input Text        ${input_NomeCompleto_Clientes}          ${nome_pesquisa}
@@ -226,26 +226,26 @@ E preencho informações de cadastro editado no menu Cadastros > Clientes
     Input Text        ${input_AtividadeEconomica_EditarClientes}    teste
     Click Element     ${botao_atualizar}
 
-# -07.02.04
+# -08.02.04
 Então sistema exibe informações de pesquisa de Clientes
     Sleep    1s
     ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    Log    "O resultado da pesquisa é B3. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é B3. Teste falhou."    WARN
 
-# -07.02.06
+# -08.02.06
 Então sistema exclui item do menu Cadastro > Clientes
     Wait Until Page Contains    text= Cliente excluído com sucesso!
 
-# -07.02.08
+# -08.02.08
 E preencho informações de busca não escontrada em Clientes
     Input Text    ${input_buscar_GruposConsumidores}    ${nome_BuscaNaoEncontrada}
 
 Então sistema exibe mensagem de erro em Clientes
     Wait Until Page Contains    text=Nenhum cliente encontrado.
 
-# -07.02.01
-# -07.03.01
+# -08.02.01
+# -08.03.01
 Dado que clico no menu "Cadastros > Grupos Consumidores"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -267,7 +267,7 @@ Então sistema exclui item do menu Cadastro > Grupos Consumidores
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
 
-# -07.03.02
+# -08.03.02
 
 E preencho informações de busca não escontrada em Grupos Consumidores
     Input Text    ${input_buscar_GruposConsumidores}    ${nome_BuscaNaoEncontrada}
@@ -276,14 +276,14 @@ Então sistema exibe mensagem de erro em Grupos Consumidores
     Wait Until Page Contains    text=Nenhum grupo consumidor encontrado.
 
 
-# -07.03.04
+# -08.03.04
 
 Então sistema exibe informações de pesquisa de Grupos Consumidores
     ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    Log    "O resultado da pesquisa é B3. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é B3. Teste falhou."    WARN
 
-# -07.04.01
+# -08.04.01
 Dado que clico no menu "Cadastros > Tipo de Gerador"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -292,36 +292,36 @@ Dado que clico no menu "Cadastros > Tipo de Gerador"
 Então sistema exibe informações de cadastro de "Tipo de Gerador"
     Wait Until Page Contains     text=Tipos de Gerador
     
-# -07.04.02
+# -08.04.02
 
 E preencho informações de inserir novo cadastro de Tipo de Gerador
     Sleep    2s
     Input Text    ${input_descricao_GruposConsumidores}    ${nome_pesquisa_GruposConsumidores}
     
-# -07.04.03
+# -08.04.03
 
 E preencho informações de cadastro editado em Tipo de Gerador
     Sleep    2s
     Input Text    //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
     Click Element    ${botao_atualizar_CadastrosPessoas}
 
-# -07.04.04
+# -08.04.04
 
 Então sistema exclui item do menu Cadastro > Tipo de Gerador
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
-# -07.04.06
+# -08.04.06
 Então sistema exibe informações de pesquisa de Tipo de Gerador
     ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    Log    "O resultado da pesquisa é B3. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é B3. Teste falhou."    WARN
 
-# -07.04.07
+# -08.04.07
 
 Então sistema exibe mensagem de erro em Tipo de Gerador
     Wait Until Page Contains    text=Nenhum tipo de gerador encontrado.
 
-# -07.05.01
+# -08.05.01
 Dado que clico no menu "Cadastros > Tipo de Financiamento"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -330,13 +330,13 @@ Dado que clico no menu "Cadastros > Tipo de Financiamento"
 Então sistema exibe informações de cadastro de "Tipo de Financiamento"
     Wait Until Page Contains     text=Tipos de Financiamento
 
-# -07.05.08
+# -08.05.08
 
 Então sistema exibe mensagem de erro de Tipo de Financiamento
     Wait Until Page Contains    text=Nenhum tipo de financiamento encontrado
 
 
-# -07.06.01
+# -08.06.01
 Dado que clico no menu "Cadastros > Classificações"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -344,12 +344,11 @@ Dado que clico no menu "Cadastros > Classificações"
 Então sistema exibe informações de cadastro de "Classificações"
     Wait Until Page Contains     text=Classificações
 
-# -07.06.08
+# -08.06.08
 Então sistema exibe mensagem de erro de Classificações
     Wait Until Page Contains    text=Nenhum classificação encontrada.
 
-
-# -07.07.01
+# -08.07.01
 
 Dado que clico no menu "Cadastros > Motivos de Urgência"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
@@ -357,8 +356,8 @@ Dado que clico no menu "Cadastros > Motivos de Urgência"
     Click Element                    ${Menu_Motivos_de_Urgencia}
 Então sistema exibe informações de cadastro de "Motivos de Urgência"
     Wait Until Page Contains     text=Motivos de Urgência
-
-# -07.07.02
+ 
+# -08.07.02
 
 E preencho informações de inserir novo cadastro de Motivos de Urgência
     Sleep    2s
@@ -366,14 +365,14 @@ E preencho informações de inserir novo cadastro de Motivos de Urgência
     Click Element    //button[@id='nivel']
     Click Element    (//div[@role='option'])[2]
 
-# -07.07.08
+# -08.07.08
 
 E preencho informações de busca não encontrada em Motivo de Urgência
     Input Text    //input[@type='text']    ${nome_BuscaNaoEncontrada}
 Então sistema exibe mensagem de erro de Motivos de Urgência
     Wait Until Page Contains    text=Nenhum motivo de urgência encontrada.
 
-# -07.08.01
+# -08.08.01
 Dado que clico no menu "Cadastros > Concessionárias"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -381,7 +380,7 @@ Dado que clico no menu "Cadastros > Concessionárias"
 Então sistema exibe informações de cadastro de "Concessionárias"
     Wait Until Page Contains     text=Concessionárias
 
-# -07.08.02
+# -08.08.02
 E preencho informações de inserir novo cadastro de Concessionárias
     Sleep    2s
     Input Text    //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
@@ -391,7 +390,7 @@ E preencho informações de inserir novo cadastro de Concessionárias
     Input Text    //input[@id='cofins']    ${nome_BuscaNaoEncontrada}
     Input Text    (//input[@type='text'])[2]    ${nome_BuscaNaoEncontrada}
 
-# -07.08.03
+# -08.08.03
 E preencho informações de cadastro editado em Concessionárias
     Sleep    2s
     Input Text    //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
@@ -402,13 +401,13 @@ E preencho informações de cadastro editado em Concessionárias
     Click Element    ${botao_atualizar_CadastrosPessoas}
 
 
-# -07.08.08
+# -08.08.08
 Então sistema exibe mensagem de erro de Concessionárias
     Wait Until Page Contains    text=Nenhuma concessionaria encontrada.
 
 
 
-# -07.09.01
+# -08.09.01
 Dado que clico no menu "Cadastros > Departamentos"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -416,7 +415,7 @@ Dado que clico no menu "Cadastros > Departamentos"
 Então sistema exibe informações de cadastro de "Departamentos"
     Wait Until Page Contains     text=Departamentos
 
-# -07.09.02
+# -08.09.02
 E preencho informações de inserir novo cadastro de Departamentos
     Sleep    2s
     Input Text        //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
@@ -428,7 +427,7 @@ E preencho informações de inserir novo cadastro de Departamentos
     Click Element    (//div[contains(.,'Isolar Energy')])[14]
     Click Element    //button[contains(.,'Próximo')]
 
-# -07.09.03
+# -08.09.03
 E preencho informações de cadastro editado em Departamentos
     Sleep    2s
     Input Text        //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
@@ -440,11 +439,11 @@ E preencho informações de cadastro editado em Departamentos
     Sleep    1s
     # Execute JavaScript    window.scrollBy(0, 500);
     Click Element    ${botao_Salvar}
-# -07.09.08
+# -08.09.08
 Então sistema exibe mensagem de erro de Departamentos
     Wait Until Page Contains    text=Nenhum departamento encontrado.
 
-# -07.10.01
+# -08.10.01
 Dado que clico no menu "Cadastros > Origem da Indicação"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -452,22 +451,22 @@ Dado que clico no menu "Cadastros > Origem da Indicação"
 Então sistema exibe informações de cadastro de "Origem de indicação"
     Wait Until Page Contains     text=Origem de indicação
 
-# -07.10.02
+# -08.10.02
 E preencho informações de inserir novo cadastro de Origem da indicação
     Sleep    2s
     Input Text    //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
 
-# -07.10.03
+# -08.10.03
 E preencho informações de cadastro editado em Origem da indicação
     Sleep    5s
     Input Text    //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
     Click Element    //button[contains(.,'Atualizar')]
     
-# -07.10.08
+# -08.10.08
 Então sistema exibe mensagem de erro de Origem da indicação
     Wait Until Page Contains    text=Nenhuma fonte de origem encontrado.
 
-# -07.11.01
+# -08.11.01
 Dado que clico no menu "Cadastros > Empresas"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -480,7 +479,7 @@ Então sistema exibe mensagem de erro de Empresas
 
 
 
-# -07.11.02
+# -08.11.02
 E preencho informações de inserir novo cadastro de Empresas
     Wait Until Element Is Visible    ${input_NomeInserirEmpresas}
     Input Text                       ${input_NomeInserirEmpresas}    ${nome_pesquisa_GruposConsumidores}
@@ -493,7 +492,7 @@ E preencho informações de inserir novo cadastro de Empresas
 Então sistema salva novo cadastro de Empresas
     Wait Until Page Contains    text=Registro adicionado com sucesso!
 
-# -07.11.03
+# -08.11.03
 E preencho informações de cadastro editado em Empresas
     Sleep    3s
     Input Text                       ${input_NomeInserirEmpresas}    ${nome_pesquisa_GruposConsumidores}
@@ -501,7 +500,7 @@ E preencho informações de cadastro editado em Empresas
     Click Element                    ${Botao_Proximo_Requisicoes}
     Execute Javascript               window.scrollTo(0,0)
     Click Element                    ${botao_Salvar}
-# -07.12.01
+# -08.12.01
 Dado que clico no menu "Cadastros > Usuários ZapSign"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -510,7 +509,7 @@ Dado que clico no menu "Cadastros > Usuários ZapSign"
 Então sistema exibe informações de cadastro de "Usuários ZapSign"
     Wait Until Page Contains    text=Usuários ZapSign
 
-# -07.12.01
+# -08.12.01
 E preencho informações de inserir novo cadastro de Usuários ZapSign
     Wait Until Element Is Visible    ${input_NomeUsuarioZapSign}
     Input Text                       ${input_NomeUsuarioZapSign}    ${nome_pesquisa_GruposConsumidores}
@@ -519,26 +518,26 @@ E preencho informações de inserir novo cadastro de Usuários ZapSign
 Então sistema salva novo cadastro de Usuários ZapSign
     Wait Until Page Contains    text=Registro adicionado com sucesso!
 
-# -07.12.03
+# -08.12.03
 E preencho informações de cadastro editado em Usuários ZapSign
     Wait Until Element Is Visible    ${input_NomeUsuarioZapSign}
     Input Text                       ${input_NomeUsuarioZapSign}    ${nome_pesquisa_GruposConsumidores}
     Input Text                       ${input_TokenUsuarioZapSign}   ${nome_pesquisa_GruposConsumidores}
     Click Element                    ${botao_atualizar_CadastrosPessoas}
 
-# -07.12.05
+# -08.12.05
 Quando clico em "Excluir" Usuário ZapSign
     Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
     Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
-# -07.12.06
+# -08.12.06
 Então sistema exclui item do menu Cadastro > Usuários ZapSign
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
-# -07.12.08
+# -08.12.08
 Então sistema exibe mensagem de erro de Usuários ZapSign
     Wait Until Page Contains    text=Nenhuma fonte de origem encontrado.
 
-# -07.13.01
+# -08.13.01
 Dado que clico no menu "Cadastros > Cargos e Funções"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -547,7 +546,7 @@ Dado que clico no menu "Cadastros > Cargos e Funções"
 Então sistema exibe informações de cadastro de "Cargos e Funções"
     Wait Until Page Contains    text=Cargos e funções
 
-# -07.13.02
+# -08.13.02
 E preencho informações de inserir novo cadastro de Cargos e Funções
     Sleep    2s
     Input Text                       ${input_NomeCargosFuncoes}         ${nome_pesquisa_GruposConsumidores}
@@ -559,28 +558,28 @@ E preencho informações de inserir novo cadastro de Cargos e Funções
 Então sistema salva novo cadastro de Cargos e Funções
     Wait Until Page Contains    text=Registro adicionado com sucesso!
 
-# -07.13.03
+# -08.13.03
 E preencho informações de cadastro editado em Cargos e Funções
     Sleep    2s
     Input Text                       ${input_NomeCargosFuncoes}    ${nome_pesquisa_GruposConsumidores}
     Click Element                    ${Botao_Proximo_Requisicoes}
 
-# -07.13.06
+# -08.13.06
 Então sistema exclui item do menu Cadastro > Cargos e Funções
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
-# -07.13.07
+# -08.13.07
 Então sistema exibe informações com filtro "Lista" em Cargos e Funções
     Sleep    2s
     ${titulo_nome}=    Run Keyword And Return Status    Element Should Be Visible    //th[contains(.,'Cargo/Função')]
     Run Keyword If    ${titulo_nome}    Log    "O Título Nome está visível. Funcionou."
     ...    ELSE    Fail    "O Título Nome não está visível. Falhou."
 
-# -07.13.08
+# -08.13.08
 Então sistema exibe mensagem de erro de Cargos e Funções
     Wait Until Page Contains    text=Nenhum departamento encontrado.
 
-# -07.14.01
+# -08.14.01
 Dado que clico no menu "Cadastros > Links externos"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -589,7 +588,7 @@ Dado que clico no menu "Cadastros > Links externos"
 Então sistema exibe informações de cadastro de "Links externos"
     Wait Until Page Contains    text=Links externos
 
-# -07.14.02
+# -08.14.02
 E preencho informações de busca em links externos
     Wait Until Element Is Visible    ${input_BuscarLinksExternos}
     Input Text                       ${input_BuscarLinksExternos}    123
@@ -607,7 +606,7 @@ E preencho informações de cadastro editado em links externos
     Sleep    1s
     Click Element                    ${botao_Salvar}
 
-# -07.14.03
+# -08.14.03
 E preencho informações de pesquisa em links externos
     Wait Until Element Is Visible    //input[@placeholder='Buscar...']
     Input Text                       //input[@placeholder='Buscar...']    123
@@ -617,25 +616,25 @@ Então sistema exibe informações de pesquisa em links externos
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
 
-# -07.14.04
+# -08.14.04
 Quando clico em "Excluir" em Links externos
     Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}   
     Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
 
-# -07.14.06
+# -08.14.06
 Então sistema exibe informações com filtro "Lista" em Links externos
     Sleep    2s
     ${titulo_nome}=    Run Keyword And Return Status    Element Should Be Visible    //th[contains(.,'Unidade consumidora')]
     Run Keyword If    ${titulo_nome}    Log    "O Título Nome está visível. Funcionou."
     ...    ELSE    Fail    "O Título Nome não está visível. Falhou."
 
-# -07.14.07
+# -08.14.07
 Então sistema exibe mensagem de erro de Links externos
     Wait Until Page Contains    text=Nenhum segmento encontrado.
 
-# -07.14.09
+# -08.14.09
 Quando clico no botão Exportar para Excel em Links externos 
     Wait Until Element Is Visible    ${botao_ExportarExcelLinksExternos}
     Click Element                    ${botao_ExportarExcelLinksExternos}
     
-# -07.14.03
+# -08.14.03

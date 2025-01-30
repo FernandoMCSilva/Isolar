@@ -20,9 +20,10 @@ ${SenhaTecnico}              Isolar@2023
 # Início
 ${MENU_INICIO}               //a[contains(.,'Início')]
 ${MENU_REQUISICOES}          //a[contains(.,'Requisições')]
+${MENU_OBRAS}                //button[contains(.,'Obras')]
 ${MENU_ESTIMATIVA}           //p[contains(.,'Estimativa')]
-${MENU_MISOL}
-${MENU_MONITORAMENTO}
+${MENU_MISOL}                //a[contains(.,'Mi Sol')]
+${MENU_MONITORAMENTO}        //a[contains(.,'Monitoramento')]
 ${MENU_DOCUMENTOS}           (//div[contains(.,'Documentos')])[8]
 ${MENU_CADASTROS}            //p[contains(.,'Cadastros')]
 ${MENU_USUARIOS}             //a[contains(.,'Usuários')]
