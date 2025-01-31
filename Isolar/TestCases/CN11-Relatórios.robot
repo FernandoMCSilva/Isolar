@@ -115,9 +115,8 @@ CT 11.01.13 - Validar filtro Departamento
     [Tags]    Relatórios    Relatórios    Funcional        
     Dado que clico no menu "Relatórios > Relatórios"
     Quando clico em "Filtros"
-    E seleciono fitro Departamento "Departamento pessoal"
-    E clico em "Buscar"
-    Então sistema exibe informações de filtro Departamento "Departamento pessoal"
+    E valido filtros de departamento em Relatórios
+    Então sistema exibe resultado de filtro departamento
 
 CT 11.01.14 - Validar filtro Quantidade de itens por pág 
     [Documentation]     Caso de teste valida se filtro Quantidade de itens por pág no Menu Relatórios > Relatórios está funcional

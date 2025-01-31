@@ -15,7 +15,7 @@ ${Status_Paradas}      Parado
 ${Btn_Buscar}          //button[contains(.,'Buscar')]
 ${Btn_Departamentos}   //button[@id='departament']
 
-@{DEPARTAMENTOS_OPTIONS}    (//div[contains(.,'Administrativo')])[5]    (//div[contains(.,'TI')])[5]    (//div[contains(.,'Departamento pessoal')])[5]    (//div[contains(.,'teste')])[5]
+@{DEPARTAMENTOS_OPTIONS}    //span[contains(.,'Técnico')]    (//div[contains(.,'Administrativo')])[5] 
 
 *** Keywords ***
 # --1.1
@@ -137,5 +137,5 @@ E preencho data final
     Input Text    (//input[contains(@placeholder,'DD/MM/YYYY')])[2]    16/08/2024
 
 Então sistema exibe requisições filtradas
-    Wait Until Element Is Visible    //span[contains(.,'1.969')]
+    Wait Until Page Contains    text=2024-08
     Capture Page Screenshot

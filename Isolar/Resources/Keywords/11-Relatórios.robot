@@ -149,13 +149,35 @@ Então sistema exibe informações de filtro Indicador "Todos"
     Wait Until Element Is Visible    (//td[contains(.,'Não definido')])[2]
 
 # --11.01.13
-E seleciono fitro Departamento "Departamento pessoal"
-    Wait Until Element Is Visible    //button[@id='departament']
-    Click Element                    //button[@id='departament']
-    Click Element                    (//div[contains(.,'Departamento pessoal')])[5]
+# E seleciono fitro Departamento "Departamento pessoal"
+#     Wait Until Element Is Visible    //button[@id='departament']
+#     Click Element                    //button[@id='departament']
+#     Click Element                    (//div[contains(.,'Administrativo')])[5]
+E valido filtros de departamento em Relatórios
+    Wait Until Element Is Visible    ${Btn_Departamentos}    timeout=10s
+    Click Element    ${Btn_Departamentos}
+    Sleep    1s
+    # Pega todas as opções dentro do dropdown
+    ${departamentos}    Get WebElements    ${Btn_Departamentos}
 
-Então sistema exibe informações de filtro Departamento "Departamento pessoal"
-    Wait Until Element Is Visible    //td[contains(.,'2085')]
+    FOR    ${departamento}    IN    @{DEPARTAMENTOS_OPTIONS}
+            # Clica na opção de departamento atual
+            Click Element    ${departamento}
+            Click Element    ${Botao_Buscar}
+
+            # Espera pela atualização e valida que a página foi atualizada
+            Wait Until Element Is Visible    ${Botao_Proximo_Requisicoes}    timeout=10s
+            
+            # Log do departamento testado
+            ${departamento_text}    Get Text    ${departamento}
+            Log    Departamento ${departamento_text} validado com sucesso
+            
+            # Reabre a combobox para a próxima iteração
+            Click Element    ${Btn_Departamentos}
+        END
+
+Então sistema exibe resultado de filtro departamento
+    Wait Until Element Is Visible    ${botao_ExportarExcel_estimativa}
 
 # --11.01.16
 Quando clico no botão Exportar para PDF

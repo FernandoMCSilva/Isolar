@@ -92,8 +92,9 @@ E clico no botao buscar
     Click Element     ${botao_buscar_CadastrosPessoas}
 
 E clico no botão "Continuar" em "Excluir"
-    Sleep    2s
-    Click Element    ${botao_continuar_Excluir}
+    Sleep    1s
+    Wait Until Element Is Visible    ${botao_continuar_Excluir}
+    Click Element                    ${botao_continuar_Excluir}
 
 Então sistema exclui item do menu Cadastro > Pessoas
     Wait Until Page Contains    text=Registro excluído com sucesso!
@@ -154,6 +155,7 @@ E clico no botao "acoes"
     Click Element                    ${botao_acoes_Clientes}
     
 Quando clico em "Editar"
+    Sleep    1s
     Wait Until Element Is Visible    ${botao_Editar_Configuracoes}    timeout=10s
     Click Element                    ${botao_Editar_Configuracoes}
 
@@ -481,6 +483,7 @@ Então sistema exibe mensagem de erro de Empresas
 
 # -08.11.02
 E preencho informações de inserir novo cadastro de Empresas
+    Sleep    2s
     Wait Until Element Is Visible    ${input_NomeInserirEmpresas}
     Input Text                       ${input_NomeInserirEmpresas}    ${nome_pesquisa_GruposConsumidores}
 

@@ -297,7 +297,7 @@ Então sistema exibe informações de filtro Buscar
 Então sistema exibe tela de edição
     Wait Until Page Contains    text=Editar contrato
 
-# -07.02.14
+# -07.02.13
 E clico em Documento original
     Wait Until Element Is Visible    ${botao_DocumentoOriginal}
     Click Element                    ${botao_DocumentoOriginal}
@@ -305,7 +305,7 @@ E clico em Documento original
 Então sistema exibe tela de Documento original
     Wait Until Element Is Not Visible    //h1[contains(.,'Documento')]
 
-# -07.02.15
+# -07.02.14
 E clico em Editar campos
     Wait Until Element Is Visible    ${botao_EditarCampos}
     Click Element                    ${botao_EditarCampos}

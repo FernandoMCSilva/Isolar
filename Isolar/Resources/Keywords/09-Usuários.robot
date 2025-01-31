@@ -38,7 +38,7 @@ E preencho informações de inserir novo cadastro de Usuários
     Input Text                       //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
     Input Text                       //input[@id='email']   ${EmailLocal}   
     Sleep    1s
-    Click Element                    (//button[@type='button'])[9]
+    Click Element                    (//button[@type='button'])[8]
     Click Element                    (//div[contains(.,'Choque Bruto')])[15]
     Sleep    1s
     Click Element                    (//button[@type='button'])[9]

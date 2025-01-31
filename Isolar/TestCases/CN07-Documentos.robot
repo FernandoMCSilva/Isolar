@@ -5,7 +5,6 @@ Test Teardown      Fechar navegador
 Documentation      Modúlo que gerencie as Estimativas cadastradas no sistema.
 
 *** Test Cases ***
-
 CT 07.01.01 - Validar menu Documentos
     [Documentation]     Caso de teste valida se Menu Documentos está funcional
     [Tags]    Documentos    Documentos gerados    Funcional
@@ -245,7 +244,7 @@ CT 07.02.12 - Validar botão Editar
     Quando clico em "Editar"
     Então sistema exibe tela de edição
 
-CT 07.02.14 - Validar botão Documento original em Editar
+CT 07.02.13 - Validar botão Documento original em Editar
     [Documentation]     Caso de teste valida se botão Documento original em Editar está funcional
     [Tags]    Documentos    Assinaturas    Funcional
     Dado que clico no menu "Documentos"
@@ -257,7 +256,7 @@ CT 07.02.14 - Validar botão Documento original em Editar
     E clico em Documento original
     Então sistema exibe tela de Documento original
 
-CT 07.02.15 - Validar botão Editar campos em Editar
+CT 07.02.14 - Validar botão Editar campos em Editar
     [Documentation]     Caso de teste valida se botão Editar campos em Editar está funcional
     [Tags]    Documentos    Assinaturas    Funcional
     Dado que clico no menu "Documentos"
