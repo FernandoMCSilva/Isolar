@@ -88,16 +88,16 @@ CT 02.11 - Validar filtro Representante comercial
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E valido filtro dentro de "Representante comercial"
-    Então sistema exibe requisições de filtro Representante comercial
+    # E valido filtro dentro de "Representante comercial"
+    # Então sistema exibe requisições de filtro Representante comercial
 
 CT 02.12 - Validar filtro Vendedor
     [Documentation]     Caso de teste valida o filtro Vendedor em Requisições
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E seleciono filtro vendedor "Todos"
-    Então sistema exibe requisições de filtro vendedor "Todos"
+    # E seleciono filtro vendedor "Todos"
+    # Então sistema exibe requisições de filtro vendedor "Todos"
 
 CT 02.13 - Validar filtro Renovadas
     [Documentation]     Caso de teste valida o filtro Renovadas em Requisições

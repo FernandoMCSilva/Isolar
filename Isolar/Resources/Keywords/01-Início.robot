@@ -139,3 +139,11 @@ E preencho data final
 Então sistema exibe requisições filtradas
     Wait Until Page Contains    text=2024-08
     Capture Page Screenshot
+
+
+
+
+
+
+
+    

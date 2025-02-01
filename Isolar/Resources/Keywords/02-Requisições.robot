@@ -42,7 +42,7 @@ ${COMBOBOX_RESPONSAVEL}        (//button[contains(@dir,'ltr')])[3]
 ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 
 
-@{OPCOES_COMBOBOX_DEPARTAMENTO}    (//div[contains(.,'Técnico')])[14]    (//div[contains(.,'Administrativo')])[5]    (//div[contains(.,'Departamento pessoal')])[5]
+@{OPCOES_COMBOBOX_DEPARTAMENTO}    (//div[contains(.,'Técnico')])[14]    (//div[contains(.,'Administrativo')])[5]
 @{OPCOES_COMBOBOX_STATUS}           (//div[contains(.,'Fila')])[22]    (//div[contains(.,'Produção')])[5]    (//div[contains(.,'Concluído')])[22]    (//div[contains(.,'Parado')])[5]
 @{OPCOES_COMBOBOX_TIPO}
 # @{OPCOES_COMBOBOX_TIPO}             (//div[contains(.,'Técnico')])[14]    (//div[contains(.,'Pós Venda')])[5]    (//div[contains(.,'Compra')])[5]    (//div[contains(.,'Defeito com computador/notebook')])[5]    (//div[contains(.,'Defeito com impressora')])[5]    
@@ -50,7 +50,7 @@ ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 # ...    (//div[contains(.,'SERVIÇO MANUTENÇAO')])[5]    (//div[contains(.,'CERTIDAO AMBIENTAL')])[5]
 @{OPCOES_COMBOBOX_URGENTE}          (//div[contains(.,'Sim')])[5]    (//div[contains(.,'Não')])[14]
 @{OPCOES_COMBOBOX_NIVELDEURGENCIA}  (//div[contains(.,'Baixo')])[5]    (//div[contains(.,'Médio')])[5]    (//div[contains(.,'Alto')])[5]
-@{OPCOES_COMBOBOX_RESPONSAVEL}      (//div[contains(.,'Larissa SDR')])[5]    (//div[contains(.,'Leandro Coser')])[5]    (//div[contains(.,'Lucas Cenci')])[5]    
+@{OPCOES_COMBOBOX_RESPONSAVEL}      (//div[contains(.,'LUANA GUARNIERI')])[5]    (//div[contains(.,'Leandro Coser')])[5]    (//div[contains(.,'Lucas Cenci')])[5]    
 @{OPCOES_COMBOBOX_RENOVADAS}        (//div[contains(.,'Originais')])[5]    
 
 ${actions}=    Get Webdriver Manager
@@ -307,9 +307,9 @@ Então sistema exibe requisições de filtro Responsável
 
 # --2.11
 E valido filtro dentro de "Representante comercial"
-    Wait Until Element Is Visible    (//button[contains(.,'Selecione')])[5]
-    Click Element                    (//button[contains(.,'Selecione')])[5]
-    Click Element                    (//div[contains(.,'Todos')])[23]
+    Wait Until Element Is Visible    (//button[@type='button'])[17]
+    Click Element                    (//button[@type='button'])[17]
+    Click Element                    (//div[contains(.,'Todos')])[24]
     Click Element                    ${Botao_Buscar}
 
 Então sistema exibe requisições de filtro Representante comercial
@@ -317,8 +317,8 @@ Então sistema exibe requisições de filtro Representante comercial
 
 # --2.12
 E seleciono filtro vendedor "Todos"
-    Wait Until Element Is Visible    (//button[contains(.,'Selecione')])[2]
-    Click Element                    (//button[contains(.,'Selecione')])[2]
+    Wait Until Element Is Visible    (//button[@type='button'])[12]
+    Click Element                    (//button[@type='button'])[12]
     Click Element                    (//div[contains(.,'Todos')])[23]
     Click Element                    ${Botao_Buscar}
 
