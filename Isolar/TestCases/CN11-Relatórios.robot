@@ -34,7 +34,7 @@ CT 11.01.04 - Validar filtro Responsável
     [Tags]    Relatórios    Relatórios    Funcional        
     Dado que clico no menu "Relatórios > Relatórios"
     Quando clico em "Filtros"
-    E seleciono filtro Responsável "suporte"
+    E seleciono filtro Responsável "Fernando"
     E clico em "Buscar"
     Então sistema exibe informações de filtro Responsável "suporte"
 
@@ -125,7 +125,7 @@ CT 11.01.14 - Validar filtro Quantidade de itens por pág
     Quando clico em "Filtros"
     Quando clico em "Quantidade de itens por pág"
     E preencho informações no campo quantidade
-    Então sistema exibe informações de acordo com quantidade preenchida
+    Então sistema exibe resultado de Quantidade de itens por pág 
 
 CT 11.01.15 - Validar exportação para Excel 
     [Documentation]     Caso de teste valida se botão Exportar para Excel no Menu Relatórios > Relatórios está funcional

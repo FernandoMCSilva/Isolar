@@ -15,7 +15,8 @@ ${Botao_Buscar}                         //button[contains(.,'Buscar')]
 ${Botao_Editar}                         (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')])[1]
 ${Botao_Visualizar}                     (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')])[2]
 ${Botao_Acoes}                          (//button[@data-state='closed'])[19]
-${Botao_Historico}                      (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10')])[3]
+${Botao_Historico}                      //button[contains(@class, 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm')]
+
 ${Botao_Comentarios}                    (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[2]
 ${Botao_Acoes_Requisicoes}              (//button[@data-state='closed'])[20]
 ${Botao_Renovar}                        //button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 w-10 bg-green-500 hover:bg-green-400']
@@ -53,7 +54,7 @@ ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 @{OPCOES_COMBOBOX_RESPONSAVEL}      (//div[contains(.,'LUANA GUARNIERI')])[5]    (//div[contains(.,'Leandro Coser')])[5]    (//div[contains(.,'Lucas Cenci')])[5]    
 @{OPCOES_COMBOBOX_RENOVADAS}        (//div[contains(.,'Originais')])[5]    
 
-${actions}=    Get Webdriver Manager
+# ${actions}=    Get Webdriver Manager
 *** Keywords ***
 # --2.1
 Dado que clico no menu "Requisições"
@@ -246,26 +247,27 @@ E preencho informações de Data de entrega
     Wait Until Element Is Visible    //button[@id='data_entrega']
     Click Element                    //button[@id='data_entrega']
     Wait Until Element Is Visible    (//button[@type='button'])[43]
-    Click Element                    (//button[@type='button'])[43]
-    Click Element                    (//button[@type='button'])[43]
-    Click Element                    (//button[@type='button'])[43]
-    Click Element                    (//button[@type='button'])[43]
+    FOR    ${i}    IN RANGE    5
+        Click Element    (//button[@type='button'])[43]
+        Sleep    0.5s
+    END
+    Sleep    2s
     Click Element                    (//button[contains(.,'1')])[1]
     Click Element                    //button[contains(.,'31')]
     Click Element                    ${Botao_Buscar} 
 
 Então sistema exibe requisições do filtro Data de entrega
     Sleep    1s
-    Wait Until Element Is Visible    //td[contains(.,'1827')]
+    Wait Until Element Is Visible    (//td[contains(.,'03/09/2024')])[1]
 # --2.9
 E preencho informações de Data de criação
     Wait Until Element Is Visible      //button[@id='data_criacao']
     Click Element                      //button[@id='data_criacao']
 
-    Click Element                    (//button[@type='button'])[43]
-    Click Element                    (//button[@type='button'])[43]
-    Click Element                    (//button[@type='button'])[43]
-    Click Element                    (//button[@type='button'])[43]
+    FOR     ${i}    IN RANGE    5
+    Click Element    (//button[@type='button'])[43]
+    Sleep    0.5s
+    END
 
     Click Element                      (//button[contains(.,'1')])[1]
     Click Element                      //button[contains(.,'31')]
@@ -307,13 +309,13 @@ Então sistema exibe requisições de filtro Responsável
 
 # --2.11
 E valido filtro dentro de "Representante comercial"
-    Wait Until Element Is Visible    (//button[@type='button'])[17]
-    Click Element                    (//button[@type='button'])[17]
-    Click Element                    (//div[contains(.,'Todos')])[24]
+    Wait Until Element Is Visible    (//button[contains(@type,'button')])[17]
+    Click Element                    (//button[contains(@type,'button')])[17]
+    Click Element                    (//div[contains(.,'Todos')])[23]
     Click Element                    ${Botao_Buscar}
 
 Então sistema exibe requisições de filtro Representante comercial
-    Wait Until Page Contains    text=1778
+    Wait Until Page Contains    text=91
 
 # --2.12
 E seleciono filtro vendedor "Todos"
@@ -323,14 +325,9 @@ E seleciono filtro vendedor "Todos"
     Click Element                    ${Botao_Buscar}
 
 Então sistema exibe requisições de filtro vendedor "Todos"
-    Wait Until Element Is Visible    (//div[contains(.,'Produção')])[10]
+    Wait Until Page Contains    text=91
 # --2.13
 E valido todos os filtros dentro de "Renovadas"
-    # Wait Until Element Is Visible    //button[@id='renovada']
-    # Click Element                    //button[@id='renovada']
-    # Click Element                    (//div[contains(.,'Renovadas')])[19]
-    # Click Element                    ${Botao_Buscar}
-
     Wait Until Element Is Visible    ${COMBOBOX_RENOVADAS}    timeout=10s
     Click Element    ${COMBOBOX_RENOVADAS}
     # Pega todas as opções dentro do dropdown

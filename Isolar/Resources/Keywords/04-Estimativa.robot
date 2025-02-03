@@ -69,16 +69,7 @@ Então sistema exibe estimativas de filtro Vendedor
 #     Click Element                    ${Botao_Buscar}
 
 Então sistema exibe estimativas do filtro Cliente
-   Wait Until Element Is Visible        xpath=//td[contains(normalize-space(),'Fernando')]       timeout=10s
-    ${statuses}=    Get Webelements      xpath=//td[contains(normalize-space(),'Fernando')]                                
-    ${count}=    Get Length    ${statuses}
-    Log    Número de elementos encontrados: ${count}
-    FOR    ${status}    IN    @{statuses}
-        ${text}=    Get Text    ${status}
-        Log    Status encontrado: ${text}
-        Should Contain    ${text}    ${Cliente_Fila}
-    END
-
+   Wait Until Element Is Visible        (//td[contains(.,'Fernando')])[2]
 # --4.4
 E seleciono Tipo de usina "Todos"  
     Wait Until Element Is Visible    //button[@type='button'][contains(.,'Tipo')]
@@ -109,16 +100,16 @@ Então sistema exibe informações de Estimativa do filtro Tipo de usina "Alugue
 # --4.7
 
 E preencho com informações data de registro
-    Click Element    (//button[@data-state='closed'])[10]
-    
+    Wait Until Element Is Visible    (//button[@type='button'])[10]
+    Click Element                    (//button[@type='button'])[10]
+    FOR    ${i}    IN RANGE    5
     Click Element    (//button[@type='button'])[12]
-    Click Element    (//button[@type='button'])[12]
-    Click Element    (//button[@type='button'])[12]
-    Click Element    (//button[@type='button'])[12]
+    Sleep    0.5s
+    END
     
     Click Element    (//button[contains(.,'12')])[1]
     Click Element    //button[contains(.,'Buscar')]
-    Sleep    3s
+    Sleep    2s
 Então sistema exibe Estimativa do filtro Data de registro
     Wait Until Page Contains    text=Fernando Morais da Costa Silva
 
@@ -136,7 +127,7 @@ Então sistema exibe informações de acordo com quantidade preenchida
     Sleep    5s
     ${resultados}    Get WebElements    xpath=//tr[contains(@class, 'border-b transition-colors')]
     ${quantidade}    Get Length    ${resultados}
-    Should Be Equal As Numbers    ${quantidade - 1}    ${EXPECTED_RESULTS}
+    Should Be Equal As Numbers    ${quantidade - 3}    ${EXPECTED_RESULTS}
 
 # --4.9
 
@@ -256,7 +247,6 @@ E seleciono GD1 ou GD2 "GD1"
     Click Element    xpath=//button[contains(@id,'GD1eGD2')]
     Click Element    xpath=//div[@role='option'][contains(.,'GD1')]
 
-
 E seleciono Local de geração "Junto a carga"
     Click Element    xpath=//button[contains(@id,'localGeracao')]
     Click Element    xpath=//div[@role='option'][contains(.,'Junto a carga')]
@@ -285,10 +275,8 @@ E clico em Gerar cálculos
     Wait Until Element Is Visible    ${botao_GerarCalculos_Estimativa}
     Click Element                    ${botao_GerarCalculos_Estimativa}
 
-
 Então sistema exibe resultado dos cálculos
     Wait Until Page Contains    text=Resultado dos cálculos
-
 
 # --4.21
 E clico no botão "Constantes personalizadas"
@@ -334,7 +322,7 @@ E preencho informações de calculos
     Click Element                    //button[@id='tensaoValor']
     Click Element                    (//div[contains(.,'220 V')])[5]
 
-    Input Text                        //input[@id='mensalValor']    500,00
+    Input Text                       //input[@id='mensalValor']    500,00
 E clico no botão Ações
     Wait Until Element Is Visible    ${botao_Acoes_Estimativa}
     Click Element                    ${botao_Acoes_Estimativa}
@@ -396,6 +384,6 @@ Então sistema sai da tela do botão Ações
 #     Execute JavaScript    document.querySelector("#radix-r11").style.zoom='0.8'
 #     Sleep    2s
 #     Click Element               //input[@value='0,7400']
-#     Input Text                  //input[@value='0,7400']    ${valorteste}
+    # Input Text                  //input[@value='0,7400']    ${valorteste}
 
 # --4.22

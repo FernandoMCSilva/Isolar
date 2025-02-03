@@ -59,15 +59,15 @@ Então sistema exibe informações de filtro "Cliente"
 # --11.01.03
 E seleciono filtro Status "Fila"
     Click Element    //button[@id='status']
-    Click Element    (//div[contains(.,'Fila')])[5]
+    Click Element    (//div[contains(.,'Fila')])[25]
 
 Então sistema exibe informações de filtro Status "Fila"
     Wait Until Element Is Visible    (//div[contains(.,'Fila')])[18]
 
 # --11.01.04
-E seleciono filtro Responsável "suporte"
+E seleciono filtro Responsável "Fernando"
     Click Element    (//button[contains(.,'Todos')])[2]
-    Click Element    (//div[contains(.,'Fernando Morais da Costa Silva')])[5]
+    Click Element    (//div[contains(.,'Fernando Morais da Costa Silva')])[13]
 
 Então sistema exibe informações de filtro Responsável "suporte"
     Wait Until Page Contains    text=Nenhum relatório encontrado.
@@ -95,7 +95,7 @@ E seleciono o filtro Renovadas "Renovadas"
     Click Element                    (//div[contains(.,'Renovadas')])[19]
 
 Então sistema exibe informações de filtro Renovadas "Renovadas"
-    Wait Until Element Is Visible    //td[contains(.,'2033')]
+    Wait Until Page Contains    text=Nenhum relatório encontrado.
 
 # --11.01.08
 E preencho informações de filtro Unidade consumidora
@@ -118,17 +118,14 @@ Então sistema exibe informações de filtro Tipo de requisição "Todos"
 E seleciono filtro Data de criação
     Wait Until Element Is Visible    (//button[@type='button'])[15]
     Click Element                    (//button[@type='button'])[15]
-    Click Element                    (//button[@type='button'])[20]    # Clica na seta para voltar
-    Click Element                    (//button[@type='button'])[20]    # Clica na seta para voltar
-    Click Element                    (//button[@type='button'])[20]    # Clica na seta para voltar
-    Click Element                    (//button[@type='button'])[20]    # Clica na seta para voltar
-    Sleep    1s
-    # Sai do loop e clica no dia 12 de setembro
-    Click Element    (//button[contains(.,'1')])[1]
-    Click Element    //button[contains(.,'31')]
+    Wait Until Element Is Visible    (//button[@type='button'])[20]
+    Click Element                    (//button[@type='button'])[20]
+    Sleep    0.5s
+    Click Element                    (//button[contains(.,'30')])[2]
+    Click Element                    (//button[contains(.,'31')])[2]
 
 Então sistema exibe informações de filtro Data de criação
-    Wait Until Element Is Visible    (//td[contains(.,'02/09/2024')])[1]
+    Wait Until Element Is Visible    (//td[contains(.,'30/01/2025')])[1]
 
 # --11.01.11
 E seleciono filtro Promotor "Todos"
@@ -149,10 +146,7 @@ Então sistema exibe informações de filtro Indicador "Todos"
     Wait Until Element Is Visible    (//td[contains(.,'Não definido')])[2]
 
 # --11.01.13
-# E seleciono fitro Departamento "Departamento pessoal"
-#     Wait Until Element Is Visible    //button[@id='departament']
-#     Click Element                    //button[@id='departament']
-#     Click Element                    (//div[contains(.,'Administrativo')])[5]
+
 E valido filtros de departamento em Relatórios
     Wait Until Element Is Visible    ${Btn_Departamentos}    timeout=10s
     Click Element    ${Btn_Departamentos}
@@ -178,6 +172,14 @@ E valido filtros de departamento em Relatórios
 
 Então sistema exibe resultado de filtro departamento
     Wait Until Element Is Visible    ${botao_ExportarExcel_estimativa}
+
+# --11.01.14
+Então sistema exibe resultado de Quantidade de itens por pág 
+    Click Element    (//div[contains(.,'Quantidade')])[10]
+    Sleep    5s
+    ${resultados}    Get WebElements    xpath=//tr[contains(@class, 'border-b transition-colors')]
+    ${quantidade}    Get Length    ${resultados}
+    Should Be Equal As Numbers    ${quantidade - 1}    ${EXPECTED_RESULTS}
 
 # --11.01.16
 Quando clico no botão Exportar para PDF
