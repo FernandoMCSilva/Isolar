@@ -208,7 +208,7 @@ Dado que clico no menu "Relatórios > Homologatórias"
     Click Element                    ${MENU_RELATORIOS}
     Wait Until Element Is Visible    ${Menu_Homologatorias}
     Click Element                    ${Menu_Homologatorias}
-
+    Sleep    1.5s
 # --11.02.02
 E preencho informação de filtro resolução ANEEL
     Wait Until Element Is Visible    ${filtro_ANEEL}

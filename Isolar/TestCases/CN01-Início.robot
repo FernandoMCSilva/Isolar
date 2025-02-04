@@ -11,7 +11,6 @@ CT 01.01 - Validar menu Início
     Dado que clico no menu "Início"
     Então sistema exibe informações de requisições gerais
 
-
 CT 01.02 - Validar requisições em Fila
     [Documentation]     Caso de teste valida todas as requisições que estão com status Em Fila
     [Tags]    Início    Funcional        

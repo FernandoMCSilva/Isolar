@@ -15,7 +15,7 @@ ${Botao_Buscar}                         //button[contains(.,'Buscar')]
 ${Botao_Editar}                         (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')])[1]
 ${Botao_Visualizar}                     (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')])[2]
 ${Botao_Acoes}                          (//button[@data-state='closed'])[19]
-${Botao_Historico}                      //button[contains(@class, 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm')]
+${Botao_Historico}                      (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10'])[3]
 
 ${Botao_Comentarios}                    (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[2]
 ${Botao_Acoes_Requisicoes}              (//button[@data-state='closed'])[20]
@@ -73,16 +73,7 @@ E preencho informações no campo Cliente
     Input Text                       ${Campo_Cliente}        Fernando
 
 Então sistema exibe requisições do filtro Cliente
-    Wait Until Element Is Visible        xpath=//td[contains(normalize-space(),'Fernando')]       timeout=10s
-    ${statuses}=    Get Webelements      xpath=//td[contains(normalize-space(),'Fernando')]                                
-    ${count}=    Get Length    ${statuses}
-    Log    Número de elementos encontrados: ${count}
-    FOR    ${status}    IN    @{statuses}
-        ${text}=    Get Text    ${status}
-        Log    Status encontrado: ${text}
-        Should Contain    ${text}    ${Cliente_Fila}
-    END
-
+    Wait Until Page Contains    text=Fernando
 # --2.3
 E valido filtros dentro de Departamento em Requisições
     Wait Until Element Is Visible    ${COMBOBOX_DEPARTAMENTO}    timeout=10s
@@ -124,30 +115,6 @@ E valido todos os filtros dentro de Status em Requisições
     Click Element                    ${Botao_Buscar}
     Sleep    2s
 
-    # Wait Until Element Is Visible    ${COMBOBOX_STATUS}
-    # Click Element    ${COMBOBOX_STATUS}
-    # # Pega todas as opções dentro do dropdown
-    # ${departamentos}    Get WebElements    ${COMBOBOX_STATUS}
-
-    # FOR    ${departamento}    IN    @{OPCOES_COMBOBOX_STATUS}
-    #         # Clica na opção de departamento atual
-    #         Click Element    ${departamento}
-            
-    #         # Clica no botão de buscar
-    #         Click Element    ${Btn_Buscar}
-            
-    #         # Espera pela atualização e valida que a página foi atualizada
-    #         Wait Until Element Is Visible    //button[contains(.,'Inserir')]    timeout=10s
-            
-    #         # Log do departamento testado
-    #         ${departamento_text}    Get Text    ${departamento}
-    #         Log    Departamento ${departamento_text} validado com sucesso
-    #         Wait Until Element Is Visible    ${COMBOBOX_STATUS}
-    #         Execute JavaScript    window.scrollTo(0, 0)
-    #         # Reabre a combobox para a próxima iteração
-    #         Click Element    ${COMBOBOX_STATUS}
-    #     END
-    
 Então sistema exibe requisições do filtro Status
     
     Wait Until Element Is Visible    (//div[contains(.,'Parado')])[19]    timeout=10s

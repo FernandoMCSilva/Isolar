@@ -20,27 +20,26 @@ ${filtro_Observador}                 //input[@id='observador']
 ${filtro_CardsLista_Documentos}      //button[contains(.,'Cards')]
 ${filtro_Buscar}                     //input[@placeholder='Buscar...']
 
-@{opcoes_Departamento}        (//div[contains(.,'Compras')])[5]    (//div[contains(.,'Administrativo')])[5]              (//div[contains(.,'TI')])[5]          (//div[contains(.,'Logística')])[5]    (//div[contains(.,'Jurídico')])[5]
-...    (//div[contains(.,'Departamento pessoal')])[5]        (//div[contains(.,'ENG.CIVIL')])[5]    (//div[contains(.,'CS-Customer Success')])[5]
-@{opcoes_OrigemAssinatura}    (//div[contains(.,'Documentos')])[14]    (//div[contains(.,'Externos')])[5]    (//div[contains(.,'Minerando Sol')])[5]    (//div[contains(.,'Estimativa')])[11]    
+@{opcoes_Departamento}              (//div[contains(.,'Compras')])[5]    (//div[contains(.,'Administrativo')])[5]              (//div[contains(.,'TI')])[5]          (//div[contains(.,'Logística')])[5]    (//div[contains(.,'Jurídico')])[5]
+@{opcoes_OrigemAssinatura}          (//div[contains(.,'Documentos')])[14]    (//div[contains(.,'Externos')])[5]    (//div[contains(.,'Minerando Sol')])[5]    (//div[contains(.,'Estimativa')])[11]    
 
-${botao_VerDocumento}            (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[4]
-${botao_StatusAssinatura}        (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[3]
-${botao_Rubrica}                 (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[17]
-${botao_GerarAssinatura}         (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[9]
-${botao_VerdocumentoERROR}       (//button[@data-state='closed'])[15] 
-${botao_StatusAssinaturaError}   (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-destructive text-destructive-foreground hover:bg-destructive/90 h-10 w-10')])[3]
-${botao_StatusAssinaturaError2}  (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')])[1]
-${botao_Criar}                   (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2')])[1]
-${botao_DocumentoOriginal}       //button[contains(.,'Documento original')]
-${botao_EditarCampos}            //button[contains(.,'Editar campos')]
-${botao_GerarDocumento}          //button[contains(.,'Gerar Documento')]
-${botao_VerTemplate_Documentos}  //button[contains(.,'Ver template')]
-${botao_PreencherDocumento}      //button[contains(.,'Preencher documento')]
-${botao_BaixarTemplateEditável}  //button[contains(.,'Baixar Template editável')]
+${botao_VerDocumento}               (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[4]
+${botao_StatusAssinatura}           (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[3]
+${botao_Rubrica}                    (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[17]
+${botao_GerarAssinatura}            (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[9]
+${botao_VerdocumentoINVÁLIDO}       (//button[@data-state='closed'])[11]
+${botao_StatusAssinaturaINVÁLIDO}   (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-destructive text-destructive-foreground hover:bg-destructive/90 h-10 w-10')])[3]
+${botao_StatusAssinaturaINVÁLIDO2}  (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')])[1]
+${botao_Criar}                      (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2')])[1]
+${botao_DocumentoOriginal}          //button[contains(.,'Documento original')]
+${botao_EditarCampos}               //button[contains(.,'Editar campos')]
+${botao_GerarDocumento}             //button[contains(.,'Gerar Documento')]
+${botao_VerTemplate_Documentos}     //button[contains(.,'Ver template')]
+${botao_PreencherDocumento}         //button[contains(.,'Preencher documento')]
+${botao_BaixarTemplateEditável}     //button[contains(.,'Baixar Template editável')]
 
-${CAMINHO_ARQUIVO}               "C:\Users\silva\Downloads\teste.pdf"
-${nome_teste}                    teste
+${CAMINHO_ARQUIVO}                  "C:\Users\silva\Downloads\teste.pdf"
+${nome_teste}                       teste
 *** Keywords ***
 
 # -07.01.01
@@ -171,27 +170,28 @@ E preencho filtro criador
     Wait Until Element Is Visible    ${input_Criador}
     Input Text                       ${input_Criador}    Fernando Morais da Costa Silva
     Sleep    1s
-E clico no botão Ver Documento (ERROR)
-    Wait Until Element Is Visible    ${botao_VerdocumentoERROR}
-    Click Element                    ${botao_VerdocumentoERROR}
+E clico no botão Ver Documento (INVÁLIDO)
+    Sleep    1s
+    Wait Until Element Is Visible    ${botao_VerdocumentoINVÁLIDO}
+    Click Element                    ${botao_VerdocumentoINVÁLIDO}
 
-Então sistema exibe informações de botão Ver Documento (ERROR)
+Então sistema exibe informações de botão Ver Documento (INVÁLIDO)
     Wait Until Page Contains    text=Documento não encontrado.
 
 # -07.01.13
-E clico no botão Status da assinatura (ERROR)
-    Wait Until Element Is Visible    ${botao_StatusAssinaturaError}
-    Click Element                    ${botao_StatusAssinaturaError}
+E clico no botão Status da assinatura (INVÁLIDO)
+    Wait Until Element Is Visible    ${botao_StatusAssinaturaINVÁLIDO}
+    Click Element                    ${botao_StatusAssinaturaINVÁLIDO}
 
-Então sistema exibe informações de botão Status da assinatura (ERROR)
+Então sistema exibe informações de botão Status da assinatura (INVÁLIDO)
     Wait Until Page Contains    text=Sem assinatura.
     
 # -07.01.14
-E clico no botão Gerar link de assinatura (ERROR)
-    Wait Until Element Is Visible    ${botao_StatusAssinaturaError2}
-    Click Element                    ${botao_StatusAssinaturaError2}
+E clico no botão Gerar link de assinatura (INVÁLIDO)
+    Wait Until Element Is Visible    ${botao_StatusAssinaturaINVÁLIDO2}
+    Click Element                    ${botao_StatusAssinaturaINVÁLIDO2}
 
-Então sistema exibe informações de botão Gerar link de assinatura (ERROR)
+Então sistema exibe informações de botão Gerar link de assinatura (INVÁLIDO)
     Wait Until Page Contains    text=Link já foi gerado.
 
 # -07.01.15

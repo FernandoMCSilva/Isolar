@@ -101,35 +101,35 @@ CT 07.01.11 - Validar botão Anterior
     E clico em "Anterior"
     Então sistema exibe informações anteriores 
 
-CT 07.01.12 - Validar botão Ver Documento (ERROR)
-    [Documentation]     Caso de teste valida se botão Ver Documento (ERROR) está funcional
+CT 07.01.12 - Validar botão Ver Documento
+    [Documentation]     Caso de teste valida se botão Ver Documento (INVÁLIDO) está funcional
     [Tags]    Documentos    Documentos gerados    Funcional
     Dado que clico no menu "Documentos"
     Clico no menu "Documentos geradados"
     Quando clico em "Filtros"
     E preencho filtro criador
-    E clico no botão Ver Documento (ERROR)
-    Então sistema exibe informações de botão Ver Documento (ERROR)
+    E clico no botão Ver Documento (INVÁLIDO)
+    Então sistema exibe informações de botão Ver Documento (INVÁLIDO)
 
-CT 07.01.13 - Validar botão Status da assinatura (ERROR)
-    [Documentation]     Caso de teste valida se botão Status da assinatura (ERROR) está funcional
+CT 07.01.13 - Validar botão Status da assinatura
+    [Documentation]     Caso de teste valida se botão Status da assinatura (INVÁLIDO) está funcional
     [Tags]    Documentos    Documentos gerados    Funcional
     Dado que clico no menu "Documentos"
     Clico no menu "Documentos geradados"
     Quando clico em "Filtros"
     E preencho filtro criador
-    E clico no botão Status da assinatura (ERROR)
-    Então sistema exibe informações de botão Status da assinatura (ERROR)
+    E clico no botão Status da assinatura (INVÁLIDO)
+    Então sistema exibe informações de botão Status da assinatura (INVÁLIDO)
 
-CT 07.01.14 - Validar botão Gerar link de assinatura (ERROR)
-    [Documentation]     Caso de teste valida se botão Gerar link de assinatura (ERROR) está funcional
+CT 07.01.14 - Validar botão Gerar link de assinatura
+    [Documentation]     Caso de teste valida se botão Gerar link de assinatura (INVÁLIDO) está funcional
     [Tags]    Documentos    Documentos gerados    Funcional
     Dado que clico no menu "Documentos"
     Clico no menu "Documentos geradados"
     Quando clico em "Filtros"
     E preencho filtro criador
-    E clico no botão Gerar link de assinatura (ERROR)
-    Então sistema exibe informações de botão Gerar link de assinatura (ERROR)
+    E clico no botão Gerar link de assinatura (INVÁLIDO)
+    Então sistema exibe informações de botão Gerar link de assinatura (INVÁLIDO)
 
 CT 07.02.01 - Validar menu Assinaturas
     [Documentation]     Caso de teste valida se menu Assinaturas está funcional

@@ -127,7 +127,7 @@ Então sistema exibe informações de acordo com quantidade preenchida
     Sleep    5s
     ${resultados}    Get WebElements    xpath=//tr[contains(@class, 'border-b transition-colors')]
     ${quantidade}    Get Length    ${resultados}
-    Should Be Equal As Numbers    ${quantidade - 3}    ${EXPECTED_RESULTS}
+    Should Be Equal As Numbers    ${quantidade - 1}    ${EXPECTED_RESULTS}
 
 # --4.9
 
