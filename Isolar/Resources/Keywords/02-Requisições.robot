@@ -537,6 +537,7 @@ E preencho informações de cadastro de requisição "Departamento Pessoal"
 E clico no botão "Excluir requisição"
     Sleep    2s
     Wait Until Page Contains         text=Editar requisição
+    Wait Until Page Contains         text=B3 (teste)
     Execute JavaScript               window.scrollTo(0, 0)
     Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}
     Click Element                    ${Botao_Excluir_Requisicoes}

@@ -59,7 +59,7 @@ Então sistema exibe informações de filtro "Cliente"
 # --11.01.03
 E seleciono filtro Status "Fila"
     Click Element    //button[@id='status']
-    Click Element    (//div[contains(.,'Fila')])[25]
+    Click Element    (//div[contains(.,'Fila')])[5]
 
 Então sistema exibe informações de filtro Status "Fila"
     Wait Until Element Is Visible    (//div[contains(.,'Fila')])[18]
@@ -67,7 +67,7 @@ Então sistema exibe informações de filtro Status "Fila"
 # --11.01.04
 E seleciono filtro Responsável "Fernando"
     Click Element    (//button[contains(.,'Todos')])[2]
-    Click Element    (//div[contains(.,'Fernando Morais da Costa Silva')])[13]
+    Click Element    (//div[contains(.,'Fernando Morais da Costa Silva')])[5]
 
 Então sistema exibe informações de filtro Responsável "suporte"
     Wait Until Page Contains    text=Nenhum relatório encontrado.
@@ -83,7 +83,8 @@ Então sistema exibe informações de filtro Vendedor Técnico "Todos"
 E seleciono filtro Representante comercial "B3 (teste)"
     Wait Until Element Is Visible    (//button[contains(.,'Todos')])[4]
     Click Element                    (//button[contains(.,'Todos')])[4]
-    Click Element                    (//div[contains(.,'B3 (teste)')])[5]
+    Click Element                    (//div[contains(.,'teste123')])[5]
+    # Click Element                    (//div[contains(.,'B3 (teste)')])[5]
 
 Então sistema exibe informações de filtro Representante comercial "B3 (teste)"
     Wait Until Page Contains    text=Nenhum relatório encontrado.
@@ -95,7 +96,7 @@ E seleciono o filtro Renovadas "Renovadas"
     Click Element                    (//div[contains(.,'Renovadas')])[19]
 
 Então sistema exibe informações de filtro Renovadas "Renovadas"
-    Wait Until Page Contains    text=Nenhum relatório encontrado.
+    Wait Until Page Contains    text=2062
 
 # --11.01.08
 E preencho informações de filtro Unidade consumidora

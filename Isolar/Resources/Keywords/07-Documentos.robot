@@ -101,6 +101,7 @@ Então sistema exibe informações de filtro Departamento
 
 # -07.01.05
 E seleciono opção de filtro Data de registro
+    Sleep    2s
     Click Element                     ${filtro_DataRegistro_Documentos}
     Wait Until Element Is Visible     (//button[@type='button'])[12]
     Click Element                     (//button[@type='button'])[12]    # Clica na seta para voltar

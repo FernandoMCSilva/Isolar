@@ -1,6 +1,6 @@
 *** Settings ***
 Resource           ../Resources/Main.robot
-Test Setup         Dado que acesse a Isolar e logue no sistema
+Test Setup         Dado que acesse a Isolar e logue no sistema com Oseias
 Test Teardown      Fechar navegador
 Documentation      Modúlo que Gerencie as requisições do tipo Obras cadastradas no sistema.
 
@@ -127,6 +127,9 @@ CT 03.02.08 - Validar filtro Data de criação
 #     Então sistema exibe resultado do filtro em Obras
 
 
-
-
+# Inserir 
+# Editar
+# Excluir
+# Comentários
+# Visualizar
 

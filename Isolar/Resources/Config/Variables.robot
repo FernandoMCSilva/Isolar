@@ -4,7 +4,7 @@ ${URLISO}                   https://teste.grupoiso.com.br/
 # ...    https://validacao.grupoiso.com.br/
 # ...    https://sistemas.grupoiso.com.br/
 
-${BROWSER}                  chrome
+${BROWSER}                  edge
 ${LOGO}                     //img[@alt='Logo Grupo ISO']
 
 # suporte@gerenciadores.com
@@ -12,6 +12,8 @@ ${LOGO}                     //img[@alt='Logo Grupo ISO']
 
 ${EmailAdmin}                qa@grupoiso.com.br
 ${SenhaAdmin}                Gabriela16+
+${EmailOseias}               oseias@email.com
+${SenhaOseias}               Isolar@2024
 ${EmailVendedor}             joice@isolarenergy.com.br
 ${SenhaVendedor}             Isolar@2023
 ${EmailTecnico}              projetos6@isolarenergy.com.br

@@ -123,7 +123,8 @@ Então sistema exibe informações com filtro "Lista"
 
 E preencho informações de pesquisa
     Input Text    //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
-
+    Wait Until Page Contains    text=B3 (teste)
+    
 Então sistema exibe informações de pesquisa
      ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
