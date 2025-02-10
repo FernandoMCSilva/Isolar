@@ -18,12 +18,12 @@ ${Botao_Acoes}                          (//button[@data-state='closed'])[19]
 ${Botao_Historico}                      (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10'])[3]
 
 ${Botao_Comentarios}                    (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[2]
-${Botao_Acoes_Requisicoes}              (//button[@data-state='closed'])[20]
+${Botao_Acoes_Requisicoes}              (//button[@data-state='closed'])[21]
 ${Botao_Renovar}                        //button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 w-10 bg-green-500 hover:bg-green-400']
 ${Botao_Inserir_Requisicoes}            //button[contains(.,'Inserir')]
 ${Botao_Proximo_Requisicoes}            //button[contains(.,'Próximo')]
 ${Botao_Excluir_Requisicoes}            //button[contains(.,'Excluir requisição')]
-${Botao_MudarStatusRequisicao}          (//button[@data-state='closed'])[19]
+${Botao_MudarStatusRequisicao}          (//button[@data-state='closed'])[20]
 
 ${input_nomecompleto_Requisicoes}       //div[@class='select__value-container css-hlgwow']
 ${input_telefone_Requisicoes}           //input[@id='telefone']
@@ -37,7 +37,7 @@ ${Tipo_Fila}               Técnico
 ${COMBOBOX_DEPARTAMENTO}       //button[contains(@id,'departament')]
 ${COMBOBOX_STATUS}             //button[contains(@id,'status')]
 ${COMBOBOX_TIPO}               //button[@id='tipo']
-${COMBOBOX_URGENTE}            //button[contains(@id,'urgente')]
+${COMBOBOX_URGENTE}            //button[contains(@id,'urgencia')]
 ${COMBOBOX_NIVEL_DE_URGENCIA}  //button[contains(@id,'nivel_urgencia')]
 ${COMBOBOX_RESPONSAVEL}        (//button[contains(@dir,'ltr')])[3]
 ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
@@ -213,9 +213,9 @@ E valido todos os filtros de Nivel de urgencia em Requisições
 E preencho informações de Data de entrega
     Wait Until Element Is Visible    //button[@id='data_entrega']
     Click Element                    //button[@id='data_entrega']
-    Wait Until Element Is Visible    (//button[@type='button'])[43]
+    Wait Until Element Is Visible    (//button[@type='button'])[44]
     FOR    ${i}    IN RANGE    5
-        Click Element    (//button[@type='button'])[43]
+        Click Element    (//button[@type='button'])[44]
         Sleep    0.5s
     END
     Sleep    2s
@@ -232,7 +232,7 @@ E preencho informações de Data de criação
     Click Element                      //button[@id='data_criacao']
 
     FOR     ${i}    IN RANGE    5
-    Click Element    (//button[@type='button'])[43]
+    Click Element    (//button[@type='button'])[44]
     Sleep    0.5s
     END
 
@@ -276,8 +276,8 @@ Então sistema exibe requisições de filtro Responsável
 
 # --2.11
 E valido filtro dentro de "Representante comercial"
-    Wait Until Element Is Visible    (//button[contains(@type,'button')])[17]
-    Click Element                    (//button[contains(@type,'button')])[17]
+    Wait Until Element Is Visible    (//button[contains(@type,'button')])[18]
+    Click Element                    (//button[contains(@type,'button')])[18]
     Click Element                    (//div[contains(.,'Todos')])[23]
     Click Element                    ${Botao_Buscar}
 
@@ -488,7 +488,7 @@ E preencho informações de comentário
     Click Element    (//button[@data-state='closed'])[25]
     Click Element    (//button[@data-state='closed'])[26]
     Input Text       //div[contains(@contenteditable,'true')]    ${nome_pesquisa_GruposConsumidores}
-    Click Element    (//button[@data-state='closed'])[39]
+    Click Element    (//button[@data-state='closed'])[40]
 
 Então sistema exibe mensagem de confirmação
     Wait Until Page Contains    text=Mensagem enviada com sucesso!

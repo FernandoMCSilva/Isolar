@@ -59,13 +59,16 @@ E valido filtros dentro de Departamento em Obras > Requisições
     Click Element                    ${Botao_Buscar}
 
 Então sistema exibe resultado de Departamento
-    Wait Until Element Is Visible    (//td[contains(.,'Não definido')])[1]
+    Wait Until Element Is Visible    //td[contains(.,'2085')]
 
 # -3.2.4
 E valido todos os filtros dentro de Tipo em Obras > Requisições
     Wait Until Element Is Visible    ${COMBOBOX_TIPO}
     Click Element                    ${COMBOBOX_TIPO}
     Click Element                    (//div[contains(.,'Todos')])[21]
+
+Então sistema exibe informações do filtro Tipo
+    Wait Until Element Is Visible    //td[contains(.,'2085')]
 
 # -3.2.5
 E seleciono filtro urgente "sim" em Obras > Requisições
@@ -85,6 +88,7 @@ E valido todos os filtros de Nivel de urgencia em Obras > Requisições
 
     FOR    ${departamento}    IN    @{OPCOES_COMBOBOX_URGENTE}
             # Clica na opção de departamento atual
+            Sleep    1s
             Click Element    ${departamento}
             
             # Clica no botão de buscar
@@ -92,7 +96,6 @@ E valido todos os filtros de Nivel de urgencia em Obras > Requisições
             
             # Espera pela atualização e valida que a página foi atualizada
             Wait Until Element Is Visible      //input[@id='cliente']      timeout=10s
-            
             # Log do departamento testado
             ${departamento_text}    Get Text    ${departamento}
             Log    Departamento ${departamento_text} validado com sucesso

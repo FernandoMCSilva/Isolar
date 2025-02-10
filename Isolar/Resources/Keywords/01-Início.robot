@@ -129,15 +129,15 @@ Então sistema exibe requisições do departamento
 # --1.7
 E preencho data inicial
     Wait Until Element Is Visible    (//input[@placeholder='DD/MM/YYYY'])[1]    timeout=10s
-    Input Text    (//input[@placeholder='DD/MM/YYYY'])[1]    16/08/2024
+    Input Text    (//input[@placeholder='DD/MM/YYYY'])[1]    01/01/2025
     Sleep   2s
 
 E preencho data final
     Wait Until Element Is Visible    (//input[@placeholder='DD/MM/YYYY'])[2]    timeout=10s
-    Input Text    (//input[contains(@placeholder,'DD/MM/YYYY')])[2]    16/08/2024
+    Input Text    (//input[contains(@placeholder,'DD/MM/YYYY')])[2]    01/01/2025
 
 Então sistema exibe requisições filtradas
-    Wait Until Page Contains    text=2024-08
+    Wait Until Page Contains    text=2025-01
     Capture Page Screenshot
 
 
