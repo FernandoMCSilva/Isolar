@@ -23,6 +23,7 @@ Quando clico no menu FAQ
 
 Então sistema exibe página de FAQ
     Wait Until Page Contains    text=Como renovar ou revisar uma requisição?
+    
 # --12.3
 Quando clico no menu Atualizações
     Wait Until Element Is Visible    ${botao_Atulaizacoes_Novidades}

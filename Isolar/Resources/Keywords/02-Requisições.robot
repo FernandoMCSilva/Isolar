@@ -39,11 +39,11 @@ ${COMBOBOX_STATUS}             //button[contains(@id,'status')]
 ${COMBOBOX_TIPO}               //button[@id='tipo']
 ${COMBOBOX_URGENTE}            //button[contains(@id,'urgencia')]
 ${COMBOBOX_NIVEL_DE_URGENCIA}  //button[contains(@id,'nivel_urgencia')]
-${COMBOBOX_RESPONSAVEL}        (//button[contains(@dir,'ltr')])[3]
+${COMBOBOX_RESPONSAVEL}        (//button[contains(@type,'button')])[11]
 ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 
 
-@{OPCOES_COMBOBOX_DEPARTAMENTO}    (//div[contains(.,'Técnico')])[14]    (//div[contains(.,'Administrativo')])[5]
+@{OPCOES_COMBOBOX_DEPARTAMENTO}    (//div[contains(.,'Técnico')])[14]    (//div[contains(.,'Comercial')])[14]
 @{OPCOES_COMBOBOX_STATUS}           (//div[contains(.,'Fila')])[22]    (//div[contains(.,'Produção')])[5]    (//div[contains(.,'Concluído')])[22]    (//div[contains(.,'Parado')])[5]
 @{OPCOES_COMBOBOX_TIPO}
 # @{OPCOES_COMBOBOX_TIPO}             (//div[contains(.,'Técnico')])[14]    (//div[contains(.,'Pós Venda')])[5]    (//div[contains(.,'Compra')])[5]    (//div[contains(.,'Defeito com computador/notebook')])[5]    (//div[contains(.,'Defeito com impressora')])[5]    
@@ -61,7 +61,7 @@ Dado que clico no menu "Requisições"
     Sleep    2s
     Wait Until Element Is Visible    ${MENU_REQUISICOES}
     Click Element                    ${MENU_REQUISICOES}
-    Sleep    5s
+    Sleep    4s
 
 # --2.2
 Quando clico em "Filtros"
@@ -343,15 +343,15 @@ E preencho informações de cadastro de requisição
     Click Element    ${Botao_Proximo_Requisicoes}
 # 2
     Click Element    (//button[contains(.,'Selecione')])[1]
-    Click Element    (//div[contains(.,'Fernando Morais da Costa Silva')])[5]
+    Click Element    (//div[contains(.,'RHIVAYLTON')])[5]
 
     Click Element                    (//button[contains(.,'Selecione')])[1]
     Wait Until Element Is Visible    (//div[contains(.,'teste')])[5]
     Click Element                    (//div[contains(.,'teste')])[5]
 
     Click Element                    (//button[contains(.,'Selecione')])[1]
-    Wait Until Element Is Visible    (//div[contains(.,'teste')])[16]
-    Click Element                    (//div[contains(.,'teste')])[16]
+    Wait Until Element Is Visible    (//div[contains(.,'RHIVAYLTON')])[15]
+    Click Element                    (//div[contains(.,'RHIVAYLTON')])[15]
 
     Click Element    //button[contains(.,'Selecione')]
     Click Element    (//div[contains(.,'Não')])[5]
@@ -402,9 +402,9 @@ Então sistema exibe mensagem de cadastro realizado
 
 E preencho filtro Cliente
     Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
-    Input Text                       //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_GruposConsumidores}
+    Input Text                       //input[@placeholder='Nome do cliente ...']    teste
     Click Element                    ${Botao_Buscar}
-    Sleep    1s
+    Wait Until Page Contains         text=B3 (teste)
 E clico no botão "Editar"
     Sleep    2s
     Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
@@ -413,9 +413,9 @@ E clico no botão "Editar"
     Click Element                    ${Botao_Editar}
 
 E preencho informações de requisição editada
-    Sleep    4s
-    Click Element    //button[contains(.,'Fernando Morais da Costa Silva')]
-    Click Element    (//div[contains(.,'teste123')])[5]
+    Sleep    3s
+    Click Element    (//button[contains(.,'RHIVAYLTON')])[1]
+    Click Element    (//div[contains(.,'Juarez Codeiro')])[5]
     Sleep    1s
     Click Element    //button[contains(.,'Salvar alterações')]
 

@@ -3,11 +3,11 @@ Documentation      Modúlo que Gerencie as requisições do tipo Obras cadastrad
 Resource           ../Main.robot
 
 *** Variables ***
-${Menu_ObrasDashboard}                //a[contains(.,'Dashboard')]
-${Menu_ObrasRequisicoes}              (//a[contains(.,'Requisições')])[2]
+${Menu_ObrasDashboard}                 //a[contains(.,'Dashboard')]
+${Menu_ObrasRequisicoes}               (//a[contains(.,'Requisições')])[2]
 
-${filtro_Departamento_Obras}          (//div[contains(.,'Obras')])[19]
-${filtro_NivelUrgencia}               //button[contains(@id,'urgencia')]
+${filtro_Departamento_administrativo}  (//div[contains(.,'Administrativo')])[5]
+${filtro_NivelUrgencia}                //button[contains(@id,'urgencia')]
 
 
 *** Keywords ***                
@@ -55,20 +55,21 @@ Então sistema exibe resultado do filtro em Obras
 E valido filtros dentro de Departamento em Obras > Requisições
     Wait Until Element Is Visible    ${COMBOBOX_DEPARTAMENTO}
     Click Element                    ${COMBOBOX_DEPARTAMENTO}
-    Click Element                    ${filtro_Departamento_Obras}
+    Click Element                    ${filtro_Departamento_administrativo}
     Click Element                    ${Botao_Buscar}
 
 Então sistema exibe resultado de Departamento
-    Wait Until Element Is Visible    //td[contains(.,'2085')]
+    Wait Until Element Is Visible    //td[contains(.,'2115')]
 
 # -3.2.4
 E valido todos os filtros dentro de Tipo em Obras > Requisições
     Wait Until Element Is Visible    ${COMBOBOX_TIPO}
     Click Element                    ${COMBOBOX_TIPO}
     Click Element                    (//div[contains(.,'Todos')])[21]
+    Click Element                    ${Botao_Buscar}
 
 Então sistema exibe informações do filtro Tipo
-    Wait Until Element Is Visible    //td[contains(.,'2085')]
+    Wait Until Page Contains    text=Concluído
 
 # -3.2.5
 E seleciono filtro urgente "sim" em Obras > Requisições
@@ -86,9 +87,8 @@ E valido todos os filtros de Nivel de urgencia em Obras > Requisições
     # Pega todas as opções dentro do dropdown
     ${departamentos}    Get WebElements    ${COMBOBOX_URGENTE}
 
-    FOR    ${departamento}    IN    @{OPCOES_COMBOBOX_URGENTE}
+    FOR    ${departamento}    IN    @{OPCOES_COMBOBOX_NIVELDEURGENCIA}
             # Clica na opção de departamento atual
-            Sleep    1s
             Click Element    ${departamento}
             
             # Clica no botão de buscar
@@ -105,13 +105,18 @@ E valido todos os filtros de Nivel de urgencia em Obras > Requisições
             Click Element    ${COMBOBOX_URGENTE}
         END
 
+Então sistema exibe resultado de nível de urgência    
+    Sleep    1.5s
+    Click Element                    (//div[contains(.,'Alto')])[19]
+    Wait Until Element Is Visible    //th[contains(.,'Cliente')]
+
 # -3.2.7
 E preencho informações de Data de entrega em Obras > Requisições
     Wait Until Element Is Visible    //button[@id='data_entrega']
     Click Element                    //button[@id='data_entrega']
-    Wait Until Element Is Visible    (//button[@type='button'])[15]
+    Wait Until Element Is Visible    (//button[@type='button'])[16]
     FOR    ${i}    IN RANGE    5
-        Click Element    (//button[@type='button'])[15]
+        Click Element    (//button[@type='button'])[16]
         Sleep    0.5s
     END
     Sleep    2s
@@ -123,9 +128,9 @@ E preencho informações de Data de entrega em Obras > Requisições
 E preencho informações de Data de criação em Obras > Requisições
     Wait Until Element Is Visible      //button[@id='data_criacao']
     Click Element                      //button[@id='data_criacao']
-    Wait Until Element Is Visible    (//button[@type='button'])[15]
+    Wait Until Element Is Visible    (//button[@type='button'])[16]
     FOR     ${i}    IN RANGE    5
-    Click Element    (//button[@type='button'])[15]
+    Click Element    (//button[@type='button'])[16]
     Sleep    0.5s
     END
 
@@ -139,6 +144,6 @@ E preencho informações de Data de criação em Obras > Requisições
 E valido todos os filtros dentro de "Responsável" em Obras > Requisições
     Wait Until Element Is Visible    ${COMBOBOX_RESPONSAVEL}
     Click Element                    ${COMBOBOX_RESPONSAVEL}
-    Click Element                    (//div[contains(.,'Oseias')])[5]
+    Click Element                    (//div[contains(.,'OSEAS')])[5]
 
 # -3.2.1

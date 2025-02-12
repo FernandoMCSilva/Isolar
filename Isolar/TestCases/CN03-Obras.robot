@@ -100,7 +100,7 @@ CT 03.02.06 - Validar filtro Nível de urgência
     Quando clico em "Filtros"
     E seleciono urgente "Sim"
     E valido todos os filtros de Nivel de urgencia em Obras > Requisições
-    Então sistema exibe resultado do filtro em Obras
+    Então sistema exibe resultado de nível de urgência
 
 CT 03.02.07 - Validar filtro Data de entrega
     [Documentation]     Caso de teste valida o filtro Data de entrega em Obras > Requisições
@@ -126,7 +126,16 @@ CT 03.02.09 - Validar filtro Responsável
     E valido todos os filtros dentro de "Responsável" em Obras > Requisições
     Então sistema exibe resultado do filtro em Obras
 
+# CT 03.02.10 - Validar botão Inserir "Técnico"
+#     [Documentation]     Caso de teste valida botão Inserir "Técnico" em Requisições
+#     [Tags]    Requisições    Funcional     SmokeTest   
+#     Dado que clico no menu Obras > Requisições
+#     Quanto clico no botão "Inserir/Técnico"
+#     E preencho informações de cadastro de requisição
+#     Então sistema exibe mensagem de cadastro realizado
 
+
+# ...
 # Inserir 
 # Editar
 # Excluir
