@@ -65,7 +65,6 @@ CT 08.01.07 - Validar filtro "Cards ou Lista"
     E clico em "Lista"
     Então sistema exibe informações com filtro "Lista"
 
-
 CT 08.01.08 - Validar busca não encontrada no filtro buscar 
     [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Pessoas
     [Tags]    Cadastros    Pessoas    Funcional        
@@ -213,7 +212,6 @@ CT 08.03.06- Validar botão Continuar em "Excluir"
     Quando clico em "Excluir"
     E clico no botão "Continuar" em "Excluir"
     Então sistema exclui item do menu Cadastro > Grupos Consumidores
-
 
 CT 08.03.07 - Validar filtro "Cards ou Lista" 
     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional

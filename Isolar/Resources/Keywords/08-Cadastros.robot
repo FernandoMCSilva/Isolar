@@ -56,7 +56,7 @@ ${input_DescricaoCargosFuncoes}                 //textarea[@id='descricao']
 ${input_BuscarLinksExternos}                    //input[@placeholder='Buscar...']
 
 
-${filtro_cards/Lista}                           (//button[@type='button'])[8]
+${filtro_cards/Lista}                           (//button[contains(@type,'button')])[9]
 ${filtro_botaoLista}                            xpath=//div[@role='option'][contains(.,'Lista')]
 
 *** Keywords ***
@@ -79,6 +79,7 @@ Quando clico no botão "Inserir"
 Quando clico em "Excluir"
     Sleep    2s
     Click Element                    ${botao_acoes_Clientes}
+    Sleep    0.5s
     Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
     Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
 
@@ -262,25 +263,21 @@ Então sistema exibe informações de cadastro de "Grupos Consumidores"
 E preencho informações de inserir novo cadastro de Grupos Consumidores
     Sleep    2s
     Input Text       ${input_descricao_GruposConsumidores}    ${nome_pesquisa_GruposConsumidores}
-    Click Element    (//button[@type='button'])[8]
-    Click Element    (//div[@tabindex='-1'])[3]
+    Click Element    //button[contains(@id,'grupo')]
+    Click Element    (//div[contains(@role,'option')])[3]
     Input Text    //input[contains(@type,'text')]    1234
 
 Então sistema exclui item do menu Cadastro > Grupos Consumidores
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
-
 # -08.03.02
-
 E preencho informações de busca não escontrada em Grupos Consumidores
     Input Text    ${input_buscar_GruposConsumidores}    ${nome_BuscaNaoEncontrada}
 
 Então sistema exibe mensagem de erro em Grupos Consumidores
     Wait Until Page Contains    text=Nenhum grupo consumidor encontrado.
 
-
 # -08.03.04
-
 Então sistema exibe informações de pesquisa de Grupos Consumidores
     ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    Log    "O resultado da pesquisa é B3. Teste passou."
@@ -302,14 +299,12 @@ E preencho informações de inserir novo cadastro de Tipo de Gerador
     Input Text    ${input_descricao_GruposConsumidores}    ${nome_pesquisa_GruposConsumidores}
     
 # -08.04.03
-
 E preencho informações de cadastro editado em Tipo de Gerador
     Sleep    2s
     Input Text    //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
     Click Element    ${botao_atualizar_CadastrosPessoas}
 
 # -08.04.04
-
 Então sistema exclui item do menu Cadastro > Tipo de Gerador
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
@@ -320,7 +315,6 @@ Então sistema exibe informações de pesquisa de Tipo de Gerador
     ...    ELSE    Log    "O resultado da pesquisa não é B3. Teste falhou."    WARN
 
 # -08.04.07
-
 Então sistema exibe mensagem de erro em Tipo de Gerador
     Wait Until Page Contains    text=Nenhum tipo de gerador encontrado.
 
@@ -334,10 +328,8 @@ Então sistema exibe informações de cadastro de "Tipo de Financiamento"
     Wait Until Page Contains     text=Tipos de Financiamento
 
 # -08.05.08
-
 Então sistema exibe mensagem de erro de Tipo de Financiamento
     Wait Until Page Contains    text=Nenhum tipo de financiamento encontrado
-
 
 # -08.06.01
 Dado que clico no menu "Cadastros > Classificações"
@@ -352,7 +344,6 @@ Então sistema exibe mensagem de erro de Classificações
     Wait Until Page Contains    text=Nenhum classificação encontrada.
 
 # -08.07.01
-
 Dado que clico no menu "Cadastros > Motivos de Urgência"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
@@ -361,7 +352,6 @@ Então sistema exibe informações de cadastro de "Motivos de Urgência"
     Wait Until Page Contains     text=Motivos de Urgência
  
 # -08.07.02
-
 E preencho informações de inserir novo cadastro de Motivos de Urgência
     Sleep    2s
     Input Text    //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
@@ -369,7 +359,6 @@ E preencho informações de inserir novo cadastro de Motivos de Urgência
     Click Element    (//div[@role='option'])[2]
 
 # -08.07.08
-
 E preencho informações de busca não encontrada em Motivo de Urgência
     Input Text    //input[@type='text']    ${nome_BuscaNaoEncontrada}
 Então sistema exibe mensagem de erro de Motivos de Urgência
@@ -403,12 +392,9 @@ E preencho informações de cadastro editado em Concessionárias
     Input Text    //input[@id='cofins']    4321
     Click Element    ${botao_atualizar_CadastrosPessoas}
 
-
 # -08.08.08
 Então sistema exibe mensagem de erro de Concessionárias
     Wait Until Page Contains    text=Nenhuma concessionaria encontrada.
-
-
 
 # -08.09.01
 Dado que clico no menu "Cadastros > Departamentos"
@@ -442,6 +428,7 @@ E preencho informações de cadastro editado em Departamentos
     Sleep    1s
     # Execute JavaScript    window.scrollBy(0, 500);
     Click Element    ${botao_Salvar}
+
 # -08.09.08
 Então sistema exibe mensagem de erro de Departamentos
     Wait Until Page Contains    text=Nenhum departamento encontrado.
@@ -480,8 +467,6 @@ Então sistema exibe informações de cadastro de "Empresas"
 Então sistema exibe mensagem de erro de Empresas
     Wait Until Page Contains    text=Nenhum segmento encontrado.
 
-
-
 # -08.11.02
 E preencho informações de inserir novo cadastro de Empresas
     Sleep    2s
@@ -504,6 +489,7 @@ E preencho informações de cadastro editado em Empresas
     Click Element                    ${Botao_Proximo_Requisicoes}
     Execute Javascript               window.scrollTo(0,0)
     Click Element                    ${botao_Salvar}
+
 # -08.12.01
 Dado que clico no menu "Cadastros > Usuários ZapSign"
     Wait Until Element Is Visible    ${MENU_CADASTROS}

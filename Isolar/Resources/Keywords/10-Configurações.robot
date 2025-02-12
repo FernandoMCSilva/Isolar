@@ -14,9 +14,8 @@ ${Menu_ConfigMinerandoSol}            (//a[contains(@href,'misol')])[2]
 ${botao_NovoTipo}                   //button[contains(.,'Novo tipo')]
 ${botao_Perguntas}                  //button[contains(.,'Perguntas')]
 ${botao_Salvar}                     //button[contains(.,'Salvar')]
-${botao_InserirPergunta}            (//button[@data-state='closed'])[11]
+${botao_InserirPergunta}            (//button[@data-state='closed'])[12]
 ${botaox_ExcluirPergunta}           xpath=//div[contains(@class, 'flex items-center justify-center gap-4')]//button[contains(@data-state, 'closed')]
-${botao_ApagarSecao}                (//button[@data-state='closed'])[10]
 
 ${filtro_cards/Lista_Perguntas}     //button[contains(.,'Cards')]
 ${filtro_botaoLista_Perguntas}      (//div[contains(.,'Lista')])[9]
@@ -40,12 +39,12 @@ ${box_EscolhaPerguntaNomeCompleto}  (//div[contains(.,'Nome completo')])[17]
 ${box_TipodoCampo}                  //button[contains(.,'Selecione')]
 ${box_TipodoCampoTexto}             (//div[contains(.,'Texto')])[4]
 
-${botao_SecaoCliente}               (//button[@type='button'])[8]
+${botao_SecaoCliente}               (//button[contains(@type,'button')])[9]
 ${botao_AdicionarSecao}             //button[contains(.,'Adicionar seção')]
-${botao_ExcluirSecao}               (//button[contains(@data-state,'closed')])[10]
+${botao_ExcluirSecao}               (//button[@data-state='closed'])[11]
 ${botao_SalvarNovaPergunta}         (//button[contains(.,'Salvar')])[2]
-${botao_CadastrarPergunta}          (//button[@data-state='closed'])[12]
-${botao_TornarObrigatorias}         (//button[@data-state='closed'])[9]
+${botao_CadastrarPergunta}          (//button[contains(@data-state,'closed')])[13]
+${botao_TornarObrigatorias}         (//button[@data-state='closed'])[10]
 ${botao_DecontoNivelAssociados}     //button[contains(.,'Nível de Associados')]
 ${botao_DecontoConcessionarias}     //button[contains(.,'Concessionárias')]
 ${botao_DecontoGruposTarifarios}    //button[contains(.,'Grupos tárifarios')]
@@ -55,6 +54,8 @@ ${botao_Editar_Configuracoes}       //button[contains(.,'Editar')]
 
 ${opcao_ObrigatorioNao}             //button[@id='opcao1']
 ${opcao_ObrigatorioSim}             //button[@id='opcao2']
+
+${nomeSecao_TipoRequisicao}         //input[@id='nome']
 
 *** Keywords ***
 # -10.01.01
@@ -102,6 +103,9 @@ E preencho informações de cadastro de Novo tipo de Requisições
     Click Element                    ${botao_ExcluirSecao}
     Click Element                    ${botao_AdicionarSecao}
     Click Element                    ${botao_ExcluirSecao}
+    Sleep    0.5s
+
+#não tem que mudar o nome da seção, se estiver com erro, provavelmente está no botão excluir seção
 
 Então sistema salva novo Tipo de requisição
     Wait Until Page Contains    text=Registro adicionado com sucesso!
@@ -119,7 +123,7 @@ E preencho informações de cadastro editado no menu Configurações > Requisiç
     Click Element            ${input_NomeDaRequisicao}
     Sleep    1s
     Click Element            ${botao_InserirPergunta}
-    Click Element            ${botao_ApagarSecao}
+    Click Element            ${botao_ExcluirSecao}
     Click Element            ${botao_Salvar}
 
 Então sistema exibe informações de "Editar" no menu Configurações > Requisições

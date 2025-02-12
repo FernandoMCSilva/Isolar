@@ -34,22 +34,22 @@ Então sistema exibe usuários
 
 # -9.2
 E preencho informações de inserir novo cadastro de Usuários
-    Sleep    2s
-    Input Text                       //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
-    Input Text                       //input[@id='email']   ${EmailLocal}   
     Sleep    1s
-    Click Element                    (//button[@type='button'])[8]
-    Click Element                    (//div[contains(.,'Choque Bruto')])[15]
+    Input Text                       //input[contains(@id,'nome')]    ${nome_pesquisa_GruposConsumidores}
+    Input Text                       //input[contains(@id,'email')]   ${EmailLocal}   
     Sleep    1s
     Click Element                    (//button[@type='button'])[9]
-    Click Element                    (//div[contains(.,'ENG.CIVIL')])[15]
+    Click Element                    (//div[contains(.,'Isolar Energy')])[15]
     Sleep    1s
     Click Element                    (//button[@type='button'])[10]
-    Click Element                    (//div[contains(.,'Teste permissions')])[15]
+    Click Element                    (//div[contains(.,'TI')])[15]
+    Sleep    1s
+    Click Element                    (//button[@type='button'])[11]
+    Click Element                    (//div[contains(.,'Desenvolvedor(a)')])[15]
     Sleep    1s
     Input Text                       //input[@id='telefone']    22222222222
     Sleep    1s
-    Click Element                    (//button[@type='button'])[11]
+    Click Element                    (//button[@type='button'])[12]
     Click Element                    (//div[contains(.,'Sim')])[15]
     Input Text                       //input[@id='senha']    ${SenhaLocal}
     Sleep    1s

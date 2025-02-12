@@ -15,7 +15,7 @@ ${Status_Paradas}      Parado
 ${Btn_Buscar}          //button[contains(.,'Buscar')]
 ${Btn_Departamentos}   //button[@id='departament']
 
-@{DEPARTAMENTOS_OPTIONS}    //span[contains(.,'Técnico')]    (//div[contains(.,'Administrativo')])[5] 
+@{DEPARTAMENTOS_OPTIONS}    (//div[contains(.,'Comercial')])[5]    (//div[contains(.,'Grandes contas')])[5]
 
 *** Keywords ***
 # --1.1

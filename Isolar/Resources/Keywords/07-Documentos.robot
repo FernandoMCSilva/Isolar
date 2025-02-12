@@ -8,11 +8,11 @@ ${menu_Assinaturas}                      //a[contains(.,'Assinaturas')]
 ${menu_Criardocumentos}                  //button[contains(.,'Criar Documento')]
 ${menu_CriarDocumento_Jurídico}          //button[contains(.,'Jurídico')]
 
-${combobox_Departamento_Documentos}      (//button[@type='button'])[10]
+${combobox_Departamento_Documentos}      (//button[@type='button'])[11]
 
 ${input_Criador}                     //input[@placeholder='Nome do criador ...']
 ${filtro_TipoDocumento}              (//button[contains(.,'Selecione')])[1]
-${filtro_DataRegistro_Documentos}    (//button[@type='button'])[11]
+${filtro_DataRegistro_Documentos}    (//button[@type='button'])[12]
 ${filtro_OrigemAssinatura}           //button[@id='origem']
 ${filtro_Status_Documentos}          //button[@id='status']
 ${filtro_Assinante}                  //input[@id='assinante']
@@ -20,7 +20,7 @@ ${filtro_Observador}                 //input[@id='observador']
 ${filtro_CardsLista_Documentos}      //button[contains(.,'Cards')]
 ${filtro_Buscar}                     //input[@placeholder='Buscar...']
 
-@{opcoes_Departamento}              (//div[contains(.,'Compras')])[5]    (//div[contains(.,'Administrativo')])[5]              (//div[contains(.,'TI')])[5]          (//div[contains(.,'Logística')])[5]    (//div[contains(.,'Jurídico')])[5]
+@{opcoes_Departamento}              (//div[contains(.,'Comercial')])[5]    (//div[contains(.,'Administrativo')])[5]    (//div[contains(.,'TI')])[5]          (//div[contains(.,'Logística')])[5]    (//div[contains(.,'Jurídico')])[5]
 @{opcoes_OrigemAssinatura}          (//div[contains(.,'Documentos')])[14]    (//div[contains(.,'Externos')])[5]    (//div[contains(.,'Minerando Sol')])[5]    (//div[contains(.,'Estimativa')])[11]    
 
 ${botao_VerDocumento}               (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[4]
@@ -40,6 +40,7 @@ ${botao_BaixarTemplateEditável}     //button[contains(.,'Baixar Template editá
 
 ${CAMINHO_ARQUIVO}                  "C:\Users\silva\Downloads\teste.pdf"
 ${nome_teste}                       teste
+${NOME_CRIADOR}                     Fernando QA
 *** Keywords ***
 
 # -07.01.01
@@ -57,20 +58,20 @@ Então sistema exibe informações de documentos gerados
 # -07.01.02
 E preencho informações de filtro criador
     Wait Until Element Is Visible    ${input_Criador}
-    Input Text                       ${input_Criador}    ${nome_pesquisa_GruposConsumidores}
+    Input Text                       ${input_Criador}    ${NOME_CRIADOR}
 
 Então sistema exibe informações de filtro criador
-    Wait Until Page Contains    text=Registros carregados com sucesso!
+    Wait Until Element Is Visible    //td[contains(.,'Fernando QA')]
 
 # -07.01.03
 E seleciono opção de filtro Tipo de documento
     Wait Until Element Is Visible    ${filtro_TipoDocumento}
     Sleep    2s
     Click Element                    ${filtro_TipoDocumento}
-    Click Element                    (//div[contains(.,'teste')])[14]
+    Click Element                    (//div[contains(.,'P')])[13]
     
 Então sistema exibe informações de filtro Tipo de documento
-    Wait Until Element Is Visible    (//p[contains(.,'teste')])[1]
+    Wait Until Element Is Visible    //td[contains(.,'Fernando QA')]
 
 # -07.01.04
 E seleciono opção de filtro Departamento
@@ -101,23 +102,20 @@ Então sistema exibe informações de filtro Departamento
 
 # -07.01.05
 E seleciono opção de filtro Data de registro
-    Sleep    2s
+    Sleep    1s
     Click Element                     ${filtro_DataRegistro_Documentos}
-    Wait Until Element Is Visible     (//button[@type='button'])[12]
-    Click Element                     (//button[@type='button'])[12]    # Clica na seta para voltar
-    Click Element                     (//button[@type='button'])[12]    # Clica na seta para voltar
-    Click Element                     (//button[@type='button'])[12]    # Clica na seta para voltar
-    Sleep    1s    # Aguarda um segundo antes de verificar novamente
-        
-    # Sai do loop e clica no dia 1 de setembro e 31 de outubro
-    Click Element    (//button[contains(.,'1')])[1]
-    Click Element    (//button[@type='button'])[80]
-    Wait Until Element Is Visible    (//li[contains(.,'Registros carregados com sucesso!')])[1]
-    Click Element                    (//li[contains(.,'Registros carregados com sucesso!')])[1]
-    Sleep    2s
+    Wait Until Element Is Visible     (//button[@type='button'])[13]
+
+    FOR    ${i}    IN RANGE    1
+        Click Element    (//button[@type='button'])[13]
+        Sleep    0.5s
+    END
+    Sleep    1s
+    Click Element                    (//button[contains(.,'1')])[2]
+    Click Element                    (//button[contains(.,'28')])[3]
 
 Então sistema exibe informações de filtro Data de registro
-    Wait Until Element Is Visible    (//td[contains(.,'20')])[1]
+    Wait Until Element Is Visible    (//td[contains(.,'28/01/2025')])[1]
     Sleep    1s 
 
 # -07.01.06

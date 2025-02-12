@@ -100,10 +100,11 @@ Então sistema exibe informações de Estimativa do filtro Tipo de usina "Alugue
 # --4.7
 
 E preencho com informações data de registro
-    Wait Until Element Is Visible    (//button[@type='button'])[10]
-    Click Element                    (//button[@type='button'])[10]
+    Wait Until Element Is Visible    (//button[@type='button'])[11]
+    Click Element                    (//button[@type='button'])[11]
+    Wait Until Element Is Visible    (//button[@type='button'])[13]
     FOR    ${i}    IN RANGE    5
-    Click Element    (//button[@type='button'])[12]
+    Click Element    (//button[@type='button'])[13]
     Sleep    0.5s
     END
     
@@ -111,7 +112,7 @@ E preencho com informações data de registro
     Click Element    //button[contains(.,'Buscar')]
     Sleep    2s
 Então sistema exibe Estimativa do filtro Data de registro
-    Wait Until Page Contains    text=Fernando Morais da Costa Silva
+    Wait Until Page Contains    text=Fernando QA
 
 # --4.8
 
@@ -176,8 +177,8 @@ Então sistema volta para menu Estimativa
 # --4.13
 
 E clico em "Sim"
-    Wait Until Element Is Visible    (//button[@type='button'])[10]
-    Click Element    (//button[@type='button'])[10]
+    Wait Until Element Is Visible    (//button[contains(@type,'button')])[12]
+    Click Element                    (//button[contains(@type,'button')])[12]
 
 Então sistema exibe informações para criar assinaturas
     Wait Until Page Contains   text=Clique para fazer o upload
@@ -188,13 +189,14 @@ Quando clico no botão "Ver PDF"
     Click Element                    ${botao_verPDF}
 
 Então sistema exibe informações em aquivo PDF
-    Wait Until Page Contains    text=27/11/2024
+    Wait Until Page Contains    text=08/01/2025
+
 E clico em "imprimir Estimativa"
     Wait Until Element Is Visible    ${botao_imprimir_estimativa}
     Click Element                    ${botao_imprimir_estimativa}
 
 Então sistema exibe informações de estimativa em arquivo PDF
-    Wait Until Page Contains    text=27/11/2024    timeout=10s
+    Wait Until Page Contains    text=08/01/2025    timeout=10s
     # Wait Until Page Contains    text=PROPOSTA COMERCIAL
 
 # --4.17

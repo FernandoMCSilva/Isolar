@@ -43,18 +43,18 @@ CT 04.05 - Validar filtro Tipo de usina "Autoconsumo"
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
     Quando clico em "Filtros"
-    # E seleciono Tipo de usina "Autoconsumo"
-    # E clico em "Buscar"
-    # Então sistema exibe informações de Estimativa do filtro Tipo de usina "Autoconsumo"
+    E seleciono Tipo de usina "Autoconsumo"
+    E clico em "Buscar"
+    Então sistema exibe informações de Estimativa do filtro Tipo de usina "Autoconsumo"
 
 CT 04.06 - Validar filtro Tipo de usina "Aluguel"
     [Documentation]    Caso de teste valida o filtro Tipo de usina "Aluguel"
     [Tags]    Estimativa    Funcional
     Dado que clico no menu "Estimativa"
     Quando clico em "Filtros"
-    # E seleciono Tipo de usina "Aluguel"
-    # E clico em "Buscar"
-    # Então sistema exibe informações de Estimativa do filtro Tipo de usina "Aluguel"
+    E seleciono Tipo de usina "Aluguel"
+    E clico em "Buscar"
+    Então sistema exibe informações de Estimativa do filtro Tipo de usina "Aluguel"
 
 CT 04.07 - Validar filtro Data de registro
     [Documentation]     Caso de teste valida o filtro Data de registro

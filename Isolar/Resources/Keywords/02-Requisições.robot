@@ -37,9 +37,9 @@ ${Tipo_Fila}               Técnico
 ${COMBOBOX_DEPARTAMENTO}       //button[contains(@id,'departament')]
 ${COMBOBOX_STATUS}             //button[contains(@id,'status')]
 ${COMBOBOX_TIPO}               //button[@id='tipo']
-${COMBOBOX_URGENTE}            //button[contains(@id,'urgencia')]
+${COMBOBOX_URGENTE}            //button[contains(@id,'urgente')]
 ${COMBOBOX_NIVEL_DE_URGENCIA}  //button[contains(@id,'nivel_urgencia')]
-${COMBOBOX_RESPONSAVEL}        (//button[contains(@type,'button')])[11]
+${COMBOBOX_RESPONSAVEL}        (//button[contains(@type,'button')])[12]
 ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 
 
@@ -402,7 +402,7 @@ Então sistema exibe mensagem de cadastro realizado
 
 E preencho filtro Cliente
     Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
-    Input Text                       //input[@placeholder='Nome do cliente ...']    teste
+    Input Text                       //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_GruposConsumidores}
     Click Element                    ${Botao_Buscar}
     Wait Until Page Contains         text=B3 (teste)
 E clico no botão "Editar"
