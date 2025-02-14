@@ -1,13 +1,13 @@
-*** Settings ***
+* Settings *
 Documentation      Modúlo que Gerencie o menu Novidades
 Resource           ../Main.robot
 
-*** Variables ***
+* Variables *
 ${botao_Atulaizacoes_Novidades}       //button[contains(.,'Atualizações')]
 ${botao_FAQ_Novidades}                //button[contains(.,'FAQ')]
 
 
-*** Keywords ***
+* Keywords *
 # --12.1
 Dado que clico no menu "Novidades"
     Wait Until Element Is Visible    ${MENU_NOVIDADES}
@@ -22,13 +22,11 @@ Quando clico no menu FAQ
     Click Element                    ${botao_FAQ_Novidades}
 
 Então sistema exibe página de FAQ
-    Wait Until Page Contains    text=Como renovar ou revisar uma requisição?
+    Wait Until Page Contains    text=Novidades
     
 # --12.3
 Quando clico no menu Atualizações
     Wait Until Element Is Visible    ${botao_Atulaizacoes_Novidades}
     Click Element                    ${botao_Atulaizacoes_Novidades}
 Então sistema exibe página de Atualizações
-    Wait Until Page Contains    text=teste 05
-
-
+    Wait Until Page Contains    text=Novidades

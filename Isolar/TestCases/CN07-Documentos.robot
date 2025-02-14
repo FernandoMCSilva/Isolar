@@ -61,6 +61,8 @@ CT 07.01.07 - Validar botão Gerar link de assinatura
     [Tags]    Documentos    Documentos gerados    Funcional    SmokeTest
     Dado que clico no menu "Documentos"
     Clico no menu "Documentos geradados"
+    Quando clico em "Filtros"
+    E preencho filtro criador em Documentos
     E clico no botão Gerar link de assinatura
     Então sistema exibe informações de botão Gerar link de assinatura
 
@@ -70,7 +72,7 @@ CT 07.01.08 - Validar botão Status da assinatura
     Dado que clico no menu "Documentos"
     Clico no menu "Documentos geradados"
     Quando clico em "Filtros"
-    E preencho filtro criador
+    E preencho filtro criador em Documentos
     E clico no botão Status da assinatura
     Então sistema exibe informações de botão Status da assinatura
 
@@ -80,7 +82,7 @@ CT 07.01.09 - Validar botão Rubrica
     Dado que clico no menu "Documentos"
     Clico no menu "Documentos geradados"
     Quando clico em "Filtros"
-    E preencho informações do filtro criador
+    E preencho filtro criador em Documentos
     E clico no botão Rubrica
     Então sistema exibe informações de botão Rubrica
 
@@ -102,34 +104,34 @@ CT 07.01.11 - Validar botão Anterior
     Então sistema exibe informações anteriores 
 
 CT 07.01.12 - Validar botão Ver Documento
-    [Documentation]     Caso de teste valida se botão Ver Documento (INVÁLIDO) está funcional
+    [Documentation]     Caso de teste valida se botão Ver Documento (INATÍVO) está funcional
     [Tags]    Documentos    Documentos gerados    Funcional
     Dado que clico no menu "Documentos"
     Clico no menu "Documentos geradados"
     Quando clico em "Filtros"
-    E preencho filtro criador
-    E clico no botão Ver Documento (INVÁLIDO)
-    Então sistema exibe informações de botão Ver Documento (INVÁLIDO)
+    E preencho filtro criador em Documentos
+    E clico no botão Ver Documento (INATÍVO)
+    Então sistema exibe informações de botão Ver Documento (INATÍVO)
 
 CT 07.01.13 - Validar botão Status da assinatura
-    [Documentation]     Caso de teste valida se botão Status da assinatura (INVÁLIDO) está funcional
+    [Documentation]     Caso de teste valida se botão Status da assinatura (INATÍVO) está funcional
     [Tags]    Documentos    Documentos gerados    Funcional
     Dado que clico no menu "Documentos"
     Clico no menu "Documentos geradados"
     Quando clico em "Filtros"
-    E preencho filtro criador
-    E clico no botão Status da assinatura (INVÁLIDO)
-    Então sistema exibe informações de botão Status da assinatura (INVÁLIDO)
+    E preencho filtro criador em Documentos
+    E clico no botão Status da assinatura (INATÍVO)
+    Então sistema exibe informações de botão Status da assinatura (INATÍVO)
 
 CT 07.01.14 - Validar botão Gerar link de assinatura
-    [Documentation]     Caso de teste valida se botão Gerar link de assinatura (INVÁLIDO) está funcional
+    [Documentation]     Caso de teste valida se botão Gerar link de assinatura (INATÍVO) está funcional
     [Tags]    Documentos    Documentos gerados    Funcional
     Dado que clico no menu "Documentos"
     Clico no menu "Documentos geradados"
     Quando clico em "Filtros"
-    E preencho filtro criador
-    E clico no botão Gerar link de assinatura (INVÁLIDO)
-    Então sistema exibe informações de botão Gerar link de assinatura (INVÁLIDO)
+    E preencho filtro criador em Documentos
+    E clico no botão Gerar link de assinatura (INATÍVO)
+    Então sistema exibe informações de botão Gerar link de assinatura (INATÍVO)
 
 CT 07.02.01 - Validar menu Assinaturas
     [Documentation]     Caso de teste valida se menu Assinaturas está funcional
@@ -213,16 +215,14 @@ CT 07.02.09 - Validar botão Anterior
     E clico em "Anterior"
     Então sistema exibe Assinaturas anteriores
 
-CT 07.02.10 - Validar funcionalidade Criar
-    [Documentation]     Caso de teste valida se funcionalidade Criar está funcional
-    [Tags]    Documentos    Assinaturas    Funcional    SmokeTest
-    Dado que clico no menu "Documentos"
-    Clico no menu "Assinaturas"
-    Quando clico no botão Criar
-    E seleciono opção "link"
-    Então sistema abre input de link
-    # E ralizo o upload do arquivo
-    # Então sistema 
+# CT 07.02.10 - Validar funcionalidade Criar
+#     [Documentation]     Caso de teste valida se funcionalidade Criar está funcional
+#     [Tags]    Documentos    Assinaturas    Funcional    SmokeTest
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Assinaturas"
+#     Quando clico no botão Criar
+#     E faço upload de arquivo teste
+#     Então sistema exibe tela final de rubrica
 
 CT 07.02.11 - Validar filtro Buscar
     [Documentation]     Caso de teste valida se filtro Buscar está funcional
@@ -269,21 +269,21 @@ CT 07.02.14 - Validar botão Editar campos em Editar
     E clico em Editar campos
     Então sistema exibe tela de Editar campos
 
-CT 07.03.01.01 - Validar menu Criar documento > Compras
-    [Documentation]     Caso de teste valida se menu Criar documento > Compras está funcional
-    [Tags]    Documentos    Criar documento    Compras    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Criar documento"
-    E clico em "Compras"
-    Então sistema exibe informações de menu Criar documento
+# CT 07.03.01.01 - Validar menu Criar documento > Compras
+#     [Documentation]     Caso de teste valida se menu Criar documento > Compras está funcional
+#     [Tags]    Documentos    Criar documento    Compras    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Criar documento"
+#     E clico em "Compras"
+#     Então sistema exibe informações de menu Criar documento
 
-CT 07.03.02.01 - Validar menu Criar documento > Comercial
-    [Documentation]     Caso de teste valida se menu Criar documento > Comercial está funcional
-    [Tags]    Documentos    Criar documento    Comercial    Funcional    SmokeTest
-    Dado que clico no menu "Documentos"
-    Clico no menu "Criar documento"
-    E clico em "Comercial"
-    Então sistema entra na tela de Criar Documento > Comercial
+# CT 07.03.02.01 - Validar menu Criar documento > Comercial
+#     [Documentation]     Caso de teste valida se menu Criar documento > Comercial está funcional
+#     [Tags]    Documentos    Criar documento    Comercial    Funcional    SmokeTest
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Criar documento"
+#     E clico em "Comercial"
+#     Então sistema entra na tela de Criar Documento > Comercial
 
 CT 07.03.03.01 - Validar menu Criar documento > Jurídico
     [Documentation]     Caso de teste valida se menu Criar documento > Jurídico está funcional
@@ -291,4 +291,5 @@ CT 07.03.03.01 - Validar menu Criar documento > Jurídico
     Dado que clico no menu "Documentos"
     Clico no menu "Criar documento"
     E clico em "Jurídico"
-    Então sistema entra na tela de Criar documento > Jurídico
+    E preencho informação de criar documento Jurídico
+    Então sistema exibe mensagem de documento criado

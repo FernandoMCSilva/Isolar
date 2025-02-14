@@ -24,12 +24,12 @@ ${filtro_Buscar}                     //input[@placeholder='Buscar...']
 @{opcoes_OrigemAssinatura}          (//div[contains(.,'Documentos')])[14]    (//div[contains(.,'Externos')])[5]    (//div[contains(.,'Minerando Sol')])[5]    (//div[contains(.,'Estimativa')])[11]    
 
 ${botao_VerDocumento}               (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[4]
-${botao_StatusAssinatura}           (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[3]
-${botao_Rubrica}                    (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[17]
-${botao_GerarAssinatura}            (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[9]
-${botao_VerdocumentoINVÁLIDO}       (//button[@data-state='closed'])[11]
-${botao_StatusAssinaturaINVÁLIDO}   (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-destructive text-destructive-foreground hover:bg-destructive/90 h-10 w-10')])[3]
-${botao_StatusAssinaturaINVÁLIDO2}  (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')])[1]
+${botao_StatusAssinatura}           (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[5]
+${botao_Rubrica}                    (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[6]
+${botao_GerarAssinatura}            (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[8]
+${botao_VerdocumentoINATÍVO}        (//button[@data-state='closed'])[13]
+${botao_GerarAssinaturaINATÍVO}     (//button[@data-state='closed'])[14]
+${botao_StatusAssinaturaINATÍVO}    (//button[@data-state='closed'])[15]
 ${botao_Criar}                      (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2')])[1]
 ${botao_DocumentoOriginal}          //button[contains(.,'Documento original')]
 ${botao_EditarCampos}               //button[contains(.,'Editar campos')]
@@ -41,6 +41,8 @@ ${botao_BaixarTemplateEditável}     //button[contains(.,'Baixar Template editá
 ${CAMINHO_ARQUIVO}                  "C:\Users\silva\Downloads\teste.pdf"
 ${nome_teste}                       teste
 ${NOME_CRIADOR}                     Fernando QA
+${link_Token}                       https://dev.grupoiso.com.br/storage/uploads/docs/67ae4ad0d5083.pdf
+
 *** Keywords ***
 
 # -07.01.01
@@ -127,7 +129,9 @@ Então sistema exibe informações de botão Ver Documento
     Wait Until Page Contains    text=Documento
 
 # -07.01.07
-
+E preencho filtro criador em Documentos
+    Wait Until Element Is Visible    //input[contains(@id,'criador')]
+    Input Text                       //input[contains(@id,'criador')]    Fernando QA
 
 # -07.01.08
 E preencho informações do filtro criador
@@ -140,7 +144,7 @@ E clico no botão Status da assinatura
     Click Element                    ${botao_StatusAssinatura}
 
 Então sistema exibe informações de botão Status da assinatura
-    Wait Until Page Contains    text=Status da assinatura - 7
+    Wait Until Page Contains    text=Status da assinatura - 6
 
 # -07.01.09
 E clico no botão Rubrica
@@ -148,7 +152,7 @@ E clico no botão Rubrica
     Click Element                    ${botao_Rubrica}
 
 Então sistema exibe informações de botão Rubrica
-    Wait Until Page Contains    text=Adicionar rubrica - 20
+    Wait Until Page Contains    text=Adicionar rubrica - 6
 
 # -07.01.10
 Quando clico no botão Próximo
@@ -169,29 +173,30 @@ E preencho filtro criador
     Wait Until Element Is Visible    ${input_Criador}
     Input Text                       ${input_Criador}    Fernando Morais da Costa Silva
     Sleep    1s
-E clico no botão Ver Documento (INVÁLIDO)
-    Sleep    1s
-    Wait Until Element Is Visible    ${botao_VerdocumentoINVÁLIDO}
-    Click Element                    ${botao_VerdocumentoINVÁLIDO}
 
-Então sistema exibe informações de botão Ver Documento (INVÁLIDO)
+E clico no botão Ver Documento (INATÍVO)
+    Sleep    1s
+    Wait Until Element Is Visible    ${botao_VerdocumentoINATÍVO}
+    Click Element                    ${botao_VerdocumentoINATÍVO}
+
+Então sistema exibe informações de botão Ver Documento (INATÍVO)
     Wait Until Page Contains    text=Documento não encontrado.
 
 # -07.01.13
-E clico no botão Status da assinatura (INVÁLIDO)
-    Wait Until Element Is Visible    ${botao_StatusAssinaturaINVÁLIDO}
-    Click Element                    ${botao_StatusAssinaturaINVÁLIDO}
+E clico no botão Status da assinatura (INATÍVO)
+    Wait Until Element Is Visible    ${botao_StatusAssinaturaINATÍVO}
+    Click Element                    ${botao_StatusAssinaturaINATÍVO}
 
-Então sistema exibe informações de botão Status da assinatura (INVÁLIDO)
+Então sistema exibe informações de botão Status da assinatura (INATÍVO)
     Wait Until Page Contains    text=Sem assinatura.
     
 # -07.01.14
-E clico no botão Gerar link de assinatura (INVÁLIDO)
-    Wait Until Element Is Visible    ${botao_StatusAssinaturaINVÁLIDO2}
-    Click Element                    ${botao_StatusAssinaturaINVÁLIDO2}
+E clico no botão Gerar link de assinatura (INATÍVO)
+    Wait Until Element Is Visible    ${botao_GerarAssinaturaINATÍVO}
+    Click Element                    ${botao_GerarAssinaturaINATÍVO}
 
-Então sistema exibe informações de botão Gerar link de assinatura (INVÁLIDO)
-    Wait Until Page Contains    text=Link já foi gerado.
+Então sistema exibe informações de botão Gerar link de assinatura (INATÍVO)
+    Wait Until Page Contains    text=Sem assinatura.
 
 # -07.01.15
 E clico no botão Gerar link de assinatura
@@ -199,7 +204,7 @@ E clico no botão Gerar link de assinatura
     Click Element                    ${botao_GerarAssinatura}
 
 Então sistema exibe informações de botão Gerar link de assinatura
-    Wait Until Page Contains    text=ZapSign - 3
+    Wait Until Page Contains    text=ZapSign - 9
 
 # -07.02.01
 Clico no menu "Assinaturas"
@@ -214,10 +219,10 @@ Então sistema exibe informações de menu Assinaturas
 E preencho informações de filtro Origem da assinatura
     Wait Until Element Is Visible    ${filtro_OrigemAssinatura}
     Click Element                    ${filtro_OrigemAssinatura}
-    Click Element                    (//div[contains(.,'Minerando Sol')])[5]
+    Click Element                    (//div[contains(.,'Externos')])[5]
 
 Então sistema exibe informações de filtro Origem da assinatura
-    Wait Until Element Is Visible    (//p[contains(.,'Doc')])[4]
+    Wait Until Element Is Visible    //p[contains(.,'FICHA E TERMO SARA TESTE ANEXOS')]
 
 # -07.02.03
 E preencho informações de filtro Status
@@ -231,18 +236,18 @@ Então sistema exibe informações de filtro Status
 # -07.02.04
 E preencho informações de filtro Assinante
     Wait Until Element Is Visible    ${filtro_Assinante}
-    Input Text                       ${filtro_Assinante}    teste123
+    Input Text                       ${filtro_Assinante}    teste
 
 Então sistema exibe informações de filtro Assinante
-    Wait Until Element Is Visible    (//p[contains(.,'Teste')])[1]
+    Wait Until Element Is Visible    //p[contains(.,'teste123')]
 
 # -07.02.05
 E preencho informações de filtro Observador
     Wait Until Element Is Visible    ${filtro_Observador}
-    Input Text                       ${filtro_Observador}    a
+    Input Text                       ${filtro_Observador}    teste123
 
 Então sistema exibe informações de filtro Observador
-    Wait Until Page Contains    text=Registros carregados com sucesso!
+    Wait Until Page Contains    text=Nenhuma contrato encontrado.
 
 # -07.02.06
 Quando seleciono opção Cards ou Lista "Lista"
@@ -267,32 +272,38 @@ Quando clico no botão Criar
     Wait Until Element Is Visible    ${botao_Criar}
     Click Element                    ${botao_Criar}
 
-# E ralizo o upload do arquivo
-#     Wait Until Element Is Visible        timeout=10
-#     Choose File        ${CAMINHO_ARQUIVO}
-#     Sleep    5s
-    
-# -07.02.10
+E faço upload de arquivo teste
+    Wait Until Element Is Visible    (//button[@type='button'])[9]
+    Click Element                    (//button[@type='button'])[9]
+    Click Element                    (//div[contains(.,'Link')])[5]
+    Sleep    1s
+    Execute JavaScript     Set Clipboard Text    https://dev.grupoiso.com.br/storage/uploads/docs/67ae4ad0d5083.pdf
+    Click Element         //input[contains(@type,'url')]
+    Press Keys            //input[contains(@type,'url')]    CTRL+v
+    # # Input Text       (//input[contains(@class,'flex h-10 w-full !max-w-none rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-muted-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 pr-')])[2]    ${nome_pesquisa_GruposConsumidores}                    
+    # Input Text       //input[@placeholder='DD/MM/YYYY']    07062025
 
+    # Click Element    //button[contains(.,'Enviar Doc')]
 E seleciono opção "link"
     Sleep    2s
     Wait Until Element Is Visible    //button[contains(.,'Arquivo')]
     Click Element                    //button[contains(.,'Arquivo')]
     Click Element                    (//div[contains(.,'Link')])[5]
 
-Então sistema abre input de link
-    Wait Until Element Is Visible    //input[@placeholder='https://gruposiso.com.br/documentos/arquivopdf.pdf']
+Então sistema exibe tela final de rubrica
+    Wait Until Page Contains    text=Terá Rubricas?
+
+# -07.02.11
 E preencho informação de filtro Buscar
-    Wait Until Element Is Visible    (//button[@type='button'])[11]
-    Click Element                    (//button[@type='button'])[11]
+    Wait Until Element Is Visible    (//button[@type='button'])[12]
+    Click Element                    (//button[@type='button'])[12]
     Wait Until Element Is Visible    ${filtro_Buscar}
     Input Text                       ${filtro_Buscar}    teste
     
 Então sistema exibe informações de filtro Buscar
     Sleep    2s
-    Wait Until Element Is Visible    //p[contains(.,'Teste de Morais')]
+    Wait Until Element Is Visible    //p[contains(.,'teste123')]
 
-# -07.02.11
 Então sistema exibe tela de edição
     Wait Until Page Contains    text=Editar contrato
 
@@ -390,8 +401,22 @@ E clico em "Jurídico"
     Wait Until Element Is Visible    ${menu_CriarDocumento_Jurídico}
     Click Element                    ${menu_CriarDocumento_Jurídico}
 
-Então sistema entra na tela de Criar documento > Jurídico
-    Wait Until Page Contains    text=Escolha o tipo de documento que deseja gerar.
+E preencho informação de criar documento Jurídico
+    Sleep    1s
+    Click Element    (//button[contains(.,'P')])[2]
+    Sleep    1.5s
+    Click Element    (//input[@type='text'])[1]
+    FOR    ${i}    IN RANGE    34
+        Press Keys    None    B3 (teste)
+        Press Keys    None    TAB
+        Sleep    0.3s
+    END
+
+    Click Element    ${botao_GerarDocumento}
+
+
+Então sistema exibe mensagem de documento criado
+    Wait Until Page Contains    text=Documentos gerados com sucesso!
 
 # -07.03.03.02
 E preencho informações de novo documento > Jurídico

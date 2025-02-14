@@ -53,9 +53,11 @@ E preencho informações de filtro "Cliente"
     Wait Until Element Is Visible    ${campo_clienteRelatorios}
     Sleep    2s
     Click Element                    ${campo_clienteRelatorios}
-    Click Element                    (//div[contains(.,'Evandro Carlos Mior')])[19]
+    Click Element                    (//div[contains(.,'Evandro Carlos Mior')])[18]
+
 Então sistema exibe informações de filtro "Cliente"
     Wait Until Page Contains    text=Evandro Carlos Mior
+
 # --11.01.03
 E seleciono filtro Status "Fila"
     Click Element    //button[@id='status']
@@ -66,28 +68,29 @@ Então sistema exibe informações de filtro Status "Fila"
 
 # --11.01.04
 E seleciono filtro Responsável "Fernando"
-    Click Element    (//button[contains(.,'Todos')])[2]
-    Click Element    (//div[contains(.,'Fernando Morais da Costa Silva')])[5]
+    Click Element    (//button[contains(@type,'button')])[11]
+    Click Element    (//div[contains(.,'Marcos Acosta Borges')])[13]
 
 Então sistema exibe informações de filtro Responsável "suporte"
-    Wait Until Page Contains    text=Nenhum relatório encontrado.
+    Wait Until Element Is Visible    (//td[contains(.,'Marcos Acosta Borges')])[1]
 
 # --11.01.05
 E seleciono filtro Vendedor Técnico "Todos"
+    Sleep    2s
     Click Element    (//button[contains(.,'Todos')])[3]
     Click Element    (//div[contains(.,'Todos')])[27]
 Então sistema exibe informações de filtro Vendedor Técnico "Todos"
     Wait Until Page Contains    text=Não definido
 
 # --11.01.06
-E seleciono filtro Representante comercial "B3 (teste)"
-    Wait Until Element Is Visible    (//button[contains(.,'Todos')])[4]
-    Click Element                    (//button[contains(.,'Todos')])[4]
-    Click Element                    (//div[contains(.,'teste123')])[5]
-    # Click Element                    (//div[contains(.,'B3 (teste)')])[5]
+E preencho informação de filtro Representante comercial
+    Wait Until Element Is Visible    (//button[contains(@type,'button')])[13]
+    Click Element                    (//button[contains(@type,'button')])[13]
+    Click Element                    (//div[contains(.,'Diego Lang')])[5]
 
-Então sistema exibe informações de filtro Representante comercial "B3 (teste)"
-    Wait Until Page Contains    text=Nenhum relatório encontrado.
+
+Então sistema exibe informações de filtro Representante comercial
+    Wait Until Element Is Visible    (//td[contains(.,'Diego Lang')])[1]
 
 # --11.01.07
 E seleciono o filtro Renovadas "Renovadas"
@@ -117,16 +120,18 @@ Então sistema exibe informações de filtro Tipo de requisição "Todos"
 
 # --11.01.10
 E seleciono filtro Data de criação
-    Wait Until Element Is Visible    (//button[@type='button'])[15]
-    Click Element                    (//button[@type='button'])[15]
-    Wait Until Element Is Visible    (//button[@type='button'])[20]
-    Click Element                    (//button[@type='button'])[20]
-    Sleep    0.5s
+    Wait Until Element Is Visible    (//button[@type='button'])[16]
+    Click Element                    (//button[@type='button'])[16]
+    Wait Until Element Is Visible    (//button[@type='button'])[21]
+    FOR     ${i}    IN RANGE    2
+        Click Element    (//button[@type='button'])[21]
+        Sleep    0.5s
+    END
     Click Element                    (//button[contains(.,'30')])[2]
     Click Element                    (//button[contains(.,'31')])[2]
 
 Então sistema exibe informações de filtro Data de criação
-    Wait Until Element Is Visible    (//td[contains(.,'30/01/2025')])[1]
+    Wait Until Element Is Visible    //td[contains(.,'31/12/2024')]
 
 # --11.01.11
 E seleciono filtro Promotor "Todos"

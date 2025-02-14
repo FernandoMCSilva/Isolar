@@ -1068,7 +1068,7 @@ CT 08.14.08 - Validar botão Fechar no filtro "buscar"
     E clico em "Fechar"
     Então sistema verifica se filtro buscar fechou   
 
-CT 08.14.09 - Validar botão Fechar no filtro "buscar" 
+CT 08.14.09 - Validar botão Exportar para Excel 
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar menu Cadastros > Links externos está funcional
     [Tags]    Cadastros    Funcional        
     Dado que clico no menu "Cadastros > Links externos"

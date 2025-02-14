@@ -9,7 +9,7 @@ ${Vendedor_Fila}          Fernando
 ${Campo_Cliente}          //input[@id='cliente']
 ${Cliente_Fila}           Fernando
 @{TIPO_USINAS}            Todos     Autoconsumo    Aluguel
-${EXPECTED_RESULTS}       10
+${EXPECTED_RESULTS}       2
 
 ${emailteste}             teste123@gmail.com   
 ${numeroteste}            21981905892

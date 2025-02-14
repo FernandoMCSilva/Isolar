@@ -11,6 +11,7 @@ CT 11.01.01 - Validar menu Relatórios > Relatórios
     [Tags]    Relatórios    Relatórios    Funcional        
     Dado que clico no menu "Relatórios > Relatórios"
     Então sistema exibe informações de menu Relatórios > Relatórios
+
 CT 11.01.02 - Validar filtro Cliente 
     [Documentation]     Caso de teste valida se filtro cliente no Menu Relatórios > Relatórios está funcional
     [Tags]    Relatórios    Relatórios    Funcional        
@@ -52,9 +53,9 @@ CT 11.01.06 - Validar filtro Representante comercial
     [Tags]    Relatórios    Relatórios    Funcional        
     Dado que clico no menu "Relatórios > Relatórios"
     Quando clico em "Filtros"
-    E seleciono filtro Representante comercial "B3 (teste)"
+    E preencho informação de filtro Representante comercial
     E clico em "Buscar"
-    Então sistema exibe informações de filtro Representante comercial "B3 (teste)"
+    Então sistema exibe informações de filtro Representante comercial
     
 CT 11.01.07 - Validar filtro Renovadas 
     [Documentation]     Caso de teste valida se filtro Renovadas no Menu Relatórios > Relatórios está funcional
@@ -283,5 +284,4 @@ CT 11.02.15 - Validar botão Anterior > Homologatórias
     Dado que clico no menu "Relatórios > Homologatórias"
     Quando clico em "Próximo"
     E clico em "Anterior"
-    Então sistema exibe informações anteriores   
-
+    Então sistema exibe informações anteriores

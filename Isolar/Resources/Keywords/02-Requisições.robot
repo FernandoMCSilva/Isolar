@@ -13,7 +13,7 @@ ${Campo_Nivel_Urgencia}                 //div[@role='option' and contains(.,'Alt
 
 ${Botao_Buscar}                         //button[contains(.,'Buscar')]
 ${Botao_Editar}                         (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')])[1]
-${Botao_Visualizar}                     (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')])[2]
+${Botao_Visualizar}                     (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10'])[2]
 ${Botao_Acoes}                          (//button[@data-state='closed'])[19]
 ${Botao_Historico}                      (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10'])[3]
 
@@ -404,6 +404,7 @@ E preencho filtro Cliente
     Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
     Input Text                       //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_GruposConsumidores}
     Click Element                    ${Botao_Buscar}
+    Sleep    2s
     Wait Until Page Contains         text=B3 (teste)
 E clico no botão "Editar"
     Sleep    2s
@@ -468,11 +469,16 @@ E clico no botão "Renovar"
     Click Element                    ${Botao_Acoes_Requisicoes}
     Wait Until Element Is Visible    ${Botao_Renovar}
     Click Element                    ${Botao_Renovar}
-Então sistema exibe mensagem de renovação    
-    Wait Until Page Contains    text=Ações
+    Wait Until Element Is Visible    //button[contains(.,'Sim')]
+    Click Element                    //button[contains(.,'Sim')]
+    Wait Until Element Is Visible    //button[contains(.,'Atualização de preço')]
+    Click Element                    //button[contains(.,'Atualização de preço')]
+    Sleep    1s
+Então sistema exibe mensagem após renovação  
+    Execute Javascript    window.scrollTo(0,0)  
+    Wait Until Page Contains    text=Gerencie informações cadastradas no sistema.
 
 # --2.20
-
 E clico no botão "Comentários"
     # Sleep    2s
     # Click Element         //td[contains(.,'Estimativa')]

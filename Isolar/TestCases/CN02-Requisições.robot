@@ -159,19 +159,8 @@ CT 02.19 - Validar botão Renovar
     Quando clico em "Filtros"
     E preencho filtro Cliente
     E clico no botão "Renovar"
-    Então sistema exibe mensagem de renovação
-
-CT 02.20 - Validar botão Comentários 
-    [Documentation]     Caso de teste valida botão Comentários 
-    [Tags]    Requisições    Funcional        
-    Dado que clico no menu "Requisições"
-    Quando clico em "Filtros"
-    E preencho filtro Cliente
-    E clico no botão "Comentários"
-    E preencho informações de comentário
-    Então sistema exibe mensagem de confirmação
-
-CT 02.21 - Excluir requisição tipo "Técnico"
+    Então sistema exibe mensagem após renovação
+CT 02.20 - Excluir requisição tipo Renovada
     [Documentation]     Caso de teste valida funcionalidade excluir 
     [Tags]    Requisições    Funcional    SmokeTest
     Dado que clico no menu "Requisições"
@@ -181,7 +170,27 @@ CT 02.21 - Excluir requisição tipo "Técnico"
     E clico no botão "Excluir requisição"
     Então sistema exclui e retorna para menu requisições 
 
-CT 02.22 - Excluir cadastro de requisiçao em Cadastros > Clientes
+CT 02.21 - Validar botão Comentários 
+    [Documentation]     Caso de teste valida botão Comentários 
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E clico no botão "Comentários"
+    E preencho informações de comentário
+    Então sistema exibe mensagem de confirmação
+
+CT 02.22 - Excluir requisição tipo "Técnico"
+    [Documentation]     Caso de teste valida funcionalidade excluir 
+    [Tags]    Requisições    Funcional    SmokeTest
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E clico no botão "Editar"
+    E clico no botão "Excluir requisição"
+    Então sistema exclui e retorna para menu requisições 
+
+CT 02.23 - Excluir cadastro de requisiçao em Cadastros > Clientes
     [Documentation]     Caso de teste valida funcionalidade excluir 
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Cadastros > Clientes"
@@ -191,7 +200,7 @@ CT 02.22 - Excluir cadastro de requisiçao em Cadastros > Clientes
     E clico no botão "Continuar" em "Excluir"
     Então sistema exibe mensagem de cadastro excluido
 
-CT 02.23 - Tentar inserir requisição sem campos obrigatórios
+CT 02.24 - Tentar inserir requisição sem campos obrigatórios
     [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
@@ -199,7 +208,7 @@ CT 02.23 - Tentar inserir requisição sem campos obrigatórios
     E clico em próximo sem preencher campos
     Então sistema exibe mensagem de campos obrigatórios não preenchido
 
-CT 02.24 - Tentar inserir requisição preenchendo somente telefone
+CT 02.25 - Tentar inserir requisição preenchendo somente telefone
     [Documentation]     Caso de teste valida inserir preenchendo somente o campo telefone (Erro) 
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
@@ -207,7 +216,7 @@ CT 02.24 - Tentar inserir requisição preenchendo somente telefone
     Preencho somente campo telefone
     Então sistema exibe mensagem de CEP não preenchido
 
-CT 02.25 - Tentar inserir requisição preenchendo somente CEP
+CT 02.26 - Tentar inserir requisição preenchendo somente CEP
     [Documentation]     Caso de teste valida inserir preenchendo somente o campo CEP (Erro) 
     [Tags]    Requisições    Funcional        
     Dado que clico no menu "Requisições"
