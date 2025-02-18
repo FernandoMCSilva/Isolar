@@ -34,7 +34,7 @@ ${botao_Editar_Clientes}                        //button[contains(.,'Editar')]
 ${botao_SalvarCadastro_Clientes}                //button[contains(.,'Salvar')]
 ${botao_acoes_Pessoas}                          //button[contains(.,'Ações')]
 ${botao_acoes1LinksExternos}                    (//button[contains(.,'Ações')])[5]
-${botao_acoes2LinksExternos}                    (//button[contains(.,'Ações')])[6]
+${botao_acoes2LinksExternos}                    (//button[contains(.,'Ações')])[2]
 ${botao_ExportarExcelLinksExternos}             //button[contains(.,'Exportar para Excel')]
 
 
@@ -525,7 +525,7 @@ Então sistema exclui item do menu Cadastro > Usuários ZapSign
 
 # -08.12.08
 Então sistema exibe mensagem de erro de Usuários ZapSign
-    Wait Until Page Contains    text=Nenhuma fonte de origem encontrado.
+    Wait Until Page Contains    text=Nenhum usuário zapsing encontrado.
 
 # -08.13.01
 Dado que clico no menu "Cadastros > Cargos e Funções"

@@ -95,7 +95,7 @@ E seleciono Tipo de usina "Aluguel"
     Click Element    //div[@role='option'][contains(.,'Aluguel')]
 
 Então sistema exibe informações de Estimativa do filtro Tipo de usina "Aluguel"
-    Wait Until Element Is Visible     (//div[contains(.,'Registros carregados com sucesso!')])[7]
+    Wait Until Page Contains    text=Registros carregados com sucesso!
 
 # --4.7
 
@@ -112,10 +112,10 @@ E preencho com informações data de registro
     Click Element    //button[contains(.,'Buscar')]
     Sleep    2s
 Então sistema exibe Estimativa do filtro Data de registro
-    Wait Until Page Contains    text=Fernando QA
+    Sleep    4s
+    Wait Until Page Contains    text=12/09/2024
 
 # --4.8
-
 Quando clico em "Quantidade de itens por pág"
     Wait Until Element Is Visible    //span[contains(.,'Quantidade de itens por pág')]    timeout=10s
     Click Element                    //span[contains(.,'Quantidade de itens por pág')]

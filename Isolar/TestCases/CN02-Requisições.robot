@@ -126,7 +126,7 @@ CT 02.15 - Validar botão Editar
     Então sistema conlcui edição de requisição
 
 CT 02.16 - Validar botão Visualizar 
-    [Documentation]     Caso de teste valida botão editar 
+    [Documentation]     Caso de teste valida botão visualizar 
     [Tags]    Requisições    Funcional    SmokeTest 
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
@@ -223,3 +223,5 @@ CT 02.26 - Tentar inserir requisição preenchendo somente CEP
     Quanto clico no botão "Inserir/Técnico"
     Preencho somente campo CEP
     Então sistema exibe mensagem de telefone não preenchido
+
+    

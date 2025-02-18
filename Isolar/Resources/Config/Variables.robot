@@ -12,8 +12,8 @@ ${LOGO}                     //img[@alt='Logo Grupo ISO']
 
 ${EmailAdmin}                qa@grupoiso.com.br
 ${SenhaAdmin}                Gabriela16+
-${EmailOseias}               oseias@email.com
-${SenhaOseias}               Isolar@2024
+${EmailOseias}               compras@grupoiso.com.br
+${SenhaOseias}               Isolar@2023
 ${EmailVendedor}             joice@isolarenergy.com.br
 ${SenhaVendedor}             Isolar@2023
 ${EmailTecnico}              projetos6@isolarenergy.com.br

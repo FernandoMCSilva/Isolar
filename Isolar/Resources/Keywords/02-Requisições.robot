@@ -24,6 +24,7 @@ ${Botao_Inserir_Requisicoes}            //button[contains(.,'Inserir')]
 ${Botao_Proximo_Requisicoes}            //button[contains(.,'Próximo')]
 ${Botao_Excluir_Requisicoes}            //button[contains(.,'Excluir requisição')]
 ${Botao_MudarStatusRequisicao}          (//button[@data-state='closed'])[20]
+${Filtro_Urgente}                       (//button[contains(@type,'button')])[10]
 
 ${input_nomecompleto_Requisicoes}       //div[@class='select__value-container css-hlgwow']
 ${input_telefone_Requisicoes}           //input[@id='telefone']
@@ -39,7 +40,7 @@ ${COMBOBOX_STATUS}             //button[contains(@id,'status')]
 ${COMBOBOX_TIPO}               //button[@id='tipo']
 ${COMBOBOX_URGENTE}            //button[contains(@id,'urgente')]
 ${COMBOBOX_NIVEL_DE_URGENCIA}  //button[contains(@id,'nivel_urgencia')]
-${COMBOBOX_RESPONSAVEL}        (//button[contains(@type,'button')])[12]
+${COMBOBOX_RESPONSAVEL}        (//button[contains(@type,'button')])[11]
 ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 
 
@@ -84,7 +85,7 @@ E valido filtros dentro de Departamento em Requisições
     FOR    ${departamento}    IN    @{OPCOES_COMBOBOX_DEPARTAMENTO}
             # Clica na opção de departamento atual
             Click Element    ${departamento}
-            
+            Sleep    0.5s
             # Clica no botão de buscar
             Click Element    ${Btn_Buscar}
             
@@ -326,9 +327,9 @@ Quanto clico no botão "Inserir/Técnico"
     Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
     Sleep    1s
     Click Element                    ${Botao_Inserir_Requisicoes}
-    Wait Until Element Is Visible    //button[contains(.,'Técnico')]
-    Click Element                    //button[contains(.,'Técnico')]
-    Click Element                    //button[contains(.,'Técnico')]
+    Wait Until Element Is Visible    //button[contains(.,'OBRAS')]
+    Click Element                    //button[contains(.,'OBRAS')]
+    Click Element                    //button[contains(.,'VISITA INSTALAÇĀO')]
 
 E preencho informações de cadastro de requisição
 # 1
