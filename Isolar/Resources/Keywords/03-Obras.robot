@@ -9,6 +9,8 @@ ${Menu_ObrasRequisicoes}               (//a[contains(.,'Requisições')])[2]
 ${filtro_Departamento_Obras}           (//div[contains(.,'OBRAS')])[5]
 ${filtro_NivelUrgencia}                //button[@id='nivel_urgencia']
 
+${Input_Trello}                        //input[@placeholder='Cole o link do trello']
+
 
 
 
@@ -28,7 +30,7 @@ Então sistema exibe tela de Obras > Dashboard
 
 # -3.1.6
 Então sistema exibe informações de filtros de data
-    Wait Until Element Is Visible    (//span[contains(.,'1')])[3]
+    Wait Until Element Is Visible    (//span[contains(.,'5')])[3]
 
 # -3.1.7
 E valido filtros de departamento em Obras
@@ -138,8 +140,17 @@ Então sistema exibe resultado de filtro Responsável
     Wait Until Element Is Visible    //td[contains(.,'2137')]
 
 # -3.2.10
+Quanto clico no botão "Inserir/Obras"
+    Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
+    Click Element                    ${Botao_Inserir_Requisicoes}
+    Wait Until Element Is Visible    //button[contains(.,'OBRAS')]
+    Click Element                    //button[contains(.,'OBRAS')]
+    Wait Until Element Is Visible    //button[contains(.,'VISITA INSTALAÇĀO')]
+    Click Element                    //button[contains(.,'VISITA INSTALAÇĀO')]
+
 E preencho informações de cadastro de requisição em Obras
 # 1
+    Sleep    1s
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    timeout=10s
     Press Keys    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
     Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]
@@ -151,10 +162,63 @@ E preencho informações de cadastro de requisição em Obras
     Click Element    (//button[contains(.,'Selecione')])[1]
     Click Element    (//div[contains(.,'RHIVAYLTON')])[5]
 
+    Click Element    (//button[@type='button'])[10]
+    Click Element    (//div[contains(.,'Solo')])[5]
+
+    Input Text        ${Input_Trello}    https://trello.com/u/teste123/boards
+    Click Element    ${Botao_Proximo_Requisicoes}
+# 3
+    Input Text       //input[@placeholder='DD/MM/YYYY']    07062025
+    Click Element    (//button[@type='button'])[10]
+    Click Element    (//div[contains(.,'OSEAS')])[5]
+
+    Click Element    (//button[@type='button'])[11]
+    Click Element    (//div[contains(.,'Sim')])[5]
+
+    Click Element    (//button[@type='button'])[12]
+    Click Element    (//div[contains(.,'Tem Proposta de Concorrente')])[5]
+    Click Element    ${botao_Salvar}
+
+Então sistema exibe requisição inserida
+    Wait Until Page Contains    text=B3 (teste)	
+
+# -3.2.11
+E preencho informações de editar requisição em Obras
+    Wait Until Element Is Visible    (//button[@type='button'])[12]
+    Click Element                    (//button[@type='button'])[12]
+    Click Element                    (//div[contains(.,'Telhado')])[5]
+    Click Element                    //button[contains(.,'Salvar alterações')]
+
+Então sistema conlcui edição de requisição em Obras
+    Wait Until Element Is Visible    //button[contains(.,'Telhado')]
+
+# -3.2.13
+E seleciono opção "Concluído" em editar status em Obras
+    Wait Until Element Is Visible    (//button[@type='button'])[13]
+    Click Element                    (//button[@type='button'])[13]
+    Click Element                    (//div[contains(.,'Concluído')])[5]
+    Click Element                    //button[contains(.,'Salvar alterações')]
 
 
+Então sistema verifica status de Requisição em Obras
+    Sleep    1.5s
+    Wait Until Element Is Visible    //button[contains(.,'Concluído')]
+
+# -3.2.14
+E preencho informações de comentário de requisição em Obras
+    Wait Until Element Is Visible    (//button[@data-state='closed'])[23]
+    Click Element    (//button[@data-state='closed'])[23]
+    Click Element    (//button[@data-state='closed'])[24]
+    Click Element    (//button[@data-state='closed'])[25]
+    Click Element    (//button[@data-state='closed'])[26]
+    Input Text       //div[contains(@contenteditable,'true')]    ${nome_pesquisa_GruposConsumidores}
+    Click Element    (//button[@type='button'])[34]
+
+# -3.2.15
+E clico no botão "Excluir requisição" em Obras
+    Wait Until Page Contains    text=Editar requisição
+    Execute JavaScript          window.scrollTo(0, 0)
+    Click Element               //button[contains(.,'Excluir requisição')]
 
 
-
-
-# -3.2.1
+# -3.2.10

@@ -126,91 +126,88 @@ CT 03.02.09 - Validar filtro Responsável
     E valido todos os filtros dentro de "Responsável" em Obras > Requisições
     Então sistema exibe resultado de filtro Responsável
 
-# CT 03.02.10 - Validar botão Inserir "Técnico"
-#     [Documentation]     Caso de teste valida botão Inserir "Técnico" em Requisições
-#     [Tags]    Obras    Requisições    Funcional   
-#     Dado que clico no menu Obras > Requisições
-#     Quanto clico no botão "Inserir/Técnico"
-#     E preencho informações de cadastro de requisição em Obras
-#     Então sistema exibe mensagem de cadastro realizado 
+CT 03.02.10 - Validar botão Inserir "Obras"
+    [Documentation]     Caso de teste valida botão Inserir "Obras" em Obras > Requisições
+    [Tags]    Obras    Requisições    Funcional   
+    Dado que clico no menu Obras > Requisições
+    Quanto clico no botão "Inserir/Obras"
+    E preencho informações de cadastro de requisição em Obras
+    Então sistema exibe requisição inserida
 
-# CT 03.02.11 - Validar botão Editar
-#     [Documentation]     Caso de teste valida botão editar em Obras > Requisições
-#     [Tags]    Obras    Requisições    Funcional 
-#     Dado que clico no menu Obras > Requisições
-#     Quando clico em "Filtros"
-#     E preencho filtro Cliente
-#     E clico no botão "Editar"
-#     E preencho informações de editar requisição em Obras
-#     Então sistema conlcui edição de requisição
+CT 03.02.11 - Validar botão Editar
+    [Documentation]     Caso de teste valida botão editar em Obras > Requisições
+    [Tags]    Obras    Requisições    Funcional 
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E clico no botão "Editar"
+    E preencho informações de editar requisição em Obras
+    Então sistema conlcui edição de requisição em Obras
 
-# CT 03.02.12 - Validar botão Visualizar 
-#     [Documentation]     Caso de teste valida botão visualizar em Obras 
-#     [Tags]    Obras    Requisições    Funcional 
-#     Dado que clico no menu Obras > Requisições
-#     Quando clico em "Filtros"
-#     E preencho filtro Cliente
-#     E clico no botão "Visualizar"
-#     Então sistema exibe informações de Visualizar em requisições
+CT 03.02.12 - Validar botão Visualizar 
+    [Documentation]     Caso de teste valida botão visualizar em Obras 
+    [Tags]    Obras    Requisições    Funcional 
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E clico no botão "Visualizar"
+    Então sistema exibe informações de Visualizar em requisições
 
-# CT 03.02.13 - Validar botão Mudar Status Requisição
-#     [Documentation]     Caso de teste valida botão Mudar Status Requisição em Obras
-#     [Tags]    Obras    Requisições    Funcional 
-#     Dado que clico no menu Obras > Requisições
-#     Quando clico em "Filtros"
-#     E preencho filtro Cliente
-#     E clico no botão "Editar"
-#     E seleciono opção "Concluído" em editar status em Obras
-#     Então sistema verifica funcionalidade do botão Mudar Status Requisição em Requisições
+CT 03.02.13 - Validar botão Mudar Status Requisição
+    [Documentation]     Caso de teste valida botão Mudar Status Requisição em Obras
+    [Tags]    Obras    Requisições    Funcional 
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E clico no botão "Editar"
+    E seleciono opção "Concluído" em editar status em Obras
+    Então sistema verifica status de Requisição em Obras 
 
-# CT 03.02.14 - Validar botão Comentários 
-#     [Documentation]     Caso de teste valida botão Comentários em Obras > Requisições
-#     [Tags]    Obras    Requisições    Funcional   
-#     Dado que clico no menu Obras > Requisições
-#     Quando clico em "Filtros"
-#     E preencho filtro Cliente
-#     E clico no botão "Comentários"
-#     E preencho informações de comentário
-#     Então sistema exibe mensagem de confirmação
+CT 03.02.14 - Validar botão Comentários 
+    [Documentation]     Caso de teste valida botão Comentários em Obras > Requisições
+    [Tags]    Obras    Requisições    Funcional   
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E clico no botão "Comentários"
+    E preencho informações de comentário de requisição em Obras
+    Então sistema exibe mensagem de confirmação
 
-# CT 03.02.15 - Excluir requisição tipo "Técnico"
-#     [Documentation]     Caso de teste valida funcionalidade excluir em Obras
-#     [Tags]    Obras    Requisições    Funcional   
-#     Dado que clico no menu Obras > Requisições
-#     Quando clico em "Filtros"
-#     E preencho filtro Cliente
-#     E clico no botão "Editar"
-#     E clico no botão "Excluir requisição"
-#     Então sistema exclui e retorna para menu requisições 
+CT 03.02.15 - Excluir requisição tipo "Técnico"
+    [Documentation]     Caso de teste valida funcionalidade excluir em Obras
+    [Tags]    Obras    Requisições    Funcional   
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E clico no botão "Editar"
+    E clico no botão "Excluir requisição" em Obras
+    Então sistema exclui e retorna para menu requisições 
 
-# CT 03.02.16 - Tentar inserir requisição sem campos obrigatórios
-#     [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
-#     [Tags]    Obras    Requisições    Funcional         
-#     Dado que clico no menu "Requisições"
-#     Quanto clico no botão "Inserir/Técnico"
-#     E clico em próximo sem preencher campos
-#     Então sistema exibe mensagem de campos obrigatórios não preenchido
+CT 03.02.16 - Tentar inserir requisição sem campos obrigatórios
+    [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
+    [Tags]    Obras    Requisições    Funcional         
+    Dado que clico no menu Obras > Requisições
+    Quanto clico no botão "Inserir/Obras"
+    E clico em próximo sem preencher campos
+    Então sistema exibe mensagem de campos obrigatórios não preenchido
 
-# CT 03.02.17 - Tentar inserir requisição preenchendo somente telefone
-#     [Documentation]     Caso de teste valida inserir preenchendo somente o campo telefone (Erro) 
-#     [Tags]    Obras    Requisições    Funcional         
-#     Dado que clico no menu "Requisições"
-#     Quanto clico no botão "Inserir/Técnico"
-#     Preencho somente campo telefone
-#     Então sistema exibe mensagem de CEP não preenchido
+CT 03.02.17 - Tentar inserir requisição preenchendo somente telefone
+    [Documentation]     Caso de teste valida inserir preenchendo somente o campo telefone (Erro) 
+    [Tags]    Obras    Requisições    Funcional         
+    Dado que clico no menu Obras > Requisições
+    Quanto clico no botão "Inserir/Obras"
+    Preencho somente campo telefone
+    Então sistema exibe mensagem de CEP não preenchido
 
-# CT 03.02.18 - Tentar inserir requisição preenchendo somente CEP
-#     [Documentation]     Caso de teste valida inserir preenchendo somente o campo CEP (Erro) 
-#     [Tags]    Obras    Requisições    Funcional         
-#     Dado que clico no menu "Requisições"
-#     Quanto clico no botão "Inserir/Técnico"
-#     Preencho somente campo CEP
-#     Então sistema exibe mensagem de telefone não preenchido
+CT 03.02.18 - Tentar inserir requisição preenchendo somente CEP
+    [Documentation]     Caso de teste valida inserir preenchendo somente o campo CEP (Erro) 
+    [Tags]    Obras    Requisições    Funcional         
+    Dado que clico no menu "Requisições"
+    Quanto clico no botão "Inserir/Obras"
+    Preencho somente campo CEP
+    Então sistema exibe mensagem de telefone não preenchido
 
     
-
-
-
 
 # ...
 # Inserir 

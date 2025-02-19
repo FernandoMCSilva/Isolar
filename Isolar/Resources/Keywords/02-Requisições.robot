@@ -40,7 +40,7 @@ ${COMBOBOX_STATUS}             //button[contains(@id,'status')]
 ${COMBOBOX_TIPO}               //button[@id='tipo']
 ${COMBOBOX_URGENTE}            //button[contains(@id,'urgente')]
 ${COMBOBOX_NIVEL_DE_URGENCIA}  //button[contains(@id,'nivel_urgencia')]
-${COMBOBOX_RESPONSAVEL}        (//button[contains(@type,'button')])[11]
+${COMBOBOX_RESPONSAVEL}        (//button[contains(.,'Selecione')])[1]
 ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 
 
@@ -327,9 +327,10 @@ Quanto clico no botão "Inserir/Técnico"
     Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
     Sleep    1s
     Click Element                    ${Botao_Inserir_Requisicoes}
-    Wait Until Element Is Visible    //button[contains(.,'OBRAS')]
-    Click Element                    //button[contains(.,'OBRAS')]
-    Click Element                    //button[contains(.,'VISITA INSTALAÇĀO')]
+    Wait Until Element Is Visible    //button[contains(.,'Técnico')]
+    Click Element                    //button[contains(.,'Técnico')]
+    Wait Until Element Is Visible    //button[contains(.,'Técnico')]
+    Click Element                    //button[contains(.,'Técnico')]
 
 E preencho informações de cadastro de requisição
 # 1
