@@ -40,7 +40,7 @@ ${COMBOBOX_STATUS}             //button[contains(@id,'status')]
 ${COMBOBOX_TIPO}               //button[@id='tipo']
 ${COMBOBOX_URGENTE}            //button[contains(@id,'urgente')]
 ${COMBOBOX_NIVEL_DE_URGENCIA}  //button[contains(@id,'nivel_urgencia')]
-${COMBOBOX_RESPONSAVEL}        (//button[contains(.,'Selecione')])[1]
+${COMBOBOX_RESPONSAVEL}        (//button[@type='button'])[12]
 ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 
 
@@ -501,7 +501,6 @@ E preencho informações de comentário
 Então sistema exibe mensagem de confirmação
     Wait Until Page Contains    text=Mensagem enviada com sucesso!
 
-
 # --2.21
 Quanto clico no botão "Inserir/TI"
     Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
@@ -511,7 +510,6 @@ Quanto clico no botão "Inserir/TI"
 
 Então sistema exibe mensagem de cadastro TI realizado
     Wait Until Page Contains    text=Escolha o tipo de requisição que deseja cadastrar.
-
 
 # --2.22
 Quanto clico no botão "Inserir/Compras"
@@ -568,6 +566,7 @@ Então sistema exibe mensagem de campos obrigatórios não preenchido
 
 # --2.27
 Preencho somente campo telefone
+    Sleep    2.5s
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]
     Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
     Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]

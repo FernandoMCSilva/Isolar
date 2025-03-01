@@ -74,7 +74,6 @@ CT 02.09 - Validar filtro Data de criação
     Quando clico em "Filtros"
     E preencho informações de Data de criação
     Então sistema exibe requisições do filtro Data de Criação
-
 CT 02.10 - Validar filtro Responsável
     [Documentation]     Caso de teste valida o filtro Responsável em Requisições
     [Tags]    Requisições    Funcional        
@@ -82,7 +81,6 @@ CT 02.10 - Validar filtro Responsável
     Quando clico em "Filtros"
     E valido todos os filtros dentro de "Responsável"
     Então sistema exibe requisições de filtro Responsável
-
 CT 02.11 - Validar filtro Representante comercial
     [Documentation]     Caso de teste valida o filtro Representante comercial em Requisições
     [Tags]    Requisições    Funcional        
@@ -90,7 +88,6 @@ CT 02.11 - Validar filtro Representante comercial
     Quando clico em "Filtros"
     E valido filtro dentro de "Representante comercial"
     Então sistema exibe requisições de filtro Representante comercial
-
 CT 02.12 - Validar filtro Vendedor
     [Documentation]     Caso de teste valida o filtro Vendedor em Requisições
     [Tags]    Requisições    Funcional        
@@ -98,7 +95,6 @@ CT 02.12 - Validar filtro Vendedor
     Quando clico em "Filtros"
     E seleciono filtro vendedor "Todos"
     Então sistema exibe requisições de filtro vendedor "Todos"
-
 CT 02.13 - Validar filtro Renovadas
     [Documentation]     Caso de teste valida o filtro Renovadas em Requisições
     [Tags]    Requisições    Funcional        
@@ -106,7 +102,6 @@ CT 02.13 - Validar filtro Renovadas
     Quando clico em "Filtros"
     E valido todos os filtros dentro de "Renovadas"
     Então sistema exibe requisições de filtro Renovadas
-
 CT 02.14 - Validar botão Inserir "Técnico"
     [Documentation]     Caso de teste valida botão Inserir "Técnico" em Requisições
     [Tags]    Requisições    Funcional     SmokeTest   
@@ -114,7 +109,6 @@ CT 02.14 - Validar botão Inserir "Técnico"
     Quanto clico no botão "Inserir/Técnico"
     E preencho informações de cadastro de requisição
     Então sistema exibe mensagem de cadastro realizado
-
 CT 02.15 - Validar botão Editar
     [Documentation]     Caso de teste valida botão editar em Requisições
     [Tags]    Requisições    Funcional    SmokeTest
@@ -124,7 +118,6 @@ CT 02.15 - Validar botão Editar
     E clico no botão "Editar"
     E preencho informações de requisição editada
     Então sistema conlcui edição de requisição
-
 CT 02.16 - Validar botão Visualizar 
     [Documentation]     Caso de teste valida botão visualizar 
     [Tags]    Requisições    Funcional    SmokeTest 
@@ -133,7 +126,6 @@ CT 02.16 - Validar botão Visualizar
     E preencho filtro Cliente
     E clico no botão "Visualizar"
     Então sistema exibe informações de Visualizar em requisições
-
 CT 02.17 - Validar botão Mudar Status Requisição
     [Documentation]     Caso de teste valida botão Mudar Status Requisição
     [Tags]    Requisições    Funcional    SmokeTest
@@ -142,7 +134,7 @@ CT 02.17 - Validar botão Mudar Status Requisição
     E preencho filtro Cliente
     E seleciono opção "Concluído" no botão Mudar Status Requisição em requisicoes
     Então sistema verifica funcionalidade do botão Mudar Status Requisição em Requisições
-
+    
 CT 02.18 - Validar botão Histórico 
     [Documentation]     Caso de teste valida botão Histórico 
     [Tags]    Requisições    Funcional     

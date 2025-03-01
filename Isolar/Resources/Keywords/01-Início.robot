@@ -32,7 +32,6 @@ Quando clico em "Fila"
     Click Element                    ${Botao_Fila}
 
 Então sistema exibe requisições com status "Fila"
-    Sleep    10s
     Wait Until Element Is Visible    xpath=//td[contains(normalize-space(),'Fila')]       timeout=10s
     ${statuses}=    Get Webelements    xpath=//td[contains(normalize-space(),'Fila')]                                
     ${count}=    Get Length    ${statuses}

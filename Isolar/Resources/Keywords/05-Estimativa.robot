@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation      Modúlo que gerencie as Estimativas cadastradas no sistema.
 Resource           ../Main.robot
+Library    Telnet
 
 *** Variables ***
 ${Tela_Estimativa}        //h1[contains(.,'Histórico das estimativas')]
@@ -15,7 +16,7 @@ ${emailteste}             teste123@gmail.com
 ${numeroteste}            21981905892
 ${valorteste}             0,7400
 
-${botao_gerar_assinatura_Estimativa}     //td[contains(@class, 'p-4 align-middle') and contains(@class, 'text-center')]//button
+${botao_gerar_assinatura_Estimativa}     (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[10]
 ${botao_imprimir_estimativa}             //button[contains(.,'Imprimir Estimativa')]
 ${botao_verPDF}                          (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[5]
 ${botao_ExportarExcel_estimativa}        //button[contains(.,'Exportar para Excel')]
@@ -175,7 +176,6 @@ Então sistema volta para menu Estimativa
     Wait Until Page Contains    text=Histórico das estimativas
 
 # --4.13
-
 E clico em "Sim"
     Wait Until Element Is Visible    (//button[contains(@type,'button')])[12]
     Click Element                    (//button[contains(@type,'button')])[12]
@@ -328,7 +328,7 @@ E preencho informações de calculos
 E clico no botão Ações
     Wait Until Element Is Visible    ${botao_Acoes_Estimativa}
     Click Element                    ${botao_Acoes_Estimativa}
-
+    
 Então sistema exibe tela de botão ações 
     Wait Until Page Contains    text=Baixar/Imprimir Estimativa
 
@@ -342,6 +342,8 @@ E preencho informações do cliente
 E clico no botão Baixar/Imprimir
     Wait Until Element Is Visible    ${botao_baixar/imprimir_Estimativa}
     Click Element                    ${botao_baixar/imprimir_Estimativa}
+    Sleep    1s 
+    Click Element                    //button[contains(.,'Confirmar')]
 
 Então sistema Baixa/Imprime Estimativa
     Wait Until Page Contains    text=Estimativa salva com sucesso!
@@ -350,6 +352,9 @@ Então sistema Baixa/Imprime Estimativa
 E clico no botão Iniciar conversa no WhatsApp
     Wait Until Element Is Visible    ${botao_iniciarconversa_Estimativa}
     Click Element                    ${botao_iniciarconversa_Estimativa}
+    Wait Until Element Is Visible    //button[contains(.,'Confirmar')]
+    Click Element                    //button[contains(.,'Confirmar')]
+
 
 Então sistema redireciona para Whatsapp
     Wait Until Page Contains    text=Estimativa salva com sucesso!
@@ -358,8 +363,11 @@ Então sistema redireciona para Whatsapp
 E clico no botão Enviar por email
     Wait Until Element Is Visible    ${botao_enviaremail_Estimativa}
     Click Element                    ${botao_enviaremail_Estimativa}
+    Wait Until Element Is Visible    //button[contains(.,'Confirmar')]
+    Click Element                    //button[contains(.,'Confirmar')]
     Wait Until Element Is Visible    //button[contains(.,'Sim')]
     Click Element                    //button[contains(.,'Sim')]
+
 Então sistema abre informações do email
     Wait Until Page Contains    text=Selecione ou arraste a estimativa
 
@@ -367,6 +375,9 @@ Então sistema abre informações do email
 E clico no botão Salvar informarções no sistema
     Wait Until Element Is Visible    ${botao_salvarinformacoes_Estimativa}
     Click Element                    ${botao_salvarinformacoes_Estimativa}
+    Wait Until Element Is Visible    //button[contains(.,'Confirmar')]
+    Click Element                    //button[contains(.,'Confirmar')]
+
 
 Então sistema salva informações no sistema
     Wait Until Page Contains    text=Estimativa salva com sucesso!

@@ -7,6 +7,8 @@ ${Menu_ContratosDashBoard}                //a[contains(.,'Dashboard')]
 ${Menu_ContratosContratos}                //a[contains(.,'Contratos')]
 
 ${botao_FiltrarContratos}                 //button[contains(.,'Filtrar')]
+${botao_Resetarfiltros}                   //button[contains(.,'Resetar filtros')]
+${botao_Anexos}                           (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[4]
 
 ${Departamento_ContratosDashboard}        //button[contains(.,'Selecione um departamento')]
 ${Filtro_+60Dias}                         (//div[contains(.,'+60 diasNº Contratos8')])[6]
@@ -24,6 +26,7 @@ ${Filtro_DepartamentoContratos}           //button[@id='departament']
 ${Filtro_DocumentoContratos}              //input[@id='documento']
 ${Filtro_NomeIndividuosContratos}         //input[@id='nome']
 ${Filtro_StatusVigenciaContratos}         //button[@id='status_vigencia']
+${Filtro_PaginaFiltro}                    //button[@id='pag']
 
 
 *** Keywords ***       
@@ -119,10 +122,12 @@ E preencho informação de filtro Vigência inicial
     Wait Until Element Is Visible    ${Filtro_VigenciaInicial}
     Click Element                    ${Filtro_VigenciaInicial}
     FOR     ${i}    IN RANGE     2
-        Click Element    (//button[@type='button'])[18]
+        Click Element    (//button[@type='button'])[19]
         Sleep    0.5s
     END
-    Click Element    (//button[contains(.,'1')])[1]
+    Sleep    1s
+    Click Element    (//button[contains(.,'1')])[2]
+    Sleep    1s
     Click Element    (//button[contains(.,'31')])[3]
     Click Element    ${Filtro_VigenciaInicial}
 
@@ -134,7 +139,7 @@ E preencho informação de filtro Vigência final
     Wait Until Element Is Visible    ${Filtro_VigenciaFinal}
     Click Element                    ${Filtro_VigenciaFinal}
     FOR     ${i}    IN RANGE     13
-        Click Element    (//button[@type='button'])[54]
+        Click Element    (//button[@type='button'])[55]
         Sleep    0.3s
     END
     Click Element    (//button[contains(.,'1')])[16]
@@ -149,7 +154,7 @@ E preencho informação de filtro Índice
     Wait Until Element Is Visible    ${Filtro_Indice}
     Click Element                    ${Filtro_Indice}
    FOR     ${i}    IN RANGE     1
-        Click Element    (//button[@type='button'])[18]
+        Click Element    (//button[@type='button'])[19]
         Sleep    0.3s
     END
     Click Element    (//button[contains(.,'1')])[2]
@@ -220,5 +225,94 @@ E preencho informação de filtro Status de vigência
 Então sistema exibe informações de filtro Status de vigência
     Wait Until Element Is Visible    //td[contains(.,'André Giovanni Raimundo Aparício')]
 
+# -4.2.12
+E preencho filtro nome
+    Wait Until Element Is Visible    ${Filtro_NomeIndividuosContratos}
+    Input Text                       ${Filtro_NomeIndividuosContratos}    teste1234
+    Wait Until Element Is Visible    //input[@value='teste1234']
+
+E clico no botão Resetar filtros
+    Wait Until Element Is Visible        ${botao_Resetarfiltros}
+    Click Element                        ${botao_Resetarfiltros}
+    Wait Until Element Is Not Visible    //input[@value='teste1234']
+
+Então sistema limpa todos os filtros
+    Wait Until Element Is Visible    ${Filtro_NomeIndividuosContratos}
+
+# -4.2.13
+Quando seleciono filtro 30 dias
+    Wait Until Element Is Visible    ${Filtro_PaginaFiltro}
+    Click Element                    ${Filtro_PaginaFiltro}
+    Click Element                    (//div[contains(.,'30 dias')])[18]
+
+Então sistema exibe informações de filtro 30 dias
+    Wait Until Element Is Visible    (//div[contains(.,'30 dias')])[12]
+
+# -4.2.14
+E preencho informações de novo Controle de contratos
+# 1
+    Wait Until Element Is Visible    (//div[contains(.,'Selecione um indivíduo')])[12]
+    Click Element                    (//div[contains(.,'Selecione um indivíduo')])[12]
+    Click Element                    (//div[contains(.,'B3 (teste) - 198.959.827-71')])[13]
+    Sleep    3s
+
+# 2
+    Click Element                    //button[contains(.,'Adicionar Registro')]
+    Wait Until Element Is Visible    (//input[@placeholder='CNPJ'])[2]
+    Click Element                    //button[contains(.,'Apagar')]
+    
+    Input Text                       //input[contains(@id,'vigencia_inicio')]    07062024
+    Input Text                       //input[@id='vigencia_fim']                 07062026
+    Input Text                       //input[@id='indiceData']                   07062026
+    Input Text                       //input[@id='indice']                       IP
+    Input Text                       (//input[@type='text'])[2]                  ${valorteste}
+    Click Element                    //button[contains(.,'Selecione a empresa')]
+    Click Element                    (//div[contains(.,'Isolar Energy')])[5]
+    Click Element                    //button[contains(.,'Selecione um departamento')]
+    Click Element                    (//div[contains(.,'TI')])[18]
+    Click Element                    //button[contains(.,'Selecione um responsável')]
+    Click Element                    (//div[contains(.,'Fernando QA')])[5]
+    Choose File                      //input[contains(@class, 'flex h-10 w-full')]    C:/Users/silva/Downloads/pdf-test.pdf
+    Click Element                    //button[contains(.,'Salvar')]
+
+Então sistema realiza inserção de novo Controle de contratos
+    Wait Until Page Contains    text=Registro adicionado com sucesso!
+
+# -4.2.15
+E preencho informações de Controle de contratos editado
+    Sleep    1s
+    Wait Until Element Is Visible    (//input[@type='text'])[2]
+    Input Text                       (//input[@type='text'])[2]    123
+    Click Element                    //button[contains(.,'Salvar')]
+
+
+Então sistema realiza edição de Controle de contratos
+    Wait Until Page Contains    text=Registro atualizado com sucesso!
+
+# -4.2.16
+E clico no botão Anexos
+    Wait Until Element Is Visible    ${botao_Anexos}
+    Click Element                    ${botao_Anexos}
+    
+Então sistema exibe informações de documento
+    Wait Until Page Contains    text=Anexos do Contrato #19
+
+# -4.2.17
+E faço download de documento
+    Wait Until Element Is Visible    //button[@type='button'][contains(.,'Documento 1')]
+    Click Element                    //button[@type='button'][contains(.,'Documento 1')]
+    Click Element                    //button[contains(.,'Baixar Documento 1')]
+
+# -4.2.18
+E mudo status de vigência
+    Sleep    1s
+    Wait Until Element Is Visible    //button[contains(.,'Selecione o status da vigência')]
+    Click Element                    //button[contains(.,'Selecione o status da vigência')]
+    Click Element                    (//div[contains(.,'Reincidido/Encerrado')])[5]
+    Click Element                    //button[contains(.,'Salvar')]
+
+Então sistema realiza mudança de vigência
+    Wait Until Page Contains    text=Registro atualizado com sucesso!
+    
 
 # -4.2.11

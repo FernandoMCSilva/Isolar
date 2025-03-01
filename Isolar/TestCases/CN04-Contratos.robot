@@ -149,6 +149,67 @@ CT 04.02.11 - Validar filtro Status de vigência
     E preencho informação de filtro Status de vigência
     Então sistema exibe informações de filtro Status de vigência
 
+CT 04.02.12 - Validar botão Resetar filtros
+    [Documentation]     Caso de teste valida botão Resetar filtros em Contratos > Contratos
+    [Tags]    Contratos    Contratos    Funcional        
+    Dado que clico no menu Contratos > Contratos
+    Quando clico em "Filtros"
+    E preencho filtro nome
+    E clico no botão Resetar filtros
+    Então sistema limpa todos os filtros
 
+CT 04.02.13 - Validar filtro pag de filtro
+    [Documentation]     Caso de teste valida filtro pag de filtro em Contratos > Contratos
+    [Tags]    Contratos    Contratos    Funcional        
+    Dado que clico no menu Contratos > Contratos
+    Quando seleciono filtro 30 dias
+    Então sistema exibe informações de filtro 30 dias
+
+CT 04.02.14 - Validar inserção
+    [Documentation]     Caso de teste valida inserção em Contratos > Contratos
+    [Tags]    Contratos    Contratos    Funcional        
+    Dado que clico no menu Contratos > Contratos
+    Quando clico no botão "Inserir"
+    E preencho informações de novo Controle de contratos
+    Então sistema realiza inserção de novo Controle de contratos
+
+CT 04.02.15 - Validar edição
+    [Documentation]     Caso de teste valida edição em Contratos > Contratos
+    [Tags]    Contratos    Contratos    Funcional        
+    Dado que clico no menu Contratos > Contratos
+    Quando clico em "Filtros"
+    E preencho filtro nome
+    E clico no botão "Editar"
+    E preencho informações de Controle de contratos editado
+    Então sistema realiza edição de Controle de contratos
+
+CT 04.02.16 - Validar botão Anexos
+    [Documentation]     Caso de teste valida botão Anexos em Contratos > Contratos
+    [Tags]    Contratos    Contratos    Funcional        
+    Dado que clico no menu Contratos > Contratos
+    Quando clico em "Filtros"
+    E preencho filtro nome
+    E clico no botão Anexos
+    Então sistema exibe informações de documento
+
+CT 04.02.17 - Validar download de documento
+    [Documentation]     Caso de teste valida download de documento em Contratos > Contratos
+    [Tags]    Contratos    Contratos    Funcional        
+    Dado que clico no menu Contratos > Contratos
+    Quando clico em "Filtros"
+    E preencho filtro nome
+    E clico no botão Anexos
+    E faço download de documento
+    Então sistema exibe informações de documento
+
+CT 04.02.18 - Validar mandança do Status vigência
+    [Documentation]     Caso de teste valida mandança do Status vigência em Contratos > Contratos
+    [Tags]    Contratos    Contratos    Funcional        
+    Dado que clico no menu Contratos > Contratos
+    Quando clico em "Filtros"
+    E preencho filtro nome
+    E clico no botão "Editar"
+    E mudo status de vigência
+    Então sistema realiza mudança de vigência
 
 
