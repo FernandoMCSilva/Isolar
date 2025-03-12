@@ -30,8 +30,7 @@ Então sistema exibe tela de Obras > Dashboard
 
 # -3.1.6
 Então sistema exibe informações de filtros de data
-    Wait Until Element Is Visible    (//span[contains(.,'5')])[3]
-
+    Wait Until Page Contains    text=2025-02
 # -3.1.7
 E valido filtros de departamento em Obras
     Wait Until Element Is Visible    ${Btn_Departamentos}
@@ -157,6 +156,7 @@ E preencho informações de cadastro de requisição em Obras
     Click Element    //button[contains(.,'Novo Cliente')]
     Input Text    //input[@id='telefone']    12345678910
     Input Text    //input[@id='cep']    28990154
+    Sleep    1s
     Click Element    ${Botao_Proximo_Requisicoes}
 # 2
     Click Element    (//button[contains(.,'Selecione')])[1]
@@ -165,7 +165,7 @@ E preencho informações de cadastro de requisição em Obras
     Click Element    (//button[@type='button'])[10]
     Click Element    (//div[contains(.,'Solo')])[5]
 
-    Input Text        ${Input_Trello}    https://trello.com/u/teste123/boards
+    Input Text       ${Input_Trello}    https://trello.com/u/teste123/boards
     Click Element    ${Botao_Proximo_Requisicoes}
 # 3
     Input Text       //input[@placeholder='DD/MM/YYYY']    07062025

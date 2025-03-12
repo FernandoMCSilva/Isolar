@@ -15,7 +15,7 @@ ${Status_Paradas}      Parado
 ${Btn_Buscar}          //button[contains(.,'Buscar')]
 ${Btn_Departamentos}   //button[@id='departament']
 
-@{DEPARTAMENTOS_OPTIONS}    (//div[contains(.,'Comercial')])[5]    (//div[contains(.,'Grandes contas')])[5]
+@{DEPARTAMENTOS_OPTIONS}    (//div[contains(.,'Comercial')])[5]    //span[normalize-space(text())='CS-Customer Success']
 
 *** Keywords ***
 # --1.1

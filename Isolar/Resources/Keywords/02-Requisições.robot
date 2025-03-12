@@ -40,11 +40,11 @@ ${COMBOBOX_STATUS}             //button[contains(@id,'status')]
 ${COMBOBOX_TIPO}               //button[@id='tipo']
 ${COMBOBOX_URGENTE}            //button[contains(@id,'urgente')]
 ${COMBOBOX_NIVEL_DE_URGENCIA}  //button[contains(@id,'nivel_urgencia')]
-${COMBOBOX_RESPONSAVEL}        (//button[@type='button'])[12]
+${COMBOBOX_RESPONSAVEL}        (//button[contains(@class,'flex h-10')])[3]
 ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 
 
-@{OPCOES_COMBOBOX_DEPARTAMENTO}    (//div[contains(.,'Técnico')])[14]    (//div[contains(.,'Comercial')])[14]
+@{OPCOES_COMBOBOX_DEPARTAMENTO}     (//div[contains(.,'Comercial')])[14]    (//div[contains(.,'TI')])[5]
 @{OPCOES_COMBOBOX_STATUS}           (//div[contains(.,'Fila')])[22]    (//div[contains(.,'Produção')])[5]    (//div[contains(.,'Concluído')])[22]    (//div[contains(.,'Parado')])[5]
 @{OPCOES_COMBOBOX_TIPO}
 # @{OPCOES_COMBOBOX_TIPO}             (//div[contains(.,'Técnico')])[14]    (//div[contains(.,'Pós Venda')])[5]    (//div[contains(.,'Compra')])[5]    (//div[contains(.,'Defeito com computador/notebook')])[5]    (//div[contains(.,'Defeito com impressora')])[5]    
@@ -215,7 +215,7 @@ E preencho informações de Data de entrega
     Wait Until Element Is Visible    //button[@id='data_entrega']
     Click Element                    //button[@id='data_entrega']
     Wait Until Element Is Visible    (//button[@type='button'])[44]
-    FOR    ${i}    IN RANGE    5
+    FOR    ${i}    IN RANGE    6
         Click Element    (//button[@type='button'])[44]
         Sleep    0.5s
     END
@@ -232,7 +232,7 @@ E preencho informações de Data de criação
     Wait Until Element Is Visible      //button[@id='data_criacao']
     Click Element                      //button[@id='data_criacao']
 
-    FOR     ${i}    IN RANGE    5
+    FOR     ${i}    IN RANGE    6
     Click Element    (//button[@type='button'])[44]
     Sleep    0.5s
     END
@@ -365,7 +365,7 @@ E preencho informações de cadastro de requisição
     Click Element    (//div[contains(.,'Trifásico 220/127V')])[5]
 
     Click Element    (//button[contains(.,'Selecione')])[1]
-    Click Element    (//div[contains(.,'B1 (RESIDENCIAL)')])[5]
+    Click Element    //span[normalize-space(text())='B1']
 
     Click Element    (//button[contains(.,'Selecione')])[1]
     Click Element    (//div[contains(.,'Light')])[5]

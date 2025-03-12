@@ -109,6 +109,7 @@ CT 02.14 - Validar botão Inserir "Técnico"
     Quanto clico no botão "Inserir/Técnico"
     E preencho informações de cadastro de requisição
     Então sistema exibe mensagem de cadastro realizado
+
 CT 02.15 - Validar botão Editar
     [Documentation]     Caso de teste valida botão editar em Requisições
     [Tags]    Requisições    Funcional    SmokeTest
@@ -118,6 +119,7 @@ CT 02.15 - Validar botão Editar
     E clico no botão "Editar"
     E preencho informações de requisição editada
     Então sistema conlcui edição de requisição
+
 CT 02.16 - Validar botão Visualizar 
     [Documentation]     Caso de teste valida botão visualizar 
     [Tags]    Requisições    Funcional    SmokeTest 
@@ -126,6 +128,7 @@ CT 02.16 - Validar botão Visualizar
     E preencho filtro Cliente
     E clico no botão "Visualizar"
     Então sistema exibe informações de Visualizar em requisições
+
 CT 02.17 - Validar botão Mudar Status Requisição
     [Documentation]     Caso de teste valida botão Mudar Status Requisição
     [Tags]    Requisições    Funcional    SmokeTest
@@ -151,7 +154,8 @@ CT 02.19 - Validar botão Renovar
     Quando clico em "Filtros"
     E preencho filtro Cliente
     E clico no botão "Renovar"
-    Então sistema exibe mensagem após renovação
+    Então sistema exibe mensagem após renovação    
+
 CT 02.20 - Excluir requisição tipo Renovada
     [Documentation]     Caso de teste valida funcionalidade excluir 
     [Tags]    Requisições    Funcional    SmokeTest
@@ -207,7 +211,7 @@ CT 02.25 - Tentar inserir requisição preenchendo somente telefone
     Quanto clico no botão "Inserir/Técnico"
     Preencho somente campo telefone
     Então sistema exibe mensagem de CEP não preenchido
-
+    
 CT 02.26 - Tentar inserir requisição preenchendo somente CEP
     [Documentation]     Caso de teste valida inserir preenchendo somente o campo CEP (Erro) 
     [Tags]    Requisições    Funcional        
@@ -215,5 +219,4 @@ CT 02.26 - Tentar inserir requisição preenchendo somente CEP
     Quanto clico no botão "Inserir/Técnico"
     Preencho somente campo CEP
     Então sistema exibe mensagem de telefone não preenchido
-
     
