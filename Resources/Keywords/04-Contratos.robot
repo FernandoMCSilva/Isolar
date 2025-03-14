@@ -12,8 +12,8 @@ ${botao_Anexos}                           (//button[contains(@class,'inline-flex
 
 ${Departamento_ContratosDashboard}        //button[contains(.,'Selecione um departamento')]
 ${Filtro_+60Dias}                         (//div[contains(.,'+60 diasNº Contratos8')])[6]
-${Filtro_30Dias}                          (//div[contains(.,'30 diasNº Contratos2')])[6]
-${Filtro_15Dias}                          (//div[contains(.,'15 diasNº Contratos0')])[6]
+${Filtro_30Dias}                          (//span[contains(@class,'mr-1 inline-flex')])[2]
+${Filtro_15Dias}                          (//div[contains(@class,'mb-3 flex')])[3]
 ${Filtro_Vencidos}                        (//div[contains(.,'VencidosNº Contratos0')])[6]
 ${Filtro_Indefinidos}                     (//div[contains(.,'IndefinidosNº Contratos9')])[6]
 ${Filtro_VigenciaInicial}                 //button[@id='vigencia_inicio']
@@ -138,16 +138,18 @@ Então sistema exibe informações de filtro Vigência inicial
 E preencho informação de filtro Vigência final
     Wait Until Element Is Visible    ${Filtro_VigenciaFinal}
     Click Element                    ${Filtro_VigenciaFinal}
-    FOR     ${i}    IN RANGE     13
-        Click Element    (//button[@type='button'])[55]
+    Click Element                    //table[contains(@class,'w-full border-collapse')]/tbody[1]/tr[6]/td[1]/button[1]
+    Sleep    1s
+    FOR     ${i}    IN RANGE     12
+        Click Element    (//div[contains(@class,'space-x-1 flex')]//button)[2]
         Sleep    0.3s
     END
-    Click Element    (//button[contains(.,'1')])[16]
-    Click Element    ${Filtro_VigenciaFinal}
 
+    Click Element    //td[normalize-space(text())='1']
+    # Click Element    ${Filtro_VigenciaFinal}
 
 Então sistema exibe informações de filtro Vigência final
-    Wait Until Element Is Visible    (//td[contains(.,'01/04/2026')])[1]
+    Wait Until Element Is Visible    //td[normalize-space(text())='Sara TESTE 2 - NORMAL']
 
 # -4.2.4
 E preencho informação de filtro Índice
@@ -243,7 +245,7 @@ Então sistema limpa todos os filtros
 Quando seleciono filtro 30 dias
     Wait Until Element Is Visible    ${Filtro_PaginaFiltro}
     Click Element                    ${Filtro_PaginaFiltro}
-    Click Element                    (//div[contains(.,'30 dias')])[18]
+    Click Element                    //span[normalize-space(text())='30 dias']
 
 Então sistema exibe informações de filtro 30 dias
     Wait Until Element Is Visible    (//div[contains(.,'30 dias')])[12]

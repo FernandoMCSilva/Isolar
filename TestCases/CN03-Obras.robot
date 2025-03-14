@@ -181,7 +181,7 @@ CT 03.02.15 - Excluir requisição tipo "Técnico"
     E preencho filtro Cliente
     E clico no botão "Editar"
     E clico no botão "Excluir requisição" em Obras
-    Então sistema exclui e retorna para menu requisições 
+    Então sistema exclui e retorna para menu Obras > requisições 
 
 CT 03.02.16 - Tentar inserir requisição sem campos obrigatórios
     [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
@@ -197,12 +197,12 @@ CT 03.02.17 - Tentar inserir requisição preenchendo somente telefone
     Dado que clico no menu Obras > Requisições
     Quanto clico no botão "Inserir/Obras"
     Preencho somente campo telefone
-    Então sistema exibe mensagem de CEP não preenchido
+    Então sistema exibe mensagem de CEP não preenchido em Obras 
 
 CT 03.02.18 - Tentar inserir requisição preenchendo somente CEP
     [Documentation]     Caso de teste valida inserir preenchendo somente o campo CEP (Erro) 
     [Tags]    Obras    Requisições    Funcional         
-    Dado que clico no menu "Requisições"
+    Dado que clico no menu Obras > Requisições
     Quanto clico no botão "Inserir/Obras"
     Preencho somente campo CEP
     Então sistema exibe mensagem de telefone não preenchido

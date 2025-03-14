@@ -123,7 +123,7 @@ E seleciono filtro Data de criação
     Wait Until Element Is Visible    (//button[@type='button'])[16]
     Click Element                    (//button[@type='button'])[16]
     Wait Until Element Is Visible    (//button[@type='button'])[21]
-    FOR     ${i}    IN RANGE    2
+    FOR     ${i}    IN RANGE    3
         Click Element    (//button[@type='button'])[21]
         Sleep    0.5s
     END
@@ -166,8 +166,8 @@ E valido filtros de departamento em Relatórios
             Click Element    ${Botao_Buscar}
 
             # Espera pela atualização e valida que a página foi atualizada
-            Wait Until Element Is Visible    ${Botao_Proximo_Requisicoes}    timeout=10s
-            
+            Wait Until Element Is Visible    //button[normalize-space(text())='Exportar para Excel']    timeout=10s
+            Sleep    1.5s
             # Log do departamento testado
             ${departamento_text}    Get Text    ${departamento}
             Log    Departamento ${departamento_text} validado com sucesso

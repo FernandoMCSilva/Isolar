@@ -24,7 +24,7 @@ ${filtro_Buscar}                     //input[@placeholder='Buscar...']
 @{opcoes_OrigemAssinatura}          (//div[contains(.,'Documentos')])[14]    (//div[contains(.,'Externos')])[5]    (//div[contains(.,'Minerando Sol')])[5]    (//div[contains(.,'Estimativa')])[11]    
 
 ${botao_VerDocumento}               (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[4]
-${botao_StatusAssinatura}           (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[5]
+${botao_StatusAssinatura}           //table[contains(@class,'caption-bottom text-sm')]/tbody[1]/tr[1]/td[7]/button[1]
 ${botao_Rubrica}                    (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[6]
 ${botao_GerarAssinatura}            (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[8]
 ${botao_VerdocumentoINATÍVO}        (//button[@data-state='closed'])[13]
@@ -108,7 +108,7 @@ E seleciono opção de filtro Data de registro
     Click Element                     ${filtro_DataRegistro_Documentos}
     Wait Until Element Is Visible     (//button[@type='button'])[13]
 
-    FOR    ${i}    IN RANGE    1
+    FOR    ${i}    IN RANGE    2
         Click Element    (//button[@type='button'])[13]
         Sleep    0.5s
     END

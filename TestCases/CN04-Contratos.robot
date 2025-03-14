@@ -40,7 +40,6 @@ CT 04.01.05 - Validar filtro 30 dias
     Dado que clico no menu Contratos > Dashboard
     Quando clico no filtro "30 dias"
     Então sistema exibe informações de filtro "30 dias"
-
     
 CT 04.01.06 - Validar filtro 15 dias
     [Documentation]     Caso de teste valida o filtro "15 dias" 

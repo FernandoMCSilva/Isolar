@@ -104,7 +104,7 @@ E preencho informações de Data de entrega em Obras > Requisições
     Wait Until Element Is Visible    //button[@id='data_entrega']
     Click Element                    //button[@id='data_entrega']
     Wait Until Element Is Visible    (//button[@type='button'])[16]
-    FOR    ${i}    IN RANGE    5
+    FOR    ${i}    IN RANGE    6
         Click Element    (//button[@type='button'])[16]
         Sleep    0.5s
     END
@@ -122,7 +122,7 @@ E preencho informações de Data de criação em Obras > Requisições
     Click Element    (//button[@type='button'])[16]
     Sleep    0.5s
     END
-
+    Sleep    2s
     Click Element                      (//button[contains(.,'1')])[1]
     Click Element                      //button[contains(.,'31')]
 
@@ -140,6 +140,7 @@ Então sistema exibe resultado de filtro Responsável
 
 # -3.2.10
 Quanto clico no botão "Inserir/Obras"
+    Sleep    5s
     Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
     Click Element                    ${Botao_Inserir_Requisicoes}
     Wait Until Element Is Visible    //button[contains(.,'OBRAS')]
@@ -216,9 +217,22 @@ E preencho informações de comentário de requisição em Obras
 
 # -3.2.15
 E clico no botão "Excluir requisição" em Obras
+    Sleep    1s
     Wait Until Page Contains    text=Editar requisição
     Execute JavaScript          window.scrollTo(0, 0)
+    Sleep    1s
     Click Element               //button[contains(.,'Excluir requisição')]
+    Click Element               //button[contains(.,'Continuar')]
+
+Então sistema exclui e retorna para menu Obras > requisições 
+    Wait Until Element Is Visible    (//div[@class='text-left mb-4']//div)[1]
+
+
+# -3.2.17
+
+Então sistema exibe mensagem de CEP não preenchido em Obras 
+    Wait Until Page Contains    text=Preencha os campos obrigatórios: Estado, Cidade, Bairro, Endereço, CEP
+
 
 
 # -3.2.10
