@@ -40,7 +40,7 @@ ${COMBOBOX_STATUS}             //button[contains(@id,'status')]
 ${COMBOBOX_TIPO}               //button[@id='tipo']
 ${COMBOBOX_URGENTE}            //button[contains(@id,'urgente')]
 ${COMBOBOX_NIVEL_DE_URGENCIA}  //button[contains(@id,'nivel_urgencia')]
-${COMBOBOX_RESPONSAVEL}        (//button[contains(@class,'flex h-10')])[2]
+${COMBOBOX_RESPONSAVEL}        (//button[contains(@class,'flex h-10')])[3]
 ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 
 
@@ -563,7 +563,7 @@ E clico em próximo sem preencher campos
     Click Element                    ${Botao_Proximo_Requisicoes}
 
 Então sistema exibe mensagem de campos obrigatórios não preenchido
-    Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, Estado, Cidade, Bairro, Endereço, CEP
+    Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, CEP
 
 # --2.27
 Preencho somente campo telefone

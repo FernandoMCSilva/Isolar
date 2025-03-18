@@ -389,15 +389,12 @@ CT 08.05.09 - Validar botão Fechar no filtro "buscar"
     E clico no botao buscar
     E clico em "Fechar"
     Então sistema verifica se filtro buscar fechou
-
-
 CT 08.06.01 - Validar menu Cadastros > Classificações
     [Documentation]     Caso de teste valida se Menu Cadastros Classificações está funcional
     [Tags]    Cadastros    Classificações    Funcional
     Dado que clico no menu "Cadastros > Classificações"
     Então sistema exibe informações de cadastro de "Classificações"
 
-    
 CT 08.06.02 - Validar botão Inserir
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Classificações está funcional
     [Tags]    Cadastros    Classificações    Funcional    SmokeTest     
@@ -406,7 +403,6 @@ CT 08.06.02 - Validar botão Inserir
     E preencho informações de inserir novo cadastro de Tipo de Gerador
     E clico em "Salvar"
     Então sistema salva novo cadastro de pessoas
-
 CT 08.06.03 - Validar botão Editar
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Classificações está funcional
     [Tags]    Cadastros    Classificações    Funcional    SmokeTest
@@ -417,7 +413,6 @@ CT 08.06.03 - Validar botão Editar
     Quando clico em "Editar"
     E preencho informações de cadastro editado em Tipo de Gerador
     Então sistema exibe mensagem de informações editadas
-
 CT 08.06.04 - Validar filtro "buscar"
     [Documentation]     Caso de teste valida se filtro buscar está funcional
     [Tags]    Cadastros    Classificações    Funcional        
@@ -425,7 +420,6 @@ CT 08.06.04 - Validar filtro "buscar"
     E clico no botao buscar
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa
-
 CT 08.06.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Cadastros    Classificações    Funcional        
@@ -433,7 +427,6 @@ CT 08.06.05 - Validar botão Cancelar em "Excluir"
     Quando clico em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Pessoas"
-
 CT 08.06.06- Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Cadastros    Classificações    Funcional    SmokeTest        
@@ -443,7 +436,6 @@ CT 08.06.06- Validar botão Continuar em "Excluir"
     Quando clico em "Excluir"
     E clico no botão "Continuar" em "Excluir"
     Então sistema exclui item do menu Cadastro > Pessoas
-
 CT 08.06.07 - Validar filtro "Cards ou Lista" 
     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
     [Tags]    Cadastros    Classificações    Funcional        

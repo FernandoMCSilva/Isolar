@@ -99,7 +99,6 @@ Então sistema exibe informações de Estimativa do filtro Tipo de usina "Alugue
     Wait Until Page Contains    text=Registros carregados com sucesso!
 
 # --4.7
-
 E preencho com informações data de registro
     Wait Until Element Is Visible    (//button[@type='button'])[11]
     Click Element                    (//button[@type='button'])[11]
