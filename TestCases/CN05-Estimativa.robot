@@ -146,6 +146,7 @@ CT 04.18 - Validar botão aplicar desconto com valor acima do limite
     Quando clico no botão "Aplicar desconto"
     E preencho informações de desconto acima do limite
     Então sistema exibe mensagem de erro de desconto máximo permitido
+    
 CT 04.19 - Validar botão e funcionalidade "Gerar"
     [Documentation]    Caso de teste valida botao gerar em estimativa
     [Tags]    Estimativa    Funcional    SmokeTest

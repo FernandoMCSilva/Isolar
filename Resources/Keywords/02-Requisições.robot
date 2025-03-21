@@ -578,6 +578,7 @@ Preencho somente campo telefone
 
 Então sistema exibe mensagem de CEP não preenchido
     Wait Until Page Contains    text=Preencha os campos obrigatórios: CEP
+    
 # --2.28
 Preencho somente campo CEP
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]

@@ -274,7 +274,7 @@ E preencho informações de novo Controle de contratos
     Click Element                    (//div[contains(.,'TI')])[18]
     Click Element                    //button[contains(.,'Selecione um responsável')]
     Click Element                    (//div[contains(.,'Fernando QA')])[5]
-    Choose File                      //input[contains(@class, 'flex h-10 w-full')]    C:/Users/silva/Downloads/pdf-test.pdf
+    Choose File                      //p[normalize-space(text())='TIPO DE ARQUIVOS ACEITÁVEIS: PDF']    C:/Users/silva/Downloads/pdf-test.pdf
     Click Element                    //button[contains(.,'Salvar')]
 
 Então sistema realiza inserção de novo Controle de contratos

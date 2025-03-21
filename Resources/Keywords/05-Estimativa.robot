@@ -219,8 +219,10 @@ Então sistema aplica desconto e exibe informações em arquivo PDF
 # --4.19
 
 E preencho informações de desconto acima do limite
-    Input Text    //input[@id='descontoMaximo']    6
-    Click Element    //button[contains(.,'Confirmar')]
+    Wait Until Element Is Visible    //input[@id='descontoMaximo']
+    Input Text                       //input[@id='descontoMaximo']    6
+    Sleep                            1s
+    Click Element                    //button[contains(.,'Confirmar')]
 
 Então sistema exibe mensagem de erro de desconto máximo permitido
     Wait Until Page Contains    text=O valor digitado é maior que o desconto máximo permitido.
@@ -230,7 +232,7 @@ Então sistema exibe mensagem de erro de desconto máximo permitido
 
 Quando clico no botão "Gerar"
     Wait Until Element Is Visible    //button[contains(.,'Gerar')]
-    Click Element    //button[contains(.,'Gerar')]
+    Click Element                    //button[contains(.,'Gerar')]
 
 Então sistema exibe informações do botão Gerar
     Wait Until Page Contains    text=Informe os campos para geração de estimativa para o estado de Santa Catarina.

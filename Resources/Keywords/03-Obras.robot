@@ -228,6 +228,10 @@ Então sistema exclui e retorna para menu Obras > requisições
     Wait Until Element Is Visible    (//div[@class='text-left mb-4']//div)[1]
 
 
+# -3.2.16
+Então sistema exibe mensagem de campos obrigatórios não preenchido em Obras
+    Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, Estado, Cidade, Bairro, Endereço, CEP
+
 # -3.2.17
 
 Então sistema exibe mensagem de CEP não preenchido em Obras 

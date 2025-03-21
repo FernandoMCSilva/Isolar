@@ -599,10 +599,10 @@ E preencho informações de cadastro editado em links externos
 # -08.14.03
 E preencho informações de pesquisa em links externos
     Wait Until Element Is Visible    //input[@placeholder='Buscar...']
-    Input Text                       //input[@placeholder='Buscar...']    123
+    Input Text                       //input[@placeholder='Buscar...']    222
 
 Então sistema exibe informações de pesquisa em links externos
-     ${nome_resultado}=    Get Text    (//td[contains(.,'123')])[2]
+     ${nome_resultado}=    Get Text    //td[normalize-space(text())='222']
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
 
