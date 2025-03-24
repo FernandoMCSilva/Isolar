@@ -3,8 +3,8 @@ Documentation      Modúlo gerencia Configurações no sistema.
 Resource           ../Main.robot
 
 *** Variables ***
-${MENU_CONFIGURACOES}                 (//div[contains(.,'Configurações')])[8]
-${MENU_DOCUMENTOS}                    //a[contains(.,'Documentos')]
+${MENU_CONFIGURACOES}                 button[aria-controls='radix-:rdb:']
+${MENU_DOCUMENTOS}                    (//div[@id='radix-:rdb:']//a)[3]
 ${Menu_ConfigRequisicoes}             (//p[contains(.,'Requisições')])[2]
 ${Menu_ConfigDocumentos}              (//p[contains(.,'Documentos')])[2]
 ${Menu_ConfigEstimativa}              (//p[contains(.,'Estimativa')])[2]
@@ -48,7 +48,7 @@ ${botao_TornarObrigatorias}         (//button[@data-state='closed'])[10]
 ${botao_DecontoNivelAssociados}     //button[contains(.,'Nível de Associados')]
 ${botao_DecontoConcessionarias}     //button[contains(.,'Concessionárias')]
 ${botao_DecontoGruposTarifarios}    //button[contains(.,'Grupos tárifarios')]
-${botaox_RemoverSupervisor}         //div[contains(@aria-label,'Remove Fernando Morais da Costa Silva')]
+${botaox_RemoverSupervisor}         (//div[text()='Fernando QA']/following-sibling::div)[1]
 ${botao_AtualizarConfig}            //button[contains(.,'Atualizar')]
 ${botao_Editar_Configuracoes}       //button[contains(.,'Editar')]
 
@@ -259,6 +259,7 @@ Então sistema exibe informações de menu Minerando sol
 
 # -10.02.02
 Quando preencho informações do menu "Geral" no menu Configurações > Minerando Sol
+# 1
     Sleep    2s
     Input Text        ${input_ValorConfins}                    2,35    
     Input Text        ${input_ValorPis}                        0,5
@@ -268,22 +269,24 @@ Quando preencho informações do menu "Geral" no menu Configurações > Minerand
     Click Element     ${botao_DecontoNivelAssociados}
     Click Element     ${botao_DecontoConcessionarias}
     Click Element     ${botao_DecontoGruposTarifarios}
+# 2
+
     Input Text        //input[@id='concessionaria-4']            ${quatidade_padrao}
     Input Text        //input[@id='concessionaria-6']            ${quatidade_padrao}
     Input Text        //input[@id='concessionaria-7']            ${quatidade_padrao}
     Input Text        //input[@id='concessionaria-8']            ${quatidade_padrao}
-    Input Text        //input[@id='grupo-106']                   ${quatidade_padrao}
-    Input Text        //input[@id='grupo-107']                   ${quatidade_padrao}
-    Input Text        //input[@id='grupo-108']                   ${quatidade_padrao}
-    Input Text        //input[@id='grupo-109']                   ${quatidade_padrao}
+    Input Text        (//label[normalize-space(text())='Enel']/following::input)[1]                    ${quatidade_padrao}
+    Input Text        (//label[normalize-space(text())='AMAZONAS ENERGIA']/following::input)[1]        ${quatidade_padrao}
+    Input Text        (//label[normalize-space(text())='Cemig']/following::input)[1]                   ${quatidade_padrao}
+    Input Text        (//label[normalize-space(text())='CRERAL']/following::input)[1]                  ${quatidade_padrao}
     Input Text        //input[@id='concessionaria-8']            ${quatidade_padrao}
     Input Text        //input[@id='concessionaria-9']            ${quatidade_padrao}
     Input Text        //input[@id='concessionaria-10']           ${quatidade_padrao}
     Input Text        //input[@id='concessionaria-11']           ${quatidade_padrao}
     Input Text        //input[@id='concessionaria-12']           ${quatidade_padrao}
-    Input Text        //input[@id='concessionaria-24']           ${quatidade_padrao}
-    Input Text        //input[@id='concessionaria-25']           ${quatidade_padrao}
-    Input Text        (//input[@value='7'])[16]                  ${quatidade_padrao}
+    Input Text        (//label[normalize-space(text())='Creluz']/following::input)[1]           ${quatidade_padrao}
+    Input Text        (//label[normalize-space(text())='Energisa']/following::input)[1]         ${quatidade_padrao}
+    Input Text        (//label[normalize-space(text())='Equatorial']/following::input)[1]       ${quatidade_padrao}
     Input Text        (//input[@value='7'])[17]                  ${quatidade_padrao}
     Input Text        (//input[@value='7'])[18]                  ${quatidade_padrao}
     Input Text        (//input[@value='7'])[19]                  ${quatidade_padrao}
@@ -291,9 +294,10 @@ Quando preencho informações do menu "Geral" no menu Configurações > Minerand
     Click Element     //button[contains(.,'Adicionar Novo Associado')]
     Click Element     (//button[contains(.,'Remover')])[6]
     Sleep    1s
+    Sleep    3s
     Click Element     ${botaox_RemoverSupervisor}
     Click Element     (//div[@aria-hidden='true'])[2]
-    Click Element     (//div[contains(.,'Fernando Morais da Costa Silva')])[16]
+    Click Element     //div[normalize-space(text())='Fernando QA']
     Click Element     //button[@class='peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-slate-400']
     Click Element     //button[@class='peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-slate-400']
 E clico em Atualizar
@@ -303,20 +307,19 @@ Então sistema exibe mensagem de atualização
     Wait Until Page Contains    text=Registro atualizado com sucesso!
 
 # -10.02.03
-Quando preencho informações do menu "Template > Campos CPF" no menu Configurações > Minerando Sol
+Quando preencho informações do menu Template
     Sleep    1s
-    Click Element    (//button[contains(.,'Texto')])[1]
-    Click Element    (//div[contains(.,'Data')])[5]
-    Click Element    (//button[contains(.,'Nenhuma')])[1]
-    Click Element    (//div[contains(.,'Endereço/Rua')])[5]
-    Input Text       (//input[@value='Nome'])[1]    ${nome_pesquisa_GruposConsumidores}
-    Click Element    //button[contains(.,'Atualizar campos Pessoa física - Termos')]
-    Wait Until Page Contains    text=Campos atualizados com sucesso.
+    Wait Until Element Is Visible    //button[normalize-space(text())='Template']
+    Click Element                    //button[normalize-space(text())='Template']
+    Click Element                    (//button[contains(.,'Texto')])[1]
+    Click Element                    (//div[contains(.,'Data')])[5]
+    Click Element                    (//button[contains(.,'Nenhuma')])[1]
+    Click Element                    (//div[contains(.,'Endereço/Rua')])[5]
+    Input Text                       (//input[@value='Nome'])[1]    ${nome_pesquisa_GruposConsumidores}
+    Click Element                    //button[contains(.,'Atualizar campos Pessoa física - Termos')]
+    Wait Until Page Contains         text=Campos atualizados com sucesso.
     Sleep    4s
 
-
-
-# -10.02.03
 # -10.03.01
 Dado que clico no menu "Configurações > Documentos"
     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
@@ -329,7 +332,8 @@ Então sistema exibe informações de menu Documentos
 # -10.03.01
 E seleciono filtro "Tipo de documento"
     Click Element            (//button[contains(.,'Selecione')])[1]
-    Click Element            (//div[contains(.,'teste-cadastro')])[13]
+    Click Element            (//button[contains(@class,'flex h-10')])[1]
+
 Então sistema exibe informações de filtro selecionado
     Wait Until Page Contains    text=Registros carregados com sucesso!
 

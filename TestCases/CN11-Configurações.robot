@@ -181,63 +181,51 @@ CT 10.02.01 - Validar menu Configurações > Minerando sol
     Dado que clico no menu "Configurações > Minerando sol"
     Então sistema exibe informações de menu Minerando sol
 
-# - Validar menu
-# ...
-# - Funcionalidade Novo Tipo
-# - Funcionalidade Editar
-# - Funcionalidade Status (Ligar e Desligar)
-# - Filtro Buscar
-# - Botão Cancelar
-# - Botão Continuar
-# - Botão Perguntas
-# - Editar perguntas
-# - Buscar perguntas
-# - Excluir perguntas
-# - Filtro Cards ou lista em perguntas
-# - Busca não encontrada em perguntas
-# - Filtro quantidade por páginas
-# - Validar botão Fechar na funcionalidade buscar em perguntas
-# - Filtro Card ou Lista
-# - Validar Busca Não encontrada
-# - Validar botão fechar 
+CT 10.02.02 - Validar edição na tela Geral 
+    [Documentation]     Caso de teste valida se edição na tela "Geral" no menu Configurações > Minerando Sol está funcional
+    [Tags]    Configurações    Minerando Sol    Funcional
+    Dado que clico no menu "Configurações > Minerando sol"
+    Quando preencho informações do menu "Geral" no menu Configurações > Minerando Sol
+    E clico em Atualizar
+    Então sistema exibe mensagem de atualização
 
-# CT 10.02.02 - Validar edição na tela "Geral" 
-#     [Documentation]     Caso de teste valida se edição na tela "Geral" no menu Configurações > Minerando Sol está funcional
-#     [Tags]    Configurações    Minerando Sol    Funcional
-#     Dado que clico no menu "Configurações > Minerando sol"
-#     Quando preencho informações do menu "Geral" no menu Configurações > Minerando Sol
-#     E clico em Atualizar
-#     Então sistema exibe mensagem de atualização
-
-# CT 10.02.03 - Validar edição na tela "Template > Campos CPF " no menu Configurações > Minerando Sol
+# CT 10.02.03 - Validar edição na tela Template 
 #     [Documentation]     Caso de teste valida se edição na tela "Template" no menu Configurações > Minerando Sol está funcional
 #     [Tags]    Configurações    Minerando Sol    Funcional
 #     Dado que clico no menu "Configurações > Minerando sol"
-#     Quando preencho informações do menu "Template > Campos CPF" no menu Configurações > Minerando Sol
+#     Quando preencho informações do menu Template
 #     E clico em Atualizar
 #     Então sistema exibe mensagem de atualização
 
-# CT 10.03.01 - Validar menu Configurações > Documentos
-#     [Documentation]     Caso de teste valida se Menu Configurações > Documentos está funcional
-#     [Tags]    Configurações    Documentos    Funcional        
-#     Dado que clico no menu "Configurações > Documentos"
-#     Então sistema exibe informações de menu Documentos
+CT 10.03.01 - Validar menu Configurações > Documentos
+    [Documentation]     Caso de teste valida se Menu Configurações > Documentos está funcional
+    [Tags]    Configurações    Documentos    Funcional        
+    Dado que clico no menu "Configurações > Documentos"
+    Então sistema exibe informações de menu Documentos
 
-# CT 10.03.02 - Validar filtro "Tipo de documento" no menu Configurações > Documentos
-#     [Documentation]     Caso de teste valida se filtro "Tipo de documento" no menu Configurações > Documentos está funcional
-#     [Tags]    Configurações    Documentos    Funcional        
-#     Dado que clico no menu "Configurações > Documentos"
-#     Quando clico em "Filtros"
-#     E seleciono filtro "Tipo de documento"
-#     Então sistema exibe informações de filtro selecionado
+CT 10.03.02 - Validar filtro "Tipo de documento"
+    [Documentation]     Caso de teste valida se filtro "Tipo de documento" no menu Configurações > Documentos está funcional
+    [Tags]    Configurações    Documentos    Funcional        
+    Dado que clico no menu "Configurações > Documentos"
+    Quando clico em "Filtros"
+    E seleciono filtro "Tipo de documento"
+    Então sistema exibe informações de filtro selecionado
 
-# CT 10.03.03 - Validar filtro "Departamento" no menu Configurações > Documentos
-#     [Documentation]     Caso de teste valida se filtro "Departamento" no menu Configurações > Documentos está funcional
-#     [Tags]    Configurações    Documentos    Funcional        
-#     Dado que clico no menu "Configurações > Documentos"
-#     Quando clico em "Filtros"
-#     E seleciono filtro "Departamento"
-#     Então sistema exibe informações de filtro selecionado
+CT 10.03.03 - Validar filtro "Departamento"
+    [Documentation]     Caso de teste valida se filtro "Departamento" no menu Configurações > Documentos está funcional
+    [Tags]    Configurações    Documentos    Funcional        
+    Dado que clico no menu "Configurações > Documentos"
+    Quando clico em "Filtros"
+    E seleciono filtro "Departamento"
+    Então sistema exibe informações de filtro selecionado
+
+CT 10.03.04 - Validar filtro "Tipo de documento"
+    [Documentation]     Caso de teste valida se filtro "Departamento" no menu Configurações > Documentos está funcional
+    [Tags]    Configurações    Documentos    Funcional        
+    Dado que clico no menu "Configurações > Documentos"
+    Quando clico em "Filtros"
+    E seleciono filtro "Departamento"
+    Então sistema exibe informações de filtro selecionado
     
 # CT 10.04 - Validar menu Configurações > Minerando sol
 #     [Documentation]     Caso de teste valida se Menu Configurações > Minerando sol está funcional
