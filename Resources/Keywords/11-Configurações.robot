@@ -3,8 +3,8 @@ Documentation      Modúlo gerencia Configurações no sistema.
 Resource           ../Main.robot
 
 *** Variables ***
-${MENU_CONFIGURACOES}                 button[aria-controls='radix-:rdb:']
-${MENU_DOCUMENTOS}                    (//div[@id='radix-:rdb:']//a)[3]
+${MENU_CONFIGURACOES}                 //button[@aria-controls='radix-:r82:']
+${MENU_DOCUMENTOS}                    (//p[contains(.,'Documentos')])[2]
 ${Menu_ConfigRequisicoes}             (//p[contains(.,'Requisições')])[2]
 ${Menu_ConfigDocumentos}              (//p[contains(.,'Documentos')])[2]
 ${Menu_ConfigEstimativa}              (//p[contains(.,'Estimativa')])[2]
@@ -324,16 +324,16 @@ Quando preencho informações do menu Template
 Dado que clico no menu "Configurações > Documentos"
     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
     Click Element                    ${MENU_CONFIGURACOES}
-    Wait Until Element Is Visible    ${Menu_Documentos}
-    Click Element                    ${Menu_Documentos}
+    Sleep    1s 
+    Wait Until Element Is Visible    ${Menu_ConfigDocumentos}
+    Click Element                    ${Menu_ConfigDocumentos}
 Então sistema exibe informações de menu Documentos
     Wait Until Page Contains    text=Informações referentes aos historicos dos documentos gerados no sistema.
 
 # -10.03.01
 E seleciono filtro "Tipo de documento"
-    Click Element            (//button[contains(.,'Selecione')])[1]
     Click Element            (//button[contains(@class,'flex h-10')])[1]
-
+    Click Element            //span[normalize-space(text())='P']
 Então sistema exibe informações de filtro selecionado
     Wait Until Page Contains    text=Registros carregados com sucesso!
 
@@ -342,16 +342,60 @@ E seleciono filtro "Departamento"
     Click Element            (//button[contains(.,'Selecione')])[2]
     Click Element            (//div[contains(.,'TI')])[5]
 
-# -10.03.01
-# # -10.4
-# Dado que clico no menu "Configurações > Estimativa"
-#     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
-#     Click Element                    ${MENU_CONFIGURACOES}
-#     Wait Until Element Is Visible    ${Menu_Estimativa}
-#     Click Element                    ${Menu_Estimativa}
+
+# -10.03.04
+E clico no botão Ver template
+    Wait Until Element Is Visible    (//td[contains(@class,'p-4 align-middle')]//button)[1]
+    Click Element                    (//td[contains(@class,'p-4 align-middle')]//button)[1]
+
+Então sistema exibe informações de template selecionado
+    Wait Until Page Contains    text=Baixar Template editável
+
+# -10.03.05
+E clico no botão Ver histórico
+    Wait Until Element Is Visible    (//td[contains(@class,'p-4 align-middle')]//button)[2]
+    Click Element                    (//td[contains(@class,'p-4 align-middle')]//button)[2]
+
+Então sistema exibe histórico de template selecionado
+    Wait Until Page Contains    text=Histórico das ações do template - 1
+
+# -10.03.06
+E clico no botão Atualizar template
+    Wait Until Element Is Visible    (//td[contains(@class,'p-4 align-middle')]//button)[3]
+    Click Element                    (//td[contains(@class,'p-4 align-middle')]//button)[3]
+    Wait Until Page Contains         text=Selecione ou arraste o novo template
+E faço upload de arquivo teste de template
+    Sleep    1s
+    Wait Until Element Is Visible    //input[@type='file']
+    Choose File                      //input[@type='file']    C:\Users\silva\Downloads\teste-2020-07.docx
+    Sleep    3s
+Então sistema atualiza template selecionado
+    Wait Until Page Contains    text=    
+
+# -10.03.05
+
+
+
+
+
+
+
+
+
+# -10.04.01
+Dado que clico no menu "Configurações > Estimativa"
+    Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
+    Click Element                    ${MENU_CONFIGURACOES}
+    Wait Until Element Is Visible    ${Menu_configEstimativa}
+    Click Element                    ${Menu_ConfigEstimativa}
+
+Então sistema exibe informações de menu Estimativa
+    Wait Until Page Contains    text=Preencha os campos abaixo e clique em atualizar para atualizar as informações.
 
 # # -10.5
 # Dado que clico no menu "Configurações > Sistema"
 #     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
 #     Click Element                    ${MENU_CONFIGURACOES}
 #     Click Element                    ${Menu_Sistema}
+
+# -10.04.01

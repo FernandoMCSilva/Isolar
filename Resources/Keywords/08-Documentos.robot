@@ -152,6 +152,7 @@ E clico no botão Rubrica
     Click Element                    ${botao_Rubrica}
 
 Então sistema exibe informações de botão Rubrica
+    Sleep    4s
     Wait Until Page Contains    text=Adicionar rubrica - 6
 
 # -07.01.10

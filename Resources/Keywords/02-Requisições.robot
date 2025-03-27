@@ -40,7 +40,7 @@ ${COMBOBOX_STATUS}             //button[contains(@id,'status')]
 ${COMBOBOX_TIPO}               //button[@id='tipo']
 ${COMBOBOX_URGENTE}            //button[contains(@id,'urgente')]
 ${COMBOBOX_NIVEL_DE_URGENCIA}  //button[contains(@id,'nivel_urgencia')]
-${COMBOBOX_RESPONSAVEL}        (//button[contains(@class,'flex h-10')])[2]
+${COMBOBOX_RESPONSAVEL}        (//button[@role='combobox'])[2]
 ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 
 

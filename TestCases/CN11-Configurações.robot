@@ -203,7 +203,7 @@ CT 10.03.01 - Validar menu Configurações > Documentos
     Dado que clico no menu "Configurações > Documentos"
     Então sistema exibe informações de menu Documentos
 
-CT 10.03.02 - Validar filtro "Tipo de documento"
+CT 10.03.02 - Validar filtro Tipo de documento
     [Documentation]     Caso de teste valida se filtro "Tipo de documento" no menu Configurações > Documentos está funcional
     [Tags]    Configurações    Documentos    Funcional        
     Dado que clico no menu "Configurações > Documentos"
@@ -211,7 +211,7 @@ CT 10.03.02 - Validar filtro "Tipo de documento"
     E seleciono filtro "Tipo de documento"
     Então sistema exibe informações de filtro selecionado
 
-CT 10.03.03 - Validar filtro "Departamento"
+CT 10.03.03 - Validar filtro Departamento
     [Documentation]     Caso de teste valida se filtro "Departamento" no menu Configurações > Documentos está funcional
     [Tags]    Configurações    Documentos    Funcional        
     Dado que clico no menu "Configurações > Documentos"
@@ -219,22 +219,57 @@ CT 10.03.03 - Validar filtro "Departamento"
     E seleciono filtro "Departamento"
     Então sistema exibe informações de filtro selecionado
 
-CT 10.03.04 - Validar filtro "Tipo de documento"
-    [Documentation]     Caso de teste valida se filtro "Departamento" no menu Configurações > Documentos está funcional
+CT 10.03.04 - Validar botão Ver template
+    [Documentation]     Caso de teste valida se botão Ver template está funcional em Configurações > Documentos
     [Tags]    Configurações    Documentos    Funcional        
     Dado que clico no menu "Configurações > Documentos"
-    Quando clico em "Filtros"
-    E seleciono filtro "Departamento"
-    Então sistema exibe informações de filtro selecionado
-    
-# CT 10.04 - Validar menu Configurações > Minerando sol
-#     [Documentation]     Caso de teste valida se Menu Configurações > Minerando sol está funcional
-#     [Tags]    Configurações    Funcional        
-#     Dado que clico no menu "Configurações > Minerando sol"
+    E clico no botão Ver template
+    Então sistema exibe informações de template selecionado
 
-# CT 10.05 - Validar menu Configurações > Sistema
-#     [Documentation]     Caso de teste valida se Menu Configurações > Sistema está funcional
-#     [Tags]    Configurações    Funcional        
-#     Dado que clico no menu "Configurações > Sistema"
+CT 10.03.05 - Validar botão Ver histórico 
+    [Documentation]     Caso de teste valida se botão Ver histórico está funcional em Configurações > Documentos
+    [Tags]    Configurações    Documentos    Funcional        
+    Dado que clico no menu "Configurações > Documentos"
+    E clico no botão Ver histórico
+    Então sistema exibe histórico de template selecionado
+
+# CT 10.03.06 - Validar botão Atualizar template 
+#     [Documentation]     Caso de teste valida se botão Atualizar template está funcional em Configurações > Documentos
+#     [Tags]    Configurações    Documentos    Funcional        
+#     Dado que clico no menu "Configurações > Documentos"
+#     E clico no botão Atualizar template
+#     E faço upload de arquivo teste de template
+#     Então sistema atualiza template selecionado
+
+# CT 10.03.07 - Validar botão Editar template e campos 
+#     [Documentation]     Caso de teste valida se botão Editar template e campos está funcional em Configurações > Documentos
+#     [Tags]    Configurações    Documentos    Funcional        
+#     Dado que clico no menu "Configurações > Documentos"
+#     E clico no botão Editar template e campos
+#     Então sistema exibe histórico de template selecionado
+
+
+# Gerar
+# Editar Template
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CT 10.04.01 - Validar menu Configurações > Estimativa
+    [Documentation]     Caso de teste valida se Menu Configurações > Estimativa está funcional
+    [Tags]    Configurações    Estimativa    Funcional        
+    Dado que clico no menu "Configurações > Estimativa"
+    Então sistema exibe informações de menu Estimativa
 
 
