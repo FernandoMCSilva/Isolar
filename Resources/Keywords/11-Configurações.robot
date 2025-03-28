@@ -51,6 +51,11 @@ ${botao_DecontoGruposTarifarios}    //button[contains(.,'Grupos tárifarios')]
 ${botaox_RemoverSupervisor}         (//div[text()='Fernando QA']/following-sibling::div)[1]
 ${botao_AtualizarConfig}            //button[contains(.,'Atualizar')]
 ${botao_Editar_Configuracoes}       //button[contains(.,'Editar')]
+${Botao_VerTemplate_Configuracoes}  (//td[contains(@class,'p-4 align-middle')]//button)[1]
+${Botao_Historico_Configuracoes}    (//td[contains(@class,'p-4 align-middle')]//button)[2]
+${Botao_AtualizarTemplate}          (//td[contains(@class,'p-4 align-middle')]//button)[3]
+${Botao_EditarTemplate}             (//td[contains(@class,'p-4 align-middle')]//a)[1]
+${Botao_Criar_ConfiguracoesDoc}     //button[normalize-space(text())='Criar']
 
 ${opcao_ObrigatorioNao}             //button[@id='opcao1']
 ${opcao_ObrigatorioSim}             //button[@id='opcao2']
@@ -345,43 +350,58 @@ E seleciono filtro "Departamento"
 
 # -10.03.04
 E clico no botão Ver template
-    Wait Until Element Is Visible    (//td[contains(@class,'p-4 align-middle')]//button)[1]
-    Click Element                    (//td[contains(@class,'p-4 align-middle')]//button)[1]
+    Wait Until Element Is Visible    ${Botao_VerTemplate_Configuracoes}
+    Click Element                    ${Botao_VerTemplate_Configuracoes}
 
 Então sistema exibe informações de template selecionado
     Wait Until Page Contains    text=Baixar Template editável
 
 # -10.03.05
 E clico no botão Ver histórico
-    Wait Until Element Is Visible    (//td[contains(@class,'p-4 align-middle')]//button)[2]
-    Click Element                    (//td[contains(@class,'p-4 align-middle')]//button)[2]
+    Wait Until Element Is Visible    ${Botao_Historico_Configuracoes}
+    Click Element                    ${Botao_Historico_Configuracoes}
 
 Então sistema exibe histórico de template selecionado
     Wait Until Page Contains    text=Histórico das ações do template - 1
 
 # -10.03.06
 E clico no botão Atualizar template
-    Wait Until Element Is Visible    (//td[contains(@class,'p-4 align-middle')]//button)[3]
-    Click Element                    (//td[contains(@class,'p-4 align-middle')]//button)[3]
+    Wait Until Element Is Visible    ${Botao_AtualizarTemplate}
+    Click Element                    ${Botao_AtualizarTemplate}
     Wait Until Page Contains         text=Selecione ou arraste o novo template
+
 E faço upload de arquivo teste de template
     Sleep    1s
-    Wait Until Element Is Visible    //input[@type='file']
-    Choose File                      //input[@type='file']    C:\Users\silva\Downloads\teste-2020-07.docx
-    Sleep    3s
+    # Wait Until Element Is Visible    //input[@type='file']
+    # Choose File                      //input[@type='file']    C:\Users\silva\Downloads\teste-2020-07.docx
+    # Sleep    3s
 Então sistema atualiza template selecionado
-    Wait Until Page Contains    text=    
+    Wait Until Page Contains    text=Atualizado
+
+# -10.03.07
+E clico no botão Editar template e campos
+    Wait Until Element Is Visible    ${Botao_EditarTemplate}
+    Click Element                    ${Botao_EditarTemplate}
+
+Então sistema exibe confirmação de edição
+    Wait Until Page Contains    text=Edição feita com sucesso!
+
+# -10.03.08
+Quando clico no botão Criar em Configurações > Documentos
+    Wait Until Element Is Visible    ${Botao_Criar_ConfiguracoesDoc}
+    Click Element                    ${Botao_Criar_ConfiguracoesDoc}
+
+E clico em Anexar Template
+    Wait Until Element Is Visible    //button[contains(.,'(0)Anexar template')]
+    Click Element                    //button[contains(.,'(0)Anexar template')]
+
+E faço upload de arquivo teste em Configurações > Documentos
+    Sleep    1s
+
+Então sistema cria novo template de documentos
+    Wait Until Page Contains    text=Templade adicionado com sucesso    
 
 # -10.03.05
-
-
-
-
-
-
-
-
-
 # -10.04.01
 Dado que clico no menu "Configurações > Estimativa"
     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}

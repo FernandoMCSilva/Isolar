@@ -233,38 +233,35 @@ CT 10.03.05 - Validar botão Ver histórico
     E clico no botão Ver histórico
     Então sistema exibe histórico de template selecionado
 
-# CT 10.03.06 - Validar botão Atualizar template 
-#     [Documentation]     Caso de teste valida se botão Atualizar template está funcional em Configurações > Documentos
-#     [Tags]    Configurações    Documentos    Funcional        
-#     Dado que clico no menu "Configurações > Documentos"
-#     E clico no botão Atualizar template
-#     E faço upload de arquivo teste de template
-#     Então sistema atualiza template selecionado
+CT 10.03.06 - Validar botão Atualizar template 
+    [Documentation]     Caso de teste valida se botão Atualizar template está funcional em Configurações > Documentos
+    [Tags]    Configurações    Documentos    Funcional        
+    Dado que clico no menu "Configurações > Documentos"
+    E clico no botão Atualizar template
+    E faço upload de arquivo teste de template
+    Então sistema atualiza template selecionado
 
-# CT 10.03.07 - Validar botão Editar template e campos 
-#     [Documentation]     Caso de teste valida se botão Editar template e campos está funcional em Configurações > Documentos
-#     [Tags]    Configurações    Documentos    Funcional        
-#     Dado que clico no menu "Configurações > Documentos"
-#     E clico no botão Editar template e campos
-#     Então sistema exibe histórico de template selecionado
+CT 10.03.07 - Validar botão Editar template e campos 
+    [Documentation]     Caso de teste valida se botão Editar template e campos está funcional em Configurações > Documentos
+    [Tags]    Configurações    Documentos    Funcional        
+    Dado que clico no menu "Configurações > Documentos"
+    E clico no botão Editar template e campos
+    Então sistema exibe confirmação de edição
 
+CT 10.03.08 - Validar botão Criar 
+    [Documentation]     Caso de teste valida se botão Criar está funcional em Configurações > Documentos
+    [Tags]    Configurações    Documentos    Funcional        
+    Dado que clico no menu "Configurações > Documentos"
+    Quando clico no botão Criar em Configurações > Documentos
+    E clico em Anexar Template
+    E faço upload de arquivo teste em Configurações > Documentos
+    Então sistema cria novo template de documentos
 
-# Gerar
-# Editar Template
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+CT 10.04.01 - Validar menu Configurações > Estimativa
+    [Documentation]     Caso de teste valida se Menu Configurações > Estimativa está funcional
+    [Tags]    Configurações    Estimativa    Funcional        
+    Dado que clico no menu "Configurações > Estimativa"
+    Então sistema exibe informações de menu Estimativa
 
 CT 10.04.01 - Validar menu Configurações > Estimativa
     [Documentation]     Caso de teste valida se Menu Configurações > Estimativa está funcional
