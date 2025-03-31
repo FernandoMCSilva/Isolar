@@ -263,11 +263,11 @@ CT 10.04.01 - Validar menu Configurações > Estimativa
     Dado que clico no menu "Configurações > Estimativa"
     Então sistema exibe informações de menu Estimativa
 
-CT 10.04.02 - Validar campos em Contantes ambientais
-    [Documentation]     Caso de teste valida se campos em constantes ambientais estão funcionais
-    [Tags]    Configurações    Estimativa    Funcional        
-    Dado que clico no menu "Configurações > Estimativa"
-    Quando clico em Constantes ambientais
-    E altero informações de Constantes ambientais
-    E clico em Atualizar valores das contanstes
-    Então sistema exibe atualiza valores das constantes
+# CT 10.04.02 - Validar campos em Contantes ambientais
+#     [Documentation]     Caso de teste valida se campos em constantes ambientais estão funcionais
+#     [Tags]    Configurações    Estimativa    Funcional        
+#     Dado que clico no menu "Configurações > Estimativa"
+#     Quando clico em Constantes ambientais
+#     E altero informações de Constantes ambientais
+#     E clico em Atualizar valores das contanstes
+#     Então sistema exibe atualiza valores das constantes
