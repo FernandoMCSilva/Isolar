@@ -31,6 +31,10 @@ ${input_ValorPis}                   //input[@id='pis']
 ${input_ValorICMS}                  //input[@id='icms']
 ${input_ValorAutoconsumo}           //input[@id='autoconsumo']
 ${input_ValorGeracaoCompartilhada}  //input[@id='geracao_compartilhada']
+${input_TotalArvores}               (//div[@class='relative']//input)[1]
+${input_TotalCO2}                   (//label[normalize-space(text())='Total CO2']/following::input)[1]
+${input_TotalResidencias}           (//label[normalize-space(text())='Total de residências']/following::input)[1]
+
 
 ${box_Departamento}                 (//div[contains(.,'Selecione as requisições')])[12]
 ${box_DepartamentoTI}               (//div[contains(.,'TI')])[13]
@@ -56,11 +60,16 @@ ${Botao_Historico_Configuracoes}    (//td[contains(@class,'p-4 align-middle')]//
 ${Botao_AtualizarTemplate}          (//td[contains(@class,'p-4 align-middle')]//button)[3]
 ${Botao_EditarTemplate}             (//td[contains(@class,'p-4 align-middle')]//a)[1]
 ${Botao_Criar_ConfiguracoesDoc}     //button[normalize-space(text())='Criar']
+${Botao_ConstantesAmbientais}       //button[normalize-space(text())='Constantes ambientais']
 
 ${opcao_ObrigatorioNao}             //button[@id='opcao1']
 ${opcao_ObrigatorioSim}             //button[@id='opcao2']
 
 ${nomeSecao_TipoRequisicao}         //input[@id='nome']
+
+${Original_TotalArvores}            707
+${Original_TotalCO2}                33581
+${Original_TotalResidencias}        2501
 
 *** Keywords ***
 # -10.01.01
@@ -401,7 +410,6 @@ E faço upload de arquivo teste em Configurações > Documentos
 Então sistema cria novo template de documentos
     Wait Until Page Contains    text=Templade adicionado com sucesso    
 
-# -10.03.05
 # -10.04.01
 Dado que clico no menu "Configurações > Estimativa"
     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
@@ -412,7 +420,30 @@ Dado que clico no menu "Configurações > Estimativa"
 Então sistema exibe informações de menu Estimativa
     Wait Until Page Contains    text=Preencha os campos abaixo e clique em atualizar para atualizar as informações.
 
-# # -10.5
+# -10.04.02
+Quando clico em Constantes ambientais
+    Wait Until Element Is Visible    ${Botao_ConstantesAmbientais}
+    Click Element                    ${Botao_ConstantesAmbientais}
+
+E altero informações de Constantes ambientais
+    Wait Until Element Is Visible    ${input_TotalArvores}
+    Input Text                       ${input_TotalArvores}    ${valorteste}
+
+E clico em Atualizar valores das contanstes
+    Wait Until Element Is Visible    ${botao_AtualizarConfig}
+    Click Element                    ${botao_AtualizarConfig}
+
+Então sistema exibe atualiza valores das constantes
+    Wait Until Page Contains    text=Registro atualizado com sucesso!
+    Sleep    5s
+
+E restauro Constantes ambientais para valores originais
+    Wait Until Element Is Visible    ${input_TotalArvores}
+    Input Text                       ${input_TotalArvores}    ${Original_TotalArvores}
+    Log To Console    Original: ${Original_TotalArvores}
+
+
+# -10.05.01
 # Dado que clico no menu "Configurações > Sistema"
 #     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
 #     Click Element                    ${MENU_CONFIGURACOES}
