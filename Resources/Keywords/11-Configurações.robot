@@ -11,16 +11,12 @@ ${Menu_ConfigEstimativa}              (//p[contains(.,'Estimativa')])[2]
 ${Menu_ConfigSistema}                 //span[contains(.,'Sistema')]
 ${Menu_ConfigMinerandoSol}            (//a[contains(@href,'misol')])[2]
 
-${botao_NovoTipo}                   //button[contains(.,'Novo tipo')]
-${botao_Perguntas}                  //button[contains(.,'Perguntas')]
-${botao_Salvar}                     //button[contains(.,'Salvar')]
-${botao_InserirPergunta}            (//button[@data-state='closed'])[12]
-${botaox_ExcluirPergunta}           xpath=//div[contains(@class, 'flex items-center justify-center gap-4')]//button[contains(@data-state, 'closed')]
 
 ${filtro_cards/Lista_Perguntas}     //button[contains(.,'Cards')]
 ${filtro_botaoLista_Perguntas}      (//div[contains(.,'Lista')])[9]
 ${quantidade_perguntas}             2
 ${quatidade_padrao}                 7
+${nomeSecao_TipoRequisicao}         //input[@id='nome']
 
 ${input_NomeDaRequisicao}           //input[@placeholder='Ex: Técnico']
 ${input_NomeSecao}                  //div[contains(@class, 'col-start-2') and contains(@class, 'col-end-3') and contains(text(), 'Clique para editar o nome da Seção')]
@@ -34,7 +30,28 @@ ${input_ValorGeracaoCompartilhada}  //input[@id='geracao_compartilhada']
 ${input_TotalArvores}               (//div[@class='relative']//input)[1]
 ${input_TotalCO2}                   (//label[normalize-space(text())='Total CO2']/following::input)[1]
 ${input_TotalResidencias}           (//label[normalize-space(text())='Total de residências']/following::input)[1]
+${input_FatorSimultaniedade}        (//label[normalize-space(text())='Fator de simultaneidade']/following::input)[1]
+${input_TaxaImposto1MW}             (//label[normalize-space(text())='Taxa de imposto até 1MW de inversor']/following::input)[1]
+${input_DemandaGeracao}             (//label[normalize-space(text())='Demanda Contratada Geração']/following::input)[1]
+${input_Porcentagem1MW}             (//label[normalize-space(text())='Porcentagem OEM até 1MW de inversor em solo']/following::input)[1]
+${input_ModuloW}                    (//label[normalize-space(text())='Módulo - W']/following::input)[1]
+${input_PesoPorModulo}              (//label[normalize-space(text())='Peso por módulo']/following::input)[1]
+${input_AreaMediaSolo}              (//label[normalize-space(text())='Área Média Utilizada por Painel no Solo (m²)']/following::input)[1]
+${input_FatorPotencia}              (//label[normalize-space(text())='Fator de Potência']/following::input)[1]
+${input_FaixaInicial}               (//input[@value='0,00'])[2]
+${input_FaixaFinal}                 (//input[@value='0,00'])[3]
 
+${Original_TotalArvores}            7,07
+${Original_TotalCO2}                33,581
+${Original_TotalResidencias}        2,501
+${Original_FatorSimultaniedade}     30
+${Original_TaxaImposto1MW}          8,14
+${Original_DemandaGeracao}          4,92
+${Original_Porcentagem1MW}          0,5
+${Original_ModuloW}                 585
+${Original_PesoPorModulo}           29,1
+${Original_AreaMediaSolo}           6
+${Original_FatorPotencia}           0,92
 
 ${box_Departamento}                 (//div[contains(.,'Selecione as requisições')])[12]
 ${box_DepartamentoTI}               (//div[contains(.,'TI')])[13]
@@ -43,6 +60,11 @@ ${box_EscolhaPerguntaNomeCompleto}  (//div[contains(.,'Nome completo')])[17]
 ${box_TipodoCampo}                  //button[contains(.,'Selecione')]
 ${box_TipodoCampoTexto}             (//div[contains(.,'Texto')])[4]
 
+${botao_NovoTipo}                   //button[contains(.,'Novo tipo')]
+${botao_Perguntas}                  //button[contains(.,'Perguntas')]
+${botao_Salvar}                     //button[contains(.,'Salvar')]
+${botao_InserirPergunta}            (//button[@data-state='closed'])[12]
+${botaox_ExcluirPergunta}           xpath=//div[contains(@class, 'flex items-center justify-center gap-4')]//button[contains(@data-state, 'closed')]
 ${botao_SecaoCliente}               (//button[contains(@type,'button')])[9]
 ${botao_AdicionarSecao}             //button[contains(.,'Adicionar seção')]
 ${botao_ExcluirSecao}               (//button[@data-state='closed'])[11]
@@ -61,15 +83,25 @@ ${Botao_AtualizarTemplate}          (//td[contains(@class,'p-4 align-middle')]//
 ${Botao_EditarTemplate}             (//td[contains(@class,'p-4 align-middle')]//a)[1]
 ${Botao_Criar_ConfiguracoesDoc}     //button[normalize-space(text())='Criar']
 ${Botao_ConstantesAmbientais}       //button[normalize-space(text())='Constantes ambientais']
+${Botao_ConstantesImpostos}         //button[normalize-space(text())='Constantes Impostos']
+${Botao_ConstantesTécnicas}         //button[normalize-space(text())='Constantes técnicas']
+${Botao_PrecoInvestimento}          //button[normalize-space(text())='Preço para Investimento kWp']
+${Botao_InvestimentoSolo}           //button[normalize-space(text())='Investimento para Solo']
+${Botao_InvestimentoFibrocimento}   //button[normalize-space(text())='Investimento para Telhado de FibroCimento']
+${Botao_InvestimentoAlunzinco}      //button[normalize-space(text())='Investimento para Telhado de Aluzinco']
+${Botao_PrecoConsumo}               //button[normalize-space(text())='Preço para Consumo kWp']
+${Botao_ConsumoSolo}                //button[normalize-space(text())='Consumo para Solo']
+${Botao_ConsumoFibroCimento}        //button[normalize-space(text())='Consumo para Telhado de FibroCimento']
+${Botao_Alunzinco}                  //button[normalize-space(text())='Consumo para Telhado de Aluzinco']
+${Botao_AdicionarRegistroConfig}    //button[normalize-space(text())='Adicionar Novo Registro']
+${Botao_RemoverRegistroConfig}      //button[contains(@class, 'inline-flex') and contains(text(), 'Remover')]
+
+
 
 ${opcao_ObrigatorioNao}             //button[@id='opcao1']
 ${opcao_ObrigatorioSim}             //button[@id='opcao2']
 
-${nomeSecao_TipoRequisicao}         //input[@id='nome']
 
-${Original_TotalArvores}            707
-${Original_TotalCO2}                33581
-${Original_TotalResidencias}        2501
 
 *** Keywords ***
 # -10.01.01
@@ -433,6 +465,16 @@ E clico em Atualizar valores das contanstes
     Wait Until Element Is Visible    ${botao_AtualizarConfig}
     Click Element                    ${botao_AtualizarConfig}
 
+E restauro informações originais de Constantes ambientais
+    Sleep    5s
+    Wait Until Element Is Visible    ${Botao_ConstantesAmbientais}
+    Click Element                    ${Botao_ConstantesAmbientais}
+    Input Text                       ${input_TotalArvores}        ${Original_TotalArvores}
+    Input Text                       ${input_TotalCO2}            ${Original_TotalCO2}
+    Input Text                       ${input_TotalResidencias}    ${Original_TotalResidencias}
+    Sleep    1s
+    Click Element                    ${botao_AtualizarConfig}
+
 Então sistema exibe atualiza valores das constantes
     Wait Until Page Contains    text=Registro atualizado com sucesso!
     Sleep    5s
@@ -442,7 +484,97 @@ E restauro Constantes ambientais para valores originais
     Input Text                       ${input_TotalArvores}    ${Original_TotalArvores}
     Log To Console    Original: ${Original_TotalArvores}
 
+# -10.04.03
+Quando clico em Constantes Impostos
+    Wait Until Element Is Visible    ${Botao_ConstantesImpostos}
+    Click Element                    ${Botao_ConstantesImpostos}
 
+E altero informações de Constantes Impostos
+    Wait Until Element Is Visible    ${input_FatorSimultaniedade}
+    Input Text                       ${input_FatorSimultaniedade}    ${valorteste}
+    Sleep    0.5
+    Input Text                       ${input_TaxaImposto1MW}         ${valorteste}
+    Sleep    0.5
+    Input Text                       ${input_DemandaGeracao}         ${valorteste}
+    Sleep    0.5
+    Input Text                       ${input_DemandaGeracao}         ${valorteste}
+    Sleep    0.5
+    Input Text                       ${input_Porcentagem1MW}         ${valorteste}
+    Sleep    0.5
+    
+E restauro informações originais de Constantes Impostos
+    Sleep    5s
+    Wait Until Element Is Visible    ${Botao_ConstantesImpostos}
+    Click Element                    ${Botao_ConstantesImpostos}
+    Input Text                       ${input_FatorSimultaniedade}    ${Original_FatorSimultaniedade}
+    Sleep    0.5
+    Input Text                       ${input_TaxaImposto1MW}         ${Original_TaxaImposto1MW}
+    Sleep    0.5
+    Input Text                       ${input_DemandaGeracao}         ${Original_DemandaGeracao}
+    Sleep    0.5
+    Input Text                       ${input_DemandaGeracao}         ${Original_DemandaGeracao}
+    Sleep    0.5
+    Input Text                       ${input_Porcentagem1MW}         ${Original_Porcentagem1MW}
+    Sleep    0.5
+    Click Element                    ${botao_AtualizarConfig}
+
+# -10.04.04
+Quando clico em Constantes técnicas
+    Wait Until Element Is Visible    ${Botao_ConstantesTécnicas}
+    Click Element                    ${Botao_ConstantesTécnicas}
+
+E altero informações de Constantes técnicas
+    Wait Until Element Is Visible    ${input_ModuloW}
+    Input Text                       ${input_ModuloW}           ${valorteste}
+    Sleep    0.5
+    Input Text                        ${input_PesoPorModulo}    ${valorteste}
+    Sleep    0.5
+    Input Text                        ${input_AreaMediaSolo}    ${valorteste}
+    Sleep    0.5
+    Input Text                        ${input_FatorPotencia}    ${valorteste}
+
+E restauro informações originais de Constantes técnicas
+    Sleep    5s
+    Wait Until Element Is Visible    ${Botao_ConstantesTécnicas}
+    Click Element                    ${Botao_ConstantesTécnicas}
+    Wait Until Element Is Visible    ${input_ModuloW}
+    Input Text                       ${input_ModuloW}           ${Original_ModuloW}
+    Sleep    0.5
+    Input Text                        ${input_PesoPorModulo}    ${Original_PesoPorModulo}
+    Sleep    0.5
+    Input Text                        ${input_AreaMediaSolo}    ${Original_AreaMediaSolo}
+    Sleep    0.5
+    Input Text                        ${input_FatorPotencia}    ${Original_FatorPotencia}
+    Sleep    0.5
+    Click Element                    ${botao_AtualizarConfig}
+
+# -10.04.05
+Quando clico em Preço para Investimento > Solo
+    Wait Until Element Is Visible    ${Botao_PrecoInvestimento}
+    Click Element                    ${Botao_PrecoInvestimento}
+    Click Element                    ${Botao_InvestimentoSolo}
+
+E adiciono novo Registro de Preço para Investimento > Solo
+    Wait Until Element Is Visible    ${Botao_AdicionarRegistroConfig}
+    Click Element                    ${Botao_AdicionarRegistroConfig}
+    Sleep    1s
+    
+E altero informações de Preço para Investimento > Solo
+    Wait Until Element Is Visible    ${input_FaixaInicial}
+    Input Text                       ${input_FaixaInicial}    ${valorteste}
+    Input Text                       ${input_FaixaFinal}      ${valorteste}
+E restauro informações originais de Preço para Investimento > Solo
+    Sleep    5s
+    Wait Until Element Is Visible        ${Botao_PrecoInvestimento}
+    Click Element                        ${Botao_PrecoInvestimento}
+    Click Element                        ${Botao_InvestimentoSolo}
+    Execute Javascript                   window.scrollToBottom
+    Click Element                        //button[contains(.,'Remover')]
+
+    Wait Until Element Is Not Visible    ${input_FaixaInicial}
+    Click Element                        ${botao_AtualizarConfig}
+
+# -10.04.01
 # -10.05.01
 # Dado que clico no menu "Configurações > Sistema"
 #     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}

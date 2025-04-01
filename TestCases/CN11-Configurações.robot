@@ -263,11 +263,44 @@ CT 10.04.01 - Validar menu Configurações > Estimativa
     Dado que clico no menu "Configurações > Estimativa"
     Então sistema exibe informações de menu Estimativa
 
-# CT 10.04.02 - Validar campos em Contantes ambientais
-#     [Documentation]     Caso de teste valida se campos em constantes ambientais estão funcionais
+CT 10.04.02 - Validar campos em Constantes ambientais
+    [Documentation]     Caso de teste valida se campos em Constantes ambientais estão funcionais
+    [Tags]    Configurações    Estimativa    Funcional        
+    Dado que clico no menu "Configurações > Estimativa"
+    Quando clico em Constantes ambientais
+    E altero informações de Constantes ambientais
+    E clico em Atualizar valores das contanstes
+    E restauro informações originais de Constantes ambientais
+    Então sistema exibe atualiza valores das constantes
+
+CT 10.04.03 - Validar campos em Constantes Impostos
+    [Documentation]     Caso de teste valida se campos em Constantes Impostos estão funcionais
+    [Tags]    Configurações    Estimativa    Funcional        
+    Dado que clico no menu "Configurações > Estimativa"
+    Quando clico em Constantes Impostos
+    E altero informações de Constantes Impostos
+    E clico em Atualizar valores das contanstes
+    E restauro informações originais de Constantes Impostos
+    Então sistema exibe atualiza valores das constantes
+
+CT 10.04.04 - Validar campos em Constantes técnicas
+    [Documentation]     Caso de teste valida se campos em Constantes técnicas estão funcionais
+    [Tags]    Configurações    Estimativa    Funcional        
+    Dado que clico no menu "Configurações > Estimativa"
+    Quando clico em Constantes técnicas
+    E altero informações de Constantes técnicas
+    E clico em Atualizar valores das contanstes
+    E restauro informações originais de Constantes técnicas
+    Então sistema exibe atualiza valores das constantes
+
+# CT 10.04.05 - Validar campos de Preço para Investimento > Solo
+#     [Documentation]     Caso de teste valida se campos em Preço para Investimento > Solo estão funcionais
 #     [Tags]    Configurações    Estimativa    Funcional        
 #     Dado que clico no menu "Configurações > Estimativa"
-#     Quando clico em Constantes ambientais
-#     E altero informações de Constantes ambientais
+#     Quando clico em Preço para Investimento > Solo 
+#     E adiciono novo Registro de Preço para Investimento > Solo
+#     # E altero informações de Preço para Investimento > Solo
 #     E clico em Atualizar valores das contanstes
+#     E restauro informações originais de Preço para Investimento > Solo
 #     Então sistema exibe atualiza valores das constantes
+

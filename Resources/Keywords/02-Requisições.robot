@@ -40,7 +40,7 @@ ${COMBOBOX_STATUS}             //button[contains(@id,'status')]
 ${COMBOBOX_TIPO}               //button[@id='tipo']
 ${COMBOBOX_URGENTE}            //button[contains(@id,'urgente')]
 ${COMBOBOX_NIVEL_DE_URGENCIA}  //button[contains(@id,'nivel_urgencia')]
-${COMBOBOX_RESPONSAVEL}        (//button[@role='combobox'])[2]
+${COMBOBOX_RESPONSAVEL}        (//button[@role='combobox'])[3]
 ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 
 
@@ -67,7 +67,7 @@ Dado que clico no menu "Requisições"
 # --2.2
 Quando clico em "Filtros"
     Wait Until Element Is Visible    ${Link_Filtros}
-    Click Element                    ${Link_Filtros}
+,    Click Element                    ${Link_Filtros}
 
 E preencho informações no campo Cliente
     Wait Until Element Is Visible    ${Campo_Cliente}
@@ -248,6 +248,7 @@ Então sistema exibe requisições do filtro Data de Criação
 
 # --2.10
 E valido todos os filtros dentro de "Responsável"
+    Sleep    1s
     Wait Until Element Is Visible    ${COMBOBOX_RESPONSAVEL}    timeout=10s
     Click Element    ${COMBOBOX_RESPONSAVEL}
     # Pega todas as opções dentro do dropdown
