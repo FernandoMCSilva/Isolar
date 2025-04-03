@@ -8,9 +8,8 @@ ${MENU_DOCUMENTOS}                    (//p[contains(.,'Documentos')])[2]
 ${Menu_ConfigRequisicoes}             (//p[contains(.,'Requisições')])[2]
 ${Menu_ConfigDocumentos}              (//p[contains(.,'Documentos')])[2]
 ${Menu_ConfigEstimativa}              (//p[contains(.,'Estimativa')])[2]
-${Menu_ConfigSistema}                 //span[contains(.,'Sistema')]
+${Menu_ConfigSistema}                 //button[@class='inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground px-4 py-2 w-full justify-center h-10 mb-1']
 ${Menu_ConfigMinerandoSol}            (//a[contains(@href,'misol')])[2]
-
 
 ${filtro_cards/Lista_Perguntas}     //button[contains(.,'Cards')]
 ${filtro_botaoLista_Perguntas}      (//div[contains(.,'Lista')])[9]
@@ -52,6 +51,10 @@ ${Original_ModuloW}                 585
 ${Original_PesoPorModulo}           29,1
 ${Original_AreaMediaSolo}           6
 ${Original_FatorPotencia}           0,92
+${Original_MensagemWhatsapp}        Olá, tudo bem? Falei com você agora pouco, sou o vendedor 
+...    representando a Isolar Energy, vamos dar continuidade a nossa conversa.
+${Original_MensagemEmail}           Olá, tudo bem? Falei com você agora pouco, sou o vendedor 
+...    representando a Isolar Energy, vamos dar continuidade a nossa conversa. No anexo, terá a estimativa gerada.
 
 ${box_Departamento}                 (//div[contains(.,'Selecione as requisições')])[12]
 ${box_DepartamentoTI}               (//div[contains(.,'TI')])[13]
@@ -95,13 +98,11 @@ ${Botao_ConsumoFibroCimento}        //button[normalize-space(text())='Consumo pa
 ${Botao_Alunzinco}                  //button[normalize-space(text())='Consumo para Telhado de Aluzinco']
 ${Botao_AdicionarRegistroConfig}    //button[normalize-space(text())='Adicionar Novo Registro']
 ${Botao_RemoverRegistroConfig}      //button[contains(@class, 'inline-flex') and contains(text(), 'Remover')]
-
-
+${Botao_SalvarConfig}               //button[@type='submit']
+${Botao_SalvarMensagensConfig}      //button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2']
 
 ${opcao_ObrigatorioNao}             //button[@id='opcao1']
 ${opcao_ObrigatorioSim}             //button[@id='opcao2']
-
-
 
 *** Keywords ***
 # -10.01.01
@@ -563,22 +564,79 @@ E altero informações de Preço para Investimento > Solo
     Wait Until Element Is Visible    ${input_FaixaInicial}
     Input Text                       ${input_FaixaInicial}    ${valorteste}
     Input Text                       ${input_FaixaFinal}      ${valorteste}
+    
+
 E restauro informações originais de Preço para Investimento > Solo
+    Wait Until Page Contains         text=Registro atualizado com sucesso!
     Sleep    5s
     Wait Until Element Is Visible        ${Botao_PrecoInvestimento}
     Click Element                        ${Botao_PrecoInvestimento}
     Click Element                        ${Botao_InvestimentoSolo}
-    Execute Javascript                   window.scrollToBottom
-    Click Element                        //button[contains(.,'Remover')]
+    Execute Javascript                   window.scrollTo(0, document.body.scrollHeight)
+    Click Element                        (//button[normalize-space()='Remover'])[20]
+
 
     Wait Until Element Is Not Visible    ${input_FaixaInicial}
     Click Element                        ${botao_AtualizarConfig}
 
-# -10.04.01
 # -10.05.01
-# Dado que clico no menu "Configurações > Sistema"
-#     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
-#     Click Element                    ${MENU_CONFIGURACOES}
-#     Click Element                    ${Menu_Sistema}
+Dado que clico no menu "Configurações > Sistema"
+    Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
+    Click Element                    ${MENU_CONFIGURACOES}
+    Sleep    1s
+    Click Element                    ${Menu_ConfigSistema}
 
-# -10.04.01
+E clico em Logo
+    Wait Until Element Is Visible    //button[normalize-space(text())='Logo']
+    Click Element                    //button[normalize-space(text())='Logo']
+
+Então sistema exibe informações de menu Sistema > Logo
+    Wait Until Page Contains    text=Gerenciar informações cadastradas no sistema.
+
+# -10.05.02
+Quando faço upload no campo de Logo
+    Wait Until Element Is Visible    //input[@id='logo']
+    Choose File                      //input[@id='logo']    C:\\Users\\silva\\Documents\\logoIsolar.png
+
+E clico em "Salvar" Logo
+    Wait Until Element Is Visible    ${Botao_SalvarConfig}
+    Click Element                    ${Botao_SalvarConfig}
+
+Então sistema atualiza logo do sistema
+    Wait Until Page Contains    text=Logo atualizado com sucesso!
+    Wait Until Element Is Not Visible    (//img[@class='my-8 w-60 object-cover'])[1]
+
+# -10.05.03
+Dado que clico no menu "Configurações > Sistema > Mensagens padrão"
+    Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
+    Click Element                    ${MENU_CONFIGURACOES}
+    Click Element                    ${Menu_ConfigSistema}
+
+E clico em Mensagens padrão
+    Wait Until Element Is Visible    //button[normalize-space()='Mensagens padrão']
+    Click Element                    //button[normalize-space()='Mensagens padrão']
+
+Quando faço edição do campo de Mensagens padrão
+    Sleep    1s
+    Wait Until Element Is Visible     //textarea[@id='whatsapp']
+    Input Text                        //textarea[@id='whatsapp']    ${valorteste}
+    Input Text                        //textarea[@id='email']       ${valorteste}
+    Sleep    1s
+
+E clico em "Salvar" Mensagens padrão
+    Wait Until Element Is Visible    ${Botao_SalvarMensagensConfig}
+    Click Element                    ${Botao_SalvarMensagensConfig}
+    
+Então sistema atualiza Mensagens padrão do sistema
+    Wait Until Page Contains    text=Registro atualizado com sucesso!
+
+# -10.05.04
+Quando restauro Mensagens padrão original
+    Sleep    1s
+    Wait Until Element Is Visible     //textarea[@id='whatsapp']
+    Input Text                        //textarea[@id='whatsapp']    ${Original_MensagemWhatsapp}
+    Input Text                        //textarea[@id='email']       ${Original_MensagemEmail}
+    Sleep    1s
+
+
+# -10.05.01

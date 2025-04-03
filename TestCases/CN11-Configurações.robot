@@ -299,8 +299,44 @@ CT 10.04.04 - Validar campos em Constantes técnicas
 #     Dado que clico no menu "Configurações > Estimativa"
 #     Quando clico em Preço para Investimento > Solo 
 #     E adiciono novo Registro de Preço para Investimento > Solo
-#     # E altero informações de Preço para Investimento > Solo
+#     E altero informações de Preço para Investimento > Solo
 #     E clico em Atualizar valores das contanstes
 #     E restauro informações originais de Preço para Investimento > Solo
 #     Então sistema exibe atualiza valores das constantes
+
+CT 10.05.01 - Validar menu Configurações > Sistema
+    [Documentation]     Caso de teste valida se Menu Configurações > Sistema > Logo está funcional
+    [Tags]    Configurações    Sistema    Funcional        
+    Dado que clico no menu "Configurações > Sistema"
+    E clico em Logo
+    Então sistema exibe informações de menu Sistema > Logo
+
+CT 10.05.02 - Validar edição de Logo
+    [Documentation]     Caso de teste valida se edição de Logo está funcional
+    [Tags]    Configurações    Sistema    Funcional        
+    Dado que clico no menu "Configurações > Sistema"
+    E clico em Logo
+    Quando faço upload no campo de Logo
+    E clico em "Salvar" Logo
+    Então sistema atualiza logo do sistema
+
+CT 10.05.03 - Validar edição de Mensagens padrão
+    [Documentation]     Caso de teste valida se edição de Mensagens padrão está funcional
+    [Tags]    Configurações    Sistema    Funcional        
+    Dado que clico no menu "Configurações > Sistema"
+    E clico em Mensagens padrão
+    Quando faço edição do campo de Mensagens padrão
+    E clico em "Salvar" Mensagens padrão
+    Então sistema atualiza Mensagens padrão do sistema
+
+CT 10.05.04 - Restaurar Mensagens padrão original
+    [Documentation]     Caso de teste restaura Mensagens padrão original
+    [Tags]    Configurações    Sistema    Funcional        
+    Dado que clico no menu "Configurações > Sistema"
+    E clico em Mensagens padrão
+    Quando restauro Mensagens padrão original
+    E clico em "Salvar" Mensagens padrão
+    Então sistema atualiza Mensagens padrão do sistema
+
+
 
