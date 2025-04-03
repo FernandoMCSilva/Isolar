@@ -3,19 +3,25 @@ Documentation      Modúlo gerencia Configurações no sistema.
 Resource           ../Main.robot
 
 *** Variables ***
-${MENU_CONFIGURACOES}                 //button[@aria-controls='radix-:r82:']
-${MENU_DOCUMENTOS}                    (//p[contains(.,'Documentos')])[2]
-${Menu_ConfigRequisicoes}             (//p[contains(.,'Requisições')])[2]
-${Menu_ConfigDocumentos}              (//p[contains(.,'Documentos')])[2]
-${Menu_ConfigEstimativa}              (//p[contains(.,'Estimativa')])[2]
-${Menu_ConfigSistema}                 //button[@class='inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground px-4 py-2 w-full justify-center h-10 mb-1']
-${Menu_ConfigMinerandoSol}            (//a[contains(@href,'misol')])[2]
+${MENU_CONFIGURACOES}               //button[@aria-controls='radix-:r82:']
+${MENU_DOCUMENTOS}                  (//p[contains(.,'Documentos')])[2]
+${Menu_ConfigRequisicoes}           (//p[contains(.,'Requisições')])[2]
+${Menu_ConfigDocumentos}            (//p[contains(.,'Documentos')])[2]
+${Menu_ConfigEstimativa}            (//p[contains(.,'Estimativa')])[2]
+${Menu_ConfigSistema}               //button[@class='inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground px-4 py-2 w-full justify-center h-10 mb-1']
+${Menu_ConfigMinerandoSol}          (//a[contains(@href,'misol')])[2]
+${Menu_ConfigMonitoramento}         (//p[contains(.,'Monitoramento')])[2]
+${Menu_ConfigObras}                 (//p[contains(.,'Obras')])[2]
+${Menu_ConfigContratos}                 (//p[contains(.,'Contratos')])[2]
 
+${filtro_buscarConfig}              (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10'])[1]
+${filtro_DataRegistroRequisicoes}   (//button[@class='inline-flex items-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full justify-start text-left font-normal text-muted-foreground'])[1]
 ${filtro_cards/Lista_Perguntas}     //button[contains(.,'Cards')]
 ${filtro_botaoLista_Perguntas}      (//div[contains(.,'Lista')])[9]
 ${quantidade_perguntas}             2
 ${quatidade_padrao}                 7
 ${nomeSecao_TipoRequisicao}         //input[@id='nome']
+${ValorPadrao_IP}                   177.38.13.190         
 
 ${input_NomeDaRequisicao}           //input[@placeholder='Ex: Técnico']
 ${input_NomeSecao}                  //div[contains(@class, 'col-start-2') and contains(@class, 'col-end-3') and contains(text(), 'Clique para editar o nome da Seção')]
@@ -100,6 +106,8 @@ ${Botao_AdicionarRegistroConfig}    //button[normalize-space(text())='Adicionar 
 ${Botao_RemoverRegistroConfig}      //button[contains(@class, 'inline-flex') and contains(text(), 'Remover')]
 ${Botao_SalvarConfig}               //button[@type='submit']
 ${Botao_SalvarMensagensConfig}      //button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2']
+${Botao_VisualizarConfig}           (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[2]
+${Botao_Anterior}                   (//button[normalize-space()='Anterior'])[1]
 
 ${opcao_ObrigatorioNao}             //button[@id='opcao1']
 ${opcao_ObrigatorioSim}             //button[@id='opcao2']
@@ -130,9 +138,9 @@ E preencho informações de cadastro de Novo tipo de Requisições
     Input Text                       ${input_NovaPergunta}   ${nome_pesquisa_GruposConsumidores}
     Click Element                    ${box_TipodoCampo}
     Click Element                    ${box_TipodoCampoTexto}
-    Input Text                   //input[@name='placeholder']    teste
-    Click Element                ${botao_SalvarNovaPergunta}
-    Wait Until Page Contains     text=Pergunta adicionada com sucesso!
+    Input Text                       //input[@name='placeholder']    teste
+    Click Element                    ${botao_SalvarNovaPergunta}
+    Wait Until Page Contains         text=Pergunta adicionada com sucesso!
     Sleep    4s
     Click Element                    ${botao_TornarObrigatorias}
     Click Element                    ${botaox_ExcluirPergunta}
@@ -638,5 +646,205 @@ Quando restauro Mensagens padrão original
     Input Text                        //textarea[@id='email']       ${Original_MensagemEmail}
     Sleep    1s
 
+# -10.05.05
+E clico em Histórico das requisições
+    Wait Until Element Is Visible    (//button[normalize-space()='Histórico'])[1]
+    Click Element                    (//button[normalize-space()='Histórico'])[1]
+    # Sleep    20s
+    Wait Until Element Is Visible    ${Botao_Proximo_Requisicoes}    timeout=20s
 
-# -10.05.01
+Então sistema exibe informações de menu Sistema > Histórico das requisições
+    Wait Until Page Contains    text=Informações referentes aos registros de histórico das requisições.
+
+# -10.05.06
+E preencho filtro responsável
+    Wait Until Element Is Visible    //input[@id='responsavel']
+    Input Text                       //input[@id='responsavel']    teste
+    Sleep    0.5s
+
+Então sistema exibe informações de filtro Responsável em Histórico das requisições
+    Wait Until Element Is Visible    (//td[@class='p-4 align-middle [&:has([role=checkbox])]:pr-0 font-medium'])[1]
+
+# -10.05.07
+E preencho filtro Requisição
+    Wait Until Element Is Visible    //input[@id='requisicaoId']
+    Input Text                       //input[@id='requisicaoId']    1732
+    Sleep    0.5s
+
+
+Então sistema exibe informações de filtro Requisição em Histórico das requisições
+    Wait Until Element Is Visible    (//td[@class='p-4 align-middle [&:has([role=checkbox])]:pr-0 font-medium'])[1]
+
+# -10.05.07
+E seleciono filtro Tipo de registro
+    Wait Until Element Is Visible    //button[@role='combobox']
+    Click Element                    //button[@role='combobox']
+    Wait Until Element Is Visible    (//div[@role='option'])[4]
+    Click Element                    (//div[@role='option'])[4]
+    Sleep    0.5s
+
+Então sistema exibe informações de filtro Tipo de registro em Histórico das requisições
+    Wait Until Page Contains    text=renovada
+
+# -10.05.08
+E seleciono filtro Data do registro
+    Wait Until Element Is Visible    ${filtro_DataRegistroRequisicoes}
+    Click Element                    ${filtro_DataRegistroRequisicoes}
+    FOR     ${i}    IN RANGE     8
+        Click Element                (//button[@name='previous-month'])[1]
+        Sleep    0.5s
+    END
+    Sleep        1s
+    Click Element                    (//button[@name='day'][normalize-space()='8'])[1]
+    Sleep        0.5s
+    # Click Element                    ${filtro_DataRegistroRequisicoes}
+    # Sleep        0.5s
+
+Então sistema exibe informações de filtro Data do registro em Histórico das requisições
+    Wait Until Element Is Visible    (//td[normalize-space()='08/08/2024'])[1]
+
+# -10.05.10
+E clico no botão visualizar
+    Wait Until Element Is Visible    ${Botao_VisualizarConfig}
+    Click Element                    ${Botao_VisualizarConfig}
+
+Então sistema visualiza informações de requisições
+    Wait Until Page Contains    text=Histórico da requisição de Nº 1732
+
+# -10.05.11
+E clico no botão Próximo
+    Wait Until Element Is Visible    ${Botao_Proximo_Requisicoes}
+    Click Element                    ${Botao_Proximo_Requisicoes}
+
+Então sistema exibe informações de próxima tela
+    Wait Until Element Is Visible    ${Botao_Anterior}    timeout=20s
+
+# -10.05.12
+E clico no botão Anterior    
+    Sleep    20s
+    Click Element                    ${Botao_Anterior}
+
+Então sistema exibe informações de tela anterior
+    Wait Until Element Is Not Visible    ${Botao_Anterior}    timeout=20s
+    Wait Until Element Is Visible        ${Link_Filtros}   timeout=20s
+    
+# -10.06.01
+Dado que clico no menu "Configurações > Monitoramento"
+    Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
+    Click Element                    ${MENU_CONFIGURACOES}
+    Sleep    1s
+    Click Element                    ${Menu_ConfigMonitoramento}
+
+Então sistema exibe informações de menu Configurações > Monitoramento
+    Wait Until Page Contains    text=Gerenciar informações de monitoramento referente aos clientes
+
+# -10.06.02
+Quando clico no filtro busca
+    Wait Until Element Is Visible   ${filtro_buscarConfig}
+    Click Element                   ${filtro_buscarConfig}
+
+E preencho filtro busca
+    Wait Until Element Is Visible    ${input_buscar}
+    Input Text                       ${input_buscar}    teste123
+
+Então sistema exibe informações de filtro de busca
+    Wait Until Element Is Visible    //p[@class="status ? hover:untruncate : ''] min-h-8 max-w-[70%] truncate hover:animate-marquee"]
+
+# -10.06.03
+Então sistema exibe informações de quantidade preenchida
+    Click Element    (//div[contains(.,'Quantidade')])[10]
+    Sleep    5s
+    ${resultados}    Get WebElements    xpath=//tr[contains(@class, 'border-b transition-colors')]
+    ${quantidade}    Get Length    ${resultados}
+    Should Be Equal As Numbers    ${quantidade - 1}    ${EXPECTED_RESULTS}
+
+E seleciono opção Cards ou Lista "Lista"
+    Wait Until Element Is Visible    ${filtro_CardsLista_Documentos}
+    Click Element                    ${filtro_CardsLista_Documentos}
+    Click Element                    (//div[contains(.,'Lista')])[5]
+    
+# -10.06.05
+E preencho informações de dados
+# 1
+    Wait Until Element Is Visible    //input[@id='nome_cliente']
+    Input Text                       //input[@id='nome_cliente']      ${nome_pesquisa_GruposConsumidores}
+    Input Text                       //input[@id='marca']             ${nome_pesquisa_GruposConsumidores}
+    Input Text                       //input[@id='modelo']            ${nome_pesquisa_GruposConsumidores}
+    Input Text                       //input[@id='ip']                ${ValorPadrao_IP}
+    Input Text                       //input[@id='porta']             80
+    Input Text                       //input[@id='usuario']           ${emailteste}
+    Input Text                       //input[@id='senha']             ${SenhaLocal}
+    Click Element                    //button[@role='combobox']
+    Click Element                    (//div[@role='option'])[1]
+# 2
+    Wait Until Element Is Visible    //input[@id='nome_dispositivo']
+    Input Text                       //input[@id='nome_dispositivo']  ${nome_pesquisa_GruposConsumidores}
+    Input Text                       //input[@id='ip_dispositivo']    ${ValorPadrao_IP}
+    Input Text                       //input[@id='tempo_execucao']    15
+    
+Então sistema realiza inserção de novo cliente em Configurações > Monitoramento
+    Wait Until Page Contains    text=Registro adicionado com sucesso!
+
+# -10.06.06
+E preencho filtro busca em configurações
+    Wait Until Element Is Visible    ${input_buscar}
+    Input Text                       ${input_buscar}    ${nome_pesquisa_GruposConsumidores}
+
+E edito dados de cliente
+    Sleep    1s
+    Execute Javascript                   window.scrollTo(0, document.body.scrollHeight)
+    Sleep    2s
+    Wait Until Element Is Visible    //input[@id='tempo_execucao-29']
+    Input Text                       //input[@id='tempo_execucao-29']    20
+
+Então sistema realiza edição de novo cliente em Configurações > Monitoramento
+    Wait Until Page Contains    text=Informações atualizadas com sucesso!
+
+# -10.06.07
+Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
+    Wait Until Page Contains    text=Registro excluído com sucesso!
+
+# -10.07.01
+Dado que clico no menu "Configurações > Obras"
+    Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
+    Click Element                    ${MENU_CONFIGURACOES}
+    Sleep    1s
+    Click Element                    ${Menu_ConfigObras}
+
+Então sistema exibe informações de menu Configurações > Obras
+    Wait Until Page Contains    text=Preencha os campos abaixo e clique em confirmar para cadastrar as informações.
+
+# -10.07.02
+E preencho informações de Novo tipo de Requisições
+    Wait Until Element Is Visible    //input[@id='nomeRequisicao']
+    Input Text                       //input[@id='nomeRequisicao']    ${nome_pesquisa_GruposConsumidores}
+    Click Element                    ${botao_ExcluirSecao}
+    Sleep    0.5
+
+Então sistema exibe informações de menu botao Novo tipo
+    Wait Until Page Contains    text=Registro adicionado com sucesso!
+
+# -10.07.04
+E preencho filtro busca em Configurações > Obras
+    Wait Until Element Is Visible    ${input_buscar}
+    Input Text                       ${input_buscar}    teste
+
+Então sistema exibe informações de filtro de busca em Configurações > Obras
+    Wait Until Element Is Visible    //h3[normalize-space()='teste']
+
+# -10.07.05
+Então sistema exibe informações de tela de Perguntas
+    Wait Until Page Contains    text=Preencha os campos abaixo e clique em confirmar para cadastrar as informações.
+
+# -10.08.01
+Dado que clico no menu "Configurações > Contratos"
+    Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
+    Click Element                    ${MENU_CONFIGURACOES}
+    Sleep    1s
+    Click Element                    ${Menu_ConfigContratos}
+
+Então sistema exibe informações de menu Configurações > Contratos
+    Wait Until Page Contains    text=Preencha os campos abaixo e clique em atualizar para atualizar as informações.
+
+
+# -10.08.01

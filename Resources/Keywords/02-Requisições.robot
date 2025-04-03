@@ -67,7 +67,7 @@ Dado que clico no menu "Requisições"
 # --2.2
 Quando clico em "Filtros"
     Wait Until Element Is Visible    ${Link_Filtros}
-,    Click Element                    ${Link_Filtros}
+    Click Element                    ${Link_Filtros}
 
 E preencho informações no campo Cliente
     Wait Until Element Is Visible    ${Campo_Cliente}

@@ -338,5 +338,188 @@ CT 10.05.04 - Restaurar Mensagens padrão original
     E clico em "Salvar" Mensagens padrão
     Então sistema atualiza Mensagens padrão do sistema
 
+CT 10.05.05 - Validar Menu Histórico das requisições
+    [Documentation]     Caso de teste valida se Histórico das requisições está funcional
+    [Tags]    Configurações    Sistema    Funcional        
+    Dado que clico no menu "Configurações > Sistema"
+    E clico em Histórico das requisições
+    Então sistema exibe informações de menu Sistema > Histórico das requisições
+
+CT 10.05.06 - Validar filtro responsável
+    [Documentation]     Caso de teste valida se filtro responsável está funcional
+    [Tags]    Configurações    Sistema    Funcional        
+    Dado que clico no menu "Configurações > Sistema"
+    E clico em Histórico das requisições
+    Quando clico em "Filtros"
+    E preencho filtro responsável
+    E clico em Buscar
+    Então sistema exibe informações de filtro Responsável em Histórico das requisições
+
+CT 10.05.07 - Validar filtro Requisição
+    [Documentation]     Caso de teste valida se filtro Requisição está funcional
+    [Tags]    Configurações    Sistema    Funcional        
+    Dado que clico no menu "Configurações > Sistema"
+    E clico em Histórico das requisições
+    Quando clico em "Filtros"
+    E preencho filtro Requisição
+    E clico em Buscar
+    Então sistema exibe informações de filtro Requisição em Histórico das requisições
+
+CT 10.05.08 - Validar filtro Tipo de registro
+    [Documentation]     Caso de teste valida se filtro Tipo de registro está funcional
+    [Tags]    Configurações    Sistema    Funcional        
+    Dado que clico no menu "Configurações > Sistema"
+    E clico em Histórico das requisições
+    Quando clico em "Filtros"
+    E seleciono filtro Tipo de registro
+    E clico em Buscar
+    Então sistema exibe informações de filtro Tipo de registro em Histórico das requisições
+
+CT 10.05.09 - Validar filtro Data do registro
+    [Documentation]     Caso de teste valida se filtro Data do registro está funcional
+    [Tags]    Configurações    Sistema    Funcional        
+    Dado que clico no menu "Configurações > Sistema"
+    E clico em Histórico das requisições
+    Quando clico em "Filtros"
+    E seleciono filtro Data do registro
+    E clico em Buscar
+    Então sistema exibe informações de filtro Data do registro em Histórico das requisições
+
+CT 10.05.10 - Validar botão visualizar
+    [Documentation]     Caso de teste valida se botão visualizar está funcional
+    [Tags]    Configurações    Sistema    Funcional        
+    Dado que clico no menu "Configurações > Sistema"
+    E clico em Histórico das requisições
+    Quando clico em "Filtros"
+    E preencho filtro responsável
+    E clico em Buscar
+    E clico no botão visualizar
+    Então sistema visualiza informações de requisições
+
+CT 10.05.11 - Validar botão Próximo
+    [Documentation]     Caso de teste valida se botão Próximo está funcional
+    [Tags]    Configurações    Sistema    Funcional        
+    Dado que clico no menu "Configurações > Sistema"
+    E clico em Histórico das requisições
+    E clico no botão Próximo
+    Então sistema exibe informações de próxima tela
+
+CT 10.05.12 - Validar botão Anterior
+    [Documentation]     Caso de teste valida se botão Anterior está funcional
+    [Tags]    Configurações    Sistema    Funcional        
+    Dado que clico no menu "Configurações > Sistema"
+    E clico em Histórico das requisições
+    E clico no botão Próximo
+    E clico no botão Anterior
+    Então sistema exibe informações de tela anterior
+
+CT 10.06.01 - Validar menu Configurações > Monitoramento
+    [Documentation]     Caso de teste valida se Menu Configurações > Monitoramento está funcional
+    [Tags]    Configurações    Monitoramento    Funcional        
+    Dado que clico no menu "Configurações > Monitoramento"
+    Então sistema exibe informações de menu Configurações > Monitoramento
+
+CT 10.06.02 - Validar filtro de busca
+    [Documentation]     Caso de teste valida se filtro de busca está funcional
+    [Tags]    Configurações    Monitoramento    Funcional        
+    Dado que clico no menu "Configurações > Monitoramento"
+    Quando clico no filtro busca
+    E preencho filtro busca
+    E clico em Buscar
+    Então sistema exibe informações de filtro de busca
+
+CT 10.06.03 - Validar filtro quantidade de item por pág
+    [Documentation]     Caso de teste valida se filtro quantidade de item por pág está funcional
+    [Tags]    Configurações    Monitoramento    Funcional        
+    Dado que clico no menu "Configurações > Monitoramento"
+    E seleciono opção Cards ou Lista "Lista"
+    Quando clico em "Quantidade de itens por pág"
+    E preencho informações no campo quantidade
+    Então sistema exibe informações de quantidade preenchida
+
+CT 10.06.04 - Validar filtro Cards ou Lista
+    [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
+    [Tags]    Configurações    Monitoramento    Funcional        
+    Dado que clico no menu "Configurações > Monitoramento"
+    E seleciono opção Cards ou Lista "Lista"
+    Então sistema exibe informações com filtro "Lista"
+
+CT 10.06.05 - Validar inserção
+    [Documentation]     Caso de teste valida se inserção de novo cliente em Configurações > Monitoramento está funcional
+    [Tags]    Configurações    Monitoramento    Funcional        
+    Dado que clico no menu "Configurações > Monitoramento"
+    Quando clico no botão "Inserir"
+    E preencho informações de dados
+    E clico em "Salvar"
+    Então sistema realiza inserção de novo cliente em Configurações > Monitoramento
+
+CT 10.06.06 - Validar edição
+    [Documentation]     Caso de teste valida se edição de cliente em Configurações > Monitoramento está funcional
+    [Tags]    Configurações    Monitoramento    Funcional        
+    Dado que clico no menu "Configurações > Monitoramento"
+    Quando clico no filtro busca
+    E preencho filtro busca em configurações
+    E clico em Buscar
+    Quando clico em "Editar"
+    E edito dados de cliente
+    E clico em Atualizar
+    Então sistema realiza edição de novo cliente em Configurações > Monitoramento
+
+CT 10.06.07 - Validar exclusão
+    [Documentation]     Caso de teste valida se exclusão de cliente em Configurações > Monitoramento está funcional
+    [Tags]    Configurações    Monitoramento    Funcional        
+    Dado que clico no menu "Configurações > Monitoramento"
+    Quando clico no filtro busca
+    E preencho filtro busca em configurações
+    E clico em Buscar
+    Quando clico em "Excluir" em configurações
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
+
+CT 10.07.01 - Validar menu Configurações > Obras
+    [Documentation]     Caso de teste valida se Menu Configurações > Obras está funcional
+    [Tags]    Configurações    Obras    Funcional        
+    Dado que clico no menu "Configurações > Obras"
+    Então sistema exibe informações de menu Configurações > Obras
+
+CT 10.07.02 - Validar inserção de Novo tipo
+    [Documentation]     Caso de teste valida se Inserção de Novo tipo está funcional
+    [Tags]    Configurações    Obras    Funcional        
+    Dado que clico no menu "Configurações > Obras"
+    Quando clico no botão "Novo tipo"
+    E preencho informações de Novo tipo de Requisições
+    E clico em "Salvar"
+    Então sistema exibe informações de menu botao Novo tipo
+
+CT 10.07.03 - Validar filtro "Cards ou Lista"
+    [Documentation]     Caso de teste valida se filtro Cards ou Lista no menu Configurações > Requisições está funcional
+    [Tags]    Configurações    Requisições    Funcional        
+    Dado que clico no menu "Configurações > Obras"
+    E seleciono opção Cards ou Lista "Lista"
+    Então sistema exibe informações com filtro "Lista" em Configurações > Requisições
+
+CT 10.07.04 - Validar filtro de busca
+    [Documentation]     Caso de teste valida se filtro de busca está funcional
+    [Tags]    Configurações    Monitoramento    Funcional        
+    Dado que clico no menu "Configurações > Obras"
+    Quando clico no filtro busca
+    E preencho filtro busca em Configurações > Obras
+    Então sistema exibe informações de filtro de busca em Configurações > Obras
+
+CT 10.07.05 - Validar botão Perguntas
+    [Documentation]     Caso de teste valida se botão Perguntas está funcional
+    [Tags]    Configurações    Monitoramento    Funcional        
+    Dado que clico no menu "Configurações > Obras"
+    E clico no botao "Perguntas"
+    Então sistema exibe informações de tela de Perguntas
+
+CT 10.08.01 - Validar menu Configurações > Contratos
+    [Documentation]     Caso de teste valida se Menu Configurações > Contratos está funcional
+    [Tags]    Configurações    Contratos    Funcional        
+    Dado que clico no menu "Configurações > Contratos"
+    Então sistema exibe informações de menu Configurações > Contratos
+
+
+
 
 
