@@ -31,6 +31,7 @@ Então sistema exibe tela de Obras > Dashboard
 # -3.1.6
 Então sistema exibe informações de filtros de data
     Wait Until Page Contains    text=2025-02
+
 # -3.1.7
 E valido filtros de departamento em Obras
     Wait Until Element Is Visible    ${Btn_Departamentos}
@@ -104,12 +105,12 @@ E preencho informações de Data de entrega em Obras > Requisições
     Wait Until Element Is Visible    //button[@id='data_entrega']
     Click Element                    //button[@id='data_entrega']
     Wait Until Element Is Visible    (//button[@type='button'])[16]
-    FOR    ${i}    IN RANGE    6
+    FOR    ${i}    IN RANGE    7
         Click Element    (//button[@type='button'])[16]
         Sleep    0.5s
     END
     Sleep    2s
-    Click Element                    (//button[contains(.,'1')])[1]
+    Click Element                    (//button[@name='day'][normalize-space()='1'])[1]
     Click Element                    //button[contains(.,'31')]
     Click Element                    ${Botao_Buscar} 
 
@@ -118,12 +119,12 @@ E preencho informações de Data de criação em Obras > Requisições
     Wait Until Element Is Visible      //button[@id='data_criacao']
     Click Element                      //button[@id='data_criacao']
     Wait Until Element Is Visible    (//button[@type='button'])[16]
-    FOR     ${i}    IN RANGE    5
+    FOR     ${i}    IN RANGE    7
     Click Element    (//button[@type='button'])[16]
     Sleep    0.5s
     END
     Sleep    2s
-    Click Element                      (//button[contains(.,'1')])[1]
+    Click Element                      (//button[@name='day'][normalize-space()='1'])[1]
     Click Element                      //button[contains(.,'31')]
 
     Click Element                      //button[@id='data_criacao']

@@ -14,7 +14,7 @@ ${Departamento_ContratosDashboard}        //button[contains(.,'Selecione um depa
 ${Filtro_+60Dias}                         (//div[contains(.,'+60 diasNº Contratos8')])[6]
 ${Filtro_30Dias}                          (//span[contains(@class,'mr-1 inline-flex')])[2]
 ${Filtro_15Dias}                          (//div[contains(@class,'mb-3 flex')])[3]
-${Filtro_Vencidos}                        (//div[contains(.,'VencidosNº Contratos0')])[6]
+${Filtro_Vencidos}                        (//div[@class='flex-1 p-6'])[4]
 ${Filtro_Indefinidos}                     (//div[contains(.,'IndefinidosNº Contratos9')])[6]
 ${Filtro_VigenciaInicial}                 //button[@id='vigencia_inicio']
 ${Filtro_VigenciaFinal}                   //button[@id='vigencia_fim']
@@ -121,7 +121,7 @@ Então sistema exibe informações de cadastros de Contratos
 E preencho informação de filtro Vigência inicial
     Wait Until Element Is Visible    ${Filtro_VigenciaInicial}
     Click Element                    ${Filtro_VigenciaInicial}
-    FOR     ${i}    IN RANGE     2
+    FOR     ${i}    IN RANGE     3
         Click Element    (//button[@type='button'])[19]
         Sleep    0.5s
     END

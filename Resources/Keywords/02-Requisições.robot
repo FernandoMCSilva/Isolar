@@ -40,7 +40,7 @@ ${COMBOBOX_STATUS}             //button[contains(@id,'status')]
 ${COMBOBOX_TIPO}               //button[@id='tipo']
 ${COMBOBOX_URGENTE}            //button[contains(@id,'urgente')]
 ${COMBOBOX_NIVEL_DE_URGENCIA}  //button[contains(@id,'nivel_urgencia')]
-${COMBOBOX_RESPONSAVEL}        (//button[@role='combobox'])[3]
+${COMBOBOX_RESPONSAVEL}        (//button[@role='combobox'])[2]
 ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 
 
@@ -215,7 +215,7 @@ E preencho informações de Data de entrega
     Wait Until Element Is Visible    //button[@id='data_entrega']
     Click Element                    //button[@id='data_entrega']
     Wait Until Element Is Visible    (//button[@type='button'])[44]
-    FOR    ${i}    IN RANGE    6
+    FOR    ${i}    IN RANGE    7
         Click Element    (//button[@type='button'])[44]
         Sleep    0.5s
     END
@@ -232,7 +232,7 @@ E preencho informações de Data de criação
     Wait Until Element Is Visible      //button[@id='data_criacao']
     Click Element                      //button[@id='data_criacao']
 
-    FOR     ${i}    IN RANGE    6
+    FOR     ${i}    IN RANGE    7
     Click Element    (//button[@type='button'])[44]
     Sleep    0.5s
     END
