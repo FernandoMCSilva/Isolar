@@ -138,7 +138,7 @@ Então sistema exibe informações de filtro Vigência inicial
 E preencho informação de filtro Vigência final
     Wait Until Element Is Visible    ${Filtro_VigenciaFinal}
     Click Element                    ${Filtro_VigenciaFinal}
-    Click Element                    //table[contains(@class,'w-full border-collapse')]/tbody[1]/tr[6]/td[1]/button[1]
+    # Click Element                    //table[contains(@class,'w-full border-collapse')]/tbody[1]/tr[6]/td[1]/button[1]
     Sleep    1s
     FOR     ${i}    IN RANGE     12
         Click Element    (//div[contains(@class,'space-x-1 flex')]//button)[2]
@@ -146,7 +146,6 @@ E preencho informação de filtro Vigência final
     END
 
     Click Element    //td[normalize-space(text())='1']
-    # Click Element    ${Filtro_VigenciaFinal}
 
 Então sistema exibe informações de filtro Vigência final
     Wait Until Element Is Visible    //td[normalize-space(text())='Sara TESTE 2 - NORMAL']
@@ -155,7 +154,7 @@ Então sistema exibe informações de filtro Vigência final
 E preencho informação de filtro Índice
     Wait Until Element Is Visible    ${Filtro_Indice}
     Click Element                    ${Filtro_Indice}
-   FOR     ${i}    IN RANGE     1
+   FOR     ${i}    IN RANGE     2
         Click Element    (//button[@type='button'])[19]
         Sleep    0.3s
     END
