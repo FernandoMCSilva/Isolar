@@ -108,7 +108,7 @@ E seleciono opção de filtro Data de registro
     Click Element                     ${filtro_DataRegistro_Documentos}
     Wait Until Element Is Visible     (//button[@type='button'])[13]
 
-    FOR    ${i}    IN RANGE    2
+    FOR    ${i}    IN RANGE    3
         Click Element    (//button[@type='button'])[13]
         Sleep    0.5s
     END

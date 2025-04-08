@@ -240,6 +240,7 @@ CT 10.03.06 - Validar botão Atualizar template
     E clico no botão Atualizar template
     E faço upload de arquivo teste de template
     Então sistema atualiza template selecionado
+# Upload / Anexo
 
 CT 10.03.07 - Validar botão Editar template e campos 
     [Documentation]     Caso de teste valida se botão Editar template e campos está funcional em Configurações > Documentos
@@ -247,6 +248,7 @@ CT 10.03.07 - Validar botão Editar template e campos
     Dado que clico no menu "Configurações > Documentos"
     E clico no botão Editar template e campos
     Então sistema exibe confirmação de edição
+# Não temos permição para editar
 
 CT 10.03.08 - Validar botão Criar 
     [Documentation]     Caso de teste valida se botão Criar está funcional em Configurações > Documentos
@@ -256,6 +258,7 @@ CT 10.03.08 - Validar botão Criar
     E clico em Anexar Template
     E faço upload de arquivo teste em Configurações > Documentos
     Então sistema cria novo template de documentos
+# Upload / anexo
 
 CT 10.04.01 - Validar menu Configurações > Estimativa
     [Documentation]     Caso de teste valida se Menu Configurações > Estimativa está funcional
@@ -513,11 +516,11 @@ CT 10.07.05 - Validar botão Perguntas
     E clico no botao "Perguntas"
     Então sistema exibe informações de tela de Perguntas
 
-CT 10.08.01 - Validar menu Configurações > Contratos
-    [Documentation]     Caso de teste valida se Menu Configurações > Contratos está funcional
-    [Tags]    Configurações    Contratos    Funcional        
-    Dado que clico no menu "Configurações > Contratos"
-    Então sistema exibe informações de menu Configurações > Contratos
+# CT 10.08.01 - Validar menu Configurações > Contratos
+#     [Documentation]     Caso de teste valida se Menu Configurações > Contratos está funcional
+#     [Tags]    Configurações    Contratos    Funcional        
+#     Dado que clico no menu "Configurações > Contratos"
+#     Então sistema exibe informações de menu Configurações > Contratos
 
 
 

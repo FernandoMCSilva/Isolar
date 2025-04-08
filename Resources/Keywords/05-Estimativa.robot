@@ -142,7 +142,6 @@ Então sistema exibe próximas Estimativa
     ...    ELSE    Log    "Botão Anterior não está visível. Falhou."    WARN
 
 # --4.10
-
 E clico em "Anterior"
     Sleep    1s
     Click Element                    //button[contains(.,'Anterior')]

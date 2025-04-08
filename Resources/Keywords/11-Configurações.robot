@@ -201,6 +201,7 @@ Então sistema exibe informações de pesquisa de tipo de requisição
 
 # -10.01.06
 Quando clico em "Excluir" em configurações
+    Sleep    0.5s
     Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
     Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
 
@@ -793,9 +794,11 @@ E preencho filtro busca em configurações
 E edito dados de cliente
     Sleep    1s
     Execute Javascript                   window.scrollTo(0, document.body.scrollHeight)
-    Sleep    2s
-    Wait Until Element Is Visible    //input[@id='tempo_execucao-29']
-    Input Text                       //input[@id='tempo_execucao-29']    20
+    Sleep    1s
+    Wait Until Element Is Visible        (//input[@id='tempo_execucao-39'])[1]
+    Input Text                           (//input[@id='tempo_execucao-39'])[1]    20
+# o Path aumenta cada vez que criamos um novo dado. Se deletarmos esse e criarmos outro b3 teste, 
+# ele aumenta esse input para 40 e depois 41 e sucessivamente
 
 Então sistema realiza edição de novo cliente em Configurações > Monitoramento
     Wait Until Page Contains    text=Informações atualizadas com sucesso!

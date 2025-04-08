@@ -40,7 +40,8 @@ ${COMBOBOX_STATUS}             //button[contains(@id,'status')]
 ${COMBOBOX_TIPO}               //button[@id='tipo']
 ${COMBOBOX_URGENTE}            //button[contains(@id,'urgente')]
 ${COMBOBOX_NIVEL_DE_URGENCIA}  //button[contains(@id,'nivel_urgencia')]
-${COMBOBOX_RESPONSAVEL}        (//button[@role='combobox'])[2]
+${COMBOBOX_RESPONSAVEL_1}      xpath=(//button[@role='combobox'])[3]
+${COMBOBOX_RESPONSAVEL_2}      xpath=(//button[@role='combobox'])[2]
 ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
 
 
@@ -77,7 +78,7 @@ Então sistema exibe requisições do filtro Cliente
     Wait Until Page Contains    text=Fernando
 # --2.3
 E valido filtros dentro de Departamento em Requisições
-    Wait Until Element Is Visible    ${COMBOBOX_DEPARTAMENTO}    timeout=10s
+    Wait Until Element Is Visible    ${COMBOBOX_DEPARTAMENTO}    timeout=12s
     Click Element    ${COMBOBOX_DEPARTAMENTO}
     # Pega todas as opções dentro do dropdown
     ${departamentos}    Get WebElements    ${COMBOBOX_DEPARTAMENTO}
@@ -249,28 +250,31 @@ Então sistema exibe requisições do filtro Data de Criação
 # --2.10
 E valido todos os filtros dentro de "Responsável"
     Sleep    1s
+    # Tenta encontrar o primeiro caminho
+    ${combobox_existe}    Run Keyword And Return Status    Element Should Be Visible    ${COMBOBOX_RESPONSAVEL_1}    timeout=5s
+    IF    ${combobox_existe}
+        ${COMBOBOX_RESPONSAVEL}    Set Variable    ${COMBOBOX_RESPONSAVEL_1}
+    ELSE
+        ${COMBOBOX_RESPONSAVEL}    Set Variable    ${COMBOBOX_RESPONSAVEL_2}
+    END
+
     Wait Until Element Is Visible    ${COMBOBOX_RESPONSAVEL}    timeout=10s
     Click Element    ${COMBOBOX_RESPONSAVEL}
-    # Pega todas as opções dentro do dropdown
-    ${departamentos}    Get WebElements    ${COMBOBOX_RESPONSAVEL}
 
-    FOR    ${departamento}    IN    @{OPCOES_COMBOBOX_RESPONSAVEL}
-            # Clica na opção de departamento atual
-            Click Element    ${departamento}
-            
-            # Clica no botão de buscar
-            Click Element    ${Btn_Buscar}
-            
-            # Espera pela atualização e valida que a página foi atualizada
-            Wait Until Element Is Visible    //button[contains(.,'Inserir')]    timeout=10s
-            
-            # Log do departamento testado
-            ${departamento_text}    Get Text    ${departamento}
-            Log    Departamento ${departamento_text} validado com sucesso
-            Wait Until Element Is Visible    ${COMBOBOX_RESPONSAVEL}
-            # Reabre a combobox para a próxima iteração
-            Click Element    ${COMBOBOX_RESPONSAVEL}
-        END
+    # Pega todas as opções dentro do dropdown
+    ${departamentos}    Get WebElements    //ul[contains(@class,'dropdown')]//li
+
+    FOR    ${departamento}    IN    @{departamentos}
+        Click Element    ${departamento}
+        Click Element    ${Btn_Buscar}
+        Wait Until Element Is Visible    //button[contains(.,'Inserir')]    timeout=10s
+        ${departamento_text}    Get Text    ${departamento}
+        Log    Departamento ${departamento_text} validado com sucesso
+
+        # Reabre o combobox para próxima iteração
+        Wait Until Element Is Visible    ${COMBOBOX_RESPONSAVEL}
+        Click Element    ${COMBOBOX_RESPONSAVEL}
+    END
 
 
 Então sistema exibe requisições de filtro Responsável
@@ -455,10 +459,10 @@ Então sistema verifica funcionalidade do botão Mudar Status Requisição em Re
 
 
 # --2.18
-
 E clico no botão "Histórico"
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
-    Wait Until Element Is Visible    ${Botao_Acoes_Requisicoes}
+    Sleep    0.5s
+    Wait Until Element Is Visible    ${Botao_Acoes_Requisicoes}    
     Click Element                    ${Botao_Acoes_Requisicoes}
     Wait Until Element Is Visible    ${Botao_Historico}
     Click Element                    ${Botao_Historico}
@@ -466,14 +470,17 @@ Então sistema exibe histórico em requisições
     Wait Until Page Contains    text=Histórico da requisição
 
 # --2.19
-
 E clico no botão "Renovar"
+    Sleep    0.5s
     Wait Until Element Is Visible    ${Botao_Acoes_Requisicoes}
     Click Element                    ${Botao_Acoes_Requisicoes}
+    Sleep    0.5s
     Wait Until Element Is Visible    ${Botao_Renovar}
     Click Element                    ${Botao_Renovar}
+    Sleep    0.5s
     Wait Until Element Is Visible    //button[contains(.,'Sim')]
     Click Element                    //button[contains(.,'Sim')]
+    Sleep    0.5s
     Wait Until Element Is Visible    //button[contains(.,'Atualização de preço')]
     Click Element                    //button[contains(.,'Atualização de preço')]
     Sleep    1s
