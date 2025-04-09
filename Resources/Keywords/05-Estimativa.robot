@@ -45,11 +45,13 @@ Então sistema exibe informações de estimativas
 
 # --4.2
 E preencho informações no campo Vendedor
-    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]
-    Press Keys    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
+    Wait Until Element Is Visible        //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]
+    Press Keys                           //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
 
 E clico em "Buscar"
-    Click Element                    ${Botao_Buscar}
+    Sleep    0.5s
+    Wait Until Element Is Visible        ${Botao_Buscar}
+    Click Element                        ${Botao_Buscar}
 
 Então sistema exibe estimativas de filtro Vendedor
     Wait Until Element Is Visible        xpath=//td[contains(normalize-space(),'Fernando')]       timeout=10s
@@ -74,8 +76,8 @@ Então sistema exibe estimativas do filtro Cliente
 # --4.4
 E seleciono Tipo de usina "Todos"  
     Wait Until Element Is Visible    //button[@type='button'][contains(.,'Tipo')]
-    Click Element    //button[@type='button'][contains(.,'Tipo')]
-    Click Element    //div[@role='option'][contains(.,'Todos')]
+    Click Element                    //button[@type='button'][contains(.,'Tipo')]
+    Click Element                    //div[@role='option'][contains(.,'Todos')]
 
 Então sistema exibe informações de Estimativa do filtro Tipo de usina "Todos"
    Wait Until Element Is Visible        (//div[contains(.,'Registros carregados com sucesso!')])[7]
@@ -83,8 +85,8 @@ Então sistema exibe informações de Estimativa do filtro Tipo de usina "Todos"
 # --4.5
 E seleciono Tipo de usina "Autoconsumo"
     Wait Until Element Is Visible    //button[@type='button'][contains(.,'Tipo')]
-    Click Element    //button[@type='button'][contains(.,'Tipo')]
-    Click Element    //div[@role='option'][contains(.,'Autoconsumo')]
+    Click Element                    //button[@type='button'][contains(.,'Tipo')]
+    Click Element                    //div[@role='option'][contains(.,'Autoconsumo')]
 
 Então sistema exibe informações de Estimativa do filtro Tipo de usina "Autoconsumo"
     Wait Until Element Is Visible     (//div[contains(.,'Registros carregados com sucesso!')])[7]
@@ -92,8 +94,8 @@ Então sistema exibe informações de Estimativa do filtro Tipo de usina "Autoco
 # --4.6
 E seleciono Tipo de usina "Aluguel"
     Wait Until Element Is Visible    //button[@type='button'][contains(.,'Tipo')]
-    Click Element    //button[@type='button'][contains(.,'Tipo')]
-    Click Element    //div[@role='option'][contains(.,'Aluguel')]
+    Click Element                    //button[@type='button'][contains(.,'Tipo')]
+    Click Element                    //div[@role='option'][contains(.,'Aluguel')]
 
 Então sistema exibe informações de Estimativa do filtro Tipo de usina "Aluguel"
     Wait Until Page Contains    text=Registros carregados com sucesso!
@@ -218,7 +220,7 @@ Então sistema aplica desconto e exibe informações em arquivo PDF
 # --4.19
 
 E preencho informações de desconto acima do limite
-    Sleep    1.5s
+    Sleep    2s
     Input Text                       //input[@id='descontoMaximo']    6
     Sleep                            1s
     Click Element                    //button[contains(.,'Confirmar')]

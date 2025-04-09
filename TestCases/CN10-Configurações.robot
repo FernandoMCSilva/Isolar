@@ -111,7 +111,7 @@ CT 10.01.12 - Validar botão "Excluir" perguntas
     E clico no botao "Perguntas"
     E clico no botao buscar
     E preencho informações de pesquisa
-    Quando clico em "Excluir" em configurações em perguntas
+    Quando clico em "Excluir" em configurações
     Então sistema exclui pergunta do menu Configurações > Requisições > Perguntas
 
 CT 10.01.13 - Validar filtro "Cards ou Lista" em Perguntas 
@@ -233,32 +233,32 @@ CT 10.03.05 - Validar botão Ver histórico
     E clico no botão Ver histórico
     Então sistema exibe histórico de template selecionado
 
-CT 10.03.06 - Validar botão Atualizar template 
-    [Documentation]     Caso de teste valida se botão Atualizar template está funcional em Configurações > Documentos
-    [Tags]    Configurações    Documentos    Funcional        
-    Dado que clico no menu "Configurações > Documentos"
-    E clico no botão Atualizar template
-    E faço upload de arquivo teste de template
-    Então sistema atualiza template selecionado
-# Upload / Anexo
+# CT 10.03.06 - Validar botão Atualizar template 
+#     [Documentation]     Caso de teste valida se botão Atualizar template está funcional em Configurações > Documentos
+#     [Tags]    Configurações    Documentos    Funcional        
+#     Dado que clico no menu "Configurações > Documentos"
+#     E clico no botão Atualizar template
+#     E faço upload de arquivo teste de template
+#     Então sistema atualiza template selecionado
+# # Upload / Anexo
 
-CT 10.03.07 - Validar botão Editar template e campos 
-    [Documentation]     Caso de teste valida se botão Editar template e campos está funcional em Configurações > Documentos
-    [Tags]    Configurações    Documentos    Funcional        
-    Dado que clico no menu "Configurações > Documentos"
-    E clico no botão Editar template e campos
-    Então sistema exibe confirmação de edição
-# Não temos permição para editar
+# CT 10.03.07 - Validar botão Editar template e campos 
+#     [Documentation]     Caso de teste valida se botão Editar template e campos está funcional em Configurações > Documentos
+#     [Tags]    Configurações    Documentos    Funcional        
+#     Dado que clico no menu "Configurações > Documentos"
+#     E clico no botão Editar template e campos
+#     Então sistema exibe confirmação de edição
+# # Não temos permição para editar
 
-CT 10.03.08 - Validar botão Criar 
-    [Documentation]     Caso de teste valida se botão Criar está funcional em Configurações > Documentos
-    [Tags]    Configurações    Documentos    Funcional        
-    Dado que clico no menu "Configurações > Documentos"
-    Quando clico no botão Criar em Configurações > Documentos
-    E clico em Anexar Template
-    E faço upload de arquivo teste em Configurações > Documentos
-    Então sistema cria novo template de documentos
-# Upload / anexo
+# CT 10.03.08 - Validar botão Criar 
+#     [Documentation]     Caso de teste valida se botão Criar está funcional em Configurações > Documentos
+#     [Tags]    Configurações    Documentos    Funcional        
+#     Dado que clico no menu "Configurações > Documentos"
+#     Quando clico no botão Criar em Configurações > Documentos
+#     E clico em Anexar Template
+#     E faço upload de arquivo teste em Configurações > Documentos
+#     Então sistema cria novo template de documentos
+# # Upload / anexo
 
 CT 10.04.01 - Validar menu Configurações > Estimativa
     [Documentation]     Caso de teste valida se Menu Configurações > Estimativa está funcional
@@ -496,14 +496,14 @@ CT 10.07.02 - Validar inserção de Novo tipo
 
 CT 10.07.03 - Validar filtro "Cards ou Lista"
     [Documentation]     Caso de teste valida se filtro Cards ou Lista no menu Configurações > Requisições está funcional
-    [Tags]    Configurações    Requisições    Funcional        
+    [Tags]    Configurações    Obras    Funcional        
     Dado que clico no menu "Configurações > Obras"
     E seleciono opção Cards ou Lista "Lista"
     Então sistema exibe informações com filtro "Lista" em Configurações > Requisições
 
 CT 10.07.04 - Validar filtro de busca
     [Documentation]     Caso de teste valida se filtro de busca está funcional
-    [Tags]    Configurações    Monitoramento    Funcional        
+    [Tags]    Configurações    Obras    Funcional        
     Dado que clico no menu "Configurações > Obras"
     Quando clico no filtro busca
     E preencho filtro busca em Configurações > Obras
@@ -511,10 +511,20 @@ CT 10.07.04 - Validar filtro de busca
 
 CT 10.07.05 - Validar botão Perguntas
     [Documentation]     Caso de teste valida se botão Perguntas está funcional
-    [Tags]    Configurações    Monitoramento    Funcional        
+    [Tags]    Configurações    Obras    Funcional        
     Dado que clico no menu "Configurações > Obras"
     E clico no botao "Perguntas"
     Então sistema exibe informações de tela de Perguntas
+
+CT 10.07.06 - Validar exclusão
+    [Documentation]     Caso de teste valida se exclusão de cliente em Configurações > Obras está funcional
+    [Tags]    Configurações    Obras    Funcional        
+    Dado que clico no menu "Configurações > Obras"
+    Quando clico no filtro busca
+    E preencho filtro busca em configurações
+    Quando clico em "Excluir" em configurações
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
 
 # CT 10.08.01 - Validar menu Configurações > Contratos
 #     [Documentation]     Caso de teste valida se Menu Configurações > Contratos está funcional

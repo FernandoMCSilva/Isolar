@@ -43,6 +43,7 @@ ${COMBOBOX_NIVEL_DE_URGENCIA}  //button[contains(@id,'nivel_urgencia')]
 ${COMBOBOX_RESPONSAVEL_1}      xpath=(//button[@role='combobox'])[3]
 ${COMBOBOX_RESPONSAVEL_2}      xpath=(//button[@role='combobox'])[2]
 ${COMBOBOX_RENOVADAS}          //button[contains(@id,'renovada')]
+${COMBOBOX_RESPONSAVEL}         xpath=(//button[@role='combobox'])[2]
 
 
 @{OPCOES_COMBOBOX_DEPARTAMENTO}     (//div[contains(.,'Comercial')])[14]    (//div[contains(.,'TI')])[5]

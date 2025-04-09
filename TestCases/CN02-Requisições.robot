@@ -74,6 +74,7 @@ CT 02.09 - Validar filtro Data de criação
     Quando clico em "Filtros"
     E preencho informações de Data de criação
     Então sistema exibe requisições do filtro Data de Criação
+    
 CT 02.10 - Validar filtro Responsável
     [Documentation]     Caso de teste valida o filtro Responsável em Requisições
     [Tags]    Requisições    Funcional        
@@ -81,6 +82,7 @@ CT 02.10 - Validar filtro Responsável
     Quando clico em "Filtros"
     E valido todos os filtros dentro de "Responsável"
     Então sistema exibe requisições de filtro Responsável
+
 CT 02.11 - Validar filtro Representante comercial
     [Documentation]     Caso de teste valida o filtro Representante comercial em Requisições
     [Tags]    Requisições    Funcional        

@@ -820,6 +820,7 @@ Então sistema exibe informações de menu Configurações > Obras
 # -10.07.02
 E preencho informações de Novo tipo de Requisições
     Wait Until Element Is Visible    //input[@id='nomeRequisicao']
+    Sleep    1s
     Input Text                       //input[@id='nomeRequisicao']    ${nome_pesquisa_GruposConsumidores}
     Click Element                    ${botao_ExcluirSecao}
     Sleep    0.5
