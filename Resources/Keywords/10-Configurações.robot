@@ -357,7 +357,8 @@ Quando preencho informações do menu "Geral" no menu Configurações > Minerand
     Click Element     //button[@class='peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-slate-400']
     Click Element     //button[@class='peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-slate-400']
 E clico em Atualizar
-    Click Element     ${botao_AtualizarConfig}
+    Wait Until Element Is Visible    ${botao_AtualizarConfig}
+    Click Element                    ${botao_AtualizarConfig}
 
 Então sistema exibe mensagem de atualização
     Wait Until Page Contains    text=Registro atualizado com sucesso!
@@ -791,18 +792,40 @@ E preencho filtro busca em configurações
     Wait Until Element Is Visible    ${input_buscar}
     Input Text                       ${input_buscar}    ${nome_pesquisa_GruposConsumidores}
 
+E preencho filtro de busca em configurações
+    Wait Until Element Is Visible    ${input_buscar}
+    Input Text                       ${input_buscar}    teste123
+
 E edito dados de cliente
     Sleep    1s
     Execute Javascript                   window.scrollTo(0, document.body.scrollHeight)
     Sleep    1s
-    Wait Until Element Is Visible        (//input[@id='tempo_execucao-39'])[1]
-    Input Text                           (//input[@id='tempo_execucao-39'])[1]    20
-# o Path aumenta cada vez que criamos um novo dado. Se deletarmos esse e criarmos outro b3 teste, 
-# ele aumenta esse input para 40 e depois 41 e sucessivamente
+    Wait Until Element Is Visible        (//input[@id='tempo_execucao-46'])[1]
+    Input Text                           (//input[@id='tempo_execucao-46'])[1]    20
+
 
 Então sistema realiza edição de novo cliente em Configurações > Monitoramento
     Wait Until Page Contains    text=Informações atualizadas com sucesso!
-
+    Sleep    5s
+#   E atualizo informação para teste posterior
+    Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
+    Click Element                    ${MENU_CONFIGURACOES}
+    Sleep    1s
+    Click Element                    ${Menu_ConfigMonitoramento}
+    Sleep    4s
+    Wait Until Element Is Visible   ${filtro_buscarConfig}
+    Click Element                   ${filtro_buscarConfig}
+    Wait Until Element Is Visible    ${input_buscar}
+    Input Text                       ${input_buscar}    teste123
+    Wait Until Element Is Visible    ${Btn_Buscar}
+    Click Element                    ${Btn_Buscar} 
+    Wait Until Element Is Visible    ${botao_Editar_Configuracoes}
+    Click Element                    ${botao_Editar_Configuracoes}
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='tempo_execucao-46'])[1]
+    Input Text                       (//input[@id='tempo_execucao-46'])[1]    10
+    Wait Until Element Is Visible    ${botao_AtualizarConfig}
+    Click Element                    ${botao_AtualizarConfig}
 # -10.06.07
 Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
     Wait Until Page Contains    text=Registro excluído com sucesso!

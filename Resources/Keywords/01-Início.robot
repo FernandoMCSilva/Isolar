@@ -120,6 +120,7 @@ E valido filtros de departamento
         END
 
 E clico em Buscar
+    Wait Until Element Is Visible    ${Btn_Buscar}
     Click Element                    ${Btn_Buscar} 
 
 Então sistema exibe requisições do departamento

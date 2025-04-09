@@ -461,7 +461,7 @@ CT 10.06.06 - Validar edição
     [Tags]    Configurações    Monitoramento    Funcional        
     Dado que clico no menu "Configurações > Monitoramento"
     Quando clico no filtro busca
-    E preencho filtro busca em configurações
+    E preencho filtro de busca em configurações
     E clico em Buscar
     Quando clico em "Editar"
     E edito dados de cliente
