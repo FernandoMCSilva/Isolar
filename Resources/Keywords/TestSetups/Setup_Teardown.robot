@@ -6,7 +6,7 @@ Resource    ../../Main.robot
 *** Keywords ***
 Abrir navegador
     [Arguments]     ${url}
-    ${options}=     Evaluate    create_options()    modules=options_module
+    ${options}=     Evaluate    create_options()    modules=Resources.options_module
     Open Browser    ${url}    chrome    options=${options}
     Maximize Browser Window
     # Set Window Size    1920    1080
