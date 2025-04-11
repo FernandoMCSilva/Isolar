@@ -11,3 +11,4 @@ Library  String
 Library  Dialogs
 # Library  SikuliLibrary
 # Library   webdriver_manager
+Library   chromedriver_autoinstaller
