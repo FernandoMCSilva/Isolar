@@ -6,7 +6,8 @@ Resource    ../../Main.robot
 *** Keywords ***
 Abrir navegador
     [Arguments]     ${url}
-    Open Browser    ${url}    chrome    options=--headless --no-sandbox --disable-dev-shm-usage
+    ${chrome_options}=    Create List    --headless    --no-sandbox    --disable-dev-shm-usage
+    Open Browser    ${url}    chrome    options=${chrome_options}
     Maximize Browser Window
     # Set Window Size    1920    1080
     Wait Until Element Is Visible    ${LOGO}    timeout=10s
