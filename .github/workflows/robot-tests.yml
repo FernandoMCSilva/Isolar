@@ -49,6 +49,6 @@ jobs:
         run: |
           Xvfb :99 -ac &
           export DISPLAY=:99
-          robot Isolar/TestCases
+          robot TestCases
 
 
