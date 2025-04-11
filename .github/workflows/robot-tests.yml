@@ -13,6 +13,9 @@ jobs:
       - name: Checkout repositório
         uses: actions/checkout@v3
 
+      - name: Configurar PYTHONPATH
+        run: echo "PYTHONPATH=${GITHUB_WORKSPACE}" >> $GITHUB_ENV
+
       - name: Configurar Python
         uses: actions/setup-python@v4
         with:
