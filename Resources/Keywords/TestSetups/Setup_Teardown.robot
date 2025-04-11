@@ -6,8 +6,11 @@ Resource    ../../Main.robot
 *** Keywords ***
 Abrir navegador
     [Arguments]     ${url}
-    ${chrome_options}=    Create List    --headless    --no-sandbox    --disable-dev-shm-usage
-    Open Browser    ${url}    chrome    options=${chrome_options}
+    ${options}=    Evaluate    __import__('selenium.webdriver.chrome.options', fromlist=['Options']).Options()    modules=selenium.webdriver.chrome.options
+    ${dummy}=      Evaluate    ${options}.add_argument('--headless')
+    ${dummy}=      Evaluate    ${options}.add_argument('--no-sandbox')
+    ${dummy}=      Evaluate    ${options}.add_argument('--disable-dev-shm-usage')
+    Open Browser    ${url}    chrome    options=${options}
     Maximize Browser Window
     # Set Window Size    1920    1080
     Wait Until Element Is Visible    ${LOGO}    timeout=10s
