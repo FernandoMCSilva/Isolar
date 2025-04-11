@@ -2,7 +2,7 @@
 Library  SeleniumLibrary
 # Library  RPA.Excel.Files
 # Library  ExcelLibrary
-Library  ScreenCapLibrary
+# Library  ScreenCapLibrary
 Library  OperatingSystem
 Library  Collections
 # Library  FakerLibrary   locale=pt_BR
