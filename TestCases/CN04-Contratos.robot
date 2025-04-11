@@ -1,4 +1,5 @@
 *** Settings ***
+Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
 Test Setup         Dado que acesse a Isolar e logue no sistema
 Test Teardown      Fechar navegador
