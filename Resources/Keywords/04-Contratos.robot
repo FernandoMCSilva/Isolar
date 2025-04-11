@@ -45,6 +45,7 @@ Dado que clico no menu Contratos > Dashboard > Dashboard
     Wait Until Element Is Visible    locator
 
 E preencho Vigência de:
+    Sleep    1s
     Wait Until Element Is Visible    (//input[@placeholder='DD/MM/YYYY'])[1]
     Input Text                       (//input[@placeholder='DD/MM/YYYY'])[1]    07062024
     Input Text                       (//input[@placeholder='DD/MM/YYYY'])[2]    01042024

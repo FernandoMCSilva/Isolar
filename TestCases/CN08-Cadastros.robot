@@ -656,7 +656,7 @@ CT 08.09.05 - Validar botão Cancelar em "Excluir"
 
 CT 08.09.06 - Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
-    [Tags]    Cadastros    Departamentos    Funcional    SmokeTest        
+    [Tags]    Cadastros    Departamentos    Funcional    SmokeTest
     Dado que clico no menu "Cadastros > Departamentos"
     E clico no botao buscar
     E preencho informações de pesquisa

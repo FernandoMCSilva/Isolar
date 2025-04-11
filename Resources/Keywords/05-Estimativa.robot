@@ -145,7 +145,7 @@ Então sistema exibe próximas Estimativa
 
 # --4.10
 E clico em "Anterior"
-    Sleep    1s
+    Sleep                            1.5s
     Click Element                    //button[contains(.,'Anterior')]
 
 Então sistema exibe Estimativa anteriores
@@ -220,7 +220,7 @@ Então sistema aplica desconto e exibe informações em arquivo PDF
 # --4.19
 
 E preencho informações de desconto acima do limite
-    Sleep    2s
+    Sleep    4s
     Input Text                       //input[@id='descontoMaximo']    6
     Sleep                            1s
     Click Element                    //button[contains(.,'Confirmar')]

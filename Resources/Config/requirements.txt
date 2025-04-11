@@ -1,4 +1,6 @@
 robotframework
 robotframework-seleniumlibrary
 robotframework-requests
-robotframework-screencaplibrary
+chromedriver-autoinstaller
+robotframework-pabot
+pi

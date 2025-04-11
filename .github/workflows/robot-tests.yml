@@ -1,0 +1,44 @@
+name: Run Robot Tests Daily
+
+on:
+  schedule:
+    - cron: '0 3 * * *'  # Executa todos os dias às 03:00 UTC
+  workflow_dispatch:     # Permite rodar manualmente também
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repositório
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Instalar dependências
+        run: |
+          pip install -r requirements.txt
+          sudo apt-get update
+          sudo apt-get install -y xvfb  # Para rodar navegador em modo headless
+          sudo apt-get install -y libglib2.0-0 libnss3 libgconf-2-4 libfontconfig1 libxss1 libasound2
+
+      - name: Baixar Google Chrome e ChromeDriver
+        run: |
+          sudo apt-get install -y wget unzip
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt --fix-broken install -y
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
+          CHROMEDRIVER_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json" | jq -r ".channels.Stable.version")
+          wget -q "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${CHROMEDRIVER_VERSION}/linux64/chromedriver-linux64.zip"
+          unzip chromedriver-linux64.zip
+          sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
+          sudo chmod +x /usr/local/bin/chromedriver
+
+      - name: Rodar testes Robot
+        run: |
+          Xvfb :99 -ac &
+          export DISPLAY=:99
+          robot Isolar\Isolar\TestCases

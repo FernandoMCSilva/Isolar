@@ -123,7 +123,7 @@ E seleciono filtro Data de criação
     Wait Until Element Is Visible    (//button[@type='button'])[16]
     Click Element                    (//button[@type='button'])[16]
     Wait Until Element Is Visible    (//button[@type='button'])[21]
-    FOR     ${i}    IN RANGE    3
+    FOR     ${i}    IN RANGE    4
         Click Element    (//button[@type='button'])[21]
         Sleep    0.5s
     END
