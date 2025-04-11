@@ -1,4 +1,6 @@
 *** Settings ***
+Suite Setup       Setup Chrome Driver
+
 Resource  Config/Libraries.robot
 Resource  Config/Variables.robot
 Resource  Config/Matchers.robot
@@ -17,7 +19,6 @@ Resource  Keywords/10-Configurações.robot
 Resource  Keywords/11-Relatórios.robot
 Resource  Keywords/12-Novidades.robot
 
-
 *** Keywords ***
 Fazer login
     [Arguments]    ${usuario}    ${senha}
@@ -25,3 +26,6 @@ Fazer login
     Input Text                       //input[@id='email']      ${usuario}
     Input Text                       //input[@id='senha']      ${senha}
     Click Element                    //button[contains(.,'Entrar')]
+
+Setup Chrome Driver
+    ${_}=    Evaluate    __import__('chromedriver_autoinstaller').install()
