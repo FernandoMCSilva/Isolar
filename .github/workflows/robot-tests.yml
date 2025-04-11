@@ -18,19 +18,28 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Instalar dependências
+      - name: Instalar dependências do sistema
         run: |
-          pip install -r requirements.txt
           sudo apt-get update
-          sudo apt-get install -y xvfb  # Para rodar navegador em modo headless
-          sudo apt-get install -y libglib2.0-0 libnss3 libgconf-2-4 libfontconfig1 libxss1 libasound2
+          sudo apt-get install -y \
+            xvfb \
+            wget \
+            unzip \
+            jq \
+            libglib2.0-0 \
+            libnss3 \
+            libfontconfig1 \
+            libxss1 \
+            libasound2
+
+      - name: Instalar dependências Python
+        run: pip install -r requirements.txt
 
       - name: Baixar Google Chrome e ChromeDriver
         run: |
-          sudo apt-get install -y wget unzip
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt --fix-broken install -y
-          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
+          
           CHROMEDRIVER_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json" | jq -r ".channels.Stable.version")
           wget -q "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${CHROMEDRIVER_VERSION}/linux64/chromedriver-linux64.zip"
           unzip chromedriver-linux64.zip
@@ -41,4 +50,4 @@ jobs:
         run: |
           Xvfb :99 -ac &
           export DISPLAY=:99
-          robot Isolar\Isolar\TestCases
+          robot Isolar\\Isolar\\TestCases
