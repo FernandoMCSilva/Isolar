@@ -6,10 +6,7 @@ Resource    ../../Main.robot
 *** Keywords ***
 Abrir navegador
     [Arguments]     ${url}
-    ${options}=    Evaluate    __import__('selenium.webdriver.chrome.options', fromlist=['Options']).Options()    modules=selenium.webdriver.chrome.options
-    Evaluate    options.add_argument("--headless")    namespace={"options": ${options}}
-    Evaluate    options.add_argument("--no-sandbox")    namespace={"options": ${options}}
-    Evaluate    options.add_argument("--disable-dev-shm-usage")    namespace={"options": ${options}}
+    ${options}=     Evaluate    create_options()    modules=options_module
     Open Browser    ${url}    chrome    options=${options}
     Maximize Browser Window
     # Set Window Size    1920    1080
