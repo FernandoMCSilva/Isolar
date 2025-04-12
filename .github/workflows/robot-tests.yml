@@ -46,7 +46,12 @@ jobs:
         run: |
           Xvfb :99 -ac &
           export DISPLAY=:99
-          pabot --processes 4 --output output.xml TestCases
+          pabot --processes 4 \
+                --merge \
+                --output output.xml \
+                --report report.html \
+                --log log.html \
+                TestCases
 
       - name: Listar arquivos gerados
         run: |
