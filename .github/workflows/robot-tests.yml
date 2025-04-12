@@ -61,6 +61,7 @@ jobs:
           ls -la Results  # Altere esse caminho se necessário
 
       - name: Upload Artifacts
+        if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: Robot Framework Reports
