@@ -48,4 +48,11 @@ jobs:
           export DISPLAY=:99
           robot TestCases
 
-
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Robot Framework Reports
+          path: |
+            output.xml
+            log.html
+            report.html
