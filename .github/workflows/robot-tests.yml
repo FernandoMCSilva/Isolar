@@ -1,4 +1,4 @@
-name: Run Robot Tests Daily
+name: Run Robot Tests in Parallel
 
 on:
   schedule:
@@ -36,17 +36,25 @@ jobs:
 
       - name: Instalar dependências Python
         run: pip install -r requirements.txt
+             pip install pabot
 
       - name: Instalar Google Chrome (via apt)
         run: |
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
 
-      - name: Rodar testes Robot
+      - name: Rodar testes Robot em paralelo
         run: |
           Xvfb :99 -ac &
           export DISPLAY=:99
-          robot TestCases
+          pabot --processes 4 --output output.xml TestCases
+
+      - name: Listar arquivos gerados
+        run: |
+          echo "Listando arquivos na raiz:"
+          ls -la
+          echo "Se os arquivos estiverem em um diretório específico, liste-o também:"
+          ls -la Results  # Altere esse caminho se necessário
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
