@@ -157,7 +157,7 @@ E clico no botao "acoes"
     Click Element                    ${botao_acoes_Clientes}
     
 Quando clico em "Editar"
-    Sleep    1s
+    Sleep    5s
     Wait Until Element Is Visible    ${botao_Editar_Configuracoes}    timeout=10s
     Click Element                    ${botao_Editar_Configuracoes}
 
