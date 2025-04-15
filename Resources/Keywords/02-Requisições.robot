@@ -61,14 +61,14 @@ ${COMBOBOX_RESPONSAVEL}         xpath=(//button[@role='combobox'])[2]
 *** Keywords ***
 # --2.1
 Dado que clico no menu "Requisições"
-    Sleep    2s
-    Wait Until Element Is Visible    ${MENU_REQUISICOES}
+    Sleep    5s
+    Wait Until Element Is Visible    ${MENU_REQUISICOES}    timeout=10s
     Click Element                    ${MENU_REQUISICOES}
     Sleep    4s
 
 # --2.2
 Quando clico em "Filtros"
-    Wait Until Element Is Visible    ${Link_Filtros}
+    Wait Until Element Is Visible    ${Link_Filtros}    timeout=10s
     Click Element                    ${Link_Filtros}
 
 E preencho informações no campo Cliente
@@ -406,14 +406,17 @@ E preencho informações de cadastro de requisição
 Então sistema exibe mensagem de cadastro realizado
     Wait Until Page Contains    text=Requisições
 
+Aguardo carregamento da página 
+    Sleep    3s
+
 # --2.15
 
 E preencho filtro Cliente
     Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
-    Input Text                       //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_GruposConsumidores}
+    Input Text                       //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_Padrao}
     Click Element                    ${Botao_Buscar}
     Sleep    2s
-    Wait Until Page Contains         text=B3 (teste)
+    Wait Until Page Contains         text=B1 (Padrão)
 E clico no botão "Editar"
     Sleep    2s
     Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
@@ -423,13 +426,45 @@ E clico no botão "Editar"
 
 E preencho informações de requisição editada
     Sleep    3s
-    Click Element    (//button[contains(.,'RHIVAYLTON')])[1]
+    Click Element    (//button[@role='combobox'])[1]
     Click Element    (//div[contains(.,'Juarez Codeiro')])[5]
     Sleep    1s
     Click Element    //button[contains(.,'Salvar alterações')]
 
 Então sistema conlcui edição de requisição
     Wait Until Page Contains    text=Editar requisição
+
+E preencho informações de cadastro de requisição com cliente "temporario"
+    # 1
+    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    timeout=10s
+    Press Keys    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    temporario
+    Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]
+    Click Element    //button[contains(.,'Novo Cliente')]
+    Input Text    //input[@id='telefone']    12345678910
+    Input Text    //input[@id='cep']    28990154
+    FOR    ${i}    IN RANGE   3
+        Click Element    ${Botao_Proximo_Requisicoes}
+        Sleep            0.5s
+    END
+    Click Element     //button[contains(.,'Salvar')]
+
+E preencho filtro com cliente "temporario"
+    Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
+    Input Text                       //input[@placeholder='Nome do cliente ...']    temporario
+    Click Element                    ${Botao_Buscar}
+    Sleep    2s
+    Wait Until Page Contains         text=temporario
+
+E preencho filtro com cliente
+    Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
+    Input Text                       //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_GruposConsumidores}
+    Click Element                    ${Botao_Buscar}
+    Sleep    2s
+    Wait Until Page Contains         text=B3 (teste)
+
+E preencho informações de pesquisa com cliente "temporario"
+    Input Text    //input[@placeholder='Buscar...']    temporario
+    Wait Until Page Contains    text=temporario
 
 # --2.16
 
@@ -446,24 +481,45 @@ Então sistema exibe informações de Visualizar em requisições
 # --2.17
 
 E seleciono opção "Concluído" no botão Mudar Status Requisição em requisicoes
-    Wait Until Element Is Visible    ${Botao_MudarStatusRequisicao}
+    Wait Until Element Is Visible    ${Botao_MudarStatusRequisicao}    timeout=10s
     Click Element                    ${Botao_MudarStatusRequisicao}
     Click Element                    //button[contains(.,'Concluído')]
 
-Então sistema verifica funcionalidade do botão Mudar Status Requisição em Requisições
+E seleciono opção "Fila" no botão Mudar Status Requisição em requisicoes
+    Wait Until Element Is Visible    ${Botao_MudarStatusRequisicao}
+    Click Element                    ${Botao_MudarStatusRequisicao}
+    Click Element                    (//button[normalize-space()='Fila'])[1]
+
+Então sistema verifica status de requisição alterado
     Sleep    5s
     Click Element                    ${Link_Filtros}
     Sleep                            1s
-    Input Text                       //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_GruposConsumidores}
+    Input Text                       //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_Padrao}
     Click Element                    ${Botao_Buscar}
-    Wait Until Element Is Visible    (//div[contains(.,'Concluído')])[10]
+    Wait Until Page Contains         text=Concluído
 
+Então sistema verifica status de requisição renovada alterado
+    Sleep    5s
+    Click Element                    ${Link_Filtros}
+    Sleep                            1s
+    Input Text                       //input[@placeholder='Nome do cliente ...']    temporario
+    Click Element                    ${Botao_Buscar}
+    Wait Until Page Contains         text=Concluído
+
+
+Então sistema verifica status de requisição alterado para fila
+    Sleep    5s
+    Click Element                    ${Link_Filtros}
+    Sleep                            1s
+    Input Text                       //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_Padrao}
+    Click Element                    ${Botao_Buscar}
+    Wait Until Page Contains         text=Fila
 
 # --2.18
 E clico no botão "Histórico"
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight);
-    Sleep    0.5s
-    Wait Until Element Is Visible    ${Botao_Acoes_Requisicoes}    
+    Sleep    1s
+    Wait Until Element Is Visible    ${Botao_Acoes_Requisicoes}    timeout=10s
     Click Element                    ${Botao_Acoes_Requisicoes}
     Wait Until Element Is Visible    ${Botao_Historico}
     Click Element                    ${Botao_Historico}
@@ -484,10 +540,19 @@ E clico no botão "Renovar"
     Sleep    0.5s
     Wait Until Element Is Visible    //button[contains(.,'Atualização de preço')]
     Click Element                    //button[contains(.,'Atualização de preço')]
+    Wait Until Element Is Visible    (//button[@type='button'][normalize-space()='Sim'])[2]
+    Click Element                    (//button[@type='button'][normalize-space()='Sim'])[2]
     Sleep    1s
 Então sistema exibe mensagem após renovação  
     Execute Javascript    window.scrollTo(0,0)  
     Wait Until Page Contains    text=Gerencie informações cadastradas no sistema.
+
+E preencho filtro Cliente renovado
+    Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
+    Input Text                       //input[@placeholder='Nome do cliente ...']    temporario - Renovação
+    Click Element                    ${Botao_Buscar}
+    Sleep    2s
+    Wait Until Page Contains         text=temporario - Renovação
 
 # --2.20
 E clico no botão "Comentários"
@@ -553,6 +618,16 @@ E clico no botão "Excluir requisição"
     Sleep    2s
     Wait Until Page Contains         text=Editar requisição
     Wait Until Page Contains         text=B3 (teste)
+    Execute JavaScript               window.scrollTo(0, 0)
+    Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}
+    Click Element                    ${Botao_Excluir_Requisicoes}
+    Wait Until Element Is Visible    //button[contains(.,'Continuar')]
+    Click Element                    //button[contains(.,'Continuar')]
+
+E clico no botão "Excluir requisição" temporario
+    Sleep    2s
+    Wait Until Page Contains         text=Editar requisição
+    Wait Until Page Contains         text=temporario
     Execute JavaScript               window.scrollTo(0, 0)
     Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}
     Click Element                    ${Botao_Excluir_Requisicoes}

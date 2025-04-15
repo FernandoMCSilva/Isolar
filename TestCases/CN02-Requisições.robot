@@ -91,7 +91,7 @@ CT 02.11 - Validar filtro Representante comercial
     Quando clico em "Filtros"
     E valido filtro dentro de "Representante comercial"
     Então sistema exibe requisições de filtro Representante comercial
-    
+
 CT 02.12 - Validar filtro Vendedor
     [Documentation]     Caso de teste valida o filtro Vendedor em Requisições
     [Tags]    Requisições    Funcional        
@@ -111,20 +111,59 @@ CT 02.13 - Validar filtro Renovadas
 CT 02.14 - Validar botão Inserir "Técnico"
     [Documentation]     Caso de teste valida botão Inserir "Técnico" em Requisições
     [Tags]    Requisições    Funcional     SmokeTest   
+#   Inserir cadastro
     Dado que clico no menu "Requisições"
     Quanto clico no botão "Inserir/Técnico"
     E preencho informações de cadastro de requisição
     Então sistema exibe mensagem de cadastro realizado
+    
+#   Excluir cadastro
+    Aguardo carregamento da página 
+    Quando clico em "Filtros"
+    E preencho filtro com cliente
+    E clico no botão "Editar"
+    E clico no botão "Excluir requisição"
+    Então sistema exclui e retorna para menu requisições 
+
+#   Excluir cadastro temporario em Cadastros > Clientes
+    Dado que clico no menu "Cadastros > Clientes"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema exibe mensagem de cadastro excluido
 
 CT 02.15 - Validar botão Editar
     [Documentation]     Caso de teste valida botão editar em Requisições
     [Tags]    Requisições    Funcional    SmokeTest
+#   Inserir cadastro temporário
     Dado que clico no menu "Requisições"
+    Quanto clico no botão "Inserir/Técnico"
+    E preencho informações de cadastro de requisição com cliente "temporario"
+    Então sistema exibe mensagem de cadastro realizado
+
+#   Editar cadastro temporario
     Quando clico em "Filtros"
-    E preencho filtro Cliente
+    E preencho filtro com cliente "temporario"
     E clico no botão "Editar"
     E preencho informações de requisição editada
     Então sistema conlcui edição de requisição
+
+#   Excluir cadastro temporario
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro com cliente "temporario"
+    E clico no botão "Editar"
+    E clico no botão "Excluir requisição" temporario
+    Então sistema exclui e retorna para menu requisições 
+
+#   Excluir cadastro temporario em Cadastros > Clientes
+    Dado que clico no menu "Cadastros > Clientes"
+    E clico no botao buscar
+    E preencho informações de pesquisa com cliente "temporario"
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema exibe mensagem de cadastro excluido
 
 CT 02.16 - Validar botão Visualizar 
     [Documentation]     Caso de teste valida botão visualizar 
@@ -138,11 +177,17 @@ CT 02.16 - Validar botão Visualizar
 CT 02.17 - Validar botão Mudar Status Requisição
     [Documentation]     Caso de teste valida botão Mudar Status Requisição
     [Tags]    Requisições    Funcional    SmokeTest
+#   Mudar status para Concluido
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro Cliente
     E seleciono opção "Concluído" no botão Mudar Status Requisição em requisicoes
-    Então sistema verifica funcionalidade do botão Mudar Status Requisição em Requisições
+    Então sistema verifica status de requisição alterado
+    
+#   Retornar status para Fila
+    Aguardo carregamento da página 
+    E seleciono opção "Fila" no botão Mudar Status Requisição em requisicoes
+    Então sistema verifica status de requisição alterado para fila
     
 CT 02.18 - Validar botão Histórico 
     [Documentation]     Caso de teste valida botão Histórico 
@@ -156,21 +201,43 @@ CT 02.18 - Validar botão Histórico
 CT 02.19 - Validar botão Renovar
     [Documentation]     Caso de teste valida botão Renovar em Requisições
     [Tags]    Requisições    Funcional    SmokeTest
+#   Inserir cadastro temporário
     Dado que clico no menu "Requisições"
-    Quando clico em "Filtros"
-    E preencho filtro Cliente
-    E clico no botão "Renovar"
-    Então sistema exibe mensagem após renovação    
+    Quanto clico no botão "Inserir/Técnico"
+    E preencho informações de cadastro de requisição com cliente "temporario"
+    Então sistema exibe mensagem de cadastro realizado
 
-CT 02.20 - Excluir requisição tipo Renovada
-    [Documentation]     Caso de teste valida funcionalidade excluir 
-    [Tags]    Requisições    Funcional    SmokeTest
+#   Muda status para concluido
+    Aguardo carregamento da página
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E preencho filtro Cliente
-    E clico no botão "Editar"
-    E clico no botão "Excluir requisição"
+    E preencho filtro com cliente "temporario"
+    E seleciono opção "Concluído" no botão Mudar Status Requisição em requisicoes
+    Então sistema verifica status de requisição renovada alterado
+
+#   Renovar requisição
+    E clico no botão "Renovar"
+
+#   Excluir requisição Renovada
+    Aguardo carregamento da página 
+    E clico no botão "Excluir requisição" temporario
     Então sistema exclui e retorna para menu requisições 
+
+#   Excluir cadastro temporario
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro com cliente "temporario"
+    E clico no botão "Editar"
+    E clico no botão "Excluir requisição" temporario
+    Então sistema exclui e retorna para menu requisições 
+
+#   Excluir cadastro temporario em Cadastros > Clientes
+    Dado que clico no menu "Cadastros > Clientes"
+    E clico no botao buscar
+    E preencho informações de pesquisa com cliente "temporario"
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema exibe mensagem de cadastro excluido
 
 CT 02.21 - Validar botão Comentários 
     [Documentation]     Caso de teste valida botão Comentários 
