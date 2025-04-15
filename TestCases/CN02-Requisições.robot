@@ -91,6 +91,7 @@ CT 02.11 - Validar filtro Representante comercial
     Quando clico em "Filtros"
     E valido filtro dentro de "Representante comercial"
     Então sistema exibe requisições de filtro Representante comercial
+    
 CT 02.12 - Validar filtro Vendedor
     [Documentation]     Caso de teste valida o filtro Vendedor em Requisições
     [Tags]    Requisições    Funcional        
@@ -98,6 +99,7 @@ CT 02.12 - Validar filtro Vendedor
     Quando clico em "Filtros"
     E seleciono filtro vendedor "Todos"
     Então sistema exibe requisições de filtro vendedor "Todos"
+
 CT 02.13 - Validar filtro Renovadas
     [Documentation]     Caso de teste valida o filtro Renovadas em Requisições
     [Tags]    Requisições    Funcional        
@@ -105,6 +107,7 @@ CT 02.13 - Validar filtro Renovadas
     Quando clico em "Filtros"
     E valido todos os filtros dentro de "Renovadas"
     Então sistema exibe requisições de filtro Renovadas
+
 CT 02.14 - Validar botão Inserir "Técnico"
     [Documentation]     Caso de teste valida botão Inserir "Técnico" em Requisições
     [Tags]    Requisições    Funcional     SmokeTest   
