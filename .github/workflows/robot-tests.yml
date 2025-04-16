@@ -58,7 +58,11 @@ jobs:
           echo "Listando arquivos na raiz:"
           ls -la
           echo "Se os arquivos estiverem em um diretório específico, liste-o também:"
-          ls -la Results  # Altere esse caminho se necessário
+          if [ -d "Results" ]; then
+            ls -la Results
+          else
+            echo "Diretório 'Results' não existe, prosseguindo..."
+          fi
 
       - name: Upload Artifacts
         if: always()
