@@ -59,11 +59,13 @@ jobs:
 
       - name: Mesclar outputs e gerar relatórios
         run: |
+          set +e
           # Mescla resultados das duas execuções
           rebot --merge --output merged_output.xml output.xml rerun.xml
           # Gera HTML de log e report
           rebot --log log.html --report report.html merged_output.xml
-
+          set -e
+          
       - name: Verificar se ainda há falhas
         run: |
           FAIL_COUNT=$(grep -oP 'status="FAIL"' merged_output.xml | wc -l)
