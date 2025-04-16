@@ -160,6 +160,7 @@ CT 02.15 - Validar botão Editar
     Então sistema exclui e retorna para menu requisições 
 
 #   Excluir cadastro temporario em Cadastros > Clientes
+    Aguardo carregamento da página
     Dado que clico no menu "Cadastros > Clientes"
     E clico no botao buscar
     E preencho informações de pesquisa com cliente "temporario"
