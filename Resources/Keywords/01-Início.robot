@@ -57,10 +57,8 @@ Quando clico em "Concluídas"
     Click Element                    ${Botao_Concluidas}
 
 Então sistema exibe requisições com status "Concluídas"
-    Wait Until Element Is Visible    (//div[@class='inline-flex items-center border px-2.5 py-0.5 
-    ...    text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring
-    ...    focus:ring-offset-2 border-transparent text-primary-foreground rounded-md bg-green-400 hover:bg-green-300 text-center'][normalize-space()='Concluído'])[1]
-
+    Wait Until Element Is Visible    (//div[normalize-space()='Concluído'])[1]
+    
 # --1.5
 Quando clico em "Paradas"
     Wait Until Element Is Visible    ${Botao_Paradas}
