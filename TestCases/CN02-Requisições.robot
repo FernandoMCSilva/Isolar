@@ -113,7 +113,7 @@ Documentation      Modúlo que Gerencie requisições cadastradas no sistema.
 #     [Tags]    Requisições    Funcional     SmokeTest   
 # #   Inserir cadastro
 #     Dado que clico no menu "Requisições"
-#     Quanto clico no botão "Inserir/Técnico"
+#     Quando clico no botão "Inserir/Técnico"
 #     E preencho informações de cadastro de requisição
 #     Então sistema exibe mensagem de cadastro realizado
     
@@ -138,11 +138,12 @@ CT 02.15 - Validar botão Editar
     [Tags]    Requisições    Funcional    SmokeTest
 #   Inserir cadastro temporário
     Dado que clico no menu "Requisições"
-    Quanto clico no botão "Inserir/Técnico"
+    Quando clico no botão "Inserir/Técnico"
     E preencho informações de cadastro de requisição com cliente "temporario"
     Então sistema exibe mensagem de cadastro realizado
 
 #   Editar cadastro temporario
+    Aguardo carregamento da página
     Quando clico em "Filtros"
     E preencho filtro com cliente "temporario"
     E clico no botão "Editar"
@@ -203,7 +204,7 @@ CT 02.15 - Validar botão Editar
 #     [Tags]    Requisições    Funcional    SmokeTest
 # #   Inserir cadastro temporário
 #     Dado que clico no menu "Requisições"
-#     Quanto clico no botão "Inserir/Técnico"
+#     Quando clico no botão "Inserir/Técnico"
 #     E preencho informações de cadastro de requisição com cliente "temporario"
 #     Então sistema exibe mensagem de cadastro realizado
 
@@ -254,7 +255,7 @@ CT 02.15 - Validar botão Editar
 #     [Tags]    Requisições    Funcional    SmokeTest
 # #   Inserir cadastro temporario
 #     Dado que clico no menu "Requisições"
-#     Quanto clico no botão "Inserir/Técnico"
+#     Quando clico no botão "Inserir/Técnico"
 #     E preencho informações de cadastro de requisição com cliente "temporario"
 #     Então sistema exibe mensagem de cadastro realizado
 
@@ -279,7 +280,7 @@ CT 02.15 - Validar botão Editar
 #     [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
 #     [Tags]    Requisições    Funcional        
 #     Dado que clico no menu "Requisições"
-#     Quanto clico no botão "Inserir/Técnico"
+#     Quando clico no botão "Inserir/Técnico"
 #     E clico em próximo sem preencher campos
 #     Então sistema exibe mensagem de campos obrigatórios não preenchido
 
@@ -287,7 +288,7 @@ CT 02.15 - Validar botão Editar
 #     [Documentation]     Caso de teste valida inserir preenchendo somente o campo telefone (Erro) 
 #     [Tags]    Requisições    Funcional        
 #     Dado que clico no menu "Requisições"
-#     Quanto clico no botão "Inserir/Técnico"
+#     Quando clico no botão "Inserir/Técnico"
 #     Preencho somente campo telefone
 #     Então sistema exibe mensagem de CEP não preenchido
     
@@ -295,7 +296,7 @@ CT 02.15 - Validar botão Editar
 #     [Documentation]     Caso de teste valida inserir preenchendo somente o campo CEP (Erro) 
 #     [Tags]    Requisições    Funcional        
 #     Dado que clico no menu "Requisições"
-#     Quanto clico no botão "Inserir/Técnico"
+#     Quando clico no botão "Inserir/Técnico"
 #     Preencho somente campo CEP
 #     Então sistema exibe mensagem de telefone não preenchido
     

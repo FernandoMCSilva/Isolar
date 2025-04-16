@@ -329,7 +329,7 @@ Então sistema exibe requisições de filtro Renovadas
     Wait Until Page Contains    text=Requisições
 
 # --2.14
-Quanto clico no botão "Inserir/Técnico"
+Quando clico no botão "Inserir/Técnico"
     Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
     Sleep    1s
     Click Element                    ${Botao_Inserir_Requisicoes}
