@@ -45,8 +45,10 @@ jobs:
       - name: Rodar testes Robot em paralelo
         run: |
           Xvfb :99 -ac &
+          XVFB_PID=$!
           export DISPLAY=:99
           pabot --processes 4 --output output.xml TestCases
+          kill $XVFB_PID
 
       - name: Mesclar outputs com Rebot
         run: |
