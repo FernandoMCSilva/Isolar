@@ -151,6 +151,7 @@ CT 02.15 - Validar botão Editar
     Então sistema conlcui edição de requisição
 
 #   Excluir cadastro temporario
+    Aguardo carregamento da página
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro com cliente "temporario"
