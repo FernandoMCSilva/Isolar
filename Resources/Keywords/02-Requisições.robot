@@ -653,7 +653,7 @@ Então sistema exibe mensagem de campos obrigatórios não preenchido
 Preencho somente campo telefone
     Sleep    2.5s
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]
-    Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
+    Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    1teste
     Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]
     Click Element                    //button[contains(.,'Novo Cliente')]
     Wait Until Element Is Visible         ${input_telefone_Requisicoes}
@@ -666,7 +666,7 @@ Então sistema exibe mensagem de CEP não preenchido
 # --2.28
 Preencho somente campo CEP
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]
-    Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
+    Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    1teste
     Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]
     Click Element                    //button[contains(.,'Novo Cliente')]
     Wait Until Element Is Visible    ${input_CEP_Requisicoes}
