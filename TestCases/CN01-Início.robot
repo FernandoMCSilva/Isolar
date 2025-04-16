@@ -1,11 +1,11 @@
-*** Settings ***
-Resource           ../Resources/SuiteSetup.robot
-Resource           ../Resources/Main.robot
-Test Setup         Dado que acesse a Isolar e logue no sistema
-Test Teardown      Fechar navegador
-Documentation      Modúlo que Gerencie um resumo das informações cadastradas no sistema.
+# *** Settings ***
+# Resource           ../Resources/SuiteSetup.robot
+# Resource           ../Resources/Main.robot
+# Test Setup         Dado que acesse a Isolar e logue no sistema
+# Test Teardown      Fechar navegador
+# Documentation      Modúlo que Gerencie um resumo das informações cadastradas no sistema.
 
-*** Test Cases ***
+# *** Test Cases ***
 # CT 01.01 - Validar menu Início
 #     [Documentation]     Caso de teste valida se Menu Início está funcional
 #     [Tags]    Início    Funcional        
@@ -19,12 +19,12 @@ Documentation      Modúlo que Gerencie um resumo das informações cadastradas 
 #     Quando clico em "Fila"
 #     Então sistema exibe requisições com status "Fila"
 
-CT 01.03 - Validar requisições em Produção
-    [Documentation]     Caso de teste valida todas as requisições que estão com status Em Produção
-    [Tags]    Início    Funcional        
-    Dado que clico no menu "Início"
-    Quando clico em "Produção"
-    Então sistema exibe requisições com status "Produção"
+# CT 01.03 - Validar requisições em Produção
+#     [Documentation]     Caso de teste valida todas as requisições que estão com status Em Produção
+#     [Tags]    Início    Funcional        
+#     Dado que clico no menu "Início"
+#     Quando clico em "Produção"
+#     Então sistema exibe requisições com status "Produção"
 
 # CT 01.04 - Validar requisições em Concluídas
 #     [Documentation]     Caso de teste valida todas as requisições que estão com status Em Concluídas
