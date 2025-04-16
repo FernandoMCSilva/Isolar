@@ -1,11 +1,11 @@
-# *** Settings ***
-# Resource           ../Resources/SuiteSetup.robot
-# Resource           ../Resources/Main.robot
-# Test Setup         Dado que acesse a Isolar e logue no sistema
-# Test Teardown      Fechar navegador
-# Documentation      Modúlo que Gerencie um resumo das informações cadastradas no sistema.
+*** Settings ***
+Resource           ../Resources/SuiteSetup.robot
+Resource           ../Resources/Main.robot
+Test Setup         Dado que acesse a Isolar e logue no sistema
+Test Teardown      Fechar navegador
+Documentation      Modúlo que Gerencie um resumo das informações cadastradas no sistema.
 
-# *** Test Cases ***
+*** Test Cases ***
 # CT 01.01 - Validar menu Início
 #     [Documentation]     Caso de teste valida se Menu Início está funcional
 #     [Tags]    Início    Funcional        
