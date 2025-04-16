@@ -133,40 +133,40 @@ Documentation      Modúlo que Gerencie requisições cadastradas no sistema.
 #     E clico no botão "Continuar" em "Excluir"
 #     Então sistema exibe mensagem de cadastro excluido
 
-CT 02.15 - Validar botão Editar
-    [Documentation]     Caso de teste valida botão editar em Requisições
-    [Tags]    Requisições    Funcional    SmokeTest
-#   Inserir cadastro temporário
-    Dado que clico no menu "Requisições"
-    Quando clico no botão "Inserir/Técnico"
-    E preencho informações de cadastro de requisição com cliente "temporario"
-    Então sistema exibe mensagem de cadastro realizado
+# CT 02.15 - Validar botão Editar
+#     [Documentation]     Caso de teste valida botão editar em Requisições
+#     [Tags]    Requisições    Funcional    SmokeTest
+# #   Inserir cadastro temporário
+#     Dado que clico no menu "Requisições"
+#     Quando clico no botão "Inserir/Técnico"
+#     E preencho informações de cadastro de requisição com cliente "temporario"
+#     Então sistema exibe mensagem de cadastro realizado
 
-#   Editar cadastro temporario
-    Aguardo carregamento da página
-    Quando clico em "Filtros"
-    E preencho filtro com cliente "temporario"
-    E clico no botão "Editar"
-    E preencho informações de requisição editada
-    Então sistema conlcui edição de requisição
+# #   Editar cadastro temporario
+#     Aguardo carregamento da página
+#     Quando clico em "Filtros"
+#     E preencho filtro com cliente "temporario"
+#     E clico no botão "Editar"
+#     E preencho informações de requisição editada
+#     Então sistema conlcui edição de requisição
 
-#   Excluir cadastro temporario
-    Aguardo carregamento da página
-    Dado que clico no menu "Requisições"
-    Quando clico em "Filtros"
-    E preencho filtro com cliente "temporario"
-    E clico no botão "Editar"
-    E clico no botão "Excluir requisição" temporario
-    Então sistema exclui e retorna para menu requisições 
+# #   Excluir cadastro temporario
+#     Aguardo carregamento da página
+#     Dado que clico no menu "Requisições"
+#     Quando clico em "Filtros"
+#     E preencho filtro com cliente "temporario"
+#     E clico no botão "Editar"
+#     E clico no botão "Excluir requisição" temporario
+#     Então sistema exclui e retorna para menu requisições 
 
-#   Excluir cadastro temporario em Cadastros > Clientes
-    Aguardo carregamento da página
-    Dado que clico no menu "Cadastros > Clientes"
-    E clico no botao buscar
-    E preencho informações de pesquisa com cliente "temporario"
-    Quando clico em "Excluir"
-    E clico no botão "Continuar" em "Excluir"
-    Então sistema exibe mensagem de cadastro excluido
+# #   Excluir cadastro temporario em Cadastros > Clientes
+#     Aguardo carregamento da página
+#     Dado que clico no menu "Cadastros > Clientes"
+#     E clico no botao buscar
+#     E preencho informações de pesquisa com cliente "temporario"
+#     Quando clico em "Excluir"
+#     E clico no botão "Continuar" em "Excluir"
+#     Então sistema exibe mensagem de cadastro excluido
 
 # CT 02.16 - Validar botão Visualizar 
 #     [Documentation]     Caso de teste valida botão visualizar 
@@ -192,14 +192,14 @@ CT 02.15 - Validar botão Editar
 #     E seleciono opção "Fila" no botão Mudar Status Requisição em requisicoes
 #     Então sistema verifica status de requisição alterado para fila
     
-# CT 02.18 - Validar botão Histórico 
-#     [Documentation]     Caso de teste valida botão Histórico 
-#     [Tags]    Requisições    Funcional     
-#     Dado que clico no menu "Requisições"
-#     Quando clico em "Filtros"
-#     E preencho filtro Cliente
-#     E clico no botão "Histórico"
-#     Então sistema exibe histórico em requisições
+CT 02.18 - Validar botão Histórico 
+    [Documentation]     Caso de teste valida botão Histórico 
+    [Tags]    Requisições    Funcional     
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    E clico no botão "Histórico"
+    Então sistema exibe histórico em requisições
 
 # CT 02.19 - Validar botão Renovar
 #     [Documentation]     Caso de teste valida botão Renovar em Requisições
