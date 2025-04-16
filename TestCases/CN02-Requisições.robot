@@ -117,7 +117,7 @@ CT 02.14 - Validar botão Inserir "Técnico"
     E preencho informações de cadastro de requisição
     Então sistema exibe mensagem de cadastro realizado
     
-#   Excluir cadastro
+#   Excluir requisição
     Aguardo carregamento da página 
     Quando clico em "Filtros"
     E preencho filtro com cliente
@@ -223,7 +223,7 @@ CT 02.19 - Validar botão Renovar
     E clico no botão "Excluir requisição" temporario
     Então sistema exclui e retorna para menu requisições 
 
-#   Excluir cadastro temporario
+#   Excluir requisição temporario
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro com cliente "temporario"
@@ -258,7 +258,7 @@ CT 02.22 - Excluir requisição tipo "Técnico"
     E preencho informações de cadastro de requisição com cliente "temporario"
     Então sistema exibe mensagem de cadastro realizado
 
-#   Excluir cadastro temporario
+#   Excluir requisição temporario
     Aguardo carregamento da página
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"

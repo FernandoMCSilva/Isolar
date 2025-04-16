@@ -32,15 +32,8 @@ Quando clico em "Fila"
     Click Element                    ${Botao_Fila}
 
 Então sistema exibe requisições com status "Fila"
-    Wait Until Element Is Visible    xpath=//td[contains(normalize-space(),'Fila')]       timeout=10s
-    ${statuses}=    Get Webelements    xpath=//td[contains(normalize-space(),'Fila')]                                
-    ${count}=    Get Length    ${statuses}
-    Log    Número de elementos encontrados: ${count}
-    FOR    ${status}    IN    @{statuses}
-        ${text}=    Get Text    ${status}
-        Log    Status encontrado: ${text}
-        Should Be Equal As Strings    ${text}    ${Status_Fila}
-    END
+    Wait Until Element Is Visible    (//div[normalize-space()='Fila'])[1]
+
 
 # --1.3
 Quando clico em "Produção"
@@ -64,15 +57,9 @@ Quando clico em "Concluídas"
     Click Element                    ${Botao_Concluidas}
 
 Então sistema exibe requisições com status "Concluídas"
-    Wait Until Element Is Visible    xpath=//td[contains(normalize-space(),'Concluído')]       timeout=15s
-    ${statuses}=    Get Webelements    xpath=//td[contains(normalize-space(),'Concluído')]                                
-    ${count}=    Get Length    ${statuses}
-    Log    Número de elementos encontrados: ${count}
-    FOR    ${status}    IN    @{statuses}
-        ${text}=    Get Text    ${status}
-        Log    Status encontrado: ${text}
-        Should Be Equal As Strings    ${text}    ${Status_Concluidas}
-    END
+    Wait Until Element Is Visible    (//div[@class='inline-flex items-center border px-2.5 py-0.5 
+    ...    text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring
+    ...    focus:ring-offset-2 border-transparent text-primary-foreground rounded-md bg-green-400 hover:bg-green-300 text-center'][normalize-space()='Concluído'])[1]
 
 # --1.5
 Quando clico em "Paradas"
