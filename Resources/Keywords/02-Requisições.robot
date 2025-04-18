@@ -525,7 +525,8 @@ E clico no botão "Histórico"
     Click Element                    ${Botao_Historico}
 Então sistema exibe histórico em requisições
     Sleep    5s
-    Wait Until Page Contains    text=Histórico da requisição
+    Wait Until Page Contains    text=Informações referentes aos registros de histórico da requisição.
+
 
 # --2.19
 E clico no botão "Renovar"
