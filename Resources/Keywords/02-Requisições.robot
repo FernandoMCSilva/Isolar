@@ -524,7 +524,7 @@ E clico no botão "Histórico"
     Wait Until Element Is Visible    ${Botao_Historico}
     Click Element                    ${Botao_Historico}
 Então sistema exibe histórico em requisições
-    Sleep    1s
+    Sleep    5s
     Wait Until Page Contains    text=Histórico da requisição
 
 # --2.19
