@@ -521,12 +521,14 @@ E clico no botão "Histórico"
     Sleep    1s
     Wait Until Element Is Visible    ${Botao_Acoes_Requisicoes}    timeout=10s
     Click Element                    ${Botao_Acoes_Requisicoes}
+    Sleep    1s
     Wait Until Element Is Visible    ${Botao_Historico}
     Click Element                    ${Botao_Historico}
+
 Então sistema exibe histórico em requisições
-    Sleep    10s
-    Wait Until Page Contains    text=Informações referentes aos registros de histórico da requisição.
-    Capture Page Screenshot
+    Sleep    1s
+    Wait Until Page Contains    text=Histórico da requisição
+    
 # --2.19
 E clico no botão "Renovar"
     Sleep    0.5s
