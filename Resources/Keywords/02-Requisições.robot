@@ -24,6 +24,8 @@ ${Botao_Inserir_Requisicoes}            //button[contains(.,'Inserir')]
 ${Botao_Proximo_Requisicoes}            //button[contains(.,'Próximo')]
 ${Botao_Excluir_Requisicoes}            //button[contains(.,'Excluir requisição')]
 ${Botao_MudarStatusRequisicao}          (//button[@data-state='closed'])[20]
+
+
 ${Filtro_Urgente}                       (//button[contains(@type,'button')])[10]
 
 ${input_nomecompleto_Requisicoes}       //div[@class='select__value-container css-hlgwow']
@@ -434,19 +436,37 @@ E preencho informações de requisição editada
 Então sistema conlcui edição de requisição
     Wait Until Page Contains    text=Editar requisição
 
+Então sistema verifica se há cadastro temporario
+    Wait Until Element Is Visible    text=temporario
+
 E preencho informações de cadastro de requisição com cliente "temporario"
-    # 1
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    timeout=10s
-    Press Keys    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    temporario
-    Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]
-    Click Element    //button[contains(.,'Novo Cliente')]
-    Input Text    //input[@id='telefone']    12345678910
-    Input Text    //input[@id='cep']    28990154
-    FOR    ${i}    IN RANGE   3
-        Click Element    ${Botao_Proximo_Requisicoes}
-        Sleep            0.5s
+    Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    temporario
+    ${botao_novocliente}=    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Novo Cliente')]
+
+    IF    ${botao_novocliente}
+        Log    Botão 'Novo Cliente' visível. Seguir com cadastro de cliente temporário.
+        Click Element    //button[contains(.,'Novo Cliente')]
+        Input Text    //input[@id='telefone']    12345678910
+        Input Text    //input[@id='cep']    28990154
+        FOR    ${i}    IN RANGE   3
+            Click Element    ${Botao_Proximo_Requisicoes}
+            Sleep            0.5s
+        END
+        Click Element     //button[contains(.,'Salvar')]
+
+        ELSE
+        Log      Cliente já cadastrado. Seguir com uso do cliente existente.
+        Sleep    1.5s
+        Press Keys    NONE    ENTER
+
+        FOR    ${i}    IN RANGE   3
+            Click Element    ${Botao_Proximo_Requisicoes}
+            Sleep            0.5s
+        END
+        Click Element     //button[contains(.,'Salvar')]
+
     END
-    Click Element     //button[contains(.,'Salvar')]
 
 E preencho filtro com cliente "temporario"
     Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
@@ -505,7 +525,6 @@ Então sistema verifica status de requisição renovada alterado
     Input Text                       //input[@placeholder='Nome do cliente ...']    temporario
     Click Element                    ${Botao_Buscar}
     Wait Until Page Contains         text=Concluído
-
 
 Então sistema verifica status de requisição alterado para fila
     Sleep    5s
