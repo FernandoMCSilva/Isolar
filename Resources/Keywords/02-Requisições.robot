@@ -333,6 +333,7 @@ Então sistema exibe requisições de filtro Renovadas
 # --2.14
 Quando clico no botão "Inserir/Técnico"
     Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
     Sleep    1s
     Click Element                    ${Botao_Inserir_Requisicoes}
     Wait Until Element Is Visible    //button[contains(.,'Técnico')]
@@ -437,7 +438,48 @@ Então sistema conlcui edição de requisição
     Wait Until Page Contains    text=Editar requisição
 
 Então sistema verifica se há cadastro temporario
-    Wait Until Element Is Visible    text=temporario
+    ${temporario_encontrado}=    Run Keyword And Return Status    Element Should Be Visible    //td[contains(.,'temporario')]
+
+    WHILE    ${temporario_encontrado}
+        Log    Requisição temporária encontrada. Irá excluir...
+
+        # Clica no botão de editar
+        Sleep    2s
+        Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
+        Wait Until Element Is Visible    ${Botao_Editar}
+        Sleep    1s
+        Click Element                    ${Botao_Editar}
+
+        # Aguarda carregamento da tela de edição
+        Wait Until Page Contains         text=Editar requisição
+        Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}    timeout=10s
+
+        # Clica no botão de excluir
+        Execute JavaScript               window.scrollTo(0, 0)
+        Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}
+        Click Element                    ${Botao_Excluir_Requisicoes}
+
+        # Confirma a exclusão, se houver confirmação
+        Wait Until Element Is Visible    //button[contains(.,'Continuar')]     timeout=10s
+        Click Element                    //button[contains(.,'Continuar')] 
+
+        # Espera página recarregar e pesquisa novamente
+        Sleep    2s
+        Wait Until Element Is Visible    //button[contains(.,'Filtros')]
+        Click Element                    //button[contains(.,'Filtros')]
+        Sleep    1.5s
+        Input Text                       //input[@placeholder='Nome do Cliente']    temporario
+        Press Keys                       //input[@placeholder='Nome do Cliente']    ENTER
+        Sleep    2s
+
+        # Atualiza status da verificação
+        ${encontrado}=    Run Keyword And Return Status    Element Should Be Visible    //td[contains(.,'temporario')]
+    END
+    Sleep    1s
+    Wait Until Element Is Visible    ${MENU_INICIO}
+    Click Element                    ${MENU_INICIO}
+    Wait Until Element Is Visible    ${MENU_REQUISICOES}
+    Click Element                    ${MENU_REQUISICOES}
 
 E preencho informações de cadastro de requisição com cliente "temporario"
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    timeout=10s
@@ -474,6 +516,13 @@ E preencho filtro com cliente "temporario"
     Click Element                    ${Botao_Buscar}
     Sleep    2s
     Wait Until Page Contains         text=temporario
+
+E preencho filtro com cliente "temporario" para verificação
+    Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
+    Input Text                       //input[@placeholder='Nome do cliente ...']    temporario
+    Click Element                    ${Botao_Buscar}
+    Sleep    2s
+
 
 E preencho filtro com cliente
     Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
