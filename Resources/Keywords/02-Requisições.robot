@@ -66,7 +66,7 @@ Dado que clico no menu "Requisições"
     Sleep    5s
     Wait Until Element Is Visible    ${MENU_REQUISICOES}    timeout=10s
     Click Element                    ${MENU_REQUISICOES}
-    Sleep    4s
+    Sleep    3s
 
 # --2.2
 Quando clico em "Filtros"
@@ -333,7 +333,6 @@ Então sistema exibe requisições de filtro Renovadas
 # --2.14
 Quando clico no botão "Inserir/Técnico"
     Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
-    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
     Sleep    1s
     Click Element                    ${Botao_Inserir_Requisicoes}
     Wait Until Element Is Visible    //button[contains(.,'Técnico')]
@@ -470,7 +469,7 @@ Então sistema verifica se há cadastro temporario
         Sleep    1.5s
         Input Text                       //input[@placeholder='Nome do Cliente']    temporario
         Press Keys                       //input[@placeholder='Nome do Cliente']    ENTER
-        Sleep    2s
+        Sleep    1s
 
         # Atualiza status da verificação
         ${encontrado}=    Run Keyword And Return Status    Element Should Be Visible    //td[contains(.,'temporario')]

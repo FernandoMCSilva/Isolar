@@ -18,7 +18,7 @@ ${Btn_Departamentos}   //button[@id='departament']
 @{DEPARTAMENTOS_OPTIONS}    (//div[contains(.,'Comercial')])[5]    //span[normalize-space(text())='CS-Customer Success']
 
 *** Keywords ***
-# --1.1
+# --1.16
 Dado que clico no menu "Início"
     Wait Until Element Is Visible    ${MENU_INICIO}
     Click Element                    ${MENU_INICIO}
