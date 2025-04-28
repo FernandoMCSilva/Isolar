@@ -45,9 +45,11 @@ Então sistema exibe requisições do departamento em Obras
 
 E volto pra tela inicial
 #   Fecho menu Obras
+    Sleep    1s
     Wait Until Element Is Visible    ${MENU_OBRAS}
     Click Element                    ${MENU_OBRAS}
 #   E clico no menu inicio
+    Sleep    1s
     Wait Until Element Is Visible    ${MENU_INICIO}
     Click Element                    ${MENU_INICIO}
     Sleep    1s
