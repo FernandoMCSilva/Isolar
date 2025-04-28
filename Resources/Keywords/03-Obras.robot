@@ -42,6 +42,16 @@ Então sistema exibe requisições do departamento em Obras
     Wait Until Page Contains    text=Gerencie um resumo das informações cadastradas no sistema.
 
 # -3.2.1
+
+E volto pra tela inicial
+#   Fecho menu Obras
+    Wait Until Element Is Visible    ${MENU_OBRAS}
+    Click Element                    ${MENU_OBRAS}
+#   E clico no menu inicio
+    Wait Until Element Is Visible    ${MENU_INICIO}
+    Click Element                    ${MENU_INICIO}
+    Sleep    1s
+
 Dado que clico no menu Obras > Requisições
     Sleep    2s
     Wait Until Element Is Visible    ${MENU_OBRAS}
@@ -65,7 +75,7 @@ E valido filtros dentro de Departamento em Obras > Requisições
     Click Element                    ${Botao_Buscar}
 
 Então sistema exibe resultado de Departamento
-    Wait Until Element Is Visible    //td[contains(.,'2137')]
+    Wait Until Element Is Visible    (//td[contains(text(),'OSEAS')])[1]
 
 # -3.2.4
 E valido todos os filtros dentro de Tipo em Obras > Requisições
@@ -137,7 +147,7 @@ E valido todos os filtros dentro de "Responsável" em Obras > Requisições
     Click Element                    (//div[contains(.,'OSEAS')])[14]
 
 Então sistema exibe resultado de filtro Responsável
-    Wait Until Element Is Visible    //td[contains(.,'2137')]
+    Wait Until Element Is Visible    (//td[contains(text(),'OSEAS')])[1]
 
 # -3.2.10
 Quanto clico no botão "Inserir/Obras"
@@ -148,6 +158,40 @@ Quanto clico no botão "Inserir/Obras"
     Click Element                    //button[contains(.,'OBRAS')]
     Wait Until Element Is Visible    //button[contains(.,'VISITA INSTALAÇĀO')]
     Click Element                    //button[contains(.,'VISITA INSTALAÇĀO')]
+
+
+E preencho informações de cadastro de requisição com cliente "temporario" em Obras
+    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    timeout=10s
+    Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    temporario
+    ${botao_novocliente}=    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Novo Cliente')]
+
+    IF    ${botao_novocliente}
+        Log    Botão 'Novo Cliente' visível. Seguir com cadastro de cliente temporário.
+        Click Element    //button[contains(.,'Novo Cliente')]
+        Input Text    //input[@id='telefone']    12345678910
+        Input Text    //input[@id='cep']    28990154
+        FOR    ${i}    IN RANGE   2
+            Click Element    ${Botao_Proximo_Requisicoes}
+            Sleep            0.5s
+        END
+        Click Element     //button[contains(.,'Salvar')]
+
+        ELSE
+        Log      Cliente já cadastrado. Seguir com uso do cliente existente.
+        Sleep    1.5s
+        Press Keys    NONE    ENTER
+
+        FOR    ${i}    IN RANGE   2
+            Click Element    ${Botao_Proximo_Requisicoes}
+            Sleep            0.5s
+        END
+        Click Element     //button[contains(.,'Salvar')]
+
+    END
+
+
+
+
 
 E preencho informações de cadastro de requisição em Obras
 # 1
