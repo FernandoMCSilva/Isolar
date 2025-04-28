@@ -58,6 +58,7 @@ Dado que clico no menu Obras > Requisições
     Sleep    2s
     Wait Until Element Is Visible    ${MENU_OBRAS}
     Click Element                    ${MENU_OBRAS}
+    Sleep    1s
     Wait Until Element Is Visible    ${Menu_ObrasRequisicoes}
     Click Element                    ${Menu_ObrasRequisicoes}
 
