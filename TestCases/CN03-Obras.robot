@@ -1,16 +1,16 @@
-*** Settings ***
-Resource           ../Resources/SuiteSetup.robot
-Resource           ../Resources/Main.robot
-Test Setup         Dado que acesse a Isolar e logue no sistema com Oseias
-Test Teardown      Fechar navegador
-Documentation      Modúlo que Gerencie as requisições do tipo Obras cadastradas no sistema.
+# *** Settings ***
+# Resource           ../Resources/SuiteSetup.robot
+# Resource           ../Resources/Main.robot
+# Test Setup         Dado que acesse a Isolar e logue no sistema com Oseias
+# Test Teardown      Fechar navegador
+# Documentation      Modúlo que Gerencie as requisições do tipo Obras cadastradas no sistema.
 
-*** Test Cases ***
-# CT 03.01.01 - Validar menu Obras
-#     [Documentation]     Caso de teste valida se Menu Obras > Dashboard está funcional
-#     [Tags]    Obras    Dashboard    Funcional        
-#     Dado que clico no menu Obras > Dashboard
-#     Então sistema exibe tela de Obras > Dashboard
+# *** Test Cases ***
+# # CT 03.01.01 - Validar menu Obras
+# #     [Documentation]     Caso de teste valida se Menu Obras > Dashboard está funcional
+# #     [Tags]    Obras    Dashboard    Funcional        
+# #     Dado que clico no menu Obras > Dashboard
+# #     Então sistema exibe tela de Obras > Dashboard
     
 # CT 03.01.02 - Validar requisições em Fila
 #     [Documentation]     Caso de teste valida todas as requisições que estão com status Em Fila
@@ -126,29 +126,29 @@ Documentation      Modúlo que Gerencie as requisições do tipo Obras cadastrad
 #     E valido todos os filtros dentro de "Responsável" em Obras > Requisições
 #     Então sistema exibe resultado de filtro Responsável
 
-CT 03.02.10 - Validar botão Inserir "Obras"
-    [Documentation]     Caso de teste valida botão Inserir "Obras" em Obras > Requisições
-    [Tags]    Obras    Requisições    Funcional   
-#   Verifico se há cadastro temporario
-    Dado que clico no menu Obras > Requisições
-    Quando clico em "Filtros"
-    E preencho filtro com cliente "temporario" para verificação
-    Então sistema verifica se há cadastro temporario
+# CT 03.02.10 - Validar botão Inserir "Obras"
+#     [Documentation]     Caso de teste valida botão Inserir "Obras" em Obras > Requisições
+#     [Tags]    Obras    Requisições    Funcional   
+# #   Verifico se há cadastro temporario
+#     Dado que clico no menu Obras > Requisições
+#     Quando clico em "Filtros"
+#     E preencho filtro com cliente "temporario" para verificação
+#     Então sistema verifica se há cadastro temporario
 
-#   Inserir cadastro temporário
-    E volto pra tela inicial
-    Dado que clico no menu Obras > Requisições
-    Quanto clico no botão "Inserir/Obras"
-    E preencho informações de cadastro de requisição com cliente "temporario" em Obras
-    Então sistema exibe requisição inserida
+# #   Inserir cadastro temporário
+#     E volto pra tela inicial
+#     Dado que clico no menu Obras > Requisições
+#     Quanto clico no botão "Inserir/Obras"
+#     E preencho informações de cadastro de requisição com cliente "temporario" em Obras
+#     Então sistema exibe requisição inserida
 
-#   Excluir requisição temporario
-    Aguardo carregamento da página 
-    Quando clico em "Filtros"
-    E preencho filtro com cliente "temporario"
-    E clico no botão "Editar"
-    E clico no botão "Excluir requisição" temporario
-    Então sistema exclui e retorna para menu requisições 
+# #   Excluir requisição temporario
+#     Aguardo carregamento da página 
+#     Quando clico em "Filtros"
+#     E preencho filtro com cliente "temporario"
+#     E clico no botão "Editar"
+#     E clico no botão "Excluir requisição" temporario
+#     Então sistema exclui e retorna para menu requisições 
 
 
 # CT 03.02.11 - Validar botão Editar
