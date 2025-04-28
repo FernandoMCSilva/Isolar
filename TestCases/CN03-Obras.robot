@@ -139,7 +139,7 @@ CT 03.02.10 - Validar botão Inserir "Obras"
     E volto pra tela inicial
     Dado que clico no menu Obras > Requisições
     Quanto clico no botão "Inserir/Obras"
-    E preencho informações de cadastro de requisição com cliente "temporario" em Obras
+    E preencho informações de cadastro de requisição com cliente "temporario"
     Então sistema exibe requisição inserida
 
 #   Excluir requisição temporario

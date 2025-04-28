@@ -487,25 +487,30 @@ E preencho informações de cadastro de requisição com cliente "temporario"
 
     IF    ${botao_novocliente}
         Log    Botão 'Novo Cliente' visível. Seguir com cadastro de cliente temporário.
+        Sleep    1s
         Click Element    //button[contains(.,'Novo Cliente')]
         Input Text    //input[@id='telefone']    12345678910
         Input Text    //input[@id='cep']    28990154
-        FOR    ${i}    IN RANGE   3
-            Click Element    ${Botao_Proximo_Requisicoes}
-            Sleep            0.5s
+        FOR    ${i}    IN RANGE    10
+            ${status}=    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Salvar')]
+            Exit For Loop If    ${status}
+            Click Element       ${Botao_Proximo_Requisicoes}    
+            Sleep    1s
         END
-        Click Element     //button[contains(.,'Salvar')]
+        Click Element    //button[contains(.,'Salvar')]
 
         ELSE
         Log      Cliente já cadastrado. Seguir com uso do cliente existente.
         Sleep    1.5s
         Press Keys    NONE    ENTER
 
-        FOR    ${i}    IN RANGE   3
-            Click Element    ${Botao_Proximo_Requisicoes}
-            Sleep            0.5s
+        FOR    ${i}    IN RANGE    10
+            ${status}=    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Salvar')]
+            Exit For Loop If    ${status}
+            Click Element       ${Botao_Proximo_Requisicoes}    
+            Sleep    1s
         END
-        Click Element     //button[contains(.,'Salvar')]
+        Click Element    //button[contains(.,'Salvar')]
 
     END
 

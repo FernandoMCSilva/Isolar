@@ -159,44 +159,6 @@ Quanto clico no botão "Inserir/Obras"
     Wait Until Element Is Visible    //button[contains(.,'VISITA INSTALAÇĀO')]
     Click Element                    //button[contains(.,'VISITA INSTALAÇĀO')]
 
-
-E preencho informações de cadastro de requisição com cliente "temporario" em Obras
-    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    timeout=10s
-    Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    temporario
-    ${botao_novocliente}=    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Novo Cliente')]
-
-    IF    ${botao_novocliente}
-        Log    Botão 'Novo Cliente' visível. Seguir com cadastro de cliente temporário.
-        Click Element    //button[contains(.,'Novo Cliente')]
-        Input Text    //input[@id='telefone']    12345678910
-        Input Text    //input[@id='cep']    28990154
-        FOR    ${i}    IN RANGE    10
-            ${status}=    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Salvar')]
-            Exit For Loop If    ${status}
-            Click Element       ${Botao_Proximo_Requisicoes}    
-            Sleep    1s
-        END
-        Click Element    //button[contains(.,'Salvar')]
-
-        ELSE
-        Log      Cliente já cadastrado. Seguir com uso do cliente existente.
-        Sleep    1.5s
-        Press Keys    NONE    ENTER
-        
-        FOR    ${i}    IN RANGE    10
-            ${status}=    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Salvar')]
-            Exit For Loop If    ${status}
-            Click Element       ${Botao_Proximo_Requisicoes}    
-            Sleep    1s
-        END
-        Click Element    //button[contains(.,'Salvar')]
-
-    END
-
-
-
-
-
 E preencho informações de cadastro de requisição em Obras
 # 1
     Sleep    1s
