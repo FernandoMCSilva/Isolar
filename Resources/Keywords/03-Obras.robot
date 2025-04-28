@@ -185,6 +185,7 @@ E preencho informações de cadastro de requisição com cliente "temporario" em
             Click Element    ${Botao_Proximo_Requisicoes}
             Sleep            0.5s
         END
+        Sleep    1s
         Click Element     //button[contains(.,'Salvar')]
 
     END
