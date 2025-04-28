@@ -151,15 +151,38 @@ CT 03.02.10 - Validar botão Inserir "Obras"
     Então sistema exclui e retorna para menu requisições 
 
 
-# CT 03.02.11 - Validar botão Editar
-#     [Documentation]     Caso de teste valida botão editar em Obras > Requisições
-#     [Tags]    Obras    Requisições    Funcional 
-#     Dado que clico no menu Obras > Requisições
-#     Quando clico em "Filtros"
-#     E preencho filtro Cliente
-#     E clico no botão "Editar"
-#     E preencho informações de editar requisição em Obras
-#     Então sistema conlcui edição de requisição em Obras
+CT 03.02.11 - Validar botão Editar
+    [Documentation]     Caso de teste valida botão editar em Obras > Requisições
+    [Tags]    Obras    Requisições    Funcional 
+#   Verifico se há cadastro temporario
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro com cliente "temporario" para verificação
+    Então sistema verifica se há cadastro temporario
+
+#   Inserir cadastro temporário
+    E volto pra tela inicial
+    Dado que clico no menu Obras > Requisições
+    Quanto clico no botão "Inserir/Obras"
+    E preencho informações de cadastro de requisição com cliente "temporario"
+    Então sistema exibe requisição inserida
+
+#   Editar cadastro temporario
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro com cliente "temporario"
+    E clico no botão "Editar"
+    E preencho informações de editar requisição em Obras
+    Então sistema conlcui edição de requisição em Obras
+
+#   Excluir requisição temporario
+    Aguardo carregamento da página 
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro com cliente "temporario"
+    E clico no botão "Editar"
+    E clico no botão "Excluir requisição" temporario
+    Então sistema exclui e retorna para menu requisições 
 
 # CT 03.02.12 - Validar botão Visualizar 
 #     [Documentation]     Caso de teste valida botão visualizar em Obras 
