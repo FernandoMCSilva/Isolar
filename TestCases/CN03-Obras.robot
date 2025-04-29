@@ -6,11 +6,11 @@
 # Documentation      Modúlo que Gerencie as requisições do tipo Obras cadastradas no sistema.
 
 # *** Test Cases ***
-# # CT 03.01.01 - Validar menu Obras
-# #     [Documentation]     Caso de teste valida se Menu Obras > Dashboard está funcional
-# #     [Tags]    Obras    Dashboard    Funcional        
-# #     Dado que clico no menu Obras > Dashboard
-# #     Então sistema exibe tela de Obras > Dashboard
+# CT 03.01.01 - Validar menu Obras
+#     [Documentation]     Caso de teste valida se Menu Obras > Dashboard está funcional
+#     [Tags]    Obras    Dashboard    Funcional        
+#     Dado que clico no menu Obras > Dashboard
+#     Então sistema exibe tela de Obras > Dashboard
     
 # CT 03.01.02 - Validar requisições em Fila
 #     [Documentation]     Caso de teste valida todas as requisições que estão com status Em Fila
