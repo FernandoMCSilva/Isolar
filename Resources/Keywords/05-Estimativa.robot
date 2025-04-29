@@ -220,7 +220,7 @@ Então sistema aplica desconto e exibe informações em arquivo PDF
 # --4.19
 
 E preencho informações de desconto acima do limite
-    Sleep    4s
+    Sleep    5s
     Input Text                       //input[@id='descontoMaximo']    6
     Sleep                            1s
     Click Element                    //button[contains(.,'Confirmar')]
