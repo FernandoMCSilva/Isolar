@@ -65,13 +65,13 @@ Documentation      Modúlo que gerencie as Estimativas cadastradas no sistema.
 #     E preencho com informações data de registro
 #     Então sistema exibe Estimativa do filtro Data de registro
 
-CT 05.08 - Validar filtro Quantidade de itens por pág
-    [Documentation]     Caso de teste valida o filtro Quantidade de itens por pág
-    [Tags]    Estimativa    Funcional        
-    Dado que clico no menu "Estimativa"
-    Quando clico em "Quantidade de itens por pág"
-    E preencho informações no campo quantidade
-    Então sistema exibe informações de acordo com quantidade preenchida
+# CT 05.08 - Validar filtro Quantidade de itens por pág
+#     [Documentation]     Caso de teste valida o filtro Quantidade de itens por pág
+#     [Tags]    Estimativa    Funcional        
+#     Dado que clico no menu "Estimativa"
+#     Quando clico em "Quantidade de itens por pág"
+#     E preencho informações no campo quantidade
+#     Então sistema exibe informações de acordo com quantidade preenchida
 
 #  CT 05.09 - Validar botão Próximo
 #     [Documentation]     Caso de teste valida o botão próximo
@@ -148,22 +148,22 @@ CT 05.08 - Validar filtro Quantidade de itens por pág
 # #     E preencho informações de desconto acima do limite
 # #     Então sistema exibe mensagem de erro de desconto máximo permitido
     
-# CT 05.19 - Validar botão e funcionalidade "Gerar"
-#     [Documentation]    Caso de teste valida botao gerar em estimativa
-#     [Tags]    Estimativa    Funcional    SmokeTest
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Gerar"
-#     E seleciono Local de instalação "Solo"
-#     E seleciono Autoconsumo ou Aluguel "Autoconsumo"
-#     E seleciono GD1 ou GD2 "GD1"
-#     E seleciono Local de geração "Junto a carga"
-#     E seleciono Estimativa pôr "Gasto mensal em R$" 
-#     E seleciono valor da classificação "Trifásico"
-#     E preencho valor de Gasto mensal
-#     E seleciono valor de tensão FF "220v"
-#     E seleciono valor de tensão FN "220v"
-#     E clico em Gerar cálculos
-#     Então sistema exibe resultado dos cálculos
+CT 05.19 - Validar botão e funcionalidade "Gerar"
+    [Documentation]    Caso de teste valida botao gerar em estimativa
+    [Tags]    Estimativa    Funcional    SmokeTest
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Gerar"
+    E seleciono Local de instalação "Solo"
+    E seleciono Autoconsumo ou Aluguel "Autoconsumo"
+    E seleciono GD1 ou GD2 "GD1"
+    E seleciono Local de geração "Junto a carga"
+    E seleciono Estimativa pôr "Gasto mensal em R$" 
+    E seleciono valor da classificação "Trifásico"
+    E preencho valor de Gasto mensal
+    E seleciono valor de tensão FF "220v"
+    E seleciono valor de tensão FN "220v"
+    E clico em Gerar cálculos
+    Então sistema exibe resultado dos cálculos
 
 # CT 05.20 - Validar botão Constantes personalizadas
 #     [Documentation]    Caso de teste valida botão Constantes personalizadas em Gerar nova estimativa
