@@ -84,13 +84,13 @@ CT 04.01.04 - Validar filtro +60 dias
 #     E preencho informação de filtro Vigência final
 #     Então sistema exibe informações de filtro Vigência final
 
-# CT 04.02.04 - Validar filtro Índice
-#     [Documentation]     Caso de teste valida o filtro "Índice" em Contratos > Contratos
-#     [Tags]    Contratos    Contratos    Funcional        
-#     Dado que clico no menu Contratos > Contratos
-#     Quando clico em "Filtros"
-#     E preencho informação de filtro Índice
-#     Então sistema exibe informações de filtro Índice
+CT 04.02.04 - Validar filtro Índice
+    [Documentation]     Caso de teste valida o filtro "Índice" em Contratos > Contratos
+    [Tags]    Contratos    Contratos    Funcional        
+    Dado que clico no menu Contratos > Contratos
+    Quando clico em "Filtros"
+    E preencho informação de filtro Índice
+    Então sistema exibe informações de filtro Índice
 
 # CT 04.02.05 - Validar filtro Tipo de índice
 #     [Documentation]     Caso de teste valida o filtro "Tipo de índice" em Contratos > Contratos

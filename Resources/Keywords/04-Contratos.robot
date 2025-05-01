@@ -155,7 +155,7 @@ Então sistema exibe informações de filtro Vigência final
 E preencho informação de filtro Índice
     Wait Until Element Is Visible    ${Filtro_Indice}
     Click Element                    ${Filtro_Indice}
-   FOR     ${i}    IN RANGE     2
+   FOR     ${i}    IN RANGE     3
         Click Element    (//button[@type='button'])[19]
         Sleep    0.3s
     END
