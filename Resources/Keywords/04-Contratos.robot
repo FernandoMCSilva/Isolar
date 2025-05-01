@@ -11,7 +11,7 @@ ${botao_Resetarfiltros}                   //button[contains(.,'Resetar filtros')
 ${botao_Anexos}                           (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[4]
 
 ${Departamento_ContratosDashboard}        //button[contains(.,'Selecione um departamento')]
-${Filtro_+60Dias}                         (//div[contains(.,'+60 diasNº Contratos8')])[6]
+${Filtro_+60Dias}                         //div[@class='inline-flex justify-center items-center flex-wrap gap-2 bg-green-600 rounded-full border p-2 text-xs capitalize leading-none text-white']
 ${Filtro_30Dias}                          (//span[contains(@class,'mr-1 inline-flex')])[2]
 ${Filtro_15Dias}                          (//div[contains(@class,'mb-3 flex')])[3]
 ${Filtro_Vencidos}                        (//div[@class='flex-1 p-6'])[4]
@@ -297,7 +297,7 @@ E clico no botão Anexos
     Click Element                    ${botao_Anexos}
     
 Então sistema exibe informações de documento
-    Wait Until Page Contains    text=Anexos do Contrato #19
+    Wait Until Page Contains    text=Anexos do Contrato #25
 
 # -4.2.17
 E faço download de documento

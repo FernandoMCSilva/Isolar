@@ -219,7 +219,7 @@ E preencho informações de Data de entrega
     Wait Until Element Is Visible    //button[@id='data_entrega']
     Click Element                    //button[@id='data_entrega']
     Wait Until Element Is Visible    (//button[@type='button'])[44]
-    FOR    ${i}    IN RANGE    7
+    FOR    ${i}    IN RANGE    8
         Click Element    (//button[@type='button'])[44]
         Sleep    0.5s
     END
@@ -236,7 +236,7 @@ E preencho informações de Data de criação
     Wait Until Element Is Visible      //button[@id='data_criacao']
     Click Element                      //button[@id='data_criacao']
 
-    FOR     ${i}    IN RANGE    7
+    FOR     ${i}    IN RANGE    8
     Click Element    (//button[@type='button'])[44]
     Sleep    0.5s
     END
