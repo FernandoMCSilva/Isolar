@@ -84,13 +84,13 @@ Documentation      Modúlo que Gerencie os Controle de Contratos cadastrados no 
 #     E preencho informação de filtro Vigência final
 #     Então sistema exibe informações de filtro Vigência final
 
-# CT 04.02.04 - Validar filtro Índice
-#     [Documentation]     Caso de teste valida o filtro "Índice" em Contratos > Contratos
-#     [Tags]    Contratos    Contratos    Funcional        
-#     Dado que clico no menu Contratos > Contratos
-#     Quando clico em "Filtros"
-#     E preencho informação de filtro Índice
-#     Então sistema exibe informações de filtro Índice
+CT 04.02.04 - Validar filtro Índice
+    [Documentation]     Caso de teste valida o filtro "Índice" em Contratos > Contratos
+    [Tags]    Contratos    Contratos    Funcional        
+    Dado que clico no menu Contratos > Contratos
+    Quando clico em "Filtros"
+    E preencho informação de filtro Índice
+    Então sistema exibe informações de filtro Índice
 
 # CT 04.02.05 - Validar filtro Tipo de índice
 #     [Documentation]     Caso de teste valida o filtro "Tipo de índice" em Contratos > Contratos
@@ -132,13 +132,13 @@ Documentation      Modúlo que Gerencie os Controle de Contratos cadastrados no 
 #     E preencho informação de filtro Documento
 #     Então sistema exibe informações de filtro Documento
 
-# CT 04.02.10 - Validar filtro Nome de indivíduo
-#     [Documentation]     Caso de teste valida o filtro "Nome de indivíduo" em Contratos > Contratos
-#     [Tags]    Contratos    Contratos    Funcional        
-#     Dado que clico no menu Contratos > Contratos
-#     Quando clico em "Filtros"
-#     E preencho informação de filtro Nome de indivíduo
-#     Então sistema exibe informações de filtro Nome de indivíduo
+CT 04.02.10 - Validar filtro Nome de indivíduo
+    [Documentation]     Caso de teste valida o filtro "Nome de indivíduo" em Contratos > Contratos
+    [Tags]    Contratos    Contratos    Funcional        
+    Dado que clico no menu Contratos > Contratos
+    Quando clico em "Filtros"
+    E preencho informação de filtro Nome de indivíduo
+    Então sistema exibe informações de filtro Nome de indivíduo
 
 # CT 04.02.11 - Validar filtro Status de vigência
 #     [Documentation]     Caso de teste valida o filtro "Status de vigência" em Contratos > Contratos
@@ -172,24 +172,24 @@ Documentation      Modúlo que Gerencie os Controle de Contratos cadastrados no 
 #     E preencho informações de novo Controle de contratos
 #     Então sistema realiza inserção de novo Controle de contratos
 
-# CT 04.02.15 - Validar edição
-#     [Documentation]     Caso de teste valida edição em Contratos > Contratos
-#     [Tags]    Contratos    Contratos    Funcional        
-#     Dado que clico no menu Contratos > Contratos
-#     Quando clico em "Filtros"
-#     E preencho filtro nome
-#     E clico no botão "Editar"
-#     E preencho informações de Controle de contratos editado
-#     Então sistema realiza edição de Controle de contratos
+CT 04.02.15 - Validar edição
+    [Documentation]     Caso de teste valida edição em Contratos > Contratos
+    [Tags]    Contratos    Contratos    Funcional        
+    Dado que clico no menu Contratos > Contratos
+    Quando clico em "Filtros"
+    E preencho filtro nome
+    E clico no botão "Editar"
+    E preencho informações de Controle de contratos editado
+    Então sistema realiza edição de Controle de contratos
 
-# CT 04.02.16 - Validar botão Anexos
-#     [Documentation]     Caso de teste valida botão Anexos em Contratos > Contratos
-#     [Tags]    Contratos    Contratos    Funcional        
-#     Dado que clico no menu Contratos > Contratos
-#     Quando clico em "Filtros"
-#     E preencho filtro nome
-#     E clico no botão Anexos
-#     Então sistema exibe informações de documento
+CT 04.02.16 - Validar botão Anexos
+    [Documentation]     Caso de teste valida botão Anexos em Contratos > Contratos
+    [Tags]    Contratos    Contratos    Funcional        
+    Dado que clico no menu Contratos > Contratos
+    Quando clico em "Filtros"
+    E preencho filtro nome
+    E clico no botão Anexos
+    Então sistema exibe informações de documento
 
 CT 04.02.17 - Validar download de documento
     [Documentation]     Caso de teste valida download de documento em Contratos > Contratos
@@ -201,14 +201,14 @@ CT 04.02.17 - Validar download de documento
     E faço download de documento
     Então sistema exibe informações de documento
 
-# CT 04.02.18 - Validar mandança do Status vigência
-#     [Documentation]     Caso de teste valida mandança do Status vigência em Contratos > Contratos
-#     [Tags]    Contratos    Contratos    Funcional        
-#     Dado que clico no menu Contratos > Contratos
-#     Quando clico em "Filtros"
-#     E preencho filtro nome
-#     E clico no botão "Editar"
-#     E mudo status de vigência
-#     Então sistema realiza mudança de vigência
+CT 04.02.18 - Validar mandança do Status vigência
+    [Documentation]     Caso de teste valida mandança do Status vigência em Contratos > Contratos
+    [Tags]    Contratos    Contratos    Funcional        
+    Dado que clico no menu Contratos > Contratos
+    Quando clico em "Filtros"
+    E preencho filtro nome
+    E clico no botão "Editar"
+    E mudo status de vigência
+    Então sistema realiza mudança de vigência
 
 
