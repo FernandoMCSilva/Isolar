@@ -122,7 +122,7 @@ Então sistema exibe informações de cadastros de Contratos
 E preencho informação de filtro Vigência inicial
     Wait Until Element Is Visible    ${Filtro_VigenciaInicial}
     Click Element                    ${Filtro_VigenciaInicial}
-    FOR     ${i}    IN RANGE     3
+    FOR     ${i}    IN RANGE     4
         Click Element    (//button[@type='button'])[19]
         Sleep    0.5s
     END
