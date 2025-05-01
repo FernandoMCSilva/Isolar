@@ -303,6 +303,7 @@ Então sistema exibe informações de documento
 E faço download de documento
     Wait Until Element Is Visible    //button[@type='button'][contains(.,'Documento 1')]
     Click Element                    //button[@type='button'][contains(.,'Documento 1')]
+    Sleep                            1s
     Click Element                    //button[contains(.,'Baixar Documento 1')]
 
 # -4.2.18
