@@ -27,12 +27,12 @@ Documentation      Modúlo que Gerencie os Controle de Contratos cadastrados no 
 #     E valido filtro departamento em Contratos > Dashboard
 #     Então sistema exibe requisições do departamento em Contratos > Dashboard
 
-# CT 04.01.04 - Validar filtro +60 dias
-#     [Documentation]     Caso de teste valida filtro "+60 dias"
-#     [Tags]    Contratos    Dashboard    Funcional        
-#     Dado que clico no menu Contratos > Dashboard
-#     Quando clico no filtro "+60 dias"
-#     Então sistema exibe informações de filtro "+60 dias"
+CT 04.01.04 - Validar filtro +60 dias
+    [Documentation]     Caso de teste valida filtro "+60 dias"
+    [Tags]    Contratos    Dashboard    Funcional        
+    Dado que clico no menu Contratos > Dashboard
+    Quando clico no filtro "+60 dias"
+    Então sistema exibe informações de filtro "+60 dias"
 
 # CT 04.01.05 - Validar filtro 30 dias
 #     [Documentation]     Caso de teste valida o filtro "30 dias" 
@@ -84,13 +84,13 @@ Documentation      Modúlo que Gerencie os Controle de Contratos cadastrados no 
 #     E preencho informação de filtro Vigência final
 #     Então sistema exibe informações de filtro Vigência final
 
-CT 04.02.04 - Validar filtro Índice
-    [Documentation]     Caso de teste valida o filtro "Índice" em Contratos > Contratos
-    [Tags]    Contratos    Contratos    Funcional        
-    Dado que clico no menu Contratos > Contratos
-    Quando clico em "Filtros"
-    E preencho informação de filtro Índice
-    Então sistema exibe informações de filtro Índice
+# CT 04.02.04 - Validar filtro Índice
+#     [Documentation]     Caso de teste valida o filtro "Índice" em Contratos > Contratos
+#     [Tags]    Contratos    Contratos    Funcional        
+#     Dado que clico no menu Contratos > Contratos
+#     Quando clico em "Filtros"
+#     E preencho informação de filtro Índice
+#     Então sistema exibe informações de filtro Índice
 
 # CT 04.02.05 - Validar filtro Tipo de índice
 #     [Documentation]     Caso de teste valida o filtro "Tipo de índice" em Contratos > Contratos
