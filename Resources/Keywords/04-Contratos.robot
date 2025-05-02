@@ -173,6 +173,7 @@ E preencho informação de filtro Tipo de índice
     Input Text                       ${Filtro_TipoIndice}    IP
 
 Então sistema exibe informações de filtro Tipo de índice
+    Sleep    1s
     Wait Until Element Is Visible    //td[contains(.,'IP')]
 
 # -4.2.6
