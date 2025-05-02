@@ -1,11 +1,11 @@
-*** Settings ***
-Resource           ../Resources/SuiteSetup.robot
-Resource           ../Resources/Main.robot
-Test Setup         Dado que acesse a Isolar e logue no sistema com Oseias
-Test Teardown      Fechar navegador
-Documentation      Modúlo que Gerencie as requisições do tipo Obras cadastradas no sistema.
+# *** Settings ***
+# Resource           ../Resources/SuiteSetup.robot
+# Resource           ../Resources/Main.robot
+# Test Setup         Dado que acesse a Isolar e logue no sistema com Oseias
+# Test Teardown      Fechar navegador
+# Documentation      Modúlo que Gerencie as requisições do tipo Obras cadastradas no sistema.
 
-*** Test Cases ***
+# *** Test Cases ***
 # CT 03.01.01 - Validar menu Obras
 #     [Documentation]     Caso de teste valida se Menu Obras > Dashboard está funcional
 #     [Tags]    Obras    Dashboard    Funcional        
