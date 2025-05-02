@@ -44,21 +44,21 @@ Então sistema exibe requisições do departamento em Obras
 # -3.2.1
 
 E volto pra tela inicial
+#   E clico no menu inicio
+    Wait Until Element Is Visible    ${MENU_INICIO}
+    Click Element                    ${MENU_INICIO}
+    Sleep    1s
 #   Fecho menu Obras
     Sleep    1s
     Wait Until Element Is Visible    ${MENU_OBRAS}
     Click Element                    ${MENU_OBRAS}
-#   E clico no menu inicio
-    Sleep    1s
-    Wait Until Element Is Visible    ${MENU_INICIO}
-    Click Element                    ${MENU_INICIO}
     Sleep    1s
 
 Dado que clico no menu Obras > Requisições
     Sleep    2s
     Wait Until Element Is Visible    ${MENU_OBRAS}
     Click Element                    ${MENU_OBRAS}
-    Sleep    1s
+    Sleep    1.5s
     Wait Until Element Is Visible    ${Menu_ObrasRequisicoes}
     Click Element                    ${Menu_ObrasRequisicoes}
 
@@ -214,10 +214,24 @@ E seleciono opção "Concluído" em editar status em Obras
     Click Element                    (//div[contains(.,'Concluído')])[5]
     Click Element                    //button[contains(.,'Salvar alterações')]
 
+E seleciono opção "Fila" em editar status em Obras
+    Wait Until Element Is Visible    (//button[@type='button'])[13]
+    Click Element                    (//button[@type='button'])[13]
+    Click Element                    (//div[contains(.,'Fila')])[5]
+    Click Element                    //button[contains(.,'Salvar alterações')]
+
+Então sitema verifica se status é Fila
+    Wait Until Element Is Visible    //div[@class='inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 rounded-md text-center']
 
 Então sistema verifica status de Requisição em Obras
     Sleep    1.5s
     Wait Until Element Is Visible    //button[contains(.,'Concluído')]
+
+
+Então sitema verifica se status é concluído
+    Sleep                            1s
+    Execute JavaScript               window.scrollTo(0, 0)
+    Wait Until Element Is Visible    //div[@class='inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-primary-foreground rounded-md bg-green-400 hover:bg-green-300 text-center']
 
 # -3.2.14
 E preencho informações de comentário de requisição em Obras

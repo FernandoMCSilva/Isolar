@@ -467,9 +467,9 @@ Então sistema verifica se há cadastro temporario
         Wait Until Element Is Visible    //button[contains(.,'Filtros')]
         Click Element                    //button[contains(.,'Filtros')]
         Sleep    3s
-        Wait Until Element Is Visible    //input[@placeholder='Nome do Cliente']    timeout=10s
-        Input Text                       //input[@placeholder='Nome do Cliente']    temporario
-        Press Keys                       //input[@placeholder='Nome do Cliente']    ENTER
+        # Wait Until Element Is Visible    //input[@placeholder='Nome do Cliente']    timeout=10s
+        Input Text                       //input[@id='cliente']    temporario
+        Press Keys                       //input[@id='cliente']    ENTER
         Sleep    1s
 
         # Atualiza status da verificação
