@@ -49,6 +49,7 @@ E valido filtros de departamento em Obras
     Click Element                    ${filtro_Departamento_Obras}
 
 Então sistema exibe requisições do departamento em Obras
+    Sleep    1s
     Wait Until Page Contains    text=2545
 # -3.2.1
 
