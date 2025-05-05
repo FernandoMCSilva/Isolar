@@ -441,7 +441,6 @@ Então sistema verifica se há cadastro temporario
 
     WHILE    ${temporario_encontrado}
         Log    Requisição temporária encontrada. Irá excluir...
-
         # Clica no botão de editar
         Sleep    2s
         Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
@@ -480,7 +479,7 @@ Então sistema verifica se há cadastro temporario
     Click Element                    ${MENU_INICIO}
     Wait Until Element Is Visible    ${MENU_REQUISICOES}
     Click Element                    ${MENU_REQUISICOES}
-
+    
 E preencho informações de cadastro de requisição com cliente "temporario"
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    timeout=10s
     Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    temporario
