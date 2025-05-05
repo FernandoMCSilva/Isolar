@@ -29,8 +29,16 @@ Então sistema exibe tela de Obras > Dashboard
     Wait Until Page Contains    text=Gerencie um resumo das informações cadastradas no sistema.
 
 # -3.1.6
+E preencho data inicial em Obras > Dashboard
+    Wait Until Element Is Visible    (//input[@placeholder='DD/MM/YYYY'])[1]    timeout=10s
+    Input Text    (//input[@placeholder='DD/MM/YYYY'])[1]    01/02/2025
+    Sleep   2s
+
+E preencho data final em Obras > Dashboard
+    Wait Until Element Is Visible    (//input[@placeholder='DD/MM/YYYY'])[2]    timeout=10s
+    Input Text    (//input[contains(@placeholder,'DD/MM/YYYY')])[2]    28/02/2025
+
 Então sistema exibe informações de filtros de data
-    Sleep    1s
     Wait Until Page Contains    text=2025-02
 
 # -3.1.7

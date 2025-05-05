@@ -44,8 +44,8 @@ CT 03.01.06 - Validar filtros de data
     [Documentation]     Caso de teste valida se filtros de data inicial e data final está funcional
     [Tags]    Obras    Dashboard    Funcional        
     Dado que clico no menu Obras > Dashboard
-    E preencho data inicial
-    E preencho data final
+    E preencho data inicial em Obras > Dashboard
+    E preencho data final em Obras > Dashboard
     Então sistema exibe informações de filtros de data
 
 # CT 03.01.07 - Validar filtros em departamento
