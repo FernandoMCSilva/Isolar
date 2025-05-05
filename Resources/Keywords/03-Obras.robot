@@ -224,12 +224,14 @@ Então sistema conlcui edição de requisição em Obras
 E seleciono opção "Concluído" em editar status em Obras
     Wait Until Element Is Visible    (//button[@type='button'])[13]
     Click Element                    (//button[@type='button'])[13]
+    Sleep    1s
     Click Element                    (//div[contains(.,'Concluído')])[5]
     Click Element                    //button[contains(.,'Salvar alterações')]
 
 E seleciono opção "Fila" em editar status em Obras
     Wait Until Element Is Visible    (//button[@type='button'])[13]
     Click Element                    (//button[@type='button'])[13]
+    Sleep    1s
     Click Element                    (//div[contains(.,'Fila')])[5]
     Click Element                    //button[contains(.,'Salvar alterações')]
 
