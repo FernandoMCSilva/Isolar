@@ -48,6 +48,7 @@ E valido filtros de departamento em Obras
     Click Element                    ${filtro_Departamento_Obras}
 
 Então sistema exibe requisições do departamento em Obras
+    Sleep    1s
     Wait Until Page Contains    text=Gerencie um resumo das informações cadastradas no sistema.
 
 # -3.2.1
