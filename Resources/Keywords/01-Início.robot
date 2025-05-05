@@ -119,7 +119,7 @@ E preencho data inicial
 
 E preencho data final
     Wait Until Element Is Visible    (//input[@placeholder='DD/MM/YYYY'])[2]    timeout=10s
-    Input Text    (//input[contains(@placeholder,'DD/MM/YYYY')])[2]    01/01/2025
+    Input Text    (//input[contains(@placeholder,'DD/MM/YYYY')])[2]    28/01/2025
 
 Então sistema exibe requisições filtradas
     Wait Until Page Contains    text=2025-01
