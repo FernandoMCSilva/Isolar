@@ -124,13 +124,13 @@
 #     E preencho informação de filtro Departamento
 #     Então sistema exibe informações de filtro Departamento em Contratos
 
-# # CT 04.02.09 - Validar filtro Documento
-# #     [Documentation]     Caso de teste valida o filtro "Documento" em Contratos > Contratos
-# #     [Tags]    Contratos    Contratos    Funcional        
-# #     Dado que clico no menu Contratos > Contratos
-# #     Quando clico em "Filtros"
-# #     E preencho informação de filtro Documento
-# #     Então sistema exibe informações de filtro Documento
+# CT 04.02.09 - Validar filtro Documento
+#     [Documentation]     Caso de teste valida o filtro "Documento" em Contratos > Contratos
+#     [Tags]    Contratos    Contratos    Funcional        
+#     Dado que clico no menu Contratos > Contratos
+#     Quando clico em "Filtros"
+#     E preencho informação de filtro Documento
+#     Então sistema exibe informações de filtro Documento
 
 # CT 04.02.10 - Validar filtro Nome de indivíduo
 #     [Documentation]     Caso de teste valida o filtro "Nome de indivíduo" em Contratos > Contratos
