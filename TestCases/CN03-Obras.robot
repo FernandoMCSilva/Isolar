@@ -6,39 +6,39 @@ Test Teardown      Fechar navegador
 Documentation      Modúlo que Gerencie as requisições do tipo Obras cadastradas no sistema.
 
 *** Test Cases ***
-# CT 03.01.01 - Validar menu Obras
-#     [Documentation]     Caso de teste valida se Menu Obras > Dashboard está funcional
-#     [Tags]    Obras    Dashboard    Funcional        
-#     Dado que clico no menu Obras > Dashboard
-#     Então sistema exibe tela de Obras > Dashboard
+CT 03.01.01 - Validar menu Obras
+    [Documentation]     Caso de teste valida se Menu Obras > Dashboard está funcional
+    [Tags]    Obras    Dashboard    Funcional        
+    Dado que clico no menu Obras > Dashboard
+    Então sistema exibe tela de Obras > Dashboard
     
-# CT 03.01.02 - Validar requisições em Fila
-#     [Documentation]     Caso de teste valida todas as requisições que estão com status Em Fila
-#     [Tags]    Obras    Dashboard    Funcional        
-#     Dado que clico no menu Obras > Dashboard
-#     Quando clico em "Fila"
-#     Então sistema exibe requisições com status "Fila"
+CT 03.01.02 - Validar requisições em Fila
+    [Documentation]     Caso de teste valida todas as requisições que estão com status Em Fila
+    [Tags]    Obras    Dashboard    Funcional        
+    Dado que clico no menu Obras > Dashboard
+    Quando clico em "Fila"
+    Então sistema exibe requisições com status "Fila"
 
-# CT 03.01.03 - Validar requisições em Produção
-#     [Documentation]     Caso de teste valida todas as requisições que estão com status Em Produção
-#     [Tags]    Obras    Dashboard    Funcional        
-#     Dado que clico no menu Obras > Dashboard
-#     Quando clico em "Produção"
-#     Então sistema exibe requisições com status "Produção"
+CT 03.01.03 - Validar requisições em Produção
+    [Documentation]     Caso de teste valida todas as requisições que estão com status Em Produção
+    [Tags]    Obras    Dashboard    Funcional        
+    Dado que clico no menu Obras > Dashboard
+    Quando clico em "Produção"
+    Então sistema exibe requisições com status "Produção"
 
-# CT 03.01.04 - Validar requisições em Concluídas
-#     [Documentation]     Caso de teste valida todas as requisições que estão com status Em Concluídas
-#     [Tags]    Obras    Dashboard    Funcional        
-#     Dado que clico no menu Obras > Dashboard
-#     Quando clico em "Concluídas"
-#     Então sistema exibe requisições com status "Concluídas"
+CT 03.01.04 - Validar requisições em Concluídas
+    [Documentation]     Caso de teste valida todas as requisições que estão com status Em Concluídas
+    [Tags]    Obras    Dashboard    Funcional        
+    Dado que clico no menu Obras > Dashboard
+    Quando clico em "Concluídas"
+    Então sistema exibe requisições com status "Concluídas"
 
-# CT 03.01.05 - Validar requisições em Paradas
-#     [Documentation]     Caso de teste valida todas as requisições que estão com status Em Paradas
-#     [Tags]    Obras    Dashboard    Funcional        
-#     Dado que clico no menu Obras > Dashboard
-#     Quando clico em "Paradas"
-#     Então sistema exibe requisições com status "Paradas"
+CT 03.01.05 - Validar requisições em Paradas
+    [Documentation]     Caso de teste valida todas as requisições que estão com status Em Paradas
+    [Tags]    Obras    Dashboard    Funcional        
+    Dado que clico no menu Obras > Dashboard
+    Quando clico em "Paradas"
+    Então sistema exibe requisições com status "Paradas"
 
 CT 03.01.06 - Validar filtros de data
     [Documentation]     Caso de teste valida se filtros de data inicial e data final está funcional
