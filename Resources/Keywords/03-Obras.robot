@@ -45,12 +45,11 @@ Então sistema exibe informações de filtros de data
 E valido filtros de departamento em Obras
     Wait Until Element Is Visible    ${Btn_Departamentos}
     Click Element                    ${Btn_Departamentos}
+    Wait Until Element Is Visible    ${filtro_Departamento_Obras}
     Click Element                    ${filtro_Departamento_Obras}
 
 Então sistema exibe requisições do departamento em Obras
-    Sleep    1s
-    Wait Until Page Contains    text=Gerencie um resumo das informações cadastradas no sistema.
-
+    Wait Until Page Contains    text=2545
 # -3.2.1
 
 E volto pra tela inicial
