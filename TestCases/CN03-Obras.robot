@@ -209,16 +209,16 @@ CT 03.02.13 - Validar botão Mudar Status Requisição
     E preencho filtro Cliente
     Então sitema verifica se status é concluído
 
-# #   Retornar Status da Requisição para Fila
-#     Aguardo carregamento da página
-#     E clico no botão "Editar"
-#     E seleciono opção "Fila" em editar status em Obras
+#   Retornar Status da Requisição para Fila
+    Aguardo carregamento da página
+    E clico no botão "Editar"
+    E seleciono opção "Fila" em editar status em Obras
     
-# #   Verificar se status da requisição foi retornado para Fila
-#     Dado que clico no menu Obras > Requisições
-#     Quando clico em "Filtros"
-#     E preencho filtro Cliente
-#     Então sitema verifica se status é Fila
+#   Verificar se status da requisição foi retornado para Fila
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    Então sitema verifica se status é Fila
 
 # CT 03.02.14 - Validar botão Comentários 
 #     [Documentation]     Caso de teste valida botão Comentários em Obras > Requisições
