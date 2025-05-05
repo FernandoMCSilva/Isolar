@@ -30,6 +30,7 @@ Então sistema exibe tela de Obras > Dashboard
 
 # -3.1.6
 Então sistema exibe informações de filtros de data
+    Sleep    1s
     Wait Until Page Contains    text=2025-02
 
 # -3.1.7
