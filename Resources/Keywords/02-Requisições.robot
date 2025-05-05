@@ -500,7 +500,7 @@ E preencho informações de cadastro de requisição com cliente "temporario"
         END
         Click Element    //button[contains(.,'Salvar')]
 
-        ELSE
+    ELSE
         Log      Cliente já cadastrado. Seguir com uso do cliente existente.
         Sleep    1.5s
         Press Keys    NONE    ENTER
