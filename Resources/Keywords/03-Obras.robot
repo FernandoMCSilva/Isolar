@@ -127,10 +127,12 @@ Então sistema exibe resultado de nível de urgência
 E preencho informações de Data de entrega em Obras > Requisições
     Wait Until Element Is Visible    //button[@id='data_entrega']
     Click Element                    //button[@id='data_entrega']
-    Wait Until Element Is Visible    (//button[@type='button'])[16]
-    FOR    ${i}    IN RANGE    7
-        Click Element    (//button[@type='button'])[16]
-        Sleep    0.5s
+    Wait Until Element Is Visible    (//div[@id='root'])[1]
+    FOR    ${i}    IN RANGE    20
+    ${status}=    Run Keyword And Return Status    Element Should Be Visible    (//div[@id='react-day-picker-26'])[1]
+    Exit For Loop If    ${status}
+    Click Element    (//div[@id='root'])[1]
+    Sleep    0.5s
     END
     Sleep    2s
     Click Element                    (//button[@name='day'][normalize-space()='1'])[1]
