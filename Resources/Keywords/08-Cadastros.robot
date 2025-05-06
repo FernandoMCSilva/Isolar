@@ -125,6 +125,7 @@ Então sistema exibe informações com filtro "Lista"
 
 E preencho informações de pesquisa
     Input Text    //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
+    Sleep    1s
     Wait Until Page Contains    text=B3 (teste)
     
 Então sistema exibe informações de pesquisa
