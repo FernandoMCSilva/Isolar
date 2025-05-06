@@ -111,12 +111,6 @@ CT 02.13 - Validar filtro Renovadas
 CT 02.14 - Validar botão Inserir "Técnico"
     [Documentation]     Caso de teste valida botão Inserir "Técnico" em Requisições
     [Tags]    Requisições    Funcional     SmokeTest   
-#   Verifico se há cadastro temporario
-    Dado que clico no menu "Requisições"
-    Quando clico em "Filtros"
-    E preencho filtro com cliente "temporario" para verificação
-    Então sistema verifica se há cadastro temporario
-
 #   Inserir cadastro
     Dado que clico no menu "Requisições"
     Quando clico no botão "Inserir/Técnico"

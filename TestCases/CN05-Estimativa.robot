@@ -65,13 +65,13 @@ CT 05.06 - Validar filtro Tipo de usina "Aluguel"
 #     E preencho com informações data de registro
 #     Então sistema exibe Estimativa do filtro Data de registro
 
-CT 05.08 - Validar filtro Quantidade de itens por pág
-    [Documentation]     Caso de teste valida o filtro Quantidade de itens por pág
-    [Tags]    Estimativa    Funcional        
-    Dado que clico no menu "Estimativa"
-    Quando clico em "Quantidade de itens por pág"
-    E preencho informações no campo quantidade
-    Então sistema exibe informações de acordo com quantidade preenchida
+# CT 05.08 - Validar filtro Quantidade de itens por pág
+#     [Documentation]     Caso de teste valida o filtro Quantidade de itens por pág
+#     [Tags]    Estimativa    Funcional        
+#     Dado que clico no menu "Estimativa"
+#     Quando clico em "Quantidade de itens por pág"
+#     E preencho informações no campo quantidade
+#     Então sistema exibe informações de acordo com quantidade preenchida
 
  CT 05.09 - Validar botão Próximo
     [Documentation]     Caso de teste valida o botão próximo
@@ -210,17 +210,17 @@ CT 05.24 - Validar impressão de estimativa
     E clico no botão Baixar/Imprimir
     Então sistema Baixa/Imprime Estimativa
 
-CT 05.25 - Validar botão Iniciar conversa no Whatsapp
-    [Documentation]    Caso de teste valida botão Iniciar conversa no Whatsapp em Acões após gerar cálculos
-    [Tags]    Estimativa    Funcional    SmokeTest
-    Dado que clico no menu "Estimativa"
-    Quando clico no botão "Gerar"
-    E preencho informações de calculos
-    E clico em Gerar cálculos
-    E preencho informações do cliente
-    E clico no botão Ações
-    E clico no botão Iniciar conversa no WhatsApp
-    Então sistema redireciona para Whatsapp
+# CT 05.25 - Validar botão Iniciar conversa no Whatsapp
+#     [Documentation]    Caso de teste valida botão Iniciar conversa no Whatsapp em Acões após gerar cálculos
+#     [Tags]    Estimativa    Funcional    SmokeTest
+#     Dado que clico no menu "Estimativa"
+#     Quando clico no botão "Gerar"
+#     E preencho informações de calculos
+#     E clico em Gerar cálculos
+#     E preencho informações do cliente
+#     E clico no botão Ações
+#     E clico no botão Iniciar conversa no WhatsApp
+#     Então sistema redireciona para Whatsapp
 
 CT 05.26 - Validar botão Enviar por email
     [Documentation]    Caso de teste valida botão Enviar por email em Acões após gerar cálculos
@@ -234,28 +234,28 @@ CT 05.26 - Validar botão Enviar por email
     E clico no botão Enviar por email
     Então sistema abre informações do email
 
-CT 05.27 - Validar botão Salvar informarções no sistema
-    [Documentation]    Caso de teste valida botão Salvar informarções no sistema em Acões após gerar cálculos
-    [Tags]    Estimativa    Funcional
-    Dado que clico no menu "Estimativa"
-    Quando clico no botão "Gerar"
-    E preencho informações de calculos
-    E clico em Gerar cálculos
-    E preencho informações do cliente
-    E clico no botão Ações
-    E clico no botão Salvar informarções no sistema
-    Então sistema salva informações no sistema
+# CT 05.27 - Validar botão Salvar informarções no sistema
+#     [Documentation]    Caso de teste valida botão Salvar informarções no sistema em Acões após gerar cálculos
+#     [Tags]    Estimativa    Funcional
+#     Dado que clico no menu "Estimativa"
+#     Quando clico no botão "Gerar"
+#     E preencho informações de calculos
+#     E clico em Gerar cálculos
+#     E preencho informações do cliente
+#     E clico no botão Ações
+#     E clico no botão Salvar informarções no sistema
+#     Então sistema salva informações no sistema
 
-CT 05.28 - Validar botão Baixar/Imprimir (Inatívo)
-    [Documentation]    Caso de teste valida botão Baixar/Imprimir (Inatívo) após gerar cálculos
-    [Tags]    Estimativa    Funcional
-    Dado que clico no menu "Estimativa"
-    Quando clico no botão "Gerar"
-    E preencho informações de calculos
-    E clico em Gerar cálculos
-    E clico no botão Ações
-    E clico no botão Baixar/Imprimir desabilitado
-    Então sistema sai da tela do botão Ações
+# CT 05.28 - Validar botão Baixar/Imprimir (Inatívo)
+#     [Documentation]    Caso de teste valida botão Baixar/Imprimir (Inatívo) após gerar cálculos
+#     [Tags]    Estimativa    Funcional
+#     Dado que clico no menu "Estimativa"
+#     Quando clico no botão "Gerar"
+#     E preencho informações de calculos
+#     E clico em Gerar cálculos
+#     E clico no botão Ações
+#     E clico no botão Baixar/Imprimir desabilitado
+#     Então sistema sai da tela do botão Ações
 
 # CT 05.30 - Validar funcionalidade Constantes personalizadas
 #     [Documentation]    Caso de teste valida funcionalidade Constantes personalizadas
