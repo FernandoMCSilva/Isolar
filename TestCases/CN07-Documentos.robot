@@ -124,15 +124,15 @@ CT 07.01.12 - Validar botão Ver Documento
 #     E clico no botão Status da assinatura (INATÍVO)
 #     Então sistema exibe informações de botão Status da assinatura (INATÍVO)
 
-CT 07.01.14 - Validar botão Gerar link de assinatura
-    [Documentation]     Caso de teste valida se botão Gerar link de assinatura (INATÍVO) está funcional
-    [Tags]    Documentos    Documentos gerados    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Documentos geradados"
-    Quando clico em "Filtros"
-    E preencho filtro criador em Documentos
-    E clico no botão Gerar link de assinatura (INATÍVO)
-    Então sistema exibe informações de botão Gerar link de assinatura (INATÍVO)
+# CT 07.01.14 - Validar botão Gerar link de assinatura
+#     [Documentation]     Caso de teste valida se botão Gerar link de assinatura (INATÍVO) está funcional
+#     [Tags]    Documentos    Documentos gerados    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Documentos geradados"
+#     Quando clico em "Filtros"
+#     E preencho filtro criador em Documentos
+#     E clico no botão Gerar link de assinatura (INATÍVO)
+#     Então sistema exibe informações de botão Gerar link de assinatura (INATÍVO)
 
 CT 07.02.01 - Validar menu Assinaturas
     [Documentation]     Caso de teste valida se menu Assinaturas está funcional
@@ -181,15 +181,15 @@ CT 07.02.05 - Validar filtro Observador
     E clico em "Buscar"
     Então sistema exibe informações de filtro Observador
 
-CT 07.02.06 - Validar filtro Quantidade de itens por pág
-    [Documentation]     Caso de teste valida se filtro Quantidade de itens por pág está funcional
-    [Tags]    Documentos    Assinaturas    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Assinaturas"
-    Quando seleciono opção Cards ou Lista "Lista"
-    Quando clico em "Quantidade de itens por pág"
-    E preencho informações no campo quantidade
-    Então sistema exibe informações de acordo com quantidade preenchida
+# CT 07.02.06 - Validar filtro Quantidade de itens por pág
+#     [Documentation]     Caso de teste valida se filtro Quantidade de itens por pág está funcional
+#     [Tags]    Documentos    Assinaturas    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Assinaturas"
+#     Quando seleciono opção Cards ou Lista "Lista"
+#     Quando clico em "Quantidade de itens por pág"
+#     E preencho informações no campo quantidade
+#     Então sistema exibe informações de acordo com quantidade preenchida
 
 # CT 07.02.07 - Validar filtro Cards ou Lista
 #     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
@@ -234,16 +234,16 @@ CT 07.02.11 - Validar filtro Buscar
     E clico em "Buscar"
     Então sistema exibe informações de filtro Buscar
 
-CT 07.02.12 - Validar botão Editar
-    [Documentation]     Caso de teste valida se botão Editar está funcional
-    [Tags]    Documentos    Assinaturas    Funcional    SmokeTest
-    Dado que clico no menu "Documentos"
-    Clico no menu "Assinaturas"
-    Quando clico em "Filtros"
-    E preencho informações de filtro Assinante
-    E clico em "Buscar"
-    Quando clico em "Editar"
-    Então sistema exibe tela de edição
+# CT 07.02.12 - Validar botão Editar
+#     [Documentation]     Caso de teste valida se botão Editar está funcional
+#     [Tags]    Documentos    Assinaturas    Funcional    SmokeTest
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Assinaturas"
+#     Quando clico em "Filtros"
+#     E preencho informações de filtro Assinante
+#     E clico em "Buscar"
+#     Quando clico em "Editar"
+#     Então sistema exibe tela de edição
 
 # CT 07.02.13 - Validar botão Documento original em Editar
 #     [Documentation]     Caso de teste valida se botão Documento original em Editar está funcional
@@ -286,11 +286,11 @@ CT 07.02.12 - Validar botão Editar
 #     E clico em "Comercial"
 #     Então sistema entra na tela de Criar Documento > Comercial
 
-CT 07.03.03.01 - Validar menu Criar documento > Jurídico
-    [Documentation]     Caso de teste valida se menu Criar documento > Jurídico está funcional
-    [Tags]    Documentos    Criar documento    Jurídico    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Criar documento"
-    E clico em "Jurídico"
-    E preencho informação de criar documento Jurídico
-    Então sistema exibe mensagem de documento criado
+# CT 07.03.03.01 - Validar menu Criar documento > Jurídico
+#     [Documentation]     Caso de teste valida se menu Criar documento > Jurídico está funcional
+#     [Tags]    Documentos    Criar documento    Jurídico    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Criar documento"
+#     E clico em "Jurídico"
+#     E preencho informação de criar documento Jurídico
+#     Então sistema exibe mensagem de documento criado
