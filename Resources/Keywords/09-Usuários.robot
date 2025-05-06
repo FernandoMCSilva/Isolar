@@ -60,6 +60,7 @@ E clico em "Salvar" em Usuários
     Wait Until Element Is Visible    ${botao_SalvarUsuários}
     Click Element                    ${botao_SalvarUsuários}
 Então sistema salva novo cadastro de Usuários
+    Sleep    1s
     Wait Until Page Contains    text=Registro adicionado com sucesso!
 
 # -9.3
