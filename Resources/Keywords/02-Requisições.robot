@@ -346,10 +346,10 @@ E preencho informações de cadastro de requisição
     Press Keys    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
     Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]
     Click Element    //button[contains(.,'Novo Cliente')]
-    Input Text    //input[@id='telefone']    12345678910
-    Input Text    //input[@id='cep']    28990154
-    Input Text    //input[@id='cpfCnpj']    12345678910
-    Input Text    //input[@id='atvEco']    Residencial
+    Input Text       //input[@id='telefone']    12345678910
+    Input Text       //input[@id='cep']    28990154
+    Input Text       //input[@id='cpfCnpj']    12345678910
+    Input Text       //input[@id='atvEco']    Residencial
     Click Element    ${Botao_Proximo_Requisicoes}
 # 2
     Click Element    (//button[contains(.,'Selecione')])[1]

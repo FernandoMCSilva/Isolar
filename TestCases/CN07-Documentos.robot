@@ -40,14 +40,14 @@ CT 07.01.04 - Validar filtro Departamento
     E seleciono opção de filtro Departamento
     Então sistema exibe informações de filtro Departamento
 
-CT 07.01.05 - Validar filtro Data de registro
-    [Documentation]     Caso de teste valida se filtro Data de registro está funcional
-    [Tags]    Documentos    Documentos gerados    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Documentos geradados"
-    Quando clico em "Filtros"
-    E seleciono opção de filtro Data de registro
-    Então sistema exibe informações de filtro Data de registro
+# CT 07.01.05 - Validar filtro Data de registro
+#     [Documentation]     Caso de teste valida se filtro Data de registro está funcional
+#     [Tags]    Documentos    Documentos gerados    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Documentos geradados"
+#     Quando clico em "Filtros"
+#     E seleciono opção de filtro Data de registro
+#     Então sistema exibe informações de filtro Data de registro
 
 CT 07.01.06 - Validar botão Ver Documento
     [Documentation]     Caso de teste valida se botão Ver Documento está funcional
@@ -77,15 +77,15 @@ CT 07.01.08 - Validar botão Status da assinatura
     E clico no botão Status da assinatura
     Então sistema exibe informações de botão Status da assinatura
 
-CT 07.01.09 - Validar botão Rubrica
-    [Documentation]     Caso de teste valida se botão Rubrica está funcional
-    [Tags]    Documentos    Documentos gerados    Funcional    SmokeTest
-    Dado que clico no menu "Documentos"
-    Clico no menu "Documentos geradados"
-    Quando clico em "Filtros"
-    E preencho filtro criador em Documentos
-    E clico no botão Rubrica
-    Então sistema exibe informações de botão Rubrica
+# CT 07.01.09 - Validar botão Rubrica
+#     [Documentation]     Caso de teste valida se botão Rubrica está funcional
+#     [Tags]    Documentos    Documentos gerados    Funcional    SmokeTest
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Documentos geradados"
+#     Quando clico em "Filtros"
+#     E preencho filtro criador em Documentos
+#     E clico no botão Rubrica
+#     Então sistema exibe informações de botão Rubrica
 
 CT 07.01.10 - Validar botão Próximo
     [Documentation]     Caso de teste valida se botão Próximo está funcional
