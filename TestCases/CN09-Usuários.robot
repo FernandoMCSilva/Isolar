@@ -15,16 +15,32 @@ CT 09.01 - Validar menu Usuários
 CT 09.02 - Validar botão Inserir 
     [Documentation]     Caso de teste valida se funcionalidade Inserir no Usuários está funcional
     [Tags]    Usuários    Funcional    SmokeTest        
+#   Inserir cadastro
     Dado que clico no menu "Usuários"
     Quando clico no botão "Inserir"
     E preencho informações de inserir novo cadastro de Usuários
     E clico em "Salvar" em Usuários
     Então sistema salva novo cadastro de Usuários
 
+#   Excluir cadastro em Cadastros > Clientes
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema exclui item do menu Usuários
+
 CT 09.03 - Validar botão Editar
     [Documentation]     Caso de teste valida se funcionalidade Editar no Usuários está funcional
     [Tags]    Usuários    Funcional    SmokeTest      
+#   Inserir cadastro
     Dado que clico no menu "Usuários"
+    Quando clico no botão "Inserir"
+    E preencho informações de inserir novo cadastro de Usuários
+    E clico em "Salvar" em Usuários
+    Então sistema salva novo cadastro de Usuários
+
+#   Editar cadastro de Usuário
+    Aguardo carregamento da página
     E clico no botao buscar
     E preencho informações de pesquisa
     E clico no botao "acoes"
@@ -33,6 +49,13 @@ CT 09.03 - Validar botão Editar
     E clico em "Salvar" em Usuários
     E preencho campo de senha
     Então sistema exibe mensagem de informações editadas
+
+#   Excluir cadastro em Usuários
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema exclui item do menu Usuários
 
 CT 09.04 - Validar filtro "buscar" 
     [Documentation]     Caso de teste valida se filtro buscar está funcional
@@ -53,6 +76,14 @@ CT 09.05 - Validar botão Cancelar em "Excluir"
 CT 09.06 - Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Usuários    Funcional    SmokeTest        
+#   Inserir cadastro
+    Dado que clico no menu "Usuários"
+    Quando clico no botão "Inserir"
+    E preencho informações de inserir novo cadastro de Usuários
+    E clico em "Salvar" em Usuários
+    Então sistema salva novo cadastro de Usuários
+
+#   Excluir cadastro em Usuários
     Dado que clico no menu "Usuários"
     E clico no botao buscar
     E preencho informações de pesquisa
