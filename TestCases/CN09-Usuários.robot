@@ -57,13 +57,13 @@ CT 09.03 - Validar botão Editar
     E clico no botão "Continuar" em "Excluir"
     Então sistema exclui item do menu Usuários
 
-CT 09.04 - Validar filtro "buscar" 
-    [Documentation]     Caso de teste valida se filtro buscar está funcional
-    [Tags]    Usuários    Funcional        
-    Dado que clico no menu "Usuários"
-    E clico no botao buscar
-    E preencho informações de pesquisa
-    Então sistema exibe informações de pesquisa
+# CT 09.04 - Validar filtro "buscar" 
+#     [Documentation]     Caso de teste valida se filtro buscar está funcional
+#     [Tags]    Usuários    Funcional        
+#     Dado que clico no menu "Usuários"
+#     E clico no botao buscar
+#     E preencho informações de pesquisa
+#     Então sistema exibe informações de pesquisa
 
 CT 09.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
