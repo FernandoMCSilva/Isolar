@@ -154,6 +154,7 @@ Então sistema exibe informações de cadastro de "Grupo Consumidores"
 # -08.01.09
 
 E clico no botao "acoes"
+    Sleep    1s
     Wait Until Element Is Visible    ${botao_acoes_Clientes}
     Click Element                    ${botao_acoes_Clientes}
     
