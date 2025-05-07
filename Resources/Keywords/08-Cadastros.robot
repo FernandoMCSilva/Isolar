@@ -98,9 +98,16 @@ E clico no botão "Continuar" em "Excluir"
     Wait Until Element Is Visible    ${botao_continuar_Excluir}
     Click Element                    ${botao_continuar_Excluir}
 
+E preencho informações de pesquisa em Cadastros > Pessoas
+    Input Text    //input[@placeholder='Buscar...']    B1 (Padrão)
+    Sleep    1s
+    Wait Until Page Contains    text=B1 (Padrão)
+
 Então sistema exclui item do menu Cadastro > Pessoas
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
+Então sistema exibe informações de pesquisa em Cadastros > Pessoas
+    Wait Until Page Contains    text=B1 (Padrão)
 # -08.01.05
 Quando clico no filtro "Cards"
     Sleep    2s
@@ -120,6 +127,8 @@ Então sistema exibe informações com filtro "Lista"
     ${titulo_nome}=    Run Keyword And Return Status    Element Should Be Visible    //th[contains(.,'Nome')]
     Run Keyword If    ${titulo_nome}    Log    "O Título Nome está visível. Funcionou."
     ...    ELSE    Fail    "O Título Nome não está visível. Falhou."
+
+
 
 # -08.01.06
 
