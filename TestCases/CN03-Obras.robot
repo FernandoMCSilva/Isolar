@@ -1,6 +1,7 @@
 # *** Settings ***
 # Resource           ../Resources/SuiteSetup.robot
 # Resource           ../Resources/Main.robot
+# Suite Setup        Setup Chrome Driver
 # Test Setup         Dado que acesse a Isolar e logue no sistema com Oseias
 # Test Teardown      Fechar navegador
 # Documentation      Modúlo que Gerencie as requisições do tipo Obras cadastradas no sistema.
