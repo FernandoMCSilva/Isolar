@@ -1081,7 +1081,8 @@ CT 08.11.06- Validar botão Continuar em "Excluir"
     Quando clico em "Excluir"
     E clico no botão "Continuar" em "Excluir"
     Então sistema exclui item do menu Cadastro > Pessoas 
-
+    
+#.
 CT 08.11.07 - Validar filtro "Cards ou Lista" 
     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
     [Tags]    Cadastros    Empresas    Funcional        
