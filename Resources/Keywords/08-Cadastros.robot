@@ -103,6 +103,11 @@ E preencho informações de pesquisa em Cadastros > Pessoas
     Sleep    1s
     Wait Until Page Contains    text=B1 (Padrão)
 
+E preencho informações de filtro buscar em cadastros
+    Input Text    //input[@placeholder='Buscar...']    teste
+    Sleep    1s
+    Wait Until Page Contains    text=teste
+
 Então sistema exclui item do menu Cadastro > Pessoas
     Wait Until Page Contains    text=Registro excluído com sucesso!
 
@@ -139,6 +144,12 @@ E preencho informações de pesquisa
     
 Então sistema exibe informações de pesquisa
      ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
+    Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
+    ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
+
+
+Então sistema exibe informações de pesquisa em cadastros
+     ${nome_resultado}=    Get Text    //td[normalize-space()='teste']
     Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
     ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
 
