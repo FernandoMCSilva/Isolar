@@ -117,6 +117,7 @@ CT 02.13 - Validar filtro Renovadas
 #     Quando clico no botão "Inserir/Técnico"
 #     E preencho informações de cadastro de requisição
 #     Então sistema exibe mensagem de cadastro realizado
+
     
 # #   Excluir requisição
 #     Aguardo carregamento da página 
