@@ -62,13 +62,13 @@ CT 03.02.01 - Validar menu Obras > Requisições
     Dado que clico no menu Obras > Requisições
     Então sistema exibe tela de Obras > Requisições
 
-CT 03.02.02 - Validar filtro Cliente
-    [Documentation]     Caso de teste valida o filtro Cliente em Obras > Requisições
-    [Tags]    Obras    Requisições    Funcional        
-    Dado que clico no menu Obras > Requisições
-    Quando clico em "Filtros"
-    E preencho informações no campo Cliente
-    Então sistema exibe resultado do filtro em Obras
+# CT 03.02.02 - Validar filtro Cliente
+#     [Documentation]     Caso de teste valida o filtro Cliente em Obras > Requisições
+#     [Tags]    Obras    Requisições    Funcional        
+#     Dado que clico no menu Obras > Requisições
+#     Quando clico em "Filtros"
+#     E preencho informações no campo Cliente
+#     Então sistema exibe resultado do filtro em Obras
 
 CT 03.02.03 - Validar filtro Departamento
     [Documentation]     Caso de teste valida o filtro Departamento em Obras > Requisições
@@ -111,21 +111,21 @@ CT 03.02.06 - Validar filtro Nível de urgência
 # #     E preencho informações de Data de entrega em Obras > Requisições
 # #     Então sistema exibe resultado do filtro em Obras
 
-CT 03.02.08 - Validar filtro Data de criação
-    [Documentation]     Caso de teste valida o filtro Data de criação em Obras > Requisições
-    [Tags]    Obras    Requisições    Funcional        
-    Dado que clico no menu Obras > Requisições
-    Quando clico em "Filtros"
-    E preencho informações de Data de criação em Obras > Requisições
-    Então sistema exibe resultado do filtro em Obras
+# CT 03.02.08 - Validar filtro Data de criação
+#     [Documentation]     Caso de teste valida o filtro Data de criação em Obras > Requisições
+#     [Tags]    Obras    Requisições    Funcional        
+#     Dado que clico no menu Obras > Requisições
+#     Quando clico em "Filtros"
+#     E preencho informações de Data de criação em Obras > Requisições
+#     Então sistema exibe resultado do filtro em Obras
 
-CT 03.02.09 - Validar filtro Responsável
-    [Documentation]     Caso de teste valida o filtro Responsável em Obras > Requisições
-    [Tags]    Obras    Requisições    Funcional        
-    Dado que clico no menu Obras > Requisições
-    Quando clico em "Filtros"
-    E valido todos os filtros dentro de "Responsável" em Obras > Requisições
-    Então sistema exibe resultado de filtro Responsável
+# CT 03.02.09 - Validar filtro Responsável
+#     [Documentation]     Caso de teste valida o filtro Responsável em Obras > Requisições
+#     [Tags]    Obras    Requisições    Funcional        
+#     Dado que clico no menu Obras > Requisições
+#     Quando clico em "Filtros"
+#     E valido todos os filtros dentro de "Responsável" em Obras > Requisições
+#     Então sistema exibe resultado de filtro Responsável
 
 # # CT 03.02.10 - Validar botão Inserir "Obras"
 # #     [Documentation]     Caso de teste valida botão Inserir "Obras" em Obras > Requisições

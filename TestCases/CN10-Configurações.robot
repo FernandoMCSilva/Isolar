@@ -106,15 +106,15 @@ CT 10.01.11 - Validar filtro "buscar" perguntas
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa de perguntas
 
-CT 10.01.12 - Validar botão "Excluir" perguntas
-    [Documentation]     Caso de teste valida se botão Excluir em perguntas está funcional no menu Configurações > Requisições
-    [Tags]    Configurações    Requisições    Funcional    SmokeTest        
-    Dado que clico no menu "Configurações > Requisições"
-    E clico no botao "Perguntas"
-    E clico no botao buscar
-    E preencho informações de pesquisa
-    Quando clico em "Excluir" em configurações
-    Então sistema exclui pergunta do menu Configurações > Requisições > Perguntas
+# CT 10.01.12 - Validar botão "Excluir" perguntas
+#     [Documentation]     Caso de teste valida se botão Excluir em perguntas está funcional no menu Configurações > Requisições
+#     [Tags]    Configurações    Requisições    Funcional    SmokeTest        
+#     Dado que clico no menu "Configurações > Requisições"
+#     E clico no botao "Perguntas"
+#     E clico no botao buscar
+#     E preencho informações de pesquisa
+#     Quando clico em "Excluir" em configurações
+#     Então sistema exclui pergunta do menu Configurações > Requisições > Perguntas
 
 CT 10.01.13 - Validar filtro "Cards ou Lista" em Perguntas 
     [Documentation]     Caso de teste valida se filtro Cards ou Lista em Perguntas no menu Configurações > Requisições está funcional

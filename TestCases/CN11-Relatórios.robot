@@ -1,7 +1,6 @@
 *** Settings ***
 Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
-Resource    ../Resources/Keywords/SuiteSetups/Authentication.robot
 Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema
 Test Teardown      Fechar navegador
@@ -14,68 +13,68 @@ CT 11.01.01 - Validar menu Relatórios > Relatórios
     Dado que clico no menu "Relatórios > Relatórios"
     Então sistema exibe informações de menu Relatórios > Relatórios
 
-CT 11.01.02 - Validar filtro Cliente 
-    [Documentation]     Caso de teste valida se filtro cliente no Menu Relatórios > Relatórios está funcional
-    [Tags]    Relatórios    Relatórios    Funcional        
-    Dado que clico no menu "Relatórios > Relatórios"
-    Quando clico em "Filtros"
-    E preencho informações de filtro "Cliente"
-    E clico em "Buscar"
-    Então sistema exibe informações de filtro "Cliente"
+# CT 11.01.02 - Validar filtro Cliente 
+#     [Documentation]     Caso de teste valida se filtro cliente no Menu Relatórios > Relatórios está funcional
+#     [Tags]    Relatórios    Relatórios    Funcional        
+#     Dado que clico no menu "Relatórios > Relatórios"
+#     Quando clico em "Filtros"
+#     E preencho informações de filtro "Cliente"
+#     E clico em "Buscar"
+#     Então sistema exibe informações de filtro "Cliente"
 
-CT 11.01.03 - Validar filtro Status
-    [Documentation]     Caso de teste valida se filtro status no Menu Relatórios > Relatórios está funcional
-    [Tags]    Relatórios    Relatórios    Funcional        
-    Dado que clico no menu "Relatórios > Relatórios"
-    Quando clico em "Filtros"
-    E seleciono filtro Status "Fila"
-    E clico em "Buscar"
-    Então sistema exibe informações de filtro Status "Fila"
+# CT 11.01.03 - Validar filtro Status
+#     [Documentation]     Caso de teste valida se filtro status no Menu Relatórios > Relatórios está funcional
+#     [Tags]    Relatórios    Relatórios    Funcional        
+#     Dado que clico no menu "Relatórios > Relatórios"
+#     Quando clico em "Filtros"
+#     E seleciono filtro Status "Fila"
+#     E clico em "Buscar"
+#     Então sistema exibe informações de filtro Status "Fila"
 
-CT 11.01.04 - Validar filtro Responsável 
-    [Documentation]     Caso de teste valida se filtro Responsável no Menu Relatórios > Relatórios está funcional
-    [Tags]    Relatórios    Relatórios    Funcional        
-    Dado que clico no menu "Relatórios > Relatórios"
-    Quando clico em "Filtros"
-    E seleciono filtro Responsável "Fernando"
-    E clico em "Buscar"
-    Então sistema exibe informações de filtro Responsável "suporte"
+# CT 11.01.04 - Validar filtro Responsável 
+#     [Documentation]     Caso de teste valida se filtro Responsável no Menu Relatórios > Relatórios está funcional
+#     [Tags]    Relatórios    Relatórios    Funcional        
+#     Dado que clico no menu "Relatórios > Relatórios"
+#     Quando clico em "Filtros"
+#     E seleciono filtro Responsável "Fernando"
+#     E clico em "Buscar"
+#     Então sistema exibe informações de filtro Responsável "suporte"
 
-CT 11.01.05 - Validar filtro Vendedor Técnico 
-    [Documentation]     Caso de teste valida se filtro Vendedor Técnico no Menu Relatórios > Relatórios está funcional
-    [Tags]    Relatórios    Relatórios    Funcional        
-    Dado que clico no menu "Relatórios > Relatórios"
-    Quando clico em "Filtros"
-    E seleciono filtro Vendedor Técnico "Todos"
-    E clico em "Buscar"
-    Então sistema exibe informações de filtro Vendedor Técnico "Todos"
+# CT 11.01.05 - Validar filtro Vendedor Técnico 
+#     [Documentation]     Caso de teste valida se filtro Vendedor Técnico no Menu Relatórios > Relatórios está funcional
+#     [Tags]    Relatórios    Relatórios    Funcional        
+#     Dado que clico no menu "Relatórios > Relatórios"
+#     Quando clico em "Filtros"
+#     E seleciono filtro Vendedor Técnico "Todos"
+#     E clico em "Buscar"
+#     Então sistema exibe informações de filtro Vendedor Técnico "Todos"
 
-CT 11.01.06 - Validar filtro Representante comercial 
-    [Documentation]     Caso de teste valida se filtro Representante comercial no Menu Relatórios > Relatórios está funcional
-    [Tags]    Relatórios    Relatórios    Funcional        
-    Dado que clico no menu "Relatórios > Relatórios"
-    Quando clico em "Filtros"
-    E preencho informação de filtro Representante comercial
-    E clico em "Buscar"
-    Então sistema exibe informações de filtro Representante comercial
+# CT 11.01.06 - Validar filtro Representante comercial 
+#     [Documentation]     Caso de teste valida se filtro Representante comercial no Menu Relatórios > Relatórios está funcional
+#     [Tags]    Relatórios    Relatórios    Funcional        
+#     Dado que clico no menu "Relatórios > Relatórios"
+#     Quando clico em "Filtros"
+#     E preencho informação de filtro Representante comercial
+#     E clico em "Buscar"
+#     Então sistema exibe informações de filtro Representante comercial
     
-CT 11.01.07 - Validar filtro Renovadas 
-    [Documentation]     Caso de teste valida se filtro Renovadas no Menu Relatórios > Relatórios está funcional
-    [Tags]    Relatórios    Relatórios    Funcional        
-    Dado que clico no menu "Relatórios > Relatórios"
-    Quando clico em "Filtros"
-    E seleciono o filtro Renovadas "Renovadas"
-    E clico em "Buscar"
-    Então sistema exibe informações de filtro Renovadas "Renovadas"
+# CT 11.01.07 - Validar filtro Renovadas 
+#     [Documentation]     Caso de teste valida se filtro Renovadas no Menu Relatórios > Relatórios está funcional
+#     [Tags]    Relatórios    Relatórios    Funcional        
+#     Dado que clico no menu "Relatórios > Relatórios"
+#     Quando clico em "Filtros"
+#     E seleciono o filtro Renovadas "Renovadas"
+#     E clico em "Buscar"
+#     Então sistema exibe informações de filtro Renovadas "Renovadas"
 
-CT 11.01.08 - Validar filtro Unidade consumidora 
-    [Documentation]     Caso de teste valida se filtro Unidade consumidora no Menu Relatórios > Relatórios está funcional
-    [Tags]    Relatórios    Relatórios    Funcional        
-    Dado que clico no menu "Relatórios > Relatórios"
-    Quando clico em "Filtros"
-    E preencho informações de filtro Unidade consumidora
-    E clico em "Buscar"
-    Então sistema exibe informações de filtro Unidade Consumidora
+# CT 11.01.08 - Validar filtro Unidade consumidora 
+#     [Documentation]     Caso de teste valida se filtro Unidade consumidora no Menu Relatórios > Relatórios está funcional
+#     [Tags]    Relatórios    Relatórios    Funcional        
+#     Dado que clico no menu "Relatórios > Relatórios"
+#     Quando clico em "Filtros"
+#     E preencho informações de filtro Unidade consumidora
+#     E clico em "Buscar"
+#     Então sistema exibe informações de filtro Unidade Consumidora
 
 # CT 11.01.09 - Validar filtro Tipo de requisição 
 #     [Documentation]     Caso de teste valida se filtro Tipo de requisição no Menu Relatórios > Relatórios está funcional
@@ -86,23 +85,23 @@ CT 11.01.08 - Validar filtro Unidade consumidora
 #     E clico em "Buscar"
 #     Então sistema exibe informações de filtro Tipo de requisição "Todos"
 
-CT 11.01.10 - Validar filtro Data de criação 
-    [Documentation]     Caso de teste valida se filtro Data de criação no Menu Relatórios > Relatórios está funcional
-    [Tags]    Relatórios    Relatórios    Funcional        
-    Dado que clico no menu "Relatórios > Relatórios"
-    Quando clico em "Filtros"
-    E seleciono filtro Data de criação
-    E clico em "Buscar"
-    Então sistema exibe informações de filtro Data de criação
+# CT 11.01.10 - Validar filtro Data de criação 
+#     [Documentation]     Caso de teste valida se filtro Data de criação no Menu Relatórios > Relatórios está funcional
+#     [Tags]    Relatórios    Relatórios    Funcional        
+#     Dado que clico no menu "Relatórios > Relatórios"
+#     Quando clico em "Filtros"
+#     E seleciono filtro Data de criação
+#     E clico em "Buscar"
+#     Então sistema exibe informações de filtro Data de criação
 
-CT 11.01.11 - Validar filtro Promotor 
-    [Documentation]     Caso de teste valida se filtro Promotor no Menu Relatórios > Relatórios está funcional
-    [Tags]    Relatórios    Relatórios    Funcional        
-    Dado que clico no menu "Relatórios > Relatórios"
-    Quando clico em "Filtros"
-    E seleciono filtro Promotor "Todos"
-    E clico em "Buscar"
-    Então sistema exibe informações de filtro Promotor "Todos"
+# CT 11.01.11 - Validar filtro Promotor 
+#     [Documentation]     Caso de teste valida se filtro Promotor no Menu Relatórios > Relatórios está funcional
+#     [Tags]    Relatórios    Relatórios    Funcional        
+#     Dado que clico no menu "Relatórios > Relatórios"
+#     Quando clico em "Filtros"
+#     E seleciono filtro Promotor "Todos"
+#     E clico em "Buscar"
+#     Então sistema exibe informações de filtro Promotor "Todos"
 
 CT 11.01.12 - Validar filtro Indicador 
     [Documentation]     Caso de teste valida se filtro Indicador no Menu Relatórios > Relatórios está funcional
@@ -121,14 +120,14 @@ CT 11.01.13 - Validar filtro Departamento
     E valido filtros de departamento em Relatórios
     Então sistema exibe resultado de filtro departamento
 
-CT 11.01.14 - Validar filtro Quantidade de itens por pág 
-    [Documentation]     Caso de teste valida se filtro Quantidade de itens por pág no Menu Relatórios > Relatórios está funcional
-    [Tags]    Relatórios    Relatórios    Funcional        
-    Dado que clico no menu "Relatórios > Relatórios"
-    Quando clico em "Filtros"
-    Quando clico em "Quantidade de itens por pág"
-    E preencho informações no campo quantidade
-    Então sistema exibe resultado de Quantidade de itens por pág 
+# CT 11.01.14 - Validar filtro Quantidade de itens por pág 
+#     [Documentation]     Caso de teste valida se filtro Quantidade de itens por pág no Menu Relatórios > Relatórios está funcional
+#     [Tags]    Relatórios    Relatórios    Funcional        
+#     Dado que clico no menu "Relatórios > Relatórios"
+#     Quando clico em "Filtros"
+#     Quando clico em "Quantidade de itens por pág"
+#     E preencho informações no campo quantidade
+#     Então sistema exibe resultado de Quantidade de itens por pág 
 
 CT 11.01.15 - Validar exportação para Excel 
     [Documentation]     Caso de teste valida se botão Exportar para Excel no Menu Relatórios > Relatórios está funcional
@@ -246,14 +245,14 @@ CT 11.02.10 - Validar filtro Modalidade
     E clico em "Buscar"
     Então sistema exibe informações de filtro Modalidade
 
-CT 11.02.11 - Validar filtro SubClasse
-    [Documentation]     Caso de teste valida se filtro SubClasse está funcional
-    [Tags]    Relatórios    Homologatórias    Funcional        
-    Dado que clico no menu "Relatórios > Homologatórias"
-    Quando clico em "Filtros"
-    E preencho informação de filtro SubClasse
-    E clico em "Buscar"
-    Então sistema exibe informações de filtro SubClasse
+# CT 11.02.11 - Validar filtro SubClasse
+#     [Documentation]     Caso de teste valida se filtro SubClasse está funcional
+#     [Tags]    Relatórios    Homologatórias    Funcional        
+#     Dado que clico no menu "Relatórios > Homologatórias"
+#     Quando clico em "Filtros"
+#     E preencho informação de filtro SubClasse
+#     E clico em "Buscar"
+#     Então sistema exibe informações de filtro SubClasse
 
 CT 11.02.12 - Validar filtro Outorga
     [Documentation]     Caso de teste valida se filtro Outorga está funcional

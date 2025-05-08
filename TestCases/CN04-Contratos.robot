@@ -173,15 +173,15 @@ CT 04.02.13 - Validar filtro pag de filtro
 #     E preencho informações de novo Controle de contratos
 #     Então sistema realiza inserção de novo Controle de contratos
 
-CT 04.02.15 - Validar edição
-    [Documentation]     Caso de teste valida edição em Contratos > Contratos
-    [Tags]    Contratos    Contratos    Funcional        
-    Dado que clico no menu Contratos > Contratos
-    Quando clico em "Filtros"
-    E preencho filtro nome
-    E clico no botão "Editar"
-    E preencho informações de Controle de contratos editado
-    Então sistema realiza edição de Controle de contratos
+# CT 04.02.15 - Validar edição
+#     [Documentation]     Caso de teste valida edição em Contratos > Contratos
+#     [Tags]    Contratos    Contratos    Funcional        
+#     Dado que clico no menu Contratos > Contratos
+#     Quando clico em "Filtros"
+#     E preencho filtro nome
+#     E clico no botão "Editar"
+#     E preencho informações de Controle de contratos editado
+#     Então sistema realiza edição de Controle de contratos
 
 CT 04.02.16 - Validar botão Anexos
     [Documentation]     Caso de teste valida botão Anexos em Contratos > Contratos

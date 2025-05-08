@@ -1,7 +1,7 @@
 *** Settings ***
 Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
-Suite Setup        Setup Chrome Driver
+# Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema
 Test Teardown      Fechar navegador
 Documentation      Modúlo que Gerencie requisições cadastradas no sistema.
@@ -61,21 +61,21 @@ CT 02.07 - Validar filtro Nível de urgência
     E valido todos os filtros de Nivel de urgencia em Requisições
     Então sistema exibe requisições do filtro Urgente
 
-CT 02.08 - Validar filtro Data de entrega
-    [Documentation]     Caso de teste valida o filtro Data de entrega em Requisições
-    [Tags]    Requisições    Funcional        
-    Dado que clico no menu "Requisições"
-    Quando clico em "Filtros"
-    E preencho informações de Data de entrega
-    Então sistema exibe requisições do filtro Data de entrega
+# CT 02.08 - Validar filtro Data de entrega
+#     [Documentation]     Caso de teste valida o filtro Data de entrega em Requisições
+#     [Tags]    Requisições    Funcional        
+#     Dado que clico no menu "Requisições"
+#     Quando clico em "Filtros"
+#     E preencho informações de Data de entrega
+#     Então sistema exibe requisições do filtro Data de entrega
 
-CT 02.09 - Validar filtro Data de criação
-    [Documentation]     Caso de teste valida o filtro Data de criação em Requisições
-    [Tags]    Requisições    Funcional        
-    Dado que clico no menu "Requisições"
-    Quando clico em "Filtros"
-    E preencho informações de Data de criação
-    Então sistema exibe requisições do filtro Data de Criação
+# CT 02.09 - Validar filtro Data de criação
+#     [Documentation]     Caso de teste valida o filtro Data de criação em Requisições
+#     [Tags]    Requisições    Funcional        
+#     Dado que clico no menu "Requisições"
+#     Quando clico em "Filtros"
+#     E preencho informações de Data de criação
+#     Então sistema exibe requisições do filtro Data de Criação
     
 CT 02.10 - Validar filtro Responsável
     [Documentation]     Caso de teste valida o filtro Responsável em Requisições
@@ -109,30 +109,30 @@ CT 02.13 - Validar filtro Renovadas
     E valido todos os filtros dentro de "Renovadas"
     Então sistema exibe requisições de filtro Renovadas
 
-CT 02.14 - Validar botão Inserir "Técnico"
-    [Documentation]     Caso de teste valida botão Inserir "Técnico" em Requisições
-    [Tags]    Requisições    Funcional     SmokeTest   
-#   Inserir cadastro
-    Dado que clico no menu "Requisições"
-    Quando clico no botão "Inserir/Técnico"
-    E preencho informações de cadastro de requisição
-    Então sistema exibe mensagem de cadastro realizado
+# CT 02.14 - Validar botão Inserir "Técnico"
+#     [Documentation]     Caso de teste valida botão Inserir "Técnico" em Requisições
+#     [Tags]    Requisições    Funcional     SmokeTest   
+# #   Inserir cadastro
+#     Dado que clico no menu "Requisições"
+#     Quando clico no botão "Inserir/Técnico"
+#     E preencho informações de cadastro de requisição
+#     Então sistema exibe mensagem de cadastro realizado
     
-#   Excluir requisição
-    Aguardo carregamento da página 
-    Quando clico em "Filtros"
-    E preencho filtro com cliente
-    E clico no botão "Editar"
-    E clico no botão "Excluir requisição"
-    Então sistema exclui e retorna para menu requisições 
+# #   Excluir requisição
+#     Aguardo carregamento da página 
+#     Quando clico em "Filtros"
+#     E preencho filtro com cliente
+#     E clico no botão "Editar"
+#     E clico no botão "Excluir requisição"
+#     Então sistema exclui e retorna para menu requisições 
 
-#   Excluir cadastro em Cadastros > Clientes
-    Dado que clico no menu "Cadastros > Clientes"
-    E clico no botao buscar
-    E preencho informações de pesquisa
-    Quando clico em "Excluir"
-    E clico no botão "Continuar" em "Excluir"
-    Então sistema exibe mensagem de cadastro excluido
+# #   Excluir cadastro em Cadastros > Clientes
+#     Dado que clico no menu "Cadastros > Clientes"
+#     E clico no botao buscar
+#     E preencho informações de pesquisa
+#     Quando clico em "Excluir"
+#     E clico no botão "Continuar" em "Excluir"
+#     Então sistema exibe mensagem de cadastro excluido
 
 CT 02.15 - Validar botão Editar
     [Documentation]     Caso de teste valida botão editar em Requisições

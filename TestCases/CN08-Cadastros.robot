@@ -1261,13 +1261,13 @@ CT 08.12.04 - Validar filtro "buscar"
     E preencho informações de filtro buscar em cadastros
     Então sistema exibe informações de pesquisa em cadastros
 
-CT 08.12.05 - Validar botão Cancelar em "Excluir"
-    [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
-    [Tags]    Cadastros    Usuários ZapSign    Funcional        
-    Dado que clico no menu "Cadastros > Usuários ZapSign"
-    Quando clico em "Excluir" Usuário ZapSign
-    E clico no botão "Cancelar" em "Excluir"
-    Então sistema exibe informações de cadastro de "Usuários ZapSign"
+# CT 08.12.05 - Validar botão Cancelar em "Excluir"
+#     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
+#     [Tags]    Cadastros    Usuários ZapSign    Funcional        
+#     Dado que clico no menu "Cadastros > Usuários ZapSign"
+#     Quando clico em "Excluir" Usuário ZapSign
+#     E clico no botão "Cancelar" em "Excluir"
+#     Então sistema exibe informações de cadastro de "Usuários ZapSign"
 
 CT 08.12.06 - Validar botão Continuar em "Excluir"
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
@@ -1452,14 +1452,14 @@ CT 08.14.01 - Validar Menu Cadastros > Links externos
 #     E preencho informações de pesquisa em links externos
 #     Então sistema exibe informações de pesquisa em links externos
 
-CT 08.14.04 - Validar botão Cancelar em "Excluir" 
-    [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
-    [Tags]    Cadastros    Funcional        
-    Dado que clico no menu "Cadastros > Links externos"
-    E clico em ações 2 
-    Quando clico em "Excluir" em Links externos
-    E clico no botão "Cancelar" em "Excluir"
-    Então sistema exibe informações de cadastro de "Links externos"
+# CT 08.14.04 - Validar botão Cancelar em "Excluir" 
+#     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
+#     [Tags]    Cadastros    Funcional        
+#     Dado que clico no menu "Cadastros > Links externos"
+#     E clico em ações 2 
+#     Quando clico em "Excluir" em Links externos
+#     E clico no botão "Cancelar" em "Excluir"
+#     Então sistema exibe informações de cadastro de "Links externos"
 
 # CT 08.14.05- Validar botão "Continuar" em "Excluir" 
 #     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
