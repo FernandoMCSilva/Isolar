@@ -2,8 +2,8 @@ name: Run Robot Tests in Parallel
 
 on:
   schedule:
-    - cron: '0 7 * * *'
-  workflow_dispatch:
+    - cron: '0 7 * * *'    # Executa todos os dias às 07:00 UTC
+  workflow_dispatch:       # Permite rodar manualmente também
 
 jobs:
   test:
@@ -43,30 +43,33 @@ jobs:
           export DISPLAY=:99
 
           # 1ª execução de todos os casos
-          pabot --processes 4 --output output.xml TestCases || true
+          pabot --processes 4 --output output1.xml TestCases || true
 
           # 2ª execução apenas dos que falharam
           pabot --processes 2 \
-            --rerunfailed output.xml \
-            --output rerun1.xml \
+            --rerunfailed output1.xml \
+            --output output2.xml \
             TestCases || true
 
           # 3ª execução só dos que ainda falharam
           pabot --processes 1 \
-            --rerunfailed rerun1.xml \
-            --output rerun2.xml \
+            --rerunfailed output2.xml \
+            --output output3.xml \
             TestCases || true
 
           kill $XVFB_PID
 
-      - name: Mesclar outputs e gerar relatórios
+      - name: Preparar merge e gerar relatórios
         run: |
-          # Se o merge falhar, já queremos quebrar o job aqui
+          # Quebrar o job se faltar algum XML
           set -e
-          rebot --merge --output merged_output.xml \
-            output.xml rerun1.xml rerun2.xml
+          ls -la *.xml
 
-          # Agora geramos o HTML de log e report
+          # Mescla todos os resultados das três rodadas
+          rebot --merge --output merged_output.xml \
+            output1.xml output2.xml output3.xml
+
+          # Gera HTML de log e report a partir do merged_output
           rebot --log log.html --report report.html merged_output.xml
 
       - name: Verificar se ainda há falhas
@@ -84,9 +87,9 @@ jobs:
         with:
           name: Robot Framework Reports
           path: |
-            output.xml
-            rerun1.xml
-            rerun2.xml
+            output1.xml
+            output2.xml
+            output3.xml
             merged_output.xml
             log.html
             report.html
