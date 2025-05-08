@@ -25,14 +25,14 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-           wget \
-           unzip \
-           xvfb \
-           libglib2.0-0 \
-           libnss3 \
-           libfontconfig1 \
-           libxss1 \
-           libasound2t64
+            wget \
+            unzip \
+            xvfb \
+            libglib2.0-0 \
+            libnss3 \
+            libfontconfig1 \
+            libxss1 \
+            libasound2t64
 
       - name: Instalar dependências Python
         run: pip install -r requirements.txt && pip install robotframework-pabot
@@ -50,36 +50,43 @@ jobs:
           Xvfb :99 -ac &
           XVFB_PID=$!
           export DISPLAY=:99
+
           # 1ª execução de todos os casos
           pabot --processes 4 --output output.xml TestCases || true
+
           # 2ª execução apenas dos que falharam
-          pabot --processes 2 --rerunfailed output.xml --output rerun.xml TestCases || true
+          pabot --processes 2 --rerunfailed output.xml --output rerun1.xml TestCases || true
+
+          # 3ª execução apenas dos que ainda falharam
+          pabot --processes 1 --rerunfailed rerun1.xml --output rerun2.xml TestCases || true
+
           # Encerra o Xvfb
           kill $XVFB_PID
 
       - name: Mesclar outputs e gerar relatórios
         run: |
           set +e
-          # Mescla resultados das duas execuções
-          rebot --merge --output merged_output.xml output.xml rerun.xml
+          # Mescla resultados das três execuções
+          rebot --merge --output merged_output.xml \
+            output.xml rerun1.xml rerun2.xml
           # Gera HTML de log e report
           rebot --log log.html --report report.html merged_output.xml
           set -e
-          
+
       - name: Verificar se ainda há falhas
         run: |
           FAIL_COUNT=$(grep -oP 'status="FAIL"' merged_output.xml | wc -l)
           echo "Total de falhas = $FAIL_COUNT"
           if [ "$FAIL_COUNT" -gt 0 ]; then
             echo "::error ::Existem $FAIL_COUNT casos ainda falhando após retry!"
-          exit 1
+            exit 1
           fi
 
       - name: Listar arquivos gerados
         run: |
           echo "Listando arquivos na raiz:"
           ls -la
-          echo "Se os arquivos estiverem em um diretório específico, liste-o também:"
+          echo "Conteúdo da pasta Results (se existir):"
           if [ -d "Results" ]; then
             ls -la Results
           else
@@ -88,10 +95,13 @@ jobs:
 
       - name: Upload Artifacts
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        uses: actions/upload-artifact@v3
         with:
           name: Robot Framework Reports
           path: |
             output.xml
+            rerun1.xml
+            rerun2.xml
+            merged_output.xml
             log.html
             report.html
