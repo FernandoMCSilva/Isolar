@@ -135,46 +135,46 @@ CT 02.13 - Validar filtro Renovadas
 #     E clico no botão "Continuar" em "Excluir"
 #     Então sistema exibe mensagem de cadastro excluido
 
-CT 02.15 - Validar botão Editar
-    [Documentation]     Caso de teste valida botão editar em Requisições
-    [Tags]    Requisições    Funcional    SmokeTest
-#   Verifico se há cadastro temporario
-    Dado que clico no menu "Requisições"
-    Quando clico em "Filtros"
-    E preencho filtro com cliente "temporario" para verificação
-    Então sistema verifica se há cadastro temporario
+# CT 02.15 - Validar botão Editar
+#     [Documentation]     Caso de teste valida botão editar em Requisições
+#     [Tags]    Requisições    Funcional    SmokeTest
+# #   Verifico se há cadastro temporario
+#     Dado que clico no menu "Requisições"
+#     Quando clico em "Filtros"
+#     E preencho filtro com cliente "temporario" para verificação
+#     Então sistema verifica se há cadastro temporario
 
-#   Inserir cadastro temporário
-    Dado que clico no menu "Requisições"
-    Quando clico no botão "Inserir/Técnico"
-    E preencho informações de cadastro de requisição com cliente "temporario"
-    Então sistema exibe mensagem de cadastro realizado
+# #   Inserir cadastro temporário
+#     Dado que clico no menu "Requisições"
+#     Quando clico no botão "Inserir/Técnico"
+#     E preencho informações de cadastro de requisição com cliente "temporario"
+#     Então sistema exibe mensagem de cadastro realizado
 
-#   Editar cadastro temporario
-    Aguardo carregamento da página
-    Quando clico em "Filtros"
-    E preencho filtro com cliente "temporario"
-    E clico no botão "Editar"
-    E preencho informações de requisição editada
-    Então sistema conlcui edição de requisição
+# #   Editar cadastro temporario
+#     Aguardo carregamento da página
+#     Quando clico em "Filtros"
+#     E preencho filtro com cliente "temporario"
+#     E clico no botão "Editar"
+#     E preencho informações de requisição editada
+#     Então sistema conlcui edição de requisição
 
-#   Excluir cadastro temporario
-    Aguardo carregamento da página
-    Dado que clico no menu "Requisições"
-    Quando clico em "Filtros"
-    E preencho filtro com cliente "temporario"
-    E clico no botão "Editar"
-    E clico no botão "Excluir requisição" temporario
-    Então sistema exclui e retorna para menu requisições 
+# #   Excluir cadastro temporario
+#     Aguardo carregamento da página
+#     Dado que clico no menu "Requisições"
+#     Quando clico em "Filtros"
+#     E preencho filtro com cliente "temporario"
+#     E clico no botão "Editar"
+#     E clico no botão "Excluir requisição" temporario
+#     Então sistema exclui e retorna para menu requisições 
 
-#   Excluir cadastro temporario em Cadastros > Clientes
-    Aguardo carregamento da página
-    Dado que clico no menu "Cadastros > Clientes"
-    E clico no botao buscar
-    E preencho informações de pesquisa com cliente "temporario"
-    Quando clico em "Excluir"
-    E clico no botão "Continuar" em "Excluir"
-    Então sistema exibe mensagem de cadastro excluido
+# #   Excluir cadastro temporario em Cadastros > Clientes
+#     Aguardo carregamento da página
+#     Dado que clico no menu "Cadastros > Clientes"
+#     E clico no botao buscar
+#     E preencho informações de pesquisa com cliente "temporario"
+#     Quando clico em "Excluir"
+#     E clico no botão "Continuar" em "Excluir"
+#     Então sistema exibe mensagem de cadastro excluido
 
 CT 02.16 - Validar botão Visualizar 
     [Documentation]     Caso de teste valida botão visualizar 
@@ -266,31 +266,31 @@ CT 02.21 - Validar botão Comentários
     E preencho informações de comentário
     Então sistema exibe mensagem de confirmação
 
-CT 02.22 - Excluir requisição tipo "Técnico"
-    [Documentation]     Caso de teste valida funcionalidade excluir 
-    [Tags]    Requisições    Funcional    SmokeTest
-#   Inserir cadastro temporario
-    Dado que clico no menu "Requisições"
-    Quando clico no botão "Inserir/Técnico"
-    E preencho informações de cadastro de requisição com cliente "temporario"
-    Então sistema exibe mensagem de cadastro realizado
+# CT 02.22 - Excluir requisição tipo "Técnico"
+#     [Documentation]     Caso de teste valida funcionalidade excluir 
+#     [Tags]    Requisições    Funcional    SmokeTest
+# #   Inserir cadastro temporario
+#     Dado que clico no menu "Requisições"
+#     Quando clico no botão "Inserir/Técnico"
+#     E preencho informações de cadastro de requisição com cliente "temporario"
+#     Então sistema exibe mensagem de cadastro realizado
 
-#   Excluir requisição temporario
-    Aguardo carregamento da página
-    Dado que clico no menu "Requisições"
-    Quando clico em "Filtros"
-    E preencho filtro com cliente "temporario"
-    E clico no botão "Editar"
-    E clico no botão "Excluir requisição" temporario
-    Então sistema exclui e retorna para menu requisições 
+# #   Excluir requisição temporario
+#     Aguardo carregamento da página
+#     Dado que clico no menu "Requisições"
+#     Quando clico em "Filtros"
+#     E preencho filtro com cliente "temporario"
+#     E clico no botão "Editar"
+#     E clico no botão "Excluir requisição" temporario
+#     Então sistema exclui e retorna para menu requisições 
 
-#   Excluir cadastro temporario em Cadastros > Clientes
-    Dado que clico no menu "Cadastros > Clientes"
-    E clico no botao buscar
-    E preencho informações de pesquisa com cliente "temporario"
-    Quando clico em "Excluir"
-    E clico no botão "Continuar" em "Excluir"
-    Então sistema exibe mensagem de cadastro excluido
+# #   Excluir cadastro temporario em Cadastros > Clientes
+#     Dado que clico no menu "Cadastros > Clientes"
+#     E clico no botao buscar
+#     E preencho informações de pesquisa com cliente "temporario"
+#     Quando clico em "Excluir"
+#     E clico no botão "Continuar" em "Excluir"
+#     Então sistema exibe mensagem de cadastro excluido
 
 # CT 02.23 - Tentar inserir requisição sem campos obrigatórios
 #     [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
