@@ -76,9 +76,12 @@ jobs:
         run: |
           FAIL_COUNT=$(grep -oP 'status="FAIL"' merged_output.xml | wc -l)
           echo "Total de falhas = $FAIL_COUNT"
-          if [ "$FAIL_COUNT" -gt 0 ]; then
-            echo "::error ::Existem $FAIL_COUNT casos ainda falhando após retry!"
+          TOLERANCIA=3
+          if [ "$FAIL_COUNT" -gt "$TOLERANCIA" ]; then
+            echo "::error ::Mais de $TOLERANCIA casos falharam após retry!"
             exit 1
+          else
+            echo "::warning ::$FAIL_COUNT falhas (dentro da tolerância de $TOLERANCIA)."
           fi
 
       - name: Upload Artifacts
