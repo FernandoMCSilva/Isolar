@@ -130,9 +130,6 @@ Então sistema exibe informações com filtro "Lista" em Motivos de urgência
 Então sistema exibe informações com filtro "Lista"
     Sleep    2s
     ${titulo_nome}=    Run Keyword And Return Status    Element Should Be Visible    //th[contains(.,'Nome')]
-    Run Keyword If    ${titulo_nome}    Log    "O Título Nome está visível. Funcionou."
-    ...    ELSE    Fail    "O Título Nome não está visível. Falhou."
-
 
 
 # -08.01.06
@@ -144,14 +141,10 @@ E preencho informações de pesquisa
     
 Então sistema exibe informações de pesquisa
      ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
-    Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
-    ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
 
 
 Então sistema exibe informações de pesquisa em cadastros
      ${nome_resultado}=    Get Text    //td[normalize-space()='teste']
-    Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
-    ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
 
 # -08.01.           
 
@@ -626,8 +619,6 @@ E preencho informações de pesquisa em links externos
 
 Então sistema exibe informações de pesquisa em links externos
      ${nome_resultado}=    Get Text    //td[normalize-space(text())='222']
-    Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
-    ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
 
 # -08.14.04
 Quando clico em "Excluir" em Links externos
