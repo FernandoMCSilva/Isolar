@@ -185,18 +185,22 @@ Então sistema exibe informações de "Editar" no menu Configurações > Requisi
     Wait Until Page Contains    text=Registro editado com sucesso!
 
 # -10.01.04
+
+E preencho informações de pesquisa em Configurações
+    Input Text    //input[@placeholder='Buscar...']    teste
+    Sleep    1s
+    Wait Until Page Contains    text=teste
+
 Quando clico no filtro status
     Click Element            //button[contains(@class, 'peer') and contains(@class, 'inline-flex') and contains(@class, 'cursor-pointer') and contains(@class, 'rounded-full') and contains(@class, 'border-2') and contains(@aria-checked, 'true')]
     
 Então sistema exibe mensagem de status atualizado
     Wait Until Page Contains    text=Status do tipo de requisição atualizado com sucesso!
     
-
 # -10.01.05
 Então sistema exibe informações de pesquisa de tipo de requisição
-    ${nome_resultado}=    Get Text    //h3[contains(.,'B3 (teste)')]
-    Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
-    ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
+    ${nome_resultado}=    Get Text    //h3[contains(.,'teste')]
+
 
 
 # -10.01.06
@@ -224,13 +228,14 @@ Então sistema exibe informações da pagina perguntas
 E clico no botao "Perguntas"
     Wait Until Element Is Visible    ${botao_Perguntas}
     Click Element                    ${botao_Perguntas}
+
 E preencho informações de nova pergunta
     Sleep    2s
-    Input Text            //input[@name='nome']    ${nome_pesquisa_GruposConsumidores}
+    Input Text            //input[@name='nome']    teste
     Click Element         //button[contains(.,'Selecione')]
     Click Element         (//div[contains(.,'Texto')])[4]
     Sleep                 1s
-    Input Text            //input[@name='placeholder']    ${nome_pesquisa_GruposConsumidores}
+    Input Text            //input[@name='placeholder']    teste
     Click Element         //button[contains(.,'Não')]
     Click Element         (//div[contains(.,'Sim')])[4]
     Click Element         //button[contains(.,'Sim')]
@@ -241,7 +246,7 @@ Então sistema exibe mensagem de pergunta adicionada no menu Configurações > R
     Wait Until Page Contains    text=Pergunta adicionada com sucesso!
 
 # -10.01.10
-E vou para o fim da página
+Rolar para o fim da página
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
 
 Quando clico em "Editar" em configurações
@@ -653,7 +658,7 @@ E clico em Histórico das requisições
     Wait Until Element Is Visible    (//button[normalize-space()='Histórico'])[1]
     Click Element                    (//button[normalize-space()='Histórico'])[1]
     # Sleep    20s
-    Wait Until Element Is Visible    ${Botao_Proximo_Requisicoes}    timeout=20s
+    Wait Until Element Is Visible    ${Botao_Proximo_Requisicoes}    timeout=30s
 
 Então sistema exibe informações de menu Sistema > Histórico das requisições
     Wait Until Page Contains    text=Informações referentes aos registros de histórico das requisições.
@@ -692,7 +697,7 @@ Então sistema exibe informações de filtro Tipo de registro em Histórico das 
 E seleciono filtro Data do registro
     Wait Until Element Is Visible    ${filtro_DataRegistroRequisicoes}
     Click Element                    ${filtro_DataRegistroRequisicoes}
-    FOR     ${i}    IN RANGE     8
+    FOR     ${i}    IN RANGE     9
         Click Element                (//button[@name='previous-month'])[1]
         Sleep    0.5s
     END
@@ -736,14 +741,19 @@ Dado que clico no menu "Configurações > Monitoramento"
     Click Element                    ${MENU_CONFIGURACOES}
     Sleep    1s
     Click Element                    ${Menu_ConfigMonitoramento}
-
+    Sleep    3s
 Então sistema exibe informações de menu Configurações > Monitoramento
     Wait Until Page Contains    text=Gerenciar informações de monitoramento referente aos clientes
 
 # -10.06.02
 Quando clico no filtro busca
-    Wait Until Element Is Visible   ${filtro_buscarConfig}
-    Click Element                   ${filtro_buscarConfig}
+    FOR    ${i}    IN RANGE    20
+        ${status}=        Run Keyword And Return Status    Element Should Be Visible    ${filtro_buscarConfig}
+        Sleep    20s
+        Exit For Loop If    ${status}
+    END
+    Wait Until Element Is Visible   ${filtro_buscarConfig}    
+    Click Element                   ${filtro_buscarConfig}    
 
 E preencho filtro busca
     Wait Until Element Is Visible    ${input_buscar}

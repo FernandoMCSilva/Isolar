@@ -133,7 +133,6 @@ Então sistema exibe informações com filtro "Lista"
 
 
 # -08.01.06
-
 E preencho informações de pesquisa
     Input Text    //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
     Sleep    1s
