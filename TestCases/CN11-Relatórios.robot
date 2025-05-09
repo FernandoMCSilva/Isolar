@@ -36,7 +36,7 @@ CT 11.01.04 - Validar filtro Responsável
     [Tags]    Relatórios    Relatórios    Funcional        
     Dado que clico no menu "Relatórios > Relatórios"
     Quando clico em "Filtros"
-    E seleciono filtro Responsável "Fernando"
+    E seleciono filtro Responsável
     E clico em "Buscar"
     Então sistema exibe informações de filtro Responsável "suporte"
 

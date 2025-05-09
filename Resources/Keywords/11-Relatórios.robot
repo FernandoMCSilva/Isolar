@@ -69,9 +69,11 @@ Então sistema exibe informações de filtro Status "Fila"
     Wait Until Element Is Visible    (//div[contains(.,'Fila')])[18]
 
 # --11.01.04
-E seleciono filtro Responsável "Fernando"
-    Click Element    (//button[contains(@type,'button')])[11]
-    Click Element    (//div[contains(.,'Marcos Acosta Borges')])[13]
+E seleciono filtro Responsável
+    Sleep    1s
+    Wait Until Element Is Visible    (//button[contains(@type,'button')])[11]
+    Click Element                    (//button[contains(@type,'button')])[11]
+    Click Element                    (//div[contains(.,'Marcos Acosta Borges')])[13]
 
 Então sistema exibe informações de filtro Responsável "suporte"
     Wait Until Element Is Visible    (//td[contains(.,'Marcos Acosta Borges')])[1]

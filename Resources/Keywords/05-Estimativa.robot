@@ -119,6 +119,7 @@ Então sistema exibe Estimativa do filtro Data de registro
 
 # --4.8
 Quando clico em "Quantidade de itens por pág"
+    Sleep    2s
     Wait Until Element Is Visible    //span[contains(.,'Quantidade de itens por pág')]    timeout=10s
     Click Element                    //span[contains(.,'Quantidade de itens por pág')]
 
