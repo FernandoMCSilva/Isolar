@@ -57,14 +57,14 @@ CT 10.01.03 - Validar botão Editar
     E clico no botão "Continuar" em "Excluir"
     Então sistema exclui item do menu Configurações > Requisições
 
-CT 10.01.04 - Validar filtro Status "Ligado ou Desligado" 
-    [Documentation]     Caso de teste valida se filtro status "Ligado ou Desligado" está funcional
-    [Tags]    Configurações    Requisições    Funcional       
-    Dado que clico no menu "Configurações > Requisições"
-    E clico no botao buscar
-    E preencho informações de pesquisa em Configurações
-    Quando clico no filtro status
-    Então sistema exibe mensagem de status atualizado
+# CT 10.01.04 - Validar filtro Status "Ligado ou Desligado" 
+#     [Documentation]     Caso de teste valida se filtro status "Ligado ou Desligado" está funcional
+#     [Tags]    Configurações    Requisições    Funcional       
+#     Dado que clico no menu "Configurações > Requisições"
+#     E clico no botao buscar
+#     E preencho informações de pesquisa em Configurações
+#     Quando clico no filtro status
+#     Então sistema exibe mensagem de status atualizado
 
 CT 10.01.05 - Validar filtro "buscar" 
     [Documentation]     Caso de teste valida se filtro buscar no menu Configurações > Requisições está funcional
@@ -102,57 +102,57 @@ CT 10.01.07 - Validar botão Continuar em "Excluir"
     E clico no botão "Continuar" em "Excluir"
     Então sistema exclui item do menu Configurações > Requisições
 
-CT 10.01.08 - Validar botão "Perguntas" 
-    [Documentation]     Caso de teste valida se botão Perguntas no menu Configurações > Requisições está funcional
-    [Tags]    Configurações    Requisições    Funcional        
-    Dado que clico no menu "Configurações > Requisições"
-    E clico no botao "Perguntas"
-    Então sistema exibe informações da pagina perguntas
+# CT 10.01.08 - Validar botão "Perguntas" 
+#     [Documentation]     Caso de teste valida se botão Perguntas no menu Configurações > Requisições está funcional
+#     [Tags]    Configurações    Requisições    Funcional        
+#     Dado que clico no menu "Configurações > Requisições"
+#     E clico no botao "Perguntas"
+#     Então sistema exibe informações da pagina perguntas
 
-CT 10.01.09 - Validar botão Inserir perguntas 
-    [Documentation]     Caso de teste valida funcionalidade "Inserir" nova pergunta em perguntas no menu Configurações > Requisições
-    [Tags]    Configurações    Requisições    Funcional    SmokeTest        
-#   Inserir pergunta
-    Dado que clico no menu "Configurações > Requisições"
-    E clico no botao "Perguntas"
-    E preencho informações de nova pergunta
-    E clico em "Salvar"
-    Então sistema exibe mensagem de pergunta adicionada no menu Configurações > Requisições
+# CT 10.01.09 - Validar botão Inserir perguntas 
+#     [Documentation]     Caso de teste valida funcionalidade "Inserir" nova pergunta em perguntas no menu Configurações > Requisições
+#     [Tags]    Configurações    Requisições    Funcional    SmokeTest        
+# #   Inserir pergunta
+#     Dado que clico no menu "Configurações > Requisições"
+#     E clico no botao "Perguntas"
+#     E preencho informações de nova pergunta
+#     E clico em "Salvar"
+#     Então sistema exibe mensagem de pergunta adicionada no menu Configurações > Requisições
 
-#   Excluir pergunta
-    Dado que clico no menu "Configurações > Requisições"
-    E clico no botao "Perguntas"
-    E clico no botao buscar
-    E preencho informações de pesquisa
-    Quando clico em "Excluir" em configurações
-    Então sistema exclui pergunta do menu Configurações > Requisições > Perguntas
+# #   Excluir pergunta
+#     Dado que clico no menu "Configurações > Requisições"
+#     E clico no botao "Perguntas"
+#     E clico no botao buscar
+#     E preencho informações de pesquisa
+#     Quando clico em "Excluir" em configurações
+#     Então sistema exclui pergunta do menu Configurações > Requisições > Perguntas
 
-CT 10.01.10 - Validar botão Editar perguntas
-    [Documentation]     Caso de teste valida se funcionalidade "Editar" em Perguntas no menu Configurações > Requisições está funcional
-    [Tags]    Configurações    Requisições    Funcional    SmokeTest        
-#   Inserir pergunta 
-    Dado que clico no menu "Configurações > Requisições"
-    E clico no botao "Perguntas"
-    E preencho informações de nova pergunta
-    E clico em "Salvar"
-    Então sistema exibe mensagem de pergunta adicionada no menu Configurações > Requisições
+# CT 10.01.10 - Validar botão Editar perguntas
+#     [Documentation]     Caso de teste valida se funcionalidade "Editar" em Perguntas no menu Configurações > Requisições está funcional
+#     [Tags]    Configurações    Requisições    Funcional    SmokeTest        
+# #   Inserir pergunta 
+#     Dado que clico no menu "Configurações > Requisições"
+#     E clico no botao "Perguntas"
+#     E preencho informações de nova pergunta
+#     E clico em "Salvar"
+#     Então sistema exibe mensagem de pergunta adicionada no menu Configurações > Requisições
 
-#   Editar Pergunta
-    Aguardo carregamento da página
-    E clico no botao buscar
-    E preencho informações de pesquisa em Configurações
-    Rolar para o fim da página
-    Quando clico em "Editar" em configurações
-    E preencho informações de pergunta editada no menu Configurações > Requisições > Perguntas
-    Então sistema exibe informações de "Editar" no menu Configurações > Requisições > Perguntas
+# #   Editar Pergunta
+#     Aguardo carregamento da página
+#     E clico no botao buscar
+#     E preencho informações de pesquisa em Configurações
+#     Rolar para o fim da página
+#     Quando clico em "Editar" em configurações
+#     E preencho informações de pergunta editada no menu Configurações > Requisições > Perguntas
+#     Então sistema exibe informações de "Editar" no menu Configurações > Requisições > Perguntas
 
-#   Excluir pergunta
-    Dado que clico no menu "Configurações > Requisições"
-    E clico no botao "Perguntas"
-    E clico no botao buscar
-    E preencho informações de pesquisa em Configurações
-    Quando clico em "Excluir" em configurações
-    Então sistema exclui pergunta do menu Configurações > Requisições > Perguntas
+# #   Excluir pergunta
+#     Dado que clico no menu "Configurações > Requisições"
+#     E clico no botao "Perguntas"
+#     E clico no botao buscar
+#     E preencho informações de pesquisa em Configurações
+#     Quando clico em "Excluir" em configurações
+#     Então sistema exclui pergunta do menu Configurações > Requisições > Perguntas
 
 CT 10.01.11 - Validar filtro "buscar" perguntas
     [Documentation]     Caso de teste valida se filtro "buscar" em perguntas no menu Configurações > Requisições está funcional
@@ -163,23 +163,23 @@ CT 10.01.11 - Validar filtro "buscar" perguntas
     E preencho informações de pesquisa
     Então sistema exibe informações de pesquisa de perguntas
 
-CT 10.01.12 - Validar botão "Excluir" perguntas
-    [Documentation]     Caso de teste valida se botão Excluir em perguntas está funcional no menu Configurações > Requisições
-    [Tags]    Configurações    Requisições    Funcional    SmokeTest        
-#   Inserir pergunta
-    Dado que clico no menu "Configurações > Requisições"
-    E clico no botao "Perguntas"
-    E preencho informações de nova pergunta
-    E clico em "Salvar"
-    Então sistema exibe mensagem de pergunta adicionada no menu Configurações > Requisições
+# CT 10.01.12 - Validar botão "Excluir" perguntas
+#     [Documentation]     Caso de teste valida se botão Excluir em perguntas está funcional no menu Configurações > Requisições
+#     [Tags]    Configurações    Requisições    Funcional    SmokeTest        
+# #   Inserir pergunta
+#     Dado que clico no menu "Configurações > Requisições"
+#     E clico no botao "Perguntas"
+#     E preencho informações de nova pergunta
+#     E clico em "Salvar"
+#     Então sistema exibe mensagem de pergunta adicionada no menu Configurações > Requisições
 
-#   Excluir pergunta
-    Dado que clico no menu "Configurações > Requisições"
-    E clico no botao "Perguntas"
-    E clico no botao buscar
-    E preencho informações de pesquisa
-    Quando clico em "Excluir" em configurações
-    Então sistema exclui pergunta do menu Configurações > Requisições > Perguntas
+# #   Excluir pergunta
+#     Dado que clico no menu "Configurações > Requisições"
+#     E clico no botao "Perguntas"
+#     E clico no botao buscar
+#     E preencho informações de pesquisa
+#     Quando clico em "Excluir" em configurações
+#     Então sistema exclui pergunta do menu Configurações > Requisições > Perguntas
 
 CT 10.01.13 - Validar filtro "Cards ou Lista" em Perguntas 
     [Documentation]     Caso de teste valida se filtro Cards ou Lista em Perguntas no menu Configurações > Requisições está funcional
@@ -190,14 +190,14 @@ CT 10.01.13 - Validar filtro "Cards ou Lista" em Perguntas
     E clico em "Lista" em perguntas
     Então sistema exibe informações com filtro "Lista"
 
-CT 10.01.14 - Validar busca não encontrada no filtro buscar em perguntas 
-    [Documentation]     Caso de teste valida busca não encontrada em perguntas no menu Configurações > Requisições
-    [Tags]    Configurações    Requisições    Funcional        
-    Dado que clico no menu "Configurações > Requisições"
-    E clico no botao "Perguntas"
-    E clico no botao buscar
-    E preencho informações de busca não encontrada
-    Então sistema exibe mensagem de erro em Perguntas
+# CT 10.01.14 - Validar busca não encontrada no filtro buscar em perguntas 
+#     [Documentation]     Caso de teste valida busca não encontrada em perguntas no menu Configurações > Requisições
+#     [Tags]    Configurações    Requisições    Funcional        
+#     Dado que clico no menu "Configurações > Requisições"
+#     E clico no botao "Perguntas"
+#     E clico no botao buscar
+#     E preencho informações de busca não encontrada
+#     Então sistema exibe mensagem de erro em Perguntas
 
 CT 10.01.15 - Validar filtro Quantidade de itens por pág em perguntas 
     [Documentation]     Caso de teste valida o filtro Quantidade de itens por pág em perguntas no menu Configurações > Requisições
@@ -381,14 +381,14 @@ CT 10.05.01 - Validar menu Configurações > Sistema
     E clico em Logo
     Então sistema exibe informações de menu Sistema > Logo
 
-CT 10.05.02 - Validar edição de Logo
-    [Documentation]     Caso de teste valida se edição de Logo está funcional
-    [Tags]    Configurações    Sistema    Funcional        
-    Dado que clico no menu "Configurações > Sistema"
-    E clico em Logo
-    Quando faço upload no campo de Logo
-    E clico em "Salvar" Logo
-    Então sistema atualiza logo do sistema
+# CT 10.05.02 - Validar edição de Logo
+#     [Documentation]     Caso de teste valida se edição de Logo está funcional
+#     [Tags]    Configurações    Sistema    Funcional        
+#     Dado que clico no menu "Configurações > Sistema"
+#     E clico em Logo
+#     Quando faço upload no campo de Logo
+#     E clico em "Salvar" Logo
+#     Então sistema atualiza logo do sistema
 
 CT 10.05.03 - Validar edição de Mensagens padrão
     [Documentation]     Caso de teste valida se edição de Mensagens padrão está funcional
@@ -455,16 +455,16 @@ CT 10.05.09 - Validar filtro Data do registro
     E clico em Buscar
     Então sistema exibe informações de filtro Data do registro em Histórico das requisições
 
-CT 10.05.10 - Validar botão visualizar
-    [Documentation]     Caso de teste valida se botão visualizar está funcional
-    [Tags]    Configurações    Sistema    Funcional        
-    Dado que clico no menu "Configurações > Sistema"
-    E clico em Histórico das requisições
-    Quando clico em "Filtros"
-    E preencho filtro responsável
-    E clico em Buscar
-    E clico no botão visualizar
-    Então sistema visualiza informações de requisições
+# CT 10.05.10 - Validar botão visualizar
+#     [Documentation]     Caso de teste valida se botão visualizar está funcional
+#     [Tags]    Configurações    Sistema    Funcional        
+#     Dado que clico no menu "Configurações > Sistema"
+#     E clico em Histórico das requisições
+#     Quando clico em "Filtros"
+#     E preencho filtro responsável
+#     E clico em Buscar
+#     E clico no botão visualizar
+#     Então sistema visualiza informações de requisições
 
 CT 10.05.11 - Validar botão Próximo
     [Documentation]     Caso de teste valida se botão Próximo está funcional
@@ -514,24 +514,24 @@ CT 10.06.04 - Validar filtro Cards ou Lista
     E seleciono opção Cards ou Lista "Lista"
     Então sistema exibe informações com filtro "Lista"
 
-CT 10.06.05 - Validar inserção
-    [Documentation]     Caso de teste valida se inserção de novo cliente em Configurações > Monitoramento está funcional
-    [Tags]    Configurações    Monitoramento    Funcional        
-#   Inserir
-    Dado que clico no menu "Configurações > Monitoramento"
-    Quando clico no botão "Inserir"
-    E preencho informações de dados
-    E clico em "Salvar"
-    Então sistema realiza inserção de novo cliente em Configurações > Monitoramento
+# CT 10.06.05 - Validar inserção
+#     [Documentation]     Caso de teste valida se inserção de novo cliente em Configurações > Monitoramento está funcional
+#     [Tags]    Configurações    Monitoramento    Funcional        
+# #   Inserir
+#     Dado que clico no menu "Configurações > Monitoramento"
+#     Quando clico no botão "Inserir"
+#     E preencho informações de dados
+#     E clico em "Salvar"
+#     Então sistema realiza inserção de novo cliente em Configurações > Monitoramento
 
-#   Excluir
-    Dado que clico no menu "Configurações > Monitoramento"
-    Quando clico no filtro busca
-    E preencho filtro busca em configurações
-    E clico em Buscar
-    Quando clico em "Excluir" em configurações
-    E clico no botão "Continuar" em "Excluir"
-    Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
+# #   Excluir
+#     Dado que clico no menu "Configurações > Monitoramento"
+#     Quando clico no filtro busca
+#     E preencho filtro busca em configurações
+#     E clico em Buscar
+#     Quando clico em "Excluir" em configurações
+#     E clico no botão "Continuar" em "Excluir"
+#     Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
 
 # CT 10.06.06 - Validar edição
 #     [Documentation]     Caso de teste valida se edição de cliente em Configurações > Monitoramento está funcional
@@ -563,24 +563,24 @@ CT 10.06.05 - Validar inserção
 #     E clico no botão "Continuar" em "Excluir"
 #     Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
 
-CT 10.06.07 - Validar exclusão
-    [Documentation]     Caso de teste valida se exclusão de cliente em Configurações > Monitoramento está funcional
-    [Tags]    Configurações    Monitoramento    Funcional        
-#   Inserir
-    Dado que clico no menu "Configurações > Monitoramento"
-    Quando clico no botão "Inserir"
-    E preencho informações de dados
-    E clico em "Salvar"
-    Então sistema realiza inserção de novo cliente em Configurações > Monitoramento
+# CT 10.06.07 - Validar exclusão
+#     [Documentation]     Caso de teste valida se exclusão de cliente em Configurações > Monitoramento está funcional
+#     [Tags]    Configurações    Monitoramento    Funcional        
+# #   Inserir
+#     Dado que clico no menu "Configurações > Monitoramento"
+#     Quando clico no botão "Inserir"
+#     E preencho informações de dados
+#     E clico em "Salvar"
+#     Então sistema realiza inserção de novo cliente em Configurações > Monitoramento
 
-#   Excluir
-    Dado que clico no menu "Configurações > Monitoramento"
-    Quando clico no filtro busca
-    E preencho filtro busca em configurações
-    E clico em Buscar
-    Quando clico em "Excluir" em configurações
-    E clico no botão "Continuar" em "Excluir"
-    Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
+# #   Excluir
+#     Dado que clico no menu "Configurações > Monitoramento"
+#     Quando clico no filtro busca
+#     E preencho filtro busca em configurações
+#     E clico em Buscar
+#     Quando clico em "Excluir" em configurações
+#     E clico no botão "Continuar" em "Excluir"
+#     Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
 
 CT 10.07.01 - Validar menu Configurações > Obras
     [Documentation]     Caso de teste valida se Menu Configurações > Obras está funcional
@@ -647,11 +647,11 @@ CT 10.07.06 - Validar exclusão
     E clico no botão "Continuar" em "Excluir"
     Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
 
-CT 10.08.01 - Validar menu Configurações > Contratos
-    [Documentation]     Caso de teste valida se Menu Configurações > Contratos está funcional
-    [Tags]    Configurações    Contratos    Funcional        
-    Dado que clico no menu "Configurações > Contratos"
-    Então sistema exibe informações de menu Configurações > Contratos
+# CT 10.08.01 - Validar menu Configurações > Contratos
+#     [Documentation]     Caso de teste valida se Menu Configurações > Contratos está funcional
+#     [Tags]    Configurações    Contratos    Funcional        
+#     Dado que clico no menu "Configurações > Contratos"
+#     Então sistema exibe informações de menu Configurações > Contratos
 
 
 
