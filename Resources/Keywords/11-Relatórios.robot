@@ -36,6 +36,8 @@ ${Campo_Cliente}                     //input[@id='cliente']
 ${campo_clienteRelatorios}           //div[@class='select__value-container css-hlgwow'][contains(.,'Digite o nome do cliente...')]
 ${botao_exportarPDF_Relatorios}      //button[contains(.,'Exportar para PDF')]
 
+${filtro_DataCriacaoRelatorios}      (//button[@class='inline-flex items-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full justify-start text-left font-normal text-muted-foreground'])[1]
+
 
 *** Keywords ***
 # --11.01.01
@@ -110,20 +112,23 @@ Então sistema exibe informações de filtro Unidade Consumidora
     Wait Until Page Contains    text=alexander leidou
 
 # --11.01.09
-E seleciono filtro Tipo de requisição "Todos"
+E seleciono filtro Tipo de requisição
+    Sleep    1s
     Wait Until Element Is Visible    //button[@id='tipo']
     Click Element                    //button[@id='tipo']
-    Click Element                    (//div[contains(.,'Todos')])[27]
+    Press Keys                       NONE    ARROW_DOWN
+    Sleep                            0.3s
+    Press Keys                       NONE    ENTER
 
 Então sistema exibe informações de filtro Tipo de requisição "Todos"
     Wait Until Element Is Visible    (//td[contains(.,'Técnico')])[1]
 
 # --11.01.10
 E seleciono filtro Data de criação
-    Wait Until Element Is Visible    (//button[@type='button'])[16]
-    Click Element                    (//button[@type='button'])[16]
+    Wait Until Element Is Visible    ${filtro_DataCriacaoRelatorios}
+    Click Element                    ${filtro_DataCriacaoRelatorios}
     Wait Until Element Is Visible    (//button[@type='button'])[21]
-    FOR     ${i}    IN RANGE    4
+    FOR     ${i}    IN RANGE    5   
         Click Element    (//button[@type='button'])[21]
         Sleep    0.5s
     END
