@@ -308,6 +308,8 @@ E preencho informação de filtro SubClasse
     Wait Until Element Is Visible    ${filtro_SubClasse}
     Click Element                    ${filtro_SubClasse}
     Click Element                    (//div[contains(.,'Baixa Renda')])[4]
+    Sleep    0.3s
+    Click Element                    ${filtro_Concessionaria}
 
 Então sistema exibe informações de filtro SubClasse
     Wait Until Element Is Visible    ${result_Subclasse}
