@@ -61,13 +61,22 @@ jobs:
 
       - name: Preparar merge e gerar relatórios
         run: |
-          # Quebrar o job se faltar algum XML
           set -e
+
+          # Lista todos os .xml para debug
           ls -la *.xml
 
-          # Mescla todos os resultados das três rodadas
-          rebot --merge --output merged_output.xml \
-            output1.xml output2.xml output3.xml
+          # Monta dinamicamente o array de arquivos a mesclar
+          FILES=(output1.xml output2.xml)
+          if [ -f output3.xml ]; then
+            echo "Encontrado output3.xml, incluindo na mescla"
+            FILES+=(output3.xml)
+          else
+            echo "output3.xml não encontrado, pulando terceira rodada"
+          fi
+
+          # Agora faz o merge dos XMLs existentes
+          rebot --merge --output merged_output.xml "${FILES[@]}"
 
           # Gera HTML de log e report a partir do merged_output
           rebot --log log.html --report report.html merged_output.xml
