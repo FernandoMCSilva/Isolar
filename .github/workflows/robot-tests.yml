@@ -3,7 +3,12 @@ name: Run Robot Tests in Parallel
 on:
   schedule:
     - cron: '0 7 * * *'    # Executa todos os dias às 07:00 UTC
-  workflow_dispatch:       # Permite rodar manualmente também
+  workflow_dispatch:
+    inputs:
+      module:
+        description: 'Digite o nome da suíte/pasta a executar (ex: CN05-Estimativa) ou deixe vazio para rodar tudo'
+        required: false
+        default: ''
 
 jobs:
   test:
@@ -41,6 +46,14 @@ jobs:
           Xvfb :99 -ac &
           XVFB_PID=$!
           export DISPLAY=:99
+
+          TARGET_DIR="TestCases"
+          if [ -n "${{ github.event.inputs.module }}" ]; then
+           TARGET_DIR="TestCases/${{ github.event.inputs.module }}"
+           echo "Executando apenas a suíte: $TARGET_DIR"
+          else
+           echo "Executando todas as suítes"
+          fi
 
           # 1ª execução de todos os casos
           pabot --processes 4 --output output1.xml TestCases || true
