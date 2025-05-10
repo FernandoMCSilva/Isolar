@@ -58,19 +58,19 @@ jobs:
           echo "Arquivo alvo: $TARGET_SUITE"
 
           # 1ª execução de todos os casos
-          pabot --processes 4 --output output1.xml TestCases || true
+          pabot --processes 4 --output output1.xml $TARGET_SUITE || true
 
           # 2ª execução apenas dos que falharam
           pabot --processes 2 \
             --rerunfailed output1.xml \
             --output output2.xml \
-            TestCases || true
+            $TARGET_SUITE || true
 
           # 3ª execução só dos que ainda falharam
           pabot --processes 1 \
             --rerunfailed output2.xml \
             --output output3.xml \
-            TestCases || true
+            $TARGET_SUITE || true
 
           kill $XVFB_PID
 
