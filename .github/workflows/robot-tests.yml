@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       module:
-        description: 'CN05-Estimativa'
+        description: 'Digite o nome da suíte/pasta a executar (ex: CN05-Estimativa) ou deixe vazio para rodar tudo'
         required: false
         default: ''
 
