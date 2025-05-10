@@ -47,13 +47,15 @@ jobs:
           XVFB_PID=$!
           export DISPLAY=:99
 
-          TARGET_DIR="TestCases"
           if [ -n "${{ github.event.inputs.module }}" ]; then
-           TARGET_DIR="TestCases/${{ github.event.inputs.module }}"
-           echo "Executando apenas a suíte: $TARGET_DIR"
+            echo "Executando somente a suíte: ${{ github.event.inputs.module }}"
+            TARGET_SUITE=$(find TestCases -name "*${{ github.event.inputs.module }}*.robot" | head -n 1)
           else
-           echo "Executando todas as suítes"
+            echo "Executando todas as suítes"
+            TARGET_SUITE="TestCases"
           fi
+
+          echo "Arquivo alvo: $TARGET_SUITE"
 
           # 1ª execução de todos os casos
           pabot --processes 4 --output output1.xml TestCases || true
