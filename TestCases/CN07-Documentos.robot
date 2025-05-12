@@ -66,6 +66,7 @@ CT 07.01.07 - Validar botão Gerar link de assinatura
     Quando clico em "Filtros"
     E preencho filtro criador em Documentos
     E clico no botão Gerar link de assinatura
+    E clico em Assinatura Tradicional
     Então sistema exibe informações de botão Gerar link de assinatura
 
 CT 07.01.08 - Validar botão Status da assinatura
@@ -110,8 +111,6 @@ CT 07.01.12 - Validar botão Ver Documento
     [Tags]    Documentos    Documentos gerados    Funcional
     Dado que clico no menu "Documentos"
     Clico no menu "Documentos geradados"
-    Quando clico em "Filtros"
-    E preencho filtro criador em Documentos
     E clico no botão Ver Documento (INATÍVO)
     Então sistema exibe informações de botão Ver Documento (INATÍVO)
 

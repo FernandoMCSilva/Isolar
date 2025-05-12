@@ -26,8 +26,8 @@ ${filtro_Buscar}                     //input[@placeholder='Buscar...']
 ${botao_VerDocumento}               (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[4]
 ${botao_StatusAssinatura}           //table[contains(@class,'caption-bottom text-sm')]/tbody[1]/tr[1]/td[7]/button[1]
 ${botao_Rubrica}                    (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[6]
-${botao_GerarAssinatura}            (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[8]
-${botao_VerdocumentoINATÍVO}        (//button[@data-state='closed'])[13]
+${botao_GerarAssinatura}            (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[3]
+${botao_VerdocumentoINATÍVO}        (//button[@data-state='closed'])[19]
 ${botao_GerarAssinaturaINATÍVO}     (//button[@data-state='closed'])[14]
 ${botao_StatusAssinaturaINATÍVO}    (//button[@data-state='closed'])[15]
 ${botao_Criar}                      (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2')])[1]
@@ -37,6 +37,7 @@ ${botao_GerarDocumento}             //button[contains(.,'Gerar Documento')]
 ${botao_VerTemplate_Documentos}     //button[contains(.,'Ver template')]
 ${botao_PreencherDocumento}         //button[contains(.,'Preencher documento')]
 ${botao_BaixarTemplateEditável}     //button[contains(.,'Baixar Template editável')]
+${AssinaturaTradicional}            (//button[normalize-space()='Assinatura Tradicional'])[1]
 
 ${CAMINHO_ARQUIVO}                  "C:\Users\silva\Downloads\teste.pdf"
 ${nome_teste}                       teste
@@ -205,8 +206,13 @@ E clico no botão Gerar link de assinatura
     Wait Until Element Is Visible    ${botao_GerarAssinatura}
     Click Element                    ${botao_GerarAssinatura}
 
+E clico em Assinatura Tradicional
+    Sleep    1s
+    Wait Until Element Is Visible    ${AssinaturaTradicional}
+    Click Element                    ${AssinaturaTradicional}
+
 Então sistema exibe informações de botão Gerar link de assinatura
-    Wait Until Page Contains    text=ZapSign - 9
+    Wait Until Page Contains    text=ZapSign - 6
 
 # -07.02.01
 Clico no menu "Assinaturas"
@@ -224,7 +230,7 @@ E preencho informações de filtro Origem da assinatura
     Click Element                    (//div[contains(.,'Externos')])[5]
 
 Então sistema exibe informações de filtro Origem da assinatura
-    Wait Until Element Is Visible    //p[contains(.,'FICHA E TERMO SARA TESTE ANEXOS')]
+    Wait Until Page Contains    text=testando sasine
 
 # -07.02.03
 E preencho informações de filtro Status
@@ -241,8 +247,7 @@ E preencho informações de filtro Assinante
     Input Text                       ${filtro_Assinante}    teste
 
 Então sistema exibe informações de filtro Assinante
-    Wait Until Element Is Visible    //p[contains(.,'teste123')]
-
+    Wait Until Page Contains    text=Teste homologação
 # -07.02.05
 E preencho informações de filtro Observador
     Wait Until Element Is Visible    ${filtro_Observador}

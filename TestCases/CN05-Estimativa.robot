@@ -88,10 +88,14 @@ CT 05.10 - Validar botão Anterior
     Quando clico em "Próximo"
     E clico em "Anterior"
     Então sistema exibe Estimativa anteriores   
+
 CT 05.12 - Validar botão Não em Gerar link de assinatura
     [Documentation]     Caso de teste valida botão Não em confirmação do Gerar link de assinatura
     [Tags]    Estimativa    Funcional  
     Dado que clico no menu "Estimativa"
+    Quando clico em "Filtros"
+    E preencho filtro cliente em Estimativa
+    E clico em Buscar
     Quando clico em "Gerar link de assinatura"
     E clico em "Não"
     Então sistema volta para menu Estimativa

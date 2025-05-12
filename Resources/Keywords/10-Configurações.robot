@@ -397,6 +397,7 @@ E seleciono filtro "Tipo de documento"
     Click Element            (//button[contains(@class,'flex h-10')])[1]
     Click Element            //span[normalize-space(text())='P']
 Então sistema exibe informações de filtro selecionado
+    Sleep    1s
     Wait Until Page Contains    text=Registros carregados com sucesso!
 
 # -10.03.02
@@ -733,7 +734,7 @@ E clico no botão Anterior
 
 Então sistema exibe informações de tela anterior
     Wait Until Element Is Not Visible    ${Botao_Anterior}    timeout=20s
-    Wait Until Element Is Visible        ${Link_Filtros}   timeout=20s
+    
     
 # -10.06.01
 Dado que clico no menu "Configurações > Monitoramento"

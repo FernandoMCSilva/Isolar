@@ -80,7 +80,7 @@ E seleciono Tipo de usina "Todos"
     Click Element                    //div[@role='option'][contains(.,'Todos')]
 
 Então sistema exibe informações de Estimativa do filtro Tipo de usina "Todos"
-   Wait Until Element Is Visible        (//div[contains(.,'Registros carregados com sucesso!')])[7]
+    Wait Until Page Contains    text=540
 
 # --4.5
 E seleciono Tipo de usina "Autoconsumo"
@@ -89,7 +89,7 @@ E seleciono Tipo de usina "Autoconsumo"
     Click Element                    //div[@role='option'][contains(.,'Autoconsumo')]
 
 Então sistema exibe informações de Estimativa do filtro Tipo de usina "Autoconsumo"
-    Wait Until Element Is Visible     (//div[contains(.,'Registros carregados com sucesso!')])[7]
+    Wait Until Page Contains    text=540
 
 # --4.6
 E seleciono Tipo de usina "Aluguel"
@@ -156,14 +156,17 @@ Então sistema exibe Estimativa anteriores
 
 
 # # --4.11
-
 # Quando clico em "Gerar link de assinatura" inativo
 #     ${is_enabled}    Run Keyword And Return Status    Is Element Enabled    ${XPATH_BOTAO_GERAR_LINK}
 #     Run Keyword If    '${is_enabled}' == 'False'    Log    O botão "Gerar link de assinatura" está inativo como esperado.
 #     ...    ELSE    Fail    O botão "Gerar link de assinatura" está ativo, mas deveria estar inativo.
 # # #     Então sistema não executa nenhuma ação
 
-# --4.12
+# --5.12
+E preencho filtro cliente em Estimativa
+    Wait Until Element Is Visible    //input[@id='cliente']
+    Input Text                       //input[@id='cliente']    Fernando
+
 
 Quando clico em "Gerar link de assinatura"
     Sleep    2s
