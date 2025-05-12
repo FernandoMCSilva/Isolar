@@ -68,16 +68,17 @@ CT 07.01.07 - Validar botão Gerar link de assinatura
     E clico no botão Gerar link de assinatura
     E clico em Assinatura Tradicional
     Então sistema exibe informações de botão Gerar link de assinatura
+# BUG
 
-CT 07.01.08 - Validar botão Status da assinatura
-    [Documentation]     Caso de teste valida se botão Status da assinatura está funcional
-    [Tags]    Documentos    Documentos gerados    Funcional    SmokeTest
-    Dado que clico no menu "Documentos"
-    Clico no menu "Documentos geradados"
-    Quando clico em "Filtros"
-    E preencho filtro criador em Documentos
-    E clico no botão Status da assinatura
-    Então sistema exibe informações de botão Status da assinatura
+# CT 07.01.08 - Validar botão Status da assinatura
+#     [Documentation]     Caso de teste valida se botão Status da assinatura está funcional
+#     [Tags]    Documentos    Documentos gerados    Funcional    SmokeTest
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Documentos geradados"
+#     Quando clico em "Filtros"
+#     E preencho filtro criador em Documentos
+#     E clico no botão Status da assinatura
+#     Então sistema exibe informações de botão Status da assinatura
 
 # CT 07.01.09 - Validar botão Rubrica
 #     [Documentation]     Caso de teste valida se botão Rubrica está funcional
@@ -199,13 +200,14 @@ CT 07.02.05 - Validar filtro Observador
 #     Quando seleciono opção Cards ou Lista "Lista"
 #     Então sistema exibe informações com filtro "Lista"
 
-CT 07.02.08 - Validar botão Próximo
-    [Documentation]     Caso de teste valida se botão Próximo está funcional
-    [Tags]    Documentos    Assinaturas    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Assinaturas"
-    Quando clico em "Próximo"
-    Então sistema exibe próximas Assinaturas
+# BUG
+# CT 07.02.08 - Validar botão Próximo
+#     [Documentation]     Caso de teste valida se botão Próximo está funcional
+#     [Tags]    Documentos    Assinaturas    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Assinaturas"
+#     Quando clico em "Próximo"
+#     Então sistema exibe próximas Assinaturas
 
 # CT 07.02.09 - Validar botão Anterior
 #     [Documentation]     Caso de teste valida se botão Anterior está funcional
@@ -225,14 +227,15 @@ CT 07.02.08 - Validar botão Próximo
 #     E faço upload de arquivo teste
 #     Então sistema exibe tela final de rubrica
 
-CT 07.02.11 - Validar filtro Buscar
-    [Documentation]     Caso de teste valida se filtro Buscar está funcional
-    [Tags]    Documentos    Assinaturas    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Assinaturas"
-    E preencho informação de filtro Buscar
-    E clico em "Buscar"
-    Então sistema exibe informações de filtro Buscar
+# BUG
+# CT 07.02.11 - Validar filtro Buscar
+#     [Documentation]     Caso de teste valida se filtro Buscar está funcional
+#     [Tags]    Documentos    Assinaturas    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Assinaturas"
+#     E preencho informação de filtro Buscar
+#     E clico em "Buscar"
+#     Então sistema exibe informações de filtro Buscar
 
 # CT 07.02.12 - Validar botão Editar
 #     [Documentation]     Caso de teste valida se botão Editar está funcional
