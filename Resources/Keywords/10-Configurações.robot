@@ -394,7 +394,7 @@ Então sistema exibe informações de menu Documentos
 
 # -10.03.01
 E seleciono filtro "Tipo de documento"
-    Click Element            (//button[contains(@class,'flex h-10')])[1]
+    Click Element            (//button[@role='combobox'])[1]
     Click Element            //span[normalize-space(text())='P']
 Então sistema exibe informações de filtro selecionado
     Sleep    1s

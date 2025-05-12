@@ -296,6 +296,7 @@ Então sistema exibe aba de Constantes personalizadas
 
 # --4.22
 Quando clico no botão Exportar para Excel
+    Sleep    1s
     Wait Until Element Is Visible    ${botao_ExportarExcel_estimativa}
     Click Element                    ${botao_ExportarExcel_estimativa}
 Então sistema exporta para excel
