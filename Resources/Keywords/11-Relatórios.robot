@@ -196,10 +196,12 @@ Então sistema exibe resultado de Quantidade de itens por pág
 
 # --11.01.16
 Quando clico no botão Exportar para PDF
+    Sleep    2s
     Wait Until Element Is Visible    ${botao_exportarPDF_Relatorios}
     Click Element                    ${botao_exportarPDF_Relatorios}
 
 Então sistema exporta para PDF
+    Sleep    1s
     Wait Until Element Is Visible    ${botao_exportarPDF_Relatorios}
 
 # --11.01.17
