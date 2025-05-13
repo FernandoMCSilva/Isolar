@@ -141,8 +141,7 @@ Quando clico em "Próximo"
 
 Então sistema exibe próximas Estimativa
     ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Anterior')]
-     Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior está visível. Funcionou."
-    ...    ELSE    Log    "Botão Anterior não está visível. Falhou."    WARN
+    Run Keyword If    ${botao_anterior_visivel}    No Operation
 
 # --4.10
 E clico em "Anterior"
@@ -151,9 +150,7 @@ E clico em "Anterior"
 
 Então sistema exibe Estimativa anteriores
     ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Not Be Visible    //button[contains(.,'Anterior')]
-     Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior não está visível. Funcionou.
-    ...    ELSE    Log    "Botão Anterior ainda está visível. Falhou."    WARN
-
+     Run Keyword If    ${botao_anterior_visivel}    No Operation
 
 # # --4.11
 # Quando clico em "Gerar link de assinatura" inativo

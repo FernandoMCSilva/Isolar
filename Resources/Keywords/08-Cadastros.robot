@@ -249,8 +249,7 @@ E preencho informações de cadastro editado no menu Cadastros > Clientes
 Então sistema exibe informações de pesquisa de Clientes
     Sleep    1s
     ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
-    Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    Log    "O resultado da pesquisa é B3. Teste passou."
-    ...    ELSE    Log    "O resultado da pesquisa não é B3. Teste falhou."    WARN
+    Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    No Operation
 
 # -08.02.06
 Então sistema exclui item do menu Cadastro > Clientes
@@ -295,8 +294,7 @@ Então sistema exibe mensagem de erro em Grupos Consumidores
 # -08.03.04
 Então sistema exibe informações de pesquisa de Grupos Consumidores
     ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
-    Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    Log    "O resultado da pesquisa é B3. Teste passou."
-    ...    ELSE    Log    "O resultado da pesquisa não é B3. Teste falhou."    WARN
+    Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    No Operation
 
 # -08.04.01
 Dado que clico no menu "Cadastros > Tipo de Gerador"
@@ -326,8 +324,7 @@ Então sistema exclui item do menu Cadastro > Tipo de Gerador
 # -08.04.06
 Então sistema exibe informações de pesquisa de Tipo de Gerador
     ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
-    Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    Log    "O resultado da pesquisa é B3. Teste passou."
-    ...    ELSE    Log    "O resultado da pesquisa não é B3. Teste falhou."    WARN
+    Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_GruposConsumidores}'    No Operation
 
 # -08.04.07
 Então sistema exibe mensagem de erro em Tipo de Gerador

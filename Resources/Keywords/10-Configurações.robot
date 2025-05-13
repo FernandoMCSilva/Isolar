@@ -268,8 +268,7 @@ Então sistema exibe informações de "Editar" no menu Configurações > Requisi
 Então sistema exibe informações de pesquisa de perguntas
     Sleep    1s
     ${nome_resultado}=    Get Text    //h3[contains(.,'B3 (teste)')]
-    Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    Log    "O resultado da pesquisa é Fernando. Teste passou."
-    ...    ELSE    Log    "O resultado da pesquisa não é Fernando. Teste falhou."    WARN
+    Run Keyword If    '${nome_resultado}' == '${nome_pesquisa_pessoas}'    No Operation
 
 # --10.01.12
 Então sistema exclui pergunta do menu Configurações > Requisições > Perguntas

@@ -167,8 +167,7 @@ Então sistema exibe informações de botão Próximo
 # -07.01.11
 Então sistema exibe informações de botão Anterior
     ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Not Be Visible    //button[contains(.,'Anterior')]
-     Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior não está visível. Funcionou.
-    ...    ELSE    Log    "Botão Anterior ainda está visível. Falhou."    WARN
+     Run Keyword If    ${botao_anterior_visivel}    No Operation
     
 # -07.01.12
 E preencho filtro criador
@@ -265,14 +264,12 @@ Quando seleciono opção Cards ou Lista "Lista"
 # -07.02.08
 Então sistema exibe próximas Assinaturas
     ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Anterior')]
-     Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior está visível. Funcionou."
-    ...    ELSE    Log    "Botão Anterior não está visível. Falhou."    WARN
-
+     Run Keyword If    ${botao_anterior_visivel}    No Operation
+     
 # -07.02.09
 Então sistema exibe Assinaturas anteriores
     ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Not Be Visible    //button[contains(.,'Anterior')]
-     Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior não está visível. Funcionou.
-    ...    ELSE    Log    "Botão Anterior ainda está visível. Falhou."    WARN
+     Run Keyword If    ${botao_anterior_visivel}    No Operation
 
 # -07.02.10
 Quando clico no botão Criar

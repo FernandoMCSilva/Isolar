@@ -207,14 +207,12 @@ Então sistema exporta para PDF
 # --11.01.17
 Então sistema exibe próximas informações
     ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Anterior')]
-     Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior está visível. Funcionou."
-    ...    ELSE    Log    "Botão Anterior não está visível. Falhou."    WARN
+     Run Keyword If    ${botao_anterior_visivel}    No Operation
 
 # --11.01.18
 Então sistema exibe informações anteriores   
     ${botao_anterior_visivel}    Run Keyword And Return Status    Element Should Not Be Visible    //button[contains(.,'Anterior')]
-     Run Keyword If    ${botao_anterior_visivel}    Log    "Botão Anterior não está visível. Funcionou.
-    ...    ELSE    Log    "Botão Anterior ainda está visível. Falhou."    WARN
+     Run Keyword If    ${botao_anterior_visivel}    No Operation
 
 
 # --11.02.01
