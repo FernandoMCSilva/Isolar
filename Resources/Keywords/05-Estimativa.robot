@@ -305,20 +305,25 @@ Então sistema exibe mensagem de campos obrigatórios não preenchido em estimat
 
 # --4.24
 E preencho informações de calculos
+    Sleep    1s
     Wait Until Element Is Visible    (//button[contains(.,'Selecione')])[1]
     Click Element                    (//button[contains(.,'Selecione')])[1]
     Click Element                    (//div[contains(.,'Solo')])[5]
 
+    Sleep    1s
     Click Element                    (//button[contains(.,'Selecione')])[1]
     Click Element                    (//div[contains(.,'Gasto mensal em R$')])[5]
 
 
+    Sleep    1s
     Click Element                    (//button[contains(.,'Selecione')])[1]
     Click Element                    (//div[contains(.,'Autoconsumo')])[15]
 
+    Sleep    1s
     Click Element                    (//button[contains(.,'Selecione')])[1]
     Click Element                    (//div[contains(.,'Junto a carga')])[5]
 
+    Sleep    1s
     Click Element                    (//button[contains(.,'Selecione')])[1]
     Click Element                    (//div[contains(.,'Trifásico')])[5]
 
