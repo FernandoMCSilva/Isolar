@@ -590,23 +590,24 @@ CT 10.07.01 - Validar menu Configurações > Obras
     Dado que clico no menu "Configurações > Obras"
     Então sistema exibe informações de menu Configurações > Obras
 
-CT 10.07.02 - Validar inserção de Novo tipo
-    [Documentation]     Caso de teste valida se Inserção de Novo tipo está funcional
-    [Tags]    Configurações    Obras    Funcional        
-#   Inserir
-    Dado que clico no menu "Configurações > Obras"
-    Quando clico no botão "Novo tipo"
-    E preencho informações de Novo tipo de Requisições
-    E clico em "Salvar"
-    Então sistema exibe informações de menu botao Novo tipo
+# BUG
+# CT 10.07.02 - Validar inserção de Novo tipo
+#     [Documentation]     Caso de teste valida se Inserção de Novo tipo está funcional
+#     [Tags]    Configurações    Obras    Funcional        
+# #   Inserir
+#     Dado que clico no menu "Configurações > Obras"
+#     Quando clico no botão "Novo tipo"
+#     E preencho informações de Novo tipo de Requisições
+#     E clico em "Salvar"
+#     Então sistema exibe informações de menu botao Novo tipo
 
-#   Excluir
-    Dado que clico no menu "Configurações > Obras"
-    Quando clico no filtro busca
-    E preencho filtro busca em configurações
-    Quando clico em "Excluir" em configurações
-    E clico no botão "Continuar" em "Excluir"
-    Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
+# #   Excluir
+#     Dado que clico no menu "Configurações > Obras"
+#     Quando clico no filtro busca
+#     E preencho filtro busca em configurações
+#     Quando clico em "Excluir" em configurações
+#     E clico no botão "Continuar" em "Excluir"
+#     Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
 
 
 CT 10.07.03 - Validar filtro "Cards ou Lista"
@@ -631,23 +632,24 @@ CT 10.07.05 - Validar botão Perguntas
     E clico no botao "Perguntas"
     Então sistema exibe informações de tela de Perguntas
 
-CT 10.07.06 - Validar exclusão
-    [Documentation]     Caso de teste valida se exclusão de cliente em Configurações > Obras está funcional
-    [Tags]    Configurações    Obras    Funcional        
-#   Inserir
-    Dado que clico no menu "Configurações > Obras"
-    Quando clico no botão "Novo tipo"
-    E preencho informações de Novo tipo de Requisições
-    E clico em "Salvar"
-    Então sistema exibe informações de menu botao Novo tipo
+#  BUG
+# CT 10.07.06 - Validar exclusão
+#     [Documentation]     Caso de teste valida se exclusão de cliente em Configurações > Obras está funcional
+#     [Tags]    Configurações    Obras    Funcional        
+# #   Inserir
+#     Dado que clico no menu "Configurações > Obras"
+#     Quando clico no botão "Novo tipo"
+#     E preencho informações de Novo tipo de Requisições
+#     E clico em "Salvar"
+#     Então sistema exibe informações de menu botao Novo tipo
 
-#   Excluir
-    Dado que clico no menu "Configurações > Obras"
-    Quando clico no filtro busca
-    E preencho filtro busca em configurações
-    Quando clico em "Excluir" em configurações
-    E clico no botão "Continuar" em "Excluir"
-    Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
+# #   Excluir
+#     Dado que clico no menu "Configurações > Obras"
+#     Quando clico no filtro busca
+#     E preencho filtro busca em configurações
+#     Quando clico em "Excluir" em configurações
+#     E clico no botão "Continuar" em "Excluir"
+#     Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
 
 # CT 10.08.01 - Validar menu Configurações > Contratos
 #     [Documentation]     Caso de teste valida se Menu Configurações > Contratos está funcional

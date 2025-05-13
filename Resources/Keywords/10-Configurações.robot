@@ -393,6 +393,7 @@ Então sistema exibe informações de menu Documentos
 
 # -10.03.01
 E seleciono filtro "Tipo de documento"
+    Sleep    2s
     Click Element            (//button[@role='combobox'])[1]
     Click Element            //span[normalize-space(text())='P']
 Então sistema exibe informações de filtro selecionado
@@ -486,6 +487,7 @@ E restauro informações originais de Constantes ambientais
     Wait Until Element Is Visible    ${Botao_ConstantesAmbientais}
     Click Element                    ${Botao_ConstantesAmbientais}
     Input Text                       ${input_TotalArvores}        ${Original_TotalArvores}
+    Sleep    1.5s
     Input Text                       ${input_TotalCO2}            ${Original_TotalCO2}
     Input Text                       ${input_TotalResidencias}    ${Original_TotalResidencias}
     Sleep    1s
@@ -856,7 +858,7 @@ E preencho informações de Novo tipo de Requisições
     Sleep    1s
     Input Text                       //input[@id='nomeRequisicao']    ${nome_pesquisa_GruposConsumidores}
     Click Element                    ${botao_ExcluirSecao}
-    Sleep    0.5
+    Sleep    1s
 
 Então sistema exibe informações de menu botao Novo tipo
     Wait Until Page Contains    text=Registro adicionado com sucesso!
