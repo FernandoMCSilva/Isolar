@@ -241,28 +241,28 @@ CT 05.26 - Validar botão Enviar por email
     E clico no botão Enviar por email
     Então sistema abre informações do email
 
-# CT 05.27 - Validar botão Salvar informarções no sistema
-#     [Documentation]    Caso de teste valida botão Salvar informarções no sistema em Acões após gerar cálculos
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Gerar"
-#     E preencho informações de calculos
-#     E clico em Gerar cálculos
-#     E preencho informações do cliente
-#     E clico no botão Ações
-#     E clico no botão Salvar informarções no sistema
-#     Então sistema salva informações no sistema
+CT 05.27 - Validar botão Salvar informarções no sistema
+    [Documentation]    Caso de teste valida botão Salvar informarções no sistema em Acões após gerar cálculos
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Gerar"
+    E preencho informações de calculos
+    E clico em Gerar cálculos
+    E preencho informações do cliente
+    E clico no botão Ações
+    E clico no botão Salvar informarções no sistema
+    Então sistema salva informações no sistema
 
-# CT 05.28 - Validar botão Baixar/Imprimir (Inatívo)
-#     [Documentation]    Caso de teste valida botão Baixar/Imprimir (Inatívo) após gerar cálculos
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Gerar"
-#     E preencho informações de calculos
-#     E clico em Gerar cálculos
-#     E clico no botão Ações
-#     E clico no botão Baixar/Imprimir desabilitado
-#     Então sistema sai da tela do botão Ações
+CT 05.28 - Validar botão Baixar/Imprimir (Inatívo)
+    [Documentation]    Caso de teste valida botão Baixar/Imprimir (Inatívo) após gerar cálculos
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Gerar"
+    E preencho informações de calculos
+    E clico em Gerar cálculos
+    E clico no botão Ações
+    E clico no botão Baixar/Imprimir desabilitado
+    Então sistema sai da tela do botão Ações
 
 # CT 05.30 - Validar funcionalidade Constantes personalizadas
 #     [Documentation]    Caso de teste valida funcionalidade Constantes personalizadas

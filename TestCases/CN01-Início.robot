@@ -55,3 +55,26 @@ CT 01.07 - Validar filtro Data inicial e Data final
     E preencho data inicial
     E preencho data final
     Então sistema exibe requisições filtradas
+
+CT 01.08 - Validar botão Tema
+    [Documentation]     Caso de teste valida se botão Tema está funcional no menu Inicio
+    [Tags]    Início    Funcional        
+    Dado que clico no menu "Início"
+    E clico no botão tema "Escuro"
+    Então sistema exibe tela em tema "Escuro"
+
+CT 01.09 - Validar botão SAC
+    [Documentation]     Caso de teste valida se botão SAC está funcional no menu Inicio
+    [Tags]    Início    Funcional        
+    Dado que clico no menu "Início"
+    E clico no botão SAC
+    Então sistema exibe tela de SAC
+
+CT 01.10 - Validar botão Notificações
+    [Documentation]     Caso de teste valida se botão Notificações está funcional no menu Inicio
+    [Tags]    Início    Funcional        
+    Dado que clico no menu "Início"
+    E clico no botão Notificações
+    Então sistema exibe tela de Notificações
+
+

@@ -8,6 +8,9 @@ ${Botao_Fila}          (//div[contains(.,'Fila')])[9]
 ${Botao_Producao}      (//div[contains(.,'Produção')])[9]
 ${Botao_Concluidas}    (//div[contains(.,'Concluídas')])[9]
 ${Botao_Paradas}       (//div[contains(.,'Paradas')])[9]
+${botao_Tema}          //button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10']//*[name()='svg']
+${botao_SAC}           (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10 relative'])[1]
+${botao_Notificacoes}  (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10 relative'])[2]
 ${Status_Fila}         Fila
 ${Status_Producao}     Produção
 ${Status_Concluidas}   Concluído
@@ -125,10 +128,35 @@ Então sistema exibe requisições filtradas
     Wait Until Page Contains    text=2025-01
     Capture Page Screenshot
 
+# --1.8
+E clico no botão tema "Escuro"
+    Wait Until Element Is Visible    ${botao_Tema}
+    Click Element                    ${botao_Tema}
+
+Então sistema exibe tela em tema "Escuro"
+    Sleep    1s
+    Wait Until Element Is Visible    ${botao_Tema}
 
 
+# --1.9
+E clico no botão SAC
+    Sleep    1s
+    Wait Until Element Is Visible    ${botao_SAC}
+    Click Element                    ${botao_SAC}
+
+Então sistema exibe tela de SAC
+    Wait Until Page Contains    text=Envie-nos problemas ou sugestões para o sistema.
+
+# --1.10
+E clico no botão Notificações
+    Wait Until Element Is Visible    ${botao_Notificacoes}
+    Click Element                    ${botao_Notificacoes}
 
 
+Então sistema exibe tela de Notificações
+    Wait Until Page Contains    text=Notificações
+
+# --1.8
 
 
     
