@@ -37,6 +37,7 @@ ${botao_acoes_Pessoas}                          //button[contains(.,'Ações')]
 ${botao_acoes1LinksExternos}                    (//button[contains(.,'Ações')])[5]
 ${botao_acoes2LinksExternos}                    (//button[contains(.,'Ações')])[2]
 ${botao_ExportarExcelLinksExternos}             //button[contains(.,'Exportar para Excel')]
+${botao_buscarPerguntas}                        (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10'])[1]
 
 
 ${input_buscar_CadastrosPessoas}                //input[contains(@placeholder,'Buscar...')]
@@ -91,7 +92,7 @@ E clico no botão "Cancelar" em "Excluir"
 # -08.01.04
 E clico no botao buscar
     Sleep    2s
-    Click Element     ${botao_buscar_CadastrosPessoas}
+    Click Element    ${botao_buscarPerguntas}
 
 E clico no botão "Continuar" em "Excluir"
     Sleep    1s

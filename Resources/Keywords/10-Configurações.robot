@@ -396,14 +396,17 @@ E seleciono filtro "Tipo de documento"
     Sleep    2s
     Click Element            (//button[@role='combobox'])[1]
     Click Element            //span[normalize-space(text())='P']
+
 Então sistema exibe informações de filtro selecionado
     Sleep    1s
     Wait Until Page Contains    text=Registros carregados com sucesso!
 
 # -10.03.02
 E seleciono filtro "Departamento"
-    Click Element            (//button[contains(.,'Selecione')])[2]
-    Click Element            (//div[contains(.,'TI')])[5]
+    Sleep    1s
+    Wait Until Element Is Visible    (//button[@role='combobox'])[2]
+    Click Element                    (//button[@role='combobox'])[2]
+    Click Element                    (//div[contains(.,'TI')])[5]
 
 
 # -10.03.04
