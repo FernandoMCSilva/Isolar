@@ -12,7 +12,7 @@ ${Menu_ConfigSistema}               //button[@class='inline-flex items-center wh
 ${Menu_ConfigMinerandoSol}          (//a[contains(@href,'misol')])[2]
 ${Menu_ConfigMonitoramento}         (//p[contains(.,'Monitoramento')])[2]
 ${Menu_ConfigObras}                 (//p[contains(.,'Obras')])[2]
-${Menu_ConfigContratos}                 (//p[contains(.,'Contratos')])[2]
+${Menu_ConfigContratos}             (//p[contains(.,'Contratos')])[2]
 
 ${filtro_buscarConfig}              (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10'])[1]
 ${filtro_DataRegistroRequisicoes}   (//button[@class='inline-flex items-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full justify-start text-left font-normal text-muted-foreground'])[1]
@@ -87,6 +87,7 @@ ${botao_DecontoGruposTarifarios}    //button[contains(.,'Grupos tárifarios')]
 ${botaox_RemoverSupervisor}         (//div[text()='Fernando QA']/following-sibling::div)[1]
 ${botao_AtualizarConfig}            //button[contains(.,'Atualizar')]
 ${botao_Editar_Configuracoes}       (//button[normalize-space()='Editar'])[1]
+${botao_buscarPerguntas}            //button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10']
 ${Botao_VerTemplate_Configuracoes}  (//td[contains(@class,'p-4 align-middle')]//button)[1]
 ${Botao_Historico_Configuracoes}    (//td[contains(@class,'p-4 align-middle')]//button)[2]
 ${Botao_AtualizarTemplate}          (//td[contains(@class,'p-4 align-middle')]//button)[3]
@@ -266,6 +267,17 @@ Então sistema exibe informações de "Editar" no menu Configurações > Requisi
     Wait Until Page Contains    text=Pergunta atualizada com sucesso!
 
 # --10.01.11
+Quando clico no botão buscar
+    Sleep    2s
+    Wait Until Element Is Visible    ${botao_buscarPerguntas}
+    Click Element                    ${botao_buscarPerguntas}
+
+E preencho informações de busca em Configurações
+    Sleep    2s
+    Wait Until Element Is Visible    (//input[@placeholder='Buscar...'])[1]
+    Input Text                       (//input[@placeholder='Buscar...'])[1]    ${nome_pesquisa_GruposConsumidores}
+
+
 Então sistema exibe informações de pesquisa de perguntas
     Sleep    1s
     ${nome_resultado}=    Get Text    //h3[contains(.,'B3 (teste)')]

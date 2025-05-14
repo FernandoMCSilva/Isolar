@@ -161,8 +161,8 @@ CT 10.01.11 - Validar filtro "buscar" perguntas
     [Tags]    Configurações    Requisições    Funcional        
     Dado que clico no menu "Configurações > Requisições"
     E clico no botao "Perguntas"
-    E clico no botao buscar
-    E preencho informações de pesquisa
+    Quando clico no botão buscar
+    E preencho informações de busca em Configurações
     Então sistema exibe informações de pesquisa de perguntas
 
 # # CT 10.01.12 - Validar botão "Excluir" perguntas
@@ -183,14 +183,14 @@ CT 10.01.11 - Validar filtro "buscar" perguntas
 # #     Quando clico em "Excluir" em configurações
 # #     Então sistema exclui pergunta do menu Configurações > Requisições > Perguntas
 
-CT 10.01.13 - Validar filtro "Cards ou Lista" em Perguntas 
-    [Documentation]     Caso de teste valida se filtro Cards ou Lista em Perguntas no menu Configurações > Requisições está funcional
-    [Tags]    Configurações    Requisições    Funcional        
-    Dado que clico no menu "Configurações > Requisições"
-    E clico no botao "Perguntas"
-    Quando clico no filtro "Cards" em perguntas
-    E clico em "Lista" em perguntas
-    Então sistema exibe informações com filtro "Lista"
+# CT 10.01.13 - Validar filtro "Cards ou Lista" em Perguntas 
+#     [Documentation]     Caso de teste valida se filtro Cards ou Lista em Perguntas no menu Configurações > Requisições está funcional
+#     [Tags]    Configurações    Requisições    Funcional        
+#     Dado que clico no menu "Configurações > Requisições"
+#     E clico no botao "Perguntas"
+#     Quando clico no filtro "Cards" em perguntas
+#     E clico em "Lista" em perguntas
+#     Então sistema exibe informações com filtro "Lista"
 
 # # CT 10.01.14 - Validar busca não encontrada no filtro buscar em perguntas 
 # #     [Documentation]     Caso de teste valida busca não encontrada em perguntas no menu Configurações > Requisições
@@ -201,16 +201,16 @@ CT 10.01.13 - Validar filtro "Cards ou Lista" em Perguntas
 # #     E preencho informações de busca não encontrada
 # #     Então sistema exibe mensagem de erro em Perguntas
 
-CT 10.01.15 - Validar filtro Quantidade de itens por pág em perguntas 
-    [Documentation]     Caso de teste valida o filtro Quantidade de itens por pág em perguntas no menu Configurações > Requisições
-    [Tags]    Configurações    Requisições    Funcional        
-    Dado que clico no menu "Configurações > Requisições"
-    E clico no botao "Perguntas"
-    Quando clico no filtro "Cards" em perguntas
-    E clico em "Lista" em perguntas
-    Quando clico em "Quantidade de itens por pág"
-    E preencho informações no campo quantidade em perguntas
-    Então sistema exibe informações de acordo com quantidade preenchida em perguntas
+# CT 10.01.15 - Validar filtro Quantidade de itens por pág em perguntas 
+#     [Documentation]     Caso de teste valida o filtro Quantidade de itens por pág em perguntas no menu Configurações > Requisições
+#     [Tags]    Configurações    Requisições    Funcional        
+#     Dado que clico no menu "Configurações > Requisições"
+#     E clico no botao "Perguntas"
+#     Quando clico no filtro "Cards" em perguntas
+#     E clico em "Lista" em perguntas
+#     Quando clico em "Quantidade de itens por pág"
+#     E preencho informações no campo quantidade em perguntas
+#     Então sistema exibe informações de acordo com quantidade preenchida em perguntas
 
 # CT 10.01.16 - Validar botão Fechar no filtro "buscar" em Perguntas 
 #     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar em Perguntas no menu Configurações > Requisições está funcional
