@@ -157,7 +157,6 @@ CT 08.02.03 - Validar botão Editar
     E preencho informações de cadastro editado no menu Cadastros > Clientes
     Então sistema exibe mensagem de informações editadas
 
-
 #   Excluir
     Aguardo carregamento da página
     E clico no botao buscar

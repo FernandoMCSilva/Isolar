@@ -100,12 +100,12 @@ E clico no botão "Continuar" em "Excluir"
     Click Element                    ${botao_continuar_Excluir}
 
 E preencho informações de pesquisa em Cadastros > Pessoas
-    Input Text    //input[@placeholder='Buscar...']    B1 (Padrão)
+    Input Text                  //input[@placeholder='Buscar...']    B1 (Padrão)
     Sleep    1s
     Wait Until Page Contains    text=B1 (Padrão)
 
 E preencho informações de filtro buscar em cadastros
-    Input Text    //input[@placeholder='Buscar...']    teste
+    Input Text                  //input[@placeholder='Buscar...']    teste
     Sleep    1s
     Wait Until Page Contains    text=teste
 

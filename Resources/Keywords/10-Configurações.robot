@@ -276,10 +276,10 @@ Então sistema exclui pergunta do menu Configurações > Requisições > Pergunt
 
 # --10.01.13
 Quando clico no filtro "Cards" em perguntas
-    Sleep    2s
+    Sleep    4s
     Click Element    ${filtro_cards/Lista_Perguntas}
 E clico em "Lista" em perguntas
-    Sleep    1s
+    Sleep    2s
     Click Element    ${filtro_botaoLista_Perguntas}
 
 # --10.01.14
