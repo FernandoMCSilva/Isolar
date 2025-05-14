@@ -23,7 +23,7 @@ ${nome_pesquisa_Padrao}                         B1 (Padrão)
 ${nome_pesquisa_pessoas}                        Fernando
 ${nome_BuscaNaoEncontrada}                      1234
 ${botao_buscar_CadastrosPessoas}                //button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10')]
-${botao_Editar_Pessoas}                                 (//a[contains(.,'Editar')])[1]
+${botao_Editar_Pessoas}                         (//a[contains(.,'Editar')])[1]
 ${botao_Excluir_CadastrosPessoas}               //button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-destructive text-destructive-foreground hover:bg-destructive/90 h-10 px-4 py-2')]
 ${botao_continuar_Excluir}                      //button[contains(.,'Continuar')]
 ${botao_Cancelar}                               //button[contains(.,'Cancelar')]
@@ -37,7 +37,7 @@ ${botao_acoes_Pessoas}                          //button[contains(.,'Ações')]
 ${botao_acoes1LinksExternos}                    (//button[contains(.,'Ações')])[5]
 ${botao_acoes2LinksExternos}                    (//button[contains(.,'Ações')])[2]
 ${botao_ExportarExcelLinksExternos}             //button[contains(.,'Exportar para Excel')]
-${botao_buscarPerguntas}                        (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10'])[1]
+${botao_buscarPerguntas}                        //button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10']
 
 
 ${input_buscar_CadastrosPessoas}                //input[contains(@placeholder,'Buscar...')]
@@ -91,7 +91,7 @@ E clico no botão "Cancelar" em "Excluir"
 
 # -08.01.04
 E clico no botao buscar
-    Sleep    2s
+    Sleep    3s
     Click Element    ${botao_buscarPerguntas}
 
 E clico no botão "Continuar" em "Excluir"

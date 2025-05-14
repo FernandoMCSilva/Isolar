@@ -17,6 +17,7 @@ ${Menu_ConfigContratos}                 (//p[contains(.,'Contratos')])[2]
 ${filtro_buscarConfig}              (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10'])[1]
 ${filtro_DataRegistroRequisicoes}   (//button[@class='inline-flex items-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full justify-start text-left font-normal text-muted-foreground'])[1]
 ${filtro_cards/Lista_Perguntas}     //button[contains(.,'Cards')]
+${filtro_cards/lista_Config}        (//button[@role='combobox'])[2]
 ${filtro_botaoLista_Perguntas}      (//div[contains(.,'Lista')])[9]
 ${quantidade_perguntas}             2
 ${quatidade_padrao}                 7
@@ -277,7 +278,8 @@ Então sistema exclui pergunta do menu Configurações > Requisições > Pergunt
 # --10.01.13
 Quando clico no filtro "Cards" em perguntas
     Sleep    4s
-    Click Element    ${filtro_cards/Lista_Perguntas}
+    Click Element    ${filtro_cards/lista_Config}
+    
 E clico em "Lista" em perguntas
     Sleep    2s
     Click Element    ${filtro_botaoLista_Perguntas}
