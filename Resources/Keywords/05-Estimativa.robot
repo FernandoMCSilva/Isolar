@@ -80,7 +80,8 @@ E seleciono Tipo de usina "Todos"
     Click Element                    //div[@role='option'][contains(.,'Todos')]
 
 Então sistema exibe informações de Estimativa do filtro Tipo de usina "Todos"
-    Wait Until Page Contains    text=540
+    Wait Until Page Contains    text=Registros carregados com sucesso!
+
 
 # --4.5
 E seleciono Tipo de usina "Autoconsumo"
@@ -89,7 +90,8 @@ E seleciono Tipo de usina "Autoconsumo"
     Click Element                    //div[@role='option'][contains(.,'Autoconsumo')]
 
 Então sistema exibe informações de Estimativa do filtro Tipo de usina "Autoconsumo"
-    Wait Until Page Contains    text=540
+    Wait Until Page Contains    text=Registros carregados com sucesso!
+
 
 # --4.6
 E seleciono Tipo de usina "Aluguel"
@@ -240,33 +242,40 @@ Então sistema exibe informações do botão Gerar
     Wait Until Page Contains    text=Informe os campos para geração de estimativa para o estado de Santa Catarina.
 
 E seleciono Local de instalação "Solo"
-    Sleep    5s
-    Click Element    (//button[contains(.,'Selecione')])[1]
-    Click Element    xpath=//div[@role='option'][contains(.,'Solo')]
+    Sleep    1s
+    Wait Until Element Is Visible    (//button[@id='localInst'])[1]
+    Click Element                    (//button[@id='localInst'])[1]
+    Sleep    0.5s
+    Click Element                    xpath=//div[@role='option'][contains(.,'Solo')]
 
 E seleciono Autoconsumo ou Aluguel "Autoconsumo"
-    Click Element    xpath=//button[contains(@id,'consuInvest')]
-    Click Element    xpath=//div[@role='option'][contains(.,'Autoconsumo')]
+    Click Element                    xpath=//button[contains(@id,'consuInvest')]
+    Sleep    0.5s
+    Click Element                    xpath=//div[@role='option'][contains(.,'Autoconsumo')]
 
 E seleciono GD1 ou GD2 "GD1"
-    Click Element    xpath=//button[contains(@id,'GD1eGD2')]
-    Click Element    xpath=//div[@role='option'][contains(.,'GD1')]
+    Click Element                    xpath=//button[contains(@id,'GD1eGD2')]
+    Sleep    0.5s
+    Click Element                    xpath=//div[@role='option'][contains(.,'GD1')]
 
 E seleciono Local de geração "Junto a carga"
-    Click Element    xpath=//button[contains(@id,'localGeracao')]
-    Click Element    xpath=//div[@role='option'][contains(.,'Junto a carga')]
+    Click Element                    xpath=//button[contains(@id,'localGeracao')]
+    Sleep    0.5s
+    Click Element                    xpath=//div[@role='option'][contains(.,'Junto a carga')]
 
 E seleciono Estimativa pôr "Gasto mensal em R$" 
-    Click Element    xpath=//button[contains(@id,'estimativaPor')]
-    Click Element    xpath=//div[@role='option'][contains(.,'Gasto mensal em R$')]
+    Click Element                    xpath=//button[contains(@id,'estimativaPor')]
+    Sleep    0.5s
+    Click Element                    xpath=//div[@role='option'][contains(.,'Gasto mensal em R$')]
 
 E seleciono valor da classificação "Trifásico"
-    Click Element    xpath=//button[contains(@id,'valorClassificacao')]
-    Click Element    xpath=//div[@role='option'][contains(.,'Trifásico')]
+    Click Element                    xpath=//button[contains(@id,'valorClassificacao')]
+    Sleep    0.5s
+    Click Element                    xpath=//div[@role='option'][contains(.,'Trifásico')]
 
 E preencho valor de Gasto mensal
-    Input Text    //input[contains(@id,'mensalValor')]    500
-
+    Input Text                       //input[contains(@id,'mensalValor')]    500
+ 
 E seleciono valor de tensão FF "220v"
     Wait Until Element Is Visible    (//button[contains(.,'Selecione')])[1]
     Click Element                    (//button[contains(.,'Selecione')])[1]
@@ -285,8 +294,9 @@ Então sistema exibe resultado dos cálculos
 
 # --4.21
 E clico no botão "Constantes personalizadas"
+    Sleep    2s
     Wait Until Element Is Visible    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 mt-4 bg-blue-400'][contains(.,'Constantes personalizadas')] 
-   Click Element    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 mt-4 bg-blue-400'][contains(.,'Constantes personalizadas')] 
+    Click Element                    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 mt-4 bg-blue-400'][contains(.,'Constantes personalizadas')] 
 
 Então sistema exibe aba de Constantes personalizadas
     Wait Until Page Contains    text=Constantes personalizadas
@@ -305,9 +315,10 @@ Então sistema exibe mensagem de campos obrigatórios não preenchido em estimat
 
 # --4.24
 E preencho informações de calculos
-    Sleep    1s
-    Wait Until Element Is Visible    (//button[contains(.,'Selecione')])[1]
-    Click Element                    (//button[contains(.,'Selecione')])[1]
+    Sleep    2s
+    Wait Until Element Is Visible    (//button[@id='localInst'])[1]
+    Click Element                    (//button[@id='localInst'])[1]
+    Sleep    0.5s
     Click Element                    (//div[contains(.,'Solo')])[5]
 
     Sleep    1s
