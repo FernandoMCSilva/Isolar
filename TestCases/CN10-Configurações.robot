@@ -13,7 +13,6 @@ CT 10.01.01 - Validar menu Configurações > Requisições
     Dado que clico no menu "Configurações > Requisições"
     Então sistema exibe informações de menu Requisições
 # BUG
-
 # CT 10.01.02 - Validar botão Inserir Novo tipo 
 #     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Configurações > Requisições está funcional
 #     [Tags]    Configurações    Requisições    Funcional    SmokeTest        

@@ -50,9 +50,9 @@ E valido filtros de departamento em Obras
 
 Então sistema exibe requisições do departamento em Obras
     Sleep    1s
-    Wait Until Page Contains    text=2545
-# -3.2.1
+    Wait Until Page Contains    text=2025-05
 
+# -3.2.1
 E volto pra tela inicial
 #   E clico no menu inicio
     Sleep    1s
@@ -76,8 +76,13 @@ Então sistema exibe tela de Obras > Requisições
     Wait Until Page Contains    text=Gerencie informações cadastradas no sistema.
 
 # -3.2.2
+E preencho informações no campo Cliente em Obras
+    Wait Until Element Is Visible    ${Campo_Cliente}
+    Input Text                       ${Campo_Cliente}    B1 (Padrão)
+
+
 Então sistema exibe resultado do filtro em Obras
-    Wait Until Page Contains    text=Nenhuma requisição encontrada.
+    Wait Until Page Contains    text=B1 (Padrão)
 
 # -3.2.3
 E valido filtros dentro de Departamento em Obras > Requisições
@@ -125,27 +130,25 @@ Então sistema exibe resultado de nível de urgência
 
 # -3.2.7
 E preencho informações de Data de entrega em Obras > Requisições
-    Wait Until Element Is Visible    //button[@id='data_entrega']
-    Click Element                    //button[@id='data_entrega']
-    Wait Until Element Is Visible    (//div[@id='root'])[1]
-    FOR    ${i}    IN RANGE    20
-    ${status}=    Run Keyword And Return Status    Element Should Be Visible    (//div[@id='react-day-picker-26'])[1]
-    Exit For Loop If    ${status}
-    Click Element    (//div[@id='root'])[1]
+    Wait Until Element Is Visible    (//button[@id='data_entrega'])[1]
+    Click Element                    (//button[@id='data_entrega'])[1]
+    Wait Until Element Is Visible    (//button[@name='previous-month'])[1]
+    FOR    ${i}    IN RANGE    8
+    Click Element       (//button[@name='previous-month'])[1]
     Sleep    0.5s
     END
     Sleep    2s
-    Click Element                    (//button[@name='day'][normalize-space()='1'])[1]
-    Click Element                    //button[contains(.,'31')]
+    Click Element       (//button[@name='day'][normalize-space()='1'])[1]
+    Click Element       //button[contains(.,'31')]
     Sleep    1s
-    Click Element                    ${Botao_Buscar} 
+    Click Element       ${Botao_Buscar} 
 
 # -3.2.8
 E preencho informações de Data de criação em Obras > Requisições
     Wait Until Element Is Visible      //button[@id='data_criacao']
     Click Element                      //button[@id='data_criacao']
     Wait Until Element Is Visible    (//button[@type='button'])[16]
-    FOR     ${i}    IN RANGE    7
+    FOR     ${i}    IN RANGE    8
     Click Element    (//button[@type='button'])[16]
     Sleep    0.5s
     END

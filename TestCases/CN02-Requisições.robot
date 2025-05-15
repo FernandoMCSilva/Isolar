@@ -1,7 +1,7 @@
 *** Settings ***
 Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
-# Suite Setup        Setup Chrome Driver
+Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema
 Test Teardown      Fechar navegador
 Documentation      Modúlo que Gerencie requisições cadastradas no sistema.
@@ -61,21 +61,21 @@ CT 02.07 - Validar filtro Nível de urgência
     E valido todos os filtros de Nivel de urgencia em Requisições
     Então sistema exibe requisições do filtro Urgente
 
-# CT 02.08 - Validar filtro Data de entrega
-#     [Documentation]     Caso de teste valida o filtro Data de entrega em Requisições
-#     [Tags]    Requisições    Funcional        
-#     Dado que clico no menu "Requisições"
-#     Quando clico em "Filtros"
-#     E preencho informações de Data de entrega
-#     Então sistema exibe requisições do filtro Data de entrega
+CT 02.08 - Validar filtro Data de entrega
+    [Documentation]     Caso de teste valida o filtro Data de entrega em Requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho informações de Data de entrega
+    Então sistema exibe requisições do filtro Data de entrega
 
-# CT 02.09 - Validar filtro Data de criação
-#     [Documentation]     Caso de teste valida o filtro Data de criação em Requisições
-#     [Tags]    Requisições    Funcional        
-#     Dado que clico no menu "Requisições"
-#     Quando clico em "Filtros"
-#     E preencho informações de Data de criação
-#     Então sistema exibe requisições do filtro Data de Criação
+CT 02.09 - Validar filtro Data de criação
+    [Documentation]     Caso de teste valida o filtro Data de criação em Requisições
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho informações de Data de criação
+    Então sistema exibe requisições do filtro Data de Criação
     
 CT 02.10 - Validar filtro Responsável
     [Documentation]     Caso de teste valida o filtro Responsável em Requisições

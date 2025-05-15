@@ -68,8 +68,8 @@ CT 07.01.07 - Validar botão Gerar link de assinatura
     E clico no botão Gerar link de assinatura
     E clico em Assinatura Tradicional
     Então sistema exibe informações de botão Gerar link de assinatura
-# BUG
 
+# BUG
 # CT 07.01.08 - Validar botão Status da assinatura
 #     [Documentation]     Caso de teste valida se botão Status da assinatura está funcional
 #     [Tags]    Documentos    Documentos gerados    Funcional    SmokeTest
