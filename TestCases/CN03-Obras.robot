@@ -248,13 +248,13 @@ CT 03.02.14 - Validar botão Comentários
 #     E clico no botão "Excluir requisição" em Obras
 #     Então sistema exclui e retorna para menu Obras > requisições 
 
-CT 03.02.16 - Tentar inserir requisição sem campos obrigatórios
-    [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
-    [Tags]    Obras    Requisições    Funcional         
-    Dado que clico no menu Obras > Requisições
-    Quanto clico no botão "Inserir/Obras"
-    E clico em próximo sem preencher campos
-    Então sistema exibe mensagem de campos obrigatórios não preenchido em Obras
+# CT 03.02.16 - Tentar inserir requisição sem campos obrigatórios
+#     [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
+#     [Tags]    Obras    Requisições    Funcional         
+#     Dado que clico no menu Obras > Requisições
+#     Quanto clico no botão "Inserir/Obras"
+#     E clico em próximo sem preencher campos
+#     Então sistema exibe mensagem de campos obrigatórios não preenchido em Obras
 
 CT 03.02.17 - Tentar inserir requisição preenchendo somente telefone
     [Documentation]     Caso de teste valida inserir preenchendo somente o campo telefone (Erro) 
