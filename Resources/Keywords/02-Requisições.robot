@@ -488,7 +488,8 @@ E preencho informações de cadastro de requisição com cliente "temporario"
 
     IF    ${botao_novocliente}
         Log    Botão 'Novo Cliente' visível. Seguir com cadastro de cliente temporário.
-        Sleep    1s
+        Execute JavaScript    document.body.style.zoom="70%"
+        Sleep    3s
         Click Element    //button[contains(.,'Novo Cliente')]
         Input Text    //input[@id='telefone']    12345678910
         Input Text    //input[@id='cep']    28990154
