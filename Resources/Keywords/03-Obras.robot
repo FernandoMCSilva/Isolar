@@ -141,6 +141,8 @@ E preencho informações de Data de entrega em Obras > Requisições
     Click Element       (//button[@name='day'][normalize-space()='1'])[1]
     Click Element       //button[contains(.,'31')]
     Sleep    1s
+    Execute JavaScript    document.body.style.zoom="70%"
+    Sleep    1s
     Click Element       ${Botao_Buscar} 
 
 # -3.2.8

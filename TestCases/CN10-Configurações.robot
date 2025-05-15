@@ -11,7 +11,8 @@ CT 10.01.01 - Validar menu Configurações > Requisições
     [Documentation]     Caso de teste valida se Menu Configurações > Requisições está funcional
     [Tags]    Configurações    Requisições    Funcional        
     Dado que clico no menu "Configurações > Requisições"
-    Então sistema exibe informações de menu Requisições
+    Então sistema exibe informações de menu Requisições   
+    
 # BUG
 # CT 10.01.02 - Validar botão Inserir Novo tipo 
 #     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Configurações > Requisições está funcional
@@ -249,13 +250,13 @@ CT 10.02.01 - Validar menu Configurações > Minerando sol
     Dado que clico no menu "Configurações > Minerando sol"
     Então sistema exibe informações de menu Minerando sol
 
-# CT 10.02.02 - Validar edição na tela Geral 
-#    [Documentation]     Caso de teste valida se edição na tela "Geral" no menu Configurações > Minerando Sol está funcional
-#    [Tags]    Configurações    Minerando Sol    Funcional
-#    Dado que clico no menu "Configurações > Minerando sol"
-#    Quando preencho informações do menu "Geral" no menu Configurações > Minerando Sol
-#    E clico em Atualizar
-#    Então sistema exibe mensagem de atualização
+CT 10.02.02 - Validar edição na tela Geral 
+    [Documentation]     Caso de teste valida se edição na tela "Geral" no menu Configurações > Minerando Sol está funcional
+    [Tags]    Configurações    Minerando Sol    Funcional
+    Dado que clico no menu "Configurações > Minerando sol"
+    Quando preencho informações do menu "Geral" no menu Configurações > Minerando Sol
+    E clico em Atualizar
+    Então sistema exibe mensagem de atualização
 
 # CT 10.02.03 - Validar edição na tela Template 
 #     [Documentation]     Caso de teste valida se edição na tela "Template" no menu Configurações > Minerando Sol está funcional
