@@ -344,17 +344,17 @@ Quando clico no botão "Inserir/Técnico"
 E preencho informações de cadastro de requisição
 # 1
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    timeout=10s
-    Press Keys    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
+    Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
     Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]
-    Click Element    //button[contains(.,'Novo Cliente')]
-    Input Text       //input[@id='telefone']    12345678910
-    Input Text       //input[@id='cep']    28990154
-    Input Text       //input[@id='cpfCnpj']    12345678910
-    Input Text       //input[@id='atvEco']    Residencial
-    Click Element    ${Botao_Proximo_Requisicoes}
+    Click Element                    //button[contains(.,'Novo Cliente')]
+    Input Text                       //input[@id='telefone']    12345678910
+    Input Text                       //input[@id='cep']    28990154
+    Input Text                       //input[@id='cpfCnpj']    12345678910
+    Input Text                       //input[@id='atvEco']    Residencial
+    Click Element                    ${Botao_Proximo_Requisicoes}
 # 2
-    Click Element    (//button[contains(.,'Selecione')])[1]
-    Click Element    (//div[contains(.,'RHIVAYLTON')])[5]
+    Click Element                    (//button[contains(.,'Selecione')])[1]
+    Click Element                    (//div[contains(.,'RHIVAYLTON')])[5]
 
     Click Element                    (//button[contains(.,'Selecione')])[1]
     Wait Until Element Is Visible    (//div[contains(.,'teste')])[5]
@@ -364,47 +364,47 @@ E preencho informações de cadastro de requisição
     Wait Until Element Is Visible    (//div[contains(.,'RHIVAYLTON')])[15]
     Click Element                    (//div[contains(.,'RHIVAYLTON')])[15]
 
-    Click Element    //button[contains(.,'Selecione')]
-    Click Element    (//div[contains(.,'Não')])[5]
-    Click Element    ${Botao_Proximo_Requisicoes}
+    Click Element                    //button[contains(.,'Selecione')]
+    Click Element                    (//div[contains(.,'Não')])[5]
+    Click Element                    ${Botao_Proximo_Requisicoes}
 # 3
-    Input Text       //input[contains(@placeholder,'10')]    1
+    Input Text                       //input[contains(@placeholder,'10')]    1
 
-    Click Element    (//button[contains(.,'Selecione')])[1]
-    Click Element    (//div[contains(.,'Trifásico 220/127V')])[5]
+    Click Element                    (//button[contains(.,'Selecione')])[1]
+    Click Element                    (//div[contains(.,'Trifásico 220/127V')])[5]
 
-    Click Element    (//button[contains(.,'Selecione')])[1]
-    Click Element    //span[normalize-space(text())='B1']
+    Click Element                    (//button[contains(.,'Selecione')])[1]
+    Click Element                    //span[normalize-space(text())='B1']
 
-    Click Element    (//button[contains(.,'Selecione')])[1]
-    Click Element    (//div[contains(.,'Light')])[5]
+    Click Element                    (//button[contains(.,'Selecione')])[1]
+    Click Element                    (//div[contains(.,'Light')])[5]
 
-    Click Element    //button[contains(.,'Selecione')]
-    Click Element    (//div[contains(.,'Telhado')])[5]
+    Click Element                    //button[contains(.,'Selecione')]
+    Click Element                    (//div[contains(.,'Telhado')])[5]
 
-    Click Element    (//button[contains(.,'Selecione')])[1]
-    Click Element    (//div[contains(.,'Aluzinco')])[5]
+    Click Element                    (//button[contains(.,'Selecione')])[1]
+    Click Element                    (//div[contains(.,'Aluzinco')])[5]
 
-    Click Element    //button[contains(.,'Selecione')]
-    Click Element    (//div[contains(.,'Concreto')])[5]
+    Click Element                    //button[contains(.,'Selecione')]
+    Click Element                    (//div[contains(.,'Concreto')])[5]
 
-    Input Text        //input[@placeholder='Descreva']        teste
-    Input Text        //input[@id='uniConsumi']               teste
-    Input Text        (//input[contains(@type,'text')])[4]    teste
-    Input Text        (//input[@type='text'])[5]              teste
-    Input Text        (//input[@type='number'])[2]            teste
-    Input Text         //input[contains(@id,'uniConsumi')]   123456
-    Click Element      ${Botao_Proximo_Requisicoes}
+    Input Text                        //input[@placeholder='Descreva']        teste
+    Input Text                        //input[@id='uniConsumi']               teste
+    Input Text                        (//input[contains(@type,'text')])[4]    teste
+    Input Text                        (//input[@type='text'])[5]              teste
+    Input Text                        (//input[@type='number'])[2]            teste
+    Input Text                         //input[contains(@id,'uniConsumi')]   123456
+    Click Element                      ${Botao_Proximo_Requisicoes}
 # 4
-    Input Text        //input[@placeholder='DD/MM/YYYY']    11112026
+    Input Text                        //input[@placeholder='DD/MM/YYYY']    11112026
 
-    Click Element      (//button[contains(.,'Selecione')])[1]
-    Click Element      (//div[contains(.,'Nacional')])[5]
+    Click Element                     (//button[contains(.,'Selecione')])[1]
+    Click Element                     (//div[contains(.,'Nacional')])[5]
 
-    Click Element      //button[contains(.,'Selecione')]
-    Click Element      (//div[contains(.,'Financiamento Importado')])[5]
+    Click Element                     //button[contains(.,'Selecione')]
+    Click Element                     (//div[contains(.,'Financiamento Importado')])[5]
 
-    Click Element     //button[contains(.,'Salvar')]
+    Click Element                     //button[contains(.,'Salvar')]
 
 Então sistema exibe mensagem de cadastro realizado
     Wait Until Page Contains    text=Requisições
@@ -428,11 +428,12 @@ E clico no botão "Editar"
     Click Element                    ${Botao_Editar}
 
 E preencho informações de requisição editada
+    Wait Until Element Is Visible    (//button[@role='combobox'])[1]    timeout=10s
     Sleep    3s
-    Click Element    (//button[@role='combobox'])[1]
-    Click Element    (//div[contains(.,'Juarez Codeiro')])[5]
+    Click Element                    (//button[@role='combobox'])[1]
+    Click Element                    (//div[contains(.,'Juarez Codeiro')])[5]
     Sleep    1s
-    Click Element    //button[contains(.,'Salvar alterações')]
+    Click Element                    //button[contains(.,'Salvar alterações')]
 
 Então sistema conlcui edição de requisição
     Wait Until Page Contains    text=Editar requisição
@@ -442,45 +443,40 @@ Então sistema verifica se há cadastro temporario
 
     WHILE    ${temporario_encontrado}
         Log    Requisição temporária encontrada. Irá excluir...
-        # Clica no botão de editar
         Sleep    2s
         Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
         Wait Until Element Is Visible    ${Botao_Editar}
         Sleep    1s
         Click Element                    ${Botao_Editar}
 
-        # Aguarda carregamento da tela de edição
         Wait Until Page Contains         text=Editar requisição
         Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}    timeout=10s
 
-        # Clica no botão de excluir
         Execute JavaScript               window.scrollTo(0, 0)
         Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}
         Click Element                    ${Botao_Excluir_Requisicoes}
 
-        # Confirma a exclusão, se houver confirmação
         Wait Until Element Is Visible    //button[contains(.,'Continuar')]     timeout=10s
         Click Element                    //button[contains(.,'Continuar')] 
 
-        # Espera página recarregar e pesquisa novamente
         Sleep    2s
         Wait Until Element Is Visible    //button[contains(.,'Filtros')]
         Click Element                    //button[contains(.,'Filtros')]
         Sleep    3s
-        # Wait Until Element Is Visible    //input[@placeholder='Nome do Cliente']    timeout=10s
         Input Text                       //input[@id='cliente']    temporario
         Press Keys                       //input[@id='cliente']    ENTER
         Sleep    1s
 
-        # Atualiza status da verificação
-        ${encontrado}=    Run Keyword And Return Status    Element Should Be Visible    //td[contains(.,'temporario')]
+        # Atualiza a variável usada no WHILE
+        ${temporario_encontrado}=    Run Keyword And Return Status    Element Should Be Visible    //td[contains(.,'temporario')]
     END
+
     Sleep    1s
     Wait Until Element Is Visible    ${MENU_INICIO}
     Click Element                    ${MENU_INICIO}
     Wait Until Element Is Visible    ${MENU_REQUISICOES}
     Click Element                    ${MENU_REQUISICOES}
-    
+
 E preencho informações de cadastro de requisição com cliente "temporario"
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    timeout=10s
     Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    temporario
@@ -526,6 +522,7 @@ E preencho filtro com cliente "temporario"
 E preencho filtro com cliente "temporario" para verificação
     Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
     Input Text                       //input[@placeholder='Nome do cliente ...']    temporario
+    Sleep    1s
     Click Element                    ${Botao_Buscar}
     Sleep    2s
 

@@ -154,7 +154,12 @@ E clico no botão Notificações
 
 
 Então sistema exibe tela de Notificações
-    Wait Until Page Contains    text=Notificações
+    ${tem_notificacoes}=    Run Keyword And Return Status    Page Should Contain    Notificações
+    ${sem_notificacoes}=    Run Keyword And Return Status    Page Should Contain    Não há nenhuma notificação no momento
+
+    Run Keyword If    '${tem_notificacoes}' == 'True'    Log    Notificações encontradas.
+...    ELSE IF        '${sem_notificacoes}' == 'True'    Log    Nenhuma notificação cadastrada.
+...    ELSE    Fail    Nenhum dos textos esperados foi encontrado!
 
 # --1.8
 
