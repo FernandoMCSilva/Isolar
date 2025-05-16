@@ -500,7 +500,7 @@ E preencho informações de cadastro de requisição com cliente "temporario"
 
     ELSE
         Log      Cliente já cadastrado. Seguir com uso do cliente existente.
-        Sleep    1.5s
+        Sleep    2s
         Press Keys    NONE    ENTER
 
         FOR    ${i}    IN RANGE    10
