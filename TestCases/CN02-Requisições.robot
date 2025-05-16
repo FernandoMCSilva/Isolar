@@ -1,7 +1,7 @@
 *** Settings ***
 Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
-Suite Setup        Setup Chrome Driver
+# Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema
 Test Teardown      Fechar navegador
 Documentation      Modúlo que Gerencie requisições cadastradas no sistema.
@@ -180,7 +180,7 @@ CT 02.16 - Validar botão Visualizar
     [Tags]    Requisições    Funcional    SmokeTest 
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
-    E preencho filtro Cliente
+    E preencho filtro Cliente 
     E clico no botão "Visualizar"
     Então sistema exibe informações de Visualizar em requisições
 

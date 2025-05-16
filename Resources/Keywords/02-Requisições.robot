@@ -571,7 +571,7 @@ Então sistema verifica status de requisição alterado
     Wait Until Page Contains         text=Concluído
 
 Então sistema verifica status de requisição renovada alterado
-    Sleep    5s
+    Sleep    7s
     Click Element                    ${Link_Filtros}
     Sleep                            1s
     Input Text                       //input[@placeholder='Nome do cliente ...']    temporario
