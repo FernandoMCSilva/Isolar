@@ -189,7 +189,7 @@ CT 03.02.12 - Validar botão Visualizar
     [Tags]    Obras    Requisições    Funcional 
     Dado que clico no menu Obras > Requisições
     Quando clico em "Filtros"
-    E preencho filtro Cliente
+    E preencho filtro Cliente em Obras
     E clico no botão "Visualizar"
     Então sistema exibe informações de Visualizar em requisições
 
@@ -226,7 +226,7 @@ CT 03.02.14 - Validar botão Comentários
     [Tags]    Obras    Requisições    Funcional   
     Dado que clico no menu Obras > Requisições
     Quando clico em "Filtros"
-    E preencho filtro Cliente
+    E preencho filtro Cliente em Obras
     E clico no botão "Comentários"
     E preencho informações de comentário de requisição em Obras
     Então sistema exibe mensagem de confirmação

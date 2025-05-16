@@ -78,11 +78,11 @@ Então sistema exibe tela de Obras > Requisições
 # -3.2.2
 E preencho informações no campo Cliente em Obras
     Wait Until Element Is Visible    ${Campo_Cliente}
-    Input Text                       ${Campo_Cliente}    B1 (Padrão)
+    Input Text                       ${Campo_Cliente}    B3 (Padrão)
 
 
 Então sistema exibe resultado do filtro em Obras
-    Wait Until Page Contains    text=B1 (Padrão)
+    Wait Until Page Contains    text=B3 (Padrão)
 
 # -3.2.3
 E valido filtros dentro de Departamento em Obras > Requisições
@@ -224,6 +224,18 @@ E preencho informações de editar requisição em Obras
 
 Então sistema conlcui edição de requisição em Obras
     Wait Until Element Is Visible    //button[contains(.,'Telhado')]
+
+# -3.2.12
+E preencho filtro Cliente em Obras
+    Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
+    Input Text                       //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_PadraoObras}
+    Click Element                    ${Botao_Buscar}
+    Sleep    2s
+    Wait Until Page Contains         text=B3 (Padrão)
+
+
+
+
 
 # -3.2.13
 E seleciono opção "Concluído" em editar status em Obras
