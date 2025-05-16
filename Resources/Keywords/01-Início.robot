@@ -44,7 +44,7 @@ Quando clico em "Produção"
     Click Element                    ${Botao_Producao}
 
 Então sistema exibe requisições com status "Produção"
-    Wait Until Element Is Visible    xpath=//td[contains(normalize-space(),'Produção')]       timeout=10s
+    Wait Until Element Is Visible      xpath=//td[contains(normalize-space(),'Produção')]       timeout=10s
     ${statuses}=    Get Webelements    xpath=//td[contains(normalize-space(),'Produção')]                                
     ${count}=    Get Length    ${statuses}
     Log    Número de elementos encontrados: ${count}

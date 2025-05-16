@@ -453,6 +453,7 @@ Então sistema verifica se há cadastro temporario
         Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}    timeout=10s
 
         Execute JavaScript               window.scrollTo(0, 0)
+        Sleep    1s
         Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}
         Click Element                    ${Botao_Excluir_Requisicoes}
 
