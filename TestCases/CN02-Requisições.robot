@@ -1,7 +1,7 @@
 *** Settings ***
 Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
-Suite Setup        Setup Chrome Driver
+# Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema
 Test Teardown      Fechar navegador
 Documentation      Modúlo que Gerencie requisições cadastradas no sistema.
@@ -112,6 +112,18 @@ CT 02.13 - Validar filtro Renovadas
 CT 02.14 - Validar botão Inserir "Técnico"
     [Documentation]     Caso de teste valida botão Inserir "Técnico" em Requisições
     [Tags]    Requisições    Funcional     SmokeTest   
+#   Verifico se há Requisição B3 (teste)
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro com cliente "B3 (teste)" para verificação
+    Então sistema verifica se há requisição B3 (teste)
+
+#   Verifico se há cadastro B3 (teste)
+    Dado que clico no menu "Cadastros > Clientes"
+    E clico no botao buscar
+    E preencho informações de pesquisa para verificação
+    Então sistema verifica se há cadastro B3 (teste)
+
 #   Inserir cadastro
     Dado que clico no menu "Requisições"
     Quando clico no botão "Inserir/Técnico"
@@ -187,6 +199,12 @@ CT 02.16 - Validar botão Visualizar
 CT 02.17 - Validar botão Mudar Status Requisição
     [Documentation]     Caso de teste valida botão Mudar Status Requisição
     [Tags]    Requisições    Funcional    SmokeTest
+#   Verifica se requisição padrão está "Fila" 
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro Cliente
+    Então sistema verifica se Requisição padrão está em "Fila"
+
 #   Mudar status para Concluido
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"

@@ -25,6 +25,8 @@ ${Botao_Proximo_Requisicoes}            //button[contains(.,'Próximo')]
 ${Botao_Excluir_Requisicoes}            //button[contains(.,'Excluir requisição')]
 ${Botao_MudarStatusRequisicao}          (//button[@data-state='closed'])[20]
 
+${elemento_fila}                        (//div[@class='inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 rounded-md text-center'])[1]
+${elemento_concluido}                   (//div[@class='inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-primary-foreground rounded-md bg-green-400 hover:bg-green-300 text-center'])[1]
 
 ${Filtro_Urgente}                       (//button[contains(@type,'button')])[10]
 
@@ -345,6 +347,7 @@ E preencho informações de cadastro de requisição
 # 1
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    timeout=10s
     Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
+    Sleep    1s
     Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]
     Click Element                    //button[contains(.,'Novo Cliente')]
     Input Text                       //input[@id='telefone']    12345678910
@@ -412,6 +415,92 @@ Então sistema exibe mensagem de cadastro realizado
 Aguardo carregamento da página 
     Sleep    3s
 
+E preencho filtro com cliente "B3 (teste)" para verificação
+    Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
+    Input Text                       //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_GruposConsumidores}
+    Sleep    1s
+    Click Element                    ${Botao_Buscar}
+    Sleep    2s
+
+Então sistema verifica se há requisição B3 (teste)
+    ${temporario_encontrado}=    Run Keyword And Return Status    Element Should Be Visible    //td[contains(.,'B3 (teste)')]
+
+    WHILE    ${temporario_encontrado}
+        Log    Requisição temporária encontrada. Irá excluir...
+        Sleep    2s
+        Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
+        Wait Until Element Is Visible    ${Botao_Editar}
+        Sleep    1s
+        Click Element                    ${Botao_Editar}
+
+        Wait Until Page Contains         text=Editar requisição
+        Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}    timeout=10s
+
+        Execute JavaScript               window.scrollTo(0, 0)
+        Sleep    1s
+        Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}
+        Click Element                    ${Botao_Excluir_Requisicoes}
+
+        Wait Until Element Is Visible    //button[contains(.,'Continuar')]     timeout=10s
+        Click Element                    //button[contains(.,'Continuar')] 
+
+        Sleep    2s
+        Wait Until Element Is Visible    //button[contains(.,'Filtros')]
+        Click Element                    //button[contains(.,'Filtros')]
+        Sleep    3s
+        Input Text                       //input[@id='cliente']    temporario
+        Press Keys                       //input[@id='cliente']    ENTER
+        Sleep    1s
+
+        # Atualiza a variável usada no WHILE
+        ${temporario_encontrado}=    Run Keyword And Return Status    Element Should Be Visible    //td[contains(.,'temporario')]
+    END
+
+    Sleep    1s
+    Wait Until Element Is Visible    ${MENU_INICIO}
+    Click Element                    ${MENU_INICIO}
+    Wait Until Element Is Visible    ${MENU_REQUISICOES}
+    Click Element                    ${MENU_REQUISICOES}
+
+E preencho informações de pesquisa para verificação
+    Input Text    //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
+    Sleep    1s
+
+Então sistema verifica se há cadastro B3 (teste)
+    ${temporario_encontrado}=    Run Keyword And Return Status    Element Should Be Visible    (//td[normalize-space()='B3 (teste)'])[1]
+
+    WHILE    ${temporario_encontrado}
+        Log    Requisição temporária encontrada. Irá excluir...
+        Sleep    2s
+        Wait Until Element Is Visible    ${botao_acoes_Clientes}
+        Sleep    2s
+        Click Element                    ${botao_acoes_Clientes}
+        Sleep    0.5s
+        Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
+        Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
+        Sleep    1s
+        Wait Until Element Is Visible    ${botao_continuar_Excluir}
+        Click Element                    ${botao_continuar_Excluir}
+        Sleep    2s
+        Wait Until Page Contains    text=Gerenciar informações cadastradas no sistema
+
+        Sleep    3s
+        Click Element    ${botao_buscarPerguntas}
+        Input Text    //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
+        Sleep    1s
+
+        # Atualiza a variável usada no WHILE
+        ${temporario_encontrado}=    Run Keyword And Return Status    Element Should Be Visible    (//td[normalize-space()='B3 (teste)'])[1]
+    END
+
+    Sleep    1s
+    Wait Until Element Is Visible    ${MENU_INICIO}
+    Click Element                    ${MENU_INICIO}
+    Wait Until Element Is Visible    ${MENU_REQUISICOES}
+    Click Element                    ${MENU_REQUISICOES}
+
+
+
 # --2.15
 
 E preencho filtro Cliente
@@ -420,6 +509,7 @@ E preencho filtro Cliente
     Click Element                    ${Botao_Buscar}
     Sleep    2s
     Wait Until Page Contains         text=B1 (Padrão)
+    
 E clico no botão "Editar"
     Sleep    2s
     Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
@@ -552,6 +642,30 @@ Então sistema exibe informações de Visualizar em requisições
 
 
 # --2.17
+Então sistema verifica se Requisição padrão está em "Fila"
+    Sleep    1s
+    ${esta_em_fila}=    Run Keyword And Return Status    Element Should Be Visible    ${elemento_fila}
+
+    Run Keyword If    ${esta_em_fila}    
+    ...    Log    Requisição está em Fila. Teste segue normalmente.
+
+    Run Keyword Unless    ${esta_em_fila}    
+    ...    Verifica e edita se estiver concluído
+
+Verifica e edita se estiver concluído
+    ${esta_concluido}=    Run Keyword And Return Status    Element Should Be Visible    ${elemento_concluido}
+
+    Run Keyword If    ${esta_concluido}
+    ...    Log    Requisição está Concluída. Irá editar para Fila.
+    ...    ELSE    
+    ...    Fail    Nenhuma requisição com status "Fila" ou "Concluído" foi encontrada.
+
+    # Editar requisição
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Wait Until Element Is Visible    ${Botao_MudarStatusRequisicao}    timeout=10s
+    Click Element                    ${Botao_MudarStatusRequisicao}
+    Click Element                    //button[contains(.,'Fila')]
+    Sleep    2s
 
 E seleciono opção "Concluído" no botão Mudar Status Requisição em requisicoes
     Wait Until Element Is Visible    ${Botao_MudarStatusRequisicao}    timeout=10s
