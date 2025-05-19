@@ -284,39 +284,39 @@ CT 02.21 - Validar botão Comentários
     E preencho informações de comentário
     Então sistema exibe mensagem de confirmação
 
-# CT 02.22 - Excluir requisição tipo "Técnico"
-#     [Documentation]     Caso de teste valida funcionalidade excluir 
-#     [Tags]    Requisições    Funcional    SmokeTest
-# #   Inserir cadastro temporario
-#     Dado que clico no menu "Requisições"
-#     Quando clico no botão "Inserir/Técnico"
-#     E preencho informações de cadastro de requisição com cliente "temporario"
-#     Então sistema exibe mensagem de cadastro realizado
+CT 02.22 - Excluir requisição tipo "Técnico"
+    [Documentation]     Caso de teste valida funcionalidade excluir 
+    [Tags]    Requisições    Funcional    SmokeTest
+#   Inserir cadastro temporario
+    Dado que clico no menu "Requisições"
+    Quando clico no botão "Inserir/Técnico"
+    E preencho informações de cadastro de requisição com cliente "temporario"
+    Então sistema exibe mensagem de cadastro realizado
 
-# #   Excluir requisição temporario
-#     Aguardo carregamento da página
-#     Dado que clico no menu "Requisições"
-#     Quando clico em "Filtros"
-#     E preencho filtro com cliente "temporario"
-#     E clico no botão "Editar"
-#     E clico no botão "Excluir requisição" temporario
-#     Então sistema exclui e retorna para menu requisições 
+#   Excluir requisição temporario
+    Aguardo carregamento da página
+    Dado que clico no menu "Requisições"
+    Quando clico em "Filtros"
+    E preencho filtro com cliente "temporario"
+    E clico no botão "Editar"
+    E clico no botão "Excluir requisição" temporario
+    Então sistema exclui e retorna para menu requisições 
 
-# #   Excluir cadastro temporario em Cadastros > Clientes
-#     Dado que clico no menu "Cadastros > Clientes"
-#     E clico no botao buscar
-#     E preencho informações de pesquisa com cliente "temporario"
-#     Quando clico em "Excluir"
-#     E clico no botão "Continuar" em "Excluir"
-#     Então sistema exibe mensagem de cadastro excluido
+#   Excluir cadastro temporario em Cadastros > Clientes
+    Dado que clico no menu "Cadastros > Clientes"
+    E clico no botao buscar
+    E preencho informações de pesquisa com cliente "temporario"
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema exibe mensagem de cadastro excluido
 
-# CT 02.23 - Tentar inserir requisição sem campos obrigatórios
-#     [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
-#     [Tags]    Requisições    Funcional        
-#     Dado que clico no menu "Requisições"
-#     Quando clico no botão "Inserir/Técnico"
-#     E clico em próximo sem preencher campos
-#     Então sistema exibe mensagem de campos obrigatórios não preenchido
+CT 02.23 - Tentar inserir requisição sem campos obrigatórios
+    [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico no botão "Inserir/Técnico"
+    E clico em próximo sem preencher campos
+    Então sistema exibe mensagem de campos obrigatórios não preenchido
 
 CT 02.24 - Tentar inserir requisição preenchendo somente telefone
     [Documentation]     Caso de teste valida inserir preenchendo somente o campo telefone (Erro) 
