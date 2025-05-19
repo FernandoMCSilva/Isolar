@@ -825,6 +825,7 @@ E clico no botão "Excluir requisição"
 E clico no botão "Excluir requisição" temporario
     Sleep    2s
     Wait Until Page Contains         text=Editar requisição
+    Sleep    2s
     Wait Until Page Contains         text=temporario
     Execute JavaScript               window.scrollTo(0, 0)
     Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}
