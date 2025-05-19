@@ -178,7 +178,7 @@ CT 08.02.05 - Validar botão Cancelar em "Excluir"
     [Tags]    Cadastros    Clientes    Funcional        
     Dado que clico no menu "Cadastros > Clientes"
     E clico no botao buscar
-    E preencho informações de pesquisa
+    E preencho informações de pesquisa em Cadastros > Pessoas
     Quando clico em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Clientes"

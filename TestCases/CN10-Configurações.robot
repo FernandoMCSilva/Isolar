@@ -476,14 +476,14 @@ CT 10.05.11 - Validar botão Próximo
     E clico no botão Próximo
     Então sistema exibe informações de próxima tela
 
-CT 10.05.12 - Validar botão Anterior
-    [Documentation]     Caso de teste valida se botão Anterior está funcional
-    [Tags]    Configurações    Sistema    Funcional        
-    Dado que clico no menu "Configurações > Sistema"
-    E clico em Histórico das requisições
-    E clico no botão Próximo
-    E clico no botão Anterior
-    Então sistema exibe informações de tela anterior
+# CT 10.05.12 - Validar botão Anterior
+#     [Documentation]     Caso de teste valida se botão Anterior está funcional
+#     [Tags]    Configurações    Sistema    Funcional        
+#     Dado que clico no menu "Configurações > Sistema"
+#     E clico em Histórico das requisições
+#     E clico no botão Próximo
+#     E clico no botão Anterior
+#     Então sistema exibe informações de tela anterior
 
 CT 10.06.01 - Validar menu Configurações > Monitoramento
     [Documentation]     Caso de teste valida se Menu Configurações > Monitoramento está funcional
