@@ -642,6 +642,12 @@ Então sistema exibe informações de Visualizar em requisições
 
 
 # --2.17
+E volto pra tela inicio
+    #   E clico no menu inicio
+    Sleep    1s
+    Wait Until Element Is Visible    ${MENU_INICIO}
+    Click Element                    ${MENU_INICIO}
+
 Então sistema verifica se Requisição padrão está em "Fila"
     Sleep    1s
     ${esta_em_fila}=    Run Keyword And Return Status    Element Should Be Visible    ${elemento_fila}

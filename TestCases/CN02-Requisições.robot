@@ -206,6 +206,7 @@ CT 02.17 - Validar botão Mudar Status Requisição
     Então sistema verifica se Requisição padrão está em "Fila"
 
 #   Mudar status para Concluido
+    E volto pra tela inicio
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro Cliente
