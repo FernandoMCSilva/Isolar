@@ -662,13 +662,15 @@ Verifica e edita se estiver concluído
 
     # Editar requisição
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
-    Wait Until Element Is Visible    ${Botao_MudarStatusRequisicao}    timeout=10s
+    Sleep    2s
+    Wait Until Element Is Visible    ${Botao_MudarStatusRequisicao}    
     Click Element                    ${Botao_MudarStatusRequisicao}
     Click Element                    //button[contains(.,'Fila')]
     Sleep    2s
 
 E seleciono opção "Concluído" no botão Mudar Status Requisição em requisicoes
-    Wait Until Element Is Visible    ${Botao_MudarStatusRequisicao}    timeout=10s
+    Sleep    2s
+    Wait Until Element Is Visible    ${Botao_MudarStatusRequisicao}    
     Click Element                    ${Botao_MudarStatusRequisicao}
     Click Element                    //button[contains(.,'Concluído')]
 
