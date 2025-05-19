@@ -315,10 +315,10 @@ Então sistema exibe mensagem de campos obrigatórios não preenchido em estimat
 
 # --4.24
 E preencho informações de calculos
-    Sleep    2s
+    Sleep    3s
     Wait Until Element Is Visible    (//button[@id='localInst'])[1]
     Click Element                    (//button[@id='localInst'])[1]
-    Sleep    0.5s
+    Sleep    1s
     Click Element                    (//div[contains(.,'Solo')])[5]
 
     Sleep    1s
