@@ -325,7 +325,6 @@ E preencho informações de calculos
     Click Element                    (//button[contains(.,'Selecione')])[1]
     Click Element                    (//div[contains(.,'Gasto mensal em R$')])[5]
 
-
     Sleep    1s
     Click Element                    (//button[contains(.,'Selecione')])[1]
     Click Element                    (//div[contains(.,'Autoconsumo')])[15]

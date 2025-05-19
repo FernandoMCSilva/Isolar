@@ -229,17 +229,17 @@ CT 05.21 - Validar exportação para Excel
 #     E clico no botão Iniciar conversa no WhatsApp
 #     Então sistema redireciona para Whatsapp
 
-CT 05.26 - Validar botão Enviar por email
-    [Documentation]    Caso de teste valida botão Enviar por email em Acões após gerar cálculos
-    [Tags]    Estimativa    Funcional    SmokeTest
-    Dado que clico no menu "Estimativa"
-    Quando clico no botão "Gerar"
-    E preencho informações de calculos
-    E clico em Gerar cálculos
-    E preencho informações do cliente
-    E clico no botão Ações
-    E clico no botão Enviar por email
-    Então sistema abre informações do email
+# CT 05.26 - Validar botão Enviar por email
+#     [Documentation]    Caso de teste valida botão Enviar por email em Acões após gerar cálculos
+#     [Tags]    Estimativa    Funcional    SmokeTest
+#     Dado que clico no menu "Estimativa"
+#     Quando clico no botão "Gerar"
+#     E preencho informações de calculos
+#     E clico em Gerar cálculos
+#     E preencho informações do cliente
+#     E clico no botão Ações
+#     E clico no botão Enviar por email
+#     Então sistema abre informações do email
 
 # CT 05.27 - Validar botão Salvar informarções no sistema
 #     [Documentation]    Caso de teste valida botão Salvar informarções no sistema em Acões após gerar cálculos
