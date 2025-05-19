@@ -669,6 +669,7 @@ Verifica e edita se estiver concluído
     Sleep    2s
 
 E seleciono opção "Concluído" no botão Mudar Status Requisição em requisicoes
+    Execute Javascript    document.body.style.zoom="70%"
     Sleep    2s
     Wait Until Element Is Visible    ${Botao_MudarStatusRequisicao}    
     Click Element                    ${Botao_MudarStatusRequisicao}
