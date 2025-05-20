@@ -846,6 +846,7 @@ E clico em próximo sem preencher campos
     Click Element                    ${Botao_Proximo_Requisicoes}
 
 Então sistema exibe mensagem de campos obrigatórios não preenchido
+    Sleep    2s
     Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, CEP
 
 # --2.27
