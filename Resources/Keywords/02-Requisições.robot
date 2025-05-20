@@ -502,7 +502,6 @@ Então sistema verifica se há cadastro B3 (teste)
 
 
 # --2.15
-
 E preencho filtro Cliente
     Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
     Input Text                       //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_Padrao}
@@ -569,7 +568,8 @@ Então sistema verifica se há cadastro temporario
     Click Element                    ${MENU_REQUISICOES}
 
 E preencho informações de cadastro de requisição com cliente "temporario"
-    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    timeout=10s
+    Sleep    1s
+    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    
     Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    temporario
     ${botao_novocliente}=    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Novo Cliente')]
 
@@ -725,6 +725,33 @@ Então sistema exibe histórico em requisições
     Wait Until Page Contains    text=Histórico da requisição
     
 # --2.19
+Então sistema verifica se existe cadastro temporario
+    ${elemento_visivel}=    Run Keyword And Return Status    Element Should Be Visible    xpath=//td[contains(text(), 'Temporario')]
+
+    Run Keyword If    ${elemento_visivel}    Executa Exclusao De Cliente Temporario
+    ...               ELSE                    Voltar Para Menu Inicio
+
+Executa Exclusao De Cliente Temporario
+    Sleep    2s
+    Click Element                    ${botao_acoes_Clientes}
+    Sleep    0.5s
+    Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
+    Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
+    Sleep    1s
+    Wait Until Element Is Visible    ${botao_continuar_Excluir}
+    Click Element                    ${botao_continuar_Excluir}
+
+Voltar Para Menu Inicio
+#   E clico no menu inicio
+    Sleep    1s
+    Wait Until Element Is Visible    ${MENU_INICIO}
+    Click Element                    ${MENU_INICIO}
+
+E preencho informações de pesquisa para verificação de temporario
+    Input Text    //input[@placeholder='Buscar...']    temporario
+    Sleep    1s
+
+
 E clico no botão "Renovar"
     Sleep    0.5s
     Wait Until Element Is Visible    ${Botao_Acoes_Requisicoes}

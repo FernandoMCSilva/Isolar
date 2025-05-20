@@ -230,12 +230,19 @@ Documentation      Modúlo que Gerencie requisições cadastradas no sistema.
 CT 02.19 - Validar botão Renovar
     [Documentation]     Caso de teste valida botão Renovar em Requisições
     [Tags]    Requisições    Funcional    SmokeTest
-    #   Verifico se há cadastro temporario
+#   Verifico se há requisiçao temporario
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro com cliente "temporario" para verificação
     Então sistema verifica se há cadastro temporario
     
+#   Verifico se há cadastro temporario em Clientes
+    Aguardo carregamento da página
+    Dado que clico no menu "Cadastros > Clientes"
+    E clico no botao buscar
+    E preencho informações de pesquisa para verificação de temporario
+    Então sistema verifica se existe cadastro temporario
+
 #   Inserir cadastro temporário
     Dado que clico no menu "Requisições"
     Quando clico no botão "Inserir/Técnico"
