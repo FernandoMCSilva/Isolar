@@ -262,7 +262,7 @@ CT 02.19 - Validar botão Renovar
 
 #   Excluir requisição Renovada
     Aguardo carregamento da página 
-    E clico no botão "Excluir requisição" temporario
+    E clico no botão "Excluir requisição" temporario em Obras
     Então sistema exclui e retorna para menu requisições 
 
 #   Excluir requisição temporario

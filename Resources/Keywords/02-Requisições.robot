@@ -779,6 +779,16 @@ E preencho filtro Cliente renovado
     Sleep    2s
     Wait Until Page Contains         text=temporario - Renovação
 
+E clico no botão "Excluir requisição" temporario em Obras
+    Sleep    2s
+    Wait Until Page Contains         text=Editar requisição
+    Execute JavaScript               window.scrollTo(0, 0)
+    Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}
+    Click Element                    ${Botao_Excluir_Requisicoes}
+    Wait Until Element Is Visible    //button[contains(.,'Continuar')]
+    Click Element                    //button[contains(.,'Continuar')]
+
+
 # --2.20
 E clico no botão "Comentários"
     # Sleep    2s
