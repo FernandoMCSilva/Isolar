@@ -193,33 +193,33 @@ CT 03.02.12 - Validar botão Visualizar
     E clico no botão "Visualizar"
     Então sistema exibe informações de Visualizar em requisições
 
-# # CT 03.02.13 - Validar botão Mudar Status Requisição
-# #     [Documentation]     Caso de teste valida botão Mudar Status Requisição em Obras
-# #     [Tags]    Obras    Requisições    Funcional 
-# # #   Mudar Status da Requisição para concluído
-# #     Dado que clico no menu Obras > Requisições
-# #     Quando clico em "Filtros"
-# #     E preencho filtro Cliente
-# #     E clico no botão "Editar"
-# #     E seleciono opção "Concluído" em editar status em Obras
-# #     Então sistema verifica status de Requisição em Obras 
+CT 03.02.13 - Validar botão Mudar Status Requisição
+    [Documentation]     Caso de teste valida botão Mudar Status Requisição em Obras
+    [Tags]    Obras    Requisições    Funcional 
+#   Mudar Status da Requisição para concluído
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro Cliente em Obras
+    E clico no botão "Editar"
+    E seleciono opção "Concluído" em editar status em Obras
+    Então sistema verifica status de Requisição em Obras 
 
-# # #   Verificar se status da requisição foi atualizado para Concluído
-# #     Dado que clico no menu Obras > Requisições
-# #     Quando clico em "Filtros"
-# #     E preencho filtro Cliente
-# #     Então sitema verifica se status é concluído
+#   Verificar se status da requisição foi atualizado para Concluído
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro Cliente em Obras
+    Então sitema verifica se status é concluído
 
-# # #   Retornar Status da Requisição para Fila
-# #     Aguardo carregamento da página
-# #     E clico no botão "Editar"
-# #     E seleciono opção "Fila" em editar status em Obras
+#   Retornar Status da Requisição para Fila
+    Aguardo carregamento da página
+    E clico no botão "Editar"
+    E seleciono opção "Fila" em editar status em Obras
     
-# # #   Verificar se status da requisição foi retornado para Fila
-# #     Dado que clico no menu Obras > Requisições
-# #     Quando clico em "Filtros"
-# #     E preencho filtro Cliente
-# #     Então sitema verifica se status é Fila
+# #   Verificar se status da requisição foi retornado para Fila
+#     Dado que clico no menu Obras > Requisições
+#     Quando clico em "Filtros"
+#     E preencho filtro Cliente em Obras
+#     Então sitema verifica se status é Fila
 
 CT 03.02.14 - Validar botão Comentários 
     [Documentation]     Caso de teste valida botão Comentários em Obras > Requisições
