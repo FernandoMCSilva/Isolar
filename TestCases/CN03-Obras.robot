@@ -215,11 +215,11 @@ CT 03.02.13 - Validar botão Mudar Status Requisição
     E clico no botão "Editar"
     E seleciono opção "Fila" em editar status em Obras
     
-# #   Verificar se status da requisição foi retornado para Fila
-#     Dado que clico no menu Obras > Requisições
-#     Quando clico em "Filtros"
-#     E preencho filtro Cliente em Obras
-#     Então sitema verifica se status é Fila
+#   Verificar se status da requisição foi retornado para Fila
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro Cliente em Obras
+    Então sitema verifica se status é Fila
 
 CT 03.02.14 - Validar botão Comentários 
     [Documentation]     Caso de teste valida botão Comentários em Obras > Requisições
@@ -231,30 +231,51 @@ CT 03.02.14 - Validar botão Comentários
     E preencho informações de comentário de requisição em Obras
     Então sistema exibe mensagem de confirmação
 
-# CT 03.02.15 - Excluir requisição tipo "Técnico"
-#     [Documentation]     Caso de teste valida funcionalidade excluir em Obras
-#     [Tags]    Obras    Requisições    Funcional   
-# #   Inserir cadastro temporário
-#     Dado que clico no menu Obras > Requisições
-#     Quanto clico no botão "Inserir/Obras"
-#     E preencho informações de cadastro de requisição com cliente "temporario"
-#     Então sistema exibe mensagem de cadastro realizado
+CT 03.02.15 - Excluir requisição tipo "Técnico"
+    [Documentation]     Caso de teste valida funcionalidade excluir em Obras
+    [Tags]    Obras    Requisições    Funcional   
+#   Verifico se há requisiçao temporario
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro com cliente "temporario" para verificação
+    Então sistema verifica se há cadastro temporario
+    
+#   Verifico se há cadastro temporario em Clientes
+    Aguardo carregamento da página
+    Dado que clico no menu Obras > Requisições
+    E clico no botao buscar
+    E preencho informações de pesquisa para verificação de temporario
+    Então sistema verifica se existe cadastro temporario
 
-# #   Excluir requisição temporario
-#     Dado que clico no menu Obras > Requisições
-#     Quando clico em "Filtros"
-#     E preencho filtro com cliente "temporario"
-#     E clico no botão "Editar"
-#     E clico no botão "Excluir requisição" em Obras
-#     Então sistema exclui e retorna para menu Obras > requisições 
+#   Inserir cadastro temporário
+    Dado que clico no menu Obras > Requisições
+    Quanto clico no botão "Inserir/Obras"
+    E preencho informações de cadastro de requisição com cliente "temporario"
+    Então sistema exibe mensagem de cadastro realizado
 
-# CT 03.02.16 - Tentar inserir requisição sem campos obrigatórios
-#     [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
-#     [Tags]    Obras    Requisições    Funcional         
-#     Dado que clico no menu Obras > Requisições
-#     Quanto clico no botão "Inserir/Obras"
-#     E clico em próximo sem preencher campos
-#     Então sistema exibe mensagem de campos obrigatórios não preenchido em Obras
+#   Excluir requisição temporario
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro com cliente "temporario"
+    E clico no botão "Editar"
+    E clico no botão "Excluir requisição" em Obras
+    Então sistema exclui e retorna para menu Obras > requisições 
+
+#   Excluir cadastro temporario em Cadastros > Clientes
+    Dado que clico no menu "Cadastros > Clientes"
+    E clico no botao buscar
+    E preencho informações de pesquisa com cliente "temporario"
+    Quando clico em "Excluir"
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema exibe mensagem de cadastro excluido
+
+CT 03.02.16 - Tentar inserir requisição sem campos obrigatórios
+    [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
+    [Tags]    Obras    Requisições    Funcional         
+    Dado que clico no menu Obras > Requisições
+    Quanto clico no botão "Inserir/Obras"
+    E clico em próximo sem preencher campos
+    Então sistema exibe mensagem de campos obrigatórios não preenchido em Obras
 
 CT 03.02.17 - Tentar inserir requisição preenchendo somente telefone
     [Documentation]     Caso de teste valida inserir preenchendo somente o campo telefone (Erro) 
