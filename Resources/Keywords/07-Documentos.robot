@@ -211,7 +211,7 @@ E clico em Assinatura Tradicional
     Click Element                    ${AssinaturaTradicional}
 
 Então sistema exibe informações de botão Gerar link de assinatura
-    Wait Until Page Contains    text=ZapSign - 6
+    Wait Until Page Contains    text=ZapSign - 2
 
 # -07.02.01
 Clico no menu "Assinaturas"
@@ -247,6 +247,7 @@ E preencho informações de filtro Assinante
 
 Então sistema exibe informações de filtro Assinante
     Wait Until Page Contains    text=Teste homologação
+    
 # -07.02.05
 E preencho informações de filtro Observador
     Wait Until Element Is Visible    ${filtro_Observador}

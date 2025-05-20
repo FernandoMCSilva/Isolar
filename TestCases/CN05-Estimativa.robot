@@ -155,30 +155,30 @@ CT 05.15 - Validar impressão de estimativa
 #     E preencho informações de desconto acima do limite
 #     Então sistema exibe mensagem de erro de desconto máximo permitido
     
-# CT 05.19 - Validar botão e funcionalidade "Gerar"
-#     [Documentation]    Caso de teste valida botao gerar em estimativa
-#     [Tags]    Estimativa    Funcional    SmokeTest
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Gerar"
-#     E seleciono Local de instalação "Solo"
-#     E seleciono Autoconsumo ou Aluguel "Autoconsumo"
-#     E seleciono GD1 ou GD2 "GD1"
-#     E seleciono Local de geração "Junto a carga"
-#     E seleciono Estimativa pôr "Gasto mensal em R$" 
-#     E seleciono valor da classificação "Trifásico"
-#     E preencho valor de Gasto mensal
-#     E seleciono valor de tensão FF "220v"
-#     E seleciono valor de tensão FN "220v"
-#     E clico em Gerar cálculos
-#     Então sistema exibe resultado dos cálculos
+CT 05.19 - Validar botão e funcionalidade "Gerar"
+    [Documentation]    Caso de teste valida botao gerar em estimativa
+    [Tags]    Estimativa    Funcional    SmokeTest
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Gerar"
+    E seleciono Local de instalação "Solo"
+    E seleciono Autoconsumo ou Aluguel "Autoconsumo"
+    E seleciono GD1 ou GD2 "GD1"
+    E seleciono Local de geração "Junto a carga"
+    E seleciono Estimativa pôr "Gasto mensal em R$" 
+    E seleciono valor da classificação "Trifásico"
+    E preencho valor de Gasto mensal
+    E seleciono valor de tensão FF "220v"
+    E seleciono valor de tensão FN "220v"
+    E clico em Gerar cálculos
+    Então sistema exibe resultado dos cálculos
 
-# CT 05.20 - Validar botão Constantes personalizadas
-#     [Documentation]    Caso de teste valida botão Constantes personalizadas em Gerar nova estimativa
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Gerar"
-#     E clico no botão "Constantes personalizadas"
-#     Então sistema exibe aba de Constantes personalizadas
+CT 05.20 - Validar botão Constantes personalizadas
+    [Documentation]    Caso de teste valida botão Constantes personalizadas em Gerar nova estimativa
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Gerar"
+    E clico no botão "Constantes personalizadas"
+    Então sistema exibe aba de Constantes personalizadas
     
 CT 05.21 - Validar exportação para Excel
     [Documentation]    Caso de teste valida botão Exportar para Excel no menu Estimativas
@@ -187,35 +187,35 @@ CT 05.21 - Validar exportação para Excel
     Quando clico no botão Exportar para Excel
     Então sistema exporta para excel
 
-# CT 05.22 - Gerar estimativa sem preencher campos obrigatórios
-#     [Documentation]    Caso de teste valida gerar sem preencher nenhum dos campos obrigatórios
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Gerar"
-#     E clico em Gerar cálculos
-#     Então sistema exibe mensagem de campos obrigatórios não preenchido em estimativa
+CT 05.22 - Gerar estimativa sem preencher campos obrigatórios
+    [Documentation]    Caso de teste valida gerar sem preencher nenhum dos campos obrigatórios
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Gerar"
+    E clico em Gerar cálculos
+    Então sistema exibe mensagem de campos obrigatórios não preenchido em estimativa
 
-# CT 05.23 - Validar botão ações após gerar cálculos
-#     [Documentation]    Caso de teste valida botão ações após gerar cálculos
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Gerar"
-#     E preencho informações de calculos
-#     E clico em Gerar cálculos
-#     E clico no botão Ações
-#     Então sistema exibe tela de botão ações 
+CT 05.23 - Validar botão ações após gerar cálculos
+    [Documentation]    Caso de teste valida botão ações após gerar cálculos
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Gerar"
+    E preencho informações de calculos
+    E clico em Gerar cálculos
+    E clico no botão Ações
+    Então sistema exibe tela de botão ações 
 
-# CT 05.24 - Validar impressão de estimativa 
-#     [Documentation]    Caso de teste valida botão Baixar/Imprimir em Acões após gerar cálculos
-#     [Tags]    Estimativa    Funcional    SmokeTest
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Gerar"
-#     E preencho informações de calculos
-#     E clico em Gerar cálculos
-#     E preencho informações do cliente
-#     E clico no botão Ações
-#     E clico no botão Baixar/Imprimir
-#     Então sistema Baixa/Imprime Estimativa
+CT 05.24 - Validar impressão de estimativa 
+    [Documentation]    Caso de teste valida botão Baixar/Imprimir em Acões após gerar cálculos
+    [Tags]    Estimativa    Funcional    SmokeTest
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Gerar"
+    E preencho informações de calculos
+    E clico em Gerar cálculos
+    E preencho informações do cliente
+    E clico no botão Ações
+    E clico no botão Baixar/Imprimir
+    Então sistema Baixa/Imprime Estimativa
 
 # CT 05.25 - Validar botão Iniciar conversa no Whatsapp
 #     [Documentation]    Caso de teste valida botão Iniciar conversa no Whatsapp em Acões após gerar cálculos
@@ -241,28 +241,28 @@ CT 05.21 - Validar exportação para Excel
 #     E clico no botão Enviar por email
 #     Então sistema abre informações do email
 
-# CT 05.27 - Validar botão Salvar informarções no sistema
-#     [Documentation]    Caso de teste valida botão Salvar informarções no sistema em Acões após gerar cálculos
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Gerar"
-#     E preencho informações de calculos
-#     E clico em Gerar cálculos
-#     E preencho informações do cliente
-#     E clico no botão Ações
-#     E clico no botão Salvar informarções no sistema
-#     Então sistema salva informações no sistema
+CT 05.27 - Validar botão Salvar informarções no sistema
+    [Documentation]    Caso de teste valida botão Salvar informarções no sistema em Acões após gerar cálculos
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Gerar"
+    E preencho informações de calculos
+    E clico em Gerar cálculos
+    E preencho informações do cliente
+    E clico no botão Ações
+    E clico no botão Salvar informarções no sistema
+    Então sistema salva informações no sistema
 
-# CT 05.28 - Validar botão Baixar/Imprimir (Inatívo)
-#     [Documentation]    Caso de teste valida botão Baixar/Imprimir (Inatívo) após gerar cálculos
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Gerar"
-#     E preencho informações de calculos
-#     E clico em Gerar cálculos
-#     E clico no botão Ações
-#     E clico no botão Baixar/Imprimir desabilitado
-#     Então sistema sai da tela do botão Ações
+CT 05.28 - Validar botão Baixar/Imprimir (Inatívo)
+    [Documentation]    Caso de teste valida botão Baixar/Imprimir (Inatívo) após gerar cálculos
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Gerar"
+    E preencho informações de calculos
+    E clico em Gerar cálculos
+    E clico no botão Ações
+    E clico no botão Baixar/Imprimir desabilitado
+    Então sistema sai da tela do botão Ações
 
 # CT 05.30 - Validar funcionalidade Constantes personalizadas
 #     [Documentation]    Caso de teste valida funcionalidade Constantes personalizadas
