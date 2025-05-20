@@ -871,9 +871,8 @@ Então sistema exibe mensagem de cadastro excluido
 E clico em próximo sem preencher campos
     Wait Until Element Is Visible    ${Botao_Proximo_Requisicoes}
     Click Element                    ${Botao_Proximo_Requisicoes}
-
-Então sistema exibe mensagem de campos obrigatórios não preenchido
     Sleep    2s
+Então sistema exibe mensagem de campos obrigatórios não preenchido
     Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, CEP
 
 # --2.27
