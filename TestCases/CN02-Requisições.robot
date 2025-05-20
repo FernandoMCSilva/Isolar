@@ -1,7 +1,7 @@
 *** Settings ***
 Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
-Suite Setup        Setup Chrome Driver
+# Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema
 Test Teardown      Fechar navegador
 Documentation      Modúlo que Gerencie requisições cadastradas no sistema.
@@ -310,13 +310,13 @@ CT 02.22 - Excluir requisição tipo "Técnico"
     E clico no botão "Continuar" em "Excluir"
     Então sistema exibe mensagem de cadastro excluido
 
-# CT 02.23 - Tentar inserir requisição sem campos obrigatórios
-#     [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
-#     [Tags]    Requisições    Funcional        
-#     Dado que clico no menu "Requisições"
-#     Quando clico no botão "Inserir/Técnico"
-#     E clico em próximo sem preencher campos
-#     Então sistema exibe mensagem de campos obrigatórios não preenchido
+CT 02.23 - Tentar inserir requisição sem campos obrigatórios
+    [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
+    [Tags]    Requisições    Funcional        
+    Dado que clico no menu "Requisições"
+    Quando clico no botão "Inserir/Técnico"
+    E clico em próximo sem preencher campos
+    Então sistema exibe mensagem de campos obrigatórios não preenchido
 
 CT 02.24 - Tentar inserir requisição preenchendo somente telefone
     [Documentation]     Caso de teste valida inserir preenchendo somente o campo telefone (Erro) 
