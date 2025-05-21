@@ -28,6 +28,7 @@ ${botao_salvarinformacoes_Estimativa}    //button[contains(.,'Salvar informaçõ
 ${botao_baixar/imprimir_desabilitado}    (//div[contains(.,'Baixar/Imprimir Estimativa')])[4]
 ${botao_GerarCalculos_Estimativa}        //button[contains(.,'Gerar cálculos')]
 ${botao_ConstantesPersonalizadas}        (//button[normalize-space()='Constantes personalizadas'])[1]
+${botao_GerarEstimativa}                 (//button[normalize-space()='Gerar'])[1]
 
 ${input_nomeCliente_Estimativa}      //input[@id='nomeCliente']
 ${input_numeroCliente_Estimativa}    //input[@id='numeroCliente']
@@ -236,8 +237,8 @@ Então sistema exibe mensagem de erro de desconto máximo permitido
 # --4.20
 
 Quando clico no botão "Gerar"
-    Wait Until Element Is Visible    //button[contains(.,'Gerar')]
-    Click Element                    //button[contains(.,'Gerar')]
+    Wait Until Element Is Visible    ${botao_GerarEstimativa}
+    Click Element                    ${botao_GerarEstimativa}
 
 Então sistema exibe informações do botão Gerar
     Wait Until Page Contains    text=Informe os campos para geração de estimativa para o estado de Santa Catarina.
