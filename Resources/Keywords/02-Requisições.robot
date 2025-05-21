@@ -879,12 +879,14 @@ Então sistema exibe mensagem de cadastro excluido
 
 # --2.26
 E clico em próximo sem preencher campos
+    Sleep    1s
     Wait Until Element Is Visible    ${Botao_Proximo_Requisicoes}
     Click Element                    ${Botao_Proximo_Requisicoes}
-    Sleep    3s
+    Sleep    2s
 
 Então sistema exibe mensagem de campos obrigatórios não preenchido
-    Wait Until Element Is Visible    (//div[contains(text(),'Preencha os campos obrigatórios: Nome completo, Te')])[2]
+    Wait Until Element Is Visible    xpath=//div[contains(text(), 'Preencha os campos obrigatórios: Nome completo, Telefone, CEP')]
+
     
 
 # --2.27
