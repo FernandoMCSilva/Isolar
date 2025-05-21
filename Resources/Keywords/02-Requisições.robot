@@ -882,9 +882,10 @@ E clico em próximo sem preencher campos
     Wait Until Element Is Visible    ${Botao_Proximo_Requisicoes}
     Click Element                    ${Botao_Proximo_Requisicoes}
     Sleep    3s
-    
+
 Então sistema exibe mensagem de campos obrigatórios não preenchido
-    Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, CEP
+    Wait Until Element Is Visible    (//div[contains(text(),'Preencha os campos obrigatórios: Nome completo, Te')])[2]
+    
 
 # --2.27
 Preencho somente campo telefone
