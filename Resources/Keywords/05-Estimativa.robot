@@ -27,6 +27,7 @@ ${botao_enviaremail_Estimativa}          //button[contains(.,'(0)Enviar por E-ma
 ${botao_salvarinformacoes_Estimativa}    //button[contains(.,'Salvar informações no sistema')]
 ${botao_baixar/imprimir_desabilitado}    (//div[contains(.,'Baixar/Imprimir Estimativa')])[4]
 ${botao_GerarCalculos_Estimativa}        //button[contains(.,'Gerar cálculos')]
+${botao_ConstantesPersonalizadas}        (//button[normalize-space()='Constantes personalizadas'])[1]
 
 ${input_nomeCliente_Estimativa}      //input[@id='nomeCliente']
 ${input_numeroCliente_Estimativa}    //input[@id='numeroCliente']
@@ -295,8 +296,8 @@ Então sistema exibe resultado dos cálculos
 # --4.21
 E clico no botão "Constantes personalizadas"
     Sleep    2s
-    Wait Until Element Is Visible    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 mt-4 bg-blue-400'][contains(.,'Constantes personalizadas')] 
-    Click Element                    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 mt-4 bg-blue-400'][contains(.,'Constantes personalizadas')] 
+    Wait Until Element Is Visible    ${botao_ConstantesPersonalizadas} 
+    Click Element                    ${botao_ConstantesPersonalizadas} 
 
 Então sistema exibe aba de Constantes personalizadas
     Wait Until Page Contains    text=Constantes personalizadas
@@ -403,6 +404,7 @@ Então sistema salva informações no sistema
 
 # --4.29
 E clico no botão Baixar/Imprimir desabilitado
+    Sleep    2s
     Wait Until Element Is Visible    ${botao_baixar/imprimir_desabilitado}
     Click Element                    ${botao_baixar/imprimir_desabilitado}
 
