@@ -295,7 +295,7 @@ Então sistema exibe resultado dos cálculos
 
 # --4.21
 E clico no botão "Constantes personalizadas"
-    Sleep    2s
+    Sleep    4s
     Wait Until Element Is Visible    ${botao_ConstantesPersonalizadas} 
     Click Element                    ${botao_ConstantesPersonalizadas} 
 
@@ -316,7 +316,7 @@ Então sistema exibe mensagem de campos obrigatórios não preenchido em estimat
 
 # --4.24
 E preencho informações de calculos
-    Sleep    3s
+    Sleep    5s
     Wait Until Element Is Visible    (//button[@id='localInst'])[1]
     Click Element                    (//button[@id='localInst'])[1]
     Sleep    1s
