@@ -109,7 +109,7 @@ E preencho com informações data de registro
     Wait Until Element Is Visible    (//button[@type='button'])[11]
     Click Element                    (//button[@type='button'])[11]
     Wait Until Element Is Visible    (//button[@type='button'])[13]
-    FOR    ${i}    IN RANGE    7
+    FOR    ${i}    IN RANGE    8
     Click Element    (//button[@type='button'])[13]
     Sleep    0.5s
     END
@@ -237,6 +237,7 @@ Então sistema exibe mensagem de erro de desconto máximo permitido
 # --4.20
 
 Quando clico no botão "Gerar"
+    Sleep    3s
     Wait Until Element Is Visible    ${botao_GerarEstimativa}
     Click Element                    ${botao_GerarEstimativa}
 
@@ -244,7 +245,7 @@ Então sistema exibe informações do botão Gerar
     Wait Until Page Contains    text=Informe os campos para geração de estimativa para o estado de Santa Catarina.
 
 E seleciono Local de instalação "Solo"
-    Sleep    1s
+    Sleep    7s
     Wait Until Element Is Visible    (//button[@id='localInst'])[1]
     Click Element                    (//button[@id='localInst'])[1]
     Sleep    0.5s
@@ -296,7 +297,7 @@ Então sistema exibe resultado dos cálculos
 
 # --4.21
 E clico no botão "Constantes personalizadas"
-    Sleep    4s
+    Sleep    8s
     Wait Until Element Is Visible    ${botao_ConstantesPersonalizadas} 
     Click Element                    ${botao_ConstantesPersonalizadas} 
 
@@ -317,7 +318,7 @@ Então sistema exibe mensagem de campos obrigatórios não preenchido em estimat
 
 # --4.24
 E preencho informações de calculos
-    Sleep    5s
+    Sleep    7s
     Wait Until Element Is Visible    (//button[@id='localInst'])[1]
     Click Element                    (//button[@id='localInst'])[1]
     Sleep    1s

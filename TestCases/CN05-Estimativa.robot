@@ -1,7 +1,7 @@
 *** Settings ***
 Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
-Suite Setup        Setup Chrome Driver
+# Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema
 Test Teardown      Fechar navegador
 Documentation      Modúlo que gerencie as Estimativas cadastradas no sistema.
@@ -58,21 +58,21 @@ CT 05.06 - Validar filtro Tipo de usina "Aluguel"
     E clico em "Buscar"
     Então sistema exibe informações de Estimativa do filtro Tipo de usina "Aluguel"
 
-# CT 05.07 - Validar filtro Data de registro
-#     [Documentation]     Caso de teste valida o filtro Data de registro
-#     [Tags]    Estimativa    Funcional        
-#     Dado que clico no menu "Estimativa"
-#     Quando clico em "Filtros"
-#     E preencho com informações data de registro
-#     Então sistema exibe Estimativa do filtro Data de registro
+CT 05.07 - Validar filtro Data de registro
+    [Documentation]     Caso de teste valida o filtro Data de registro
+    [Tags]    Estimativa    Funcional        
+    Dado que clico no menu "Estimativa"
+    Quando clico em "Filtros"
+    E preencho com informações data de registro
+    Então sistema exibe Estimativa do filtro Data de registro
 
-# CT 05.08 - Validar filtro Quantidade de itens por pág
-#     [Documentation]     Caso de teste valida o filtro Quantidade de itens por pág
-#     [Tags]    Estimativa    Funcional        
-#     Dado que clico no menu "Estimativa"
-#     Quando clico em "Quantidade de itens por pág"
-#     E preencho informações no campo quantidade
-#     Então sistema exibe informações de acordo com quantidade preenchida
+CT 05.08 - Validar filtro Quantidade de itens por pág
+    [Documentation]     Caso de teste valida o filtro Quantidade de itens por pág
+    [Tags]    Estimativa    Funcional        
+    Dado que clico no menu "Estimativa"
+    Quando clico em "Quantidade de itens por pág"
+    E preencho informações no campo quantidade
+    Então sistema exibe informações de acordo com quantidade preenchida
 
  CT 05.09 - Validar botão Próximo
     [Documentation]     Caso de teste valida o botão próximo

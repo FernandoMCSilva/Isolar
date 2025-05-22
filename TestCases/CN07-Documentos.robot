@@ -273,27 +273,11 @@ CT 07.02.05 - Validar filtro Observador
 #     E clico em Editar campos
 #     Então sistema exibe tela de Editar campos
 
-# CT 07.03.01.01 - Validar menu Criar documento > Compras
-#     [Documentation]     Caso de teste valida se menu Criar documento > Compras está funcional
-#     [Tags]    Documentos    Criar documento    Compras    Funcional
-#     Dado que clico no menu "Documentos"
-#     Clico no menu "Criar documento"
-#     E clico em "Compras"
-#     Então sistema exibe informações de menu Criar documento
-
-# CT 07.03.02.01 - Validar menu Criar documento > Comercial
-#     [Documentation]     Caso de teste valida se menu Criar documento > Comercial está funcional
-#     [Tags]    Documentos    Criar documento    Comercial    Funcional    SmokeTest
-#     Dado que clico no menu "Documentos"
-#     Clico no menu "Criar documento"
-#     E clico em "Comercial"
-#     Então sistema entra na tela de Criar Documento > Comercial
-
-# CT 07.03.03.01 - Validar menu Criar documento > Jurídico
-#     [Documentation]     Caso de teste valida se menu Criar documento > Jurídico está funcional
-#     [Tags]    Documentos    Criar documento    Jurídico    Funcional
-#     Dado que clico no menu "Documentos"
-#     Clico no menu "Criar documento"
-#     E clico em "Jurídico"
-#     E preencho informação de criar documento Jurídico
-#     Então sistema exibe mensagem de documento criado
+CT 07.03.01 - Validar menu Criar documento > Jurídico
+    [Documentation]     Caso de teste valida se menu Criar documento > Jurídico está funcional
+    [Tags]    Documentos    Criar documento    Jurídico    Funcional
+    Dado que clico no menu "Documentos"
+    Clico no menu "Criar documento"
+    E clico em "Jurídico"
+    E preencho informação de criar documento Jurídico
+    Então sistema exibe mensagem de documento criado

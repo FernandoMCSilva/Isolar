@@ -401,7 +401,7 @@ Então sistema Gera documento
 Então sistema exibe erro de campos obrigatórios não preenchidos
     Wait Until Page Contains    text=Por favor, preencha todos os campos obrigatórios.
 
-# -07.03.03.01
+# -07.03.01
 E clico em "Jurídico"
     Wait Until Element Is Visible    ${menu_CriarDocumento_Jurídico}
     Click Element                    ${menu_CriarDocumento_Jurídico}
@@ -410,13 +410,133 @@ E preencho informação de criar documento Jurídico
     Sleep    1s
     Click Element    (//button[contains(.,'P')])[2]
     Sleep    1.5s
-    Click Element    (//input[@type='text'])[1]
-    FOR    ${i}    IN RANGE    34
-        Press Keys    None    B3 (teste)
-        Press Keys    None    TAB
-        Sleep    0.3s
-    END
 
+    Wait Until Element Is Visible    (//input[@id='razao_social'])[1]
+    Input Text                       (//input[@id='razao_social'])[1]    teste
+    
+    Wait Until Element Is Visible    (//input[@id='numero_uc'])[1]
+    Input Text                       (//input[@id='numero_uc'])[1]    123
+
+    Wait Until Element Is Visible    (//input[@id='dia'])[1]
+    Input Text                       (//input[@id='dia'])[1]    07
+
+    Wait Until Element Is Visible    (//input[@id='mes'])[1]
+    Input Text                       (//input[@id='mes'])[1]    06
+    
+    Wait Until Element Is Visible    (//input[@id='ano'])[1]
+    Input Text                       (//input[@id='ano'])[1]    2025
+    
+    Wait Until Element Is Visible    (//input[@id='cnpj'])[1]
+    Input Text                       (//input[@id='cnpj'])[1]    1231231231321
+    Sleep    1s
+
+    Wait Until Element Is Visible    (//input[@id='rua_pj'])[1]
+    Input Text                       (//input[@id='rua_pj'])[1]    teste
+    Sleep    1s
+
+    Wait Until Element Is Visible    (//input[@id='numero_endereco_pj'])[1]
+    Input Text                       (//input[@id='numero_endereco_pj'])[1]    1231231231321
+    Sleep    1s
+
+    Wait Until Element Is Visible    (//input[@id='bairro_pj'])[1]
+    Input Text                       (//input[@id='bairro_pj'])[1]    teste
+    Sleep    1s
+
+    Wait Until Element Is Visible    (//input[@id='municipio_pj'])[1]
+    Input Text                       (//input[@id='municipio_pj'])[1]    teste
+    Sleep    1s
+
+    Wait Until Element Is Visible    (//input[@id='estado_pj'])[1]
+    Input Text                       (//input[@id='estado_pj'])[1]    RJ
+    
+    Wait Until Element Is Visible    (//input[@id='cep_pj'])[1]
+    Input Text                       (//input[@id='cep_pj'])[1]    28990204
+
+    Wait Until Element Is Visible    (//input[@id='nome'])[1]
+    Input Text                       (//input[@id='nome'])[1]    teste
+    
+    Wait Until Element Is Visible    (//input[@id='nacionalidade'])[1]
+    Input Text                       (//input[@id='nacionalidade'])[1]    Brasieiro
+
+    Wait Until Element Is Visible    (//input[@id='profissao'])[1]
+    Input Text                       (//input[@id='profissao'])[1]    teste
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='estado_civil'])[1]
+    Input Text                       (//input[@id='estado_civil'])[1]    Solteiro
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='cpf'])[1]
+    Input Text                       (//input[@id='cpf'])[1]    19895982771
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='rg'])[1]
+    Input Text                       (//input[@id='rg'])[1]    222222222
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='rua'])[1]
+    Input Text                       (//input[@id='rua'])[1]    teste
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='numero_endereco'])[1]
+    Input Text                       (//input[@id='numero_endereco'])[1]    123
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='bairro'])[1]
+    Input Text                       (//input[@id='bairro'])[1]    teste
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='municipio'])[1]
+    Input Text                       (//input[@id='municipio'])[1]    teste
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='estado'])[1]
+    Input Text                       (//input[@id='estado'])[1]    teste
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='cep'])[1]
+    Input Text                       (//input[@id='cep'])[1]    28990204
+
+    Wait Until Element Is Visible    (//input[@id='email_associado'])[1]
+    Input Text                       (//input[@id='email_associado'])[1]    teste123@gmail.com
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='municip'])[1]
+    Input Text                       (//input[@id='municip'])[1]    teste
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='mes_extenso'])[1]
+    Input Text                       (//input[@id='mes_extenso'])[1]    teste
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='primeiro_nome'])[1]
+    Input Text                       (//input[@id='primeiro_nome'])[1]    teste
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='data'])[1]
+    Input Text                       (//input[@id='data'])[1]    07/06/2025
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='grupo_consumidor'])[1]
+    Input Text                       (//input[@id='grupo_consumidor'])[1]    teste
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='distribuidora_local'])[1]
+    Input Text                       (//input[@id='distribuidora_local'])[1]    teste
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='consumo'])[1]
+    Input Text                       (//input[@id='consumo'])[1]    teste
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='login'])[1]
+    Input Text                       (//input[@id='login'])[1]    teste123
+
+    Sleep    0.5s
+    Wait Until Element Is Visible    (//input[@id='senha'])[1]
+    Input Text                       (//input[@id='senha'])[1]    Gi@979076609
+    
+#   Clicar no botão Gerar
+    Sleep    0.5s
     Click Element    ${botao_GerarDocumento}
 
 
