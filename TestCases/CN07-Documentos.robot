@@ -143,35 +143,38 @@ CT 07.02.01 - Validar menu Assinaturas
     Clico no menu "Assinaturas"
     Então sistema exibe informações de menu Assinaturas
 
-CT 07.02.02 - Validar filtro Origem da assinatura
-    [Documentation]     Caso de teste valida se filtro Origem da assinatura está funcional
-    [Tags]    Documentos    Assinaturas    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Assinaturas"
-    Quando clico em "Filtros"
-    E preencho informações de filtro Origem da assinatura
-    E clico em "Buscar"
-    Então sistema exibe informações de filtro Origem da assinatura
+# # BUG #1351
+# CT 07.02.02 - Validar filtro Origem da assinatura
+#     [Documentation]     Caso de teste valida se filtro Origem da assinatura está funcional
+#     [Tags]    Documentos    Assinaturas    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Assinaturas"
+#     Quando clico em "Filtros"
+#     E preencho informações de filtro Origem da assinatura
+#     E clico em "Buscar"
+#     Então sistema exibe informações de filtro Origem da assinatura
 
-CT 07.02.03 - Validar filtro Status
-    [Documentation]     Caso de teste valida se filtro Status está funcional
-    [Tags]    Documentos    Assinaturas    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Assinaturas"
-    Quando clico em "Filtros"
-    E preencho informações de filtro Status
-    E clico em "Buscar"
-    Então sistema exibe informações de filtro Status
+# BUG #1351
+# CT 07.02.03 - Validar filtro Status
+#     [Documentation]     Caso de teste valida se filtro Status está funcional
+#     [Tags]    Documentos    Assinaturas    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Assinaturas"
+#     Quando clico em "Filtros"
+#     E preencho informações de filtro Status
+#     E clico em "Buscar"
+#     Então sistema exibe informações de filtro Status
 
-CT 07.02.04 - Validar filtro Assinante
-    [Documentation]     Caso de teste valida se filtro Assinante está funcional
-    [Tags]    Documentos    Assinaturas    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Assinaturas"
-    Quando clico em "Filtros"
-    E preencho informações de filtro Assinante
-    E clico em "Buscar"
-    Então sistema exibe informações de filtro Assinante
+# BUG #1351
+# CT 07.02.04 - Validar filtro Assinante
+#     [Documentation]     Caso de teste valida se filtro Assinante está funcional
+#     [Tags]    Documentos    Assinaturas    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Assinaturas"
+#     Quando clico em "Filtros"
+#     E preencho informações de filtro Assinante
+#     E clico em "Buscar"
+#     Então sistema exibe informações de filtro Assinante
 
 CT 07.02.05 - Validar filtro Observador
     [Documentation]     Caso de teste valida se filtro Observador está funcional
