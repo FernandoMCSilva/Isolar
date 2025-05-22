@@ -107,13 +107,14 @@ CT 07.01.11 - Validar botão Anterior
     E clico em "Anterior"
     Então sistema exibe informações anteriores 
 
-CT 07.01.12 - Validar botão Ver Documento
-    [Documentation]     Caso de teste valida se botão Ver Documento (INATÍVO) está funcional
-    [Tags]    Documentos    Documentos gerados    Funcional
-    Dado que clico no menu "Documentos"
-    Clico no menu "Documentos geradados"
-    E clico no botão Ver Documento (INATÍVO)
-    Então sistema exibe informações de botão Ver Documento (INATÍVO)
+#  SEM DOCUMENTO COM BOTÃO INATIVO NO SISTEMA
+# CT 07.01.12 - Validar botão Ver Documento
+#     [Documentation]     Caso de teste valida se botão Ver Documento (INATÍVO) está funcional
+#     [Tags]    Documentos    Documentos gerados    Funcional
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Documentos geradados"
+#     E clico no botão Ver Documento (INATÍVO)
+#     Então sistema exibe informações de botão Ver Documento (INATÍVO)
 
 # CT 07.01.13 - Validar botão Status da assinatura
 #     [Documentation]     Caso de teste valida se botão Status da assinatura (INATÍVO) está funcional
@@ -133,7 +134,7 @@ CT 07.01.12 - Validar botão Ver Documento
 #     Quando clico em "Filtros"
 #     E preencho filtro criador em Documentos
 #     E clico no botão Gerar link de assinatura (INATÍVO)
-#     Então sistema exibe informações de botão Gerar link de assinatura (INATÍVO)
+    # Então sistema exibe informações de botão Gerar link de assinatura (INATÍVO)
 
 CT 07.02.01 - Validar menu Assinaturas
     [Documentation]     Caso de teste valida se menu Assinaturas está funcional

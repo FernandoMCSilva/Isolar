@@ -107,18 +107,18 @@ Então sistema exibe informações de filtro Departamento
 E seleciono opção de filtro Data de registro
     Sleep    1s
     Click Element                     ${filtro_DataRegistro_Documentos}
-    Wait Until Element Is Visible     (//button[@type='button'])[13]
-
-    FOR    ${i}    IN RANGE    3
-        Click Element    (//button[@type='button'])[13]
-        Sleep    0.5s
-    END
+    Wait Until Page Contains          text=maio 2025
+    # Wait Until Element Is Visible     (//button[@type='button'])[13]
+    # FOR    ${i}    IN RANGE    4
+    #     Click Element    (//button[@type='button'])[13]
+    #     Sleep    0.5s
+    # END
     Sleep    1s
     Click Element                    (//button[contains(.,'1')])[2]
     Click Element                    (//button[contains(.,'28')])[3]
 
 Então sistema exibe informações de filtro Data de registro
-    Wait Until Element Is Visible    (//td[contains(.,'28/01/2025')])[1]
+    Wait Until Element Is Visible    (//td[contains(.,'20/05/2025')])[1]
     Sleep    1s 
 
 # -07.01.06
