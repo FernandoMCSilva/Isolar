@@ -20,7 +20,7 @@ ${filtro_Modalidade}                 (//div[contains(.,'Selecione ...')])[53]
 ${filtro_SubClasse}                  (//div[contains(.,'Selecione ...')])[58]
 ${filtro_Outorga}                    (//div[contains(.,'Todos')])[17]
 
-${result_ANEEL}                      (//td[@class='p-4 align-middle [&:has([role=checkbox])]:pr-0 text-center font-bold'][contains(.,'DSP RETIFICAÇÃO DE 24 DE NOVEMBRO DE 2016')])[1]
+${result_ANEEL}                      (//div[@class='select__value-container select__value-container--is-multi css-hlgwow'])[3]
 ${result_Concessionaria}             (//td[contains(.,'Castro - DIS')])[1]
 ${result_Acessante}                  //td[@class='p-4 align-middle [&:has([role=checkbox])]:pr-0 text-center'][contains(.,'ADVOGADO EDUARDO SOARES (ANTIGA BOA ESPERANÇA)')]
 ${result_Classe}                     (//td[contains(.,'Residencial')])[1]
