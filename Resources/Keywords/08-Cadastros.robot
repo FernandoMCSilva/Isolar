@@ -143,9 +143,12 @@ E preencho informações de pesquisa
 Então sistema exibe informações de pesquisa
      ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
 
+Então sistema exibe informações de pesquisa padrão
+    Wait Until Page Contains    text=B1 (Padrão)
+
 
 Então sistema exibe informações de pesquisa em cadastros
-     ${nome_resultado}=    Get Text    //td[normalize-space()='teste']
+     ${nome_resultado}=    Get Text    //td[normalize-space()='B3 (teste)']
 
 # -08.01.           
 

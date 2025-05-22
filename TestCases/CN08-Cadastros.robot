@@ -170,8 +170,8 @@ CT 08.02.04 - Validar filtro "buscar"
     [Tags]    Cadastros    Clientes    Funcional    
     Dado que clico no menu "Cadastros > Clientes"
     E clico no botao buscar
-    E preencho informações de filtro buscar em cadastros
-    Então sistema exibe informações de pesquisa em cadastros
+    E preencho informações de pesquisa em Cadastros > Pessoas
+    Então sistema exibe informações de pesquisa padrão
 
 CT 08.02.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Clientes está funcional
