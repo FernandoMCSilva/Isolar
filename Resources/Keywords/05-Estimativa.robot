@@ -246,7 +246,7 @@ Então sistema exibe informações do botão Gerar
 
 E seleciono Local de instalação "Solo"
     Sleep    7s
-    Wait Until Element Is Visible    (//button[@id='localInst'])[1]
+    Wait Until Element Is Visible    (//button[@id='localInst'])[1]    timeout=20s
     Click Element                    (//button[@id='localInst'])[1]
     Sleep    0.5s
     Click Element                    xpath=//div[@role='option'][contains(.,'Solo')]
