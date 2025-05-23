@@ -118,6 +118,7 @@ ${opcao_ObrigatorioSim}             //button[@id='opcao2']
 Dado que clico no menu "Configurações > Requisições"
     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
     Click Element                    ${MENU_CONFIGURACOES}
+    Wait Until Element Is Visible    ${Menu_ConfigRequisicoes}
     Click Element                    ${Menu_ConfigRequisicoes} 
 Então sistema exibe informações de menu Requisições
     Wait Until Page Contains    text=Tipos de requisição
