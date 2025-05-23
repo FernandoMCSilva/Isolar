@@ -347,7 +347,9 @@ E preencho informações de calculos
     Click Element                    (//div[contains(.,'220 V')])[5]
 
     Input Text                       //input[@id='mensalValor']    500,00
+
 E clico no botão Ações
+    Sleep    2s
     Wait Until Element Is Visible    ${botao_Acoes_Estimativa}
     Click Element                    ${botao_Acoes_Estimativa}
     
@@ -372,25 +374,32 @@ Então sistema Baixa/Imprime Estimativa
 
 # --4.26
 E clico no botão Iniciar conversa no WhatsApp
+    Sleep    2s
     Wait Until Element Is Visible    ${botao_iniciarconversa_Estimativa}
     Click Element                    ${botao_iniciarconversa_Estimativa}
+    Sleep    2s
     Wait Until Element Is Visible    //button[contains(.,'Confirmar')]
     Click Element                    //button[contains(.,'Confirmar')]
 
 
 Então sistema redireciona para Whatsapp
+    Sleep    1s
     Wait Until Page Contains    text=Estimativa salva com sucesso!
 
 # --4.27
 E clico no botão Enviar por email
+    Sleep    2s
     Wait Until Element Is Visible    ${botao_enviaremail_Estimativa}
     Click Element                    ${botao_enviaremail_Estimativa}
+    Sleep    2s
     Wait Until Element Is Visible    //button[contains(.,'Confirmar')]
     Click Element                    //button[contains(.,'Confirmar')]
+    Sleep    2s
     Wait Until Element Is Visible    //button[contains(.,'Sim')]
     Click Element                    //button[contains(.,'Sim')]
 
 Então sistema abre informações do email
+    Sleep    1s
     Wait Until Page Contains    text=Selecione ou arraste a estimativa
 
 # --4.28
