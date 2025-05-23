@@ -80,6 +80,44 @@ E preencho campo de senha
     Input Text    //input[@id='confirm-password']    ${SenhaLocal} 
     Click Element    //button[contains(.,'Confirmar')]
 
+# -9.4
+Então sistema verifica se há cadastro B3 (teste) em Usuarios
+    ${temporario_encontrado}=    Run Keyword And Return Status    Element Should Be Visible    (//td[normalize-space()='B3 (teste)'])[1]
+
+    WHILE    ${temporario_encontrado}
+        Log    Requisição temporária encontrada. Irá excluir...
+        Sleep    2s
+        Wait Until Element Is Visible    ${botao_acoes_Clientes}
+        Sleep    2s
+        Click Element                    ${botao_acoes_Clientes}
+        Sleep    0.5s
+        Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
+        Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
+        Sleep    1s
+        Wait Until Element Is Visible    ${botao_continuar_Excluir}
+        Click Element                    ${botao_continuar_Excluir}
+        Sleep    2s
+        Wait Until Page Contains    text=Gerenciar informações cadastradas no sistema
+    
+    #   voltar para menu inicio
+        Sleep    1s
+        E volto pra tela inicio
+
+    #   Retorno para menu Usuários
+        Sleep    1s
+        Dado que clico no menu "Usuários"
+
+        Sleep    3s
+        Click Element    ${botao_buscarPerguntas}
+        Input Text    //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
+        Sleep    1s
+
+        # Atualiza a variável usada no WHILE
+        ${temporario_encontrado}=    Run Keyword And Return Status    Element Should Be Visible    (//td[normalize-space()='B3 (teste)'])[1]
+    END
+
+
+
 # -9.5
 Então sistema exibe informações de cadastro de "Usuários"
     Wait Until Page Contains    text=Gerenciar informações cadastradas no sistema
