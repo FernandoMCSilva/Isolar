@@ -223,11 +223,13 @@ Então sistema exclui item do menu Configurações > Requisições
 
 # -10.01.08
 Então sistema exibe informações da pagina perguntas
+    Sleep    3s
     Wait Until Page Contains    text=Adicionar uma nova pergunta
 
 
 # --10.01.09
 E clico no botao "Perguntas"
+    Sleep    1s
     Wait Until Element Is Visible    ${botao_Perguntas}
     Click Element                    ${botao_Perguntas}
 

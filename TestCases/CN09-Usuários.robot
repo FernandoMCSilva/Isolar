@@ -60,11 +60,26 @@ CT 09.03 - Validar botão Editar
 
 # CT 09.04 - Validar filtro "buscar" 
 #     [Documentation]     Caso de teste valida se filtro buscar está funcional
-#     [Tags]    Usuários    Funcional        
+#     [Tags]    Usuários    Funcional   
+# #   Inserir cadastro
+#     Dado que clico no menu "Usuários"
+#     Quando clico no botão "Inserir"
+#     E preencho informações de inserir novo cadastro de Usuários
+#     E clico em "Salvar" em Usuários
+#     Então sistema salva novo cadastro de Usuários     
+
+# #   buscar usuário
 #     Dado que clico no menu "Usuários"
 #     E clico no botao buscar
 #     E preencho informações de pesquisa
 #     Então sistema exibe informações de pesquisa
+
+# #   Excluir cadastro em Usuários
+#     E clico no botao buscar
+#     E preencho informações de pesquisa
+#     Quando clico em "Excluir"
+#     E clico no botão "Continuar" em "Excluir"
+#     Então sistema exclui item do menu Usuários
 
 CT 09.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
