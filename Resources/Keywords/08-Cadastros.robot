@@ -92,7 +92,7 @@ E clico no botão "Cancelar" em "Excluir"
 
 # -08.01.04
 E clico no botao buscar
-    Sleep    3s
+    Sleep    5s
     Click Element    ${botao_buscarPerguntas}
 
 E clico no botão "Continuar" em "Excluir"

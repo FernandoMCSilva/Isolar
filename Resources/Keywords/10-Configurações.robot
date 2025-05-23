@@ -742,7 +742,8 @@ Então sistema exibe informações de próxima tela
 
 # -10.05.12
 E clico no botão Anterior    
-    Sleep    20s
+    Sleep    30s
+    Wait Until Element Is Visible    ${Botao_Anterior}
     Click Element                    ${Botao_Anterior}
 
 Então sistema exibe informações de tela anterior
