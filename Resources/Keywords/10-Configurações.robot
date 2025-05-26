@@ -881,10 +881,10 @@ Então sistema exibe informações de menu botao Novo tipo
 # -10.07.04
 E preencho filtro busca em Configurações > Obras
     Wait Until Element Is Visible    ${input_buscar}
-    Input Text                       ${input_buscar}    teste
+    Input Text                       ${input_buscar}    padrão
 
 Então sistema exibe informações de filtro de busca em Configurações > Obras
-    Wait Until Element Is Visible    //h3[normalize-space()='teste']
+    Wait Until Element Is Visible    //h3[normalize-space()='padrão']
 
 # -10.07.05
 Então sistema exibe informações de tela de Perguntas
