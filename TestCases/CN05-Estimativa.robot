@@ -88,6 +88,8 @@ CT 05.10 - Validar botão Anterior
     Quando clico em "Próximo"
     E clico em "Anterior"
     Então sistema exibe Estimativa anteriores   
+
+    
 # BUG
 # CT 05.12 - Validar botão Não em Gerar link de assinatura
 #     [Documentation]     Caso de teste valida botão Não em confirmação do Gerar link de assinatura
