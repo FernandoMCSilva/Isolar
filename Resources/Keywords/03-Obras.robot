@@ -4,7 +4,7 @@ Resource           ../Main.robot
 
 *** Variables ***
 ${Menu_ObrasDashboard}                 //a[contains(.,'Dashboard')]
-${Menu_ObrasRequisicoes}               (//a[contains(.,'Requisições')])[2]
+${Menu_ObrasRequisicoes}               (//a[@class='inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground px-4 py-2 w-full justify-center h-10 mb-1'])[2]
 
 ${filtro_Departamento_Obras}           (//div[contains(.,'OBRAS')])[5]
 ${filtro_NivelUrgencia}                //button[@id='nivel_urgencia']
@@ -233,10 +233,6 @@ E preencho filtro Cliente em Obras
     Sleep    2s
     Wait Until Page Contains         text=B3 (Padrão)
 
-
-
-
-
 # -3.2.13
 E seleciono opção "Concluído" em editar status em Obras
     Wait Until Element Is Visible    (//button[@type='button'])[13]
@@ -290,12 +286,12 @@ Então sistema exclui e retorna para menu Obras > requisições
 
 # -3.2.16
 Então sistema exibe mensagem de campos obrigatórios não preenchido em Obras
-    Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, Estado, Cidade, Bairro, Endereço, CEP
+    Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, CEP, Estado, Cidade, Endereço, Bairro
 
 # -3.2.17
-
 Então sistema exibe mensagem de CEP não preenchido em Obras 
-    Wait Until Page Contains    text=Preencha os campos obrigatórios: Estado, Cidade, Bairro, Endereço, CEP
+    Wait Until Page Contains    text=Preencha os campos obrigatórios: CEP, Estado, Cidade, Endereço, Bairro
+
 
 
 

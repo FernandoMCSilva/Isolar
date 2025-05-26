@@ -37,6 +37,11 @@ ${botao_GerarDocumento}             //button[contains(.,'Gerar Documento')]
 ${botao_VerTemplate_Documentos}     //button[contains(.,'Ver template')]
 ${botao_PreencherDocumento}         //button[contains(.,'Preencher documento')]
 ${botao_BaixarTemplateEditável}     //button[contains(.,'Baixar Template editável')]
+${botao_Deletar}                    (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:text-accent-foreground h-10 w-10 hover:bg-red-900'])[1]
+${botao_CancelarDocumentos}         (//button[normalize-space()='Cancelar'])[1]
+
+
+
 ${AssinaturaTradicional}            (//button[normalize-space()='Assinatura Tradicional'])[1]
 
 ${CAMINHO_ARQUIVO}                  "C:\Users\silva\Downloads\teste.pdf"
@@ -212,6 +217,20 @@ E clico em Assinatura Tradicional
 
 Então sistema exibe informações de botão Gerar link de assinatura
     Wait Until Page Contains    text=ZapSign - 2
+
+E clico no botão Deletar
+    Sleep    1s
+    Wait Until Element Is Visible    ${botao_Deletar}
+    Click Element                    ${botao_Deletar} 
+
+E clico em Cancelar
+    Wait Until Element Is Visible    ${botao_CancelarDocumentos}
+    Click Element                    ${botao_CancelarDocumentos}
+    Sleep    1s
+    
+    Wait Until Element Is Visible    ${botao_CancelarDocumentos}
+    Click Element                    ${botao_CancelarDocumentos}
+    Sleep    1s
 
 # -07.02.01
 Clico no menu "Assinaturas"

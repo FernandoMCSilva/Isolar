@@ -1,7 +1,7 @@
 *** Settings ***
 Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
-Suite Setup        Setup Chrome Driver
+# Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema
 Test Teardown      Fechar navegador
 Documentation      Modúlo que gerencie as Estimativas cadastradas no sistema.
@@ -135,6 +135,25 @@ CT 07.01.11 - Validar botão Anterior
 #     E preencho filtro criador em Documentos
 #     E clico no botão Gerar link de assinatura (INATÍVO)
     # Então sistema exibe informações de botão Gerar link de assinatura (INATÍVO)
+
+CT 07.01.15 - Validar exclusão de documento
+    [Documentation]     Caso de teste valida se funcionlidade excluir está funcional
+    [Tags]    Documentos    Documentos gerados    Funcional
+#   Gerar documento
+    Dado que clico no menu "Documentos"
+    Clico no menu "Criar documento"
+    E clico em "Jurídico"
+    E preencho informação de criar documento Jurídico
+    Então sistema exibe mensagem de documento criado
+
+#   Excluir documento gerado
+    E clico em Cancelar
+    E volto pra tela inicio
+    Dado que clico no menu "Documentos"
+    Clico no menu "Documentos geradados"
+    Quando clico em "Filtros"
+    E preencho informações de filtro criador
+    E clico no botão Deletar
 
 CT 07.02.01 - Validar menu Assinaturas
     [Documentation]     Caso de teste valida se menu Assinaturas está funcional

@@ -242,7 +242,7 @@ CT 03.02.15 - Excluir requisição tipo "Técnico"
     
 #   Verifico se há cadastro temporario em Clientes
     Aguardo carregamento da página
-    Dado que clico no menu Obras > Requisições
+    Dado que clico no menu "Cadastros > Clientes"
     E clico no botao buscar
     E preencho informações de pesquisa para verificação de temporario
     Então sistema verifica se existe cadastro temporario
@@ -254,7 +254,7 @@ CT 03.02.15 - Excluir requisição tipo "Técnico"
     Então sistema exibe mensagem de cadastro realizado
 
 #   Excluir requisição temporario
-    Dado que clico no menu Obras > Requisições
+    Aguardo carregamento da página
     Quando clico em "Filtros"
     E preencho filtro com cliente "temporario"
     E clico no botão "Editar"

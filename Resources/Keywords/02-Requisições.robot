@@ -640,7 +640,6 @@ E clico no botão "Visualizar"
 Então sistema exibe informações de Visualizar em requisições
     Wait Until Page Contains    text=Visualizar informações
 
-
 # --2.17
 E volto pra tela inicio
     #   E clico no menu inicio
