@@ -13,7 +13,6 @@ CT 10.01.01 - Validar menu Configurações > Requisições
     Dado que clico no menu "Configurações > Requisições"
     Então sistema exibe informações de menu Requisições   
     
-# BUG
 CT 10.01.02 - Validar botão Inserir Novo tipo 
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Configurações > Requisições está funcional
     [Tags]    Configurações    Requisições    Funcional    SmokeTest        
@@ -32,7 +31,6 @@ CT 10.01.02 - Validar botão Inserir Novo tipo
     E clico no botão "Continuar" em "Excluir"
     Então sistema exclui item do menu Configurações > Requisições
 
-# BUG
 CT 10.01.03 - Validar botão Editar
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Configurações > Requisições está funcional
     [Tags]    Configurações    Requisições    Funcional    SmokeTest       
@@ -86,7 +84,6 @@ CT 10.01.06 - Validar botão Cancelar em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de menu Requisições
 
-# BUG
 CT 10.01.07 - Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional no menu Configurações > Requisições
     [Tags]    Configurações    Requisições    Funcional    SmokeTest        
@@ -591,7 +588,6 @@ CT 10.07.01 - Validar menu Configurações > Obras
     Dado que clico no menu "Configurações > Obras"
     Então sistema exibe informações de menu Configurações > Obras
 
-# BUG
 CT 10.07.02 - Validar inserção de Novo tipo
     [Documentation]     Caso de teste valida se Inserção de Novo tipo está funcional
     [Tags]    Configurações    Obras    Funcional        
@@ -610,6 +606,33 @@ CT 10.07.02 - Validar inserção de Novo tipo
     E clico no botão "Continuar" em "Excluir"
     Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
 
+CT 10.07.03 - Validar ediçao de tipo de requisição
+    [Documentation]     Caso de teste valida se Edição de tipo de requisição está funcional
+    [Tags]    Configurações    Obras    Funcional        
+#   Inserir
+    Dado que clico no menu "Configurações > Obras"
+    Quando clico no botão "Novo tipo"
+    E preencho informações de Novo tipo de Requisições
+    E clico em "Salvar"
+    Então sistema exibe informações de menu botao Novo tipo
+
+#   Editar
+    E volto pra tela inicio
+    Dado que clico no menu "Configurações > Obras"
+    E clico no botao buscar
+    E preencho informações de pesquisa
+    Quando clico em "Editar" em configuracoes
+    E edito informações de tipo de requisição em Configurações > Obras
+    E clico em "Salvar"
+    Então sistema exibe informações de "Editar" no menu Configurações > Requisições
+
+#   Excluir
+    Dado que clico no menu "Configurações > Obras"
+    Quando clico no filtro busca
+    E preencho filtro busca em configurações
+    Quando clico em "Excluir" em configurações
+    E clico no botão "Continuar" em "Excluir"
+    Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
 
 CT 10.07.03 - Validar filtro "Cards ou Lista"
     [Documentation]     Caso de teste valida se filtro Cards ou Lista no menu Configurações > Requisições está funcional
@@ -633,7 +656,6 @@ CT 10.07.05 - Validar botão Perguntas
     E clico no botao "Perguntas"
     Então sistema exibe informações de tela de Perguntas
 
-#  BUG
 CT 10.07.06 - Validar exclusão
     [Documentation]     Caso de teste valida se exclusão de cliente em Configurações > Obras está funcional
     [Tags]    Configurações    Obras    Funcional        

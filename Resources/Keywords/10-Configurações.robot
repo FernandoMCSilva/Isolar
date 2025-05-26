@@ -878,6 +878,19 @@ E preencho informações de Novo tipo de Requisições
 Então sistema exibe informações de menu botao Novo tipo
     Wait Until Page Contains    text=Registro adicionado com sucesso!
 
+# -10.07.03
+E preencho informações de pesquisa em Configurações > Obras
+    Input Text    //input[@placeholder='Buscar...']    padrão
+    Sleep    1s
+    Wait Until Page Contains    text=padrão
+
+E edito informações de tipo de requisição em Configurações > Obras
+    Wait Until Element Is Visible    //input[@id='nomeRequisicao']
+    Sleep    1s
+    Input Text                       //input[@id='nomeRequisicao']    ${nome_pesquisa_GruposConsumidores}
+    Click Element                    ${botao_ExcluirSecao}
+    Sleep    1s
+
 # -10.07.04
 E preencho filtro busca em Configurações > Obras
     Wait Until Element Is Visible    ${input_buscar}
