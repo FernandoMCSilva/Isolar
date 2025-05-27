@@ -360,8 +360,8 @@ E preencho informações de cadastro de requisição
     Click Element                    (//div[contains(.,'RHIVAYLTON')])[5]
 
     Click Element                    (//button[contains(.,'Selecione')])[1]
-    Wait Until Element Is Visible    (//div[contains(.,'teste')])[5]
-    Click Element                    (//div[contains(.,'teste')])[5]
+    Wait Until Element Is Visible    (//div[@class='rounded-lg border bg-card text-card-foreground shadow-sm mt-12 mb-5'])[1]
+    Click Element                    (//div[@class='rounded-lg border bg-card text-card-foreground shadow-sm mt-12 mb-5'])[1]
 
     Click Element                    (//button[contains(.,'Selecione')])[1]
     Wait Until Element Is Visible    (//div[contains(.,'RHIVAYLTON')])[15]

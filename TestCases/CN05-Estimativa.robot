@@ -1,7 +1,7 @@
 *** Settings ***
 Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
-Suite Setup        Setup Chrome Driver
+# Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema
 Test Teardown      Fechar navegador
 Documentation      Modúlo que gerencie as Estimativas cadastradas no sistema.
@@ -91,24 +91,24 @@ CT 05.10 - Validar botão Anterior
 
     
 # BUG
-# CT 05.12 - Validar botão Não em Gerar link de assinatura
-#     [Documentation]     Caso de teste valida botão Não em confirmação do Gerar link de assinatura
-#     [Tags]    Estimativa    Funcional  
-#     Dado que clico no menu "Estimativa"
-#     Quando clico em "Filtros"
-#     E preencho filtro cliente em Estimativa
-#     E clico em Buscar
-#     Quando clico em "Gerar link de assinatura"
-#     E clico em "Não"
-#     Então sistema volta para menu Estimativa
+CT 05.12 - Validar botão Não em Gerar link de assinatura
+    [Documentation]     Caso de teste valida botão Não em confirmação do Gerar link de assinatura
+    [Tags]    Estimativa    Funcional  
+    Dado que clico no menu "Estimativa"
+    Quando clico em "Filtros"
+    E preencho filtro cliente em Estimativa
+    E clico em Buscar
+    Quando clico em "Gerar link de assinatura"
+    E clico em "Não"
+    Então sistema volta para menu Estimativa
 # BUG
-# CT 05.13 - Validar botão Gerar link de assinatura
-#     [Documentation]     Caso de teste valida botão Gerar link de assinatura    
-#     [Tags]    Estimativa    Funcional    SmokeTest
-#     Dado que clico no menu "Estimativa"
-#     Quando clico em "Gerar link de assinatura"
-#     E clico em "Sim"
-#     Então sistema exibe informações para criar assinaturas
+CT 05.13 - Validar botão Gerar link de assinatura
+    [Documentation]     Caso de teste valida botão Gerar link de assinatura    
+    [Tags]    Estimativa    Funcional    SmokeTest
+    Dado que clico no menu "Estimativa"
+    Quando clico em "Gerar link de assinatura"
+    E clico em "Sim"
+    Então sistema exibe informações para criar assinaturas
 
 CT 05.14 - Validar botão Ver PDF
     [Documentation]    Caso de teste valida botão Ver PDF
@@ -130,24 +130,24 @@ CT 05.15 - Validar impressão de estimativa
     Quando clico no botão "Ver PDF"
     E clico em "imprimir Estimativa"
     Então sistema exibe informações de estimativa em arquivo PDF
-# BUG
 
-# CT 05.16 - Validar botão Cancelar em Aplicar desconto
-#     [Documentation]    Caso de teste valida botão Cancelar em Aplicar desconto
-#     [Tags]    Estimativa    Funcional
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Aplicar desconto"
-#     E clico em "Cancelar"
-#     Então sistema retorna e exibe informações do menu Estimativa
 # BUG
+CT 05.16 - Validar botão Cancelar em Aplicar desconto
+    [Documentation]    Caso de teste valida botão Cancelar em Aplicar desconto
+    [Tags]    Estimativa    Funcional
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Aplicar desconto"
+    E clico em "Cancelar"
+    Então sistema retorna e exibe informações do menu Estimativa
 
-# CT 05.17 - Validar botão aplicar desconto
-#     [Documentation]    Caso de teste valida botão Aplicar desconto
-#     [Tags]    Estimativa    Funcional    SmokeTest
-#     Dado que clico no menu "Estimativa"
-#     Quando clico no botão "Aplicar desconto"
-#     E preencho informações de desconto
-#     Então sistema aplica desconto e exibe informações em arquivo PDF
+# BUG
+CT 05.17 - Validar botão aplicar desconto
+    [Documentation]    Caso de teste valida botão Aplicar desconto
+    [Tags]    Estimativa    Funcional    SmokeTest
+    Dado que clico no menu "Estimativa"
+    Quando clico no botão "Aplicar desconto"
+    E preencho informações de desconto
+    Então sistema aplica desconto e exibe informações em arquivo PDF
 
 # CT 05.18 - Validar botão aplicar desconto com valor acima do limite
 #     [Documentation]    Caso de teste testa aplicar desconto acima do valor permitido

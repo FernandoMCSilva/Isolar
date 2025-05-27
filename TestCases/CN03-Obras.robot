@@ -1,7 +1,7 @@
 *** Settings ***
 Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
-Suite Setup        Setup Chrome Driver
+# Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema com Oseias
 Test Teardown      Fechar navegador
 Documentation      Modúlo que Gerencie as requisições do tipo Obras cadastradas no sistema.
@@ -79,13 +79,13 @@ CT 03.02.03 - Validar filtro Departamento
     Então sistema exibe resultado de Departamento
 
 #  BUG # Obras > Requisições
-# CT 03.02.04 - Validar filtro Tipo
-#     [Documentation]     Caso de teste valida o filtro Tipo em Obras > Requisições
-#     [Tags]    Obras    Requisições    Funcional        
-#     Dado que clico no menu Obras > Requisições
-#     Quando clico em "Filtros"
-#     E valido todos os filtros dentro de Tipo em Obras > Requisições
-#     Então sistema exibe informações do filtro Tipo
+CT 03.02.04 - Validar filtro Tipo
+    [Documentation]     Caso de teste valida o filtro Tipo em Obras > Requisições
+    [Tags]    Obras    Requisições    Funcional        
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E valido todos os filtros dentro de Tipo em Obras > Requisições
+    Então sistema exibe informações do filtro Tipo
 
 CT 03.02.05 - Validar filtro Urgente
     [Documentation]     Caso de teste valida o filtro Urgente em Obras > Requisições
@@ -152,39 +152,39 @@ CT 03.02.10 - Validar botão Inserir "Obras"
     E clico no botão "Excluir requisição" temporario
     Então sistema exclui e retorna para menu requisições 
 
-# CT 03.02.11 - Validar botão Editar
-#     [Documentation]     Caso de teste valida botão editar em Obras > Requisições
-#     [Tags]    Obras    Requisições    Funcional 
-# #   Verifico se há requisição temporario
-#     Dado que clico no menu Obras > Requisições
-#     Quando clico em "Filtros"
-#     E preencho filtro com cliente "temporario" para verificação
-#     Então sistema verifica se há cadastro temporario
+CT 03.02.11 - Validar botão Editar
+    [Documentation]     Caso de teste valida botão editar em Obras > Requisições
+    [Tags]    Obras    Requisições    Funcional 
+#   Verifico se há requisição temporario
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro com cliente "temporario" para verificação
+    Então sistema verifica se há cadastro temporario
 
-# #   Inserir cadastro temporário
-#     E volto pra tela inicio
-#     Reload Page
-#     Dado que clico no menu Obras > Requisições
-#     Quanto clico no botão "Inserir/Obras"
-#     E preencho informações de cadastro de requisição com cliente "temporario"
-#     Então sistema exibe mensagem de cadastro realizado
+#   Inserir cadastro temporário
+    E volto pra tela inicio
+    Reload Page
+    Dado que clico no menu Obras > Requisições
+    Quanto clico no botão "Inserir/Obras"
+    E preencho informações de cadastro de requisição com cliente "temporario"
+    Então sistema exibe mensagem de cadastro realizado
 
-# #   Editar cadastro temporario
-#     Aguardo carregamento da página
-#     Quando clico em "Filtros"
-#     E preencho filtro com cliente "temporario"
-#     E clico no botão "Editar"
-#     E preencho informações de editar requisição em Obras
-#     Então sistema conlcui edição de requisição em Obras
+#   Editar cadastro temporario
+    Aguardo carregamento da página
+    Quando clico em "Filtros"
+    E preencho filtro com cliente "temporario"
+    E clico no botão "Editar"
+    E preencho informações de editar requisição em Obras
+    Então sistema conlcui edição de requisição em Obras
 
-# #   Excluir requisição temporario
-#     Aguardo carregamento da página 
-#     Dado que clico no menu Obras > Requisições
-#     Quando clico em "Filtros"
-#     E preencho filtro com cliente "temporario"
-#     E clico no botão "Editar"
-#     E clico no botão "Excluir requisição" temporario
-#     Então sistema exclui e retorna para menu requisições 
+#   Excluir requisição temporario
+    Aguardo carregamento da página 
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro com cliente "temporario"
+    E clico no botão "Editar"
+    E clico no botão "Excluir requisição" temporario
+    Então sistema exclui e retorna para menu requisições 
 
 CT 03.02.12 - Validar botão Visualizar 
     [Documentation]     Caso de teste valida botão visualizar em Obras 
