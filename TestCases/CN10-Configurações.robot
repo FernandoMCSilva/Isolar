@@ -634,14 +634,14 @@ CT 10.07.03 - Validar ediçao de tipo de requisição
     E clico no botão "Continuar" em "Excluir"
     Então sistema realiza exclusão de novo cliente em Configurações > Monitoramento
 
-CT 10.07.03 - Validar filtro "Cards ou Lista"
+CT 10.07.04 - Validar filtro "Cards ou Lista"
     [Documentation]     Caso de teste valida se filtro Cards ou Lista no menu Configurações > Requisições está funcional
     [Tags]    Configurações    Obras    Funcional        
     Dado que clico no menu "Configurações > Obras"
     E seleciono opção Cards ou Lista "Lista"
     Então sistema exibe informações com filtro "Lista" em Configurações > Requisições
 
-CT 10.07.04 - Validar filtro de busca
+CT 10.07.05 - Validar filtro de busca
     [Documentation]     Caso de teste valida se filtro de busca está funcional
     [Tags]    Configurações    Obras    Funcional        
     Dado que clico no menu "Configurações > Obras"
@@ -649,14 +649,14 @@ CT 10.07.04 - Validar filtro de busca
     E preencho filtro busca em Configurações > Obras
     Então sistema exibe informações de filtro de busca em Configurações > Obras
 
-CT 10.07.05 - Validar botão Perguntas
+CT 10.07.06 - Validar botão Perguntas
     [Documentation]     Caso de teste valida se botão Perguntas está funcional
     [Tags]    Configurações    Obras    Funcional        
     Dado que clico no menu "Configurações > Obras"
     E clico no botao "Perguntas"
     Então sistema exibe informações de tela de Perguntas
 
-CT 10.07.06 - Validar exclusão
+CT 10.07.07 - Validar exclusão
     [Documentation]     Caso de teste valida se exclusão de cliente em Configurações > Obras está funcional
     [Tags]    Configurações    Obras    Funcional        
 #   Inserir

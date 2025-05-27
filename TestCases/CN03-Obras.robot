@@ -127,29 +127,29 @@ CT 03.02.09 - Validar filtro Responsável
     E valido todos os filtros dentro de "Responsável" em Obras > Requisições
     Então sistema exibe resultado de filtro Responsável
 
-# # CT 03.02.10 - Validar botão Inserir "Obras"
-# #     [Documentation]     Caso de teste valida botão Inserir "Obras" em Obras > Requisições
-# #     [Tags]    Obras    Requisições    Funcional   
-# # #   Verifico se há cadastro temporario
-# #     Dado que clico no menu Obras > Requisições
-# #     Quando clico em "Filtros"
-# #     E preencho filtro com cliente "temporario" para verificação
-# #     Então sistema verifica se há cadastro temporario
+CT 03.02.10 - Validar botão Inserir "Obras"
+    [Documentation]     Caso de teste valida botão Inserir "Obras" em Obras > Requisições
+    [Tags]    Obras    Requisições    Funcional   
+#   Verifico se há cadastro temporario
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro com cliente "temporario" para verificação
+    Então sistema verifica se há cadastro temporario
 
-# # #   Inserir cadastro temporário
-# #     E volto pra tela inicial
-# #     Dado que clico no menu Obras > Requisições
-# #     Quanto clico no botão "Inserir/Obras"
-# #     E preencho informações de cadastro de requisição com cliente "temporario"
-# #     Então sistema exibe mensagem de cadastro realizado
+#   Inserir cadastro temporário
+    E volto pra tela inicial
+    Dado que clico no menu Obras > Requisições
+    Quanto clico no botão "Inserir/Obras"
+    E preencho informações de cadastro de requisição com cliente "temporario"
+    Então sistema exibe mensagem de cadastro realizado
 
-# # #   Excluir requisição temporario
-# #     Aguardo carregamento da página 
-# #     Quando clico em "Filtros"
-# #     E preencho filtro com cliente "temporario"
-# #     E clico no botão "Editar"
-# #     E clico no botão "Excluir requisição" temporario
-# #     Então sistema exclui e retorna para menu requisições 
+#   Excluir requisição temporario
+    Aguardo carregamento da página 
+    Quando clico em "Filtros"
+    E preencho filtro com cliente "temporario"
+    E clico no botão "Editar"
+    E clico no botão "Excluir requisição" temporario
+    Então sistema exclui e retorna para menu requisições 
 
 # # CT 03.02.11 - Validar botão Editar
 # #     [Documentation]     Caso de teste valida botão editar em Obras > Requisições

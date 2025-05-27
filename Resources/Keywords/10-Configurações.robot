@@ -818,6 +818,8 @@ Então sistema realiza inserção de novo cliente em Configurações > Monitoram
 E preencho filtro busca em configurações
     Wait Until Element Is Visible    ${input_buscar}
     Input Text                       ${input_buscar}    ${nome_pesquisa_GruposConsumidores}
+    Sleep    1s
+    Wait Until Element Is Visible    (//h3[normalize-space()='B3 (teste)'])[1]
 
 E preencho filtro de busca em configurações
     Wait Until Element Is Visible    ${input_buscar}
