@@ -70,7 +70,7 @@ Dado que clico no menu Obras > Requisições
     Sleep    2s
     Wait Until Element Is Visible    ${MENU_OBRAS}
     Click Element                    ${MENU_OBRAS}
-    Sleep    1.5s
+    Sleep    4s
     Wait Until Element Is Visible    ${Menu_ObrasRequisicoes}
     Click Element                    ${Menu_ObrasRequisicoes}
 
@@ -298,7 +298,7 @@ E clico no botão "Excluir requisição" em Obras
     Sleep    1s
     Wait Until Page Contains    text=Editar requisição
     Execute JavaScript          window.scrollTo(0, 0)
-    Sleep    1s
+    Sleep    5s
     Click Element               //button[contains(.,'Excluir requisição')]
     Click Element               //button[contains(.,'Continuar')]
 
