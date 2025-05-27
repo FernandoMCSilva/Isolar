@@ -646,6 +646,7 @@ E volto pra tela inicio
     Sleep    1s
     Wait Until Element Is Visible    ${MENU_INICIO}
     Click Element                    ${MENU_INICIO}
+    Sleep    1s
 
 Então sistema verifica se Requisição padrão está em "Fila"
     Sleep    1s

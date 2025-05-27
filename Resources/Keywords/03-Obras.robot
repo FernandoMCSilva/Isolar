@@ -11,6 +11,8 @@ ${filtro_NivelUrgencia}                //button[@id='nivel_urgencia']
 
 ${Input_Trello}                        //input[@placeholder='Cole o link do trello']
 
+${STATUS_CONCLUIDO}    (//div[@class='inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-primary-foreground rounded-md bg-green-400 hover:bg-green-300 text-center'])[1]
+${STATUS_FILA}         (//div[@class='inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 rounded-md text-center'])[1]
 
 
 
@@ -234,6 +236,26 @@ E preencho filtro Cliente em Obras
     Wait Until Page Contains         text=B3 (Padrão)
 
 # -3.2.13
+Então sistema verifica se requisição está "fila" inicialmente
+    Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
+    ${concluido_visivel}=    Run Keyword And Return Status    Element Should Be Visible    ${STATUS_CONCLUIDO}
+    Run Keyword If    '${concluido_visivel}'=='True'    Trocar Status Para Fila
+
+Trocar Status Para Fila
+#   Clico em editar
+    Sleep    2s
+    Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
+    Wait Until Element Is Visible    ${Botao_Editar}
+    Sleep    1s
+    Click Element                    ${Botao_Editar}
+
+#   E troco status para fila
+    Wait Until Element Is Visible    (//button[@type='button'])[13]
+    Click Element                    (//button[@type='button'])[13]
+    Sleep    1s
+    Click Element                    (//div[contains(.,'Fila')])[5]
+    Click Element                    //button[contains(.,'Salvar alterações')]
+
 E seleciono opção "Concluído" em editar status em Obras
     Wait Until Element Is Visible    (//button[@type='button'])[13]
     Click Element                    (//button[@type='button'])[13]

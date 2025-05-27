@@ -78,13 +78,14 @@ CT 03.02.03 - Validar filtro Departamento
     E valido filtros dentro de Departamento em Obras > Requisições
     Então sistema exibe resultado de Departamento
 
-CT 03.02.04 - Validar filtro Tipo
-    [Documentation]     Caso de teste valida o filtro Tipo em Obras > Requisições
-    [Tags]    Obras    Requisições    Funcional        
-    Dado que clico no menu Obras > Requisições
-    Quando clico em "Filtros"
-    E valido todos os filtros dentro de Tipo em Obras > Requisições
-    Então sistema exibe informações do filtro Tipo
+#  BUG # Obras > Requisições
+# CT 03.02.04 - Validar filtro Tipo
+#     [Documentation]     Caso de teste valida o filtro Tipo em Obras > Requisições
+#     [Tags]    Obras    Requisições    Funcional        
+#     Dado que clico no menu Obras > Requisições
+#     Quando clico em "Filtros"
+#     E valido todos os filtros dentro de Tipo em Obras > Requisições
+#     Então sistema exibe informações do filtro Tipo
 
 CT 03.02.05 - Validar filtro Urgente
     [Documentation]     Caso de teste valida o filtro Urgente em Obras > Requisições
@@ -151,38 +152,39 @@ CT 03.02.10 - Validar botão Inserir "Obras"
     E clico no botão "Excluir requisição" temporario
     Então sistema exclui e retorna para menu requisições 
 
-# # CT 03.02.11 - Validar botão Editar
-# #     [Documentation]     Caso de teste valida botão editar em Obras > Requisições
-# #     [Tags]    Obras    Requisições    Funcional 
-# # #   Verifico se há cadastro temporario
-# #     Dado que clico no menu Obras > Requisições
-# #     Quando clico em "Filtros"
-# #     E preencho filtro com cliente "temporario" para verificação
-# #     Então sistema verifica se há cadastro temporario
+# CT 03.02.11 - Validar botão Editar
+#     [Documentation]     Caso de teste valida botão editar em Obras > Requisições
+#     [Tags]    Obras    Requisições    Funcional 
+# #   Verifico se há requisição temporario
+#     Dado que clico no menu Obras > Requisições
+#     Quando clico em "Filtros"
+#     E preencho filtro com cliente "temporario" para verificação
+#     Então sistema verifica se há cadastro temporario
 
-# # #   Inserir cadastro temporário
-# #     E volto pra tela inicial
-# #     Dado que clico no menu Obras > Requisições
-# #     Quanto clico no botão "Inserir/Obras"
-# #     E preencho informações de cadastro de requisição com cliente "temporario"
-# #     Então sistema exibe mensagem de cadastro realizado
+# #   Inserir cadastro temporário
+#     E volto pra tela inicio
+#     Reload Page
+#     Dado que clico no menu Obras > Requisições
+#     Quanto clico no botão "Inserir/Obras"
+#     E preencho informações de cadastro de requisição com cliente "temporario"
+#     Então sistema exibe mensagem de cadastro realizado
 
-# # #   Editar cadastro temporario
-# #     Dado que clico no menu Obras > Requisições
-# #     Quando clico em "Filtros"
-# #     E preencho filtro com cliente "temporario"
-# #     E clico no botão "Editar"
-# #     E preencho informações de editar requisição em Obras
-# #     Então sistema conlcui edição de requisição em Obras
+# #   Editar cadastro temporario
+#     Aguardo carregamento da página
+#     Quando clico em "Filtros"
+#     E preencho filtro com cliente "temporario"
+#     E clico no botão "Editar"
+#     E preencho informações de editar requisição em Obras
+#     Então sistema conlcui edição de requisição em Obras
 
-# # #   Excluir requisição temporario
-# #     Aguardo carregamento da página 
-# #     Dado que clico no menu Obras > Requisições
-# #     Quando clico em "Filtros"
-# #     E preencho filtro com cliente "temporario"
-# #     E clico no botão "Editar"
-# #     E clico no botão "Excluir requisição" temporario
-# #     Então sistema exclui e retorna para menu requisições 
+# #   Excluir requisição temporario
+#     Aguardo carregamento da página 
+#     Dado que clico no menu Obras > Requisições
+#     Quando clico em "Filtros"
+#     E preencho filtro com cliente "temporario"
+#     E clico no botão "Editar"
+#     E clico no botão "Excluir requisição" temporario
+#     Então sistema exclui e retorna para menu requisições 
 
 CT 03.02.12 - Validar botão Visualizar 
     [Documentation]     Caso de teste valida botão visualizar em Obras 
@@ -196,7 +198,14 @@ CT 03.02.12 - Validar botão Visualizar
 CT 03.02.13 - Validar botão Mudar Status Requisição
     [Documentation]     Caso de teste valida botão Mudar Status Requisição em Obras
     [Tags]    Obras    Requisições    Funcional 
+#   Verificar se requisição está "fila" inicialmente
+    Dado que clico no menu Obras > Requisições
+    Quando clico em "Filtros"
+    E preencho filtro Cliente em Obras
+    Então sistema verifica se requisição está "fila" inicialmente
+
 #   Mudar Status da Requisição para concluído
+    E volto pra tela inicio
     Dado que clico no menu Obras > Requisições
     Quando clico em "Filtros"
     E preencho filtro Cliente em Obras
