@@ -206,6 +206,7 @@ CT 03.02.13 - Validar botão Mudar Status Requisição
 
 #   Mudar Status da Requisição para concluído
     E volto pra tela inicio
+    Reload Page
     Dado que clico no menu Obras > Requisições
     Quando clico em "Filtros"
     E preencho filtro Cliente em Obras
