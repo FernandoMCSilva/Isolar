@@ -49,6 +49,10 @@ ${nome_teste}                       teste
 ${NOME_CRIADOR}                     Fernando QA
 ${link_Token}                       https://dev.grupoiso.com.br/storage/uploads/docs/67ae4ad0d5083.pdf
 
+${dia1}                             (//button[@name='day'][normalize-space()='1'])[1]
+${dia28}                            (//button[@class='rdp-button_reset rdp-button inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 w-9 p-0 font-normal aria-selected:opacity-100 bg-accent text-accent-foreground'])[1]
+
+
 *** Keywords ***
 
 # -07.01.01
@@ -76,7 +80,8 @@ E seleciono opção de filtro Tipo de documento
     Wait Until Element Is Visible    ${filtro_TipoDocumento}
     Sleep    2s
     Click Element                    ${filtro_TipoDocumento}
-    Click Element                    (//div[contains(.,'P')])[13]
+    Wait Until Element Is Visible    xpath=//div[@role="option" and normalize-space(.)="P"]
+    Click Element                    xpath=//div[@role="option" and normalize-space(.)="P"]
     
 Então sistema exibe informações de filtro Tipo de documento
     Wait Until Element Is Visible    //td[contains(.,'Fernando QA')]
@@ -119,11 +124,11 @@ E seleciono opção de filtro Data de registro
     #     Sleep    0.5s
     # END
     Sleep    1s
-    Click Element                    (//button[contains(.,'1')])[2]
-    Click Element                    (//button[contains(.,'28')])[3]
+    Click Element                    ${dia1}
+    Click Element                    ${dia28}
 
 Então sistema exibe informações de filtro Data de registro
-    Wait Until Element Is Visible    (//td[contains(.,'20/05/2025')])[1]
+    Wait Until Element Is Visible    (//td[contains(.,'05/05/2025')])[1]
     Sleep    1s 
 
 # -07.01.06
@@ -216,7 +221,7 @@ E clico em Assinatura Tradicional
     Click Element                    ${AssinaturaTradicional}
 
 Então sistema exibe informações de botão Gerar link de assinatura
-    Wait Until Page Contains    text=ZapSign - 2
+    Wait Until Page Contains    text=ZapSign - 124
 
 E clico no botão Deletar
     Sleep    1s

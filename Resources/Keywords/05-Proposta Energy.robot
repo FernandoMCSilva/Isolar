@@ -17,7 +17,7 @@ ${numeroteste}            21981905892
 ${valorteste}             0,7400
 
 ${botao_gerar_assinatura_Estimativa}     (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[10]
-${botao_imprimir_estimativa}             //button[contains(.,'Imprimir Estimativa')]
+${botao_imprimir_estimativa}             (//button[normalize-space()='Imprimir Proposta'])[1]
 ${botao_verPDF}                          (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[5]
 ${botao_ExportarExcel_estimativa}        //button[contains(.,'Exportar para Excel')]
 ${botao_Acoes_Estimativa}                //button[contains(.,'Ações')]
@@ -29,6 +29,7 @@ ${botao_baixar/imprimir_desabilitado}    (//div[contains(.,'Baixar/Imprimir Esti
 ${botao_GerarCalculos_Estimativa}        //button[contains(.,'Gerar cálculos')]
 ${botao_ConstantesPersonalizadas}        (//button[normalize-space()='Constantes personalizadas'])[1]
 ${botao_GerarEstimativa}                 (//button[normalize-space()='Gerar'])[1]
+${botao_AssinaturaTradicional}           (//button[normalize-space()='Assinatura Tradicional'])[1]
 
 ${input_nomeCliente_Estimativa}      //input[@id='nomeCliente']
 ${input_numeroCliente_Estimativa}    //input[@id='numeroCliente']
@@ -172,8 +173,14 @@ E preencho filtro cliente em Estimativa
 Quando clico em "Gerar link de assinatura"
     Sleep    2s
     Click Element    ${botao_gerar_assinatura_Estimativa}
+
+E clico em "Assinatura Tradicional"
+    Wait Until Element Is Visible    ${AssinaturaTradicional}
+    Click Element                    ${AssinaturaTradicional}
+
 E clico em "Não"
-    Click Element    //button[contains(.,'Sim')]
+    Sleep    1s
+    Click Element    //button[contains(.,'Não')]
     Click Element    //button[contains(@class, 'absolute') and contains(@class, 'right-4') and contains(@class, 'top-4') and contains(@class, 'rounded-sm')]
     Click Element    //button[contains(.,'Fechar')]
     
@@ -197,6 +204,8 @@ Então sistema exibe informações em aquivo PDF
     Wait Until Page Contains    text=08/01/2025
 
 E clico em "imprimir Estimativa"
+    Execute Javascript               window.scrollTo(0,0)
+    Sleep    1s
     Wait Until Element Is Visible    ${botao_imprimir_estimativa}
     Click Element                    ${botao_imprimir_estimativa}
 
@@ -212,7 +221,7 @@ E clico em "Cancelar"
     Click Element    (//button[@type='button'])[11]
 
 Então sistema retorna e exibe informações do menu Estimativa
-    Wait Until Page Contains    text=Histórico das estimativas
+    Wait Until Page Contains    text=Histórico das Propostas Energy
 
 # --4.18
 E preencho informações de desconto
@@ -330,7 +339,7 @@ E preencho informações de calculos
 
     Sleep    1s
     Click Element                    (//button[contains(.,'Selecione')])[1]
-    Click Element                    (//div[contains(.,'Autoconsumo')])[15]
+    Click Element                    (//div[@class='flex flex-col space-y-1.5'])[2]
 
     Sleep    1s
     Click Element                    (//button[contains(.,'Selecione')])[1]

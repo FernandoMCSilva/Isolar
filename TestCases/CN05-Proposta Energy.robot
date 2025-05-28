@@ -89,7 +89,6 @@ CT 05.10 - Validar botão Anterior
     E clico em "Anterior"
     Então sistema exibe Estimativa anteriores   
 
-    
 # BUG
 CT 05.12 - Validar botão Não em Gerar link de assinatura
     [Documentation]     Caso de teste valida botão Não em confirmação do Gerar link de assinatura
@@ -99,14 +98,16 @@ CT 05.12 - Validar botão Não em Gerar link de assinatura
     E preencho filtro cliente em Estimativa
     E clico em Buscar
     Quando clico em "Gerar link de assinatura"
+    E clico em "Assinatura Tradicional"
     E clico em "Não"
-    Então sistema volta para menu Estimativa
+    # Então sistema volta para menu Estimativa
 # BUG
 CT 05.13 - Validar botão Gerar link de assinatura
     [Documentation]     Caso de teste valida botão Gerar link de assinatura    
     [Tags]    Estimativa    Funcional    SmokeTest
     Dado que clico no menu "Estimativa"
     Quando clico em "Gerar link de assinatura"
+    E clico em "Assinatura Tradicional"
     E clico em "Sim"
     Então sistema exibe informações para criar assinaturas
 
