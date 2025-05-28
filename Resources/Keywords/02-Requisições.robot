@@ -359,15 +359,15 @@ E preencho informações de cadastro de requisição
     Click Element                    (//button[contains(.,'Selecione')])[1]
     Click Element                    (//div[contains(.,'RHIVAYLTON')])[5]
 
-    Click Element                    (//button[contains(.,'Selecione')])[1]
-    Wait Until Element Is Visible    (//div[@class='rounded-lg border bg-card text-card-foreground shadow-sm mt-12 mb-5'])[1]
-    Click Element                    (//div[@class='rounded-lg border bg-card text-card-foreground shadow-sm mt-12 mb-5'])[1]
+    # Click Element                    (//button[@role='combobox'])[2]
+    # Wait Until Element Is Visible    (//div[@class='flex flex-wrap w-full p-2 gap-8 ml-4'])[1]
+    # Click Element                    (//div[@class='flex flex-wrap w-full p-2 gap-8 ml-4'])[1]
 
-    Click Element                    (//button[contains(.,'Selecione')])[1]
+    Click Element                    (//button[@role='combobox'])[3]
     Wait Until Element Is Visible    (//div[contains(.,'RHIVAYLTON')])[15]
     Click Element                    (//div[contains(.,'RHIVAYLTON')])[15]
 
-    Click Element                    //button[contains(.,'Selecione')]
+    Click Element                    (//button[@role='combobox'])[4]
     Click Element                    (//div[contains(.,'Não')])[5]
     Click Element                    ${Botao_Proximo_Requisicoes}
 # 3
@@ -854,6 +854,7 @@ E clico no botão "Excluir requisição"
     Wait Until Page Contains         text=Editar requisição
     Wait Until Page Contains         text=B3 (teste)
     Execute JavaScript               window.scrollTo(0, 0)
+    Sleep    2s
     Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}
     Click Element                    ${Botao_Excluir_Requisicoes}
     Wait Until Element Is Visible    //button[contains(.,'Continuar')]

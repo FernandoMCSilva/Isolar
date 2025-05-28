@@ -11,11 +11,9 @@ ${filtro_NivelUrgencia}                //button[@id='nivel_urgencia']
 
 ${Input_Trello}                        //input[@placeholder='Cole o link do trello']
 
-${STATUS_CONCLUIDO}    (//div[@class='inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-primary-foreground rounded-md bg-green-400 hover:bg-green-300 text-center'])[1]
-${STATUS_FILA}         (//div[@class='inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 rounded-md text-center'])[1]
-
-
-
+${STATUS_CONCLUIDO}                    (//div[@class='inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-primary-foreground rounded-md bg-green-400 hover:bg-green-300 text-center'])[1]
+${STATUS_FILA}                         (//div[@class='inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 rounded-md text-center'])[1]
+${Botao_EditarObras}                   (//button)[22]
 
 *** Keywords ***                
 # -3.1.1
@@ -250,22 +248,22 @@ Trocar Status Para Fila
     Click Element                    ${Botao_Editar}
 
 #   E troco status para fila
-    Wait Until Element Is Visible    (//button[@type='button'])[13]
-    Click Element                    (//button[@type='button'])[13]
+    Wait Until Element Is Visible    (//button[@id='status'])[1]
+    Click Element                    (//button[@id='status'])[1]
     Sleep    1s
     Click Element                    (//div[contains(.,'Fila')])[5]
     Click Element                    //button[contains(.,'Salvar alterações')]
 
 E seleciono opção "Concluído" em editar status em Obras
-    Wait Until Element Is Visible    (//button[@type='button'])[13]
-    Click Element                    (//button[@type='button'])[13]
+    Wait Until Element Is Visible    (//button[@id='status'])[1]
+    Click Element                    (//button[@id='status'])[1]
     Sleep    1s
     Click Element                    (//div[contains(.,'Concluído')])[5]
     Click Element                    //button[contains(.,'Salvar alterações')]
 
 E seleciono opção "Fila" em editar status em Obras
-    Wait Until Element Is Visible    (//button[@type='button'])[13]
-    Click Element                    (//button[@type='button'])[13]
+    Wait Until Element Is Visible    (//button[@id='status'])[1]
+    Click Element                    (//button[@id='status'])[1]
     Sleep    1s
     Click Element                    (//div[contains(.,'Fila')])[5]
     Click Element                    //button[contains(.,'Salvar alterações')]
@@ -308,11 +306,11 @@ Então sistema exclui e retorna para menu Obras > requisições
 
 # -3.2.16
 Então sistema exibe mensagem de campos obrigatórios não preenchido em Obras
-    Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, CEP, Estado, Cidade, Endereço, Bairro
+    Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, Estado, Cidade, Bairro, Endereço, CEP
 
 # -3.2.17
 Então sistema exibe mensagem de CEP não preenchido em Obras 
-    Wait Until Page Contains    text=Preencha os campos obrigatórios: CEP, Estado, Cidade, Endereço, Bairro
+    Wait Until Page Contains    text=Preencha os campos obrigatórios: Estado, Cidade, Bairro, Endereço, CEP
 
 
 

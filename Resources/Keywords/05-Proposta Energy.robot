@@ -4,7 +4,7 @@ Resource           ../Main.robot
 Library    Telnet
 
 *** Variables ***
-${Tela_Estimativa}        //h1[contains(.,'Histórico das estimativas')]
+${Tela_PropostaEnergy}        //h1[contains(.,'Histórico das Propostas Energy')]
 ${Campo_Vendedor}         //input[@id='vendedor']
 ${Vendedor_Fila}          Fernando        
 ${Campo_Cliente}          //input[@id='cliente']
@@ -39,11 +39,11 @@ ${CTRL}           CONTROL
 # --4.1
 Dado que clico no menu "Estimativa"
     Sleep    2s
-    Wait Until Element Is Visible    ${MENU_ESTIMATIVA}
-    Click Element                    ${MENU_ESTIMATIVA}
+    Wait Until Element Is Visible    ${MENU_PROPOSTAENERGY}
+    Click Element                    ${MENU_PROPOSTAENERGY}
 
 Então sistema exibe informações de estimativas
-    Wait Until Element Is Visible    ${Tela_Estimativa}
+    Wait Until Element Is Visible    ${Tela_PropostaEnergy}
 
 # --4.2
 E preencho informações no campo Vendedor

@@ -8,7 +8,7 @@ Resource  Keywords/01-Início.robot
 Resource  Keywords/02-Requisições.robot
 Resource  Keywords/03-Obras.robot
 Resource  Keywords/04-Contratos.robot
-Resource  Keywords/05-Estimativa.robot
+Resource  Keywords/05-Proposta Energy.robot
 Resource  Keywords/06-Monitoramento.robot
 Resource  Keywords/07-Documentos.robot
 Resource  Keywords/08-Cadastros.robot
