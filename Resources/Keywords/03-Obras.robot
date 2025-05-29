@@ -217,13 +217,15 @@ Então sistema exibe requisição inserida
 
 # -3.2.11
 E preencho informações de editar requisição em Obras
-    Wait Until Element Is Visible    (//button[@type='button'])[12]
-    Click Element                    (//button[@type='button'])[12]
-    Click Element                    (//div[contains(.,'Telhado')])[5]
+    Wait Until Element Is Visible    (//button[@id='status'])[1]
+    Click Element                    (//button[@id='status'])[1]
+    Sleep    1s
+    Click Element                    (//div[contains(.,'Concluído')])[5]
     Click Element                    //button[contains(.,'Salvar alterações')]
 
 Então sistema conlcui edição de requisição em Obras
-    Wait Until Element Is Visible    //button[contains(.,'Telhado')]
+    Wait Until Page Contains    text=Preencha os campos abaixo e clique em atualizar para editar as informações.
+
 
 # -3.2.12
 E preencho filtro Cliente em Obras
@@ -306,11 +308,11 @@ Então sistema exclui e retorna para menu Obras > requisições
 
 # -3.2.16
 Então sistema exibe mensagem de campos obrigatórios não preenchido em Obras
-    Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, Estado, Cidade, Bairro, Endereço, CEP
-
+    Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, CEP, Estado, Cidade, Endereço, Bairro
+    
 # -3.2.17
 Então sistema exibe mensagem de CEP não preenchido em Obras 
-    Wait Until Page Contains    text=Preencha os campos obrigatórios: Estado, Cidade, Bairro, Endereço, CEP
+    Wait Until Page Contains    text=Preencha os campos obrigatórios: CEP, Estado, Cidade, Endereço, Bairro
 
 
 

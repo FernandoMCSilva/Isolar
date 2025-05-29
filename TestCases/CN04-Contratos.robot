@@ -11,7 +11,7 @@ CT 04.01.01 - Validar menu Contratos > Dashboard
     [Documentation]     Caso de teste valida se Menu Contratos > Dashboard está funcional
     [Tags]    Contratos    Dashboard    Funcional        
     Dado que clico no menu Contratos > Dashboard
-    Então sistema exibe tela de Contratos > Dashboard > Dashboard
+    Então sistema exibe tela de Contratos > Dashboard
     
 CT 04.01.02 - Validar filtros de data
     [Documentation]     Caso de teste valida se filtros de data inicial e data final está funcional

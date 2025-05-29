@@ -37,7 +37,7 @@ Dado que clico no menu Contratos > Dashboard
     Wait Until Element Is Visible    ${Menu_ContratosDashBoard}
     Click Element                    ${Menu_ContratosDashBoard}
 
-Então sistema exibe tela de Contratos > Dashboard > Dashboard
+Então sistema exibe tela de Contratos > Dashboard
     Wait Until Page Contains    text=Controle de contratos
 
 # -4.1.2

@@ -148,7 +148,7 @@ Então sistema exibe informações de pesquisa padrão
 
 
 Então sistema exibe informações de pesquisa em cadastros
-     ${nome_resultado}=    Get Text    //td[normalize-space()='B3 (teste)']
+     ${nome_resultado}=    Get Text    //td[normalize-space()='teste']
 
 # -08.01.           
 

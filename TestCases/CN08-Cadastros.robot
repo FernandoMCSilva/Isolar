@@ -1,7 +1,7 @@
 *** Settings ***
 Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
-Suite Setup        Setup Chrome Driver
+# Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema
 Test Teardown      Fechar navegador
 Documentation      Modúlo que Gerencie informações cadastradas no sistema.
@@ -1042,6 +1042,7 @@ CT 08.10.04 - Validar filtro "buscar"
     E clico no botao buscar
     E preencho informações de filtro buscar em cadastros
     Então sistema exibe informações de pesquisa em cadastros
+    
 CT 08.10.05 - Validar botão Cancelar em "Excluir"
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
     [Tags]    Cadastros    Origem da indicação    Funcional        

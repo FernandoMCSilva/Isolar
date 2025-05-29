@@ -22,7 +22,7 @@ ${filtro_Outorga}                    (//div[contains(.,'Todos')])[17]
 
 ${result_ANEEL}                      (//div[@class='select__value-container select__value-container--is-multi css-hlgwow'])[3]
 ${result_Concessionaria}             (//td[contains(.,'Castro - DIS')])[1]
-${result_Acessante}                  //td[@class='p-4 align-middle [&:has([role=checkbox])]:pr-0 text-center'][contains(.,'ADVOGADO EDUARDO SOARES (ANTIGA BOA ESPERANÇA)')]
+${result_Acessante}                  (//td[@class='p-4 align-middle [&:has([role=checkbox])]:pr-0 text-center'][normalize-space()='BOREALIS'])[1]
 ${result_Classe}                     (//td[contains(.,'Residencial')])[1]
 ${result_Detalhe}                    (//td[contains(.,'TIPO 02')])[1]
 ${result_Posto}                      (//td[contains(.,'Fora ponta')])[1]
@@ -73,10 +73,11 @@ E seleciono filtro Responsável
     Sleep    1s
     Wait Until Element Is Visible    (//button[contains(@type,'button')])[11]
     Click Element                    (//button[contains(@type,'button')])[11]
-    Click Element                    (//div[contains(.,'Marcos Acosta Borges')])[13]
+    Wait Until Element Is Visible    xpath=//div[@role="option" and normalize-space(.)="OSEAS"]
+    Click Element                    xpath=//div[@role="option" and normalize-space(.)="OSEAS"]
 
 Então sistema exibe informações de filtro Responsável "suporte"
-    Wait Until Element Is Visible    (//td[contains(.,'Marcos Acosta Borges')])[1]
+    Wait Until Element Is Visible    (//td[contains(text(),'OSEAS')])[1]
 
 # --11.01.05
 E seleciono filtro Vendedor Técnico "Todos"
@@ -123,7 +124,7 @@ E seleciono filtro Tipo de requisição
     Press Keys                       NONE    ENTER
 
 Então sistema exibe informações de filtro Tipo de requisição "Todos"
-    Wait Until Element Is Visible    (//td[contains(.,'Técnico')])[1]
+    Wait Until Element Is Visible    (//td[@class='p-4 align-middle [&:has([role=checkbox])]:pr-0 text-center'][normalize-space()='Estimativa'])[1]
 
 # --11.01.10
 E seleciono filtro Data de criação
@@ -244,7 +245,7 @@ Então sistema exibe informações de filtro Concessionária
 E preencho informação de filtro Acessante
     Wait Until Element Is Visible    ${filtro_Acessante}    
     Click Element                    ${filtro_Acessante}
-    Click Element                    (//div[contains(.,'ADVOGADO EDUARDO SOARES (ANTIGA BOA ESPERANÇA)')])[4]
+    Click Element                    (//div[contains(.,'BOREALIS')])[4]
 
 Então sistema exibe informações de filtro Acessante
     Wait Until Element Is Visible    ${result_Acessante}
