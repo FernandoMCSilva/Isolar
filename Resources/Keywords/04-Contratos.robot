@@ -15,7 +15,7 @@ ${Filtro_+60Dias}                         //div[@class='inline-flex justify-cent
 ${Filtro_30Dias}                          (//span[contains(@class,'mr-1 inline-flex')])[2]
 ${Filtro_15Dias}                          (//div[contains(@class,'mb-3 flex')])[3]
 ${Filtro_Vencidos}                        (//div[@class='flex-1 p-6'])[4]
-${Filtro_Indefinidos}                     (//div[contains(.,'IndefinidosNº Contratos9')])[6]
+${Filtro_Indefinidos}                     (//div[@class='flex-1 p-6 items-center justify-center'])[1]
 ${Filtro_VigenciaInicial}                 //button[@id='vigencia_inicio']
 ${Filtro_VigenciaFinal}                   //button[@id='vigencia_fim']
 ${Filtro_Indice}                          //button[@id='indice_data']
@@ -133,7 +133,7 @@ E preencho informação de filtro Vigência inicial
     Click Element    ${Filtro_VigenciaInicial}
 
 Então sistema exibe informações de filtro Vigência inicial
-    Wait Until Element Is Visible    //td[contains(.,'01/01/2025')]
+    Wait Until Element Is Visible    //td[contains(.,'06/01/2025')]
 
 # -4.2.3
 E preencho informação de filtro Vigência final
@@ -149,7 +149,7 @@ E preencho informação de filtro Vigência final
     Click Element    //td[normalize-space(text())='1']
 
 Então sistema exibe informações de filtro Vigência final
-    Wait Until Element Is Visible    //td[normalize-space(text())='Sara TESTE 2 - NORMAL']
+    Wait Until Element Is Visible    (//td[normalize-space()='SARA MABILIA DE MATTOS'])[1]
 
 # -4.2.4
 E preencho informação de filtro Índice
@@ -183,16 +183,16 @@ E preencho informação de filtro Status do índice
     Click Element                    (//div[contains(.,'Não atualizado')])[5]
 
 Então sistema exibe informações de filtro Status do índice
-    Wait Until Element Is Visible    //td[contains(.,'ConsoliDATA')]
+    Wait Until Element Is Visible    (//td[@class='p-4 align-middle [&:has([role=checkbox])]:pr-0 text-center'])[5]
 
 # -4.2.7
 E preencho informação de filtro Empresa
     Wait Until Element Is Visible    ${Filtro_EmpresaContratos}
     Click Element                    ${Filtro_EmpresaContratos}
-    Click Element                    (//div[contains(.,'Unifabricas')])[14]
+    Click Element                    xpath=//div[@role="option" and normalize-space(.)="Isolar Energy"]
 
 Então sistema exibe informações de filtro Empresa
-    Wait Until Element Is Visible    //td[contains(.,'Caleb Otávio Mendes')]
+    Wait Until Element Is Visible    (//td[@class='p-4 align-middle [&:has([role=checkbox])]:pr-0 text-center'][normalize-space()='Isolar Energy'])[1]
 
 # -4.2.8
 E preencho informação de filtro Departamento
@@ -223,10 +223,10 @@ Então sistema exibe informações de filtro Nome de indivíduo
 E preencho informação de filtro Status de vigência
     Wait Until Element Is Visible    ${Filtro_StatusVigenciaContratos}
     Click Element                    ${Filtro_StatusVigenciaContratos}
-    Click Element                    (//div[contains(.,'Renovado')])[5]
+    Click Element                    (//div[contains(.,'Reincidido/Encerrado')])[5]
     
 Então sistema exibe informações de filtro Status de vigência
-    Wait Until Element Is Visible    //td[contains(.,'André Giovanni Raimundo Aparício')]
+    Wait Until Element Is Visible    (//td[normalize-space()='Anderson'])[1]
 
 # -4.2.12
 E preencho filtro nome
@@ -298,7 +298,7 @@ E clico no botão Anexos
     Click Element                    ${botao_Anexos}
     
 Então sistema exibe informações de documento
-    Wait Until Page Contains    text=Anexos do Contrato #25
+    Wait Until Page Contains    text=Anexos do Contrato #35
 
 # -4.2.17
 E faço download de documento
