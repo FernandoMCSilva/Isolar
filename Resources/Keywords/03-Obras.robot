@@ -217,6 +217,7 @@ Então sistema exibe requisição inserida
 
 # -3.2.11
 E preencho informações de editar requisição em Obras
+    Sleep    3s
     Wait Until Element Is Visible    (//button[@id='status'])[1]
     Click Element                    (//button[@id='status'])[1]
     Sleep    1s
@@ -250,6 +251,7 @@ Trocar Status Para Fila
     Click Element                    ${Botao_Editar}
 
 #   E troco status para fila
+    Sleep    3s
     Wait Until Element Is Visible    (//button[@id='status'])[1]
     Click Element                    (//button[@id='status'])[1]
     Sleep    1s
@@ -257,6 +259,7 @@ Trocar Status Para Fila
     Click Element                    //button[contains(.,'Salvar alterações')]
 
 E seleciono opção "Concluído" em editar status em Obras
+    Sleep    3s
     Wait Until Element Is Visible    (//button[@id='status'])[1]
     Click Element                    (//button[@id='status'])[1]
     Sleep    1s

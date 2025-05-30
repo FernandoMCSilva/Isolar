@@ -211,5 +211,3 @@ CT 04.02.18 - Validar mandança do Status vigência
     E clico no botão "Editar"
     E mudo status de vigência
     Então sistema realiza mudança de vigência
-
-

@@ -539,6 +539,7 @@ Então sistema verifica se há cadastro temporario
         Click Element                    ${Botao_Editar}
 
         Wait Until Page Contains         text=Editar requisição
+        Sleep    2s
         Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}    timeout=10s
 
         Execute JavaScript               window.scrollTo(0, 0)
