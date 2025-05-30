@@ -170,8 +170,6 @@ CT 05.19 - Validar botão e funcionalidade "Gerar"
     E seleciono Estimativa pôr "Gasto mensal em R$" 
     E seleciono valor da classificação "Trifásico"
     E preencho valor de Gasto mensal
-    E seleciono valor de tensão FF "220v"
-    E seleciono valor de tensão FN "220v"
     E clico em Gerar cálculos
     Então sistema exibe resultado dos cálculos
 

@@ -21,11 +21,11 @@ ${botao_imprimir_estimativa}             (//button[normalize-space()='Imprimir P
 ${botao_verPDF}                          (//button[contains(@class,'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10')])[5]
 ${botao_ExportarExcel_estimativa}        //button[contains(.,'Exportar para Excel')]
 ${botao_Acoes_Estimativa}                //button[contains(.,'Ações')]
-${botao_baixar/imprimir_Estimativa}      //button[contains(.,'Baixar/Imprimir Estimativa')]
+${botao_baixar/imprimir_Estimativa}      (//button[normalize-space()='Baixar/Imprimir Proposta'])[1]
 ${botao_iniciarconversa_Estimativa}      //button[contains(.,'Iniciar conversa no WhatsApp')]
 ${botao_enviaremail_Estimativa}          //button[contains(.,'(0)Enviar por E-mail')]
 ${botao_salvarinformacoes_Estimativa}    //button[contains(.,'Salvar informações no sistema')]
-${botao_baixar/imprimir_desabilitado}    (//div[contains(.,'Baixar/Imprimir Estimativa')])[4]
+${botao_imprimir_energyINATIVO}          (//div[@role='menuitem'])[1]
 ${botao_GerarCalculos_Estimativa}        //button[contains(.,'Gerar cálculos')]
 ${botao_ConstantesPersonalizadas}        (//button[normalize-space()='Constantes personalizadas'])[1]
 ${botao_GerarEstimativa}                 (//button[normalize-space()='Gerar'])[1]
@@ -339,21 +339,11 @@ E preencho informações de calculos
 
     Sleep    1s
     Click Element                    (//button[contains(.,'Selecione')])[1]
-    Click Element                    (//div[@class='flex flex-col space-y-1.5'])[2]
-
-    Sleep    1s
-    Click Element                    (//button[contains(.,'Selecione')])[1]
     Click Element                    (//div[contains(.,'Junto a carga')])[5]
 
     Sleep    1s
     Click Element                    (//button[contains(.,'Selecione')])[1]
     Click Element                    (//div[contains(.,'Trifásico')])[5]
-
-    Click Element                    (//button[@id='tensaoValor'])[1]
-    Click Element                    (//div[contains(.,'127 V')])[5]
-
-    Click Element                    //button[@id='tensaoValor']
-    Click Element                    (//div[contains(.,'220 V')])[5]
 
     Input Text                       //input[@id='mensalValor']    500,00
 
@@ -363,7 +353,7 @@ E clico no botão Ações
     Click Element                    ${botao_Acoes_Estimativa}
     
 Então sistema exibe tela de botão ações 
-    Wait Until Page Contains    text=Baixar/Imprimir Estimativa
+    Wait Until Element Is Visible    ${botao_imprimir_energyINATIVO}    timeout=10s
 
 # --4.25
 E preencho informações do cliente
@@ -379,7 +369,7 @@ E clico no botão Baixar/Imprimir
     Click Element                    //button[contains(.,'Confirmar')]
 
 Então sistema Baixa/Imprime Estimativa
-    Wait Until Page Contains    text=Estimativa salva com sucesso!
+    Wait Until Page Contains    text=Proposta salva com sucesso!
 
 # --4.26
 E clico no botão Iniciar conversa no WhatsApp
@@ -393,7 +383,7 @@ E clico no botão Iniciar conversa no WhatsApp
 
 Então sistema redireciona para Whatsapp
     Sleep    1s
-    Wait Until Page Contains    text=Estimativa salva com sucesso!
+    Wait Until Page Contains    text=Proposta salva com sucesso!
 
 # --4.27
 E clico no botão Enviar por email
@@ -409,7 +399,7 @@ E clico no botão Enviar por email
 
 Então sistema abre informações do email
     Sleep    1s
-    Wait Until Page Contains    text=Selecione ou arraste a estimativa
+    Wait Until Page Contains    text=Selecione ou arraste a Proposta
 
 # --4.28
 E clico no botão Salvar informarções no sistema
@@ -420,17 +410,17 @@ E clico no botão Salvar informarções no sistema
 
 
 Então sistema salva informações no sistema
-    Wait Until Page Contains    text=Estimativa salva com sucesso!
+    Wait Until Page Contains    text=Proposta salva com sucesso!
 
 # --4.29
 E clico no botão Baixar/Imprimir desabilitado
     Sleep    2s
-    Wait Until Element Is Visible    ${botao_baixar/imprimir_desabilitado}
-    Click Element                    ${botao_baixar/imprimir_desabilitado}
+    Wait Until Element Is Visible    ${botao_imprimir_energyINATIVO}
+    Click Element                    ${botao_imprimir_energyINATIVO}
 
 Então sistema sai da tela do botão Ações
-    Wait Until Element Is Not Visible    ${botao_baixar/imprimir_desabilitado}
-    Element Should Not Be Visible        ${botao_baixar/imprimir_desabilitado}
+    Wait Until Element Is Not Visible    ${botao_imprimir_energyINATIVO}
+    Element Should Not Be Visible        ${botao_imprimir_energyINATIVO}
 
 # --4.30
 # E preencho informações de constantes personalizadas
