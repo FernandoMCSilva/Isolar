@@ -125,7 +125,7 @@ E valido filtro Nível Urgencia em Obras > Requisições
 
 Então sistema exibe resultado de nível de urgência    
     Sleep    1s
-    Wait Until Element Is Visible    //td[contains(.,'test123')]
+    Wait Until Element Is Visible    //td[contains(.,'2305')]
 
 
 # -3.2.7
