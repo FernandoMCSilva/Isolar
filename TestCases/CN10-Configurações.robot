@@ -1,7 +1,7 @@
 *** Settings ***
 Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
-# Suite Setup        Setup Chrome Driver
+Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema
 Test Teardown      Fechar navegador
 Documentation      Modúlo gerencia Configurações no sistema.

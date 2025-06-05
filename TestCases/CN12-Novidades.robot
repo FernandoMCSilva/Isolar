@@ -1,7 +1,7 @@
 *** Settings ***
 Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
-# Suite Setup        Setup Chrome Driver
+Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema
 Test Teardown      Fechar navegador
 Documentation      Modúlo que Gerencie o menu Novidades
@@ -27,3 +27,4 @@ CT 12.03 - Validar menu Atualizações
     Quando clico no menu Atualizações
     Então sistema exibe página de Atualizações
     
+# testerepositorio 1
