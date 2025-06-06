@@ -26,5 +26,3 @@ CT 12.03 - Validar menu Atualizações
     Dado que clico no menu "Novidades"
     Quando clico no menu Atualizações
     Então sistema exibe página de Atualizações
-    
-# testerepositorio 1
