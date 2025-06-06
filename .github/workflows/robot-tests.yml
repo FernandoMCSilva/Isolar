@@ -14,6 +14,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      DISPLAY: :99  # necessário para executar o Chrome com interface gráfica via Xvfb
+
     steps:
       - name: Checkout repositório
         uses: actions/checkout@v3
@@ -39,13 +42,15 @@ jobs:
       - name: Instalar Google Chrome
         run: sudo apt-get install -y google-chrome-stable
 
+      - name: Iniciar Xvfb (display virtual)
+        run: |
+          /usr/bin/Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
+          echo "Xvfb iniciado com DISPLAY=:99"
+
       - name: Rodar testes Robot em paralelo
         id: run_tests
         run: |
           set -o pipefail
-          Xvfb :99 -ac &
-          XVFB_PID=$!
-          export DISPLAY=:99
 
           if [ -n "${{ github.event.inputs.module }}" ]; then
             echo "Executando somente a suíte: ${{ github.event.inputs.module }}"
@@ -57,47 +62,27 @@ jobs:
 
           echo "Arquivo alvo: $TARGET_SUITE"
 
-          # 1ª execução de todos os casos
           pabot --processes 4 --output output1.xml $TARGET_SUITE || true
-
-          # 2ª execução apenas dos que falharam
-          pabot --processes 2 \
-            --rerunfailed output1.xml \
-            --output output2.xml \
-            $TARGET_SUITE || true
-
-          # 3ª execução só dos que ainda falharam
-          pabot --processes 1 \
-            --rerunfailed output2.xml \
-            --output output3.xml \
-            $TARGET_SUITE || true
-
-          kill $XVFB_PID
+          pabot --processes 2 --rerunfailed output1.xml --output output2.xml $TARGET_SUITE || true
+          pabot --processes 1 --rerunfailed output2.xml --output output3.xml $TARGET_SUITE || true
 
       - name: Preparar merge e gerar relatórios
         run: |
           set -e
-
-          # Lista todos os .xml para debug
           ls -la *.xml
 
-          # Monta dinamicamente o array de arquivos a mesclar
           FILES=()
           for f in output1.xml output2.xml output3.xml; do
-          if [[ -f "$f" ]]; then
-            echo "Incluindo $f na mescla"
-            FILES+=("$f")
-          else
-            echo "$f não encontrado, pulando"
-          fi
+            if [[ -f "$f" ]]; then
+              echo "Incluindo $f na mescla"
+              FILES+=("$f")
+            else
+              echo "$f não encontrado, pulando"
+            fi
           done
 
-          # Agora faz o merge dos XMLs existentes
           rebot --merge --output merged_output.xml "${FILES[@]}"
-
-          # Gera HTML de log e report a partir do merged_output
           rebot --log log.html --report report.html merged_output.xml
-
 
       - name: Verificar se ainda há falhas
         run: |
