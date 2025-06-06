@@ -39,17 +39,20 @@ jobs:
       - name: Instalar Google Chrome
         run: sudo apt-get install -y google-chrome-stable
 
-      - name: Rodar testes Robot em paralelo
+      - name: Rodar testes Robot em paralelo com Xvfb
         id: run_tests
         run: |
           set -o pipefail
-          Xvfb :99 -ac &
+
+          # Inicia o X virtual framebuffer
+          Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
           XVFB_PID=$!
           export DISPLAY=:99
 
+          # Define qual suíte executar
           if [ -n "${{ github.event.inputs.module }}" ]; then
             echo "Executando somente a suíte: ${{ github.event.inputs.module }}"
-            TARGET_SUITE=$(find TestCases -name "*${{ github.event.inputs.module }}*.robot" | head -n 1)
+            TARGET_SUITE="TestCases/${{ github.event.inputs.module }}"
           else
             echo "Executando todas as suítes"
             TARGET_SUITE="TestCases"
@@ -57,20 +60,10 @@ jobs:
 
           echo "Arquivo alvo: $TARGET_SUITE"
 
-          # 1ª execução de todos os casos
-          pabot --processes 4 --output output1.xml $TARGET_SUITE || true
-
-          # 2ª execução apenas dos que falharam
-          pabot --processes 2 \
-            --rerunfailed output1.xml \
-            --output output2.xml \
-            $TARGET_SUITE || true
-
-          # 3ª execução só dos que ainda falharam
-          pabot --processes 1 \
-            --rerunfailed output2.xml \
-            --output output3.xml \
-            $TARGET_SUITE || true
+          # Execuções com retry
+          pabot --processes 4 --output output1.xml "$TARGET_SUITE" || true
+          pabot --processes 2 --rerunfailed output1.xml --output output2.xml "$TARGET_SUITE" || true
+          pabot --processes 1 --rerunfailed output2.xml --output output3.xml "$TARGET_SUITE" || true
 
           kill $XVFB_PID
 
