@@ -39,6 +39,14 @@ jobs:
       - name: Instalar Google Chrome
         run: sudo apt-get install -y google-chrome-stable
 
+      - name: Instalar Firefox e GeckoDriver
+        run: |
+         sudo apt-get install -y firefox
+         GECKO_VERSION=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
+         wget https://github.com/mozilla/geckodriver/releases/download/v$GECKO_VERSION/geckodriver-v$GECKO_VERSION-linux64.tar.gz
+         tar -xzf geckodriver-v$GECKO_VERSION-linux64.tar.gz
+         sudo mv geckodriver /usr/local/bin/
+
       - name: Rodar testes Robot em paralelo com Xvfb
         id: run_tests
         run: |
