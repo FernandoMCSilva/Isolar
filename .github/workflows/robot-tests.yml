@@ -52,7 +52,7 @@ jobs:
           # Define qual suíte executar
           if [ -n "${{ github.event.inputs.module }}" ]; then
             echo "Executando somente a suíte: ${{ github.event.inputs.module }}"
-            TARGET_SUITE="TestCases/${{ github.event.inputs.module }}"
+            TARGET_SUITE=$(find TestCases -iname "*${{ github.event.inputs.module }}*.robot" | head -n 1)
           else
             echo "Executando todas as suítes"
             TARGET_SUITE="TestCases"
