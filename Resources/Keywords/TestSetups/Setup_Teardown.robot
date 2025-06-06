@@ -17,6 +17,7 @@ Dado que acesse a Isolar e logue no sistema
     Fazer login        ${EmailAdmin}    ${SenhaAdmin}
     Sleep    3s
     Reload Page
+    Set Window Size    1920    1080
 
 Dado que acesse a Isolar e logue no sistema com Oseias
     Abrir navegador    ${URLISO}
