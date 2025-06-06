@@ -41,18 +41,18 @@ jobs:
 
       - name: Instalar Firefox e GeckoDriver manualmente
         run: |
-           # Instala Firefox direto da Mozilla
-           wget -qO firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=pt-BR"
-           tar xjf firefox.tar.bz2
-           sudo mv firefox /opt/firefox
-           sudo ln -sf /opt/firefox/firefox /usr/bin/firefox
+         # Instala Firefox direto da Mozilla
+         wget -O firefox.tar.bz2 https://ftp.mozilla.org/pub/firefox/releases/latest/linux-x86_64/pt-BR/firefox-*.tar.bz2
+         tar -xjf firefox.tar.bz2
+         sudo mv firefox /opt/firefox
+         sudo ln -sf /opt/firefox/firefox /usr/bin/firefox
 
-           # Instala GeckoDriver compatível
-           GECKO_VERSION=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
-           wget -q https://github.com/mozilla/geckodriver/releases/download/v$GECKO_VERSION/geckodriver-v$GECKO_VERSION-linux64.tar.gz
-           tar -xzf geckodriver-v$GECKO_VERSION-linux64.tar.gz
-           chmod +x geckodriver
-           sudo mv geckodriver /usr/local/bin/
+         # Instala GeckoDriver compatível
+         GECKO_VERSION=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
+         wget https://github.com/mozilla/geckodriver/releases/download/v$GECKO_VERSION/geckodriver-v$GECKO_VERSION-linux64.tar.gz
+         tar -xzf geckodriver-v$GECKO_VERSION-linux64.tar.gz
+         chmod +x geckodriver
+         sudo mv geckodriver /usr/local/bin/
 
       - name: Rodar testes Robot em paralelo com Xvfb
         id: run_tests
