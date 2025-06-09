@@ -1,7 +1,7 @@
 *** Settings ***
 Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
-Suite Setup        Setup Chrome Driver
+# Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema
 Test Teardown      Fechar navegador
 Documentation      Modúlo que Gerencie informações cadastradas no sistema.
@@ -952,6 +952,7 @@ CT 08.09.06 - Validar botão Continuar em "Excluir"
     Então sistema salva novo cadastro de pessoas
 
 #   Excluir
+    Aguardo carregamento da página
     Dado que clico no menu "Cadastros > Departamentos"
     E clico no botao buscar
     E preencho informações de pesquisa

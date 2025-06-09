@@ -57,6 +57,8 @@ ${input_TokenUsuarioZapSign}                    //input[@placeholder='Ex: 66587e
 ${input_NomeCargosFuncoes}                      //input[@id='nome']
 ${input_DescricaoCargosFuncoes}                 //textarea[@id='descricao']
 ${input_BuscarLinksExternos}                    //input[@placeholder='Buscar...']
+${input_Telefone_Cadastros}                     (//input[@id='telefone'])[1]
+${input_Email_Cadastros}                        (//input[@id='email'])[1]
 
 
 ${filtro_cards/Lista}                           (//button[contains(@type,'button')])[9]
@@ -416,6 +418,7 @@ Dado que clico no menu "Cadastros > Departamentos"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
     Click Element                    ${Menu_Departamentos}
+
 Então sistema exibe informações de cadastro de "Departamentos"
     Wait Until Page Contains     text=Departamentos
 
@@ -426,19 +429,23 @@ E preencho informações de inserir novo cadastro de Departamentos
     Input Text        //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
     Click Element    (//div[contains(.,'Selecione as requisições')])[13]
     Click Element    (//div[contains(.,'Técnico')])[14]
+    Sleep            0.3s
     Click Element    (//input[@value='B3 (teste)'])[2]
     Click Element    (//div[contains(.,'Selecione as empresas')])[13]
+    Sleep            0.3s
     Click Element    (//div[contains(.,'Isolar Energy')])[14]
+    Sleep            0.3s
     Click Element    //button[contains(.,'Próximo')]
 
 # -08.09.03
 E preencho informações de cadastro editado em Departamentos
-    Sleep    2s
+    Sleep    2.5s
     Input Text        //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
     Input Text        //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
     Click Element    (//div[contains(.,'Técnico')])[13]
     Click Element    (//div[contains(.,'Pós Venda')])[14]
     Click Element    (//input[@value='B3 (teste)'])[2]
+    Sleep    0.3s
     Click Element    //button[contains(.,'Próximo')]
     Sleep    1s
     # Execute JavaScript    window.scrollBy(0, 500);
@@ -518,6 +525,8 @@ Então sistema exibe informações de cadastro de "Usuários ZapSign"
 E preencho informações de inserir novo cadastro de Usuários ZapSign
     Wait Until Element Is Visible    ${input_NomeUsuarioZapSign}
     Input Text                       ${input_NomeUsuarioZapSign}    ${nome_pesquisa_GruposConsumidores}
+    Input Text                       ${input_Telefone_Cadastros}    21981905892
+    Input Text                       ${input_Email_Cadastros}       teste123@gmail.com
     Input Text                       ${input_TokenUsuarioZapSign}   ${nome_pesquisa_GruposConsumidores}
 
 Então sistema salva novo cadastro de Usuários ZapSign
