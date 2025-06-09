@@ -39,7 +39,7 @@ ${Departamento_Fila}       Técnico
 ${Status_option}           (//div[contains(.,'Parado')])[5]
 ${Tipo_Fila}               Técnico
 
-${COMBOBOX_DEPARTAMENTO}       //button[contains(@id,'departament')]
+${COMBOBOX_DEPARTAMENTO}       (//button[@id='departament'])[1]
 ${COMBOBOX_STATUS}             //button[contains(@id,'status')]
 ${COMBOBOX_TIPO}               //button[@id='tipo']
 ${COMBOBOX_URGENTE}            //button[contains(@id,'urgente')]
@@ -82,6 +82,7 @@ E preencho informações no campo Cliente
 
 Então sistema exibe requisições do filtro Cliente
     Wait Until Page Contains    text=Fernando
+
 # --2.3
 E valido filtros dentro de Departamento em Requisições
     Wait Until Element Is Visible    ${COMBOBOX_DEPARTAMENTO}    timeout=12s
@@ -90,11 +91,12 @@ E valido filtros dentro de Departamento em Requisições
     ${departamentos}    Get WebElements    ${COMBOBOX_DEPARTAMENTO}
 
     FOR    ${departamento}    IN    @{OPCOES_COMBOBOX_DEPARTAMENTO}
+            Sleep    1s
             # Clica na opção de departamento atual
             Click Element    ${departamento}
-            Sleep    0.5s
+            Sleep    1s
             # Clica no botão de buscar
-            Click Element    ${Btn_Buscar}
+            # Click Element    ${Btn_Buscar}
             
             # Espera pela atualização e valida que a página foi atualizada
             Wait Until Element Is Visible    //button[contains(.,'Inserir')]    timeout=10s
@@ -102,10 +104,12 @@ E valido filtros dentro de Departamento em Requisições
             # Log do departamento testado
             ${departamento_text}    Get Text    ${departamento}
             Log    Departamento ${departamento_text} validado com sucesso
-            Wait Until Element Is Visible    ${COMBOBOX_DEPARTAMENTO}
+            Sleep    1s
             Execute JavaScript    window.scrollTo(0, 0)
+            Sleep    1s
             # Reabre a combobox para a próxima iteração
-            Click Element    ${COMBOBOX_DEPARTAMENTO}
+            Wait Until Element Is Visible    ${COMBOBOX_DEPARTAMENTO}
+            Click Element                    ${COMBOBOX_DEPARTAMENTO}
         END
 
     # Wait Until Element Is Visible    //button[@id='departament']      10s
@@ -195,6 +199,7 @@ E seleciono urgente "Sim"
 
 E valido todos os filtros de Nivel de urgencia em Requisições
     Wait Until Element Is Visible    ${COMBOBOX_NIVEL_DE_URGENCIA}    timeout=10s
+    Sleep    1s
     Click Element    ${COMBOBOX_NIVEL_DE_URGENCIA}
     # Pega todas as opções dentro do dropdown
     ${departamentos}    Get WebElements    ${COMBOBOX_NIVEL_DE_URGENCIA}
@@ -350,10 +355,11 @@ E preencho informações de cadastro de requisição
     Sleep    1s
     Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]
     Click Element                    //button[contains(.,'Novo Cliente')]
-    Input Text                       //input[@id='telefone']    12345678910
-    Input Text                       //input[@id='cep']    28990154
-    Input Text                       //input[@id='cpfCnpj']    12345678910
+    Input Text                       //input[@id='cpfCnpj']    19895982771
+    Input Text                       //input[@id='telefone']    21981905892
     Input Text                       //input[@id='atvEco']    Residencial
+    Input Text                       //input[@id='cep']    28990154
+    Sleep    1s
     Click Element                    ${Botao_Proximo_Requisicoes}
 # 2
     Click Element                    (//button[contains(.,'Selecione')])[1]
@@ -579,8 +585,10 @@ E preencho informações de cadastro de requisição com cliente "temporario"
         Execute JavaScript    document.body.style.zoom="70%"
         Sleep    3s
         Click Element    //button[contains(.,'Novo Cliente')]
-        Input Text    //input[@id='telefone']    12345678910
-        Input Text    //input[@id='cep']    28990154
+        Input Text       //input[@id='cpfCnpj']    19895982771
+        Input Text       //input[@id='telefone']   21981905892
+        Input Text       //input[@id='atvEco']     Residencial
+        Input Text       //input[@id='cep']        28990154
         FOR    ${i}    IN RANGE    10
             ${status}=    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Salvar')]
             Exit For Loop If    ${status}
@@ -888,8 +896,6 @@ E clico em próximo sem preencher campos
 
 Então sistema exibe mensagem de campos obrigatórios não preenchido
     Wait Until Element Is Visible    xpath=//div[contains(text(), 'Preencha os campos obrigatórios: Nome completo, Telefone, CEP')]
-
-    
 
 # --2.27
 Preencho somente campo telefone

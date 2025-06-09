@@ -8,8 +8,8 @@ Abrir navegador
     [Arguments]     ${url}
     ${options}=    Evaluate    options_module.create_options()    modules=options_module
     Open Browser    ${url}    firefox    options=${options}
+    Sleep    1s
     Maximize Browser Window
-    # Set Window Size    1920    1080
     Wait Until Element Is Visible    ${LOGO}    timeout=10s
 
 Dado que acesse a Isolar e logue no sistema
@@ -17,7 +17,7 @@ Dado que acesse a Isolar e logue no sistema
     Fazer login        ${EmailAdmin}    ${SenhaAdmin}
     Sleep    3s
     Reload Page
-    Set Window Size    1920    1080
+    # Set Window Size    1920    1080
 
 Dado que acesse a Isolar e logue no sistema com Oseias
     Abrir navegador    ${URLISO}
