@@ -226,6 +226,7 @@ CT 03.02.13 - Validar botão Mudar Status Requisição
     E seleciono opção "Fila" em editar status em Obras
     
 #   Verificar se status da requisição foi retornado para Fila
+    Aguardo carregamento da página
     Dado que clico no menu Obras > Requisições
     Quando clico em "Filtros"
     E preencho filtro Cliente em Obras
