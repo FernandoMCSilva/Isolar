@@ -23,7 +23,7 @@ ${SenhaTecnico}              Isolar@2023
 ${MENU_INICIO}               //a[contains(.,'Início')]
 ${MENU_REQUISICOES}          //a[contains(.,'Requisições')]
 ${MENU_OBRAS}                //button[contains(.,'Obras')]
-${MENU_CONTROLECONTRATORS}   //button[contains(.,'Controle de contratos')]
+${MENU_CONTROLECONTRATOS}   //button[contains(.,'Controle de contratos')]
 ${MENU_PROPOSTAENERGY}       (//a[@href='/estimativa'])[1]
 ${MENU_MISOL}                //a[contains(.,'Mi Sol')]
 ${MENU_MONITORAMENTO}        //a[contains(.,'Monitoramento')]

@@ -30,10 +30,12 @@ ${Filtro_PaginaFiltro}                    //button[@id='pag']
 
 
 *** Keywords ***       
+
 # -4.1.1
 Dado que clico no menu Contratos > Dashboard
-    Wait Until Element Is Visible    ${MENU_CONTROLECONTRATORS}
-    Click Element                    ${MENU_CONTROLECONTRATORS}
+    Sleep    2s
+    Wait Until Element Is Visible    ${MENU_CONTROLECONTRATOS}
+    Click Element                    ${MENU_CONTROLECONTRATOS}
     Wait Until Element Is Visible    ${Menu_ContratosDashBoard}
     Click Element                    ${Menu_ContratosDashBoard}
 
@@ -60,6 +62,7 @@ Então sistema exibe número de contratos
 
 # -4.1.3
 E valido filtro departamento em Contratos > Dashboard
+    Sleep    4s
     Wait Until Element Is Visible    ${Departamento_ContratosDashboard}
     Click Element                    ${Departamento_ContratosDashboard}
     Click Element                    (//div[contains(.,'Administrativo')])[5]
@@ -68,50 +71,61 @@ Então sistema exibe requisições do departamento em Contratos > Dashboard
     Wait Until Element Is Visible    //h3[contains(.,'Administrativo')]
 
 # -4.1.4
-
 Quando clico no filtro "+60 dias"
+    Sleep    1s
     Wait Until Element Is Visible    ${Filtro_+60Dias}
     Click Element                    ${Filtro_+60Dias}
+    Sleep    1s
 
 Então sistema exibe informações de filtro "+60 dias"
     Wait Until Element Is Visible    //button[contains(.,'+60 dias')]
 
 # -4.1.5
 Quando clico no filtro "30 dias"
+    Sleep    1s
     Wait Until Element Is Visible    ${Filtro_30Dias}
     Click Element                    ${Filtro_30Dias}
+    Sleep    1s
+
 
 Então sistema exibe informações de filtro "30 dias"
     Wait Until Element Is Visible    //button[contains(.,'30 dias')]
 
 # -4.1.6
 Quando clico no filtro "15 dias"
+    Sleep    2s
     Wait Until Element Is Visible    ${Filtro_15Dias}
     Click Element                    ${Filtro_15Dias}
+    Sleep    1s
+
 
 Então sistema exibe informações de filtro "15 dias"
     Wait Until Element Is Visible    //button[contains(.,'15 dias')]
 
 # -4.1.7
 Quando clico no filtro "Vencidos"
+    Sleep    1s
     Wait Until Element Is Visible    ${Filtro_Vencidos}
     Click Element                    ${Filtro_Vencidos}
+    Sleep    1s
 
 Então sistema exibe informações de filtro "Vencidos"
     Wait Until Element Is Visible    //button[contains(.,'Vencidos')]
 
 # -4.1.7
 Quando clico no filtro "Indefinidos"
+    Sleep    1s
     Wait Until Element Is Visible    ${Filtro_Indefinidos}
     Click Element                    ${Filtro_Indefinidos}
+    Sleep    1s
 
 Então sistema exibe informações de filtro "Indefinidos"
     Wait Until Element Is Visible    //button[contains(.,'Indefinidos')]
 
 # -4.2.1
 Dado que clico no menu Contratos > Contratos
-    Wait Until Element Is Visible    ${MENU_CONTROLECONTRATORS}
-    Click Element                    ${MENU_CONTROLECONTRATORS}
+    Wait Until Element Is Visible    ${MENU_CONTROLECONTRATOS}
+    Click Element                    ${MENU_CONTROLECONTRATOS}
     Wait Until Element Is Visible    ${Menu_ContratosContratos}
     Click Element                    ${Menu_ContratosContratos}
 
@@ -244,6 +258,7 @@ Então sistema limpa todos os filtros
 
 # -4.2.13
 Quando seleciono filtro 30 dias
+    Sleep    1s
     Wait Until Element Is Visible    ${Filtro_PaginaFiltro}
     Click Element                    ${Filtro_PaginaFiltro}
     Click Element                    //span[normalize-space(text())='30 dias']
