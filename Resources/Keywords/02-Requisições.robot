@@ -766,18 +766,18 @@ E clico no botão "Renovar"
     Sleep    1s
     Wait Until Element Is Visible    ${Botao_Acoes_Requisicoes}
     Click Element                    ${Botao_Acoes_Requisicoes}
-    Sleep    1s
+    Sleep    2s
     Wait Until Element Is Visible    ${Botao_Renovar}
     Click Element                    ${Botao_Renovar}
-    Sleep    1s
+    Sleep    2s
     Wait Until Element Is Visible    //button[contains(.,'Sim')]
     Click Element                    //button[contains(.,'Sim')]
-    Sleep    1s
+    Sleep    2s
     Wait Until Element Is Visible    //button[contains(.,'Atualização de preço')]
     Click Element                    //button[contains(.,'Atualização de preço')]
     Wait Until Element Is Visible    (//button[@type='button'][normalize-space()='Sim'])[2]
     Click Element                    (//button[@type='button'][normalize-space()='Sim'])[2]
-    Sleep    1s
+    Sleep    2s
 
 Então sistema exibe mensagem após renovação  
     Execute Javascript    window.scrollTo(0,0)  

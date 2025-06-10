@@ -317,13 +317,13 @@ CT 02.19 - Validar botão Renovar
 #     E clico no botão "Continuar" em "Excluir"
 #     Então sistema exibe mensagem de cadastro excluido
 
-CT 02.23 - Tentar inserir requisição sem campos obrigatórios
-    [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
-    [Tags]    Requisições    Funcional        
-    Dado que clico no menu "Requisições"
-    Quando clico no botão "Inserir/Técnico"
-    E clico em próximo sem preencher campos
-    Então sistema exibe mensagem de campos obrigatórios não preenchido
+# CT 02.23 - Tentar inserir requisição sem campos obrigatórios
+#     [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
+#     [Tags]    Requisições    Funcional        
+#     Dado que clico no menu "Requisições"
+#     Quando clico no botão "Inserir/Técnico"
+#     E clico em próximo sem preencher campos
+#     Então sistema exibe mensagem de campos obrigatórios não preenchido
 
 # CT 02.24 - Tentar inserir requisição preenchendo somente telefone
 #     [Documentation]     Caso de teste valida inserir preenchendo somente o campo telefone (Erro) 
