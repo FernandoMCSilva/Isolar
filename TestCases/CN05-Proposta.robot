@@ -1,7 +1,7 @@
 *** Settings ***
 Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
-Suite Setup        Setup Chrome Driver
+# Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema
 Test Teardown      Fechar navegador
 Documentation      Modúlo que gerencie as Estimativas cadastradas no sistema.
@@ -101,6 +101,7 @@ CT 05.12 - Validar botão Não em Gerar link de assinatura
     E clico em "Assinatura Tradicional"
     E clico em "Não"
     # Então sistema volta para menu Estimativa
+    
 # BUG
 CT 05.13 - Validar botão Gerar link de assinatura
     [Documentation]     Caso de teste valida botão Gerar link de assinatura    

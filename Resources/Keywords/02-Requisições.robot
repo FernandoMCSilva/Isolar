@@ -16,7 +16,6 @@ ${Botao_Editar}                         (//button[contains(@class,'inline-flex i
 ${Botao_Visualizar}                     (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10'])[2]
 ${Botao_Acoes}                          (//button[@data-state='closed'])[19]
 ${Botao_Historico}                      (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 w-10'])[3]
-
 ${Botao_Comentarios}                    (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'])[2]
 ${Botao_Acoes_Requisicoes}              (//button[@data-state='closed'])[21]
 ${Botao_Renovar}                        //button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 w-10 bg-green-500 hover:bg-green-400']
@@ -27,6 +26,8 @@ ${Botao_MudarStatusRequisicao}          (//button[@data-state='closed'])[20]
 
 ${elemento_fila}                        (//div[@class='inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 rounded-md text-center'])[1]
 ${elemento_concluido}                   (//div[@class='inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-primary-foreground rounded-md bg-green-400 hover:bg-green-300 text-center'])[1]
+
+${input_CPF_Requisicoes}                (//input[@id='cpfCnpj'])[1]
 
 ${Filtro_Urgente}                       (//button[contains(@type,'button')])[10]
 
@@ -895,9 +896,14 @@ E clico em próximo sem preencher campos
     Sleep    2s
 
 Então sistema exibe mensagem de campos obrigatórios não preenchido
-    Wait Until Element Is Visible    xpath=//div[contains(text(), 'Preencha os campos obrigatórios: Nome completo, Telefone, CEP')]
+    Wait Until Page Contains    Por favor digite um CPF ou CNPJ válido.
 
 # --2.27
+Preencho o campo CPF
+    Wait Until Element Is Visible    ${input_CPF_Requisicoes}
+    Input Text                       ${input_CPF_Requisicoes}    19895982771
+
+
 Preencho somente campo telefone
     Sleep    2.5s
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]
