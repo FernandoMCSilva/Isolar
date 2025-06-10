@@ -424,8 +424,8 @@ Então sistema exibe informações de cadastro de "Departamentos"
 
 # -08.09.02
 E preencho informações de inserir novo cadastro de Departamentos
-    Sleep    2s
-    Input Text        //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
+    Sleep    4s
+    Input Text        //input[@id='nome']         ${nome_pesquisa_GruposConsumidores}
     Input Text        //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
     Click Element    (//div[contains(.,'Selecione as requisições')])[13]
     Click Element    (//div[contains(.,'Técnico')])[14]
@@ -434,7 +434,7 @@ E preencho informações de inserir novo cadastro de Departamentos
     Click Element    (//div[contains(.,'Selecione as empresas')])[13]
     Sleep            0.3s
     Click Element    (//div[contains(.,'Isolar Energy')])[14]
-    Sleep            0.3s
+    Sleep            3s
     Click Element    //button[contains(.,'Próximo')]
 
 # -08.09.03

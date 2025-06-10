@@ -891,6 +891,7 @@ CT 08.09.02 - Validar botão Inserir
     Então sistema salva novo cadastro de pessoas
 
 #   Excluir
+    Aguardo carregamento da página
     Dado que clico no menu "Cadastros > Departamentos"
     E clico no botao buscar
     E preencho informações de pesquisa
