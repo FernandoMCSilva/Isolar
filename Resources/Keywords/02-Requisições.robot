@@ -763,21 +763,22 @@ E preencho informações de pesquisa para verificação de temporario
 
 
 E clico no botão "Renovar"
-    Sleep    0.5s
+    Sleep    1s
     Wait Until Element Is Visible    ${Botao_Acoes_Requisicoes}
     Click Element                    ${Botao_Acoes_Requisicoes}
-    Sleep    0.5s
+    Sleep    1s
     Wait Until Element Is Visible    ${Botao_Renovar}
     Click Element                    ${Botao_Renovar}
-    Sleep    0.5s
+    Sleep    1s
     Wait Until Element Is Visible    //button[contains(.,'Sim')]
     Click Element                    //button[contains(.,'Sim')]
-    Sleep    0.5s
+    Sleep    1s
     Wait Until Element Is Visible    //button[contains(.,'Atualização de preço')]
     Click Element                    //button[contains(.,'Atualização de preço')]
     Wait Until Element Is Visible    (//button[@type='button'][normalize-space()='Sim'])[2]
     Click Element                    (//button[@type='button'][normalize-space()='Sim'])[2]
     Sleep    1s
+
 Então sistema exibe mensagem após renovação  
     Execute Javascript    window.scrollTo(0,0)  
     Wait Until Page Contains    text=Gerencie informações cadastradas no sistema.
@@ -890,10 +891,10 @@ Então sistema exibe mensagem de cadastro excluido
 
 # --2.26
 E clico em próximo sem preencher campos
-    Sleep    1s
+    Sleep    2s
     Wait Until Element Is Visible    ${Botao_Proximo_Requisicoes}
     Click Element                    ${Botao_Proximo_Requisicoes}
-    Sleep    2s
+    Sleep    1s
 
 Então sistema exibe mensagem de campos obrigatórios não preenchido
     Wait Until Page Contains    text=Por favor digite um CPF ou CNPJ válido.
