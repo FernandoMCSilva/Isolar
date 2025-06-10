@@ -896,7 +896,7 @@ E clico em próximo sem preencher campos
     Sleep    2s
 
 Então sistema exibe mensagem de campos obrigatórios não preenchido
-    Wait Until Page Contains    Por favor digite um CPF ou CNPJ válido.
+    Wait Until Page Contains    text=Por favor digite um CPF ou CNPJ válido.
 
 # --2.27
 Preencho o campo CPF
