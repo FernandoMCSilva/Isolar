@@ -654,7 +654,7 @@ Então sistema exibe informações de Visualizar em requisições
 # --2.17
 E volto pra tela inicio
     #   E clico no menu inicio
-    Sleep    1s
+    Sleep    2s
     Wait Until Element Is Visible    ${MENU_INICIO}
     Click Element                    ${MENU_INICIO}
     Sleep    1s

@@ -55,7 +55,7 @@ Então sistema exibe requisições do departamento em Obras
 # -3.2.1
 E volto pra tela inicial
 #   E clico no menu inicio
-    Sleep    1s
+    Sleep    2s
     Wait Until Element Is Visible    ${MENU_INICIO}
     Click Element                    ${MENU_INICIO}
 #   Fecho menu Obras
@@ -311,7 +311,7 @@ Então sistema exclui e retorna para menu Obras > requisições
 
 # -3.2.16
 Então sistema exibe mensagem de campos obrigatórios não preenchido em Obras
-    Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, CEP, Estado, Cidade, Endereço, Bairro
+    Wait Until Page Contains    text=Por favor digite um CPF ou CNPJ válido.
     
 # -3.2.17
 Então sistema exibe mensagem de CEP não preenchido em Obras 

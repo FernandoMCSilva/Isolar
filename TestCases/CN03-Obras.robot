@@ -292,6 +292,7 @@ CT 03.02.17 - Tentar inserir requisição preenchendo somente telefone
     [Tags]    Obras    Requisições    Funcional         
     Dado que clico no menu Obras > Requisições
     Quanto clico no botão "Inserir/Obras"
+    Preencho o campo CPF
     Preencho somente campo telefone
     Então sistema exibe mensagem de CEP não preenchido em Obras 
 
@@ -300,10 +301,9 @@ CT 03.02.18 - Tentar inserir requisição preenchendo somente CEP
     [Tags]    Obras    Requisições    Funcional         
     Dado que clico no menu Obras > Requisições
     Quanto clico no botão "Inserir/Obras"
+    Preencho o campo CPF
     Preencho somente campo CEP
     Então sistema exibe mensagem de telefone não preenchido
-
-    
 
 # ...
 # Inserir 
