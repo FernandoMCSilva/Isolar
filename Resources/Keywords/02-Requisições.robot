@@ -911,11 +911,11 @@ Preencho o campo CPF
 
 Preencho somente campo telefone
     Wait Until Element Is Visible         ${input_telefone_Requisicoes}
-    Input Text                            ${input_telefone_Requisicoes}    1111111111
+    Input Text                            ${input_telefone_Requisicoes}    21981905892
     Click Element                         ${Botao_Proximo_Requisicoes}
 
 Então sistema exibe mensagem de CEP não preenchido
-    Wait Until Page Contains    text=Preencha os campos obrigatórios: CEP
+    Wait Until Page Contains    text=Preencha os campos obrigatórios: CEP, Estado, Cidade, Endereço
     
 # --2.28
 Preencho somente campo CEP
