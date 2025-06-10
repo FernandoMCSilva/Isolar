@@ -900,16 +900,16 @@ Então sistema exibe mensagem de campos obrigatórios não preenchido
 
 # --2.27
 Preencho o campo CPF
-    Wait Until Element Is Visible    ${input_CPF_Requisicoes}
-    Input Text                       ${input_CPF_Requisicoes}    19895982771
-
-
-Preencho somente campo telefone
     Sleep    2.5s
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]
     Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    1teste
     Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]
     Click Element                    //button[contains(.,'Novo Cliente')]
+    Wait Until Element Is Visible    ${input_CPF_Requisicoes}
+    Input Text                       ${input_CPF_Requisicoes}    19895982771
+
+
+Preencho somente campo telefone
     Wait Until Element Is Visible         ${input_telefone_Requisicoes}
     Input Text                            ${input_telefone_Requisicoes}    1111111111
     Click Element                         ${Botao_Proximo_Requisicoes}
@@ -919,10 +919,6 @@ Então sistema exibe mensagem de CEP não preenchido
     
 # --2.28
 Preencho somente campo CEP
-    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]
-    Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    1teste
-    Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]
-    Click Element                    //button[contains(.,'Novo Cliente')]
     Wait Until Element Is Visible    ${input_CEP_Requisicoes}
     Input Text                       ${input_CEP_Requisicoes}    1111111
     Click Element                    ${Botao_Proximo_Requisicoes}
