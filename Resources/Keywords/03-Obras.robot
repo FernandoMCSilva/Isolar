@@ -71,6 +71,7 @@ Dado que clico no menu Obras > Requisições
     Sleep    4s
     Wait Until Element Is Visible    ${Menu_ObrasRequisicoes}
     Click Element                    ${Menu_ObrasRequisicoes}
+    Sleep    2s
 
 Então sistema exibe tela de Obras > Requisições
     Wait Until Page Contains    text=Gerencie informações cadastradas no sistema.
@@ -267,6 +268,7 @@ E seleciono opção "Concluído" em editar status em Obras
     Click Element                    //button[contains(.,'Salvar alterações')]
 
 E seleciono opção "Fila" em editar status em Obras
+    Sleep    3s
     Wait Until Element Is Visible    (//button[@id='status'])[1]
     Click Element                    (//button[@id='status'])[1]
     Sleep    1s
