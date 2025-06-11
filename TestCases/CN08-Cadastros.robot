@@ -1111,6 +1111,7 @@ CT 08.11.02 - Validar botão Inserir
     Então sistema salva novo cadastro de Empresas
 
 #   Excluir
+    Aguardo carregamento da página
     Dado que clico no menu "Cadastros > Empresas"
     E clico no botao buscar
     E preencho informações de pesquisa
@@ -1172,6 +1173,7 @@ CT 08.11.06- Validar botão Continuar em "Excluir"
     Então sistema salva novo cadastro de Empresas
 
 #   Excluir
+    Aguardo carregamento da página
     Dado que clico no menu "Cadastros > Empresas"
     E clico no botao buscar
     E preencho informações de pesquisa
@@ -1329,6 +1331,7 @@ CT 08.13.02 - Validar botão Inserir
     Então sistema salva novo cadastro de Cargos e Funções
 
 #   Excluir
+    Aguardo carregamento da página
     Dado que clico no menu "Cadastros > Cargos e Funções"
     E clico no botao buscar
     E preencho informações de pesquisa
@@ -1347,6 +1350,7 @@ CT 08.13.03 - Validar botão Editar
     Então sistema salva novo cadastro de Cargos e Funções
 
 #   Editar
+    Aguardo carregamento da página
     Dado que clico no menu "Cadastros > Cargos e Funções"
     E clico no botao buscar
     E preencho informações de pesquisa

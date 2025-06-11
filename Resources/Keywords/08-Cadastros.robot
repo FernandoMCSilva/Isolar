@@ -213,6 +213,7 @@ E preencho informações de inserir novo cadastro de pessoas
  
 
 E clico em "Salvar"
+    Sleep    2s
     Wait Until Element Is Visible    ${botao_salvar_CadastrosPessoas}
     Click Element                    ${botao_salvar_CadastrosPessoas}
     

@@ -68,6 +68,7 @@ Quando clico em "Paradas"
     Click Element                    ${Botao_Paradas}
 
 Então sistema exibe requisições com status "Paradas"
+    Sleep    2s
     Wait Until Element Is Visible    xpath=//td[contains(normalize-space(),'Parado')]       timeout=10s
     ${statuses}=    Get Webelements    xpath=//td[contains(normalize-space(),'Parado')]                                
     ${count}=    Get Length    ${statuses}
