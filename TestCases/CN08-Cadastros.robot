@@ -910,6 +910,7 @@ CT 08.09.03 - Validar botão Editar
     Então sistema salva novo cadastro de pessoas
 
 #   Editar
+    Aguardo carregamento da página
     Dado que clico no menu "Cadastros > Departamentos"
     E clico no botao buscar
     E preencho informações de pesquisa
@@ -1395,6 +1396,7 @@ CT 08.13.06 - Validar botão Continuar em "Excluir"
     Então sistema salva novo cadastro de Cargos e Funções
 
 #   Excluir
+    Aguardo carregamento da página
     Dado que clico no menu "Cadastros > Cargos e Funções"
     E clico no botao buscar
     E preencho informações de pesquisa
