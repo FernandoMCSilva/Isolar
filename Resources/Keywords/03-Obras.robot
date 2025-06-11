@@ -118,6 +118,7 @@ Então sistema exibe resultado do filtro Urgente
     
 # -3.2.6
 E valido filtro Nível Urgencia em Obras > Requisições
+    Sleep    2s
     Wait Until Element Is Visible    (//button[@type='button'])[11]
     Click Element                    (//button[@type='button'])[11]
     Click Element                    (//div[contains(.,'Baixo')])[5]
@@ -239,6 +240,7 @@ E preencho filtro Cliente em Obras
 
 # -3.2.13
 Então sistema verifica se requisição está "fila" inicialmente
+    Sleep    2s
     Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
     ${concluido_visivel}=    Run Keyword And Return Status    Element Should Be Visible    ${STATUS_CONCLUIDO}
     Run Keyword If    '${concluido_visivel}'=='True'    Trocar Status Para Fila
