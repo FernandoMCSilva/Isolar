@@ -1182,7 +1182,6 @@ CT 08.11.06- Validar botão Continuar em "Excluir"
     E clico no botão "Continuar" em "Excluir"
     Então sistema exclui item do menu Cadastro > Pessoas 
     
-.
 CT 08.11.07 - Validar filtro "Cards ou Lista" 
     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
     [Tags]    Cadastros    Empresas    Funcional        
@@ -1507,4 +1506,3 @@ CT 08.14.09 - Validar botão Exportar para Excel
     Dado que clico no menu "Cadastros > Links externos"
     Quando clico no botão Exportar para Excel em Links externos 
     Então sistema exporta para excel
-
