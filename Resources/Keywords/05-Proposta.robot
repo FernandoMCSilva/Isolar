@@ -30,6 +30,7 @@ ${botao_GerarCalculos_Estimativa}        //button[contains(.,'Gerar cálculos')]
 ${botao_ConstantesPersonalizadas}        (//button[normalize-space()='Constantes personalizadas'])[1]
 ${botao_GerarEstimativa}                 (//button[normalize-space()='Gerar'])[1]
 ${botao_AssinaturaTradicional}           (//button[normalize-space()='Assinatura Tradicional'])[1]
+${botao_NomeQuantidadeProposta}          (//div[@class='px-2 py-1.5 text-sm font-semibold'])[1]
 
 ${input_nomeCliente_Estimativa}      //input[@id='nomeCliente']
 ${input_numeroCliente_Estimativa}    //input[@id='numeroCliente']
@@ -52,7 +53,7 @@ E preencho informações no campo Vendedor
     Press Keys                           //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
 
 E clico em "Buscar"
-    Sleep    1s
+    Sleep    2s
     Wait Until Element Is Visible        ${Botao_Buscar}
     Click Element                        ${Botao_Buscar}
 
@@ -130,6 +131,9 @@ Quando clico em "Quantidade de itens por pág"
 
 E preencho informações no campo quantidade
     Input Text    //input[contains(@id,'itensPorPagina')]   ${EXPECTED_RESULTS}
+    Sleep    1s
+#   E clico fora para carregar o filtro
+    Click Element     ${botao_NomeQuantidadeProposta}   
 
 Então sistema exibe informações de acordo com quantidade preenchida
     Click Element    (//div[contains(.,'Quantidade')])[10]

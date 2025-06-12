@@ -109,6 +109,7 @@ E valido filtros de departamento
         END
 
 E clico em Buscar
+    Sleep    2s
     Wait Until Element Is Visible    ${Btn_Buscar}
     Click Element                    ${Btn_Buscar} 
 
