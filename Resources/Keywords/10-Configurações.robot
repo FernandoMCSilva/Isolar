@@ -422,6 +422,7 @@ E seleciono filtro "Departamento"
 
 # -10.03.04
 E clico no botão Ver template
+    Sleep    2s
     Wait Until Element Is Visible    ${Botao_VerTemplate_Configuracoes}
     Click Element                    ${Botao_VerTemplate_Configuracoes}
 
@@ -430,6 +431,7 @@ Então sistema exibe informações de template selecionado
 
 # -10.03.05
 E clico no botão Ver histórico
+    Sleep    2s
     Wait Until Element Is Visible    ${Botao_Historico_Configuracoes}
     Click Element                    ${Botao_Historico_Configuracoes}
 
@@ -872,7 +874,7 @@ Então sistema exibe informações de menu Configurações > Obras
 # -10.07.02
 E preencho informações de Novo tipo de Requisições
     Wait Until Element Is Visible    //input[@id='nomeRequisicao']
-    Sleep    1s
+    Sleep    2s
     Input Text                       //input[@id='nomeRequisicao']    ${nome_pesquisa_GruposConsumidores}
     Click Element                    ${botao_ExcluirSecao}
     Sleep    1s
