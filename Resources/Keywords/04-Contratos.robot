@@ -324,7 +324,7 @@ E faço download de documento
 
 # -4.2.18
 E mudo status de vigência
-    Sleep    1s
+    Sleep    3s
     Wait Until Element Is Visible    //button[contains(.,'Selecione o status da vigência')]
     Click Element                    //button[contains(.,'Selecione o status da vigência')]
     Click Element                    (//div[contains(.,'Reincidido/Encerrado')])[5]

@@ -92,6 +92,7 @@ E seleciono Tipo de usina "Autoconsumo"
     Wait Until Element Is Visible    //button[@type='button'][contains(.,'Tipo')]
     Click Element                    //button[@type='button'][contains(.,'Tipo')]
     Click Element                    //div[@role='option'][contains(.,'Autoconsumo')]
+    Sleep    2s
 
 Então sistema exibe informações de Estimativa do filtro Tipo de usina "Autoconsumo"
     Wait Until Page Contains    text=Registros carregados com sucesso!
