@@ -764,7 +764,7 @@ E preencho informações de pesquisa para verificação de temporario
 
 
 E clico no botão "Renovar"
-    Sleep    1s
+    Sleep    3s
     Wait Until Element Is Visible    ${Botao_Acoes_Requisicoes}
     Click Element                    ${Botao_Acoes_Requisicoes}
     Sleep    2s

@@ -173,7 +173,7 @@ Quando clico em "Editar" em configuracoes
     Click Element                    ${botao_Editar_Configuracoes}
 
 E preencho informações de cadastro editado no menu Configurações > Requisições
-    Sleep    2s
+    Sleep    4s
     Input Text               ${input_NomeDaRequisicao}    ${nome_pesquisa_GruposConsumidores}
     Click Element            (//div[contains(.,'TI')])[12]
     Click Element            (//div[contains(.,'Compras')])[13]
@@ -889,9 +889,11 @@ E preencho informações de pesquisa em Configurações > Obras
     Wait Until Page Contains    text=padrão
 
 E edito informações de tipo de requisição em Configurações > Obras
+    Sleep    2s
     Wait Until Element Is Visible    //input[@id='nomeRequisicao']
     Sleep    1s
     Input Text                       //input[@id='nomeRequisicao']    ${nome_pesquisa_GruposConsumidores}
+    Sleep    2s
     Click Element                    ${botao_ExcluirSecao}
     Sleep    1s
 
