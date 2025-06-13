@@ -119,12 +119,15 @@ E seleciono filtro Tipo de requisição
     Sleep    1s
     Wait Until Element Is Visible    //button[@id='tipo']
     Click Element                    //button[@id='tipo']
-    Press Keys                       NONE    ARROW_DOWN
-    Sleep                            0.3s
+    FOR    ${i}    IN RANGE    3
+        Press Keys                       NONE    ARROW_DOWN
+        Sleep                            0.3s
+    END
+    Sleep    0.3s
     Press Keys                       NONE    ENTER
 
-Então sistema exibe informações de filtro Tipo de requisição "Todos"
-    Wait Until Element Is Visible    (//td[@class='p-4 align-middle [&:has([role=checkbox])]:pr-0 text-center'][normalize-space()='Estimativa'])[1]
+Então sistema exibe informações de filtro Tipo de requisição
+    Wait Until Element Is Visible    (//td[@class='p-4 align-middle [&:has([role=checkbox])]:pr-0 text-center'][normalize-space()='Técnico'])[1]
 
 # --11.01.10
 E seleciono filtro Data de criação
@@ -183,12 +186,18 @@ E valido filtros de departamento em Relatórios
             # Reabre a combobox para a próxima iteração
             Click Element    ${Btn_Departamentos}
         END
+        Sleep    1s
+        Press Keys    None    ESC
+        Sleep    0.5s
+        Click Element    ${Link_Filtros}
 
 Então sistema exibe resultado de filtro departamento
+    Sleep    3s
     Wait Until Element Is Visible    ${botao_ExportarExcel_estimativa}
 
 # --11.01.14
 Então sistema exibe resultado de Quantidade de itens por pág 
+    Sleep    2s
     Click Element    (//div[contains(.,'Quantidade')])[10]
     Sleep    5s
     ${resultados}    Get WebElements    xpath=//tr[contains(@class, 'border-b transition-colors')]

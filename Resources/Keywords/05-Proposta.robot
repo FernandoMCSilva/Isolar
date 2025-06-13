@@ -130,7 +130,13 @@ Quando clico em "Quantidade de itens por pág"
     Click Element                    //span[contains(.,'Quantidade de itens por pág')]
 
 E preencho informações no campo quantidade
-    Input Text    //input[contains(@id,'itensPorPagina')]   ${EXPECTED_RESULTS}
+    Sleep    2s
+    Click Element    //input[contains(@id,'itensPorPagina')]
+    FOR    ${i}    IN RANGE    2
+        Press Keys       //input[contains(@id,'itensPorPagina')]    BACKSPACE
+        Sleep    0.5s        
+    END
+    Press Keys       //input[contains(@id,'itensPorPagina')]    2
     Sleep    1s
 #   E clico fora para carregar o filtro
     Click Element     ${botao_NomeQuantidadeProposta}   
@@ -319,7 +325,7 @@ Então sistema exibe aba de Constantes personalizadas
 
 # --4.22
 Quando clico no botão Exportar para Excel
-    Sleep    1s
+    Sleep    3s
     Wait Until Element Is Visible    ${botao_ExportarExcel_estimativa}
     Click Element                    ${botao_ExportarExcel_estimativa}
 Então sistema exporta para excel

@@ -83,7 +83,7 @@ CT 11.01.09 - Validar filtro Tipo de requisição
     Quando clico em "Filtros"
     E seleciono filtro Tipo de requisição
     E clico em "Buscar"
-    Então sistema exibe informações de filtro Tipo de requisição "Todos"
+    Então sistema exibe informações de filtro Tipo de requisição
 
 CT 11.01.10 - Validar filtro Data de criação 
     [Documentation]     Caso de teste valida se filtro Data de criação no Menu Relatórios > Relatórios está funcional
@@ -124,7 +124,6 @@ CT 11.01.14 - Validar filtro Quantidade de itens por pág
     [Documentation]     Caso de teste valida se filtro Quantidade de itens por pág no Menu Relatórios > Relatórios está funcional
     [Tags]    Relatórios    Relatórios    Funcional        
     Dado que clico no menu "Relatórios > Relatórios"
-    Quando clico em "Filtros"
     Quando clico em "Quantidade de itens por pág"
     E preencho informações no campo quantidade
     Então sistema exibe resultado de Quantidade de itens por pág 
