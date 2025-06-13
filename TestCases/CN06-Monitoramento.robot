@@ -9,6 +9,6 @@ Documentation      Gerenciar informações de rede direto pelo sistema.
 *** Test Cases ***
 CT 06.01 - Validar menu Monitoramento
     [Documentation]     Caso de teste valida se Menu Monitoramento está funcional
-    [Tags]    Perfil    Funcional        
+    [Tags]    Monitoramento
     Dado que clico no menu "Monitoramento"
     Então sistema entra na página Monitoramento

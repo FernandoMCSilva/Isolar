@@ -9,13 +9,13 @@ Documentation      Modúlo que Gerencie usuários cadastrados no sistema.
 *** Test Cases ***
 CT 09.01 - Validar menu Usuários
     [Documentation]     Caso de teste valida se Menu Usuário está funcional
-    [Tags]    Usuários    Funcional        
+    [Tags]    Usuários        
     Dado que clico no menu "Usuários"
     Então sistema exibe usuários
 
 CT 09.02 - Validar botão Inserir 
     [Documentation]     Caso de teste valida se funcionalidade Inserir no Usuários está funcional
-    [Tags]    Usuários    Funcional    SmokeTest        
+    [Tags]    Usuários        
 #   Inserir cadastro
     Dado que clico no menu "Usuários"
     Quando clico no botão "Inserir"
@@ -32,7 +32,7 @@ CT 09.02 - Validar botão Inserir
 
 CT 09.03 - Validar botão Editar
     [Documentation]     Caso de teste valida se funcionalidade Editar no Usuários está funcional
-    [Tags]    Usuários    Funcional    SmokeTest      
+    [Tags]    Usuários      
 #   Inserir cadastro
     Dado que clico no menu "Usuários"
     Quando clico no botão "Inserir"
@@ -60,7 +60,7 @@ CT 09.03 - Validar botão Editar
 
 CT 09.04 - Validar filtro "buscar" 
     [Documentation]     Caso de teste valida se filtro buscar está funcional
-    [Tags]    Usuários    Funcional   
+    [Tags]    Usuários   
 #   Verifico se há cadastro B3 (teste)
     Dado que clico no menu "Usuários"
     E clico no botao buscar
@@ -92,7 +92,7 @@ CT 09.04 - Validar filtro "buscar"
 
 CT 09.05 - Validar botão Cancelar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Cancelar em Excluir está funcional
-    [Tags]    Usuários    Funcional        
+    [Tags]    Usuários        
     Dado que clico no menu "Usuários"
     Quando clico em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
@@ -100,7 +100,7 @@ CT 09.05 - Validar botão Cancelar em "Excluir"
 
 CT 09.06 - Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
-    [Tags]    Usuários    Funcional    SmokeTest        
+    [Tags]    Usuários        
 #   Inserir cadastro
     Dado que clico no menu "Usuários"
     Quando clico no botão "Inserir"
@@ -118,7 +118,7 @@ CT 09.06 - Validar botão Continuar em "Excluir"
 
 CT 09.07 - Validar filtro "Cards ou Lista" 
     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
-    [Tags]    Usuários    Funcional        
+    [Tags]    Usuários        
     Dado que clico no menu "Usuários"
     Quando clico no filtro "Cards"
     E clico em "Lista"
@@ -127,7 +127,7 @@ CT 09.07 - Validar filtro "Cards ou Lista"
 
 CT 09.08 - Validar busca não encontrada no filtro buscar 
     [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no Usuários
-    [Tags]    Usuários    Funcional        
+    [Tags]    Usuários        
     Dado que clico no menu "Usuários"
     E clico no botao buscar
     E preencho informações de busca não encontrada
@@ -135,7 +135,7 @@ CT 09.08 - Validar busca não encontrada no filtro buscar
 
 CT 09.09 - Validar botão Fechar no filtro "buscar" 
     [Documentation]     Caso de teste valida se botão Fechar no filtro buscar Usuários está funcional
-    [Tags]    Usuários    Funcional        
+    [Tags]    Usuários        
     Dado que clico no menu "Usuários"
     E clico no botao buscar
     E clico em "Fechar"

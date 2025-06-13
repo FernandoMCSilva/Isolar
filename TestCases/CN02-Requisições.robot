@@ -9,12 +9,12 @@ Documentation      Modúlo que Gerencie requisições cadastradas no sistema.
 *** Test Cases ***
 CT 02.01 - Validar menu Requisições
     [Documentation]     Caso de teste valida se Menu Requisições está funcional
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
 
 CT 02.02 - Validar filtro Cliente
     [Documentation]     Caso de teste valida o filtro Cliente em Requisições
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho informações no campo Cliente
@@ -22,7 +22,7 @@ CT 02.02 - Validar filtro Cliente
 
 CT 02.03 - Validar filtro Departamento
     [Documentation]     Caso de teste valida o filtro Departamento em Requisições
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E valido filtros dentro de Departamento em Requisições
@@ -30,7 +30,7 @@ CT 02.03 - Validar filtro Departamento
 
 CT 02.04 - Validar filtro Status
     [Documentation]     Caso de teste valida o filtro Status em Requisições
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E valido todos os filtros dentro de Status em Requisições
@@ -38,7 +38,7 @@ CT 02.04 - Validar filtro Status
 
 CT 02.05 - Validar filtro Tipo
     [Documentation]     Caso de teste valida o filtro Tipo em Requisições
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E valido todos os filtros dentro de Tipo em Requisições
@@ -46,7 +46,7 @@ CT 02.05 - Validar filtro Tipo
 
 CT 02.06 - Validar filtro Urgente
     [Documentation]     Caso de teste valida o filtro Urgente em Requisições
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E valido todos os filtros dentro de Urgente em Requisições
@@ -54,7 +54,7 @@ CT 02.06 - Validar filtro Urgente
 
 CT 02.07 - Validar filtro Nível de urgência
     [Documentation]     Caso de teste valida o filtro Nível de urgência em Requisições
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E seleciono urgente "Sim"
@@ -63,7 +63,7 @@ CT 02.07 - Validar filtro Nível de urgência
 
 CT 02.08 - Validar filtro Data de entrega
     [Documentation]     Caso de teste valida o filtro Data de entrega em Requisições
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho informações de Data de entrega
@@ -71,7 +71,7 @@ CT 02.08 - Validar filtro Data de entrega
 
 CT 02.09 - Validar filtro Data de criação
     [Documentation]     Caso de teste valida o filtro Data de criação em Requisições
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho informações de Data de criação
@@ -79,7 +79,7 @@ CT 02.09 - Validar filtro Data de criação
     
 CT 02.10 - Validar filtro Responsável
     [Documentation]     Caso de teste valida o filtro Responsável em Requisições
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E valido todos os filtros dentro de "Responsável"
@@ -87,7 +87,7 @@ CT 02.10 - Validar filtro Responsável
 
 CT 02.11 - Validar filtro Representante comercial
     [Documentation]     Caso de teste valida o filtro Representante comercial em Requisições
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E valido filtro dentro de "Representante comercial"
@@ -95,7 +95,7 @@ CT 02.11 - Validar filtro Representante comercial
 
 CT 02.12 - Validar filtro Vendedor
     [Documentation]     Caso de teste valida o filtro Vendedor em Requisições
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E seleciono filtro vendedor "Todos"
@@ -103,7 +103,7 @@ CT 02.12 - Validar filtro Vendedor
 
 CT 02.13 - Validar filtro Renovadas
     [Documentation]     Caso de teste valida o filtro Renovadas em Requisições
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E valido todos os filtros dentro de "Renovadas"
@@ -111,7 +111,7 @@ CT 02.13 - Validar filtro Renovadas
 
 CT 02.14 - Validar botão Inserir "Técnico"
     [Documentation]     Caso de teste valida botão Inserir "Técnico" em Requisições
-    [Tags]    Requisições    Funcional     SmokeTest   
+    [Tags]    Requisições   
 #   Verifico se há Requisição B3 (teste)
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
@@ -148,7 +148,7 @@ CT 02.14 - Validar botão Inserir "Técnico"
 
 CT 02.15 - Validar botão Editar
     [Documentation]     Caso de teste valida botão editar em Requisições
-    [Tags]    Requisições    Funcional    SmokeTest
+    [Tags]    Requisições    SmokeTest
 #   Verifico se há cadastro temporario
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
@@ -189,7 +189,7 @@ CT 02.15 - Validar botão Editar
 
 CT 02.16 - Validar botão Visualizar 
     [Documentation]     Caso de teste valida botão visualizar 
-    [Tags]    Requisições    Funcional    SmokeTest 
+    [Tags]    Requisições    SmokeTest 
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro Cliente 
@@ -198,7 +198,7 @@ CT 02.16 - Validar botão Visualizar
 
 CT 02.17 - Validar botão Mudar Status Requisição
     [Documentation]     Caso de teste valida botão Mudar Status Requisição
-    [Tags]    Requisições    Funcional    SmokeTest
+    [Tags]    Requisições    SmokeTest
 #   Verifica se requisição padrão está "Fila" 
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
@@ -220,7 +220,7 @@ CT 02.17 - Validar botão Mudar Status Requisição
     
 CT 02.18 - Validar botão Histórico 
     [Documentation]     Caso de teste valida botão Histórico 
-    [Tags]    Requisições    Funcional     
+    [Tags]    Requisições     
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro Cliente
@@ -229,7 +229,7 @@ CT 02.18 - Validar botão Histórico
 
 CT 02.19 - Validar botão Renovar
     [Documentation]     Caso de teste valida botão Renovar em Requisições
-    [Tags]    Requisições    Funcional    SmokeTest
+    [Tags]    Requisições    SmokeTest
 #   Verifico se há requisiçao temporario
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
@@ -283,7 +283,7 @@ CT 02.19 - Validar botão Renovar
 
 CT 02.21 - Validar botão Comentários 
     [Documentation]     Caso de teste valida botão Comentários 
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro Cliente
@@ -293,7 +293,7 @@ CT 02.21 - Validar botão Comentários
 
 CT 02.22 - Excluir requisição tipo "Técnico"
     [Documentation]     Caso de teste valida funcionalidade excluir 
-    [Tags]    Requisições    Funcional    SmokeTest
+    [Tags]    Requisições    SmokeTest
 #   Inserir cadastro temporario
     Dado que clico no menu "Requisições"
     Quando clico no botão "Inserir/Técnico"
@@ -319,7 +319,7 @@ CT 02.22 - Excluir requisição tipo "Técnico"
 
 CT 02.23 - Tentar inserir requisição sem campos obrigatórios
     [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
     Quando clico no botão "Inserir/Técnico"
     E clico em próximo sem preencher campos
@@ -327,7 +327,7 @@ CT 02.23 - Tentar inserir requisição sem campos obrigatórios
 
 CT 02.24 - Tentar inserir requisição preenchendo somente telefone
     [Documentation]     Caso de teste valida inserir preenchendo somente o campo telefone (Erro) 
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
     Quando clico no botão "Inserir/Técnico"
     Preencho o campo CPF
@@ -336,7 +336,7 @@ CT 02.24 - Tentar inserir requisição preenchendo somente telefone
     
 CT 02.25 - Tentar inserir requisição preenchendo somente CEP
     [Documentation]     Caso de teste valida inserir preenchendo somente o campo CEP (Erro) 
-    [Tags]    Requisições    Funcional        
+    [Tags]    Requisições        
     Dado que clico no menu "Requisições"
     Quando clico no botão "Inserir/Técnico"
     Preencho o campo CPF
