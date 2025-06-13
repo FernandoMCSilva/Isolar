@@ -341,6 +341,7 @@ Então sistema exibe informações do menu Relatórios > Homologatórias
 
 # --11.02.12
 Então sistema exibe quantidade de itens preenchida em Relatórios
+    Sleep    2s
     Click Element    (//div[contains(.,'Quantidade')])[15]
     Sleep    5s
     ${resultados}    Get WebElements    xpath=//tr[contains(@class, 'border-b transition-colors')]

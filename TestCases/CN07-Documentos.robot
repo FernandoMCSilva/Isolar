@@ -1,7 +1,7 @@
 *** Settings ***
 Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
-Suite Setup        Setup Chrome Driver
+# Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema
 Test Teardown      Fechar navegador
 Documentation      Modúlo que gerencie as Estimativas cadastradas no sistema.
@@ -63,6 +63,7 @@ CT 07.01.07 - Validar botão Gerar link de assinatura
     [Tags]    Documentos    Documentos gerados    Funcional    SmokeTest
     Dado que clico no menu "Documentos"
     Clico no menu "Documentos geradados"
+    Aguardo carregamento da página
     Quando clico em "Filtros"
     E preencho filtro criador em Documentos
     E clico no botão Gerar link de assinatura

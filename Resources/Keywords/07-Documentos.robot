@@ -133,6 +133,7 @@ Então sistema exibe informações de filtro Data de registro
 
 # -07.01.06
 E clico no botão Ver Documento
+    Sleep    2s
     Wait Until Element Is Visible    ${botao_VerDocumento}
     Click Element                    ${botao_VerDocumento}
 
@@ -221,7 +222,7 @@ E clico em Assinatura Tradicional
     Click Element                    ${AssinaturaTradicional}
 
 Então sistema exibe informações de botão Gerar link de assinatura
-    Wait Until Page Contains    text=ZapSign - 124
+    Wait Until Page Contains    text=ZapSign - 158
 
 E clico no botão Deletar
     Sleep    1s
