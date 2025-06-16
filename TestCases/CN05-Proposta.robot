@@ -1,5 +1,5 @@
 *** Settings ***
-Resource           ../Resources/SuiteSetup.robot
+# Resource           ../Resources/SuiteSetup.robot
 Resource           ../Resources/Main.robot
 # Suite Setup        Setup Chrome Driver
 Test Setup         Dado que acesse a Isolar e logue no sistema
