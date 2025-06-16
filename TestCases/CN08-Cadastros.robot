@@ -169,6 +169,7 @@ CT 08.02.04 - Validar filtro "buscar"
     [Documentation]     Caso de teste valida se filtro buscar está funcional
     [Tags]    Cadastros    
     Dado que clico no menu "Cadastros > Clientes"
+    Aguardo carregamento da página
     E clico no botao buscar
     E preencho informações de pesquisa em Cadastros > Pessoas
     Então sistema exibe informações de pesquisa padrão
@@ -177,6 +178,7 @@ CT 08.02.05 - Validar botão Cancelar em "Excluir"
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Clientes está funcional
     [Tags]    Cadastros        
     Dado que clico no menu "Cadastros > Clientes"
+    Aguardo carregamento da página
     E clico no botao buscar
     E preencho informações de pesquisa em Cadastros > Pessoas
     Quando clico em "Excluir"
@@ -221,6 +223,7 @@ CT 08.02.09 - Validar botão Fechar no filtro "buscar"
     [Documentation]     Caso de teste valida botão fechar no filtro buscar no menu Cadastros > Gupos Clientes
     [Tags]    Cadastros        
     Dado que clico no menu "Cadastros > Clientes"
+    Aguardo carregamento da página
     E clico no botao buscar
     E clico em "Fechar"
     Então sistema verifica se filtro buscar fechou
@@ -1233,6 +1236,7 @@ CT 08.02.09 - Validar botão Fechar no filtro "buscar"
 
 CT 08.12.03 - Validar botão Editar
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Usuários ZapSign está funcional
+    [Tags]    Cadastros        
 #   Inserir
     Dado que clico no menu "Cadastros > Usuários ZapSign"
     Quando clico no botão "Inserir"
@@ -1241,7 +1245,6 @@ CT 08.12.03 - Validar botão Editar
     Então sistema salva novo cadastro de Usuários ZapSign
 
 #   Editar
-    [Tags]    Cadastros        
     Dado que clico no menu "Cadastros > Usuários ZapSign"
     E clico no botao buscar
     E preencho informações de pesquisa

@@ -539,7 +539,9 @@ E preencho informações de cadastro editado em Usuários ZapSign
     Wait Until Element Is Visible    ${input_NomeUsuarioZapSign}
     Input Text                       ${input_NomeUsuarioZapSign}    ${nome_pesquisa_GruposConsumidores}
     Input Text                       ${input_TokenUsuarioZapSign}   ${nome_pesquisa_GruposConsumidores}
+    Sleep    1s
     Click Element                    ${botao_atualizar_CadastrosPessoas}
+    Sleep    1s
 
 # -08.12.05
 Quando clico em "Excluir" Usuário ZapSign
