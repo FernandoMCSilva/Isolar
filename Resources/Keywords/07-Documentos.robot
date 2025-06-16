@@ -445,6 +445,7 @@ E preencho informação de criar documento Jurídico
     Click Element    (//button[contains(.,'P')])[2]
     Sleep    1.5s
 
+    Sleep    2s
     Wait Until Element Is Visible    (//input[@id='razao_social'])[1]
     Input Text                       (//input[@id='razao_social'])[1]    teste
     

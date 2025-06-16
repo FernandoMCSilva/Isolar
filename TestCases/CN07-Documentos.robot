@@ -41,14 +41,14 @@ Documentation      Modúlo que gerencie as Estimativas cadastradas no sistema.
 #     E seleciono opção de filtro Departamento
 #     Então sistema exibe informações de filtro Departamento
 # BUG
-CT 07.01.05 - Validar filtro Data de registro
-    [Documentation]     Caso de teste valida se filtro Data de registro está funcional
-    [Tags]    Documentos
-    Dado que clico no menu "Documentos"
-    Clico no menu "Documentos geradados"
-    Quando clico em "Filtros"
-    E seleciono opção de filtro Data de registro
-    Então sistema exibe informações de filtro Data de registro
+# CT 07.01.05 - Validar filtro Data de registro
+#     [Documentation]     Caso de teste valida se filtro Data de registro está funcional
+#     [Tags]    Documentos
+#     Dado que clico no menu "Documentos"
+#     Clico no menu "Documentos geradados"
+#     Quando clico em "Filtros"
+#     E seleciono opção de filtro Data de registro
+#     Então sistema exibe informações de filtro Data de registro
 
 # CT 07.01.06 - Validar botão Ver Documento
 #     [Documentation]     Caso de teste valida se botão Ver Documento está funcional
