@@ -40,7 +40,7 @@ Documentation      Modúlo que gerencie as Estimativas cadastradas no sistema.
 #     Quando clico em "Filtros"
 #     E seleciono opção de filtro Departamento
 #     Então sistema exibe informações de filtro Departamento
-
+# BUG
 CT 07.01.05 - Validar filtro Data de registro
     [Documentation]     Caso de teste valida se filtro Data de registro está funcional
     [Tags]    Documentos
@@ -65,7 +65,7 @@ CT 07.01.07 - Validar botão Gerar link de assinatura
     Clico no menu "Documentos geradados"
     Aguardo carregamento da página
     Quando clico em "Filtros"
-    E preencho filtro criador em Documentos
+    E preencho filtro criador com Oseas
     E clico no botão Gerar link de assinatura
     E clico em Assinatura Tradicional
     Então sistema exibe informações de botão Gerar link de assinatura

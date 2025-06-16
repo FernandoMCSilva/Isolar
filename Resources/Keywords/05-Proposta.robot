@@ -103,7 +103,7 @@ E seleciono Tipo de usina "Aluguel"
     Wait Until Element Is Visible    //button[@type='button'][contains(.,'Tipo')]
     Click Element                    //button[@type='button'][contains(.,'Tipo')]
     Click Element                    //div[@role='option'][contains(.,'Aluguel')]
-    Sleep    4s
+    Sleep    5s
 
 Então sistema exibe informações de Estimativa do filtro Tipo de usina "Aluguel"
     Wait Until Page Contains    text=Registros carregados com sucesso!

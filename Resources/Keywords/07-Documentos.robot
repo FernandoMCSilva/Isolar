@@ -145,6 +145,10 @@ E preencho filtro criador em Documentos
     Wait Until Element Is Visible    //input[contains(@id,'criador')]
     Input Text                       //input[contains(@id,'criador')]    Fernando QA
 
+E preencho filtro criador com Oseas
+    Wait Until Element Is Visible    //input[contains(@id,'criador')]
+    Input Text                       //input[contains(@id,'criador')]    Oseas
+
 # -07.01.08
 E preencho informações do filtro criador
     Wait Until Element Is Visible    ${input_Criador}
@@ -222,7 +226,7 @@ E clico em Assinatura Tradicional
     Click Element                    ${AssinaturaTradicional}
 
 Então sistema exibe informações de botão Gerar link de assinatura
-    Wait Until Page Contains    text=ZapSign - 158
+    Wait Until Page Contains    text=ZapSign - 171
 
 E clico no botão Deletar
     Sleep    1s
