@@ -258,6 +258,7 @@ CT 02.19 - Validar botão Renovar
     Então sistema verifica status de requisição renovada alterado
 
 #   Renovar requisição
+    Aguardo carregamento da página
     E clico no botão "Renovar"
 
 #   Excluir requisição Renovada
