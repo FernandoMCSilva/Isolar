@@ -535,6 +535,7 @@ Então sistema conlcui edição de requisição
     Wait Until Page Contains    text=Editar requisição
 
 Então sistema verifica se há cadastro temporario
+    Sleep    3s
     ${temporario_encontrado}=    Run Keyword And Return Status    Element Should Be Visible    //td[contains(.,'temporario')]
 
     WHILE    ${temporario_encontrado}
