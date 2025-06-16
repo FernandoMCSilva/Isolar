@@ -187,6 +187,7 @@ E preencho informações de cadastro editado
     Input Text        //input[@placeholder='000.000.000-00']    19895982771
     Input Text        //input[@placeholder='(99) 99999-9999']    21981905892
     Input Text        //input[@placeholder='00000-000']    289901541
+    Sleep    0.5s
     Click Element     xpath=//div[@role='button' and contains(@class, 'select__multi-value__remove')]
     Click Element     xpath=//div[@class='select__input-container css-o3kr9i']
     Click Element     (//div[contains(.,'Vendedor técnico')])[13]
