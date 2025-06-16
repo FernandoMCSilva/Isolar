@@ -15,6 +15,8 @@ ${STATUS_CONCLUIDO}                    (//div[@class='inline-flex items-center b
 ${STATUS_FILA}                         (//div[@class='inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 rounded-md text-center'])[1]
 ${Botao_EditarObras}                   (//button)[22]
 
+${opcao_departamentoObras}             (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full my-2'])[1]
+
 *** Keywords ***                
 # -3.1.1
 Dado que clico no menu Obras > Dashboard
@@ -63,7 +65,6 @@ E volto pra tela inicial
     Wait Until Element Is Visible    ${MENU_OBRAS}
     Click Element                    ${MENU_OBRAS}
     Sleep    1s
-
 Dado que clico no menu Obras > Requisições
     Sleep    2s
     Wait Until Element Is Visible    ${MENU_OBRAS}
@@ -81,6 +82,55 @@ E preencho informações no campo Cliente em Obras
     Wait Until Element Is Visible    ${Campo_Cliente}
     Input Text                       ${Campo_Cliente}    B3 (Padrão)
 
+E preencho informações de cadastro de requisição padrão
+    Sleep    2s
+    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    
+    Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    B3 (Padrão)
+    ${botao_novocliente}=    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Novo Cliente')]
+
+    IF    ${botao_novocliente}
+        Log    Botão 'Novo Cliente' visível. Seguir com cadastro de cliente temporário.
+        Execute JavaScript    document.body.style.zoom="70%"
+        Sleep    3s
+        Click Element    //button[contains(.,'Novo Cliente')]
+        Input Text       //input[@id='cpfCnpj']    19895982771
+        Input Text       //input[@id='telefone']   21981905892
+        Input Text       //input[@id='atvEco']     Residencial
+        Input Text       //input[@id='cep']        28990154
+        FOR    ${i}    IN RANGE    10
+            ${status}=    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Salvar')]
+            Exit For Loop If    ${status}
+            Click Element       ${Botao_Proximo_Requisicoes}    
+            Sleep    1s
+        END
+        Click Element    //button[contains(.,'Salvar')]
+
+    ELSE
+        Log      Cliente já cadastrado. Seguir com uso do cliente existente.
+        Sleep    2s
+        Press Keys    NONE    ENTER
+
+        FOR    ${i}    IN RANGE    10
+            ${status}=    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Salvar')]
+            Exit For Loop If    ${status}
+            Click Element       ${Botao_Proximo_Requisicoes}    
+            Sleep    1s
+        END
+        Click Element    //button[contains(.,'Salvar')]
+
+    END
+
+Então sistema verifica se há requisição B3 (Padrão)
+    Sleep    2s
+    ${nenhuma_requisicao}=    Run Keyword And Return Status    Page Should Contain    Nenhuma requisição encontrada.
+    IF    ${nenhuma_requisicao}
+        Sleep    2s
+        Quanto clico no botão "Inserir/Obras"
+        E preencho informações de cadastro de requisição padrão
+        Então sistema exibe mensagem de cadastro realizado
+    ELSE
+        Log    continuar...
+    END
 
 Então sistema exibe resultado do filtro em Obras
     Wait Until Page Contains    text=B3 (Padrão)
@@ -177,8 +227,9 @@ Quanto clico no botão "Inserir/Obras"
     Sleep    5s
     Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
     Click Element                    ${Botao_Inserir_Requisicoes}
-    Wait Until Element Is Visible    //button[contains(.,'OBRAS')]
-    Click Element                    //button[contains(.,'OBRAS')]
+    Sleep    1s
+    Wait Until Element Is Visible    ${opcao_departamento_Obras}
+    Click Element                    ${opcao_departamento_Obras}
     Wait Until Element Is Visible    //button[contains(.,'VISITA INSTALAÇĀO')]
     Click Element                    //button[contains(.,'VISITA INSTALAÇĀO')]
 
@@ -254,7 +305,7 @@ Trocar Status Para Fila
     Click Element                    ${Botao_Editar}
 
 #   E troco status para fila
-    Sleep    3s
+    Sleep    5s
     Wait Until Element Is Visible    (//button[@id='status'])[1]
     Click Element                    (//button[@id='status'])[1]
     Sleep    1s
@@ -270,7 +321,7 @@ E seleciono opção "Concluído" em editar status em Obras
     Click Element                    //button[contains(.,'Salvar alterações')]
 
 E seleciono opção "Fila" em editar status em Obras
-    Sleep    3s
+    Sleep    5s
     Wait Until Element Is Visible    (//button[@id='status'])[1]
     Click Element                    (//button[@id='status'])[1]
     Sleep    1s

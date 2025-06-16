@@ -65,9 +65,13 @@ CT 03.01.04 - Validar requisições em Concluídas
 CT 03.02.02 - Validar filtro Cliente
     [Documentation]     Caso de teste valida o filtro Cliente em Obras > Requisições
     [Tags]    Obras        
+#   Verifico se há cliente B3 (Padrão)
     Dado que clico no menu Obras > Requisições
     Quando clico em "Filtros"
     E preencho informações no campo Cliente em Obras
+    Então sistema verifica se há requisição B3 (Padrão)    
+
+#   Validar filtro Cliente
     Então sistema exibe resultado do filtro em Obras
 
 # CT 03.02.03 - Validar filtro Departamento
@@ -135,7 +139,7 @@ CT 03.02.08 - Validar filtro Data de criação
 #     Dado que clico no menu Obras > Requisições
 #     Quando clico em "Filtros"
 #     E preencho filtro com cliente "temporario" para verificação
-#     Então sistema verifica se há cadastro temporario
+    # Então sistema verifica se há cadastro temporario
 
 # #   Inserir cadastro temporário
 #     E volto pra tela inicial
