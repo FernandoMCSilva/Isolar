@@ -9,13 +9,13 @@ Documentation      Modúlo que gerencie as Estimativas cadastradas no sistema.
 *** Test Cases ***
 CT 05.01 - Validar menu Estimativa
     [Documentation]     Caso de teste valida se Menu Estimativa está funcional
-    [Tags]    Estimativa    Funcional        
+    [Tags]    Proposta        
     Dado que clico no menu "Estimativa"
     Então sistema exibe informações de estimativas
     
 CT 05.02 - Validar filtro Vendedor
     [Documentation]     Caso de teste valida o filtro Vendedor em Estimativa
-    [Tags]    Estimativa    Funcional        
+    [Tags]    Proposta        
     Dado que clico no menu "Estimativa"
     Quando clico em "Filtros"
     E preencho informações no campo Vendedor
@@ -24,7 +24,7 @@ CT 05.02 - Validar filtro Vendedor
 
 CT 05.03 - Validar filtro Cliente
     [Documentation]     Caso de teste valida o filtro Cliente em Estimativa
-    [Tags]    Estimativa    Funcional        
+    [Tags]    Proposta        
     Dado que clico no menu "Estimativa"
     Quando clico em "Filtros"
     E preencho informações no campo Cliente
@@ -33,7 +33,7 @@ CT 05.03 - Validar filtro Cliente
 
 CT 05.04 - Validar filtro Tipo de usina "Todos"
     [Documentation]    Caso de teste valida o filtro Tipo de usina "Todos"
-    [Tags]    Estimativa    Funcional
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico em "Filtros"
     E seleciono Tipo de usina "Todos"
@@ -42,7 +42,7 @@ CT 05.04 - Validar filtro Tipo de usina "Todos"
 
 CT 05.05 - Validar filtro Tipo de usina "Autoconsumo"
     [Documentation]    Caso de teste valida o filtro Tipo de usina "Autoconsumo"
-    [Tags]    Estimativa    Funcional
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico em "Filtros"
     E seleciono Tipo de usina "Autoconsumo"
@@ -51,7 +51,7 @@ CT 05.05 - Validar filtro Tipo de usina "Autoconsumo"
 
 CT 05.06 - Validar filtro Tipo de usina "Aluguel"
     [Documentation]    Caso de teste valida o filtro Tipo de usina "Aluguel"
-    [Tags]    Estimativa    Funcional
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico em "Filtros"
     E seleciono Tipo de usina "Aluguel"
@@ -60,7 +60,7 @@ CT 05.06 - Validar filtro Tipo de usina "Aluguel"
 
 CT 05.07 - Validar filtro Data de registro
     [Documentation]     Caso de teste valida o filtro Data de registro
-    [Tags]    Estimativa    Funcional        
+    [Tags]    Proposta        
     Dado que clico no menu "Estimativa"
     Quando clico em "Filtros"
     E preencho com informações data de registro
@@ -68,7 +68,7 @@ CT 05.07 - Validar filtro Data de registro
 
 CT 05.08 - Validar filtro Quantidade de itens por pág
     [Documentation]     Caso de teste valida o filtro Quantidade de itens por pág
-    [Tags]    Estimativa    Funcional        
+    [Tags]    Proposta        
     Dado que clico no menu "Estimativa"
     Quando clico em "Quantidade de itens por pág"
     E preencho informações no campo quantidade
@@ -77,14 +77,14 @@ CT 05.08 - Validar filtro Quantidade de itens por pág
 
  CT 05.09 - Validar botão Próximo
     [Documentation]     Caso de teste valida o botão próximo
-    [Tags]    Estimativa    Funcional
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico em "Próximo"
     Então sistema exibe próximas Estimativa
 
 CT 05.10 - Validar botão Anterior
     [Documentation]     Caso de teste valida o botão Anterior
-    [Tags]    Estimativa    Funcional
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico em "Próximo"
     E clico em "Anterior"
@@ -93,7 +93,7 @@ CT 05.10 - Validar botão Anterior
 # BUG
 CT 05.12 - Validar botão Não em Gerar link de assinatura
     [Documentation]     Caso de teste valida botão Não em confirmação do Gerar link de assinatura
-    [Tags]    Estimativa    Funcional  
+    [Tags]    Proposta  
     Dado que clico no menu "Estimativa"
     Quando clico em "Filtros"
     E preencho filtro cliente em Estimativa
@@ -106,7 +106,7 @@ CT 05.12 - Validar botão Não em Gerar link de assinatura
 # BUG
 CT 05.13 - Validar botão Gerar link de assinatura
     [Documentation]     Caso de teste valida botão Gerar link de assinatura    
-    [Tags]    Estimativa    Funcional    SmokeTest
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico em "Gerar link de assinatura"
     E clico em "Assinatura Tradicional"
@@ -115,7 +115,7 @@ CT 05.13 - Validar botão Gerar link de assinatura
 
 CT 05.14 - Validar botão Ver PDF
     [Documentation]    Caso de teste valida botão Ver PDF
-    [Tags]    Estimativa    Funcional    SmokeTest
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico em "Filtros"
     E preencho informações no campo Cliente
@@ -125,7 +125,7 @@ CT 05.14 - Validar botão Ver PDF
 
 CT 05.15 - Validar impressão de estimativa
     [Documentation]    Caso de teste testa botão Imprimir Estimativa em "Ver PDF"
-    [Tags]    Estimativa    Funcional    SmokeTest
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico em "Filtros"
     E preencho informações no campo Cliente
@@ -137,7 +137,7 @@ CT 05.15 - Validar impressão de estimativa
 # BUG
 CT 05.16 - Validar botão Cancelar em Aplicar desconto
     [Documentation]    Caso de teste valida botão Cancelar em Aplicar desconto
-    [Tags]    Estimativa    Funcional
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Aplicar desconto"
     E clico em "Cancelar"
@@ -146,7 +146,7 @@ CT 05.16 - Validar botão Cancelar em Aplicar desconto
 # BUG
 CT 05.17 - Validar botão aplicar desconto
     [Documentation]    Caso de teste valida botão Aplicar desconto
-    [Tags]    Estimativa    Funcional    SmokeTest
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Aplicar desconto"
     E preencho informações de desconto
@@ -154,7 +154,7 @@ CT 05.17 - Validar botão aplicar desconto
 
 # CT 05.18 - Validar botão aplicar desconto com valor acima do limite
 #     [Documentation]    Caso de teste testa aplicar desconto acima do valor permitido
-#     [Tags]    Estimativa    Funcional
+#     [Tags]    Proposta
 #     Dado que clico no menu "Estimativa"
 #     Quando clico no botão "Aplicar desconto"
 #     E preencho informações de desconto acima do limite
@@ -162,7 +162,7 @@ CT 05.17 - Validar botão aplicar desconto
     
 CT 05.19 - Validar botão e funcionalidade "Gerar"
     [Documentation]    Caso de teste valida botao gerar em estimativa
-    [Tags]    Estimativa    Funcional    SmokeTest
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Gerar"
     E seleciono Local de instalação "Solo"
@@ -177,7 +177,7 @@ CT 05.19 - Validar botão e funcionalidade "Gerar"
 
 CT 05.20 - Validar botão Constantes personalizadas
     [Documentation]    Caso de teste valida botão Constantes personalizadas em Gerar nova estimativa
-    [Tags]    Estimativa    Funcional
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Gerar"
     E clico no botão "Constantes personalizadas"
@@ -185,14 +185,14 @@ CT 05.20 - Validar botão Constantes personalizadas
     
 CT 05.21 - Validar exportação para Excel
     [Documentation]    Caso de teste valida botão Exportar para Excel no menu Estimativas
-    [Tags]    Estimativa    Funcional
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico no botão Exportar para Excel
     Então sistema exporta para excel
 
 CT 05.22 - Gerar estimativa sem preencher campos obrigatórios
     [Documentation]    Caso de teste valida gerar sem preencher nenhum dos campos obrigatórios
-    [Tags]    Estimativa    Funcional
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Gerar"
     E clico em Gerar cálculos
@@ -200,7 +200,7 @@ CT 05.22 - Gerar estimativa sem preencher campos obrigatórios
 
 CT 05.23 - Validar botão ações após gerar cálculos
     [Documentation]    Caso de teste valida botão ações após gerar cálculos
-    [Tags]    Estimativa    Funcional
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Gerar"
     E preencho informações de calculos
@@ -210,7 +210,7 @@ CT 05.23 - Validar botão ações após gerar cálculos
 
 CT 05.24 - Validar impressão de estimativa 
     [Documentation]    Caso de teste valida botão Baixar/Imprimir em Acões após gerar cálculos
-    [Tags]    Estimativa    Funcional    SmokeTest
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Gerar"
     E preencho informações de calculos
@@ -222,7 +222,7 @@ CT 05.24 - Validar impressão de estimativa
 
 CT 05.25 - Validar botão Iniciar conversa no Whatsapp
     [Documentation]    Caso de teste valida botão Iniciar conversa no Whatsapp em Acões após gerar cálculos
-    [Tags]    Estimativa    Funcional    SmokeTest
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Gerar"
     E preencho informações de calculos
@@ -234,7 +234,7 @@ CT 05.25 - Validar botão Iniciar conversa no Whatsapp
 
 CT 05.26 - Validar botão Enviar por email
     [Documentation]    Caso de teste valida botão Enviar por email em Acões após gerar cálculos
-    [Tags]    Estimativa    Funcional    SmokeTest
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Gerar"
     E preencho informações de calculos
@@ -246,7 +246,7 @@ CT 05.26 - Validar botão Enviar por email
 
 CT 05.27 - Validar botão Salvar informarções no sistema
     [Documentation]    Caso de teste valida botão Salvar informarções no sistema em Acões após gerar cálculos
-    [Tags]    Estimativa    Funcional
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Gerar"
     E preencho informações de calculos
@@ -258,7 +258,7 @@ CT 05.27 - Validar botão Salvar informarções no sistema
 
 CT 05.28 - Validar botão Baixar/Imprimir (Inatívo)
     [Documentation]    Caso de teste valida botão Baixar/Imprimir (Inatívo) após gerar cálculos
-    [Tags]    Estimativa    Funcional
+    [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico no botão "Gerar"
     E preencho informações de calculos
@@ -269,7 +269,7 @@ CT 05.28 - Validar botão Baixar/Imprimir (Inatívo)
 
 # CT 05.30 - Validar funcionalidade Constantes personalizadas
 #     [Documentation]    Caso de teste valida funcionalidade Constantes personalizadas
-#     [Tags]    Estimativa    Funcional
+#     [Tags]    Proposta
 #     Dado que clico no menu "Estimativa"
 #     Quando clico no botão "Gerar"
 #     E preencho informações de calculos

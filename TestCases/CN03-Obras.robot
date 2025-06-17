@@ -201,7 +201,7 @@ CT 03.02.12 - Validar botão Visualizar
 
 CT 03.02.13 - Validar botão Mudar Status Requisição
     [Documentation]     Caso de teste valida botão Mudar Status Requisição em Obras
-    [Tags]    Obras    Requisições    Funcional 
+    [Tags]    Obras 
 #   Verificar se requisição está "fila" inicialmente
     Dado que clico no menu Obras > Requisições
     Quando clico em "Filtros"
@@ -238,7 +238,7 @@ CT 03.02.13 - Validar botão Mudar Status Requisição
 
 CT 03.02.14 - Validar botão Comentários 
     [Documentation]     Caso de teste valida botão Comentários em Obras > Requisições
-    [Tags]    Obras    Requisições    Funcional   
+    [Tags]    Obras   
     Dado que clico no menu Obras > Requisições
     Quando clico em "Filtros"
     E preencho filtro Cliente em Obras
@@ -248,7 +248,7 @@ CT 03.02.14 - Validar botão Comentários
 
 CT 03.02.15 - Excluir requisição tipo "Técnico"
     [Documentation]     Caso de teste valida funcionalidade excluir em Obras
-    [Tags]    Obras    Requisições    Funcional   
+    [Tags]    Obras   
 #   Verifico se há requisiçao temporario
     Dado que clico no menu Obras > Requisições
     Quando clico em "Filtros"
@@ -286,7 +286,7 @@ CT 03.02.15 - Excluir requisição tipo "Técnico"
 
 CT 03.02.16 - Tentar inserir requisição sem campos obrigatórios
     [Documentation]     Caso de teste valida inserir sem preencher campos obrigatórios (Erro) 
-    [Tags]    Obras    Requisições    Funcional         
+    [Tags]    Obras         
     Dado que clico no menu Obras > Requisições
     Quanto clico no botão "Inserir/Obras"
     E clico em próximo sem preencher campos
@@ -294,7 +294,7 @@ CT 03.02.16 - Tentar inserir requisição sem campos obrigatórios
 
 CT 03.02.17 - Tentar inserir requisição preenchendo somente telefone
     [Documentation]     Caso de teste valida inserir preenchendo somente o campo telefone (Erro) 
-    [Tags]    Obras    Requisições    Funcional         
+    [Tags]    Obras         
     Dado que clico no menu Obras > Requisições
     Quanto clico no botão "Inserir/Obras"
     Preencho o campo CPF
@@ -303,7 +303,7 @@ CT 03.02.17 - Tentar inserir requisição preenchendo somente telefone
 
 CT 03.02.18 - Tentar inserir requisição preenchendo somente CEP
     [Documentation]     Caso de teste valida inserir preenchendo somente o campo CEP (Erro) 
-    [Tags]    Obras    Requisições    Funcional         
+    [Tags]    Obras         
     Dado que clico no menu Obras > Requisições
     Quanto clico no botão "Inserir/Obras"
     Preencho o campo CPF

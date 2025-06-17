@@ -148,7 +148,7 @@ CT 02.14 - Validar botão Inserir "Técnico"
 
 CT 02.15 - Validar botão Editar
     [Documentation]     Caso de teste valida botão editar em Requisições
-    [Tags]    Requisições    SmokeTest
+    [Tags]    Requisições
 #   Verifico se há cadastro temporario
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
@@ -189,7 +189,7 @@ CT 02.15 - Validar botão Editar
 
 CT 02.16 - Validar botão Visualizar 
     [Documentation]     Caso de teste valida botão visualizar 
-    [Tags]    Requisições    SmokeTest 
+    [Tags]    Requisições 
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro Cliente 
@@ -198,7 +198,7 @@ CT 02.16 - Validar botão Visualizar
 
 CT 02.17 - Validar botão Mudar Status Requisição
     [Documentation]     Caso de teste valida botão Mudar Status Requisição
-    [Tags]    Requisições    SmokeTest
+    [Tags]    Requisições
 #   Verifica se requisição padrão está "Fila" 
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
@@ -229,7 +229,7 @@ CT 02.18 - Validar botão Histórico
 
 CT 02.19 - Validar botão Renovar
     [Documentation]     Caso de teste valida botão Renovar em Requisições
-    [Tags]    Requisições    SmokeTest
+    [Tags]    Requisições
 #   Verifico se há requisiçao temporario
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
@@ -294,7 +294,7 @@ CT 02.21 - Validar botão Comentários
 
 CT 02.22 - Excluir requisição tipo "Técnico"
     [Documentation]     Caso de teste valida funcionalidade excluir 
-    [Tags]    Requisições    SmokeTest
+    [Tags]    Requisições
 #   Inserir cadastro temporario
     Dado que clico no menu "Requisições"
     Quando clico no botão "Inserir/Técnico"
