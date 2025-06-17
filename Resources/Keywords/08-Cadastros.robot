@@ -226,6 +226,7 @@ Dado que clico no menu "Cadastros > Clientes"
     Sleep    2s
     Click Element      ${MENU_CADASTROS} 
     Click Element      ${Menu_Clientes}
+    Run Keyword        Aguardo carregamento da página
     
 Então sistema exibe informações de cadastro de "Clientes"
     Wait Until Page Contains    text=Gerenciar informações cadastradas no sistema
