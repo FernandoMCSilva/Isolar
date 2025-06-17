@@ -119,7 +119,7 @@ Então sistema exibe informações de pesquisa em Cadastros > Pessoas
     Wait Until Page Contains    text=B1 (Padrão)
 # -08.01.05
 Quando clico no filtro "Cards"
-    Sleep    7s
+    Sleep    2s
     Click Element    ${filtro_cards/Lista}
 
 E clico em "Lista"
