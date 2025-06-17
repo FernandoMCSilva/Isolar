@@ -61,7 +61,7 @@ ${input_Telefone_Cadastros}                     (//input[@id='telefone'])[1]
 ${input_Email_Cadastros}                        (//input[@id='email'])[1]
 
 
-${filtro_cards/Lista}                           (//button[contains(@type,'button')])[9]
+${filtro_cards/Lista}                           (//button[@role='combobox'])[1]
 ${filtro_botaoLista}                            xpath=//div[@role='option'][contains(.,'Lista')]
 
 *** Keywords ***
@@ -119,7 +119,7 @@ Então sistema exibe informações de pesquisa em Cadastros > Pessoas
     Wait Until Page Contains    text=B1 (Padrão)
 # -08.01.05
 Quando clico no filtro "Cards"
-    Sleep    2s
+    Sleep    7s
     Click Element    ${filtro_cards/Lista}
 
 E clico em "Lista"
