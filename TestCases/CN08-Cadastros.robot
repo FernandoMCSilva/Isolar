@@ -125,7 +125,6 @@ CT 08.02.02 - Validar botão Inserir
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Clientes está funcional
     [Tags]    Cadastros  
     Dado que clico no menu "Cadastros > Clientes"
-    Aguardo carregamento da página
     Quando clico no botão "Inserir"
     E preencho informações de inserir novo cadastro de Clientes
     E clico em "Salvar"
@@ -170,7 +169,6 @@ CT 08.02.04 - Validar filtro "buscar"
     [Documentation]     Caso de teste valida se filtro buscar está funcional
     [Tags]    Cadastros    
     Dado que clico no menu "Cadastros > Clientes"
-    Aguardo carregamento da página
     E clico no botao buscar
     E preencho informações de pesquisa em Cadastros > Pessoas
     Então sistema exibe informações de pesquisa padrão
@@ -179,7 +177,6 @@ CT 08.02.05 - Validar botão Cancelar em "Excluir"
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Clientes está funcional
     [Tags]    Cadastros        
     Dado que clico no menu "Cadastros > Clientes"
-    Aguardo carregamento da página
     E clico no botao buscar
     E preencho informações de pesquisa em Cadastros > Pessoas
     Quando clico em "Excluir"
@@ -191,7 +188,6 @@ CT 08.02.06- Validar botão Continuar em "Excluir"
     [Tags]    Cadastros  
 #   Inserir
     Dado que clico no menu "Cadastros > Clientes"
-    Aguardo carregamento da página
     Quando clico no botão "Inserir"
     E preencho informações de inserir novo cadastro de Clientes
     E clico em "Salvar"
@@ -217,7 +213,6 @@ CT 08.02.08 - Validar busca não encontrada no filtro buscar
     [Documentation]     Caso de teste valida busca não encontrada no filtro buscar no menu Cadastros > Gupos Clientes
     [Tags]    Cadastros        
     Dado que clico no menu "Cadastros > Clientes"
-    Aguardo carregamento da página
     E clico no botao buscar
     E preencho informações de busca não escontrada em Clientes
     Então sistema exibe mensagem de erro em Clientes
@@ -226,7 +221,6 @@ CT 08.02.09 - Validar botão Fechar no filtro "buscar"
     [Documentation]     Caso de teste valida botão fechar no filtro buscar no menu Cadastros > Gupos Clientes
     [Tags]    Cadastros        
     Dado que clico no menu "Cadastros > Clientes"
-    Aguardo carregamento da página
     E clico no botao buscar
     E clico em "Fechar"
     Então sistema verifica se filtro buscar fechou
