@@ -559,7 +559,7 @@ Então sistema verifica se há cadastro temporario
         Wait Until Element Is Visible    //button[contains(.,'Continuar')]     timeout=10s
         Click Element                    //button[contains(.,'Continuar')] 
 
-        Sleep    2s
+        Sleep    4s
         Wait Until Element Is Visible    //button[contains(.,'Filtros')]
         Click Element                    //button[contains(.,'Filtros')]
         Sleep    3s
