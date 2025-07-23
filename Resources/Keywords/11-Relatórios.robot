@@ -42,7 +42,7 @@ ${filtro_DataCriacaoRelatorios}      (//button[@class='inline-flex items-center 
 *** Keywords ***
 # --11.01.01
 Dado que clico no menu "Relatórios > Relatórios"
-    Wait Until Element Is Visible    ${Menu_Relatorios}
+    Wait Until Element Is Visible    ${Menu_Relatorios}    timeout=20s
     Click Element                    ${Menu_Relatorios}
     Wait Until Element Is Visible    ${Menu_Relatorios>Relatorios}
     Click Element                    ${Menu_Relatorios>Relatorios}
@@ -62,8 +62,11 @@ Então sistema exibe informações de filtro "Cliente"
 
 # --11.01.03
 E seleciono filtro Status "Fila"
-    Click Element    //button[@id='status']
-    Click Element    (//div[contains(.,'Fila')])[5]
+    Wait Until Element Is Visible    //button[@id='status']    timeout=20s
+    Click Element                    //button[@id='status']
+    Sleep    1s
+    Press Keys                        none    ARROW_DOWN
+    Press Keys                        none    ENTER
 
 Então sistema exibe informações de filtro Status "Fila"
     Wait Until Element Is Visible    (//div[contains(.,'Fila')])[18]

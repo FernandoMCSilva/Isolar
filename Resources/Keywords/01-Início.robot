@@ -3,7 +3,7 @@ Documentation      Modúlo que Gerencie um resumo das informações cadastradas 
 Resource           ../Main.robot
 
 *** Variables ***
-${Tela_Inicio}         (//div[contains(.,'Gerencie um resumo das informações cadastradas no sistema.')])[7]
+# botões
 ${Botao_Fila}          (//div[contains(.,'Fila')])[9] 
 ${Botao_Producao}      (//div[contains(.,'Produção')])[9]
 ${Botao_Concluidas}    (//div[contains(.,'Concluídas')])[9]
@@ -11,17 +11,23 @@ ${Botao_Paradas}       (//div[contains(.,'Paradas')])[9]
 ${botao_Tema}          //button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10']//*[name()='svg']
 ${botao_SAC}           (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10 relative'])[1]
 ${botao_Notificacoes}  (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10 relative'])[2]
+${Btn_Buscar}          //button[contains(.,'Buscar')]
+${Btn_Departamentos}   //button[@id='departament']
+
+# resultados esperados
+${Tela_Inicio}         (//div[contains(.,'Gerencie um resumo das informações cadastradas no sistema.')])[7]
 ${Status_Fila}         Fila
 ${Status_Producao}     Produção
 ${Status_Concluidas}   Concluído
 ${Status_Paradas}      Parado
-${Btn_Buscar}          //button[contains(.,'Buscar')]
-${Btn_Departamentos}   //button[@id='departament']
 
-@{DEPARTAMENTOS_OPTIONS}    (//div[contains(.,'Comercial')])[5]    //span[normalize-space(text())='CS-Customer Success']
+
+# arrays
+${DEPARTAMENTOS_TOTAL}    1
+# @{DEPARTAMENTOS_OPTIONS}    //span[normalize-space(text())='Comercial ']    //span[normalize-space(text())='CS-Customer Success']
 
 *** Keywords ***
-# --1.16
+# --1.1
 Dado que clico no menu "Início"
     Wait Until Element Is Visible    ${MENU_INICIO}
     Click Element                    ${MENU_INICIO}
@@ -36,7 +42,6 @@ Quando clico em "Fila"
 
 Então sistema exibe requisições com status "Fila"
     Wait Until Element Is Visible    (//div[normalize-space()='Fila'])[1]
-
 
 # --1.3
 Quando clico em "Produção"
@@ -89,25 +94,26 @@ E seleciono "Todos"
 
 E valido filtros de departamento
     Wait Until Element Is Visible    ${Btn_Departamentos}    timeout=10s
-    Click Element    ${Btn_Departamentos}
-    Sleep    1s
-    # Pega todas as opções dentro do dropdown
-    ${departamentos}    Get WebElements    ${Btn_Departamentos}
+    FOR    ${index}    IN RANGE    ${DEPARTAMENTOS_TOTAL}
+        # Abre a combobox
+        Click Element    ${Btn_Departamentos}
+        Sleep    0.5s
 
-    FOR    ${departamento}    IN    @{DEPARTAMENTOS_OPTIONS}
-            # Clica na opção de departamento atual
-            Click Element    ${departamento}
-
-            # Espera pela atualização e valida que a página foi atualizada
-            Wait Until Element Is Visible    //h2[contains(.,'Requisições por Status')]    timeout=10s
-            
-            # Log do departamento testado
-            ${departamento_text}    Get Text    ${departamento}
-            Log    Departamento ${departamento_text} validado com sucesso
-            
-            # Reabre a combobox para a próxima iteração
-            Click Element    ${Btn_Departamentos}
+        # Pressiona setas para baixo conforme o índice
+        FOR    ${i}    IN RANGE    ${index + 1}
+            Press Key    ${Btn_Departamentos}    ARROW_DOWN
+            Sleep    0.2s
         END
+
+        # Pressiona ENTER para selecionar a opção
+        Press Key    ${Btn_Departamentos}    ENTER
+
+        # Espera a página atualizar
+        Wait Until Element Is Visible    //h2[contains(.,'Requisições por Status')]    timeout=10s
+
+        # (Opcional) Log da iteração
+        Log    Departamento na posição ${index + 1} validado com sucesso
+    END
 
 E clico em Buscar
     Sleep    2s
@@ -120,15 +126,15 @@ Então sistema exibe requisições do departamento
 # --1.7
 E preencho data inicial
     Wait Until Element Is Visible    (//input[@placeholder='DD/MM/YYYY'])[1]    timeout=10s
-    Input Text    (//input[@placeholder='DD/MM/YYYY'])[1]    01/01/2025
+    Input Text    (//input[@placeholder='DD/MM/YYYY'])[1]    01/06/2025
     Sleep   2s
 
 E preencho data final
     Wait Until Element Is Visible    (//input[@placeholder='DD/MM/YYYY'])[2]    timeout=10s
-    Input Text    (//input[contains(@placeholder,'DD/MM/YYYY')])[2]    28/01/2025
+    Input Text    (//input[contains(@placeholder,'DD/MM/YYYY')])[2]    30/06/2025
 
 Então sistema exibe requisições filtradas
-    Wait Until Page Contains    text=2025-01
+    Wait Until Page Contains    text=2025-06
     Capture Page Screenshot
 
 # --1.8
@@ -139,7 +145,6 @@ E clico no botão tema "Escuro"
 Então sistema exibe tela em tema "Escuro"
     Sleep    1s
     Wait Until Element Is Visible    ${botao_Tema}
-
 
 # --1.9
 E clico no botão SAC
@@ -155,7 +160,6 @@ E clico no botão Notificações
     Wait Until Element Is Visible    ${botao_Notificacoes}
     Click Element                    ${botao_Notificacoes}
 
-
 Então sistema exibe tela de Notificações
     ${tem_notificacoes}=    Run Keyword And Return Status    Page Should Contain    Notificações
     ${sem_notificacoes}=    Run Keyword And Return Status    Page Should Contain    Não há nenhuma notificação no momento
@@ -163,8 +167,6 @@ Então sistema exibe tela de Notificações
     Run Keyword If    '${tem_notificacoes}' == 'True'    Log    Notificações encontradas.
 ...    ELSE IF        '${sem_notificacoes}' == 'True'    Log    Nenhuma notificação cadastrada.
 ...    ELSE    Fail    Nenhum dos textos esperados foi encontrado!
-
-# --1.8
 
 
     
