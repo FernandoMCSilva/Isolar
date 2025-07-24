@@ -330,6 +330,7 @@ Quando clico no botão Exportar para Excel
     Sleep    3s
     Wait Until Element Is Visible    ${botao_ExportarExcel_estimativa}
     Click Element                    ${botao_ExportarExcel_estimativa}
+    
 Então sistema exporta para excel
     Wait Until Element Is Visible    ${botao_ExportarExcel_estimativa}
 

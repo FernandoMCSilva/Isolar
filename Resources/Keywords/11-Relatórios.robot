@@ -3,11 +3,13 @@ Documentation      Modúlo gerencia Relatórios no sistema.
 Resource           ../Main.robot
 
 *** Variables ***
+# menus
 ${Menu_Relatorios}                   (//span[contains(.,'Relatórios')])[2]
 ${Menu_Relatorios>Relatorios}        //a[contains(.,'Relatórios')]
 ${Menu_Homologatorias}               //p[contains(.,'Homologatórias')]
 ${nome_pesquisa_Relatórios}          Teste
 
+# filtros
 ${filtro_ANEEL}                      (//div[contains(.,'Selecione ...')])[17]
 ${filtro_Concessionaria}             (//div[contains(.,'Selecione ...')])[22]
 ${filtro_Acessante}                  (//div[contains(.,'Selecione ...')])[27]
@@ -19,7 +21,9 @@ ${filtro_Subgrupo}                   (//div[contains(.,'Selecione ...')])[48]
 ${filtro_Modalidade}                 (//div[contains(.,'Selecione ...')])[53]
 ${filtro_SubClasse}                  (//div[contains(.,'Selecione ...')])[58]
 ${filtro_Outorga}                    (//div[contains(.,'Todos')])[17]
+${filtro_DataCriacaoRelatorios}      (//button[@class='inline-flex items-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full justify-start text-left font-normal text-muted-foreground'])[1]
 
+# resultados esperados
 ${result_ANEEL}                      (//div[@class='select__value-container select__value-container--is-multi css-hlgwow'])[3]
 ${result_Concessionaria}             (//td[contains(.,'Castro - DIS')])[1]
 ${result_Acessante}                  (//td[@class='p-4 align-middle [&:has([role=checkbox])]:pr-0 text-center'][normalize-space()='BOREALIS'])[1]
@@ -31,12 +35,13 @@ ${result_Subgrupo}                   (//td[contains(.,'B3')])[1]
 ${result_Modalidade}                 (//td[contains(.,'Convencional')])[1]
 ${result_Subclasse}                  (//td[contains(.,'Baixa Renda')])[1]
 ${result_Outorga}                    (//td[contains(.,'Amazonas Energia')])[1]
+${result_oseasResponsavel}           //td[normalize-space()='OSEAS']
 
+
+# campos inputs
 ${Campo_Cliente}                     //input[@id='cliente']
 ${campo_clienteRelatorios}           //div[@class='select__value-container css-hlgwow'][contains(.,'Digite o nome do cliente...')]
 ${botao_exportarPDF_Relatorios}      //button[contains(.,'Exportar para PDF')]
-
-${filtro_DataCriacaoRelatorios}      (//button[@class='inline-flex items-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full justify-start text-left font-normal text-muted-foreground'])[1]
 
 
 *** Keywords ***
@@ -79,8 +84,8 @@ E seleciono filtro Responsável
     Wait Until Element Is Visible    xpath=//div[@role="option" and normalize-space(.)="OSEAS"]
     Click Element                    xpath=//div[@role="option" and normalize-space(.)="OSEAS"]
 
-Então sistema exibe informações de filtro Responsável "suporte"
-    Wait Until Element Is Visible    (//td[contains(text(),'OSEAS')])[1]
+Então sistema exibe informações de filtro Responsável
+    Wait Until Element Is Visible    ${result_oseasResponsavel}    timeout=20s
 
 # --11.01.05
 E seleciono filtro Vendedor Técnico "Todos"
@@ -122,7 +127,7 @@ E seleciono filtro Tipo de requisição
     Sleep    1s
     Wait Until Element Is Visible    //button[@id='tipo']
     Click Element                    //button[@id='tipo']
-    FOR    ${i}    IN RANGE    3
+    FOR    ${i}    IN RANGE    5
         Press Keys                       NONE    ARROW_DOWN
         Sleep                            0.3s
     END
@@ -130,22 +135,21 @@ E seleciono filtro Tipo de requisição
     Press Keys                       NONE    ENTER
 
 Então sistema exibe informações de filtro Tipo de requisição
-    Wait Until Element Is Visible    (//td[@class='p-4 align-middle [&:has([role=checkbox])]:pr-0 text-center'][normalize-space()='Técnico'])[1]
+    Wait Until Element Is Visible    (//td[contains(text(),'Estimativa')])[1]
 
 # --11.01.10
 E seleciono filtro Data de criação
     Wait Until Element Is Visible    ${filtro_DataCriacaoRelatorios}
     Click Element                    ${filtro_DataCriacaoRelatorios}
     Wait Until Element Is Visible    (//button[@type='button'])[21]
-    FOR     ${i}    IN RANGE    6   
-        Click Element    (//button[@type='button'])[21]
-        Sleep    0.5s
-    END
-    Click Element                    (//button[contains(.,'30')])[2]
-    Click Element                    (//button[contains(.,'31')])[2]
+    # FOR     ${i}    IN RANGE    7   
+    #     Click Element    (//button[@type='button'])[21]
+    #     Sleep    0.5s
+    # END
+    Click Element                    (//button[@name='day'][normalize-space()='14'])[1]
 
 Então sistema exibe informações de filtro Data de criação
-    Wait Until Element Is Visible    //td[contains(.,'31/12/2024')]
+    Wait Until Element Is Visible    //td[contains(.,'14/07/2025')]
 
 # --11.01.11
 E seleciono filtro Promotor "Todos"

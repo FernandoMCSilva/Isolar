@@ -20,6 +20,7 @@ CT 02.02 - Validar filtro Cliente
     E preencho informações no campo Cliente
     Então sistema exibe requisições do filtro Cliente
 
+#  BUG 
 CT 02.03 - Validar filtro Departamento
     [Documentation]     Caso de teste valida o filtro Departamento em Requisições
     [Tags]    Requisições        

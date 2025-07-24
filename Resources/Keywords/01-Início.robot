@@ -24,7 +24,7 @@ ${Status_Paradas}      Parado
 
 # arrays
 ${DEPARTAMENTOS_TOTAL}    1
-# @{DEPARTAMENTOS_OPTIONS}    //span[normalize-space(text())='Comercial ']    //span[normalize-space(text())='CS-Customer Success']
+@{DEPARTAMENTOS_OPTIONS}    //span[normalize-space(text())='Comercial ']    //span[normalize-space(text())='CS-Customer Success']
 
 *** Keywords ***
 # --1.1

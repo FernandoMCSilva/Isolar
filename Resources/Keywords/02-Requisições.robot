@@ -57,7 +57,7 @@ ${COMBOBOX_RESPONSAVEL}         xpath=(//button[@role='combobox'])[2]
 # @{OPCOES_COMBOBOX_TIPO}             (//div[contains(.,'Técnico')])[14]    (//div[contains(.,'Pós Venda')])[5]    (//div[contains(.,'Compra')])[5]    (//div[contains(.,'Defeito com computador/notebook')])[5]    (//div[contains(.,'Defeito com impressora')])[5]    
 # ...     (//div[contains(.,'Problemas com internet')])[5]    (//div[contains(.,'Novo Colaborador')])[5]    (//div[contains(.,'Bloqueio de Acesso a Plataforma')])[5]    (//div[contains(.,'Problema com Sistema')])[5]    
 # ...    (//div[contains(.,'SERVIÇO MANUTENÇAO')])[5]    (//div[contains(.,'CERTIDAO AMBIENTAL')])[5]
-@{OPCOES_COMBOBOX_URGENTE}          (//div[contains(.,'Sim')])[5]    (//div[contains(.,'Não')])[14]
+@{OPCOES_COMBOBOX_URGENTE}          (//div[contains(.,'Sim')])[5]    (//div[contains(.,'Não')])[5]
 @{OPCOES_COMBOBOX_NIVELDEURGENCIA}  (//div[contains(.,'Baixo')])[5]    (//div[contains(.,'Médio')])[5]    (//div[contains(.,'Alto')])[5]
 @{OPCOES_COMBOBOX_RESPONSAVEL}      (//div[contains(.,'LUANA GUARNIERI')])[5]    (//div[contains(.,'Leandro Coser')])[5]    (//div[contains(.,'Lucas Cenci')])[5]    
 @{OPCOES_COMBOBOX_RENOVADAS}        (//div[contains(.,'Originais')])[5]    
@@ -169,11 +169,14 @@ E valido todos os filtros dentro de Urgente em Requisições
     ${departamentos}    Get WebElements    ${COMBOBOX_URGENTE}
 
     FOR    ${departamento}    IN    @{OPCOES_COMBOBOX_URGENTE}
+            Sleep    0.5
             # Clica na opção de departamento atual
             Click Element    ${departamento}
+            Sleep    0.5
             
             # Clica no botão de buscar
             Click Element    ${Btn_Buscar}
+            Sleep    0.5
             
             # Espera pela atualização e valida que a página foi atualizada
             Wait Until Element Is Visible    //button[contains(.,'Inserir')]    timeout=10s
@@ -228,7 +231,7 @@ E preencho informações de Data de entrega
     Wait Until Element Is Visible    //button[@id='data_entrega']
     Click Element                    //button[@id='data_entrega']
     Wait Until Element Is Visible    (//button[@type='button'])[44]
-    FOR    ${i}    IN RANGE    9
+    FOR    ${i}    IN RANGE    2
         Click Element       (//button[@type='button'])[44]
         Sleep    1s
     END
@@ -239,13 +242,13 @@ E preencho informações de Data de entrega
 
 Então sistema exibe requisições do filtro Data de entrega
     Sleep    1s
-    Wait Until Element Is Visible    (//td[contains(.,'03/09/2024')])[1]
+    Wait Until Element Is Visible    (//td[normalize-space()='28/05/2025'])[1]
 # --2.9
 E preencho informações de Data de criação
     Wait Until Element Is Visible      //button[@id='data_criacao']
     Click Element                      //button[@id='data_criacao']
 
-    FOR     ${i}    IN RANGE    9
+    FOR     ${i}    IN RANGE    2
     Click Element    (//button[@type='button'])[44]
     Sleep    1s
     END
@@ -257,7 +260,7 @@ E preencho informações de Data de criação
     Click Element                      ${Botao_Buscar}
 Então sistema exibe requisições do filtro Data de Criação
     Sleep    1s
-    Wait Until Element Is Visible    //td[contains(.,'1793')]
+    Wait Until Element Is Visible    (//td[normalize-space()='28/05/2025'])[1]
 
 # --2.10
 E valido todos os filtros dentro de "Responsável"
@@ -800,7 +803,6 @@ E clico no botão "Excluir requisição" temporario em Obras
     Click Element                    ${Botao_Excluir_Requisicoes}
     Wait Until Element Is Visible    //button[contains(.,'Continuar')]
     Click Element                    //button[contains(.,'Continuar')]
-
 
 # --2.20
 E clico no botão "Comentários"
