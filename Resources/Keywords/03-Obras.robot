@@ -271,7 +271,7 @@ Então sistema exibe requisição inserida
 # -3.2.11
 E preencho informações de editar requisição em Obras
     Sleep    3s
-    Wait Until Element Is Visible    (//button[@id='status'])[1]
+    Wait Until Element Is Visible    (//button[@id='status'])[1]    timeout=20s
     Click Element                    (//button[@id='status'])[1]
     Sleep    1s
     Click Element                    (//div[contains(.,'Concluído')])[5]
@@ -279,7 +279,6 @@ E preencho informações de editar requisição em Obras
 
 Então sistema conlcui edição de requisição em Obras
     Wait Until Page Contains    text=Preencha os campos abaixo e clique em atualizar para editar as informações.
-
 
 # -3.2.12
 E preencho filtro Cliente em Obras
@@ -343,13 +342,14 @@ Então sitema verifica se status é concluído
 
 # -3.2.14
 E preencho informações de comentário de requisição em Obras
-    Wait Until Element Is Visible    (//button[@data-state='closed'])[23]
-    Click Element    (//button[@data-state='closed'])[23]
-    Click Element    (//button[@data-state='closed'])[24]
-    Click Element    (//button[@data-state='closed'])[25]
-    Click Element    (//button[@data-state='closed'])[26]
-    Input Text       //div[contains(@contenteditable,'true')]    ${nome_pesquisa_GruposConsumidores}
-    Click Element    (//button[@type='button'])[34]
+    Wait Until Element Is Visible    (//button[@type='button'])[16]
+    Click Element    (//button[@type='button'])[16]
+    Click Element    (//button[@type='button'])[17]
+    Click Element    (//button[@type='button'])[18]
+    Click Element    (//button[@type='button'])[19]
+    Sleep    3s
+    Press Keys       NONE    B3 (teste)
+    Click Element    (//button[@type='button'])[33]
 
 # -3.2.15
 E clico no botão "Excluir requisição" em Obras

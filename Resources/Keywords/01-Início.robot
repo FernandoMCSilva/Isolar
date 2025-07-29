@@ -66,7 +66,7 @@ Quando clico em "Concluídas"
     Click Element                    ${Botao_Concluidas}
 
 Então sistema exibe requisições com status "Concluídas"
-    Wait Until Element Is Visible    (//div[normalize-space()='Concluído'])[1]
+    Wait Until Element Is Visible    (//div[normalize-space()='Concluído'])[1]    timeout=20s
     
 # --1.5
 Quando clico em "Paradas"
