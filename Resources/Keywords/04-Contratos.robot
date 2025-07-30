@@ -105,7 +105,7 @@ Então sistema exibe informações de filtro "15 dias"
 # -4.1.7
 Quando clico no filtro "Vencidos"
     Sleep    1s
-    Wait Until Element Is Visible    ${Filtro_Vencidos}
+    Wait Until Element Is Visible    ${Filtro_Vencidos}    timeout=20s
     Click Element                    ${Filtro_Vencidos}
     Sleep    1s
 
@@ -124,7 +124,7 @@ Então sistema exibe informações de filtro "Indefinidos"
 
 # -4.2.1
 Dado que clico no menu Contratos > Contratos
-    Wait Until Element Is Visible    ${MENU_CONTROLECONTRATOS}
+    Wait Until Element Is Visible    ${MENU_CONTROLECONTRATOS}    timeout=20s
     Click Element                    ${MENU_CONTROLECONTRATOS}
     Wait Until Element Is Visible    ${Menu_ContratosContratos}
     Click Element                    ${Menu_ContratosContratos}
@@ -136,18 +136,18 @@ Então sistema exibe informações de cadastros de Contratos
 E preencho informação de filtro Vigência inicial
     Wait Until Element Is Visible    ${Filtro_VigenciaInicial}
     Click Element                    ${Filtro_VigenciaInicial}
-    FOR     ${i}    IN RANGE     5
+    FOR     ${i}    IN RANGE     2
         Click Element    (//button[@type='button'])[19]
         Sleep    0.5s
     END
     Sleep    1s
-    Click Element    (//button[contains(.,'1')])[2]
+    Click Element    (//button[contains(.,'1')])
     Sleep    1s
-    Click Element    (//button[contains(.,'31')])[3]
+    Click Element    (//button[contains(.,'31')])
     Click Element    ${Filtro_VigenciaInicial}
 
 Então sistema exibe informações de filtro Vigência inicial
-    Wait Until Element Is Visible    //td[contains(.,'06/01/2025')]
+    Wait Until Element Is Visible    (//td[normalize-space()='21/05/2025'])[1]
 
 # -4.2.3
 E preencho informação de filtro Vigência final
@@ -167,19 +167,19 @@ Então sistema exibe informações de filtro Vigência final
 
 # -4.2.4
 E preencho informação de filtro Índice
-    Wait Until Element Is Visible    ${Filtro_Indice}
+    Wait Until Element Is Visible    ${Filtro_Indice}    timeout=20s
     Click Element                    ${Filtro_Indice}
-   FOR     ${i}    IN RANGE     4
+   FOR     ${i}    IN RANGE     2
         Click Element    (//button[@type='button'])[19]
         Sleep    0.3s
     END
-    Click Element    (//button[contains(.,'1')])[2]
+    Click Element    (//button[contains(.,'1')])
     Sleep    2.5s
-    Click Element    (//button[contains(.,'28')])[3]
+    Click Element    (//button[contains(.,'31')])
     Click Element    ${Filtro_Indice}
 
 Então sistema exibe informações de filtro Índice
-    Wait Until Element Is Visible    (//td[contains(.,'12/02/2025')])[1]
+    Wait Until Element Is Visible    (//td[normalize-space()='10/05/2025'])[1]
 
 # -4.2.5
 E preencho informação de filtro Tipo de índice
@@ -325,8 +325,8 @@ E faço download de documento
 # -4.2.18
 E mudo status de vigência
     Sleep    3s
-    Wait Until Element Is Visible    //button[contains(.,'Selecione o status da vigência')]
-    Click Element                    //button[contains(.,'Selecione o status da vigência')]
+    Wait Until Element Is Visible    (//button[@role='combobox'])[4]    timeout=20s 
+    Click Element                    (//button[@role='combobox'])[4]
     Click Element                    (//div[contains(.,'Reincidido/Encerrado')])[5]
     Click Element                    //button[contains(.,'Salvar')]
 

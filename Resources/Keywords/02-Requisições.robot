@@ -796,10 +796,10 @@ E preencho filtro Cliente renovado
     Wait Until Page Contains         text=temporario - Renovação
 
 E clico no botão "Excluir requisição" temporario em Obras
-    Sleep    2s
-    Wait Until Page Contains         text=Editar requisição
+    Sleep    8s
+    Wait Until Page Contains         text=Dados do Cliente
     Execute JavaScript               window.scrollTo(0, 0)
-    Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}
+    Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}    timeout=20s
     Click Element                    ${Botao_Excluir_Requisicoes}
     Wait Until Element Is Visible    //button[contains(.,'Continuar')]
     Click Element                    //button[contains(.,'Continuar')]

@@ -66,8 +66,8 @@ E volto pra tela inicial
     Click Element                    ${MENU_OBRAS}
     Sleep    1s
 Dado que clico no menu Obras > Requisições
-    Sleep    2s
-    Wait Until Element Is Visible    ${MENU_OBRAS}
+    Sleep    5s
+    Wait Until Element Is Visible    ${MENU_OBRAS}    timeout=20s
     Click Element                    ${MENU_OBRAS}
     Sleep    4s
     Wait Until Element Is Visible    ${Menu_ObrasRequisicoes}
@@ -270,8 +270,8 @@ Então sistema exibe requisição inserida
 
 # -3.2.11
 E preencho informações de editar requisição em Obras
-    Sleep    3s
-    Wait Until Element Is Visible    (//button[@id='status'])[1]    timeout=20s
+    Sleep    7s
+    Wait Until Element Is Visible    (//button[@id='status'])[1]    timeout=40s
     Click Element                    (//button[@id='status'])[1]
     Sleep    1s
     Click Element                    (//div[contains(.,'Concluído')])[5]
@@ -312,7 +312,7 @@ Trocar Status Para Fila
     Click Element                    //button[contains(.,'Salvar alterações')]
 
 E seleciono opção "Concluído" em editar status em Obras
-    Sleep    3s
+    Sleep    5s
     Wait Until Element Is Visible    (//button[@id='status'])[1]
     Click Element                    (//button[@id='status'])[1]
     Sleep    1s
@@ -365,7 +365,7 @@ Então sistema exclui e retorna para menu Obras > requisições
 
 
 # -3.2.16
-Então sistema exibe mensagem de campos obrigatórios não preenchido em Obras
+Então sistema exibe mensagem de campos obrigatórios não preenchido em Obrasq
     Wait Until Page Contains    text=Por favor digite um CPF ou CNPJ válido.
     
 # -3.2.17

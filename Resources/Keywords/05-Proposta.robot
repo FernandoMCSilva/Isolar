@@ -113,7 +113,7 @@ E preencho com informações data de registro
     Wait Until Element Is Visible    (//button[@type='button'])[11]
     Click Element                    (//button[@type='button'])[11]
     Wait Until Element Is Visible    (//button[@type='button'])[13]
-    FOR    ${i}    IN RANGE    9
+    FOR    ${i}    IN RANGE    2
     Click Element    (//button[@type='button'])[13]
     Sleep    0.5s
     END
@@ -123,7 +123,7 @@ E preencho com informações data de registro
     Sleep    2s
 Então sistema exibe Estimativa do filtro Data de registro
     Sleep    4s
-    Wait Until Page Contains    text=12/09/2024
+    Wait Until Page Contains    text=12/05/2025
 
 # --4.8
 Quando clico em "Quantidade de itens por pág"

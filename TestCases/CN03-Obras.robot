@@ -290,7 +290,7 @@ CT 03.02.16 - Tentar inserir requisição sem campos obrigatórios
     Dado que clico no menu Obras > Requisições
     Quanto clico no botão "Inserir/Obras"
     E clico em próximo sem preencher campos
-    Então sistema exibe mensagem de campos obrigatórios não preenchido em Obras
+    Então sistema exibe mensagem de campos obrigatórios não preenchido
 
 CT 03.02.17 - Tentar inserir requisição preenchendo somente telefone
     [Documentation]     Caso de teste valida inserir preenchendo somente o campo telefone (Erro) 

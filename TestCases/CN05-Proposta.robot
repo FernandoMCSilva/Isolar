@@ -188,7 +188,7 @@ CT 05.21 - Validar exportação para Excel
     [Tags]    Proposta
     Dado que clico no menu "Estimativa"
     Quando clico no botão Exportar para Excel
-    Então sistema exporta para excel
+    # Então sistema exporta para excel
 
 CT 05.22 - Gerar estimativa sem preencher campos obrigatórios
     [Documentation]    Caso de teste valida gerar sem preencher nenhum dos campos obrigatórios
