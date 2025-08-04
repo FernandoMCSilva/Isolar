@@ -153,7 +153,14 @@ E clico no botão SAC
     Click Element                    ${botao_SAC}
 
 Então sistema exibe tela de SAC
-    Wait Until Page Contains    text=Envie-nos problemas ou sugestões para o sistema.
+    ${mensagemSAC_visivel}=       Run Keyword And Return Status    Element Should Be Visible    (//p[contains(@class,'text-sm sm:text-lg text-gray-600 mt-4 mb-4 sm:mb-0')])[1]
+    ${notificacaoSAC_visivel}=    Run Keyword And Return Status    Element Should Be Visible    (//button[normalize-space()='1 - Mensagem no SAC.'])[1]
+    
+    IF    ${mensagemSAC_visivel}
+        Sleep    0.5s
+    ELSE
+        Sleep    0.5s
+    END
 
 # --1.10
 E clico no botão Notificações

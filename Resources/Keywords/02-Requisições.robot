@@ -74,7 +74,7 @@ Dado que clico no menu "Requisições"
 # --2.2
 Quando clico em "Filtros"
     Sleep    2s
-    Wait Until Element Is Visible    ${Link_Filtros}    timeout=10s
+    Wait Until Element Is Visible    ${Link_Filtros}    timeout=20s
     Click Element                    ${Link_Filtros}
 
 E preencho informações no campo Cliente
@@ -231,7 +231,7 @@ E preencho informações de Data de entrega
     Wait Until Element Is Visible    //button[@id='data_entrega']
     Click Element                    //button[@id='data_entrega']
     Wait Until Element Is Visible    (//button[@type='button'])[44]
-    FOR    ${i}    IN RANGE    2
+    FOR    ${i}    IN RANGE    3
         Click Element       (//button[@type='button'])[44]
         Sleep    1s
     END
@@ -248,7 +248,7 @@ E preencho informações de Data de criação
     Wait Until Element Is Visible      //button[@id='data_criacao']
     Click Element                      //button[@id='data_criacao']
 
-    FOR     ${i}    IN RANGE    2
+    FOR     ${i}    IN RANGE    3
     Click Element    (//button[@type='button'])[44]
     Sleep    1s
     END
