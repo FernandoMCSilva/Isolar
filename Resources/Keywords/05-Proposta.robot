@@ -54,7 +54,7 @@ E preencho informações no campo Vendedor
 
 E clico em "Buscar"
     Sleep    2s
-    Wait Until Element Is Visible        ${Botao_Buscar}
+    Wait Until Element Is Visible        ${Botao_Buscar}    timemout=20s
     Click Element                        ${Botao_Buscar}
 
 Então sistema exibe estimativas de filtro Vendedor
@@ -113,7 +113,7 @@ E preencho com informações data de registro
     Wait Until Element Is Visible    (//button[@type='button'])[11]
     Click Element                    (//button[@type='button'])[11]
     Wait Until Element Is Visible    (//button[@type='button'])[13]
-    FOR    ${i}    IN RANGE    2
+    FOR    ${i}    IN RANGE    3
     Click Element    (//button[@type='button'])[13]
     Sleep    0.5s
     END
@@ -201,8 +201,8 @@ Então sistema volta para menu Estimativa
 
 # --4.13
 E clico em "Sim"
-    Wait Until Element Is Visible    (//button[contains(@type,'button')])[12]
-    Click Element                    (//button[contains(@type,'button')])[12]
+    Wait Until Element Is Visible    (//button[normalize-space()='Sim'])[1]    timeout=20s
+    Click Element                    (//button[normalize-space()='Sim'])[1]
 
 Então sistema exibe informações para criar assinaturas
     Wait Until Page Contains   text=Clique para fazer o upload

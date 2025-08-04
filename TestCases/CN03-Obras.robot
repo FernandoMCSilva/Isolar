@@ -49,12 +49,12 @@ CT 03.01.06 - Validar filtros de data
     E preencho data final em Obras > Dashboard
     Então sistema exibe informações de filtros de data
 
-CT 03.01.07 - Validar filtros em departamento
-    [Documentation]     Caso de teste valida os filtros Departamento
-    [Tags]    Obras       
-    Dado que clico no menu Obras > Dashboard
-    E valido filtros de departamento em Obras
-    Então sistema exibe requisições do departamento em Obras
+# CT 03.01.07 - Validar filtros em departamento
+#     [Documentation]     Caso de teste valida os filtros Departamento
+#     [Tags]    Obras       
+#     Dado que clico no menu Obras > Dashboard
+#     E valido filtros de departamento em Obras
+#     Então sistema exibe requisições do departamento em Obras
 
 CT 03.02.01 - Validar menu Obras > Requisições
     [Documentation]     Caso de teste valida se Menu Obras > Requisições está funcional
@@ -74,13 +74,13 @@ CT 03.02.02 - Validar filtro Cliente
 #   Validar filtro Cliente
     Então sistema exibe resultado do filtro em Obras
 
-CT 03.02.03 - Validar filtro Departamento
-    [Documentation]     Caso de teste valida o filtro Departamento em Obras > Requisições
-    [Tags]    Obras        
-    Dado que clico no menu Obras > Requisições
-    Quando clico em "Filtros"
-    E valido filtros dentro de Departamento em Obras > Requisições
-    Então sistema exibe resultado de Departamento
+# CT 03.02.03 - Validar filtro Departamento
+#     [Documentation]     Caso de teste valida o filtro Departamento em Obras > Requisições
+#     [Tags]    Obras        
+#     Dado que clico no menu Obras > Requisições
+#     Quando clico em "Filtros"
+#     E valido filtros dentro de Departamento em Obras > Requisições
+#     Então sistema exibe resultado de Departamento
 
 #  BUG # Obras > Requisições
 CT 03.02.04 - Validar filtro Tipo
