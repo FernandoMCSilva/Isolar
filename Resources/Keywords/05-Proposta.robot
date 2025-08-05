@@ -54,7 +54,7 @@ E preencho informações no campo Vendedor
 
 E clico em "Buscar"
     Sleep    2s
-    Wait Until Element Is Visible        ${Botao_Buscar}    timemout=20s
+    Wait Until Element Is Visible        ${Botao_Buscar}    timeout=20s
     Click Element                        ${Botao_Buscar}
 
 Então sistema exibe estimativas de filtro Vendedor

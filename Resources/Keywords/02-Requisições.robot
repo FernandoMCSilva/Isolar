@@ -73,7 +73,7 @@ Dado que clico no menu "Requisições"
 
 # --2.2
 Quando clico em "Filtros"
-    Sleep    2s
+    Sleep    5s
     Wait Until Element Is Visible    ${Link_Filtros}    timeout=20s
     Click Element                    ${Link_Filtros}
 
