@@ -242,35 +242,13 @@ CT 10.01.19 - Validar botão Fechar no filtro "buscar"
     E clico em "Fechar"
     Então sistema verifica se filtro buscar fechou
 
-CT 10.02.01 - Validar menu Configurações > Minerando sol 
-    [Documentation]     Caso de teste valida se Menu Configurações > Minerando sol está funcional
-    [Tags]    Configurações
-    Dado que clico no menu "Configurações > Minerando sol"
-    Então sistema exibe informações de menu Minerando sol
-
-# CT 10.02.02 - Validar edição na tela Geral 
-#     [Documentation]     Caso de teste valida se edição na tela "Geral" no menu Configurações > Minerando Sol está funcional
-#     [Tags]    Configurações
-#     Dado que clico no menu "Configurações > Minerando sol"
-#     Quando preencho informações do menu "Geral" no menu Configurações > Minerando Sol
-#     E clico em Atualizar
-#     Então sistema exibe mensagem de atualização
-
-# CT 10.02.03 - Validar edição na tela Template 
-#     [Documentation]     Caso de teste valida se edição na tela "Template" no menu Configurações > Minerando Sol está funcional
-#     [Tags]    Configurações
-#     Dado que clico no menu "Configurações > Minerando sol"
-#     Quando preencho informações do menu Template
-#     E clico em Atualizar
-#     Então sistema exibe mensagem de atualização
-
-CT 10.03.01 - Validar menu Configurações > Documentos
+CT 10.02.01 - Validar menu Configurações > Documentos
     [Documentation]     Caso de teste valida se Menu Configurações > Documentos está funcional
     [Tags]    Configurações        
     Dado que clico no menu "Configurações > Documentos"
     Então sistema exibe informações de menu Documentos
 
-CT 10.03.02 - Validar filtro Tipo de documento
+CT 10.02.02 - Validar filtro Tipo de documento
     [Documentation]     Caso de teste valida se filtro "Tipo de documento" no menu Configurações > Documentos está funcional
     [Tags]    Configurações        
     Dado que clico no menu "Configurações > Documentos"
@@ -278,7 +256,7 @@ CT 10.03.02 - Validar filtro Tipo de documento
     E seleciono filtro "Tipo de documento"
     Então sistema exibe informações de filtro selecionado
 
-CT 10.03.03 - Validar filtro Departamento
+CT 10.02.03 - Validar filtro Departamento
     [Documentation]     Caso de teste valida se filtro "Departamento" no menu Configurações > Documentos está funcional
     [Tags]    Configurações        
     Dado que clico no menu "Configurações > Documentos"
@@ -286,21 +264,21 @@ CT 10.03.03 - Validar filtro Departamento
     E seleciono filtro "Departamento"
     Então sistema exibe informações de filtro selecionado
 
-CT 10.03.04 - Validar botão Ver template
+CT 10.02.04 - Validar botão Ver template
     [Documentation]     Caso de teste valida se botão Ver template está funcional em Configurações > Documentos
     [Tags]    Configurações        
     Dado que clico no menu "Configurações > Documentos"
     E clico no botão Ver template
     Então sistema exibe informações de template selecionado
 
-CT 10.03.05 - Validar botão Ver histórico 
+CT 10.02.05 - Validar botão Ver histórico 
     [Documentation]     Caso de teste valida se botão Ver histórico está funcional em Configurações > Documentos
     [Tags]    Configurações        
     Dado que clico no menu "Configurações > Documentos"
     E clico no botão Ver histórico
     Então sistema exibe histórico de template selecionado
 
-# CT 10.03.06 - Validar botão Atualizar template 
+# CT 10.02.06 - Validar botão Atualizar template 
 #     [Documentation]     Caso de teste valida se botão Atualizar template está funcional em Configurações > Documentos
 #     [Tags]    Configurações        
 #     Dado que clico no menu "Configurações > Documentos"
@@ -309,7 +287,7 @@ CT 10.03.05 - Validar botão Ver histórico
 #     Então sistema atualiza template selecionado
 # # Upload / Anexo
 
-# CT 10.03.07 - Validar botão Editar template e campos 
+# CT 10.02.07 - Validar botão Editar template e campos 
 #     [Documentation]     Caso de teste valida se botão Editar template e campos está funcional em Configurações > Documentos
 #     [Tags]    Configurações        
 #     Dado que clico no menu "Configurações > Documentos"
@@ -317,7 +295,7 @@ CT 10.03.05 - Validar botão Ver histórico
 #     Então sistema exibe confirmação de edição
 # # Não temos permição para editar
 
-# CT 10.03.08 - Validar botão Criar 
+# CT 10.02.08 - Validar botão Criar 
 #     [Documentation]     Caso de teste valida se botão Criar está funcional em Configurações > Documentos
 #     [Tags]    Configurações        
 #     Dado que clico no menu "Configurações > Documentos"
@@ -327,16 +305,16 @@ CT 10.03.05 - Validar botão Ver histórico
 #     Então sistema cria novo template de documentos
 # # Upload / anexo
 
-CT 10.04.01 - Validar menu Configurações > Estimativa
-    [Documentation]     Caso de teste valida se Menu Configurações > Estimativa está funcional
+CT 10.04.01 - Validar menu Configurações > Proposta
+    [Documentation]     Caso de teste valida se Menu Configurações > Proposta está funcional
     [Tags]    Configurações        
-    Dado que clico no menu "Configurações > Estimativa"
+    Dado que clico no menu "Configurações > Proposta"
     Então sistema exibe informações de menu Estimativa
 
 CT 10.04.02 - Validar campos em Constantes ambientais
     [Documentation]     Caso de teste valida se campos em Constantes ambientais estão funcionais
     [Tags]    Configurações        
-    Dado que clico no menu "Configurações > Estimativa"
+    Dado que clico no menu "Configurações > Proposta"
     Quando clico em Constantes ambientais
     E altero informações de Constantes ambientais
     E clico em Atualizar valores das contanstes
@@ -346,7 +324,7 @@ CT 10.04.02 - Validar campos em Constantes ambientais
 CT 10.04.03 - Validar campos em Constantes Impostos
     [Documentation]     Caso de teste valida se campos em Constantes Impostos estão funcionais
     [Tags]    Configurações        
-    Dado que clico no menu "Configurações > Estimativa"
+    Dado que clico no menu "Configurações > Proposta"
     Quando clico em Constantes Impostos
     E altero informações de Constantes Impostos
     E clico em Atualizar valores das contanstes
@@ -356,7 +334,7 @@ CT 10.04.03 - Validar campos em Constantes Impostos
 CT 10.04.04 - Validar campos em Constantes técnicas
     [Documentation]     Caso de teste valida se campos em Constantes técnicas estão funcionais
     [Tags]    Configurações        
-    Dado que clico no menu "Configurações > Estimativa"
+    Dado que clico no menu "Configurações > Proposta"
     Quando clico em Constantes técnicas
     E altero informações de Constantes técnicas
     E clico em Atualizar valores das contanstes
@@ -366,7 +344,7 @@ CT 10.04.04 - Validar campos em Constantes técnicas
 # CT 10.04.05 - Validar campos de Preço para Investimento > Solo
 #     [Documentation]     Caso de teste valida se campos em Preço para Investimento > Solo estão funcionais
 #     [Tags]    Configurações        
-#     Dado que clico no menu "Configurações > Estimativa"
+#     Dado que clico no menu "Configurações > Proposta"
 #     Quando clico em Preço para Investimento > Solo 
 #     E adiciono novo Registro de Preço para Investimento > Solo
 #     E altero informações de Preço para Investimento > Solo

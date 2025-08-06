@@ -39,7 +39,7 @@ ${CTRL}           CONTROL
 
 *** Keywords ***
 # --4.1
-Dado que clico no menu "Estimativa"
+Dado que clico no menu "Proposta"
     Sleep    2s
     Wait Until Element Is Visible    ${MENU_PROPOSTAENERGY}
     Click Element                    ${MENU_PROPOSTAENERGY}
@@ -201,6 +201,7 @@ Então sistema volta para menu Estimativa
 
 # --4.13
 E clico em "Sim"
+    Sleep    1s
     Wait Until Element Is Visible    (//button[normalize-space()='Sim'])[1]    timeout=20s
     Click Element                    (//button[normalize-space()='Sim'])[1]
 
@@ -382,6 +383,7 @@ E clico no botão Baixar/Imprimir
     Click Element                    //button[contains(.,'Confirmar')]
 
 Então sistema Baixa/Imprime Estimativa
+    Sleep    3s
     Wait Until Page Contains    text=Proposta salva com sucesso!
 
 # --4.26
@@ -395,7 +397,7 @@ E clico no botão Iniciar conversa no WhatsApp
 
 
 Então sistema redireciona para Whatsapp
-    Sleep    1s
+    Sleep    3s
     Wait Until Page Contains    text=Proposta salva com sucesso!
 
 # --4.27
@@ -420,7 +422,6 @@ E clico no botão Salvar informarções no sistema
     Click Element                    ${botao_salvarinformacoes_Estimativa}
     Wait Until Element Is Visible    //button[contains(.,'Confirmar')]
     Click Element                    //button[contains(.,'Confirmar')]
-
 
 Então sistema salva informações no sistema
     Wait Until Page Contains    text=Proposta salva com sucesso!

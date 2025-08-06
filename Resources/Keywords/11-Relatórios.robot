@@ -10,17 +10,17 @@ ${Menu_Homologatorias}               //p[contains(.,'Homologatórias')]
 ${nome_pesquisa_Relatórios}          Teste
 
 # filtros
-${filtro_ANEEL}                      (//div[contains(.,'Selecione ...')])[17]
-${filtro_Concessionaria}             (//div[contains(.,'Selecione ...')])[22]
-${filtro_Acessante}                  (//div[contains(.,'Selecione ...')])[27]
-${filtro_Classe}                     (//div[contains(.,'Selecione ...')])[32]
-${filtro_Detalhe}                    (//div[contains(.,'Selecione ...')])[37]
-${filtro_Posto}                      (//div[contains(.,'Selecione ...')])[42]
-${filtro_Ano}                        //button[contains(.,'Selecione um ano')]
-${filtro_Subgrupo}                   (//div[contains(.,'Selecione ...')])[48]
-${filtro_Modalidade}                 (//div[contains(.,'Selecione ...')])[53]
-${filtro_SubClasse}                  (//div[contains(.,'Selecione ...')])[58]
-${filtro_Outorga}                    (//div[contains(.,'Todos')])[17]
+${filtro_ANEEL}                      (//div[@class='select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer'])[1]
+${filtro_Concessionaria}             (//div[@class='select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer'])[2]
+${filtro_Acessante}                  (//div[@class='select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer'])[3]
+${filtro_Classe}                     (//div[@class='select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer'])[4]
+${filtro_Detalhe}                    (//div[@class='select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer'])[5]
+${filtro_Posto}                      (//div[@class='select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer'])[6]
+${filtro_Ano}                        (//button[@role='combobox'])[1]
+${filtro_Subgrupo}                   (//div[@class='select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer'])[7]
+${filtro_Modalidade}                 (//div[@class='select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer'])[8]
+${filtro_SubClasse}                  (//div[@class='select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer'])[9]
+${filtro_Outorga}                    (//div[@class='select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer'])[10]
 ${filtro_DataCriacaoRelatorios}      (//button[@class='inline-flex items-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full justify-start text-left font-normal text-muted-foreground'])[1]
 
 # resultados esperados
@@ -142,10 +142,10 @@ E seleciono filtro Data de criação
     Wait Until Element Is Visible    ${filtro_DataCriacaoRelatorios}
     Click Element                    ${filtro_DataCriacaoRelatorios}
     Wait Until Element Is Visible    (//button[@type='button'])[21]
-    # FOR     ${i}    IN RANGE    7   
-    #     Click Element    (//button[@type='button'])[21]
-    #     Sleep    0.5s
-    # END
+    FOR     ${i}    IN RANGE    1
+        Click Element    (//button[@type='button'])[21]
+        Sleep    0.5s
+    END
     Click Element                    (//button[@name='day'][normalize-space()='14'])[1]
 
 Então sistema exibe informações de filtro Data de criação
@@ -279,7 +279,11 @@ Então sistema exibe informações de filtro Classe
 E preencho informação de filtro Detalhe
     Wait Until Element Is Visible    ${filtro_Detalhe}
     Click Element                    ${filtro_Detalhe}
-    Click Element                    (//div[contains(.,'TIPO 02')])[12]
+    FOR    ${i}    IN RANGE    5
+        Press Keys    NONE    ARROW_DOWN
+        Sleep    0.2s
+    END
+    Press Keys    NONE    ENTER
 
 Então sistema exibe informações de filtro Detalhe
     Wait Until Element Is Visible    ${result_Detalhe}    

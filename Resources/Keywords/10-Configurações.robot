@@ -92,9 +92,9 @@ ${Botao_Historico_Configuracoes}    (//td[contains(@class,'p-4 align-middle')]//
 ${Botao_AtualizarTemplate}          (//td[contains(@class,'p-4 align-middle')]//button)[3]
 ${Botao_EditarTemplate}             (//td[contains(@class,'p-4 align-middle')]//a)[1]
 ${Botao_Criar_ConfiguracoesDoc}     //button[normalize-space(text())='Criar']
-${Botao_ConstantesAmbientais}       //button[normalize-space(text())='Constantes ambientais']
-${Botao_ConstantesImpostos}         //button[normalize-space(text())='Constantes Impostos']
-${Botao_ConstantesTécnicas}         //button[normalize-space(text())='Constantes técnicas']
+${Botao_ConstantesAmbientais}       (//button[normalize-space()='Constantes ambientais'])[1]
+${Botao_ConstantesImpostos}         (//button[normalize-space()='Constantes Impostos'])[1]
+${Botao_ConstantesTécnicas}         (//button[normalize-space()='Constantes técnicas'])[1]
 ${Botao_PrecoInvestimento}          //button[normalize-space(text())='Preço para Investimento kWp']
 ${Botao_InvestimentoSolo}           //button[normalize-space(text())='Investimento para Solo']
 ${Botao_InvestimentoFibrocimento}   //button[normalize-space(text())='Investimento para Telhado de FibroCimento']
@@ -319,80 +319,81 @@ Então sistema exibe informações com filtro "Lista" em Configurações > Requi
 Então sistema exibe mensagem de erro em Configurações > Requisições
     Wait Until Page Contains    text=Nenhum tipo de requisição encontrado.
 
-# --10.02.01
-Dado que clico no menu "Configurações > Minerando sol"
-    Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
-    Click Element                    ${MENU_CONFIGURACOES}
-    Wait Until Element Is Visible    ${Menu_ConfigMinerandoSol}
-    Click Element                    ${Menu_ConfigMinerandoSol}
-Então sistema exibe informações de menu Minerando sol
-    Wait Until Page Contains    text=Configurar valores das constantes da Minerando Sol
+# NÃO EXISTE MAIS ESSE CÓDIGO
+# # --10.02.01
+# Dado que clico no menu "Configurações > Minerando sol"
+#     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
+#     Click Element                    ${MENU_CONFIGURACOES}
+#     Wait Until Element Is Visible    ${Menu_ConfigMinerandoSol}
+#     Click Element                    ${Menu_ConfigMinerandoSol}
+# Então sistema exibe informações de menu Minerando sol
+#     Wait Until Page Contains    text=Configurar valores das constantes da Minerando Sol
 
-# -10.02.02
-Quando preencho informações do menu "Geral" no menu Configurações > Minerando Sol
-# 1
-    Sleep    2s
-    Input Text        ${input_ValorConfins}                    2,35    
-    Input Text        ${input_ValorPis}                        0,5
-    Input Text        ${input_ValorICMS}                       17
-    Input Text        ${input_ValorAutoconsumo}                1
-    Input Text        ${input_ValorGeracaoCompartilhada}       1
-    Click Element     ${botao_DecontoNivelAssociados}
-    Click Element     ${botao_DecontoConcessionarias}
-    Click Element     ${botao_DecontoGruposTarifarios}
-# 2
+# # -10.02.02
+# Quando preencho informações do menu "Geral" no menu Configurações > Minerando Sol
+# # 1
+#     Sleep    2s
+#     Input Text        ${input_ValorConfins}                    2,35    
+#     Input Text        ${input_ValorPis}                        0,5
+#     Input Text        ${input_ValorICMS}                       17
+#     Input Text        ${input_ValorAutoconsumo}                1
+#     Input Text        ${input_ValorGeracaoCompartilhada}       1
+#     Click Element     ${botao_DecontoNivelAssociados}
+#     Click Element     ${botao_DecontoConcessionarias}
+#     Click Element     ${botao_DecontoGruposTarifarios}
+# # 2
 
-    Input Text        //input[@id='concessionaria-4']            ${quatidade_padrao}
-    Input Text        //input[@id='concessionaria-6']            ${quatidade_padrao}
-    Input Text        //input[@id='concessionaria-7']            ${quatidade_padrao}
-    Input Text        //input[@id='concessionaria-8']            ${quatidade_padrao}
-    Input Text        (//label[normalize-space(text())='Enel']/following::input)[1]                    ${quatidade_padrao}
-    Input Text        (//label[normalize-space(text())='AMAZONAS ENERGIA']/following::input)[1]        ${quatidade_padrao}
-    Input Text        (//label[normalize-space(text())='Cemig']/following::input)[1]                   ${quatidade_padrao}
-    Input Text        (//label[normalize-space(text())='CRERAL']/following::input)[1]                  ${quatidade_padrao}
-    Input Text        //input[@id='concessionaria-8']            ${quatidade_padrao}
-    Input Text        //input[@id='concessionaria-9']            ${quatidade_padrao}
-    Input Text        //input[@id='concessionaria-10']           ${quatidade_padrao}
-    Input Text        //input[@id='concessionaria-11']           ${quatidade_padrao}
-    Input Text        //input[@id='concessionaria-12']           ${quatidade_padrao}
-    Input Text        (//label[normalize-space(text())='Creluz']/following::input)[1]           ${quatidade_padrao}
-    Input Text        (//label[normalize-space(text())='Energisa']/following::input)[1]         ${quatidade_padrao}
-    Input Text        (//label[normalize-space(text())='Equatorial']/following::input)[1]       ${quatidade_padrao}
-    Input Text        (//input[@value='7'])[17]                  ${quatidade_padrao}
-    Input Text        (//input[@value='7'])[18]                  ${quatidade_padrao}
-    Input Text        (//input[@value='7'])[19]                  ${quatidade_padrao}
-    Input Text        (//input[@type='number'])[5]               ${quatidade_padrao}
-    Click Element     //button[contains(.,'Adicionar Novo Associado')]
-    Click Element     (//button[contains(.,'Remover')])[6]
-    Sleep    1s
-    Sleep    3s
-    Click Element     ${botaox_RemoverSupervisor}
-    Click Element     (//div[@aria-hidden='true'])[2]
-    Click Element     //div[normalize-space(text())='Fernando QA']
-    Click Element     //button[@class='peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-slate-400']
-    Click Element     //button[@class='peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-slate-400']
-E clico em Atualizar
-    Wait Until Element Is Visible    ${botao_AtualizarConfig}
-    Click Element                    ${botao_AtualizarConfig}
+#     Input Text        //input[@id='concessionaria-4']            ${quatidade_padrao}
+#     Input Text        //input[@id='concessionaria-6']            ${quatidade_padrao}
+#     Input Text        //input[@id='concessionaria-7']            ${quatidade_padrao}
+#     Input Text        //input[@id='concessionaria-8']            ${quatidade_padrao}
+#     Input Text        (//label[normalize-space(text())='Enel']/following::input)[1]                    ${quatidade_padrao}
+#     Input Text        (//label[normalize-space(text())='AMAZONAS ENERGIA']/following::input)[1]        ${quatidade_padrao}
+#     Input Text        (//label[normalize-space(text())='Cemig']/following::input)[1]                   ${quatidade_padrao}
+#     Input Text        (//label[normalize-space(text())='CRERAL']/following::input)[1]                  ${quatidade_padrao}
+#     Input Text        //input[@id='concessionaria-8']            ${quatidade_padrao}
+#     Input Text        //input[@id='concessionaria-9']            ${quatidade_padrao}
+#     Input Text        //input[@id='concessionaria-10']           ${quatidade_padrao}
+#     Input Text        //input[@id='concessionaria-11']           ${quatidade_padrao}
+#     Input Text        //input[@id='concessionaria-12']           ${quatidade_padrao}
+#     Input Text        (//label[normalize-space(text())='Creluz']/following::input)[1]           ${quatidade_padrao}
+#     Input Text        (//label[normalize-space(text())='Energisa']/following::input)[1]         ${quatidade_padrao}
+#     Input Text        (//label[normalize-space(text())='Equatorial']/following::input)[1]       ${quatidade_padrao}
+#     Input Text        (//input[@value='7'])[17]                  ${quatidade_padrao}
+#     Input Text        (//input[@value='7'])[18]                  ${quatidade_padrao}
+#     Input Text        (//input[@value='7'])[19]                  ${quatidade_padrao}
+#     Input Text        (//input[@type='number'])[5]               ${quatidade_padrao}
+#     Click Element     //button[contains(.,'Adicionar Novo Associado')]
+#     Click Element     (//button[contains(.,'Remover')])[6]
+#     Sleep    1s
+#     Sleep    3s
+#     Click Element     ${botaox_RemoverSupervisor}
+#     Click Element     (//div[@aria-hidden='true'])[2]
+#     Click Element     //div[normalize-space(text())='Fernando QA']
+#     Click Element     //button[@class='peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-slate-400']
+#     Click Element     //button[@class='peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-slate-400']
+# E clico em Atualizar
+#     Wait Until Element Is Visible    ${botao_AtualizarConfig}
+#     Click Element                    ${botao_AtualizarConfig}
 
-Então sistema exibe mensagem de atualização
-    Wait Until Page Contains    text=Registro atualizado com sucesso!
+# Então sistema exibe mensagem de atualização
+#     Wait Until Page Contains    text=Registro atualizado com sucesso!
 
-# -10.02.03
-Quando preencho informações do menu Template
-    Sleep    1s
-    Wait Until Element Is Visible    //button[normalize-space(text())='Template']
-    Click Element                    //button[normalize-space(text())='Template']
-    Click Element                    (//button[contains(.,'Texto')])[1]
-    Click Element                    (//div[contains(.,'Data')])[5]
-    Click Element                    (//button[contains(.,'Nenhuma')])[1]
-    Click Element                    (//div[contains(.,'Endereço/Rua')])[5]
-    Input Text                       (//input[@value='Nome'])[1]    ${nome_pesquisa_GruposConsumidores}
-    Click Element                    //button[contains(.,'Atualizar campos Pessoa física - Termos')]
-    Wait Until Page Contains         text=Campos atualizados com sucesso.
-    Sleep    4s
+# # -10.02.03
+# Quando preencho informações do menu Template
+#     Sleep    1s
+#     Wait Until Element Is Visible    //button[normalize-space(text())='Template']
+#     Click Element                    //button[normalize-space(text())='Template']
+#     Click Element                    (//button[contains(.,'Texto')])[1]
+#     Click Element                    (//div[contains(.,'Data')])[5]
+#     Click Element                    (//button[contains(.,'Nenhuma')])[1]
+#     Click Element                    (//div[contains(.,'Endereço/Rua')])[5]
+#     Input Text                       (//input[@value='Nome'])[1]    ${nome_pesquisa_GruposConsumidores}
+#     Click Element                    //button[contains(.,'Atualizar campos Pessoa física - Termos')]
+#     Wait Until Page Contains         text=Campos atualizados com sucesso.
+#     Sleep    4s
 
-# -10.03.01
+# -10.02.01
 Dado que clico no menu "Configurações > Documentos"
     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
     Click Element                    ${MENU_CONFIGURACOES}
@@ -402,7 +403,7 @@ Dado que clico no menu "Configurações > Documentos"
 Então sistema exibe informações de menu Documentos
     Wait Until Page Contains    text=Informações referentes aos historicos dos documentos gerados no sistema.
 
-# -10.03.01
+# -10.02.01
 E seleciono filtro "Tipo de documento"
     Sleep    2s
     Click Element            (//button[@role='combobox'])[1]
@@ -412,15 +413,14 @@ Então sistema exibe informações de filtro selecionado
     Sleep    1s
     Wait Until Page Contains    text=Registros carregados com sucesso!
 
-# -10.03.02
+# -10.02.02
 E seleciono filtro "Departamento"
     Sleep    1s
     Wait Until Element Is Visible    (//button[@role='combobox'])[2]
     Click Element                    (//button[@role='combobox'])[2]
     Click Element                    (//div[contains(.,'TI')])[5]
 
-
-# -10.03.04
+# -10.02.03
 E clico no botão Ver template
     Sleep    2s
     Wait Until Element Is Visible    ${Botao_VerTemplate_Configuracoes}
@@ -429,7 +429,7 @@ E clico no botão Ver template
 Então sistema exibe informações de template selecionado
     Wait Until Page Contains    text=Baixar Template editável
 
-# -10.03.05
+# -10.02.04
 E clico no botão Ver histórico
     Sleep    2s
     Wait Until Element Is Visible    ${Botao_Historico_Configuracoes}
@@ -438,7 +438,7 @@ E clico no botão Ver histórico
 Então sistema exibe histórico de template selecionado
     Wait Until Page Contains    text=Histórico das ações do template - 1
 
-# -10.03.06
+# -10.02.05
 E clico no botão Atualizar template
     Wait Until Element Is Visible    ${Botao_AtualizarTemplate}
     Click Element                    ${Botao_AtualizarTemplate}
@@ -452,7 +452,7 @@ E faço upload de arquivo teste de template
 Então sistema atualiza template selecionado
     Wait Until Page Contains    text=Atualizado
 
-# -10.03.07
+# -10.02.06
 E clico no botão Editar template e campos
     Wait Until Element Is Visible    ${Botao_EditarTemplate}
     Click Element                    ${Botao_EditarTemplate}
@@ -460,7 +460,7 @@ E clico no botão Editar template e campos
 Então sistema exibe confirmação de edição
     Wait Until Page Contains    text=Edição feita com sucesso!
 
-# -10.03.08
+# -10.02.07
 Quando clico no botão Criar em Configurações > Documentos
     Wait Until Element Is Visible    ${Botao_Criar_ConfiguracoesDoc}
     Click Element                    ${Botao_Criar_ConfiguracoesDoc}
@@ -476,7 +476,7 @@ Então sistema cria novo template de documentos
     Wait Until Page Contains    text=Templade adicionado com sucesso    
 
 # -10.04.01
-Dado que clico no menu "Configurações > Estimativa"
+Dado que clico no menu "Configurações > Proposta"
     Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
     Click Element                    ${MENU_CONFIGURACOES}
     Wait Until Element Is Visible    ${Menu_ConfigProposta}
@@ -487,7 +487,8 @@ Então sistema exibe informações de menu Estimativa
 
 # -10.04.02
 Quando clico em Constantes ambientais
-    Wait Until Element Is Visible    ${Botao_ConstantesAmbientais}
+    Sleep    3s
+    Wait Until Element Is Visible    ${Botao_ConstantesAmbientais}    timeout=20s
     Click Element                    ${Botao_ConstantesAmbientais}
 
 E altero informações de Constantes ambientais
@@ -499,8 +500,8 @@ E clico em Atualizar valores das contanstes
     Click Element                    ${botao_AtualizarConfig}
 
 E restauro informações originais de Constantes ambientais
-    Sleep    5s
-    Wait Until Element Is Visible    ${Botao_ConstantesAmbientais}
+    Sleep    7s
+    Wait Until Element Is Visible    ${Botao_ConstantesAmbientais}    timeout=20s
     Click Element                    ${Botao_ConstantesAmbientais}
     Input Text                       ${input_TotalArvores}        ${Original_TotalArvores}
     Sleep    1.5s
@@ -510,7 +511,7 @@ E restauro informações originais de Constantes ambientais
     Click Element                    ${botao_AtualizarConfig}
 
 Então sistema exibe atualiza valores das constantes
-    Wait Until Page Contains    text=Registro atualizado com sucesso!
+    Wait Until Page Contains    text=Configurações atualizadas com sucesso!
     Sleep    5s
 
 E restauro Constantes ambientais para valores originais
@@ -520,6 +521,7 @@ E restauro Constantes ambientais para valores originais
 
 # -10.04.03
 Quando clico em Constantes Impostos
+    Sleep    3s
     Wait Until Element Is Visible    ${Botao_ConstantesImpostos}
     Click Element                    ${Botao_ConstantesImpostos}
 
@@ -537,8 +539,8 @@ E altero informações de Constantes Impostos
     Sleep    0.5
     
 E restauro informações originais de Constantes Impostos
-    Sleep    5s
-    Wait Until Element Is Visible    ${Botao_ConstantesImpostos}
+    Sleep    7s
+    Wait Until Element Is Visible    ${Botao_ConstantesImpostos}    timeout=20s
     Click Element                    ${Botao_ConstantesImpostos}
     Input Text                       ${input_FatorSimultaniedade}    ${Original_FatorSimultaniedade}
     Sleep    0.5
@@ -554,7 +556,8 @@ E restauro informações originais de Constantes Impostos
 
 # -10.04.04
 Quando clico em Constantes técnicas
-    Wait Until Element Is Visible    ${Botao_ConstantesTécnicas}
+    Sleep    7s
+    Wait Until Element Is Visible    ${Botao_ConstantesTécnicas}    timeout=20s
     Click Element                    ${Botao_ConstantesTécnicas}
 
 E altero informações de Constantes técnicas
@@ -568,8 +571,8 @@ E altero informações de Constantes técnicas
     Input Text                        ${input_FatorPotencia}    ${valorteste}
 
 E restauro informações originais de Constantes técnicas
-    Sleep    5s
-    Wait Until Element Is Visible    ${Botao_ConstantesTécnicas}
+    Sleep    8s
+    Wait Until Element Is Visible    ${Botao_ConstantesTécnicas}    timeout=20s
     Click Element                    ${Botao_ConstantesTécnicas}
     Wait Until Element Is Visible    ${input_ModuloW}
     Input Text                       ${input_ModuloW}           ${Original_ModuloW}
@@ -715,7 +718,7 @@ Então sistema exibe informações de filtro Tipo de registro em Histórico das 
 E seleciono filtro Data do registro
     Wait Until Element Is Visible    ${filtro_DataRegistroRequisicoes}
     Click Element                    ${filtro_DataRegistroRequisicoes}
-    FOR     ${i}    IN RANGE     10
+    FOR     ${i}    IN RANGE     3
         Click Element                (//button[@name='previous-month'])[1]
         Sleep    0.5s
     END
@@ -726,7 +729,7 @@ E seleciono filtro Data do registro
     # Sleep        0.5s
 
 Então sistema exibe informações de filtro Data do registro em Histórico das requisições
-    Wait Until Element Is Visible    (//td[normalize-space()='08/08/2024'])[1]
+    Wait Until Element Is Visible    (//td[normalize-space()='08/05/2025'])[1]
 
 # -10.05.10
 E clico no botão visualizar

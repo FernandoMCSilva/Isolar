@@ -54,10 +54,8 @@ ${COMBOBOX_RESPONSAVEL}         xpath=(//button[@role='combobox'])[2]
 @{OPCOES_COMBOBOX_DEPARTAMENTO}     (//div[contains(.,'Comercial')])[14]    (//div[contains(.,'TI')])[5]
 @{OPCOES_COMBOBOX_STATUS}           (//div[contains(.,'Fila')])[22]    (//div[contains(.,'Produção')])[5]    (//div[contains(.,'Concluído')])[22]    (//div[contains(.,'Parado')])[5]
 @{OPCOES_COMBOBOX_TIPO}
-# @{OPCOES_COMBOBOX_TIPO}             (//div[contains(.,'Técnico')])[14]    (//div[contains(.,'Pós Venda')])[5]    (//div[contains(.,'Compra')])[5]    (//div[contains(.,'Defeito com computador/notebook')])[5]    (//div[contains(.,'Defeito com impressora')])[5]    
-# ...     (//div[contains(.,'Problemas com internet')])[5]    (//div[contains(.,'Novo Colaborador')])[5]    (//div[contains(.,'Bloqueio de Acesso a Plataforma')])[5]    (//div[contains(.,'Problema com Sistema')])[5]    
-# ...    (//div[contains(.,'SERVIÇO MANUTENÇAO')])[5]    (//div[contains(.,'CERTIDAO AMBIENTAL')])[5]
-@{OPCOES_COMBOBOX_URGENTE}          (//div[contains(.,'Sim')])[5]    (//div[contains(.,'Não')])[5]
+
+@{OPCOES_COMBOBOX_URGENTE}          (//div[contains(.,'Sim')])
 @{OPCOES_COMBOBOX_NIVELDEURGENCIA}  (//div[contains(.,'Baixo')])[5]    (//div[contains(.,'Médio')])[5]    (//div[contains(.,'Alto')])[5]
 @{OPCOES_COMBOBOX_RESPONSAVEL}      (//div[contains(.,'LUANA GUARNIERI')])[5]    (//div[contains(.,'Leandro Coser')])[5]    (//div[contains(.,'Lucas Cenci')])[5]    
 @{OPCOES_COMBOBOX_RENOVADAS}        (//div[contains(.,'Originais')])[5]    
@@ -366,16 +364,21 @@ E preencho informações de cadastro de requisição
     Sleep    1s
     Click Element                    ${Botao_Proximo_Requisicoes}
 # 2
-    Click Element                    (//button[contains(.,'Selecione')])[1]
+    Wait Until Element Is Visible    (//button[@role='combobox'])[1]    timeout=20s
+    Click Element                    (//button[@role='combobox'])[1]
     Click Element                    (//div[contains(.,'RHIVAYLTON')])[5]
 
-    # Click Element                    (//button[@role='combobox'])[2]
-    # Wait Until Element Is Visible    (//div[@class='flex flex-wrap w-full p-2 gap-8 ml-4'])[1]
-    # Click Element                    (//div[@class='flex flex-wrap w-full p-2 gap-8 ml-4'])[1]
-
-    Click Element                    (//button[@role='combobox'])[3]
+    Click Element                    (//button[@role='combobox'])[2]
     Wait Until Element Is Visible    (//div[contains(.,'RHIVAYLTON')])[15]
     Click Element                    (//div[contains(.,'RHIVAYLTON')])[15]
+
+    Click Element                    (//button[@role='combobox'])[2]
+    Sleep    1s  
+    FOR    ${i}    IN RANGE    2
+        Press Keys     NONE    ARROW_DOWN
+        Sleep    0.2s
+    END
+    Press Keys    NONE    ENTER
 
     Click Element                    (//button[@role='combobox'])[4]
     Click Element                    (//div[contains(.,'Não')])[5]
@@ -563,7 +566,7 @@ Então sistema verifica se há cadastro temporario
         Click Element                    //button[contains(.,'Continuar')] 
 
         Sleep    4s
-        Wait Until Element Is Visible    //button[contains(.,'Filtros')]
+        Wait Until Element Is Visible    //button[contains(.,'Filtros')]    timeout=20s
         Click Element                    //button[contains(.,'Filtros')]
         Sleep    3s
         Input Text                       //input[@id='cliente']    temporario
@@ -778,8 +781,9 @@ E clico no botão "Renovar"
     Wait Until Element Is Visible    //button[contains(.,'Sim')]
     Click Element                    //button[contains(.,'Sim')]
     Sleep    2s
-    Wait Until Element Is Visible    //button[contains(.,'Atualização de preço')]
-    Click Element                    //button[contains(.,'Atualização de preço')]
+    Wait Until Element Is Visible    (//button[normalize-space()='Atualização de preço'])[1]    timeout=20s
+    Click Element                    (//button[normalize-space()='Atualização de preço'])[1]
+    Sleep    2s
     Wait Until Element Is Visible    (//button[@type='button'][normalize-space()='Sim'])[2]
     Click Element                    (//button[@type='button'][normalize-space()='Sim'])[2]
     Sleep    2s
