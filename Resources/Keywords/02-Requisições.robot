@@ -185,7 +185,8 @@ E valido todos os filtros dentro de Urgente em Requisições
             Wait Until Element Is Visible    ${COMBOBOX_URGENTE}
             Execute JavaScript    window.scrollTo(0, 0)
             # Reabre a combobox para a próxima iteração
-            Click Element    ${COMBOBOX_URGENTE}
+            Wait Until Element Is Visible    ${COMBOBOX_URGENTE}    timeout=20s
+            Click Element                    ${COMBOBOX_URGENTE}
         END
 
 
@@ -222,7 +223,8 @@ E valido todos os filtros de Nivel de urgencia em Requisições
             Wait Until Element Is Visible    ${COMBOBOX_NIVEL_DE_URGENCIA}
             Execute JavaScript    window.scrollTo(0, 0)
             # Reabre a combobox para a próxima iteração
-            Click Element    ${COMBOBOX_NIVEL_DE_URGENCIA}
+            Wait Until Element Is Visible    ${COMBOBOX_NIVEL_DE_URGENCIA}    timeout=20s
+            Click Element                    ${COMBOBOX_NIVEL_DE_URGENCIA}
         END
 # --2.8
 E preencho informações de Data de entrega
@@ -334,7 +336,8 @@ E valido todos os filtros dentro de "Renovadas"
             Log    Departamento ${departamento_text} validado com sucesso
             Wait Until Element Is Visible    ${COMBOBOX_RENOVADAS}
             # Reabre a combobox para a próxima iteração
-            Click Element    ${COMBOBOX_RENOVADAS}
+            Wait Until Element Is Visible    ${COMBOBOX_RENOVADAS}    timeout=20s
+            Click Element                    ${COMBOBOX_RENOVADAS}
         END
 
 Então sistema exibe requisições de filtro Renovadas

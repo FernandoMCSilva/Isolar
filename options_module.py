@@ -5,5 +5,5 @@ def create_options():
     binary = FirefoxBinary("/usr/bin/firefox")
     options = Options()
     options.binary = binary
-    # options.add_argument('--headless')  # Comente se quiser com GUI 
+    options.add_argument('--headless')  # Comente se quiser com GUI 
     return options
