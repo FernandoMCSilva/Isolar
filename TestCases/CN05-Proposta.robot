@@ -208,6 +208,7 @@ CT 05.23 - Validar botão ações após gerar cálculos
     E clico no botão Ações
     Então sistema exibe tela de botão ações 
 
+# BUG #1549
 CT 05.24 - Validar impressão de estimativa 
     [Documentation]    Caso de teste valida botão Baixar/Imprimir em Acões após gerar cálculos
     [Tags]    Proposta
@@ -219,7 +220,8 @@ CT 05.24 - Validar impressão de estimativa
     E clico no botão Ações
     E clico no botão Baixar/Imprimir
     Então sistema Baixa/Imprime Estimativa
-
+    
+# BUG #1549
 CT 05.25 - Validar botão Iniciar conversa no Whatsapp
     [Documentation]    Caso de teste valida botão Iniciar conversa no Whatsapp em Acões após gerar cálculos
     [Tags]    Proposta
@@ -244,6 +246,7 @@ CT 05.26 - Validar botão Enviar por email
     E clico no botão Enviar por email
     Então sistema abre informações do email
 
+# BUG #1549
 CT 05.27 - Validar botão Salvar informarções no sistema
     [Documentation]    Caso de teste valida botão Salvar informarções no sistema em Acões após gerar cálculos
     [Tags]    Proposta

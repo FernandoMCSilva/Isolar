@@ -119,7 +119,9 @@ E preencho com informações data de registro
     END
     
     Click Element    (//button[contains(.,'12')])[1]
-    Click Element    //button[contains(.,'Buscar')]
+
+    Wait Until Element Is Visible    //button[contains(.,'Buscar')]    timeout=20s
+    Click Element                    //button[contains(.,'Buscar')]
     Sleep    2s
 Então sistema exibe Estimativa do filtro Data de registro
     Sleep    4s

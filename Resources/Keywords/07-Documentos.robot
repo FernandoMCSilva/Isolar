@@ -118,7 +118,7 @@ E seleciono opção de filtro Data de registro
     Sleep    1s
     Click Element                     ${filtro_DataRegistro_Documentos}
     Wait Until Element Is Visible     (//button[@type='button'])[13]
-    FOR    ${i}    IN RANGE    1
+    FOR    ${i}    IN RANGE    3
         Click Element    (//button[@type='button'])[13]
         Sleep    0.5s
     END
@@ -226,7 +226,7 @@ E clico em Assinatura Tradicional
     Click Element                    ${AssinaturaTradicional}
 
 Então sistema exibe informações de botão Gerar link de assinatura
-    Wait Until Page Contains    text=ZapSign - 171
+    Wait Until Page Contains    text=ZapSign - 229
 
 E clico no botão Deletar
     Sleep    1s
