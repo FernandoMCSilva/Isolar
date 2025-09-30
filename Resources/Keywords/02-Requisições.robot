@@ -231,7 +231,7 @@ E preencho informações de Data de entrega
     Wait Until Element Is Visible    //button[@id='data_entrega']
     Click Element                    //button[@id='data_entrega']
     Wait Until Element Is Visible    (//button[@type='button'])[44]
-    FOR    ${i}    IN RANGE    3
+    FOR    ${i}    IN RANGE    4
         Click Element       (//button[@type='button'])[44]
         Sleep    1s
     END
@@ -248,7 +248,7 @@ E preencho informações de Data de criação
     Wait Until Element Is Visible      //button[@id='data_criacao']
     Click Element                      //button[@id='data_criacao']
 
-    FOR     ${i}    IN RANGE    3
+    FOR     ${i}    IN RANGE    4
     Click Element    (//button[@type='button'])[44]
     Sleep    1s
     END
@@ -345,7 +345,7 @@ Então sistema exibe requisições de filtro Renovadas
 
 # --2.14
 Quando clico no botão "Inserir/Técnico"
-    Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
+    Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}    timeout=20s
     Sleep    1s
     Click Element                    ${Botao_Inserir_Requisicoes}
     Wait Until Element Is Visible    //button[contains(.,'Técnico')]
@@ -709,6 +709,7 @@ E seleciono opção "Fila" no botão Mudar Status Requisição em requisicoes
 
 Então sistema verifica status de requisição alterado
     Sleep    5s
+    Wait Until Element Is Visible    ${Link_Filtros}    timeout=30s
     Click Element                    ${Link_Filtros}
     Sleep                            1s
     Input Text                       //input[@placeholder='Nome do cliente ...']    ${nome_pesquisa_Padrao}
@@ -903,12 +904,12 @@ Então sistema exibe mensagem de cadastro excluido
 # --2.26
 E clico em próximo sem preencher campos
     Sleep    2s
-    Wait Until Element Is Visible    ${Botao_Proximo_Requisicoes}
+    Wait Until Element Is Visible    ${Botao_Proximo_Requisicoes}    timeout=20s
     Click Element                    ${Botao_Proximo_Requisicoes}
     Sleep    1s
 
 Então sistema exibe mensagem de campos obrigatórios não preenchido
-    Wait Until Page Contains    text=Por favor digite um CPF ou CNPJ válido.
+    Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, CEP, Estado, Cidade, Endereço
 
 # --2.27
 Preencho o campo CPF

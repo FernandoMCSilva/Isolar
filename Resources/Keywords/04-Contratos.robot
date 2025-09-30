@@ -12,7 +12,7 @@ ${botao_Anexos}                           (//button[contains(@class,'inline-flex
 
 ${Departamento_ContratosDashboard}        //button[contains(.,'Selecione um departamento')]
 ${Filtro_+60Dias}                         //div[@class='inline-flex justify-center items-center flex-wrap gap-2 bg-green-600 rounded-full border p-2 text-xs capitalize leading-none text-white']
-${Filtro_30Dias}                          (//span[contains(@class,'mr-1 inline-flex')])[2]
+${Filtro_30Dias}                          (//div[@class='flex items-center justify-between flex-wrap'])[2]
 ${Filtro_15Dias}                          (//div[contains(@class,'mb-3 flex')])[3]
 ${Filtro_Vencidos}                        (//div[@class='flex-1 p-6'])[4]
 ${Filtro_Indefinidos}                     (//div[@class='flex-1 p-6 items-center justify-center'])[1]
@@ -73,7 +73,7 @@ Então sistema exibe requisições do departamento em Contratos > Dashboard
 # -4.1.4
 Quando clico no filtro "+60 dias"
     Sleep    1s
-    Wait Until Element Is Visible    ${Filtro_+60Dias}
+    Wait Until Element Is Visible    ${Filtro_+60Dias}    timeout=20s
     Click Element                    ${Filtro_+60Dias}
     Sleep    1s
 
@@ -83,7 +83,7 @@ Então sistema exibe informações de filtro "+60 dias"
 # -4.1.5
 Quando clico no filtro "30 dias"
     Sleep    1s
-    Wait Until Element Is Visible    ${Filtro_30Dias}
+    Wait Until Element Is Visible    ${Filtro_30Dias}    timeout=20s
     Click Element                    ${Filtro_30Dias}
     Sleep    1s
 
@@ -136,7 +136,7 @@ Então sistema exibe informações de cadastros de Contratos
 E preencho informação de filtro Vigência inicial
     Wait Until Element Is Visible    ${Filtro_VigenciaInicial}
     Click Element                    ${Filtro_VigenciaInicial}
-    FOR     ${i}    IN RANGE     3
+    FOR     ${i}    IN RANGE     4
         Click Element    (//button[@type='button'])[19]
         Sleep    0.5s
     END
@@ -169,7 +169,7 @@ Então sistema exibe informações de filtro Vigência final
 E preencho informação de filtro Índice
     Wait Until Element Is Visible    ${Filtro_Indice}    timeout=20s
     Click Element                    ${Filtro_Indice}
-   FOR     ${i}    IN RANGE     3
+   FOR     ${i}    IN RANGE     4
         Click Element    (//button[@type='button'])[19]
         Sleep    0.3s
     END

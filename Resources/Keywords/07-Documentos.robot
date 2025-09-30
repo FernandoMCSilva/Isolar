@@ -37,7 +37,7 @@ ${botao_GerarDocumento}             //button[contains(.,'Gerar Documento')]
 ${botao_VerTemplate_Documentos}     //button[contains(.,'Ver template')]
 ${botao_PreencherDocumento}         //button[contains(.,'Preencher documento')]
 ${botao_BaixarTemplateEditável}     //button[contains(.,'Baixar Template editável')]
-${botao_Deletar}                    (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:text-accent-foreground h-10 w-10 hover:bg-red-900'])[1]
+${botao_Deletar}                    (//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background h-10 w-10 hover:bg-red-600 hover:text-white dark:hover:bg-red-900'])[1]
 ${botao_CancelarDocumentos}         (//button[normalize-space()='Cancelar'])[1]
 
 
@@ -50,7 +50,7 @@ ${NOME_CRIADOR}                     Fernando QA
 ${link_Token}                       https://dev.grupoiso.com.br/storage/uploads/docs/67ae4ad0d5083.pdf
 
 ${dia1}                             (//button[@name='day'][normalize-space()='1'])[1]
-${dia28}                            (//button[@class='rdp-button_reset rdp-button inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 w-9 p-0 font-normal aria-selected:opacity-100 bg-accent text-accent-foreground'])[1]
+${dia31}                            (//button[normalize-space()='31'])[1]
 
 
 *** Keywords ***
@@ -69,7 +69,8 @@ Então sistema exibe informações de documentos gerados
 
 # -07.01.02
 E preencho informações de filtro criador
-    Wait Until Element Is Visible    ${input_Criador}
+    Wait Until Element Is Visible    ${input_Criador}    timeout=20s
+    Sleep    1s
     Input Text                       ${input_Criador}    ${NOME_CRIADOR}
 
 Então sistema exibe informações de filtro criador
@@ -84,7 +85,7 @@ E seleciono opção de filtro Tipo de documento
     Click Element                    xpath=//div[@role="option" and normalize-space(.)="P"]
     
 Então sistema exibe informações de filtro Tipo de documento
-    Wait Until Element Is Visible    //td[contains(.,'Fernando QA')]
+    Wait Until Element Is Visible    (//p[@data-state='closed'][normalize-space()='P'])[1]    timeout=20s
 
 # -07.01.04
 E seleciono opção de filtro Departamento
@@ -118,23 +119,24 @@ E seleciono opção de filtro Data de registro
     Sleep    1s
     Click Element                     ${filtro_DataRegistro_Documentos}
     Wait Until Element Is Visible     (//button[@type='button'])[13]
-    FOR    ${i}    IN RANGE    3
+    FOR    ${i}    IN RANGE    4
         Click Element    (//button[@type='button'])[13]
         Sleep    0.5s
     END
     Wait Until Page Contains          text=maio 2025
     Sleep    1s
+    Wait Until Element Is Visible    ${dia1}    timeout=20s
     Click Element                    ${dia1}
-    Click Element                    ${dia28}
+    Click Element                    ${dia31}
 
 Então sistema exibe informações de filtro Data de registro
-    Wait Until Element Is Visible    (//td[contains(.,'05/05/2025')])[1]
+    Wait Until Element Is Visible    (//td[contains(.,'29/05/2025')])[1]
     Sleep    1s 
 
 # -07.01.06
 E clico no botão Ver Documento
-    Sleep    2s
-    Wait Until Element Is Visible    ${botao_VerDocumento}
+    Sleep    2s 
+    Wait Until Element Is Visible    ${botao_VerDocumento}    timeout=20s
     Click Element                    ${botao_VerDocumento}
 
 Então sistema exibe informações de botão Ver Documento
@@ -217,7 +219,7 @@ Então sistema exibe informações de botão Gerar link de assinatura (INATÍVO)
 # -07.01.15
 E clico no botão Gerar link de assinatura
     Sleep    1s
-    Wait Until Element Is Visible    ${botao_GerarAssinatura}
+    Wait Until Element Is Visible    ${botao_GerarAssinatura}    timeout=20s
     Click Element                    ${botao_GerarAssinatura}
 
 E clico em Assinatura Tradicional
@@ -230,7 +232,7 @@ Então sistema exibe informações de botão Gerar link de assinatura
 
 E clico no botão Deletar
     Sleep    1s
-    Wait Until Element Is Visible    ${botao_Deletar}
+    Wait Until Element Is Visible    ${botao_Deletar}    timeout=20s
     Click Element                    ${botao_Deletar} 
 
 E clico em Cancelar
@@ -442,11 +444,11 @@ E clico em "Jurídico"
 
 E preencho informação de criar documento Jurídico
     Sleep    1s
-    Click Element    (//button[contains(.,'P')])[2]
+    Click Element    (//button[normalize-space()='P'])[1]
     Sleep    1.5s
 
     Sleep    2s
-    Wait Until Element Is Visible    (//input[@id='razao_social'])[1]
+    Wait Until Element Is Visible    (//input[@id='razao_social'])[1]    timeout=20s
     Input Text                       (//input[@id='razao_social'])[1]    teste
     
     Wait Until Element Is Visible    (//input[@id='numero_uc'])[1]
