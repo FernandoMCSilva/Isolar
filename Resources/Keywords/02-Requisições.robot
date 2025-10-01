@@ -350,7 +350,7 @@ Quando clico no botão "Inserir/Técnico"
     Click Element                    ${Botao_Inserir_Requisicoes}
     Wait Until Element Is Visible    //button[contains(.,'Técnico')]
     Click Element                    //button[contains(.,'Técnico')]
-    Wait Until Element Is Visible    //button[contains(.,'Técnico')]
+    Wait Until Element Is Visible    //button[contains(.,'Técnico')]    timeout=20s
     Click Element                    //button[contains(.,'Técnico')]
 
 E preencho informações de cadastro de requisição

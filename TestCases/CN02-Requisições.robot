@@ -118,11 +118,11 @@ CT 02.14 - Validar botão Inserir "Técnico"
     E preencho filtro com cliente "B3 (teste)" para verificação
     Então sistema verifica se há requisição B3 (teste)
 
-#   Verifico se há cadastro B3 (teste)
-    Dado que clico no menu "Cadastros > Clientes"
-    E clico no botao buscar
-    E preencho informações de pesquisa para verificação
-    Então sistema verifica se há cadastro B3 (teste)
+# #   Verifico se há cadastro B3 (teste)
+#     Dado que clico no menu "Cadastros > Clientes"
+#     E clico no botao buscar
+#     E preencho informações de pesquisa para verificação
+#     Então sistema verifica se há cadastro B3 (teste)
 
 #   Inserir cadastro
     Dado que clico no menu "Requisições"

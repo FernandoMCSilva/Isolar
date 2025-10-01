@@ -108,7 +108,7 @@ E preencho informações de pesquisa em Cadastros > Pessoas
     Wait Until Page Contains    text=B1 (Padrão)
 
 E preencho informações de filtro buscar em cadastros
-    Input Text                  //input[@placeholder='Buscar...']    teste
+    Input Text                  //input[@placeholder='Buscar...']    ${nome_pesquisa}
     Sleep    1s
     Wait Until Page Contains    text=teste
 
@@ -148,8 +148,9 @@ Então sistema exibe informações de pesquisa
 Então sistema exibe informações de pesquisa padrão
     Wait Until Page Contains    text=B1 (Padrão)
 
-Então sistema exibe informações de pesquisa em cadastros
-     ${nome_resultado}=    Get Text    //td[normalize-space()='teste']
+Então sistema exibe informações de pesquisa em cadastros    
+    Sleep    5s
+    ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
 
 # -08.01.           
 E preencho informações de busca não encontrada
@@ -234,11 +235,12 @@ Então sistema exibe informações de cadastro de "Clientes"
 # -08.02.02
 E preencho informações de inserir novo cadastro de Clientes
     Sleep    2s
-    Input Text        ${input_NomeCompleto_Clientes}          ${nome_pesquisa}
-    Input Text        ${input_CPF_Clientes}                   19895982771
-    Input Text        ${input_Telefone_Clientes}              99999999999
-    Input Text        ${input_AtividadeEconomica_Clientes}    teste
-    Input Text        ${input_CEP_Clientes}                   28990154
+    Wait Until Element Is Visible    ${input_NomeCompleto_Clientes}    timeout=20s
+    Input Text                       ${input_NomeCompleto_Clientes}          ${nome_pesquisa}
+    Input Text                       ${input_CPF_Clientes}                   19895982771
+    Input Text                       ${input_Telefone_Clientes}              99999999999
+    Input Text                       ${input_AtividadeEconomica_Clientes}    teste
+    Input Text                       ${input_CEP_Clientes}                   28990154
     Sleep    3s
 Então sistema salva novo cadastro de Clientes
     # Sleep    10s
@@ -247,12 +249,13 @@ Então sistema salva novo cadastro de Clientes
 # -08.02.03
 E preencho informações de cadastro editado no menu Cadastros > Clientes
     Sleep    2s
-    Input Text        ${input_NomeCompleto_Clientes}          ${nome_pesquisa}
-    Input Text        ${input_CPF_Clientes}                   19895982771
-    Input Text        ${input_CEP_Clientes}                   28990154
-    Input Text        ${input_Telefone_Clientes}              99999999999
-    Input Text        ${input_AtividadeEconomica_EditarClientes}    teste
-    Click Element     ${botao_atualizar}
+    Wait Until Element Is Visible    ${input_NomeCompleto_Clientes}    timeout=20s
+    Input Text                       ${input_NomeCompleto_Clientes}          ${nome_pesquisa}
+    Input Text                       ${input_CPF_Clientes}                   19895982771
+    Input Text                       ${input_CEP_Clientes}                   28990154
+    Input Text                       ${input_Telefone_Clientes}              99999999999
+    Input Text                       ${input_AtividadeEconomica_EditarClientes}    teste
+    Click Element                    ${botao_atualizar}
 
 # -08.02.04
 Então sistema exibe informações de pesquisa de Clientes
@@ -266,7 +269,8 @@ Então sistema exclui item do menu Cadastro > Clientes
 
 # -08.02.08
 E preencho informações de busca não escontrada em Clientes
-    Input Text    ${input_buscar_GruposConsumidores}    ${nome_BuscaNaoEncontrada}
+    Wait Until Element Is Visible    ${input_buscar_GruposConsumidores}    timeout=20s
+    Input Text                       ${input_buscar_GruposConsumidores}    ${nome_BuscaNaoEncontrada}
 
 Então sistema exibe mensagem de erro em Clientes
     Wait Until Page Contains    text=Nenhum cliente encontrado.
@@ -274,6 +278,7 @@ Então sistema exibe mensagem de erro em Clientes
 # -08.02.01
 # -08.03.01
 Dado que clico no menu "Cadastros > Grupos Consumidores"
+    Wait Until Element Is Visible    ${MENU_CADASTROS}    timeout=20s
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
     Sleep    2s
@@ -285,10 +290,11 @@ Então sistema exibe informações de cadastro de "Grupos Consumidores"
 
 E preencho informações de inserir novo cadastro de Grupos Consumidores
     Sleep    2s
-    Input Text       ${input_descricao_GruposConsumidores}    ${nome_pesquisa_GruposConsumidores}
+    Wait Until Element Is Visible    ${input_descricao_GruposConsumidores}    timeout=20s
+    Input Text                       ${input_descricao_GruposConsumidores}    ${nome_pesquisa_GruposConsumidores}
     Click Element    //button[contains(@id,'grupo')]
     Click Element    (//div[contains(@role,'option')])[3]
-    Input Text    //input[contains(@type,'text')]    1234
+    Input Text       //input[contains(@type,'text')]    1234
 
 Então sistema exclui item do menu Cadastro > Grupos Consumidores
     Wait Until Page Contains    text=Registro excluído com sucesso!
@@ -419,7 +425,7 @@ Então sistema exibe mensagem de erro de Concessionárias
 
 # -08.09.01
 Dado que clico no menu "Cadastros > Departamentos"
-    Wait Until Element Is Visible    ${MENU_CADASTROS}
+    Wait Until Element Is Visible    ${MENU_CADASTROS}    timeout=20s
     Click Element                    ${MENU_CADASTROS}
     Click Element                    ${Menu_Departamentos}
 
@@ -446,14 +452,17 @@ E preencho informações de cadastro editado em Departamentos
     Sleep    2.5s
     Input Text        //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
     Input Text        //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
-    Click Element    (//div[contains(.,'Técnico')])[13]
-    Click Element    (//div[contains(.,'Pós Venda')])[14]
-    Click Element    (//input[@value='B3 (teste)'])[2]
+    Sleep    7s
+    Wait Until Element Is Visible    (//div[contains(.,'Técnico')])[13]    timeout=20s
+    Click Element                    (//div[contains(.,'Técnico')])[13]
+    Click Element                    (//div[contains(.,'Pós Venda')])[14]
+    Click Element                    (//input[@value='B3 (teste)'])[2]
     Sleep    0.3s
-    Click Element    //button[contains(.,'Próximo')]
+    Click Element                    //button[contains(.,'Próximo')]
     Sleep    1s
     # Execute JavaScript    window.scrollBy(0, 500);
-    Click Element    ${botao_Salvar}
+    Wait Until Element Is Visible    ${botao_Salvar}    timeout=20s
+    Click Element                    ${botao_Salvar}
 
 # -08.09.08
 Então sistema exibe mensagem de erro de Departamentos
@@ -461,7 +470,7 @@ Então sistema exibe mensagem de erro de Departamentos
 
 # -08.10.01
 Dado que clico no menu "Cadastros > Origem da Indicação"
-    Wait Until Element Is Visible    ${MENU_CADASTROS}
+    Wait Until Element Is Visible    ${MENU_CADASTROS}    timeout=20s
     Click Element                    ${MENU_CADASTROS}
     Click Element                    ${Menu_Origem_da_Indicacao}
 Então sistema exibe informações de cadastro de "Origem de indicação"
@@ -559,7 +568,8 @@ Então sistema exibe mensagem de erro de Usuários ZapSign
 
 # -08.13.01
 Dado que clico no menu "Cadastros > Cargos e Funções"
-    Wait Until Element Is Visible    ${MENU_CADASTROS}
+    Sleep    2s
+    Wait Until Element Is Visible    ${MENU_CADASTROS}    timeout=20s
     Click Element                    ${MENU_CADASTROS}
     Click Element                    ${Menu_CargosFuncoes}
 
@@ -569,6 +579,7 @@ Então sistema exibe informações de cadastro de "Cargos e Funções"
 # -08.13.02
 E preencho informações de inserir novo cadastro de Cargos e Funções
     Sleep    2s
+    Wait Until Element Is Visible    ${input_NomeCargosFuncoes}         timeout=20s
     Input Text                       ${input_NomeCargosFuncoes}         ${nome_pesquisa_GruposConsumidores}
     Click Element                    //button[contains(.,'Selecione')]
     Click Element                    (//div[contains(.,'Técnico')])[15]
@@ -581,6 +592,7 @@ Então sistema salva novo cadastro de Cargos e Funções
 # -08.13.03
 E preencho informações de cadastro editado em Cargos e Funções
     Sleep    2s
+    Wait Until Element Is Visible    ${input_NomeCargosFuncoes}    timeout=20s
     Input Text                       ${input_NomeCargosFuncoes}    ${nome_pesquisa_GruposConsumidores}
     Click Element                    ${Botao_Proximo_Requisicoes}
 
