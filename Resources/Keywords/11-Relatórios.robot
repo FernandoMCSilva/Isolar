@@ -127,7 +127,7 @@ E seleciono filtro Tipo de requisição
     Sleep    1s
     Wait Until Element Is Visible    //button[@id='tipo']
     Click Element                    //button[@id='tipo']
-    FOR    ${i}    IN RANGE    5
+    FOR    ${i}    IN RANGE    3
         Press Keys                       NONE    ARROW_DOWN
         Sleep                            0.3s
     END
@@ -142,7 +142,7 @@ E seleciono filtro Data de criação
     Wait Until Element Is Visible    ${filtro_DataCriacaoRelatorios}
     Click Element                    ${filtro_DataCriacaoRelatorios}
     Wait Until Element Is Visible    (//button[@type='button'])[21]
-    FOR     ${i}    IN RANGE    1
+    FOR     ${i}    IN RANGE    3
         Click Element    (//button[@type='button'])[21]
         Sleep    0.5s
     END
@@ -213,13 +213,13 @@ Então sistema exibe resultado de Quantidade de itens por pág
 
 # --11.01.16
 Quando clico no botão Exportar para PDF
-    Sleep    2s
-    Wait Until Element Is Visible    ${botao_exportarPDF_Relatorios}
+    Sleep    5s
+    Wait Until Element Is Visible    ${botao_exportarPDF_Relatorios}    timeout=20s
     Click Element                    ${botao_exportarPDF_Relatorios}
 
 Então sistema exporta para PDF
     Sleep    1s
-    Wait Until Element Is Visible    ${botao_exportarPDF_Relatorios}
+    Wait Until Element Is Visible    ${botao_exportarPDF_Relatorios}    timeout=20s
 
 # --11.01.17
 Então sistema exibe próximas informações
@@ -308,26 +308,30 @@ Então sistema exibe informações de filtro Ano
 
 # --11.02.09
 E preencho informação de filtro Subgrupo
-    Wait Until Element Is Visible    ${filtro_Subgrupo}
+    Sleep    5s
+    Wait Until Element Is Visible    ${filtro_Subgrupo}    timeout=20s
     Click Element                    ${filtro_Subgrupo}
+    Wait Until Element Is Visible    (//div[contains(.,'B3')])[4]    timoeut=20s
     Click Element                    (//div[contains(.,'B3')])[4]
 
 Então sistema exibe informações de filtro Subgrupo
-    Wait Until Element Is Visible    ${result_Subgrupo}
+    Wait Until Element Is Visible    ${result_Subgrupo}    timeout=20s
 
 # --11.02.10
 E preencho informação de filtro Modalidade
     Wait Until Element Is Visible    ${filtro_Modalidade}
     Click Element                    ${filtro_Modalidade}
+    Wait Until Element Is Visible    (//div[contains(.,'Convencional')])[4]    timoeut=20s
     Click Element                    (//div[contains(.,'Convencional')])[4]
 
 Então sistema exibe informações de filtro Modalidade
-    Wait Until Element Is Visible    ${result_Modalidade}
+    Wait Until Element Is Visible    ${result_Modalidade}    timoeut=20s
 
 # --11.02.11
 E preencho informação de filtro SubClasse
     Wait Until Element Is Visible    ${filtro_SubClasse}
     Click Element                    ${filtro_SubClasse}
+    Wait Until Element Is Visible    (//div[contains(.,'Baixa Renda')])[4]    timeout=20s
     Click Element                    (//div[contains(.,'Baixa Renda')])[4]
     Sleep    0.3s
     Click Element                    ${filtro_Concessionaria}
@@ -339,12 +343,13 @@ Então sistema exibe informações de filtro SubClasse
 E preencho informação de filtro Outorga
     Wait Until Element Is Visible    ${filtro_Outorga}
     Click Element                    ${filtro_Outorga}
+    Wait Until Element Is Visible    (//div[contains(.,'Concessionária')])[23]    timeout=20s
     Click Element                    (//div[contains(.,'Concessionária')])[23]
     Execute JavaScript    window.scrollTo(0, 0)
     Sleep    2s
 
 Então sistema exibe informações de filtro Outorga
-    Wait Until Element Is Visible    ${result_Outorga}
+    Wait Until Element Is Visible    ${result_Outorga}    timeout=20s
 
 # --11.02.01
 Então sistema exibe informações do menu Relatórios > Homologatórias

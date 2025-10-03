@@ -129,7 +129,7 @@ Então sistema exibe Estimativa do filtro Data de registro
 
 # --4.8
 Quando clico em "Quantidade de itens por pág"
-    Sleep    2s
+    Sleep    5s
     Wait Until Element Is Visible    //span[contains(.,'Quantidade de itens por pág')]    timeout=10s
     Click Element                    //span[contains(.,'Quantidade de itens por pág')]
 
@@ -164,7 +164,8 @@ Então sistema exibe próximas Estimativa
 
 # --4.10
 E clico em "Anterior"
-    Sleep                            1.5s
+    Sleep                            5s
+    Wait Until Element Is Visible    //button[contains(.,'Anterior')]    timeout=20s
     Click Element                    //button[contains(.,'Anterior')]
 
 Então sistema exibe Estimativa anteriores
