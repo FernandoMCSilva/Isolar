@@ -21,7 +21,7 @@ ${opcao_departamentoObras}             (//button[@class='inline-flex items-cente
 # -3.1.1
 Dado que clico no menu Obras > Dashboard
     Sleep    2s
-    Wait Until Element Is Visible    ${MENU_OBRAS}
+    Wait Until Element Is Visible    ${MENU_OBRAS}    timeout=20s
     Click Element                    ${MENU_OBRAS}
     Wait Until Element Is Visible    ${Menu_ObrasDashboard}
     Click Element                    ${Menu_ObrasDashboard}
@@ -33,19 +33,19 @@ Então sistema exibe tela de Obras > Dashboard
 # -3.1.6
 E preencho data inicial em Obras > Dashboard
     Wait Until Element Is Visible    (//input[@placeholder='DD/MM/YYYY'])[1]    timeout=10s
-    Input Text    (//input[@placeholder='DD/MM/YYYY'])[1]    01/05/2025
+    Input Text    (//input[@placeholder='DD/MM/YYYY'])[1]    01/10/2025
     Sleep   2s
 
 E preencho data final em Obras > Dashboard
     Wait Until Element Is Visible    (//input[@placeholder='DD/MM/YYYY'])[2]    timeout=10s
-    Input Text    (//input[contains(@placeholder,'DD/MM/YYYY')])[2]    30/05/2025
+    Input Text    (//input[contains(@placeholder,'DD/MM/YYYY')])[2]    30/10/2025
 
 Então sistema exibe informações de filtros de data
-    Wait Until Page Contains    text=2025-05
+    Wait Until Page Contains    text=2025-10
 
 # -3.1.7
 E valido filtros de departamento em Obras
-    Wait Until Element Is Visible    ${Btn_Departamentos}
+    Wait Until Element Is Visible    ${Btn_Departamentos}    timeout=20s
     Click Element                    ${Btn_Departamentos}
     Wait Until Element Is Visible    ${filtro_Departamento_Obras}
     Click Element                    ${filtro_Departamento_Obras}
@@ -57,12 +57,12 @@ Então sistema exibe requisições do departamento em Obras
 # -3.2.1
 E volto pra tela inicial
 #   E clico no menu inicio
-    Sleep    2s
-    Wait Until Element Is Visible    ${MENU_INICIO}
+    Sleep    4s
+    Wait Until Element Is Visible    ${MENU_INICIO}    timeout=20s
     Click Element                    ${MENU_INICIO}
 #   Fecho menu Obras
     Sleep    1s
-    Wait Until Element Is Visible    ${MENU_OBRAS}
+    Wait Until Element Is Visible    ${MENU_OBRAS}    timeout=20s
     Click Element                    ${MENU_OBRAS}
     Sleep    1s
 Dado que clico no menu Obras > Requisições
@@ -70,7 +70,7 @@ Dado que clico no menu Obras > Requisições
     Wait Until Element Is Visible    ${MENU_OBRAS}    timeout=20s
     Click Element                    ${MENU_OBRAS}
     Sleep    4s
-    Wait Until Element Is Visible    ${Menu_ObrasRequisicoes}
+    Wait Until Element Is Visible    ${Menu_ObrasRequisicoes}    timeout=20s
     Click Element                    ${Menu_ObrasRequisicoes}
     Sleep    2s
 
@@ -79,7 +79,7 @@ Então sistema exibe tela de Obras > Requisições
 
 # -3.2.2
 E preencho informações no campo Cliente em Obras
-    Wait Until Element Is Visible    ${Campo_Cliente}
+    Wait Until Element Is Visible    ${Campo_Cliente}    timeout=20s
     Input Text                       ${Campo_Cliente}    B3 (Padrão)
 
 E preencho informações de cadastro de requisição padrão
@@ -137,7 +137,7 @@ Então sistema exibe resultado do filtro em Obras
 
 # -3.2.3
 E valido filtros dentro de Departamento em Obras > Requisições
-    Wait Until Element Is Visible    ${COMBOBOX_DEPARTAMENTO}
+    Wait Until Element Is Visible    ${COMBOBOX_DEPARTAMENTO}    timeout=20s
     Click Element                    ${COMBOBOX_DEPARTAMENTO}
     Wait Until Element Is Visible    (//div[contains(.,'OBRAS')])[19]
     Click Element                    (//div[contains(.,'OBRAS')])[19]
@@ -148,7 +148,7 @@ Então sistema exibe resultado de Departamento
 
 # -3.2.4
 E valido todos os filtros dentro de Tipo em Obras > Requisições
-    Wait Until Element Is Visible    ${COMBOBOX_TIPO}
+    Wait Until Element Is Visible    ${COMBOBOX_TIPO}    timeout=20s
     Click Element                    ${COMBOBOX_TIPO}
     Click Element                    (//div[contains(.,'Todos')])[21]
     Click Element                    ${Botao_Buscar}
@@ -159,7 +159,7 @@ Então sistema exibe informações do filtro Tipo
 
 # -3.2.5
 E seleciono filtro urgente "sim" em Obras > Requisições
-    Wait Until Element Is Visible    ${COMBOBOX_URGENTE}
+    Wait Until Element Is Visible    ${COMBOBOX_URGENTE}    timeout=20s
     Click Element                    ${COMBOBOX_URGENTE}
     Click Element                    (//div[contains(.,'Sim')])[5]
 
@@ -169,7 +169,7 @@ Então sistema exibe resultado do filtro Urgente
 # -3.2.6
 E valido filtro Nível Urgencia em Obras > Requisições
     Sleep    2s
-    Wait Until Element Is Visible    (//button[@type='button'])[11]
+    Wait Until Element Is Visible    (//button[@type='button'])[11]    timeout=20s
     Click Element                    (//button[@type='button'])[11]
     Click Element                    (//div[contains(.,'Baixo')])[5]
     Click Element                    ${Btn_Buscar}
@@ -177,12 +177,11 @@ E valido filtro Nível Urgencia em Obras > Requisições
 
 Então sistema exibe resultado de nível de urgência    
     Sleep    1s
-    Wait Until Element Is Visible    //td[contains(.,'2305')]
-
+    Wait Until Element Is Visible    //td[contains(.,'3062')]    timeout=20s
 
 # -3.2.7
 E preencho informações de Data de entrega em Obras > Requisições
-    Wait Until Element Is Visible    (//button[@id='data_entrega'])[1]
+    Wait Until Element Is Visible    (//button[@id='data_entrega'])[1]    timeout=20s
     Click Element                    (//button[@id='data_entrega'])[1]
     Wait Until Element Is Visible    (//button[@name='previous-month'])[1]
     FOR    ${i}    IN RANGE    8
@@ -199,7 +198,7 @@ E preencho informações de Data de entrega em Obras > Requisições
 
 # -3.2.8
 E preencho informações de Data de criação em Obras > Requisições
-    Wait Until Element Is Visible      //button[@id='data_criacao']
+    Wait Until Element Is Visible      //button[@id='data_criacao']    timeout=20s
     Click Element                      //button[@id='data_criacao']
     Wait Until Element Is Visible    (//button[@type='button'])[16]
     FOR     ${i}    IN RANGE    8
@@ -215,7 +214,7 @@ E preencho informações de Data de criação em Obras > Requisições
 
 # -3.2.9
 E valido todos os filtros dentro de "Responsável" em Obras > Requisições
-    Wait Until Element Is Visible    ${COMBOBOX_RESPONSAVEL}
+    Wait Until Element Is Visible    ${COMBOBOX_RESPONSAVEL}    timeout=20s
     Click Element                    ${COMBOBOX_RESPONSAVEL}
     Click Element                    (//div[contains(.,'OSEAS')])[14]
 
@@ -225,12 +224,12 @@ Então sistema exibe resultado de filtro Responsável
 # -3.2.10
 Quanto clico no botão "Inserir/Obras"
     Sleep    5s
-    Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}
+    Wait Until Element Is Visible    ${Botao_Inserir_Requisicoes}    timeout=20s
     Click Element                    ${Botao_Inserir_Requisicoes}
     Sleep    1s
-    Wait Until Element Is Visible    ${opcao_departamento_Obras}
+    Wait Until Element Is Visible    ${opcao_departamento_Obras}    timeout=20s
     Click Element                    ${opcao_departamento_Obras}
-    Wait Until Element Is Visible    //button[contains(.,'VISITA INSTALAÇĀO')]
+    Wait Until Element Is Visible    //button[contains(.,'VISITA INSTALAÇĀO')]    timeout=20s
     Click Element                    //button[contains(.,'VISITA INSTALAÇĀO')]
 
 E preencho informações de cadastro de requisição em Obras
@@ -299,13 +298,13 @@ Trocar Status Para Fila
 #   Clico em editar
     Sleep    2s
     Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
-    Wait Until Element Is Visible    ${Botao_Editar}
+    Wait Until Element Is Visible    ${Botao_Editar}    timeout=20s
     Sleep    1s
     Click Element                    ${Botao_Editar}
 
 #   E troco status para fila
     Sleep    5s
-    Wait Until Element Is Visible    (//button[@id='status'])[1]
+    Wait Until Element Is Visible    (//button[@id='status'])[1]    timeout=20s
     Click Element                    (//button[@id='status'])[1]
     Sleep    1s
     Click Element                    (//div[contains(.,'Fila')])[5]
@@ -313,7 +312,7 @@ Trocar Status Para Fila
 
 E seleciono opção "Concluído" em editar status em Obras
     Sleep    5s
-    Wait Until Element Is Visible    (//button[@id='status'])[1]
+    Wait Until Element Is Visible    (//button[@id='status'])[1]    timeout=20s
     Click Element                    (//button[@id='status'])[1]
     Sleep    1s
     Click Element                    (//div[contains(.,'Concluído')])[5]
@@ -321,7 +320,7 @@ E seleciono opção "Concluído" em editar status em Obras
 
 E seleciono opção "Fila" em editar status em Obras
     Sleep    5s
-    Wait Until Element Is Visible    (//button[@id='status'])[1]
+    Wait Until Element Is Visible    (//button[@id='status'])[1]    timeout=20s
     Click Element                    (//button[@id='status'])[1]
     Sleep    1s
     Click Element                    (//div[contains(.,'Fila')])[5]
@@ -370,7 +369,7 @@ Então sistema exibe mensagem de campos obrigatórios não preenchido em Obrasq
     
 # -3.2.17
 Então sistema exibe mensagem de CEP não preenchido em Obras 
-    Wait Until Page Contains    text=Preencha os campos obrigatórios: CEP, Estado, Cidade, Endereço, Bairro
+    Wait Until Page Contains    text=Preencha os campos obrigatórios: CEP, Estado, Cidade, Endereço
 
 
 

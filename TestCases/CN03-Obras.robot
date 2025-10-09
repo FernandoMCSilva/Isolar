@@ -289,6 +289,7 @@ CT 03.02.16 - Tentar inserir requisição sem campos obrigatórios
     [Tags]    Obras         
     Dado que clico no menu Obras > Requisições
     Quanto clico no botão "Inserir/Obras"
+    Preencho o campo CPF
     E clico em próximo sem preencher campos
     Então sistema exibe mensagem de campos obrigatórios não preenchido
 

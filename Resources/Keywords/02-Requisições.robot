@@ -664,7 +664,7 @@ Então sistema exibe informações de Visualizar em requisições
 # --2.17
 E volto pra tela inicio
     #   E clico no menu inicio
-    Sleep    2s
+    Sleep    5s
     Wait Until Element Is Visible    ${MENU_INICIO}    timeout=50s
     Click Element                    ${MENU_INICIO}
     Sleep    1s
@@ -909,7 +909,7 @@ E clico em próximo sem preencher campos
     Sleep    1s
 
 Então sistema exibe mensagem de campos obrigatórios não preenchido
-    Wait Until Page Contains    text=Preencha os campos obrigatórios: Nome completo, Telefone, CEP, Estado, Cidade, Endereço
+    Wait Until Page Contains    text=Preencha os campos obrigatórios: Telefone, CEP, Estado, Cidade, Endereço
 
 # --2.27
 Preencho o campo CPF

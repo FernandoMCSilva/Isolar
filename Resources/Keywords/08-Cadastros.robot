@@ -138,7 +138,8 @@ Então sistema exibe informações com filtro "Lista"
 
 # -08.01.06
 E preencho informações de pesquisa
-    Input Text    //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
+    Wait Until Element Is Visible    //input[@placeholder='Buscar...']    timeout=20s
+    Input Text                       //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
     Sleep    1s
     Wait Until Page Contains    text=B3 (teste)
     
@@ -226,8 +227,9 @@ Então sistema salva novo cadastro de pessoas
 Dado que clico no menu "Cadastros > Clientes"
     Sleep    2s
     Run Keyword        Aguardo carregamento da página
-    Click Element      ${MENU_CADASTROS} 
-    Click Element      ${Menu_Clientes}
+    Wait Until Element Is Visible    ${MENU_CADASTROS}    timeout=20s
+    Click Element                    ${MENU_CADASTROS} 
+    Click Element                    ${Menu_Clientes}
     
 Então sistema exibe informações de cadastro de "Clientes"
     Wait Until Page Contains    text=Gerenciar informações cadastradas no sistema

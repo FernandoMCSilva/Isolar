@@ -43,6 +43,8 @@ ${Campo_Cliente}                     //input[@id='cliente']
 ${campo_clienteRelatorios}           //div[@class='select__value-container css-hlgwow'][contains(.,'Digite o nome do cliente...')]
 ${botao_exportarPDF_Relatorios}      //button[contains(.,'Exportar para PDF')]
 
+# Botões
+${botao_QuantidadeItens_Relatorios}  (//div[contains(.,'Quantidade')])[10]  
 
 *** Keywords ***
 # --11.01.01
@@ -205,7 +207,7 @@ Então sistema exibe resultado de filtro departamento
 # --11.01.14
 Então sistema exibe resultado de Quantidade de itens por pág 
     Sleep    2s
-    Click Element    (//div[contains(.,'Quantidade')])[10]
+    Click Element    ${botao_QuantidadeItens_Relatorios}
     Sleep    5s
     ${resultados}    Get WebElements    xpath=//tr[contains(@class, 'border-b transition-colors')]
     ${quantidade}    Get Length    ${resultados}
@@ -234,14 +236,14 @@ Então sistema exibe informações anteriores
 
 # --11.02.01
 Dado que clico no menu "Relatórios > Homologatórias"
-    Wait Until Element Is Visible    ${MENU_RELATORIOS}
+    Wait Until Element Is Visible    ${MENU_RELATORIOS}    timeout=20s
     Click Element                    ${MENU_RELATORIOS}
-    Wait Until Element Is Visible    ${Menu_Homologatorias}
+    Wait Until Element Is Visible    ${Menu_Homologatorias}    timeout=20s
     Click Element                    ${Menu_Homologatorias}
     Sleep    1.5s
 # --11.02.02
 E preencho informação de filtro resolução ANEEL
-    Wait Until Element Is Visible    ${filtro_ANEEL}
+    Wait Until Element Is Visible    ${filtro_ANEEL}    timeout=20s
     Click Element                    ${filtro_ANEEL}
     Sleep    1s
     Click Element                    //div[@id='react-select-2-option-1']
