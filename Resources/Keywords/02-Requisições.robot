@@ -596,11 +596,12 @@ E preencho informações de cadastro de requisição com cliente "temporario"
         Log    Botão 'Novo Cliente' visível. Seguir com cadastro de cliente temporário.
         Execute JavaScript    document.body.style.zoom="70%"
         Sleep    3s
-        Click Element    //button[contains(.,'Novo Cliente')]
-        Input Text       //input[@id='cpfCnpj']    19895982771
-        Input Text       //input[@id='telefone']   21981905892
-        Input Text       //input[@id='atvEco']     Residencial
-        Input Text       //input[@id='cep']        28990154
+        Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]    timeout=20s
+        Click Element                    //button[contains(.,'Novo Cliente')]
+        Input Text                       //input[@id='cpfCnpj']    19895982771
+        Input Text                       //input[@id='telefone']   21981905892
+        Input Text                       //input[@id='atvEco']     Residencial
+        Input Text                       //input[@id='cep']        28990154
         FOR    ${i}    IN RANGE    10
             ${status}=    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Salvar')]
             Exit For Loop If    ${status}
