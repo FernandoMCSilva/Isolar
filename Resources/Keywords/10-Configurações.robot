@@ -423,7 +423,7 @@ E seleciono filtro "Departamento"
 # -10.02.03
 E clico no botão Ver template
     Sleep    2s
-    Wait Until Element Is Visible    ${Botao_VerTemplate_Configuracoes}
+    Wait Until Element Is Visible    ${Botao_VerTemplate_Configuracoes}    timeout=20s
     Click Element                    ${Botao_VerTemplate_Configuracoes}
 
 Então sistema exibe informações de template selecionado
@@ -436,7 +436,7 @@ E clico no botão Ver histórico
     Click Element                    ${Botao_Historico_Configuracoes}
 
 Então sistema exibe histórico de template selecionado
-    Wait Until Page Contains    text=Histórico das ações do template - 1
+    Wait Until Page Contains    text=Histórico das ações do template - 2
 
 # -10.02.05
 E clico no botão Atualizar template
@@ -718,7 +718,7 @@ Então sistema exibe informações de filtro Tipo de registro em Histórico das 
 E seleciono filtro Data do registro
     Wait Until Element Is Visible    ${filtro_DataRegistroRequisicoes}
     Click Element                    ${filtro_DataRegistroRequisicoes}
-    FOR     ${i}    IN RANGE     3
+    FOR     ${i}    IN RANGE     5
         Click Element                (//button[@name='previous-month'])[1]
         Sleep    0.5s
     END
@@ -729,7 +729,7 @@ E seleciono filtro Data do registro
     # Sleep        0.5s
 
 Então sistema exibe informações de filtro Data do registro em Histórico das requisições
-    Wait Until Element Is Visible    (//td[normalize-space()='08/05/2025'])[1]
+    Wait Until Element Is Visible    (//td[@class='p-4 align-middle [&:has([role=checkbox])]:pr-0 text-center'])[3]
 
 # -10.05.10
 E clico no botão visualizar

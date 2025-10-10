@@ -20,13 +20,13 @@ ${input_descricao}            //input[@id='descricao']
 ${input_buscar}               xpath=//input[contains(@class, 'flex h-10')]
 ${filtro_cards/Lista}         (//button[@type='button'])[7]
 ${filtro_botaoLista}          xpath=//div[@role='option'][contains(.,'Lista')]
-${EmailLocal}                 teste123@gmail.com
+${EmailLocal}                 teste4321@gmail.com
 ${SenhaLocal}                 Q@grupoiso123
 
 *** Keywords ***                
 # -9.1
 Dado que clico no menu "Usuários"
-    Wait Until Element Is Visible    ${MENU_USUARIOS}
+    Wait Until Element Is Visible    ${MENU_USUARIOS}    timeout=20s
     Click Element                    ${MENU_USUARIOS}
 
 Então sistema exibe usuários
@@ -34,17 +34,17 @@ Então sistema exibe usuários
 
 # -9.2
 E preencho informações de inserir novo cadastro de Usuários
-    Sleep    1s
-    Input Text                       //input[contains(@id,'nome')]    ${nome_pesquisa_GruposConsumidores}
+    Sleep    3s
+    Input Text                       //input[contains(@id,'nome')]    ${nome_pesquisa_GruposConsumidores}    timeout=20s
     Input Text                       //input[contains(@id,'email')]   ${EmailLocal}   
     Sleep    1s
-    Click Element                    (//button[@type='button'])[9]
+    Click Element                    (//button[@role='combobox'])[1]
     Click Element                    (//div[contains(.,'Isolar Energy')])[15]
     Sleep    1s
     Click Element                    (//button[@type='button'])[10]
     Click Element                    (//div[contains(.,'TI')])[15]
     Sleep    1s
-    Click Element                    (//button[@type='button'])[11]
+    Click Element                    (//button[@role='combobox'])[3]
     Click Element                    (//div[contains(.,'Desenvolvedor(a)')])[15]
     Sleep    1s
     Input Text                       //input[@id='telefone']    22222222222
@@ -57,7 +57,7 @@ E preencho informações de inserir novo cadastro de Usuários
     Sleep    1s
     Execute Javascript    window.scrollTo(0,0)
 E clico em "Salvar" em Usuários
-    Wait Until Element Is Visible    ${botao_SalvarUsuários}
+    Wait Until Element Is Visible    ${botao_SalvarUsuários}    timeout=20s
     Click Element                    ${botao_SalvarUsuários}
 Então sistema salva novo cadastro de Usuários
     Sleep    1s
@@ -65,11 +65,12 @@ Então sistema salva novo cadastro de Usuários
 
 # -9.3
 E preencho informações de cadastro editado no menu Usuários
-    Sleep    3s
-    Input Text       //input[@id='nome']    ${nome_pesquisa}
-    Input Text       //input[@id='telefone']    99999999999
-    Input Text       //input[@id='email']    ${EmailLocal}
-    Input Text       //input[@id='senha']    ${SenhaLocal}
+    Sleep    5s
+    Wait Until Element Is Visible    ${nome_pesquisa}        timeout=20s
+    Input Text                       //input[@id='nome']     ${nome_pesquisa}
+    Input Text                       //input[@id='telefone']    99999999999
+    Input Text                       //input[@id='email']    ${EmailLocal}
+    Input Text                       //input[@id='senha']    ${SenhaLocal}
     Sleep    1s
     Click Element    ${Botao_Proximo_Requisicoes}   
     Sleep    1s

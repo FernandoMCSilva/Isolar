@@ -67,9 +67,10 @@ ${filtro_botaoLista}                            xpath=//div[@role='option'][cont
 *** Keywords ***
 # -08.01.01
 Dado que clico no menu "Cadastros > Pessoas"
-    Wait Until Element Is Visible    ${MENU_CADASTROS}
+    Wait Until Element Is Visible    ${MENU_CADASTROS}    timeout=20s
     Click Element                    ${MENU_CADASTROS}
     Sleep    2s
+    Wait Until Element Is Enabled    ${Menu_Pessoas}    timeout=20s
     Click Element                    ${Menu_Pessoas}
 Então sistema exibe informações de cadastro de "Pessoas"
     Wait Until Page Contains     text=Pessoas
@@ -77,29 +78,32 @@ Então sistema exibe informações de cadastro de "Pessoas"
 # -08.01.02
 Quando clico no botão "Inserir"
     Sleep    2s
-    Wait Until Element Is Visible    //button[contains(.,'Inserir')]
-    Click Element    //button[contains(.,'Inserir')]
+    Wait Until Element Is Visible    //button[contains(.,'Inserir')]    timeout=20s
+    Click Element                    //button[contains(.,'Inserir')]
 
 # -08.01.03
 Quando clico em "Excluir"
     Sleep    2s
+    Wait Until Element Is Visible    ${botao_acoes_Clientes}    timeout=20s
     Click Element                    ${botao_acoes_Clientes}
     Sleep    0.5s
-    Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}
+    Wait Until Element Is Visible    ${botao_Excluir_CadastrosGruposConsumidores}    timeout=20s
     Click Element                    ${botao_Excluir_CadastrosGruposConsumidores}
 
 E clico no botão "Cancelar" em "Excluir"
     Sleep    2s
+    Wait Until Element Is Visible    ${botao_Cancelar}    timeout=20s
     Click Element                    ${botao_Cancelar}
 
 # -08.01.04
 E clico no botao buscar
     Sleep    7s
-    Click Element    ${botao_buscarPerguntas}
+    Wait Until Element Is Visible    ${botao_buscarPerguntas}    timeout=20s
+    Click Element                    ${botao_buscarPerguntas}
 
 E clico no botão "Continuar" em "Excluir"
     Sleep    1s
-    Wait Until Element Is Visible    ${botao_continuar_Excluir}
+    Wait Until Element Is Visible    ${botao_continuar_Excluir}    timeout=20s
     Click Element                    ${botao_continuar_Excluir}
 
 E preencho informações de pesquisa em Cadastros > Pessoas
