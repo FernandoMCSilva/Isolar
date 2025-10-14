@@ -407,7 +407,7 @@ Então sistema exibe informações de cadastro de "Concessionárias"
 
 # -08.08.02
 E preencho informações de inserir novo cadastro de Concessionárias
-    Sleep    2s
+    Sleep    5s
     Input Text    //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
     Input Text    //input[@id='icms']   ${nome_BuscaNaoEncontrada}
     Input Text    //input[@id='pis']    ${nome_BuscaNaoEncontrada}

@@ -219,6 +219,7 @@ CT 03.02.13 - Validar botão Mudar Status Requisição
     Então sistema verifica status de Requisição em Obras 
 
 #   Verificar se status da requisição foi atualizado para Concluído
+    Aguardo carregamento da página
     Dado que clico no menu Obras > Requisições
     Quando clico em "Filtros"
     E preencho filtro Cliente em Obras

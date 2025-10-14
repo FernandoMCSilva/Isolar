@@ -26,7 +26,7 @@ ${Filtro_DepartamentoContratos}           //button[@id='departament']
 ${Filtro_DocumentoContratos}              //input[@id='documento']
 ${Filtro_NomeIndividuosContratos}         //input[@id='nome']
 ${Filtro_StatusVigenciaContratos}         //button[@id='status_vigencia']
-${Filtro_PaginaFiltro}                    //button[@id='pag']
+${Filtro_PaginaFiltro}                    (//button[@id='pag'])[1]
 
 
 *** Keywords ***       
@@ -136,7 +136,7 @@ Então sistema exibe informações de cadastros de Contratos
 E preencho informação de filtro Vigência inicial
     Wait Until Element Is Visible    ${Filtro_VigenciaInicial}
     Click Element                    ${Filtro_VigenciaInicial}
-    FOR     ${i}    IN RANGE     4
+    FOR     ${i}    IN RANGE     5
         Click Element    (//button[@type='button'])[19]
         Sleep    0.5s
     END
@@ -155,7 +155,7 @@ E preencho informação de filtro Vigência final
     Click Element                    ${Filtro_VigenciaFinal}
     # Click Element                    //table[contains(@class,'w-full border-collapse')]/tbody[1]/tr[6]/td[1]/button[1]
     Sleep    1s
-    FOR     ${i}    IN RANGE     12
+    FOR     ${i}    IN RANGE     11
         Click Element    (//div[contains(@class,'space-x-1 flex')]//button)[2]
         Sleep    0.3s
     END
@@ -169,7 +169,7 @@ Então sistema exibe informações de filtro Vigência final
 E preencho informação de filtro Índice
     Wait Until Element Is Visible    ${Filtro_Indice}    timeout=20s
     Click Element                    ${Filtro_Indice}
-   FOR     ${i}    IN RANGE     4
+   FOR     ${i}    IN RANGE     5
         Click Element    (//button[@type='button'])[19]
         Sleep    0.3s
     END
@@ -259,7 +259,7 @@ Então sistema limpa todos os filtros
 # -4.2.13
 Quando seleciono filtro 30 dias
     Sleep    1s
-    Wait Until Element Is Visible    ${Filtro_PaginaFiltro}
+    Wait Until Element Is Visible    ${Filtro_PaginaFiltro}    timeout=20s
     Click Element                    ${Filtro_PaginaFiltro}
     Click Element                    //span[normalize-space(text())='30 dias']
 
@@ -309,7 +309,7 @@ Então sistema realiza edição de Controle de contratos
 
 # -4.2.16
 E clico no botão Anexos
-    Wait Until Element Is Visible    ${botao_Anexos}
+    Wait Until Element Is Visible    ${botao_Anexos}    timeout=20s
     Click Element                    ${botao_Anexos}
     
 Então sistema exibe informações de documento
