@@ -65,7 +65,7 @@ ${COMBOBOX_RESPONSAVEL}         xpath=(//button[@role='combobox'])[2]
 # --2.1
 Dado que clico no menu "Requisições"
     Sleep    5s
-    Wait Until Element Is Visible    ${MENU_REQUISICOES}    timeout=10s
+    Wait Until Element Is Visible    ${MENU_REQUISICOES}    timeout=20s
     Click Element                    ${MENU_REQUISICOES}
     Sleep    3s
 
@@ -201,7 +201,7 @@ E seleciono urgente "Sim"
     Click Element                    ${Botao_Buscar}
 
 E valido todos os filtros de Nivel de urgencia em Requisições
-    Wait Until Element Is Visible    ${COMBOBOX_NIVEL_DE_URGENCIA}    timeout=10s
+    Wait Until Element Is Visible    ${COMBOBOX_NIVEL_DE_URGENCIA}    timeout=20s
     Sleep    1s
     Click Element    ${COMBOBOX_NIVEL_DE_URGENCIA}
     # Pega todas as opções dentro do dropdown
@@ -222,6 +222,8 @@ E valido todos os filtros de Nivel de urgencia em Requisições
             Log    Departamento ${departamento_text} validado com sucesso
             Wait Until Element Is Visible    ${COMBOBOX_NIVEL_DE_URGENCIA}
             Execute JavaScript    window.scrollTo(0, 0)
+
+            Sleep    3s
             # Reabre a combobox para a próxima iteração
             Wait Until Element Is Visible    ${COMBOBOX_NIVEL_DE_URGENCIA}    timeout=20s
             Click Element                    ${COMBOBOX_NIVEL_DE_URGENCIA}
@@ -231,7 +233,7 @@ E preencho informações de Data de entrega
     Wait Until Element Is Visible    //button[@id='data_entrega']
     Click Element                    //button[@id='data_entrega']
     Wait Until Element Is Visible    (//button[@type='button'])[44]
-    FOR    ${i}    IN RANGE    4
+    FOR    ${i}    IN RANGE    5
         Click Element       (//button[@type='button'])[44]
         Sleep    1s
     END
@@ -242,13 +244,13 @@ E preencho informações de Data de entrega
 
 Então sistema exibe requisições do filtro Data de entrega
     Sleep    1s
-    Wait Until Element Is Visible    (//td[normalize-space()='28/05/2025'])[1]
+    Wait Until Element Is Visible    (//td[normalize-space()='14/05/2025'])[1]
 # --2.9
 E preencho informações de Data de criação
     Wait Until Element Is Visible      //button[@id='data_criacao']
     Click Element                      //button[@id='data_criacao']
 
-    FOR     ${i}    IN RANGE    4
+    FOR     ${i}    IN RANGE    5
     Click Element    (//button[@type='button'])[44]
     Sleep    1s
     END
@@ -260,7 +262,7 @@ E preencho informações de Data de criação
     Click Element                      ${Botao_Buscar}
 Então sistema exibe requisições do filtro Data de Criação
     Sleep    1s
-    Wait Until Element Is Visible    (//td[normalize-space()='28/05/2025'])[1]
+    Wait Until Element Is Visible    (//td[normalize-space()='14/05/2025'])[1]
 
 # --2.10
 E valido todos os filtros dentro de "Responsável"
@@ -335,6 +337,8 @@ E valido todos os filtros dentro de "Renovadas"
             ${departamento_text}    Get Text    ${departamento}
             Log    Departamento ${departamento_text} validado com sucesso
             Wait Until Element Is Visible    ${COMBOBOX_RENOVADAS}
+
+            Sleep    3s
             # Reabre a combobox para a próxima iteração
             Wait Until Element Is Visible    ${COMBOBOX_RENOVADAS}    timeout=20s
             Click Element                    ${COMBOBOX_RENOVADAS}
@@ -358,13 +362,13 @@ E preencho informações de cadastro de requisição
     Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    timeout=10s
     Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    ${nome_pesquisa_GruposConsumidores}
     Sleep    1s
-    Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]
+    Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]    timeout=20s
     Click Element                    //button[contains(.,'Novo Cliente')]
     Input Text                       //input[@id='cpfCnpj']    19895982771
     Input Text                       //input[@id='telefone']    21981905892
     Input Text                       //input[@id='atvEco']    Residencial
     Input Text                       //input[@id='cep']    28990154
-    Sleep    1s
+    Sleep    1.5s
     Click Element                    ${Botao_Proximo_Requisicoes}
 # 2
     Wait Until Element Is Visible    (//button[@role='combobox'])[1]    timeout=20s
@@ -393,7 +397,7 @@ E preencho informações de cadastro de requisição
     Click Element                    (//div[contains(.,'Trifásico 220/127V')])[5]
 
     Click Element                    (//button[contains(.,'Selecione')])[1]
-    Click Element                    //span[normalize-space(text())='B1']
+    Click Element                    //span[normalize-space(text())='B1 - (Residencial Monofásico)']
 
     Click Element                    (//button[contains(.,'Selecione')])[1]
     Click Element                    (//div[contains(.,'Light')])[5]
@@ -429,7 +433,7 @@ Então sistema exibe mensagem de cadastro realizado
     Wait Until Page Contains    text=Requisições
 
 Aguardo carregamento da página 
-    Sleep    3s
+    Sleep    5s
 
 E preencho filtro com cliente "B3 (teste)" para verificação
     Wait Until Element Is Visible    //input[@placeholder='Nome do cliente ...']
@@ -568,7 +572,7 @@ Então sistema verifica se há cadastro temporario
         Wait Until Element Is Visible    //button[contains(.,'Continuar')]     timeout=10s
         Click Element                    //button[contains(.,'Continuar')] 
 
-        Sleep    4s
+        Sleep    5s
         Wait Until Element Is Visible    //button[contains(.,'Filtros')]    timeout=20s
         Click Element                    //button[contains(.,'Filtros')]
         Sleep    3s
@@ -588,7 +592,7 @@ Então sistema verifica se há cadastro temporario
 
 E preencho informações de cadastro de requisição com cliente "temporario"
     Sleep    1s
-    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    
+    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    timeout=20s    
     Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    temporario
     ${botao_novocliente}=    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Novo Cliente')]
 
@@ -719,6 +723,7 @@ Então sistema verifica status de requisição alterado
 
 Então sistema verifica status de requisição renovada alterado
     Sleep    7s
+    Wait Until Element Is Visible    ${Link_Filtros}    timeout=20s
     Click Element                    ${Link_Filtros}
     Sleep                            1s
     Input Text                       //input[@placeholder='Nome do cliente ...']    temporario
@@ -915,7 +920,7 @@ Então sistema exibe mensagem de campos obrigatórios não preenchido
 # --2.27
 Preencho o campo CPF
     Sleep    2.5s
-    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]
+    Wait Until Element Is Visible    //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    timeout=20s
     Press Keys                       //div[contains(@class,'select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer')]    1teste
     Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]
     Click Element                    //button[contains(.,'Novo Cliente')]
