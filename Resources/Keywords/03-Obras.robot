@@ -154,7 +154,7 @@ E valido todos os filtros dentro de Tipo em Obras > Requisições
     Click Element                    ${Botao_Buscar}
 
 Então sistema exibe informações do filtro Tipo
-    Wait Until Element Is Visible    (//td[contains(.,'VISITA INSTALAÇĀO')])[1]
+    Wait Until Element Is Visible    (//td[contains(.,'Padrão')])[1]
 
 
 # -3.2.5
@@ -177,14 +177,14 @@ E valido filtro Nível Urgencia em Obras > Requisições
 
 Então sistema exibe resultado de nível de urgência    
     Sleep    1s
-    Wait Until Element Is Visible    //td[contains(.,'3062')]    timeout=20s
+    Wait Until Element Is Visible    //td[contains(.,'3083')]    timeout=20s
 
 # -3.2.7
 E preencho informações de Data de entrega em Obras > Requisições
     Wait Until Element Is Visible    (//button[@id='data_entrega'])[1]    timeout=20s
     Click Element                    (//button[@id='data_entrega'])[1]
     Wait Until Element Is Visible    (//button[@name='previous-month'])[1]
-    FOR    ${i}    IN RANGE    8
+    FOR    ${i}    IN RANGE    1
     Click Element       (//button[@name='previous-month'])[1]
     Sleep    0.5s
     END
@@ -201,7 +201,7 @@ E preencho informações de Data de criação em Obras > Requisições
     Wait Until Element Is Visible      //button[@id='data_criacao']    timeout=20s
     Click Element                      //button[@id='data_criacao']
     Wait Until Element Is Visible    (//button[@type='button'])[16]
-    FOR     ${i}    IN RANGE    8
+    FOR     ${i}    IN RANGE    0
     Click Element    (//button[@type='button'])[16]
     Sleep    0.5s
     END
@@ -229,8 +229,8 @@ Quanto clico no botão "Inserir/Obras"
     Sleep    1s
     Wait Until Element Is Visible    ${opcao_departamento_Obras}    timeout=20s
     Click Element                    ${opcao_departamento_Obras}
-    Wait Until Element Is Visible    //button[contains(.,'VISITA INSTALAÇĀO')]    timeout=20s
-    Click Element                    //button[contains(.,'VISITA INSTALAÇĀO')]
+    Wait Until Element Is Visible    //button[contains(.,'Técnico')]    timeout=20s
+    Click Element                    //button[contains(.,'Técnico')]
 
 E preencho informações de cadastro de requisição em Obras
 # 1

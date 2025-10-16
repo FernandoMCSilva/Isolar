@@ -866,9 +866,10 @@ Então sistema realiza exclusão de novo cliente em Configurações > Monitorame
 
 # -10.07.01
 Dado que clico no menu "Configurações > Obras"
-    Wait Until Element Is Visible    ${MENU_CONFIGURACOES}
+    Wait Until Element Is Visible    ${MENU_CONFIGURACOES}    timeout=20s
     Click Element                    ${MENU_CONFIGURACOES}
     Sleep    1s
+    Wait Until Element Is Visible    ${Menu_ConfigObras}    timeout=20s
     Click Element                    ${Menu_ConfigObras}
 
 Então sistema exibe informações de menu Configurações > Obras
