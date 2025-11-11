@@ -167,10 +167,10 @@ E valido todos os filtros dentro de Urgente em Requisições
     ${departamentos}    Get WebElements    ${COMBOBOX_URGENTE}
 
     FOR    ${departamento}    IN    @{OPCOES_COMBOBOX_URGENTE}
-            Sleep    0.5
+            Sleep    1s
             # Clica na opção de departamento atual
             Click Element    ${departamento}
-            Sleep    0.5
+            Sleep    1s
             
             # Clica no botão de buscar
             Click Element    ${Btn_Buscar}
@@ -210,9 +210,11 @@ E valido todos os filtros de Nivel de urgencia em Requisições
     FOR    ${departamento}    IN    @{OPCOES_COMBOBOX_NIVELDEURGENCIA}
             # Clica na opção de departamento atual
             Click Element    ${departamento}
+            Sleep    0.5s
             
             # Clica no botão de buscar
             Click Element    ${Btn_Buscar}
+            Sleep    0.5s
             
             # Espera pela atualização e valida que a página foi atualizada
             Wait Until Element Is Visible    //button[contains(.,'Inserir')]    timeout=10s
@@ -233,7 +235,7 @@ E preencho informações de Data de entrega
     Wait Until Element Is Visible    //button[@id='data_entrega']
     Click Element                    //button[@id='data_entrega']
     Wait Until Element Is Visible    (//button[@type='button'])[44]
-    FOR    ${i}    IN RANGE    5
+    FOR    ${i}    IN RANGE    6
         Click Element       (//button[@type='button'])[44]
         Sleep    1s
     END
@@ -250,7 +252,7 @@ E preencho informações de Data de criação
     Wait Until Element Is Visible      //button[@id='data_criacao']
     Click Element                      //button[@id='data_criacao']
 
-    FOR     ${i}    IN RANGE    5
+    FOR     ${i}    IN RANGE    6
     Click Element    (//button[@type='button'])[44]
     Sleep    1s
     END
