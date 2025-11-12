@@ -11,7 +11,7 @@ CT 02.01 - Validar menu Requisições
     [Documentation]     Caso de teste valida se Menu Requisições está funcional
     [Tags]    Requisições        
     Dado que clico no menu "Requisições"
-
+# 
 CT 02.02 - Validar filtro Cliente
     [Documentation]     Caso de teste valida o filtro Cliente em Requisições
     [Tags]    Requisições        
