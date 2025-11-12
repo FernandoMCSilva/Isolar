@@ -54,12 +54,15 @@ jobs:
           sudo apt-get install -y google-chrome-stable
           google-chrome --version
 
-      - name: Instalar Firefox e Geckodriver
+      - name: Instalar Firefox ESR e GeckoDriver
         run: |
-          set -euxo pipefail
-          sudo apt-get install -y firefox-geckodriver
-          firefox --version || true
-          geckodriver --version
+            # Instala Firefox ESR estável
+            wget -O firefox-esr.tar.bz2 https://ftp.mozilla.org/pub/firefox/releases/115.11.0esr/linux-x86_64/pt-BR/firefox-115.11.0esr.tar.bz2
+            tar -xjf firefox-esr.tar.bz2
+            sudo rm -rf /opt/firefox
+            sudo mv firefox /opt/firefox
+            sudo ln -sf /opt/firefox/firefox /usr/bin/firefox
+            firefox --version || true
 
       - name: Rodar testes Robot em paralelo com Xvfb
         id: run_tests
