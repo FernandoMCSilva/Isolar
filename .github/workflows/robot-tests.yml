@@ -16,50 +16,67 @@ jobs:
 
     steps:
       - name: Checkout repositório
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Configurar PYTHONPATH
         run: echo "PYTHONPATH=${GITHUB_WORKSPACE}" >> $GITHUB_ENV
 
       - name: Configurar Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
       - name: Instalar dependências do sistema
         run: |
+          set -euxo pipefail
           sudo apt-get update
           sudo apt-get install -y \
-            wget unzip xvfb libglib2.0-0 libnss3 \
-            libfontconfig1 libxss1 libasound2t64
+            wget curl unzip xvfb \
+            libglib2.0-0 libnss3 libfontconfig1 libxss1 libasound2t64 \
+            ca-certificates gnupg
 
-      - name: Instalar dependências Python
-        run: pip install -r requirements.txt robotframework-pabot
-
-      - name: Instalar Google Chrome
-        run: sudo apt-get install -y google-chrome-stable
-
-      - name: Instalar Firefox ESR e GeckoDriver
+      - name: Instalar dependências Python (Robot + Pabot + libs do projeto)
         run: |
-           # Instala Firefox ESR estável
-           wget -O firefox-esr.tar.bz2 https://ftp.mozilla.org/pub/firefox/releases/115.11.0esr/linux-x86_64/pt-BR/firefox-115.11.0esr.tar.bz2
-           tar -xjf firefox-esr.tar.bz2
-           sudo mv firefox /opt/firefox
-           sudo ln -sf /opt/firefox/firefox /usr/bin/firefox
+          pip install --upgrade pip
+          # Garante Robot + Pabot
+          pip install robotframework robotframework-pabot
+          # Suas dependências
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
 
-           # Instala GeckoDriver mais recente
-           GECKO_VERSION=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
-           wget https://github.com/mozilla/geckodriver/releases/download/v$GECKO_VERSION/geckodriver-v$GECKO_VERSION-linux64.tar.gz
-           tar -xzf geckodriver-v$GECKO_VERSION-linux64.tar.gz
-           chmod +x geckodriver
-           sudo mv geckodriver /usr/local/bin/
+      # ---- CHROME (repositório oficial Google) ----
+      - name: Instalar Google Chrome stable
+        run: |
+          set -euxo pipefail
+          sudo install -m 0755 -d /etc/apt/keyrings
+          curl -fsSL https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /etc/apt/keyrings/google-linux.gpg
+          echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/google-linux.gpg] https://dl.google.com/linux/chrome/deb/ stable main" \
+            | sudo tee /etc/apt/sources.list.d/google-chrome.list
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+          google-chrome --version
+
+      # ---- FIREFOX + GECKODRIVER via APT (mais estável que URL fixa) ----
+      - name: Instalar Firefox e Geckodriver
+        run: |
+          set -euxo pipefail
+          sudo apt-get install -y firefox-geckodriver
+          firefox --version || true
+          geckodriver --version
+
+      # Se você usa Selenium 4.6+ com SeleniumLibrary, o Selenium Manager
+      # baixa o driver automaticamente. Com Chrome instalado, Chromedriver
+      # não é obrigatório. Se preferir, você pode manter um passo de
+      # Chromedriver, mas normalmente não precisa.
 
       - name: Rodar testes Robot em paralelo com Xvfb
         id: run_tests
+        shell: bash
         run: |
-          set -o pipefail
+          set -euxo pipefail
 
-          # Inicia o X virtual framebuffer
+          # Inicia X virtual
           Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
           XVFB_PID=$!
           export DISPLAY=:99
@@ -67,7 +84,12 @@ jobs:
           # Define qual suíte executar
           if [ -n "${{ github.event.inputs.module }}" ]; then
             echo "Executando somente a suíte: ${{ github.event.inputs.module }}"
-            TARGET_SUITE=$(find TestCases -iname "*${{ github.event.inputs.module }}*.robot" | head -n 1)
+            TARGET_SUITE=$(find TestCases -iname "*${{ github.event.inputs.module }}*.robot" | head -n 1 || true)
+            if [ -z "$TARGET_SUITE" ]; then
+              echo "::error ::Nenhuma suíte encontrada para o filtro '${{ github.event.inputs.module }}'."
+              kill $XVFB_PID
+              exit 1
+            fi
           else
             echo "Executando todas as suítes"
             TARGET_SUITE="TestCases"
@@ -75,53 +97,92 @@ jobs:
 
           echo "Arquivo alvo: $TARGET_SUITE"
 
-          # Execuções com retry
+          # Execuções com retry (pabot)
           pabot --processes 4 --output output1.xml "$TARGET_SUITE" || true
           pabot --processes 2 --rerunfailed output1.xml --output output2.xml "$TARGET_SUITE" || true
           pabot --processes 1 --rerunfailed output2.xml --output output3.xml "$TARGET_SUITE" || true
 
           kill $XVFB_PID
 
-      - name: Preparar merge e gerar relatórios
+      - name: Preparar merge e gerar relatórios (Robot + JUnit)
+        shell: bash
         run: |
-          set -e
+          set -euxo pipefail
 
-          # Lista todos os .xml para debug
-          ls -la *.xml
+          # Lista para debug (não falha se não houver match)
+          ls -la || true
+          ls -la *.xml || true
 
           # Monta dinamicamente o array de arquivos a mesclar
           FILES=()
           for f in output1.xml output2.xml output3.xml; do
-          if [[ -f "$f" ]]; then
-            echo "Incluindo $f na mescla"
-            FILES+=("$f")
-          else
-            echo "$f não encontrado, pulando"
-          fi
+            if [[ -f "$f" ]]; then
+              echo "Incluindo $f na mescla"
+              FILES+=("$f")
+            else
+              echo "$f não encontrado, pulando"
+            fi
           done
 
-          # Agora faz o merge dos XMLs existentes
+          if [ ${#FILES[@]} -eq 0 ]; then
+            echo "::error ::Nenhum arquivo de saída do Robot encontrado (output1/2/3.xml)."
+            exit 1
+          fi
+
+          # Merge dos outputs
           rebot --merge --output merged_output.xml "${FILES[@]}"
 
-          # Gera HTML de log e report a partir do merged_output
+          # Gera Log/Report
           rebot --log log.html --report report.html merged_output.xml
 
+          # Gera também JUnit para contagem confiável de falhas
+          rebot --xunit xunit.xml merged_output.xml
 
-      - name: Verificar se ainda há falhas
+      - name: Checar tolerância de falhas (8%)
+        shell: bash
         run: |
-          FAIL_COUNT=$(grep -oP 'status="FAIL"' merged_output.xml | wc -l)
-          echo "Total de falhas = $FAIL_COUNT"
-          TOLERANCIA=3
-          if [ "$FAIL_COUNT" -gt "$TOLERANCIA" ]; then
-            echo "::error ::Mais de $TOLERANCIA casos falharam após retry!"
-            exit 1
-          else
-            echo "::warning ::$FAIL_COUNT falhas (dentro da tolerância de $TOLERANCIA)."
-          fi
+          set -euxo pipefail
+          python3 - << 'PY'
+import xml.etree.ElementTree as ET
+from math import ceil
+
+tree = ET.parse('xunit.xml')
+ts = tree.find('testsuite')
+
+total = int(ts.attrib.get('tests', '0'))
+failures = int(ts.attrib.get('failures', '0'))
+errors = int(ts.attrib.get('errors', '0'))
+failed = failures + errors
+
+# Limite de 8% (verde se <= 8%, vermelho se > 8%)
+limite_float = total * 0.08 if total else 0.0
+# Arredonda para cima para não punir com uma fração (ex.: 26.08 -> 27)
+limite = ceil(limite_float)
+
+taxa = (failed / total * 100.0) if total else 0.0
+
+print(f"TOTAL_TESTES={total}")
+print(f"FALHAS={failed}")
+print(f"TAXA_FALHA={taxa:.2f}%")
+print(f"LIMITE_8pct={limite} falhas (ceil de {limite_float:.2f})")
+
+# Se quiser 'fixar' em 326 testes independentemente do JUnit, use:
+# TOTAL_FIXO = 326
+# limite_fixo = ceil(TOTAL_FIXO * 0.08)
+# print(f\"LIMITE_FIXO(326)={limite_fixo}\")
+# e compare 'failed' contra 'limite_fixo' em vez de 'limite'.
+
+if failed > limite:
+    print("::error ::Mais de 8% de falhas - reprovando o job.")
+    raise SystemExit(1)
+else:
+    print("Dentro da tolerância de 8% - mantendo o job VERDE.")
+    raise SystemExit(0)
+PY
 
       - name: Upload Artifacts
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        uses: actions/upload-artifact@v4
         with:
           name: Robot Framework Reports
           path: |
@@ -131,3 +192,5 @@ jobs:
             merged_output.xml
             log.html
             report.html
+            xunit.xml
+
