@@ -184,7 +184,9 @@ E valido todos os filtros dentro de Urgente em Requisições
             Log    Departamento ${departamento_text} validado com sucesso
             Wait Until Element Is Visible    ${COMBOBOX_URGENTE}
             Execute JavaScript    window.scrollTo(0, 0)
+
             # Reabre a combobox para a próxima iteração
+            Sleep    3s
             Wait Until Element Is Visible    ${COMBOBOX_URGENTE}    timeout=20s
             Click Element                    ${COMBOBOX_URGENTE}
         END
@@ -201,8 +203,8 @@ E seleciono urgente "Sim"
     Click Element                    ${Botao_Buscar}
 
 E valido todos os filtros de Nivel de urgencia em Requisições
+    Sleep    3s
     Wait Until Element Is Visible    ${COMBOBOX_NIVEL_DE_URGENCIA}    timeout=20s
-    Sleep    1s
     Click Element    ${COMBOBOX_NIVEL_DE_URGENCIA}
     # Pega todas as opções dentro do dropdown
     ${departamentos}    Get WebElements    ${COMBOBOX_NIVEL_DE_URGENCIA}
@@ -747,7 +749,7 @@ E clico no botão "Histórico"
     Wait Until Element Is Visible    ${Botao_Acoes_Requisicoes}    timeout=10s
     Click Element                    ${Botao_Acoes_Requisicoes}
     Sleep    1s
-    Wait Until Element Is Visible    ${Botao_Historico}
+    Wait Until Element Is Visible    ${Botao_Historico}    timeout=30s
     Click Element                    ${Botao_Historico}
 
 Então sistema exibe histórico em requisições
