@@ -103,7 +103,7 @@ E clico no botao buscar
 
 E clico no botão "Continuar" em "Excluir"
     Sleep    1s
-    Wait Until Element Is Visible    ${botao_continuar_Excluir}    timeout=20s
+    Wait Until Element Is Visible    ${botao_continuar_Excluir}    timeout=30s
     Click Element                    ${botao_continuar_Excluir}
 
 E preencho informações de pesquisa em Cadastros > Pessoas
@@ -142,6 +142,7 @@ Então sistema exibe informações com filtro "Lista"
 
 # -08.01.06
 E preencho informações de pesquisa
+    Sleep    2s
     Wait Until Element Is Visible    //input[@placeholder='Buscar...']    timeout=20s
     Input Text                       //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
     Sleep    1s
@@ -322,6 +323,7 @@ Dado que clico no menu "Cadastros > Tipo de Gerador"
     Wait Until Element Is Visible    ${MENU_CADASTROS}
     Click Element                    ${MENU_CADASTROS}
     Sleep    2s
+    Wait Until Element Is Visible    ${Menu_Tipo_de_Gerador}    timeout=30s
     Click Element                    ${Menu_Tipo_de_Gerador}
 Então sistema exibe informações de cadastro de "Tipo de Gerador"
     Wait Until Page Contains     text=Tipos de Gerador
@@ -441,28 +443,29 @@ Então sistema exibe informações de cadastro de "Departamentos"
 # -08.09.02
 E preencho informações de inserir novo cadastro de Departamentos
     Sleep    4s
-    Input Text        //input[@id='nome']         ${nome_pesquisa_GruposConsumidores}
-    Input Text        //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
-    Click Element    (//div[contains(.,'Selecione as requisições')])[13]
-    Click Element    (//div[contains(.,'Técnico')])[14]
-    Sleep            0.3s
-    Click Element    (//input[@value='B3 (teste)'])[2]
-    Click Element    (//div[contains(.,'Selecione as empresas')])[13]
-    Sleep            0.3s
-    Click Element    (//div[contains(.,'Isolar Energy')])[14]
-    Sleep            3s
-    Click Element    //button[contains(.,'Próximo')]
+    Wait Until Element Is Visible    //input[@id='nome']    timeout=30s
+    Input Text                       //input[@id='nome']         ${nome_pesquisa_GruposConsumidores}
+    Input Text                       //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
+    Click Element                    (//div[contains(.,'Selecione as requisições')])[13]
+    Click Element                    (//div[contains(.,'Técnico')])[14]
+    Sleep                            0.3s
+    Click Element                    (//input[@value='B3 (teste)'])[2]
+    Click Element                    (//div[contains(.,'Selecione as empresas')])[13]
+    Sleep                            0.3s
+    Click Element                    (//div[contains(.,'Isolar Energy')])[14]
+    Sleep                            3s
+    Click Element                    //button[contains(.,'Próximo')]
 
 # -08.09.03
 E preencho informações de cadastro editado em Departamentos
-    Sleep    2.5s
+    Sleep    3s
     Input Text        //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
     Input Text        //input[@id='descricao']    ${nome_pesquisa_GruposConsumidores}
     Sleep    7s
-    Wait Until Element Is Visible    (//div[contains(.,'Técnico')])[13]    timeout=20s
+    Wait Until Element Is Visible    (//div[contains(.,'Técnico')])[13]    timeout=30s
     Click Element                    (//div[contains(.,'Técnico')])[13]
-    Click Element                    (//div[contains(.,'Pós Venda')])[14]
-    Click Element                    (//input[@value='B3 (teste)'])[2]
+    Click Element                    (//div[contains(.,'Estimativa')])[10]
+    Click Element                    (//input[@value='B3 (teste)'])[1]
     Sleep    0.3s
     Click Element                    //button[contains(.,'Próximo')]
     Sleep    1s
@@ -490,7 +493,7 @@ E preencho informações de inserir novo cadastro de Origem da indicação
 # -08.10.03
 E preencho informações de cadastro editado em Origem da indicação
     Sleep    5s
-    Input Text    //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
+    Input Text       //input[@id='nome']    ${nome_pesquisa_GruposConsumidores}
     Click Element    //button[contains(.,'Atualizar')]
     
 # -08.10.08
@@ -591,6 +594,7 @@ E preencho informações de inserir novo cadastro de Cargos e Funções
     Click Element                    (//div[contains(.,'Técnico')])[15]
     Sleep    1s
     Input Text                       ${input_DescricaoCargosFuncoes}    ${nome_pesquisa_GruposConsumidores}
+    Wait Until Element Is Visible    ${Botao_Proximo_Requisicoes}    timeout=30s
     Click Element                    ${Botao_Proximo_Requisicoes}
 Então sistema salva novo cadastro de Cargos e Funções
     Wait Until Page Contains    text=Registro adicionado com sucesso!

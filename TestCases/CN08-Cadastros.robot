@@ -231,6 +231,7 @@ CT 08.03.01 - Validar menu Cadastros > Grupo Consumidores
     Dado que clico no menu "Cadastros > Grupos Consumidores"
     Então sistema exibe informações de cadastro de "Grupos Consumidores"
 
+# BUG Inserção não está funcional em Grupos Consumidores
 CT 08.03.02 - Validar botão Inserir
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Grupo Consumidores está funcional
     [Tags]    Cadastros 
@@ -248,6 +249,7 @@ CT 08.03.02 - Validar botão Inserir
     E clico no botão "Continuar" em "Excluir"
     Então sistema exclui item do menu Cadastro > Grupos Consumidores
 
+# BUG Inserção não está funcional em Grupos Consumidores
 CT 08.03.03 - Validar botão Editar
     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Grupos Consumidores está funcional
     [Tags]    Cadastros       
@@ -275,6 +277,7 @@ CT 08.03.03 - Validar botão Editar
     E clico no botão "Continuar" em "Excluir"
     Então sistema exclui item do menu Cadastro > Grupos Consumidores
 
+# BUG Inserção não está funcional em Grupos Consumidores
 CT 08.03.04 - Validar filtro "buscar" 
     [Documentation]     Caso de teste valida se filtro buscar está funcional
     [Tags]    Cadastros        
@@ -291,6 +294,7 @@ CT 08.03.05 - Validar botão Cancelar em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Grupo Consumidores"
 
+# BUG Inserção não está funcional em Grupos Consumidores
 CT 08.03.06- Validar botão Continuar em "Excluir" 
     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
     [Tags]    Cadastros      
