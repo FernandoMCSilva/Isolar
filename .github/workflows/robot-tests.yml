@@ -68,16 +68,46 @@ jobs:
         id: run_tests
         run: |
           set -euxo pipefail
-
+      
+          # Inicia X virtual
           Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
           XVFB_PID=$!
           export DISPLAY=:99
-
-          if [ -n "${{ github.event.inputs.module }}" ]; then
-            echo "Executando somente a suíte: ${{ github.event.inputs.module }}"
-            TARGET_SUITE=$(find TestCases -iname "*${{ github.event.inputs.module }}*.robot" | head -n 1 || true)
+      
+          # === Seleção robusta do alvo ===
+          MODULE="${{ github.event.inputs.module }}"
+          ROOTS=("TestCases" "Tests" "tests" ".")
+      
+          if [ -n "$MODULE" ]; then
+            echo "Executando somente: $MODULE"
+            TARGET_SUITE=""
+      
+            # 1) se veio um caminho exato
+            if [ -e "$MODULE" ]; then
+              TARGET_SUITE="$MODULE"
+            fi
+      
+            # 2) procurar diretório que case
             if [ -z "$TARGET_SUITE" ]; then
-              echo "::error ::Nenhuma suíte encontrada para o filtro '${{ github.event.inputs.module }}'."
+              for r in "${ROOTS[@]}"; do
+                d="$(find "$r" -type d -iname "*${MODULE}*" | head -n 1 || true)"
+                if [ -n "$d" ]; then TARGET_SUITE="$d"; break; fi
+              done
+            fi
+      
+            # 3) procurar arquivo .robot que case
+            if [ -z "$TARGET_SUITE" ]; then
+              for r in "${ROOTS[@]}"; do
+                f="$(find "$r" -type f -iname "*${MODULE}*.robot" | head -n 1 || true)"
+                if [ -n "$f" ]; then TARGET_SUITE="$f"; break; fi
+              done
+            fi
+      
+            if [ -z "$TARGET_SUITE" ]; then
+              echo "::group::Candidatos (.robot encontrados)"
+              for r in "${ROOTS[@]}"; do find "$r" -type f -name "*.robot" | sed 's/^/ - /'; done
+              echo "::endgroup::"
+              echo "::error ::Nenhuma suíte/pasta encontrada para o filtro '$MODULE'."
               kill $XVFB_PID
               exit 1
             fi
@@ -85,13 +115,14 @@ jobs:
             echo "Executando todas as suítes"
             TARGET_SUITE="TestCases"
           fi
-
-          echo "Arquivo alvo: $TARGET_SUITE"
-
+      
+          echo "Arquivo/pasta alvo: $TARGET_SUITE"
+      
+          # Execuções com retry
           pabot --processes 4 --output output1.xml "$TARGET_SUITE" || true
           pabot --processes 2 --rerunfailed output1.xml --output output2.xml "$TARGET_SUITE" || true
           pabot --processes 1 --rerunfailed output2.xml --output output3.xml "$TARGET_SUITE" || true
-
+      
           kill $XVFB_PID
 
       - name: Preparar merge e gerar relatórios (Robot + JUnit)
