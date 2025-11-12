@@ -510,7 +510,8 @@ Então sistema verifica se há cadastro B3 (teste)
 
         Sleep    3s
         Click Element    ${botao_buscarPerguntas}
-        Input Text    //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
+        Wait Until Element Is Visible    //input[@placeholder='Buscar...']    timeout=30s
+        Input Text                       //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
         Sleep    1s
 
         # Atualiza a variável usada no WHILE
@@ -604,7 +605,7 @@ E preencho informações de cadastro de requisição com cliente "temporario"
         Log    Botão 'Novo Cliente' visível. Seguir com cadastro de cliente temporário.
         Execute JavaScript    document.body.style.zoom="70%"
         Sleep    3s
-        Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]    timeout=20s
+        Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]    timeout=30s
         Click Element                    //button[contains(.,'Novo Cliente')]
         Input Text                       //input[@id='cpfCnpj']    19895982771
         Input Text                       //input[@id='telefone']   21981905892
@@ -620,8 +621,9 @@ E preencho informações de cadastro de requisição com cliente "temporario"
 
     ELSE
         Log      Cliente já cadastrado. Seguir com uso do cliente existente.
-        Sleep    2s
+        Sleep    1s
         Press Keys    NONE    ENTER
+        Sleep    1s
 
         FOR    ${i}    IN RANGE    10
             ${status}=    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Salvar')]
