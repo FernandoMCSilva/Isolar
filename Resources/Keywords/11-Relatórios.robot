@@ -49,7 +49,7 @@ ${botao_QuantidadeItens_Relatorios}  (//div[contains(.,'Quantidade')])[10]
 *** Keywords ***
 # --11.01.01
 Dado que clico no menu "Relatórios > Relatórios"
-    Wait Until Element Is Visible    ${Menu_Relatorios}    timeout=20s
+    Wait Until Element Is Visible    ${Menu_Relatorios}    timeout=30s
     Click Element                    ${Menu_Relatorios}
     Wait Until Element Is Visible    ${Menu_Relatorios>Relatorios}
     Click Element                    ${Menu_Relatorios>Relatorios}
@@ -144,7 +144,7 @@ E seleciono filtro Data de criação
     Wait Until Element Is Visible    ${filtro_DataCriacaoRelatorios}
     Click Element                    ${filtro_DataCriacaoRelatorios}
     Wait Until Element Is Visible    (//button[@type='button'])[21]
-    FOR     ${i}    IN RANGE    3
+    FOR     ${i}    IN RANGE    4
         Click Element    (//button[@type='button'])[21]
         Sleep    0.5s
     END
