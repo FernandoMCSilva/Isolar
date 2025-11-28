@@ -109,10 +109,9 @@ CT 02.13 - Validar filtro Renovadas
     E valido todos os filtros dentro de "Renovadas"
     Então sistema exibe requisições de filtro Renovadas
 
-CT 02.14 - Validar botão Inserir "Técnico"
+CT 02.14 - Validar botão Inserir Técnico
     [Documentation]     Caso de teste valida botão Inserir "Técnico" em Requisições
     [Tags]    Requisições   
-#   Verifico se há Requisição B3 (teste)
     Dado que clico no menu "Requisições"
     Quando clico em "Filtros"
     E preencho filtro com cliente "B3 (teste)" para verificação
@@ -292,7 +291,7 @@ CT 02.21 - Validar botão Comentários
     E preencho informações de comentário
     Então sistema exibe mensagem de confirmação
 
-CT 02.22 - Excluir requisição tipo "Técnico"
+CT 02.22 - Excluir requisição tipo Técnico
     [Documentation]     Caso de teste valida funcionalidade excluir 
     [Tags]    Requisições
 #   Inserir cadastro temporario

@@ -184,9 +184,7 @@ E valido todos os filtros dentro de Urgente em Requisições
             Log    Departamento ${departamento_text} validado com sucesso
             Wait Until Element Is Visible    ${COMBOBOX_URGENTE}
             Execute JavaScript    window.scrollTo(0, 0)
-
             # Reabre a combobox para a próxima iteração
-            Sleep    3s
             Wait Until Element Is Visible    ${COMBOBOX_URGENTE}    timeout=20s
             Click Element                    ${COMBOBOX_URGENTE}
         END
@@ -203,8 +201,8 @@ E seleciono urgente "Sim"
     Click Element                    ${Botao_Buscar}
 
 E valido todos os filtros de Nivel de urgencia em Requisições
-    Sleep    3s
     Wait Until Element Is Visible    ${COMBOBOX_NIVEL_DE_URGENCIA}    timeout=20s
+    Sleep    1s
     Click Element    ${COMBOBOX_NIVEL_DE_URGENCIA}
     # Pega todas as opções dentro do dropdown
     ${departamentos}    Get WebElements    ${COMBOBOX_NIVEL_DE_URGENCIA}
@@ -510,8 +508,8 @@ Então sistema verifica se há cadastro B3 (teste)
 
         Sleep    3s
         Click Element    ${botao_buscarPerguntas}
-        Wait Until Element Is Visible    //input[@placeholder='Buscar...']    timeout=30s
-        Input Text                       //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
+        Wait Until Element Is Visible    (//input[@placeholder='Buscar...'])[1]    timeout=20s
+        Input Text    (//input[@placeholder='Buscar...'])[1]    ${nome_pesquisa_GruposConsumidores}
         Sleep    1s
 
         # Atualiza a variável usada no WHILE
@@ -605,7 +603,7 @@ E preencho informações de cadastro de requisição com cliente "temporario"
         Log    Botão 'Novo Cliente' visível. Seguir com cadastro de cliente temporário.
         Execute JavaScript    document.body.style.zoom="70%"
         Sleep    3s
-        Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]    timeout=30s
+        Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]    timeout=20s
         Click Element                    //button[contains(.,'Novo Cliente')]
         Input Text                       //input[@id='cpfCnpj']    19895982771
         Input Text                       //input[@id='telefone']   21981905892
@@ -621,9 +619,8 @@ E preencho informações de cadastro de requisição com cliente "temporario"
 
     ELSE
         Log      Cliente já cadastrado. Seguir com uso do cliente existente.
-        Sleep    1s
+        Sleep    2s
         Press Keys    NONE    ENTER
-        Sleep    1s
 
         FOR    ${i}    IN RANGE    10
             ${status}=    Run Keyword And Return Status    Element Should Be Visible    //button[contains(.,'Salvar')]
@@ -751,7 +748,7 @@ E clico no botão "Histórico"
     Wait Until Element Is Visible    ${Botao_Acoes_Requisicoes}    timeout=10s
     Click Element                    ${Botao_Acoes_Requisicoes}
     Sleep    1s
-    Wait Until Element Is Visible    ${Botao_Historico}    timeout=30s
+    Wait Until Element Is Visible    ${Botao_Historico}
     Click Element                    ${Botao_Historico}
 
 Então sistema exibe histórico em requisições

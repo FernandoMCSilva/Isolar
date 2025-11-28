@@ -6,8 +6,11 @@ Resource    ../../Main.robot
 *** Keywords ***
 Abrir navegador
     [Arguments]     ${url}
-    ${options}=    Evaluate    options_module.create_options()    modules=options_module
-    Open Browser    ${url}    firefox    options=${options}
+    # ${options}=    Evaluate    options_module.create_options()    modules=options_module
+    # Open Browser    ${url}    firefox    options=${options}
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].FirefoxOptions()    sys, selenium.webdriver
+    Call Method    ${options}    add_argument    --headless
+    Open Browser    ${url}    browser=firefox    options=${options}
     Sleep    1s
     Maximize Browser Window
     Wait Until Element Is Visible    ${LOGO}    timeout=10s

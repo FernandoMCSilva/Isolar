@@ -132,10 +132,10 @@ CT 03.02.09 - Validar filtro Responsável
     E valido todos os filtros dentro de "Responsável" em Obras > Requisições
     Então sistema exibe resultado de filtro Responsável
 
-CT 03.02.10 - Validar botão Inserir "Obras"
+CT 03.02.10 - Validar botão Inserir Obras
     [Documentation]     Caso de teste valida botão Inserir "Obras" em Obras > Requisições
     [Tags]    Obras   
-#   Verifico se há cadastro temporario
+#   Verifico se há requisição temporario
     Dado que clico no menu Obras > Requisições
     Quando clico em "Filtros"
     E preencho filtro com cliente "temporario" para verificação
