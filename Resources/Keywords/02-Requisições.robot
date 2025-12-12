@@ -506,7 +506,7 @@ Então sistema verifica se há cadastro B3 (teste)
         Sleep    2s
         Wait Until Page Contains    text=Gerenciar informações cadastradas no sistema
 
-        Sleep    5s
+        Sleep    7s
         Click Element    ${botao_buscarPerguntas}
         Wait Until Element Is Visible    (//input[@placeholder='Buscar...'])[1]    timeout=20s
         Input Text    (//input[@placeholder='Buscar...'])[1]    ${nome_pesquisa_GruposConsumidores}
@@ -602,7 +602,7 @@ E preencho informações de cadastro de requisição com cliente "temporario"
     IF    ${botao_novocliente}
         Log    Botão 'Novo Cliente' visível. Seguir com cadastro de cliente temporário.
         Execute JavaScript    document.body.style.zoom="70%"
-        Sleep    3s
+        Sleep    5s
         Wait Until Element Is Visible    //button[contains(.,'Novo Cliente')]    timeout=20s
         Click Element                    //button[contains(.,'Novo Cliente')]
         Input Text                       //input[@id='cpfCnpj']    19895982771
@@ -895,7 +895,7 @@ E clico no botão "Excluir requisição"
 E clico no botão "Excluir requisição" temporario
     Sleep    2s
     Wait Until Page Contains         text=Editar requisição
-    Sleep    2s
+    Sleep    4s
     Wait Until Page Contains         text=temporario
     Execute JavaScript               window.scrollTo(0, 0)
     Wait Until Element Is Visible    ${Botao_Excluir_Requisicoes}
