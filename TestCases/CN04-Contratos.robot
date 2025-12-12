@@ -209,5 +209,7 @@ CT 04.02.18 - Validar mandança do Status vigência
     Quando clico em "Filtros"
     E preencho filtro nome
     E clico no botão "Editar"
-    E mudo status de vigência
-    Então sistema realiza mudança de vigência
+    # E mudo status de vigência
+    # Então sistema realiza mudança de vigência
+    
+    # Ajeitar, pois não tem como editar e voltar para opção de antes
