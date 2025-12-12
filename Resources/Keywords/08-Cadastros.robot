@@ -146,7 +146,7 @@ E preencho informações de pesquisa
     Wait Until Element Is Visible    //input[@placeholder='Buscar...']    timeout=20s
     Input Text                       //input[@placeholder='Buscar...']    ${nome_pesquisa_GruposConsumidores}
     Sleep    1s
-    Wait Until Page Contains    text=B3 (teste)
+    Wait Until Page Contains    text=B3 (teste)    timeout=20s
     
 Então sistema exibe informações de pesquisa
      ${nome_resultado}=    Get Text    //td[contains(.,'B3 (teste)')]
@@ -194,7 +194,8 @@ E preencho informações de cadastro editado
     Input Text        //input[@placeholder='000.000.000-00']    19895982771
     Input Text        //input[@placeholder='(99) 99999-9999']    21981905892
     Input Text        //input[@placeholder='00000-000']    289901541
-    Sleep    0.5s
+    Sleep    1s
+    Wait Until Element Is Visible    xpath=//div[@role='button' and contains(@class, 'select__multi-value__remove')]    timeout=20s
     Click Element     xpath=//div[@role='button' and contains(@class, 'select__multi-value__remove')]
     Click Element     xpath=//div[@class='select__input-container css-o3kr9i']
     Click Element     (//div[contains(.,'Vendedor técnico')])[13]

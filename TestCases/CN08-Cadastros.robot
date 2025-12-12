@@ -231,7 +231,7 @@ CT 08.03.01 - Validar menu Cadastros > Grupo Consumidores
     Dado que clico no menu "Cadastros > Grupos Consumidores"
     Então sistema exibe informações de cadastro de "Grupos Consumidores"
 
-# BUG Inserção não está funcional em Grupos Consumidores
+# BUG Inserção não está funcional em Grupos Consumidores BUG 1631
 CT 08.03.02 - Validar botão Inserir
     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Grupo Consumidores está funcional
     [Tags]    Cadastros 

@@ -15,12 +15,12 @@ ${botao_Cancelar_Excluir}     //button[contains(.,'Cancelar')]
 ${botao_salvar}               //button[contains(.,'Salvar')]
 ${botao_atualizar}            //button[contains(.,'Atualizar')]
 ${botao_SalvarUsuários}       //button[contains(.,'Salvar')]
+${botao_Proximo_Usuarios}     (//button[normalize-space()='Próximo'])[1]
 ${input_buscar}               //input[contains(@placeholder,'Buscar...')]
 ${input_descricao}            //input[@id='descricao']
-${input_buscar}               xpath=//input[contains(@class, 'flex h-10')]
 ${filtro_cards/Lista}         (//button[@type='button'])[7]
 ${filtro_botaoLista}          xpath=//div[@role='option'][contains(.,'Lista')]
-${EmailLocal}                 teste4321@gmail.com
+${EmailLocal}                 teste43210@gmail.com
 ${SenhaLocal}                 Q@grupoiso123
 
 *** Keywords ***                
@@ -66,13 +66,12 @@ Então sistema salva novo cadastro de Usuários
 # -9.3
 E preencho informações de cadastro editado no menu Usuários
     Sleep    5s
-    Wait Until Element Is Visible    ${nome_pesquisa}        timeout=20s
-    Input Text                       //input[@id='nome']     ${nome_pesquisa}
+    Input Text                       //input[@id='nome']        ${nome_pesquisa}
     Input Text                       //input[@id='telefone']    99999999999
-    Input Text                       //input[@id='email']    ${EmailLocal}
-    Input Text                       //input[@id='senha']    ${SenhaLocal}
+    Input Text                       //input[@id='email']       ${EmailLocal}
+    Input Text                       //input[@id='senha']       ${SenhaLocal}
     Sleep    1s
-    Click Element    ${Botao_Proximo_Requisicoes}   
+    Click Element         ${Botao_Proximo_Usuarios}   
     Sleep    1s
     Execute Javascript    window.scrollTo(0,0)
 
