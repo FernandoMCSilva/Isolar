@@ -71,7 +71,7 @@ Dado que clico no menu "Requisições"
 
 # --2.2
 Quando clico em "Filtros"
-    Sleep    5s
+    Sleep    7s
     Wait Until Element Is Visible    ${Link_Filtros}    timeout=20s
     Click Element                    ${Link_Filtros}
 
@@ -466,8 +466,8 @@ Então sistema verifica se há requisição B3 (teste)
         Wait Until Element Is Visible    //button[contains(.,'Continuar')]     timeout=10s
         Click Element                    //button[contains(.,'Continuar')] 
 
-        Sleep    2s
-        Wait Until Element Is Visible    //button[contains(.,'Filtros')]
+        Sleep    2s    
+        Wait Until Element Is Visible    //button[contains(.,'Filtros')]    timeout=20s
         Click Element                    //button[contains(.,'Filtros')]
         Sleep    3s
         Input Text                       //input[@id='cliente']    temporario
@@ -506,7 +506,7 @@ Então sistema verifica se há cadastro B3 (teste)
         Sleep    2s
         Wait Until Page Contains    text=Gerenciar informações cadastradas no sistema
 
-        Sleep    3s
+        Sleep    5s
         Click Element    ${botao_buscarPerguntas}
         Wait Until Element Is Visible    (//input[@placeholder='Buscar...'])[1]    timeout=20s
         Input Text    (//input[@placeholder='Buscar...'])[1]    ${nome_pesquisa_GruposConsumidores}
