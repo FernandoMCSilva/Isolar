@@ -136,7 +136,7 @@ Então sistema exibe informações de cadastros de Contratos
 E preencho informação de filtro Vigência inicial
     Wait Until Element Is Visible    ${Filtro_VigenciaInicial}
     Click Element                    ${Filtro_VigenciaInicial}
-    FOR     ${i}    IN RANGE     5
+    FOR     ${i}    IN RANGE     7
         Click Element    (//button[@type='button'])[19]
         Sleep    0.5s
     END
@@ -169,7 +169,7 @@ Então sistema exibe informações de filtro Vigência final
 E preencho informação de filtro Índice
     Wait Until Element Is Visible    ${Filtro_Indice}    timeout=20s
     Click Element                    ${Filtro_Indice}
-   FOR     ${i}    IN RANGE     5
+   FOR     ${i}    IN RANGE     7
         Click Element    (//button[@type='button'])[19]
         Sleep    0.3s
     END

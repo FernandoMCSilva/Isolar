@@ -144,7 +144,7 @@ E seleciono filtro Data de criação
     Wait Until Element Is Visible    ${filtro_DataCriacaoRelatorios}
     Click Element                    ${filtro_DataCriacaoRelatorios}
     Wait Until Element Is Visible    (//button[@type='button'])[21]
-    FOR     ${i}    IN RANGE    4
+    FOR     ${i}    IN RANGE    5
         Click Element    (//button[@type='button'])[21]
         Sleep    0.5s
     END
@@ -193,7 +193,11 @@ E valido filtros de departamento em Relatórios
             Log    Departamento ${departamento_text} validado com sucesso
             
             # Reabre a combobox para a próxima iteração
-            Click Element    ${Btn_Departamentos}
+            Sleep    1s
+            Execute JavaScript    window.scrollTo(0, 0)
+            Sleep    1s
+            Wait Until Element Is Visible    ${Btn_Departamentos}    timeout=20s
+            Click Element                    ${Btn_Departamentos}
         END
         Sleep    1s
         Press Keys    None    ESC
@@ -313,7 +317,7 @@ E preencho informação de filtro Subgrupo
     Sleep    5s
     Wait Until Element Is Visible    ${filtro_Subgrupo}    timeout=20s
     Click Element                    ${filtro_Subgrupo}
-    Wait Until Element Is Visible    (//div[contains(.,'B3')])[4]    timoeut=20s
+    Wait Until Element Is Visible    (//div[contains(.,'B3')])[4]    timeout=20s
     Click Element                    (//div[contains(.,'B3')])[4]
 
 Então sistema exibe informações de filtro Subgrupo
@@ -323,11 +327,11 @@ Então sistema exibe informações de filtro Subgrupo
 E preencho informação de filtro Modalidade
     Wait Until Element Is Visible    ${filtro_Modalidade}
     Click Element                    ${filtro_Modalidade}
-    Wait Until Element Is Visible    (//div[contains(.,'Convencional')])[4]    timoeut=20s
+    Wait Until Element Is Visible    (//div[contains(.,'Convencional')])[4]    timeout=20s
     Click Element                    (//div[contains(.,'Convencional')])[4]
 
 Então sistema exibe informações de filtro Modalidade
-    Wait Until Element Is Visible    ${result_Modalidade}    timoeut=20s
+    Wait Until Element Is Visible    ${result_Modalidade}    timeout=20s
 
 # --11.02.11
 E preencho informação de filtro SubClasse

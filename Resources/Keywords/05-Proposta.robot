@@ -113,7 +113,7 @@ E preencho com informações data de registro
     Wait Until Element Is Visible    (//button[@type='button'])[11]
     Click Element                    (//button[@type='button'])[11]
     Wait Until Element Is Visible    (//button[@type='button'])[13]
-    FOR    ${i}    IN RANGE    4
+    FOR    ${i}    IN RANGE    7
     Click Element    (//button[@type='button'])[13]
     Sleep    0.5s
     END
