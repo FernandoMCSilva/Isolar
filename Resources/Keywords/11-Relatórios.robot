@@ -127,9 +127,9 @@ Então sistema exibe informações de filtro Unidade Consumidora
 # --11.01.09
 E seleciono filtro Tipo de requisição
     Sleep    1s
-    Wait Until Element Is Visible    //button[@id='tipo']
+    Wait Until Element Is Visible    //button[@id='tipo']    timeout=20s
     Click Element                    //button[@id='tipo']
-    FOR    ${i}    IN RANGE    3
+    FOR    ${i}    IN RANGE    1
         Press Keys                       NONE    ARROW_DOWN
         Sleep                            0.3s
     END

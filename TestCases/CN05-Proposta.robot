@@ -90,7 +90,6 @@ CT 05.10 - Validar botão Anterior
     E clico em "Anterior"
     Então sistema exibe Estimativa anteriores   
 
-# BUG
 CT 05.12 - Validar botão Não em Gerar link de assinatura
     [Documentation]     Caso de teste valida botão Não em confirmação do Gerar link de assinatura
     [Tags]    Proposta  
@@ -103,7 +102,6 @@ CT 05.12 - Validar botão Não em Gerar link de assinatura
     E clico em "Não"
     # Então sistema volta para menu Estimativa
     
-# BUG
 CT 05.13 - Validar botão Gerar link de assinatura
     [Documentation]     Caso de teste valida botão Gerar link de assinatura    
     [Tags]    Proposta
@@ -134,7 +132,6 @@ CT 05.15 - Validar impressão de estimativa
     E clico em "imprimir Estimativa"
     Então sistema exibe informações de estimativa em arquivo PDF
 
-# BUG
 CT 05.16 - Validar botão Cancelar em Aplicar desconto
     [Documentation]    Caso de teste valida botão Cancelar em Aplicar desconto
     [Tags]    Proposta
@@ -143,7 +140,6 @@ CT 05.16 - Validar botão Cancelar em Aplicar desconto
     E clico em "Cancelar"
     Então sistema retorna e exibe informações do menu Estimativa
 
-# BUG
 CT 05.17 - Validar botão aplicar desconto
     [Documentation]    Caso de teste valida botão Aplicar desconto
     [Tags]    Proposta
@@ -208,7 +204,6 @@ CT 05.23 - Validar botão ações após gerar cálculos
     E clico no botão Ações
     Então sistema exibe tela de botão ações 
 
-# BUG #1549
 CT 05.24 - Validar impressão de estimativa 
     [Documentation]    Caso de teste valida botão Baixar/Imprimir em Acões após gerar cálculos
     [Tags]    Proposta
@@ -221,7 +216,6 @@ CT 05.24 - Validar impressão de estimativa
     E clico no botão Baixar/Imprimir
     Então sistema Baixa/Imprime Estimativa
     
-# BUG #1549
 CT 05.25 - Validar botão Iniciar conversa no Whatsapp
     [Documentation]    Caso de teste valida botão Iniciar conversa no Whatsapp em Acões após gerar cálculos
     [Tags]    Proposta

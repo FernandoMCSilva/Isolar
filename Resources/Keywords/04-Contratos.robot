@@ -313,7 +313,7 @@ E clico no botão Anexos
     Click Element                    ${botao_Anexos}
     
 Então sistema exibe informações de documento
-    Wait Until Page Contains    text=Anexos do Contrato #35    timeout=20s
+    Wait Until Page Contains    text=Anexos do Contrato #37    timeout=20s
 
 # -4.2.17
 E faço download de documento

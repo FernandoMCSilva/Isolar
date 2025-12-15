@@ -246,9 +246,12 @@ E clico em Cancelar
 
 # -07.02.01
 Clico no menu "Assinaturas"
-    Wait Until Element Is Visible    ${menu_Assinaturas}
+    Wait Until Element Is Visible    ${menu_Assinaturas}    timeout=20s
     Click Element                    ${menu_Assinaturas}
     Sleep    5s
+
+E aguardo 20 segundos para carregamento de assinaturas
+    Sleep    20s
 
 Então sistema exibe informações de menu Assinaturas
     Wait Until Page Contains    text=Informações referentes as assinaturas gerados no sistema.

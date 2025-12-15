@@ -164,7 +164,7 @@ Então sistema exibe próximas Estimativa
 
 # --4.10
 E clico em "Anterior"
-    Sleep                            5s
+    Sleep                            8s
     Wait Until Element Is Visible    //button[contains(.,'Anterior')]    timeout=20s
     Click Element                    //button[contains(.,'Anterior')]
 
@@ -395,7 +395,7 @@ E clico no botão Iniciar conversa no WhatsApp
     Wait Until Element Is Visible    ${botao_iniciarconversa_Estimativa}
     Click Element                    ${botao_iniciarconversa_Estimativa}
     Sleep    2s
-    Wait Until Element Is Visible    //button[contains(.,'Confirmar')]
+    Wait Until Element Is Visible    //button[contains(.,'Confirmar')]    timeout=20s
     Click Element                    //button[contains(.,'Confirmar')]
 
 

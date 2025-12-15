@@ -163,38 +163,38 @@ CT 07.02.01 - Validar menu Assinaturas
     Clico no menu "Assinaturas"
     Então sistema exibe informações de menu Assinaturas
 
-# # BUG #1351
-# CT 07.02.02 - Validar filtro Origem da assinatura
-#     [Documentation]     Caso de teste valida se filtro Origem da assinatura está funcional
-#     [Tags]    Documentos
-#     Dado que clico no menu "Documentos"
-#     Clico no menu "Assinaturas"
-#     Quando clico em "Filtros"
-#     E preencho informações de filtro Origem da assinatura
-#     E clico em "Buscar"
-#     Então sistema exibe informações de filtro Origem da assinatura
+CT 07.02.02 - Validar filtro Origem da assinatura
+    [Documentation]     Caso de teste valida se filtro Origem da assinatura está funcional
+    [Tags]    Documentos
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Aguardo carregamento da página
+    Quando clico em "Filtros"
+    E preencho informações de filtro Origem da assinatura
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Origem da assinatura
 
-# BUG #1351
-# CT 07.02.03 - Validar filtro Status
-#     [Documentation]     Caso de teste valida se filtro Status está funcional
-#     [Tags]    Documentos
-#     Dado que clico no menu "Documentos"
-#     Clico no menu "Assinaturas"
-#     Quando clico em "Filtros"
-#     E preencho informações de filtro Status
-#     E clico em "Buscar"
-#     Então sistema exibe informações de filtro Status
+CT 07.02.03 - Validar filtro Status
+    [Documentation]     Caso de teste valida se filtro Status está funcional
+    [Tags]    Documentos
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Aguardo carregamento da página
+    Quando clico em "Filtros"
+    E preencho informações de filtro Status
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Status
 
-# BUG #1351
-# CT 07.02.04 - Validar filtro Assinante
-#     [Documentation]     Caso de teste valida se filtro Assinante está funcional
-#     [Tags]    Documentos
-#     Dado que clico no menu "Documentos"
-#     Clico no menu "Assinaturas"
-#     Quando clico em "Filtros"
-#     E preencho informações de filtro Assinante
-#     E clico em "Buscar"
-#     Então sistema exibe informações de filtro Assinante
+CT 07.02.04 - Validar filtro Assinante
+    [Documentation]     Caso de teste valida se filtro Assinante está funcional
+    [Tags]    Documentos
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    Aguardo carregamento da página
+    Quando clico em "Filtros"
+    E preencho informações de filtro Assinante
+    E clico em "Buscar"
+    Então sistema exibe informações de filtro Assinante
 
 CT 07.02.05 - Validar filtro Observador
     [Documentation]     Caso de teste valida se filtro Observador está funcional
@@ -225,20 +225,21 @@ CT 07.02.05 - Validar filtro Observador
 #     Quando seleciono opção Cards ou Lista "Lista"
 #     Então sistema exibe informações com filtro "Lista"
 
-# BUG
-# CT 07.02.08 - Validar botão Próximo
-#     [Documentation]     Caso de teste valida se botão Próximo está funcional
-#     [Tags]    Documentos
-#     Dado que clico no menu "Documentos"
-#     Clico no menu "Assinaturas"
-#     Quando clico em "Próximo"
-#     Então sistema exibe próximas Assinaturas
+CT 07.02.08 - Validar botão Próximo
+    [Documentation]     Caso de teste valida se botão Próximo está funcional
+    [Tags]    Documentos
+    Dado que clico no menu "Documentos"
+    Clico no menu "Assinaturas"
+    E aguardo 20 segundos para carregamento de assinaturas
+    Quando clico em "Próximo"
+    Então sistema exibe próximas Assinaturas
 
 # CT 07.02.09 - Validar botão Anterior
 #     [Documentation]     Caso de teste valida se botão Anterior está funcional
 #     [Tags]    Documentos
 #     Dado que clico no menu "Documentos"
 #     Clico no menu "Assinaturas"
+#     E aguardo 20 segundos para carregamento de assinaturas
 #     Quando clico em "Próximo"
 #     E clico em "Anterior"
 #     Então sistema exibe Assinaturas anteriores

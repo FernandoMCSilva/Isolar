@@ -82,7 +82,6 @@ CT 03.02.02 - Validar filtro Cliente
 #     E valido filtros dentro de Departamento em Obras > Requisições
 #     Então sistema exibe resultado de Departamento
 
-#  BUG # Obras > Requisições
 CT 03.02.04 - Validar filtro Tipo
     [Documentation]     Caso de teste valida o filtro Tipo em Obras > Requisições
     [Tags]    Obras        
