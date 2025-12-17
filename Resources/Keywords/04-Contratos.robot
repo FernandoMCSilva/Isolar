@@ -176,7 +176,11 @@ E preencho informação de filtro Índice
     Click Element    (//button[contains(.,'1')])
     Sleep    2.5s
     Click Element    (//button[contains(.,'31')])
-    Click Element    ${Filtro_Indice}
+    
+    Wait Until Element Is Not Visible    //li[contains(@class,'calendar')]    timeout=10s
+    Wait Until Element Is Enabled        ${Filtro_Indice}    timeout=10s
+    Scroll Element Into View             ${Filtro_Indice}
+    Click Element                        ${Filtro_Indice}
 
 Então sistema exibe informações de filtro Índice
     Wait Until Element Is Visible    (//td[normalize-space()='10/05/2025'])[1]
