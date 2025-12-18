@@ -176,7 +176,7 @@ E preencho informação de filtro Índice
     Click Element    (//button[contains(.,'1')])
     Sleep    2.5s
     Click Element    (//button[contains(.,'31')])
-    
+
     Wait Until Element Is Not Visible    //li[contains(@class,'calendar')]    timeout=10s
     Wait Until Element Is Enabled        ${Filtro_Indice}    timeout=10s
     Scroll Element Into View             ${Filtro_Indice}
@@ -317,6 +317,7 @@ E clico no botão Anexos
     Click Element                    ${botao_Anexos}
     
 Então sistema exibe informações de documento
+    Sleep    2s
     Wait Until Page Contains    text=Anexos do Contrato #37    timeout=20s
 
 # -4.2.17
