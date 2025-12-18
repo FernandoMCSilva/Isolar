@@ -313,6 +313,7 @@ Então sistema realiza edição de Controle de contratos
 
 # -4.2.16
 E clico no botão Anexos
+    Sleep    2s
     Wait Until Element Is Visible    ${botao_Anexos}    timeout=20s
     Click Element                    ${botao_Anexos}
     
