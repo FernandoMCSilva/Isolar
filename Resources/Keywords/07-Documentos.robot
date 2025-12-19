@@ -219,6 +219,8 @@ Então sistema exibe informações de botão Gerar link de assinatura (INATÍVO)
 # -07.01.15
 E clico no botão Gerar link de assinatura
     Sleep    1s
+    Execute Javascript    document.body.style.zoom='70%'
+    Sleep    1s
     Wait Until Element Is Visible    ${botao_GerarAssinatura}    timeout=20s
     Click Element                    ${botao_GerarAssinatura}
 
