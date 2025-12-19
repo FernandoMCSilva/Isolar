@@ -263,7 +263,7 @@ E preencho informações de filtro Origem da assinatura
     Click Element                    (//div[contains(.,'Externos')])[5]
 
 Então sistema exibe informações de filtro Origem da assinatura
-    Wait Until Page Contains    text=testando sasine
+    Wait Until Page Contains    text=FICHA E TERMO SARA TESTE ANEXOS
 
 # -07.02.03
 E preencho informações de filtro Status
