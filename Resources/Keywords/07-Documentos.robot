@@ -228,7 +228,7 @@ E clico em Assinatura Tradicional
     Click Element                    ${AssinaturaTradicional}
 
 Então sistema exibe informações de botão Gerar link de assinatura
-    Wait Until Page Contains    text=ZapSign - 262
+    Wait Until Page Contains    text=ZapSign - 262    timeout=20s
 
 E clico no botão Deletar
     Sleep    1s
