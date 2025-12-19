@@ -135,7 +135,9 @@ Então sistema exibe informações de filtro Data de registro
 
 # -07.01.06
 E clico no botão Ver Documento
-    Sleep    2s 
+    Sleep    2s
+    Execute Javascript    document.body.style.zoom='70%'
+    Sleep    1s
     Wait Until Element Is Visible    ${botao_VerDocumento}    timeout=20s
     Click Element                    ${botao_VerDocumento}
 
