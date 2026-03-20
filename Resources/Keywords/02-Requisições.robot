@@ -23,6 +23,7 @@ ${Botao_Inserir_Requisicoes}            //button[contains(.,'Inserir')]
 ${Botao_Proximo_Requisicoes}            //button[contains(.,'Próximo')]
 ${Botao_Excluir_Requisicoes}            //button[contains(.,'Excluir requisição')]
 ${Botao_MudarStatusRequisicao}          (//button[@data-state='closed'])[20]
+${Botao_SetaAnterior_calendario}        (//button[@name='previous-month'])[1]
 
 ${elemento_fila}                        (//div[@class='inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 rounded-md text-center'])[1]
 ${elemento_concluido}                   (//div[@class='inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-primary-foreground rounded-md bg-green-400 hover:bg-green-300 text-center'])[1]
