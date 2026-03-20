@@ -232,22 +232,29 @@ E valido todos os filtros de Nivel de urgencia em Requisições
             Click Element                    ${COMBOBOX_NIVEL_DE_URGENCIA}
         END
 # --2.8
-E preencho informações de Data de entrega
-    Wait Until Element Is Visible    //button[@id='data_entrega']
-    Click Element                    //button[@id='data_entrega']
-    Wait Until Element Is Visible    (//button[@type='button'])[44]
-    FOR    ${i}    IN RANGE    7
-        Click Element       (//button[@type='button'])[44]
-        Sleep    1s
-    END
-    Sleep    2s
-    Click Element                    (//button[contains(.,'1')])[1]
-    Click Element                    //button[contains(.,'31')]
-    Click Element                    ${Botao_Buscar} 
+E preencho período Maio 10 até 15
+    Wait Until Element Is Visible    ${filtro_dataentrega_requisicoes}    timeout=20s
+    Click Element                    ${filtro_dataentrega_requisicoes}
 
-Então sistema exibe requisições do filtro Data de entrega
-    Sleep    1s
-    Wait Until Element Is Visible    (//td[normalize-space()='14/05/2025'])[1]
+    FOR    ${i}    IN RANGE    12
+        ${visivel}=    Run Keyword And Return Status
+        ...    Page Should Contain Element    ${mes_maio}
+
+        Exit For Loop If    ${visivel}
+
+        Click Element    ${Botao_SetaAnterior_calendario}
+        Sleep    0.3s
+    END
+
+        # clicar dia 10
+    Click Element    xpath=//button[normalize-space()='10'][1]
+
+    # clicar dia 15
+    Click Element    xpath=//button[normalize-space()='15'][1]
+
+
+Então sistema deve exibir requisições na data de entrega filtrada
+    Wait Until Page Contains    text=14/05/2025    timeout=20s
 # --2.9
 E preencho informações de Data de criação
     Wait Until Element Is Visible      //button[@id='data_criacao']
