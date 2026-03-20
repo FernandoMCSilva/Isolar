@@ -186,6 +186,7 @@ E valido todos os filtros dentro de Urgente em Requisições
             Execute JavaScript    window.scrollTo(0, 0)
             # Reabre a combobox para a próxima iteração
             Wait Until Element Is Visible    ${COMBOBOX_URGENTE}    timeout=20s
+            Sleep    5
             Click Element                    ${COMBOBOX_URGENTE}
         END
 
