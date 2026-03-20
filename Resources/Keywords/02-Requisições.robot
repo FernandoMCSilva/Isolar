@@ -30,6 +30,10 @@ ${elemento_concluido}                   (//div[@class='inline-flex items-center 
 ${input_CPF_Requisicoes}                (//input[@id='cpfCnpj'])[1]
 
 ${Filtro_Urgente}                       (//button[contains(@type,'button')])[10]
+${filtro_dataentrega_requisicoes}       (//button[@id='data_entrega'])[1]
+${filtro_datacriacao_requisicoes}       //button[@id='data_criacao']
+
+${mes_maio}                             xpath=//div[contains(text(),'maio')]
 
 ${input_nomecompleto_Requisicoes}       //div[@class='select__value-container css-hlgwow']
 ${input_telefone_Requisicoes}           //input[@id='telefone']
