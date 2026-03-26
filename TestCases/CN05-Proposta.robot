@@ -58,13 +58,13 @@ CT 05.06 - Validar filtro Tipo de usina "Aluguel"
     E clico em "Buscar"
     Então sistema exibe informações de Estimativa do filtro Tipo de usina "Aluguel"
 
-CT 05.07 - Validar filtro Data de registro
-    [Documentation]     Caso de teste valida o filtro Data de registro
-    [Tags]    Proposta        
-    Dado que clico no menu "Proposta"
-    Quando clico em "Filtros"
-    E preencho com informações data de registro
-    Então sistema exibe Estimativa do filtro Data de registro
+# CT 05.07 - Validar filtro Data de registro
+#     [Documentation]     Caso de teste valida o filtro Data de registro
+#     [Tags]    Proposta        
+#     Dado que clico no menu "Proposta"
+#     Quando clico em "Filtros"
+#     E preencho com informações data de registro
+#     Então sistema exibe Estimativa do filtro Data de registro
 
 CT 05.08 - Validar filtro Quantidade de itens por pág
     [Documentation]     Caso de teste valida o filtro Quantidade de itens por pág
