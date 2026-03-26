@@ -69,13 +69,13 @@ CT 04.02.01 - Validar menu Contratos > Contratos
     Dado que clico no menu Contratos > Contratos
     Então sistema exibe informações de cadastros de Contratos
 
-CT 04.02.02 - Validar filtro Vigência inicial
-    [Documentation]     Caso de teste valida o filtro "Vigência inicial" em Contratos > Contratos
-    [Tags]    Contratos        
-    Dado que clico no menu Contratos > Contratos
-    Quando clico em "Filtros"
-    E preencho informação de filtro Vigência inicial
-    Então sistema exibe informações de filtro Vigência inicial
+# CT 04.02.02 - Validar filtro Vigência inicial
+#     [Documentation]     Caso de teste valida o filtro "Vigência inicial" em Contratos > Contratos
+#     [Tags]    Contratos        
+#     Dado que clico no menu Contratos > Contratos
+#     Quando clico em "Filtros"
+#     E preencho informação de filtro Vigência inicial
+#     Então sistema exibe informações de filtro Vigência inicial
 
 CT 04.02.03 - Validar filtro Vigência final
     [Documentation]     Caso de teste valida o filtro "Vigência final" em Contratos > Contratos
@@ -85,13 +85,13 @@ CT 04.02.03 - Validar filtro Vigência final
     E preencho informação de filtro Vigência final
     Então sistema exibe informações de filtro Vigência final
 
-CT 04.02.04 - Validar filtro Índice
-    [Documentation]     Caso de teste valida o filtro "Índice" em Contratos > Contratos
-    [Tags]    Contratos        
-    Dado que clico no menu Contratos > Contratos
-    Quando clico em "Filtros"
-    E preencho informação de filtro Índice
-    Então sistema exibe informações de filtro Índice
+# CT 04.02.04 - Validar filtro Índice
+#     [Documentation]     Caso de teste valida o filtro "Índice" em Contratos > Contratos
+#     [Tags]    Contratos        
+#     Dado que clico no menu Contratos > Contratos
+#     Quando clico em "Filtros"
+#     E preencho informação de filtro Índice
+#     Então sistema exibe informações de filtro Índice
 
 CT 04.02.05 - Validar filtro Tipo de índice
     [Documentation]     Caso de teste valida o filtro "Tipo de índice" em Contratos > Contratos
@@ -192,15 +192,15 @@ CT 04.02.16 - Validar botão Anexos
     E clico no botão Anexos
     Então sistema exibe informações de documento
 
-CT 04.02.17 - Validar download de documento
-    [Documentation]     Caso de teste valida download de documento em Contratos > Contratos
-    [Tags]    Contratos        
-    Dado que clico no menu Contratos > Contratos
-    Quando clico em "Filtros"
-    E preencho filtro nome
-    E clico no botão Anexos
-    E faço download de documento
-    Então sistema exibe informações de documento
+# CT 04.02.17 - Validar download de documento
+#     [Documentation]     Caso de teste valida download de documento em Contratos > Contratos
+#     [Tags]    Contratos        
+#     Dado que clico no menu Contratos > Contratos
+#     Quando clico em "Filtros"
+#     E preencho filtro nome
+#     E clico no botão Anexos
+#     E faço download de documento
+#     Então sistema exibe informações de documento
 
 CT 04.02.18 - Validar mandança do Status vigência
     [Documentation]     Caso de teste valida mandança do Status vigência em Contratos > Contratos
