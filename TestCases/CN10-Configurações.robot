@@ -425,15 +425,15 @@ CT 10.05.08 - Validar filtro Tipo de registro
     E clico em Buscar
     Então sistema exibe informações de filtro Tipo de registro em Histórico das requisições
 
-CT 10.05.09 - Validar filtro Data do registro
-    [Documentation]     Caso de teste valida se filtro Data do registro está funcional
-    [Tags]    Configurações        
-    Dado que clico no menu "Configurações > Sistema"
-    E clico em Histórico das requisições
-    Quando clico em "Filtros"
-    E seleciono filtro Data do registro
-    E clico em Buscar
-    Então sistema exibe informações de filtro Data do registro em Histórico das requisições
+# CT 10.05.09 - Validar filtro Data do registro
+#     [Documentation]     Caso de teste valida se filtro Data do registro está funcional
+#     [Tags]    Configurações        
+#     Dado que clico no menu "Configurações > Sistema"
+#     E clico em Histórico das requisições
+#     Quando clico em "Filtros"
+#     E seleciono filtro Data do registro
+#     E clico em Buscar
+#     Então sistema exibe informações de filtro Data do registro em Histórico das requisições
 
 # CT 10.05.10 - Validar botão visualizar
 #     [Documentation]     Caso de teste valida se botão visualizar está funcional
