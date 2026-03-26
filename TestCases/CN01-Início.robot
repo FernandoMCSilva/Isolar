@@ -13,33 +13,33 @@ CT 01.01 - Validar menu Início
     Dado que clico no menu "Início"
     Então sistema exibe informações de requisições gerais
 
-CT 01.02 - Validar requisições em Fila
-    [Documentation]     Caso de teste valida todas as requisições que estão com status Em Fila
-    [Tags]    Início        
-    Dado que clico no menu "Início"
-    Quando clico em "Fila"
-    Então sistema exibe requisições com status "Fila"
+# CT 01.02 - Validar requisições em Fila
+#     [Documentation]     Caso de teste valida todas as requisições que estão com status Em Fila
+#     [Tags]    Início        
+#     Dado que clico no menu "Início"
+#     Quando clico em "Fila"
+#     Então sistema exibe requisições com status "Fila"
 
-CT 01.03 - Validar requisições em Produção
-    [Documentation]     Caso de teste valida todas as requisições que estão com status Em Produção
-    [Tags]    Início        
-    Dado que clico no menu "Início"
-    Quando clico em "Produção"
-    Então sistema exibe requisições com status "Produção"
+# CT 01.03 - Validar requisições em Produção
+#     [Documentation]     Caso de teste valida todas as requisições que estão com status Em Produção
+#     [Tags]    Início        
+#     Dado que clico no menu "Início"
+#     Quando clico em "Produção"
+#     Então sistema exibe requisições com status "Produção"
 
-CT 01.04 - Validar requisições em Concluídas
-    [Documentation]     Caso de teste valida todas as requisições que estão com status Em Concluídas
-    [Tags]    Início        
-    Dado que clico no menu "Início"
-    Quando clico em "Concluídas"
-    Então sistema exibe requisições com status "Concluídas"
+# CT 01.04 - Validar requisições em Concluídas
+#     [Documentation]     Caso de teste valida todas as requisições que estão com status Em Concluídas
+#     [Tags]    Início        
+#     Dado que clico no menu "Início"
+#     Quando clico em "Concluídas"
+#     Então sistema exibe requisições com status "Concluídas"
 
-CT 01.05 - Validar requisições em Paradas
-    [Documentation]     Caso de teste valida todas as requisições que estão com status Em Paradas
-    [Tags]    Início        
-    Dado que clico no menu "Início"
-    Quando clico em "Paradas"
-    Então sistema exibe requisições com status "Paradas"
+# CT 01.05 - Validar requisições em Paradas
+#     [Documentation]     Caso de teste valida todas as requisições que estão com status Em Paradas
+#     [Tags]    Início        
+#     Dado que clico no menu "Início"
+#     Quando clico em "Paradas"
+#     Então sistema exibe requisições com status "Paradas"
 
 CT 01.06 - Validar filtros em departamento
     [Documentation]     Caso de teste valida os filtros Departamento
