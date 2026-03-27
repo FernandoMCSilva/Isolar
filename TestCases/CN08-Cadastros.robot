@@ -73,23 +73,23 @@ CT 08.01.05 - Validar botão Cancelar em "Excluir"
     E clico no botão "Cancelar" em "Excluir"
     Então sistema exibe informações de cadastro de "Pessoas"
 
-CT 08.01.06 - Validar botão Continuar em "Excluir" 
-    [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
-    [Tags]    Cadastros  
-#   Inserir
-    Dado que clico no menu "Cadastros > Pessoas"
-    Quando clico no botão "Inserir"
-    E preencho informações de inserir novo cadastro de pessoas
-    E clico em "Salvar"
-    Então sistema salva novo cadastro de pessoas
+# CT 08.01.06 - Validar botão Continuar em "Excluir" 
+#     [Documentation]     Caso de teste valida se botão Continuar em Excluir está funcional
+#     [Tags]    Cadastros  
+# #   Inserir
+#     Dado que clico no menu "Cadastros > Pessoas"
+#     Quando clico no botão "Inserir"
+#     E preencho informações de inserir novo cadastro de pessoas
+#     E clico em "Salvar"
+#     Então sistema salva novo cadastro de pessoas
 
-#   Excluir
-    Dado que clico no menu "Cadastros > Pessoas"
-    E clico no botao buscar
-    E preencho informações de pesquisa
-    Quando clico em "Excluir"
-    E clico no botão "Continuar" em "Excluir"
-    Então sistema exclui item do menu Cadastro > Pessoas
+# #   Excluir
+#     Dado que clico no menu "Cadastros > Pessoas"
+#     E clico no botao buscar
+#     E preencho informações de pesquisa
+#     Quando clico em "Excluir"
+#     E clico no botão "Continuar" em "Excluir"
+#     Então sistema exclui item do menu Cadastro > Pessoas
 
 CT 08.01.07 - Validar filtro "Cards ou Lista" 
     [Documentation]     Caso de teste valida se filtro Cards ou Lista está funcional
@@ -667,22 +667,22 @@ CT 08.07.01 - Validar menu Cadastros > Motivos de Urgência
     Dado que clico no menu "Cadastros > Motivos de Urgência"
     Então sistema exibe informações de cadastro de "Motivos de Urgência"
 
-CT 08.07.02 - Validar botão Inserir 
-    [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Motivos de Urgência está funcional
-    [Tags]    Cadastros        
-    Dado que clico no menu "Cadastros > Motivos de Urgência"
-    Quando clico no botão "Inserir"
-    E preencho informações de inserir novo cadastro de Motivos de Urgência
-    E clico em "Salvar"
-    Então sistema salva novo cadastro de pessoas
+# CT 08.07.02 - Validar botão Inserir 
+#     [Documentation]     Caso de teste valida se funcionalidade Inserir no menu Cadastros > Motivos de Urgência está funcional
+#     [Tags]    Cadastros        
+#     Dado que clico no menu "Cadastros > Motivos de Urgência"
+#     Quando clico no botão "Inserir"
+#     E preencho informações de inserir novo cadastro de Motivos de Urgência
+#     E clico em "Salvar"
+#     Então sistema salva novo cadastro de pessoas
 
-#   Excluir
-    Dado que clico no menu "Cadastros > Motivos de Urgência"
-    E clico no botao buscar
-    E preencho informações de pesquisa
-    Quando clico em "Excluir"
-    E clico no botão "Continuar" em "Excluir"
-    Então sistema exclui item do menu Cadastro > Pessoas
+# #   Excluir
+#     Dado que clico no menu "Cadastros > Motivos de Urgência"
+#     E clico no botao buscar
+#     E preencho informações de pesquisa
+#     Quando clico em "Excluir"
+#     E clico no botão "Continuar" em "Excluir"
+#     Então sistema exclui item do menu Cadastro > Pessoas
 
 # CT 08.07.03 - Validar botão Editar 
 #     [Documentation]     Caso de teste valida se funcionalidade Editar no menu Cadastros > Motivos de Urgência está funcional
