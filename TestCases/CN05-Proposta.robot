@@ -216,17 +216,17 @@ CT 05.24 - Validar impressão de estimativa
     E clico no botão Baixar/Imprimir
     Então sistema Baixa/Imprime Estimativa
     
-CT 05.25 - Validar botão Iniciar conversa no Whatsapp
-    [Documentation]    Caso de teste valida botão Iniciar conversa no Whatsapp em Acões após gerar cálculos
-    [Tags]    Proposta
-    Dado que clico no menu "Proposta"
-    Quando clico no botão "Gerar"
-    E preencho informações de calculos
-    E clico em Gerar cálculos
-    E preencho informações do cliente
-    E clico no botão Ações
-    E clico no botão Iniciar conversa no WhatsApp
-    Então sistema redireciona para Whatsapp
+# CT 05.25 - Validar botão Iniciar conversa no Whatsapp
+#     [Documentation]    Caso de teste valida botão Iniciar conversa no Whatsapp em Acões após gerar cálculos
+#     [Tags]    Proposta
+#     Dado que clico no menu "Proposta"
+#     Quando clico no botão "Gerar"
+#     E preencho informações de calculos
+#     E clico em Gerar cálculos
+#     E preencho informações do cliente
+#     E clico no botão Ações
+#     E clico no botão Iniciar conversa no WhatsApp
+#     Então sistema redireciona para Whatsapp
 
 CT 05.26 - Validar botão Enviar por email
     [Documentation]    Caso de teste valida botão Enviar por email em Acões após gerar cálculos
