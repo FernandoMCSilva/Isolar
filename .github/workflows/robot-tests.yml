@@ -2,7 +2,7 @@ name: Run Robot Tests in Parallel
 
 on:
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '0 12 * * *'
   workflow_dispatch:
     inputs:
       module:
